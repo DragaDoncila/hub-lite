@@ -1,0 +1,28 @@
+name: CircleCI artifact preview
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  circleci_artifacts_redirector_job:
+    if: "${{ github.event.context == 'ci/circleci: build-site' }}"
+    permissions:
+      statuses: write
+    runs-on: ubuntu-latest
+    name: Run CircleCI artifacts redirector
+    steps:
+      - name: GitHub Action step
+        uses:
+          scientific-python/circleci-artifacts-redirector-action@7eafdb60666f57706a5525a2f5eb76224dc8779b  # v1.1.0
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          api-token: ${{ secrets.CIRCLECI_TOKEN }}
+          artifact-path: 0/build-artifacts/index.html
+          circleci-jobs: build-site
+          job-title: View the hub-lite preview
+      # See example https://github.com/scientific-python/circleci-artifacts-redirector-action
+      - name: Check the URL
+        if: github.event.status != 'pending'
+        run: |
+          curl --fail ${{ steps.step1.outputs.url }} | grep $GITHUB_SHA

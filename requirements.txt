@@ -1,5 +1,8 @@
 beautifulsoup4
-requests
+Jinja2
+markdown-it-py[linkify,plugins]
+mypy
 pandas
-Jinja2 
-markdown
+pygments
+requests
+types-requests
