@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.1.0</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.1.1</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2025-07-16</li>
+                                            <li class="MetadataList_textItem__KKmMN">2025-07-22</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -99,7 +99,7 @@
                                         <p class="font-bold whitespace-nowrap">License<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
                                             <li class="MetadataList_textItem__KKmMN">
-                                                Unavailable
+                                                BSD-3-Clause
                                             </li>
                                         </ul>
                                     </div>
@@ -156,7 +156,7 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Requirements<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">pyyaml</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">pandas</li><li class="MetadataList_textItem__KKmMN">napari_video</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt5; extra == "testing"</li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">pyyaml</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">pandas</li><li class="MetadataList_textItem__KKmMN">napari_video</li><li class="MetadataList_textItem__KKmMN">zarr</li><li class="MetadataList_textItem__KKmMN">numcodecs</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt5; extra == "testing"</li></ul>
                                     </div>
                                 </div>
                             </div>
@@ -241,118 +241,161 @@ https://napari.org/stable/plugins/index.html
 </pre></div>
 </code></pre>
 <h2>How to use</h2>
-<h3>Bounding Box Annotation (for images)</h3>
+<h3>Getting Started</h3>
+<p>After installing napari-simpleannotate, launch napari and navigate to <code>Plugins &gt; Add dock widget</code> to find three annotation widgets:</p>
+<ul>
+<li><strong>Bbox annotation</strong>: For bounding box annotation on images</li>
+<li><strong>Bbox video annotation</strong>: For bounding box annotation on video files</li>
+<li><strong>Label image classification</strong>: For image classification labeling</li>
+</ul>
+<h3>Bounding Box Annotation (Images)</h3>
+<p><strong>Prerequisites</strong>: None required</p>
 <ol>
 <li>
-<p><strong>Opening Files or Directories</strong>:</p>
+<p><strong>Opening Files</strong>:</p>
 <ul>
-<li>Click the <code>Open File</code> button to open an image file.</li>
-<li>Click the <code>Open Directory</code> button to open a directory containing images.</li>
-<li>If there's a <code>class.yaml</code> in the directory of the selected file or within the selected directory, it will be automatically detected. A popup will appear, giving you the option to load it.</li>
+<li>Single file: Click <code>Open File</code> to select an image file</li>
+<li>Directory: Click <code>Open Directory</code> to select a folder containing images</li>
+<li>If a <code>class.yaml</code> file exists in the directory, you'll be prompted to load existing classes</li>
 </ul>
 </li>
 <li>
 <p><strong>Class Management</strong>:</p>
 <ul>
-<li>Enter the class name in the textbox and click the <code>Add class</code> button to add a class. When adding a class name, a number is automatically assigned to it. This number will be used when saving annotations.</li>
-<li>Select a class from the class list and click the <code>Delete selected class</code> button to remove it.</li>
+<li>Enter class names in the text box and click <code>Add class</code></li>
+<li>Classes are automatically assigned sequential IDs (0, 1, 2, ...)</li>
+<li>Select a class and click <code>Delete selected class</code> to remove it</li>
+<li>Classes are saved to <code>class.yaml</code> alongside annotations</li>
 </ul>
 </li>
 <li>
-<p><strong>Annotating Images</strong>:</p>
+<p><strong>Creating Annotations</strong>:</p>
 <ul>
-<li>Use napari's rectangle tool to annotate the images. If you have a class selected, the annotation will automatically be assigned to that class.</li>
-<li>For existing rectangles, you can change their class by selecting the rectangle and then choosing a different class from the list.</li>
+<li>Select a class from the list (becomes your active class)</li>
+<li>Use napari's rectangle tool (shortcut: R) to draw bounding boxes</li>
+<li>New rectangles automatically inherit the selected class</li>
+<li>Change existing rectangles: select the shape, then click a different class</li>
 </ul>
 </li>
 <li>
-<p><strong>Saving Annotations</strong>:</p>
+<p><strong>Saving Work</strong>:</p>
 <ul>
-<li>Click the <code>Save Annotations</code> button to save the annotations in YOLO format.</li>
-<li>Along with saving the annotations, the <code>class.yaml</code> will also be saved. If a <code>class.yaml</code> already exists and its content is different from the current one, a popup will appear asking for confirmation to overwrite it.</li>
+<li>Click <code>Save Annotations</code> to export in YOLO format</li>
+<li>Files saved: <code>image_name.txt</code> (YOLO coordinates) + <code>class.yaml</code> (class definitions)</li>
+<li>YOLO format: <code>class_id x_center y_center width height</code> (normalized 0-1)</li>
 </ul>
 </li>
 </ol>
 <h3>Video Bounding Box Annotation</h3>
+<p><strong>Prerequisites</strong>: Install PyAV for video support: <code>pip install av</code></p>
 <ol>
 <li>
 <p><strong>Opening Videos</strong>:</p>
 <ul>
-<li>Click the <code>Open Video</code> button to open a video file (supports MP4, AVI, MOV, MKV, WMV, FLV, WebM formats).</li>
-<li>The video will be loaded and displayed in napari's time-aware viewer.</li>
+<li>Click <code>Open Video</code> to select video files</li>
+<li>Supported formats: MP4, AVI, MOV, MKV, WMV, FLV, WebM</li>
+<li>Video loads with frame-by-frame navigation</li>
 </ul>
 </li>
 <li>
 <p><strong>Navigation</strong>:</p>
 <ul>
-<li>Use napari's time slider to navigate between frames.</li>
-<li>Current frame information is displayed in the widget.</li>
+<li>Use napari's time slider to navigate frames</li>
+<li>Frame counter shows current position: &quot;Frame: X/Y&quot;</li>
+<li>Video performance optimized with LRU cache and parallel prefetching</li>
 </ul>
 </li>
 <li>
-<p><strong>Class Management</strong>:</p>
+<p><strong>Frame-Aware Annotation</strong>:</p>
 <ul>
-<li>Same as image annotation: add/delete classes with automatic ID assignment.</li>
-<li>Classes are saved to <code>class.yaml</code> in the video directory.</li>
+<li>Navigate to target frame before annotating</li>
+<li>Create bounding boxes with napari's rectangle tool</li>
+<li>Each annotation automatically records the current frame number</li>
+<li>Annotations only visible on their respective frames</li>
 </ul>
 </li>
 <li>
-<p><strong>Annotating Videos</strong>:</p>
+<p><strong>Class and Export</strong>:</p>
 <ul>
-<li>Navigate to the desired frame using the time slider.</li>
-<li>Use napari's rectangle tool to create bounding boxes.</li>
-<li>Each annotation automatically includes the current frame number.</li>
-<li>Annotations are frame-aware and will only be visible on their respective frames.</li>
-</ul>
-</li>
-<li>
-<p><strong>Saving Annotations</strong>:</p>
-<ul>
-<li>Click <code>Save Annotations</code> to save annotations in extended YOLO format.</li>
-<li>Annotations are saved as <code>video_name.txt</code> with format: <code>class_id frame x_center y_center width height</code></li>
-<li>Frame images are automatically extracted and saved alongside annotations.</li>
+<li>Class management identical to image annotation</li>
+<li>Extended YOLO format: <code>class_id frame x_center y_center width height</code></li>
+<li>Saves to <code>video_name.txt</code> + <code>class.yaml</code> in video directory</li>
 </ul>
 </li>
 </ol>
 <h3>Image Classification Labeling</h3>
+<p><strong>Prerequisites</strong>: None required</p>
 <ol>
 <li>
 <p><strong>Opening Directory</strong>:</p>
 <ul>
-<li>Click the <code>Open Directory</code> button to select a directory containing images.</li>
-<li>Supported formats: PNG, TIF, JPG, JPEG, TIFF (recursive search).</li>
+<li>Click <code>Open Directory</code> to select image folder</li>
+<li>Recursively finds all images (PNG, TIF, JPG, JPEG, TIFF)</li>
+<li>Automatically loads existing <code>labels.csv</code> and <code>class.txt</code> if present</li>
 </ul>
 </li>
 <li>
 <p><strong>Display Options</strong>:</p>
 <ul>
-<li>Check <code>Split Channels</code> to display multi-channel images as separate layers.</li>
-<li>Contrast settings are preserved when switching between images.</li>
-</ul>
-</li>
-<li>
-<p><strong>Class Management</strong>:</p>
-<ul>
-<li>Enter class names in the text box and press Enter to add/remove classes.</li>
-<li>Classes are automatically saved to <code>class.txt</code> in the target directory.</li>
+<li><strong>Split Channels</strong>: Check to display multi-channel images as separate layers</li>
+<li>Contrast settings preserved when switching between images</li>
+<li>Navigate images using the file list on the left</li>
 </ul>
 </li>
 <li>
 <p><strong>Labeling Workflow</strong>:</p>
 <ul>
-<li>Select an image from the file list to display it.</li>
-<li>Click on a class name to assign that label to the current image.</li>
-<li>Labels are automatically saved to <code>labels.csv</code> in real-time.</li>
+<li>Add classes: Type in text box and press Enter (or click <code>Add class</code>)</li>
+<li>Remove classes: Type existing class name and press Enter</li>
+<li>Assign labels: Select image → Click class name to label it</li>
+<li>Real-time auto-save to <code>labels.csv</code> and <code>class.txt</code></li>
 </ul>
 </li>
 <li>
-<p><strong>Resume Capability</strong>:</p>
+<p><strong>Resume Sessions</strong>:</p>
 <ul>
-<li>Previous labels and classes are automatically loaded when reopening a directory.</li>
-<li>The workflow can be resumed from where you left off.</li>
+<li>Previous work automatically loaded when reopening directories</li>
+<li>Continue labeling from where you left off</li>
 </ul>
 </li>
 </ol>
+<h2>Performance Notes</h2>
+<ul>
+<li><strong>Video annotation</strong>: Optimized with frame caching and parallel prefetching for smooth playback</li>
+<li><strong>Large datasets</strong>: Classification widget handles thousands of images efficiently</li>
+<li><strong>Memory management</strong>: LRU cache prevents memory overflow during long annotation sessions</li>
+</ul>
+<h2>Output Formats</h2>
+<table>
+<thead>
+<tr>
+<th>Widget</th>
+<th>Annotation File</th>
+<th>Class File</th>
+<th>Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bbox (Images)</td>
+<td><code>image.txt</code></td>
+<td><code>class.yaml</code></td>
+<td>YOLO standard</td>
+</tr>
+<tr>
+<td>Bbox (Video)</td>
+<td><code>video.txt</code></td>
+<td><code>class.yaml</code></td>
+<td>Extended YOLO with frame</td>
+</tr>
+<tr>
+<td>Classification</td>
+<td><code>labels.csv</code></td>
+<td><code>class.txt</code></td>
+<td>CSV with image-label pairs</td>
+</tr>
+</tbody>
+</table>
 <h2>Contributing</h2>
 <p>Contributions are very welcome. Tests can be run with <a href="https://tox.readthedocs.io/en/latest/">tox</a>, please ensure
 the coverage at least stays the same before you submit a pull request.</p>
@@ -376,7 +419,7 @@ the coverage at least stays the same before you submit a pull request.</p>
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.1.0</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.1.1</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -386,7 +429,7 @@ the coverage at least stays the same before you submit a pull request.</p>
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2025-07-16</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2025-07-22</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -407,7 +450,7 @@ the coverage at least stays the same before you submit a pull request.</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
                                                     <li class="MetadataList_textItem__KKmMN">
-                                                            Unavailable
+                                                            BSD-3-Clause
                                                     </li>
                                                 </ul>
                                             </div>
@@ -483,7 +526,7 @@ the coverage at least stays the same before you submit a pull request.</p>
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">
                                                     Requirements<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">pyyaml</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">pandas</li><li class="MetadataList_textItem__KKmMN">napari_video</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt5; extra == "testing"</li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">pyyaml</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">pandas</li><li class="MetadataList_textItem__KKmMN">napari_video</li><li class="MetadataList_textItem__KKmMN">zarr</li><li class="MetadataList_textItem__KKmMN">numcodecs</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt5; extra == "testing"</li></ul>
                                             </div>
                                         </div>
                                     </div>
