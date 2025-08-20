@@ -4,20 +4,20 @@
 
 <head>
     <meta charset="utf-8" />
-    <link href="../plugins/neurogenesis-napari.html" rel="canonical" />
+    <link href="../plugins/napari-czitools.html" rel="canonical" />
     <meta content="width=device-width,initial-scale=1" name="viewport" />
     <meta
-        content="neurogenesis-napari, TUM.ai, napari hub, napari, hub, plugin, image analysis, imaging, chan zuckerberg initiative"
+        content="napari-czitools, Sebastian Rhode, napari hub, napari, hub, plugin, image analysis, imaging, chan zuckerberg initiative"
         name="keywords" />
-    <meta content="A napari plugin to segment and classify cells." name="description" />
-    <meta content="A napari plugin to segment and classify cells." property="og:description" />
-    <meta content="A napari plugin to segment and classify cells.." name="twitter:description" />
-    <meta content="TUM.ai + Helmholtz - napari Plugin - TUM.ai" property="og:title" />
-    <meta content="TUM.ai + Helmholtz - napari Plugin - TUM.ai" name="twitter:title" />
+    <meta content="Plugin to read CZI image files and their metadata" name="description" />
+    <meta content="Plugin to read CZI image files and their metadata" property="og:description" />
+    <meta content="Plugin to read CZI image files and their metadata." name="twitter:description" />
+    <meta content="CziReadTools - napari Plugin - Sebastian Rhode" property="og:title" />
+    <meta content="CziReadTools - napari Plugin - Sebastian Rhode" name="twitter:title" />
     <meta content="article" property="og:type" />
-    <meta content="../plugins/neurogenesis-napari.html" property="og:url" />
+    <meta content="../plugins/napari-czitools.html" property="og:url" />
     <meta content="@napari_imaging" name="twitter:site" />
-    <title>TUM.ai + Helmholtz - napari Plugin - TUM.ai</title>
+    <title>CziReadTools - napari Plugin - Sebastian Rhode</title>
 
     <meta content="2" name="next-head-count" />
     <meta content="#80d1ff" name="theme-color" />
@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.1.0a1.post3</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.0.3</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -90,7 +90,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">First released<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2025-07-29</li>
+                                            <li class="MetadataList_textItem__KKmMN">2025-08-20</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -112,13 +112,13 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Plugin type<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=widget">Widget</a></li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=reader">Reader</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=widget">Widget</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=sample_data">Sample_data</a></li></ul>
                                     </div>
                                 </div>
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Open extension<!-- -->:</p>
-                                        
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?readerFileExtensions=*.czi">*.czi</a></li></ul>
                                     </div>
                                 </div>
                                 <div class="text-sm">
@@ -144,19 +144,19 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Python versions supported<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.10">3.10</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.11">3.11</a></li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"></ul>
                                     </div>
                                 </div>
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Operating system<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">MacOS :: MacOS X</li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">Unix</li></ul>
                                     </div>
                                 </div>
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Requirements<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">cellpose==3.1.1.2</li><li class="MetadataList_textItem__KKmMN">huggingface-hub>=0.33.0</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">napari-czifile2</li><li class="MetadataList_textItem__KKmMN">napari[pyqt5]</li><li class="MetadataList_textItem__KKmMN">numpy==1.26.4</li><li class="MetadataList_textItem__KKmMN">opencv-python==4.11.0.86</li><li class="MetadataList_textItem__KKmMN">pandas==2.3.0</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">sam2==1.1.0</li><li class="MetadataList_textItem__KKmMN">scikit-image==0.25.2</li><li class="MetadataList_textItem__KKmMN">scikit-learn==1.2.2</li><li class="MetadataList_textItem__KKmMN">tifffile<=2023.4.12</li><li class="MetadataList_textItem__KKmMN">torch==2.7.1</li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">superqt</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">pyqtgraph</li><li class="MetadataList_textItem__KKmMN">czitools>=0.10.3</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt5; extra == "testing"</li></ul>
                                     </div>
                                 </div>
                             </div>
@@ -168,26 +168,26 @@
                         <article
                             class="w-full col-span-2 row-start-1 screen-875:col-span-3 screen-1150:col-start-1 screen-1425:col-start-2">
                                 <div class="container" style="display: flex; flex-direction: column;">
-                                    <h1 class="font-bold text-4xl" style="margin-bottom: 20px;" >TUM.ai + Helmholtz</h1>
+                                    <h1 class="font-bold text-4xl" style="margin-bottom: 20px;" >CziReadTools</h1>
                                 </div>
 
                                 
    <div class="flex items-center" style="gap: 20px; ; align-items: center;"">
-        <a class="underline flex" href="https://pypi.org/project/neurogenesis-napari/" rel="noreferrer" target="_blank">
-        <img src="../static/images/PyPI_logo.svg.png" alt="PyPI" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">neurogenesis-napari</span>
+        <a class="underline flex" href="https://pypi.org/project/napari-czitools/" rel="noreferrer" target="_blank">
+        <img src="../static/images/PyPI_logo.svg.png" alt="PyPI" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">napari-czitools</span>
     </a>
     
-        <a class="underline flex" href="https://github.com/tum-ai/neurogenesis_napari" rel="noreferrer" target="_blank">
-            <img src="../static/images/GitHub_Invertocat_Logo.svg.png" alt="GitHub" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">tum-ai/neurogenesis_napar</span>
+        <a class="underline flex" href="https://github.com/sebi06/napari-czitools/issues" rel="noreferrer" target="_blank">
+            <img src="../static/images/GitHub_Invertocat_Logo.svg.png" alt="GitHub" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">sebi06/napari-czitools</span>
         </a>
         </div>
 
                                 <div class="flex justify-between items-center my-6">
-                                    <h2 class="text-lg">A napari plugin to segment and classify cells.</h2>
+                                    <h2 class="text-lg">Plugin to read CZI image files and their metadata</h2>
                                 </div>
                                 <ul class="PluginAuthors_authors__hs3zO">
                                     <li class="inline">
-                                        <span class="text-[11px] screen-495:text-[14px] font-semibold">TUM.ai</span>
+                                        <span class="text-[11px] screen-495:text-[14px] font-semibold">Sebastian Rhode</span>
                                     </li>
                             </ul>
                             <div class="screen-1425:hidden mt-sds-xl mb-sds-xxl"><a
@@ -209,150 +209,149 @@
                                 <div class="flex items-center justify-between mb-sds-xxl">
                                     <div class="Markdown_markdown__QZ95j">
 
-                                        <p><a href="LICENSE"><img src="https://img.shields.io/pypi/l/neurogenesis-napari.svg?color=green" alt="License MIT" /></a>
-<a href="https://pypi.org/project/neurogenesis-napari"><img src="https://img.shields.io/pypi/v/neurogenesis-napari.svg?color=green" alt="PyPI" /></a>
-<a href="https://python.org"><img src="https://img.shields.io/pypi/pyversions/neurogenesis-napari.svg?color=green" alt="Python Version" /></a>
-<a href="https://napari-hub.org/plugins/neurogenesis-napari"><img src="https://img.shields.io/endpoint?url=https://api.napari-hub.org/shields/neurogenesis-napari" alt="napari hub" /></a></p>
-<p>This plugin provides one-click color normalization, denoising, Cellpose-based nuclear segmentation and cell classification.</p>
-<h2>Key Features</h2>
-<table>
-<thead>
-<tr>
-<th>Widget</th>
-<th>Function</th>
-<th>Input</th>
-<th>Output</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Normalize + Denoise</strong></td>
-<td>Color normalization and denoising</td>
-<td>Bright-field image</td>
-<td>Processed image</td>
-</tr>
-<tr>
-<td><strong>Segment</strong></td>
-<td>Nuclear segmentation</td>
-<td>DAPI/nuclear stain</td>
-<td>Masks, centroids, bounding boxes</td>
-</tr>
-<tr>
-<td><strong>Segment + Classify</strong></td>
-<td>End-to-end cell analysis</td>
-<td>4-channel images</td>
-<td>Cell segmentation + classification</td>
-</tr>
-</tbody>
-</table>
-<h2>Quick Start</h2>
-<h3>Installation</h3>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>neurogenesis-napari
+                                        <ul>
+<li><a href="#napari-czitools">napari-czitools</a>
+<ul>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#supported-operating-systems">Supported Operating Systems</a></li>
+<li><a href="#usage---core-functionalities">Usage - Core Functionalities</a>
+<ul>
+<li><a href="#open-complete-czi-files">Open Complete CZI Files</a></li>
+<li><a href="#open-czi-sample-data">Open CZI Sample Data</a>
+<ul>
+<li><a href="#celldivision-5d-stack">CellDivision 5D Stack</a></li>
+<li><a href="#neurons-3d-stack">Neurons 3D Stack</a></li>
+<li><a href="#airyscan-3d-stack">AiryScan 3D Stack</a></li>
+<li><a href="#wellplate-data">Wellplate Data</a></li>
+</ul>
+</li>
+<li><a href="#advanced-czi-reader-czireadtools-plugin">Advanced CZI Reader (CziReadTools) plugin</a></li>
+</ul>
+</li>
+<li><a href="#current-limitations">Current Limitations</a>
+<ul>
+<li><a href="#future-plans">Future plans</a></li>
+</ul>
+</li>
+<li><a href="#contributing">Contributing</a></li>
+<li><a href="#license">License</a></li>
+<li><a href="#issues">Issues</a></li>
+</ul>
+</li>
+<li><a href="#disclaimer">Disclaimer</a></li>
+</ul>
+<h1>napari-czitools</h1>
+<p><a href="https://github.com/sebi06/napari-czitools/raw/main/LICENSE"><img src="https://img.shields.io/pypi/l/napari-czitools.svg?color=green" alt="License MIT" /></a>
+<a href="https://pypi.org/project/napari-czitools"><img src="https://img.shields.io/pypi/v/napari-czitools.svg?color=green" alt="PyPI" /></a>
+<a href="https://python.org"><img src="https://img.shields.io/pypi/pyversions/napari-czitools.svg?color=green" alt="Python Version" /></a>
+<a href="https://github.com/sebi06/napari-czitools/actions"><img src="https://github.com/sebi06/napari-czitools/workflows/tests/badge.svg" alt="tests" /></a>
+<a href="https://codecov.io/gh/sebi06/napari-czitools"><img src="https://codecov.io/gh/sebi06/napari-czitools/branch/main/graph/badge.svg" alt="codecov" /></a>
+<a href="https://napari-hub.org/plugins/napari-czitools"><img src="https://img.shields.io/endpoint?url=https://api.napari-hub.org/shields/napari-czitools" alt="napari hub" /></a>
+<a href="https://napari.org/stable/plugins/index.html"><img src="https://img.shields.io/badge/plugin-npe2-blue?link=https://napari.org/stable/plugins/index.html" alt="npe2" /></a>
+<a href="https://github.com/copier-org/copier"><img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/copier-org/copier/master/img/badge/badge-grayscale-inverted-border-purple.json" alt="Copier" /></a></p>
+<p>Plugin to read CZI image file and metadata</p>
+<hr />
+<p>This <a href="https://github.com/napari/napari">napari</a> plugin was generated with <a href="https://copier.readthedocs.io/en/stable/">copier</a> using the <a href="https://github.com/napari/napari-plugin-template">napari-plugin-template</a>.</p>
+<p><img src="https://github.com/sebi06/napari-czitools/raw/main/readme_images/title_pic.png" alt="napari-czitools - Read CZI Metadata and load image Data" /></p>
+<!--
+Don't miss the full getting started guide to set up your new package:
+https://github.com/napari/napari-plugin-template#getting-started
+
+and review the napari docs for plugin developers:
+https://napari.org/stable/plugins/index.html
+-->
+<h2>Installation</h2>
+<p>You can install <code>napari-czitools</code> via <a href="https://pypi.org/project/pip/">pip</a>:</p>
+<pre><code><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">napari</span><span class="o">-</span><span class="n">czitools</span>
 </pre></div>
 </code></pre>
-<p>Or install through napari:</p>
-<ol>
-<li>Open napari</li>
-<li>Go to <code>Plugins</code> → <code>Install/Uninstall Plugins</code></li>
-<li>Search for <strong>&quot;TumAI Histology Toolkit&quot;</strong></li>
-<li>Click Install</li>
-</ol>
-<h3>Basic Usage</h3>
-<ol>
-<li><strong>Load your images</strong> into napari</li>
-<li><strong>Select the appropriate widget</strong> from the <code>Plugins</code> menu</li>
-<li><strong>Choose your image layers</strong> from the dropdown menus</li>
-<li><strong>Click the action button</strong> to process</li>
-</ol>
-<p>The plugin will automatically download required AI models on first use.</p>
-<hr />
-<h2>Widget Documentation</h2>
-<h3>Normalize + Denoise</h3>
-<p><strong>Purpose</strong>: Standardizes color variations and reduces noise in bright-field images.</p>
-<h4>Usage</h4>
-<ol>
-<li>Load a bright-field image into napari</li>
-<li>Open <code>Plugins</code> → <code>Normalize and Denoise</code></li>
-<li>Select your bright-field image from the <strong>BF</strong> dropdown</li>
-<li>Click <strong>&quot;Normalize + Denoise&quot;</strong></li>
-</ol>
-<h4>What it does</h4>
+<p>To install latest development version :</p>
+<pre><code><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">git</span><span class="o">+</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">sebi06</span><span class="o">/</span><span class="n">napari</span><span class="o">-</span><span class="n">czitools</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</code></pre>
+<h2>Supported Operating Systems</h2>
+<p>Currently this only tested on:</p>
 <ul>
-<li><strong>Color Normalization</strong>: Adjusts colors against an internal reference to standardize appearance across different images/scanners</li>
-<li><strong>Denoising</strong>: Removes noise while preserving important cellular structures</li>
-<li><strong>Output</strong>: Creates a new layer named <code>{original_name}_denoised</code></li>
+<li>Linux</li>
+<li>Windows</li>
 </ul>
-<hr />
-<h3>Segment</h3>
-<p><strong>Purpose</strong>: Detects and segments individual cell nuclei using Cellpose.</p>
-<h4>Usage</h4>
-<ol>
-<li>Load a nuclear staining image (DAPI) into napari</li>
-<li>Open <code>Plugins</code> → <code>Segment</code></li>
-<li>Select your nuclear image from the <strong>DAPI</strong> dropdown</li>
-<li>Optionally adjust:
+<p>MacOS is not supported yet out of the box yet, but <a href="https://pypi.org/project/czitools/">czitools</a> uses <a href="https://pypi.org/project/pylibCZIrw/">pylibCZIrw</a>. But it should be possible to install it manually: <a href="https://pypi.scm.io/#/package/pylibczirw">MaxOS wheels for pylibCZIrw</a> (read and write CZI files on MacOS).</p>
+<h2>Usage - Core Functionalities</h2>
+<p>The plugin provides a reader for CZI files and allows to load the image data into <a href="https://github.com/napari/napari">napari</a>. It also reads the metadata from the CZI file and displays it in the metadata panel of <a href="https://github.com/napari/napari">napari</a>.</p>
+<h3>Open Complete CZI Files</h3>
 <ul>
-<li><strong>GPU</strong>: Enable for faster processing</li>
-<li><strong>Model</strong>: Choose Cellpose model (<code>cyto3</code> default)</li>
+<li>Open complete CZI Files and display the metadata in Napari using the <a href="https://pypi.org/project/czitools/">czitools</a> package</li>
+</ul>
+<p><img src="./readme_images/file_open_mdtable_lls7.png" alt="Open complete CZI file" /></p>
+<ul>
+<li>Open different CZI Image sample data</li>
+<li>if not found locally in current directory <code>../src/napari_czitools/sample_data</code> it will be opened from remote repository (might be slow)</li>
+</ul>
+<p><img src="https://github.com/sebi06/napari-czitools/raw/main/readme_images/open_sample1.png" alt="Open sample data" /></p>
+<h3>Open CZI Sample Data</h3>
+<h4>CellDivision 5D Stack</h4>
+<p><img src="https://github.com/sebi06/napari-czitools/raw/main/readme_images/open_sample_5D.png" alt="Sample Data - 5D Stack" /></p>
+<h4>Neurons 3D Stack</h4>
+<p><img src="https://github.com/sebi06/napari-czitools/raw/main/readme_images/open_sample_3D.png" alt="Sample Data - 3D Stack" /></p>
+<h4>AiryScan 3D Stack</h4>
+<p><img src="https://github.com/sebi06/napari-czitools/raw/main/readme_images/open_sample_airyscan.png" alt="Sample Data - AiryScan 3D Stack" /></p>
+<h4>Wellplate Data</h4>
+<p><img src="https://github.com/sebi06/napari-czitools/raw/main/readme_images/open_sample_wellplate.png" alt="Sample Data - Wellpate" /></p>
+<h3>Advanced CZI Reader (CziReadTools) plugin</h3>
+<p>Select the plugin to show the UI in the right panel of the Napari UI via &quot;Plugins &gt; Advanced CZI Reader (CziReadTools)&quot;</p>
+<ol>
+<li>Select the CZI file to read its metadata</li>
+<li>Once the metadata are read the display can be toggled between a <strong>table</strong> and a <strong>tree view</strong></li>
+<li>The metadata will update the dimension double-range sliders and enable reading the pixel data</li>
+</ol>
+<img src="https://github.com/sebi06/napari-czitools/raw/main/readme_images/reader_adv1.png" alt="Advanced CZI Reader - Plugin" style="width:30%; height:auto;">
+<ol>
+<li>Metadata will be shown as a <strong>table</strong> or as a <strong>tree view</strong></li>
+<li>The <strong>Load Pixel Data</strong> button will be enabled once the metadata is read</li>
+<li>The <strong>Dimension Sliders</strong> will be enabled and allow to select an range to be read for all available dimensions</li>
+</ol>
+<img src="https://github.com/sebi06/napari-czitools/raw/main/readme_images/reader_adv2.png" alt="Advanced CZI Reader - Plugin" style="width:80%; height:auto;">
+<ul>
+<li>The dimensions slider allow to define size of CZI subset to be read</li>
+<li>This allows to read parts of a CZI image dataset</li>
+<li>Important - when reading a subset the metadata will still reflects the size of the complete CZI</li>
+</ul>
+<p><img src="./readme_images/load_pixel1.png" alt="Advanced CZI Reader - Plugin" /></p>
+<ul>
+<li>Example for reading a subset
+<ul>
+<li>Timepoints (4-7): 4 slices or T=4</li>
+<li>Channels (0-0): 1 slice or CH=1</li>
+<li>Z-Plane (7-10): 4 slices or Z=4</li>
 </ul>
 </li>
-<li>Click <strong>&quot;Segment Nuclei&quot;</strong></li>
-</ol>
-<h4>What it does</h4>
-<ul>
-<li><strong>Segmentation</strong>: Uses Cellpose to identify individual nuclei</li>
-<li><strong>Creates 3 new layers</strong>:
-<ul>
-<li><code>{name}_masks</code>: Segmentation masks</li>
-<li><code>{name}_centroids</code>: Center points of each detected cell</li>
-<li><code>{name}_bboxes</code>: Bounding boxes around each cell</li>
 </ul>
-</li>
-</ul>
-<hr />
-<h3>Segment + Classify</h3>
-<p><strong>Purpose</strong>: Complete pipeline that segments nuclei AND classifies cell types in multi-channel images.</p>
-<h4>Usage</h4>
-<ol>
-<li>Load a <strong>4-channel image</strong> into napari as separate layers:
+<p><img src="./readme_images/load_pixel2.png" alt="Advanced CZI Reader - Plugin" /></p>
+<h2>Current Limitations</h2>
+<p>The plugin is still in its very early stage, therefor expect bugs and breaking changes</p>
 <ul>
-<li><strong>DAPI</strong>: Nuclear staining</li>
-<li><strong>Tuj1</strong>: β-III-tubulin</li>
-<li><strong>RFP</strong>: Red fluorescent protein marker</li>
-<li><strong>BF</strong>: Bright-field</li>
+<li>reading CZI with multiple scenes only works when the scenes have equal size</li>
+<li>opening the sample CZI files will not display the CZI metadata right now</li>
 </ul>
-</li>
-<li>Open <code>Plugins</code> → <code>Segment and Classify</code></li>
-<li>Select each channel from the respective dropdowns</li>
-<li>Choose <strong>Reuse cached</strong>:
+<h3>Future plans</h3>
 <ul>
-<li><strong>True</strong>: Reuse previous segmentation (faster) from the segment widget</li>
-<li><strong>False</strong>: Perform fresh segmentation</li>
+<li>allow reading individual scenes when scenes have different sizes</li>
+<li>upgrade <a href="https://pypi.org/project/pylibCZIrw/">pylibCZIrw</a> to allow use <a href="https://pypi.org/project/bioio-czi/">bioio-czi</a> for even better reading</li>
+<li>export of metadata table</li>
 </ul>
-</li>
-<li>Click <strong>&quot;Segment + Classify&quot;</strong></li>
-</ol>
-<h4>What it does</h4>
-<ol>
-<li><strong>Segmentation</strong>: Does segmentation same as the segment widget above</li>
-<li><strong>Feature extraction</strong>: Uses a Variational Autoencoder (VAE) to extract features</li>
-<li><strong>Classification</strong>: Nearest-centroid classifier assigns cell types</li>
-</ol>
-<h4>Output</h4>
-<p>Creates colored polygons for detected cells based on type:</p>
-<ul>
-<li><strong>🟣 Astrocytes</strong> (magenta polygons)</li>
-<li><strong>⚫ Dead Cells</strong> (gray polygons)</li>
-<li><strong>🔵 Neurons</strong> (cyan polygons)</li>
-<li><strong>🟢 OPCs</strong> (lime polygons)</li>
-</ul>
-<p>The classification results can be edited.</p>
-<hr />
-<h3>Supported Image Formats</h3>
-<ul>
-<li><code>.czi</code> (via napari-czifile2)</li>
-<li><code>.png</code>, <code>.jpg</code></li>
-</ul>
+<p>Feedback is always welcome!</p>
+<h2>Contributing</h2>
+<p>Contributions are very welcome. Tests can be run with <a href="https://tox.readthedocs.io/en/latest/">tox</a>, please ensure
+the coverage at least stays the same before you submit a pull request.</p>
+<h2>License</h2>
+<p>Distributed under the terms of the <a href="http://opensource.org/licenses/MIT">MIT</a> license,
+&quot;napari-czitools&quot; is free and open source software</p>
+<h2>Issues</h2>
+<p>If you encounter any problems, please <a href="https://github.com/sebi06/napari-czitools/issues">file an issue</a> along with a detailed description.</p>
+<h1>Disclaimer</h1>
+<p>The software &amp; scripts are free to use for everybody. The author undertakes no warranty concerning the use of this plugins and scripts. Use them on your own risk.</p>
+<p>By using this plugin you agree to this disclaimer.</p>
+<p>Version: 2025.08.20</p>
 
 
                                     </div>
@@ -368,7 +367,7 @@
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.1.0a1.post3</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.0.3</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -388,7 +387,7 @@
                                                     released<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2025-07-29</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2025-08-20</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -425,14 +424,14 @@
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">Plugin
                                                     type<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=widget">Widget</a></li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=reader">Reader</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=widget">Widget</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=sample_data">Sample_data</a></li></ul>
                                             </div>
                                         </div>
                                         <div class="text-sm">
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">Open
                                                     extension<!-- -->:</p>
-                                                    
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?readerFileExtensions=*.czi">*.czi</a></li></ul>
                                             </div>
                                         </div>
                                         <div class="text-sm">
@@ -456,7 +455,7 @@
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">Python versions
                                                     supported<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.10">3.10</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.11">3.11</a></li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"></ul>
                                             </div>
                                         </div>
                                         <div class="text-sm">
@@ -475,7 +474,7 @@
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">
                                                     Requirements<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">cellpose==3.1.1.2</li><li class="MetadataList_textItem__KKmMN">huggingface-hub>=0.33.0</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">napari-czifile2</li><li class="MetadataList_textItem__KKmMN">napari[pyqt5]</li><li class="MetadataList_textItem__KKmMN">numpy==1.26.4</li><li class="MetadataList_textItem__KKmMN">opencv-python==4.11.0.86</li><li class="MetadataList_textItem__KKmMN">pandas==2.3.0</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">sam2==1.1.0</li><li class="MetadataList_textItem__KKmMN">scikit-image==0.25.2</li><li class="MetadataList_textItem__KKmMN">scikit-learn==1.2.2</li><li class="MetadataList_textItem__KKmMN">tifffile<=2023.4.12</li><li class="MetadataList_textItem__KKmMN">torch==2.7.1</li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">superqt</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">pyqtgraph</li><li class="MetadataList_textItem__KKmMN">czitools>=0.10.3</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt5; extra == "testing"</li></ul>
                                             </div>
                                         </div>
                                     </div>
