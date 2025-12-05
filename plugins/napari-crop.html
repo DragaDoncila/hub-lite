@@ -4,20 +4,20 @@
 
 <head>
     <meta charset="utf-8" />
-    <link href="../plugins/napari-nD-annotator.html" rel="canonical" />
+    <link href="../plugins/napari-crop.html" rel="canonical" />
     <meta content="width=device-width,initial-scale=1" name="viewport" />
     <meta
-        content="napari-nD-annotator, David Bauer, Jozsef Molnar, Dominik Hirling, napari hub, napari, hub, plugin, image analysis, imaging, chan zuckerberg initiative"
+        content="napari-crop, Tim Morello, Marcelo Leomil Zoccoler, Johannes Soltwedel, napari hub, napari, hub, plugin, image analysis, imaging, chan zuckerberg initiative"
         name="keywords" />
-    <meta content="A toolbox for annotating objects one by one in nD" name="description" />
-    <meta content="A toolbox for annotating objects one by one in nD" property="og:description" />
-    <meta content="A toolbox for annotating objects one by one in nD." name="twitter:description" />
-    <meta content="Annotation Toolbox - napari Plugin - David Bauer, Jozsef Molnar, Dominik Hirling" property="og:title" />
-    <meta content="Annotation Toolbox - napari Plugin - David Bauer, Jozsef Molnar, Dominik Hirling" name="twitter:title" />
+    <meta content="Crop regions in napari manually" name="description" />
+    <meta content="Crop regions in napari manually" property="og:description" />
+    <meta content="Crop regions in napari manually." name="twitter:description" />
+    <meta content="napari-crop - napari Plugin - Tim Morello, Marcelo Leomil Zoccoler, Johannes Soltwedel" property="og:title" />
+    <meta content="napari-crop - napari Plugin - Tim Morello, Marcelo Leomil Zoccoler, Johannes Soltwedel" name="twitter:title" />
     <meta content="article" property="og:type" />
-    <meta content="../plugins/napari-nD-annotator.html" property="og:url" />
+    <meta content="../plugins/napari-crop.html" property="og:url" />
     <meta content="@napari_imaging" name="twitter:site" />
-    <title>Annotation Toolbox - napari Plugin - David Bauer, Jozsef Molnar, Dominik Hirling</title>
+    <title>napari-crop - napari Plugin - Tim Morello, Marcelo Leomil Zoccoler, Johannes Soltwedel</title>
 
     <meta content="2" name="next-head-count" />
     <meta content="#80d1ff" name="theme-color" />
@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.3.3</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.1.10</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -90,7 +90,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">First released<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2022-06-01</li>
+                                            <li class="MetadataList_textItem__KKmMN">2021-10-21</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -99,7 +99,7 @@
                                         <p class="font-bold whitespace-nowrap">License<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
                                             <li class="MetadataList_textItem__KKmMN">
-                                                BSD-3-Clause
+                                                Copyright (c) 2021, Robert Haa...
                                             </li>
                                         </ul>
                                     </div>
@@ -144,7 +144,7 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Python versions supported<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.8">3.8</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.9">3.9</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.10">3.10</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.11">3.11</a></li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.10">3.10</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.11">3.11</a></li></ul>
                                     </div>
                                 </div>
                                 <div class="text-sm">
@@ -156,7 +156,7 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Requirements<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">magic-class</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">opencv-python</li><li class="MetadataList_textItem__KKmMN">matplotlib</li><li class="MetadataList_textItem__KKmMN">napari>=0.4.11</li><li class="MetadataList_textItem__KKmMN">scikit-image>=0.19</li><li class="MetadataList_textItem__KKmMN">SimpleITK</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt5; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">numpy; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari-bbox; extra == "bbox"</li><li class="MetadataList_textItem__KKmMN">minimal-surface; extra == "ms"</li><li class="MetadataList_textItem__KKmMN">napari-bbox; extra == "all"</li><li class="MetadataList_textItem__KKmMN">minimal-surface; extra == "all"</li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">napari-plugin-engine>=0.1.4</li><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">napari-tools-menu>=0.1.17</li><li class="MetadataList_textItem__KKmMN">napari-workflows</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt5; extra == "testing"</li></ul>
                                     </div>
                                 </div>
                             </div>
@@ -168,26 +168,26 @@
                         <article
                             class="w-full col-span-2 row-start-1 screen-875:col-span-3 screen-1150:col-start-1 screen-1425:col-start-2">
                                 <div class="container" style="display: flex; flex-direction: column;">
-                                    <h1 class="font-bold text-4xl" style="margin-bottom: 20px;" >Annotation Toolbox</h1>
+                                    <h1 class="font-bold text-4xl" style="margin-bottom: 20px;" >napari-crop</h1>
                                 </div>
 
                                 
    <div class="flex items-center" style="gap: 20px; ; align-items: center;"">
-        <a class="underline flex" href="https://pypi.org/project/napari-nD-annotator/" rel="noreferrer" target="_blank">
-        <img src="../static/images/PyPI_logo.svg.png" alt="PyPI" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">napari-nD-annotator</span>
+        <a class="underline flex" href="https://pypi.org/project/napari-crop/" rel="noreferrer" target="_blank">
+        <img src="../static/images/PyPI_logo.svg.png" alt="PyPI" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">napari-crop</span>
     </a>
     
-        <a class="underline flex" href="https://github.com/bauerdavid/napari-nD-annotator/issues" rel="noreferrer" target="_blank">
-            <img src="../static/images/GitHub_Invertocat_Logo.svg.png" alt="GitHub" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">bauerdavid/napari-nD-annotator</span>
+        <a class="underline flex" href="https://github.com/biapol/napari-crop/issues" rel="noreferrer" target="_blank">
+            <img src="../static/images/GitHub_Invertocat_Logo.svg.png" alt="GitHub" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">biapol/napari-crop</span>
         </a>
         </div>
 
                                 <div class="flex justify-between items-center my-6">
-                                    <h2 class="text-lg">A toolbox for annotating objects one by one in nD</h2>
+                                    <h2 class="text-lg">Crop regions in napari manually</h2>
                                 </div>
                                 <ul class="PluginAuthors_authors__hs3zO">
                                     <li class="inline">
-                                        <span class="text-[11px] screen-495:text-[14px] font-semibold">David Bauer, Jozsef Molnar, Dominik Hirling</span>
+                                        <span class="text-[11px] screen-495:text-[14px] font-semibold">Tim Morello, Marcelo Leomil Zoccoler, Johannes Soltwedel</span>
                                     </li>
                             </ul>
                             <div class="screen-1425:hidden mt-sds-xl mb-sds-xxl"><a
@@ -209,209 +209,49 @@
                                 <div class="flex items-center justify-between mb-sds-xxl">
                                     <div class="Markdown_markdown__QZ95j">
 
-                                        <p><a href="https://github.com/bauerdavid/napari-nD-annotator/raw/main/LICENSE"><img src="https://img.shields.io/pypi/l/napari-nD-annotator.svg?color=green" alt="License BSD-3" /></a>
-<a href="https://pypi.org/project/napari-nD-annotator"><img src="https://img.shields.io/pypi/v/napari-nD-annotator.svg?color=green" alt="PyPI" /></a>
-<a href="https://python.org"><img src="https://img.shields.io/pypi/pyversions/napari-nD-annotator.svg?color=green" alt="Python Version" /></a>
-<a href="https://github.com/bauerdavid/napari-nD-annotator/actions"><img src="https://github.com/bauerdavid/napari-nD-annotator/workflows/tests/badge.svg" alt="tests" /></a>
-<a href="https://codecov.io/gh/bauerdavid/napari-nD-annotator"><img src="https://codecov.io/gh/bauerdavid/napari-nD-annotator/branch/main/graph/badge.svg" alt="codecov" /></a>
-<a href="https://napari-hub.org/plugins/napari-nD-annotator"><img src="https://img.shields.io/endpoint?url=https://api.napari-hub.org/shields/napari-nD-annotator" alt="napari hub" /></a></p>
-<p><strong>A toolbox for annotating objects one by one in nD.</strong></p>
-<p>This plugin contains some tools to make 2D/3D (and technically any dimensional) annotation easier.
-Main features:</p>
-<ul>
-<li>auto-filling labels</li>
-<li>label slice interpolation (geometric mean, RPSV representation)</li>
-<li>minimal contour segmentation</li>
-</ul>
-<p>If the <code><a href="https://github.com/bauerdavid/napari-bbox">napari-bbox</a></code> plugin is also installed (see <a href="#installation">Installation</a>), you can also</p>
-<ul>
-<li>list objects annotated with bounding boxes</li>
-<li>visualize selected objects from different projections</li>
-</ul>
-<hr />
-<p>This <a href="https://github.com/napari/napari">napari</a> plugin was generated with <a href="https://github.com/audreyr/cookiecutter">Cookiecutter</a> using <a href="https://github.com/napari">@napari</a>'s <a href="https://github.com/napari/cookiecutter-napari-plugin">cookiecutter-napari-plugin</a> template.</p>
-<!--
-Don't miss the full getting started guide to set up your new package:
-https://github.com/napari/cookiecutter-napari-plugin#getting-started
-
-and review the napari docs for plugin developers:
-https://napari.org/plugins/index.html
--->
-<h2>Installation</h2>
-<p>You can install <code>napari-nD-annotator</code> via <a href="https://pypi.org/project/pip/">pip</a>:</p>
-<pre><code><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">napari</span><span class="o">-</span><span class="n">nD</span><span class="o">-</span><span class="n">annotator</span>
-</pre></div>
-</code></pre>
-<p>The plugin is also available in <a href="https://napari-hub.org/">napari-hub</a>, to install it directly from napari, please refer to
-<a href="https://napari.org/plugins/find_and_install_plugin.html">plugin installation instructions</a> at the official <a href="https://github.com/napari/napari">napari</a> website.</p>
-<h3>Optional packages</h3>
-<p>There are some functionalities which require additional Python packages.</p>
-<h4>Bounding boxes</h4>
-<p>The bounding box and object list functionality requires the <code><a href="https://github.com/bauerdavid/napari-bbox">napari-bbox</a></code> Python package.
-If you want to use these features, install <code><a href="https://github.com/bauerdavid/napari-bbox">napari-bbox</a></code> separately either using <a href="https://pypi.org/project/pip/">pip</a> or directly from napari.
-You can also install it together with this plugin:</p>
-<pre><code><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">napari</span><span class="o">-</span><span class="n">nD</span><span class="o">-</span><span class="n">annotator</span><span class="p">[</span><span class="n">bbox</span><span class="p">]</span>
-</pre></div>
-</code></pre>
-<h4>Minimal surface</h4>
-<p>To use the minimal surface method, you will need the <code><a href="https://pypi.org/project/minimal-surface">minimal-surface</a></code> Python package as well. Please install it using <a href="https://pypi.org/project/pip/">pip</a>:</p>
-<p>Separately:</p>
-<pre><code><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">minimal</span><span class="o">-</span><span class="n">surface</span>
-</pre></div>
-</code></pre>
-<p>Or bundled with the plugin:</p>
-<pre><code><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">napari</span><span class="o">-</span><span class="n">nD</span><span class="o">-</span><span class="n">annotator</span><span class="p">[</span><span class="n">ms</span><span class="p">]</span>
-</pre></div>
-</code></pre>
-<blockquote>
-<p>[!WARNING]
-The <code><a href="https://pypi.org/project/minimal-surface">minimal-surface</a></code> package is only available for Windows at the time. We are actively working on bringing it to Linux and Mac systems as well.</p>
-</blockquote>
-<h1></h1>
-<p>If you would like to install all optional packages, use</p>
-<pre><code><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">napari</span><span class="o">-</span><span class="n">nD</span><span class="o">-</span><span class="n">annotator</span><span class="p">[</span><span class="nb">all</span><span class="p">]</span>
-</pre></div>
-</code></pre>
-<h3></h3>
-<p>If any problems occur during installation or while using the plugin, please <a href="https://github.com/bauerdavid/napari-nD-annotator/issues/new/choose">file an issue</a>.</p>
+                                        <p><a href="https://github.com/BiAPoL/napari-crop/raw/master/LICENSE"><img src="https://img.shields.io/pypi/l/napari-crop.svg?color=green" alt="License" /></a>
+<a href="https://pypi.org/project/napari-crop"><img src="https://img.shields.io/pypi/v/napari-crop.svg?color=green" alt="PyPI" /></a>
+<a href="https://python.org"><img src="https://img.shields.io/pypi/pyversions/napari-crop.svg?color=green" alt="Python Version" /></a>
+<a href="https://github.com/BiAPoL/napari-crop/actions"><img src="https://github.com/BiAPoL/napari-crop/workflows/tests/badge.svg" alt="tests" /></a>
+<a href="https://codecov.io/gh/BiAPoL/napari-crop"><img src="https://codecov.io/gh/BiAPoL/napari-crop/branch/main/graph/badge.svg" alt="codecov" /></a>
+<a href="https://zenodo.org/badge/latestdoi/419822240"><img src="https://zenodo.org/badge/419822240.svg" alt="DOI" /></a></p>
+<p>🚨🚨🚨 <strong>Call for maintainers</strong> 🚨🚨🚨</p>
+<p>If you are interested in further developing it, please get in touch or create a fork.</p>
+<p>Crop regions in napari manually</p>
+<p><img src="https://github.com/BiAPoL/napari-crop/raw/main/images/screencast.gif" alt="" /></p>
+<p>Crop in any dimension</p>
+<p><img src="https://github.com/BiAPoL/napari-crop/raw/main/images/side_crop.gif" alt="" /></p>
+<p>Cut a volume using a plane</p>
+<p><em>Note:</em></p>
+<p><em>- this functionality currently only works with 3D data</em></p>
+<p><em>- to drag the plane, hold the 'SHIFT' key from your keyboard</em></p>
+<p><img src="https://github.com/BiAPoL/napari-crop/raw/main/images/napari_crop_cut_with_plane_demo.gif" alt="" /></p>
+<p>Draw shapes of fixed size at given coordinates for later cropping</p>
+<p><img src="https://github.com/BiAPoL/napari-crop/raw/main/images/napari_crop_draw_shapes.gif" alt="" /></p>
 <h2>Usage</h2>
-<p>You can start napari with the plugin's widgets already opened as:</p>
-<pre><code><div class="highlight"><pre><span></span><span class="n">napari</span> <span class="o">-</span><span class="n">w</span> <span class="n">napari</span><span class="o">-</span><span class="n">nD</span><span class="o">-</span><span class="n">annotator</span> <span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span><span class="n">Object</span> <span class="n">List</span><span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span> <span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span><span class="n">Annotation</span> <span class="n">Toolbox</span><span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span>
+<p>Create a new shapes layer to annotate the region you would like to crop:</p>
+<p><img src="https://github.com/BiAPoL/napari-crop/raw/main/images/shapes.png" alt="" /></p>
+<p>Use the rectangle tool to annotate a region. Start the <code>crop</code> tool from the <code>Plugins &gt; napari-crop &gt; Crop region</code> or, if available, <code>Tools &gt; Utilities &gt; Crop region</code> menu.
+Click the <code>Run</code> button to crop the region.</p>
+<p><img src="https://github.com/BiAPoL/napari-crop/raw/main/images/draw_rectangle.png" alt="" /></p>
+<p>You can also use the <code>Select shapes</code> tool to move the rectangle to a new place and crop another region by clicking on <code>Run</code>.</p>
+<p><img src="https://github.com/BiAPoL/napari-crop/raw/main/images/move_rectangle.png" alt="" /></p>
+<p>Hint: You can also use the <a href="https://www.napari-hub.org/plugins/napari-tabu">napari-tabu</a> plugin to send all your cropped images to a new napari window.</p>
+<p><img src="https://github.com/BiAPoL/napari-crop/raw/main/images/new_window.gif" alt="" /></p>
+<hr />
+<p>This <a href="https://github.com/napari/napari">napari</a> plugin was generated with <a href="https://github.com/audreyr/cookiecutter">Cookiecutter</a> using with <a href="https://github.com/napari">@napari</a>'s <a href="https://github.com/napari/cookiecutter-napari-plugin">cookiecutter-napari-plugin</a> template.</p>
+<h2>Installation</h2>
+<p>You can install <code>napari-crop</code> via <a href="https://pypi.org/project/pip/">pip</a>:</p>
+<pre><code><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">napari</span><span class="o">-</span><span class="n">crop</span>
 </pre></div>
 </code></pre>
-<h3>Bounding boxes</h3>
-<p>The main idea is to create bounding boxes around objects we want to annotate, crop them, and annotate them one by one. This has mainly two advantages when visualizing in 3D:</p>
-<ol>
-<li>We don't have to load the whole data into memory</li>
-<li>The surrounding objects won't occlude the annotated ones, making it easier to check the annotation.</li>
-</ol>
-<p>Bounding boxes can be created from the <code>Object list</code> widget. The dimensionality of the bounding box layer will be determined from the image layer. As bounding boxes are created, a small thumbnail will be displayed.</p>
-<p>The proposed pipeline goes as follows:</p>
-<ol>
-<li>Create a bounding box layer</li>
-<li>Select data parts using the bounding boxes</li>
-<li>Select an object from the object list</li>
-<li>Annotate the object</li>
-<li>Repeat from 3.</li>
-</ol>
-<h3>Slice interpolation</h3>
-<p>The <code>Interpolation</code> tab contains tools for estimating missing annotation slices from existing ones. There are multiple options:</p>
-<ul>
-<li>Geometric: the interpolation will be determined by calculating the average of the corresponding contour points.</li>
-<li>RPSV: A more sophisticated average contour calculation, see the preprint <a href="https://arxiv.org/pdf/1901.02823.pdf">here</a>.</li>
-<li>Distance-based: a signed distance transform is applied to the annotations. The missing slices will be filled in using their
-weighted sum.</li>
-</ul>
-<blockquote>
-<p><strong>Note</strong>: Geometric and RPSV interpolation works only when there's a single connected mask on each slice. If you want to
-interpolate disjoint objects (<em>e.g.</em> dividing cells), use distance based interpolation instead.</p>
-</blockquote>
-<blockquote>
-<p><strong>Note</strong>: Distance-based interpolation might give bad results if some masks are too far away from each other on the same slice
-and there's a big offset compared to the other slice used in the interpolation. If you get unsatisfactory results, try
-annotating more slices (skip less frames).</p>
-</blockquote>
-<p><a href="https://user-images.githubusercontent.com/36735863/188876826-1771acee-93ba-4905-982e-bfb459329659.mp4">https://user-images.githubusercontent.com/36735863/188876826-1771acee-93ba-4905-982e-bfb459329659.mp4</a></p>
-<h3>Minimal contour</h3>
-<p>This plugin can estimate a minimal contour, which is calculated from a point set on the edges of the object, which are provided by the user. This contour will follow some kind of image feature (pixels with high gradient or high/low intensity).
-Features:</p>
-<ul>
-<li>With a single click a new point can be added to the set. This will also extend the contour with the curve shown in red</li>
-<li>A double click will close the curve by adding both the red and gray curves to the minimal contour</li>
-<li>When holding <code>Shift</code>, the gray and red highlight will be swapped, so the other curve can be added to the contour</li>
-<li>With the <code>Ctrl</code> button down a straight line can be added instead of the minimal path</li>
-<li>If the anchor points were misplaced, the last point can be removed by right-clicking, or the whole point set can be cleared by pressing <code>Esc</code></li>
-<li>The <code>Param</code> value at the widget will decide, how strongly should the contour follow edges on the image. Higher value means higher sensitivity to image data, while a lower value will be closer to straight lines.</li>
-<li>Different features can be used, like image gradient or pixel intensities, and also user-defined features (using Python)
-<ul>
-<li>the image is accessed as the <code>image</code> variable, and the features should be stored in the <code>features</code> variable in the small code editor widget</li>
-</ul>
-</li>
-</ul>
-<p>This functionality can be used by selecting the <code>Minimal Contour</code> tab in the <code>Annotation Toolbox</code> widget, which will create a new layer called <code>Anchors</code>.</p>
-<blockquote>
-<p><strong>Warning</strong>: Do not remove the <code>Anchors</code> layer!</p>
-</blockquote>
-<blockquote>
-<p><strong>Warning</strong>: Some utility layers appear in the layer list when using the plugin. These are marked with a lock (:lock:) symbol.
-<strong>Do not remove them or modify their data, as this will most probably break the plugin!</strong> However, you can change their appearance,
-<em>e.g.</em> their color settings.</p>
-</blockquote>
-<h4>Intensity-based:</h4>
-<p><a href="https://user-images.githubusercontent.com/36735863/191023482-0dfafb5c-003a-47f6-a21b-8582a4e3930f.mp4">https://user-images.githubusercontent.com/36735863/191023482-0dfafb5c-003a-47f6-a21b-8582a4e3930f.mp4</a></p>
-<h4>Gradient-based:</h4>
-<p><a href="https://user-images.githubusercontent.com/36735863/191024941-f20f63a0-8281-47d2-be22-d1ec34fe1f5d.mp4">https://user-images.githubusercontent.com/36735863/191024941-f20f63a0-8281-47d2-be22-d1ec34fe1f5d.mp4</a></p>
-<h4>Custom feature:</h4>
-<p><a href="https://user-images.githubusercontent.com/36735863/191025028-3f807bd2-1f2e-40d2-800b-48af820a7dbe.mp4">https://user-images.githubusercontent.com/36735863/191025028-3f807bd2-1f2e-40d2-800b-48af820a7dbe.mp4</a></p>
-<h3>Shortcuts</h3>
-<table>
-<thead>
-<tr>
-<th>Action</th>
-<th>Mouse</th>
-<th>Keyboard</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Increment selected label</td>
-<td><code>Shift + Wheel ⬆️</code></td>
-<td><code>E</code></td>
-</tr>
-<tr>
-<td>Decrement selected label</td>
-<td><code>Shift + Wheel ⬇️</code></td>
-<td><code>Q</code></td>
-</tr>
-<tr>
-<td>Previous slice</td>
-<td><code>Ctrl + Wheel ⬆️</code>*</td>
-<td><code>A</code></td>
-</tr>
-<tr>
-<td>Next slice</td>
-<td><code>Ctrl + Wheel ⬇️</code>*</td>
-<td><code>D</code></td>
-</tr>
-<tr>
-<td>Increase paint brush size of labels layer</td>
-<td><code>Alt + Wheel ⬆️</code></td>
-<td><code>W</code></td>
-</tr>
-<tr>
-<td>Decrease paint brush size of labels layer</td>
-<td><code>Alt + Wheel ⬇️</code></td>
-<td><code>S</code></td>
-</tr>
-<tr>
-<td>Interpolate</td>
-<td>-</td>
-<td><code>Ctrl+I</code></td>
-</tr>
-<tr>
-<td>Change between 'Anchors' and the labels layer</td>
-<td>-</td>
-<td><code>Ctrl+Tab</code></td>
-</tr>
-<tr>
-<td>Jump to layer <code>#i</code></td>
-<td>-</td>
-<td><code>Ctrl+'i'</code>**</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>*Built-in functionality of <a href="https://github.com/napari/napari">napari</a></p>
-<p>**<code>i</code>: 0-9</p>
-</blockquote>
-<blockquote>
-<p><strong>Note</strong>: you can check the list of available shortcuts by clicking the <code>?</code> button in the bottom right corner of the main widget.</p>
-</blockquote>
+<h2>Contributing</h2>
+<p>Contributions are very welcome.</p>
 <h2>License</h2>
 <p>Distributed under the terms of the <a href="http://opensource.org/licenses/BSD-3-Clause">BSD-3</a> license,
-&quot;napari-nD-annotator&quot; is free and open source software</p>
+&quot;napari-crop&quot; is free and open source software</p>
 <h2>Issues</h2>
-<p>If you encounter any problems, please <a href="https://github.com/bauerdavid/napari-nD-annotator/issues/new/choose">file an issue</a> along with a detailed description.</p>
+<p>If you encounter any problems, please create a thread on <a href="https://image.sc">image.sc</a> along with a detailed description and tag <a href="https://twitter.com/haesleinhuepf">@haesleinhuepf</a>.</p>
 
 
                                     </div>
@@ -427,7 +267,7 @@ Features:</p>
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.3.3</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.1.10</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -447,7 +287,7 @@ Features:</p>
                                                     released<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2022-06-01</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2021-10-21</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -458,7 +298,7 @@ Features:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
                                                     <li class="MetadataList_textItem__KKmMN">
-                                                            BSD-3-Clause
+                                                            Copyright (c) 2021, Robert Haa...
                                                     </li>
                                                 </ul>
                                             </div>
@@ -515,7 +355,7 @@ Features:</p>
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">Python versions
                                                     supported<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.8">3.8</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.9">3.9</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.10">3.10</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.11">3.11</a></li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.10">3.10</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.11">3.11</a></li></ul>
                                             </div>
                                         </div>
                                         <div class="text-sm">
@@ -534,7 +374,7 @@ Features:</p>
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">
                                                     Requirements<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">magic-class</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">opencv-python</li><li class="MetadataList_textItem__KKmMN">matplotlib</li><li class="MetadataList_textItem__KKmMN">napari>=0.4.11</li><li class="MetadataList_textItem__KKmMN">scikit-image>=0.19</li><li class="MetadataList_textItem__KKmMN">SimpleITK</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt5; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">numpy; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari-bbox; extra == "bbox"</li><li class="MetadataList_textItem__KKmMN">minimal-surface; extra == "ms"</li><li class="MetadataList_textItem__KKmMN">napari-bbox; extra == "all"</li><li class="MetadataList_textItem__KKmMN">minimal-surface; extra == "all"</li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">napari-plugin-engine>=0.1.4</li><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">napari-tools-menu>=0.1.17</li><li class="MetadataList_textItem__KKmMN">napari-workflows</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt5; extra == "testing"</li></ul>
                                             </div>
                                         </div>
                                     </div>
