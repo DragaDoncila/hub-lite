@@ -4,20 +4,20 @@
 
 <head>
     <meta charset="utf-8" />
-    <link href="../plugins/neurogenesis-napari.html" rel="canonical" />
+    <link href="../plugins/nagini3d-napari.html" rel="canonical" />
     <meta content="width=device-width,initial-scale=1" name="viewport" />
     <meta
-        content="neurogenesis-napari, TUM.ai, napari hub, napari, hub, plugin, image analysis, imaging, chan zuckerberg initiative"
+        content="nagini3d-napari, Quentin RAPILLY, napari hub, napari, hub, plugin, image analysis, imaging, chan zuckerberg initiative"
         name="keywords" />
-    <meta content="A napari plugin to segment and classify cells." name="description" />
-    <meta content="A napari plugin to segment and classify cells." property="og:description" />
-    <meta content="A napari plugin to segment and classify cells.." name="twitter:description" />
-    <meta content="TUM.ai Neurogenesis Toolkit - napari Plugin - TUM.ai" property="og:title" />
-    <meta content="TUM.ai Neurogenesis Toolkit - napari Plugin - TUM.ai" name="twitter:title" />
+    <meta content="A simple plugin that implements Nagini3D inference tools 3D biological segmentation." name="description" />
+    <meta content="A simple plugin that implements Nagini3D inference tools 3D biological segmentation." property="og:description" />
+    <meta content="A simple plugin that implements Nagini3D inference tools 3D biological segmentation.." name="twitter:description" />
+    <meta content="Nagini3D Napari - napari Plugin - Quentin RAPILLY" property="og:title" />
+    <meta content="Nagini3D Napari - napari Plugin - Quentin RAPILLY" name="twitter:title" />
     <meta content="article" property="og:type" />
-    <meta content="../plugins/neurogenesis-napari.html" property="og:url" />
+    <meta content="../plugins/nagini3d-napari.html" property="og:url" />
     <meta content="@napari_imaging" name="twitter:site" />
-    <title>TUM.ai Neurogenesis Toolkit - napari Plugin - TUM.ai</title>
+    <title>Nagini3D Napari - napari Plugin - Quentin RAPILLY</title>
 
     <meta content="2" name="next-head-count" />
     <meta content="#80d1ff" name="theme-color" />
@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.1.0a2</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.1.0</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2025-12-07</li>
+                                            <li class="MetadataList_textItem__KKmMN">2025-12-08</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -90,7 +90,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">First released<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2025-07-29</li>
+                                            <li class="MetadataList_textItem__KKmMN">2025-12-08</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -99,7 +99,8 @@
                                         <p class="font-bold whitespace-nowrap">License<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
                                             <li class="MetadataList_textItem__KKmMN">
-                                                MIT
+                                                GNU GENERAL PUBLIC LICENSE
+   ...
                                             </li>
                                         </ul>
                                     </div>
@@ -150,13 +151,13 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Operating system<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">MacOS :: MacOS X</li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">OS Independent</li></ul>
                                     </div>
                                 </div>
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Requirements<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">cellpose==3.1.1.2</li><li class="MetadataList_textItem__KKmMN">huggingface-hub>=0.33.0</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">napari-czifile2</li><li class="MetadataList_textItem__KKmMN">napari[pyqt5]</li><li class="MetadataList_textItem__KKmMN">numpy==1.26.4</li><li class="MetadataList_textItem__KKmMN">opencv-python==4.11.0.86</li><li class="MetadataList_textItem__KKmMN">pandas==2.3.0</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">sam2==1.1.0</li><li class="MetadataList_textItem__KKmMN">scikit-image==0.25.2</li><li class="MetadataList_textItem__KKmMN">scikit-learn==1.2.2</li><li class="MetadataList_textItem__KKmMN">tifffile<=2023.4.12</li><li class="MetadataList_textItem__KKmMN">torch==2.7.1</li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">scikit-learn</li><li class="MetadataList_textItem__KKmMN">torch==2.1.0</li><li class="MetadataList_textItem__KKmMN">torchvision==0.16.0</li><li class="MetadataList_textItem__KKmMN">nagini3d==0.2.2</li><li class="MetadataList_textItem__KKmMN">napari[all]; extra == "all"</li></ul>
                                     </div>
                                 </div>
                             </div>
@@ -168,26 +169,26 @@
                         <article
                             class="w-full col-span-2 row-start-1 screen-875:col-span-3 screen-1150:col-start-1 screen-1425:col-start-2">
                                 <div class="container" style="display: flex; flex-direction: column;">
-                                    <h1 class="font-bold text-4xl" style="margin-bottom: 20px;" >TUM.ai Neurogenesis Toolkit</h1>
+                                    <h1 class="font-bold text-4xl" style="margin-bottom: 20px;" >Nagini3D Napari</h1>
                                 </div>
 
                                 
    <div class="flex items-center" style="gap: 20px; ; align-items: center;"">
-        <a class="underline flex" href="https://pypi.org/project/neurogenesis-napari/" rel="noreferrer" target="_blank">
-        <img src="../static/images/PyPI_logo.svg.png" alt="PyPI" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">neurogenesis-napari</span>
+        <a class="underline flex" href="https://pypi.org/project/nagini3d-napari/" rel="noreferrer" target="_blank">
+        <img src="../static/images/PyPI_logo.svg.png" alt="PyPI" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">nagini3d-napari</span>
     </a>
     
-        <a class="underline flex" href="https://github.com/tum-ai/neurogenesis_napari" rel="noreferrer" target="_blank">
-            <img src="../static/images/GitHub_Invertocat_Logo.svg.png" alt="GitHub" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">tum-ai/neurogenesis_napar</span>
+        <a class="underline flex" href="https://github.com/QuentinRapilly/nagini3d-napari/issues" rel="noreferrer" target="_blank">
+            <img src="../static/images/GitHub_Invertocat_Logo.svg.png" alt="GitHub" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">QuentinRapilly/nagini3d-napar</span>
         </a>
         </div>
 
                                 <div class="flex justify-between items-center my-6">
-                                    <h2 class="text-lg">A napari plugin to segment and classify cells.</h2>
+                                    <h2 class="text-lg">A simple plugin that implements Nagini3D inference tools 3D biological segmentation.</h2>
                                 </div>
                                 <ul class="PluginAuthors_authors__hs3zO">
                                     <li class="inline">
-                                        <span class="text-[11px] screen-495:text-[14px] font-semibold">TUM.ai</span>
+                                        <span class="text-[11px] screen-495:text-[14px] font-semibold">Quentin RAPILLY</span>
                                     </li>
                             </ul>
                             <div class="screen-1425:hidden mt-sds-xl mb-sds-xxl"><a
@@ -209,177 +210,45 @@
                                 <div class="flex items-center justify-between mb-sds-xxl">
                                     <div class="Markdown_markdown__QZ95j">
 
-                                        <p><a href="https://github.com/tum-ai/neurogenesis_napari/blob/main/LICENSE"><img src="https://img.shields.io/pypi/l/neurogenesis-napari.svg?color=green" alt="License MIT" /></a>
-<a href="https://pypi.org/project/neurogenesis-napari"><img src="https://img.shields.io/pypi/v/neurogenesis-napari.svg?color=green" alt="PyPI" /></a>
-<a href="https://python.org"><img src="https://img.shields.io/pypi/pyversions/neurogenesis-napari.svg?color=green" alt="Python Version" /></a>
-<a href="https://napari-hub.org/plugins/neurogenesis-napari"><img src="https://img.shields.io/endpoint?url=https://api.napari-hub.org/shields/neurogenesis-napari" alt="napari hub" /></a></p>
-<p>A napari plugin for automated nuclear segmentation and neural cell type classification in neurogenesis research. Supports classification of astrocytes, neurons, oligodendrocyte precursor cells (OPCs), and dead cells from multi-channel fluorescence microscopy images.</p>
-<h2>Key Features</h2>
-<table>
-<thead>
-<tr>
-<th>Widget</th>
-<th>Function</th>
-<th>Input</th>
-<th>Output</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Normalize + Denoise</strong></td>
-<td>Color normalization and denoising</td>
-<td>Bright-field image</td>
-<td>Processed image</td>
-</tr>
-<tr>
-<td><strong>Segment</strong></td>
-<td>Nuclear segmentation</td>
-<td>DAPI/nuclear stain</td>
-<td>Masks, centroids, bounding boxes</td>
-</tr>
-<tr>
-<td><strong>Segment + Classify</strong></td>
-<td>End-to-end cell analysis</td>
-<td>4-channel images</td>
-<td>Cell segmentation + classification</td>
-</tr>
-</tbody>
-</table>
-<h2>Quick Start</h2>
-<h3>Installation</h3>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>neurogenesis-napari
+                                        <p><a href="https://github.com/QuentinRapilly/nagini3d-napari/raw/main/LICENSE"><img src="https://img.shields.io/pypi/l/nagini3d-napari.svg?color=green" alt="License GNU GPL v3.0" /></a>
+<a href="https://pypi.org/project/nagini3d-napari"><img src="https://img.shields.io/pypi/v/nagini3d-napari.svg?color=green" alt="PyPI" /></a>
+<a href="https://python.org"><img src="https://img.shields.io/pypi/pyversions/nagini3d-napari.svg?color=green" alt="Python Version" /></a>
+<a href="https://github.com/QuentinRapilly/nagini3d-napari/actions"><img src="https://github.com/QuentinRapilly/nagini3d-napari/workflows/tests/badge.svg" alt="tests" /></a>
+<a href="https://codecov.io/gh/QuentinRapilly/nagini3d-napari"><img src="https://codecov.io/gh/QuentinRapilly/nagini3d-napari/branch/main/graph/badge.svg" alt="codecov" /></a>
+<a href="https://napari-hub.org/plugins/nagini3d-napari"><img src="https://img.shields.io/endpoint?url=https://api.napari-hub.org/shields/nagini3d-napari" alt="napari hub" /></a>
+<a href="https://napari.org/stable/plugins/index.html"><img src="https://img.shields.io/badge/plugin-npe2-blue?link=https://napari.org/stable/plugins/index.html" alt="npe2" /></a>
+<a href="https://github.com/copier-org/copier"><img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/copier-org/copier/master/img/badge/badge-grayscale-inverted-border-purple.json" alt="Copier" /></a></p>
+<p>A simple plugin that implements Nagini3D inference tools for segmenting 3D biological images.</p>
+<hr />
+<p>This <a href="https://github.com/napari/napari">napari</a> plugin was generated with <a href="https://copier.readthedocs.io/en/stable/">copier</a> using the <a href="https://github.com/napari/napari-plugin-template">napari-plugin-template</a> (None).</p>
+<!--
+Don't miss the full getting started guide to set up your new package:
+https://github.com/napari/napari-plugin-template#getting-started
+
+and review the napari docs for plugin developers:
+https://napari.org/stable/plugins/index.html
+-->
+<h2>Installation</h2>
+<p>You can install <code>nagini3d-napari</code> via <a href="https://pypi.org/project/pip/">pip</a>:</p>
+<pre><code><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">nagini3d</span><span class="o">-</span><span class="n">napari</span>
 </pre></div>
 </code></pre>
-<p>Or install through napari:</p>
-<ol>
-<li>Open napari</li>
-<li>Go to <code>Plugins</code> → <code>Install/Uninstall Plugins</code></li>
-<li>Search for &quot;<a href="http://TUM.ai">TUM.ai</a> Neurogenesis Toolkit&quot;</li>
-<li>Click Install</li>
-</ol>
-<h3>Basic Usage</h3>
-<ol>
-<li>Load your images into napari</li>
-<li>Select the appropriate widget from the <code>Plugins</code> menu</li>
-<li>Choose your image layers from the dropdown menus</li>
-<li>Click the action button to process</li>
-</ol>
-<p>Model weights are automatically downloaded on first use.</p>
-<hr />
-<h2>Widget Documentation</h2>
-<h3>Normalize + Denoise</h3>
-<p>Standardizes color variations and reduces noise in bright-field microscopy images.</p>
-<h4>Usage</h4>
-<ol>
-<li>Load a bright-field image into napari</li>
-<li>Open <code>Plugins</code> → <code>Normalize and Denoise</code></li>
-<li>Select your bright-field image from the <strong>BF</strong> dropdown</li>
-<li>Click <strong>&quot;Normalize + Denoise&quot;</strong></li>
-</ol>
-<h4>What it does</h4>
-<ul>
-<li><strong>Color Normalization</strong>: Histogram matching against an internal reference to standardize appearance across different acquisitions</li>
-<li><strong>Denoising</strong>: Removes noise while preserving cellular structures using Cellpose</li>
-<li><strong>Output</strong>: Creates a new layer named <code>{original_name}_denoised</code></li>
-</ul>
-<hr />
-<h3>Segment</h3>
-<p>Detects and segments individual cell nuclei from DAPI-stained images using Cellpose.</p>
-<h4>Usage</h4>
-<ol>
-<li>Load a DAPI/nuclear staining image into napari</li>
-<li>Open <code>Plugins</code> → <code>Segment</code></li>
-<li>Select your DAPI image from the <strong>DAPI</strong> dropdown</li>
-<li>Optionally adjust:
-<ul>
-<li><strong>GPU</strong>: Enable for faster processing (if CUDA available)</li>
-<li><strong>Model</strong>: Choose Cellpose model (<code>cyto3</code> default)</li>
-</ul>
-</li>
-<li>Click <strong>&quot;Segment&quot;</strong></li>
-</ol>
-<h4>What it does</h4>
-<ul>
-<li><strong>Segmentation</strong>: Uses Cellpose to identify individual nuclei</li>
-<li><strong>Creates 3 new layers</strong>:
-<ul>
-<li><code>{name}_masks</code>: Segmentation masks for each nucleus</li>
-<li><code>{name}_centroids</code>: Center points of detected nuclei</li>
-<li><code>{name}_bboxes</code>: Bounding boxes (polygons) around each nucleus</li>
-</ul>
-</li>
-</ul>
-<hr />
-<h3>Segment + Classify</h3>
-<p>End-to-end pipeline that segments nuclei and classifies neural cell types in multi-channel fluorescence images.</p>
-<h4>Usage</h4>
-<ol>
-<li>Load a <strong>4-channel image</strong> into napari as separate layers:
-<ul>
-<li><strong>DAPI</strong>: Nuclear staining (DAPI/Hoechst)</li>
-<li><strong>Tuj1</strong>: β-III-tubulin (neuronal marker)</li>
-<li><strong>RFP</strong>: Red fluorescent protein marker</li>
-<li><strong>BF</strong>: Bright-field</li>
-</ul>
-</li>
-<li>Open <code>Plugins</code> → <code>Segment and Classify</code></li>
-<li>Select each channel from the respective dropdowns</li>
-<li>Choose <strong>Reuse cached segmentation</strong>:
-<ul>
-<li><strong>True</strong> (default): Reuse previous segmentation if available (faster)</li>
-<li><strong>False</strong>: Perform fresh segmentation</li>
-</ul>
-</li>
-<li>Click <strong>&quot;Segment + Classify&quot;</strong></li>
-</ol>
-<h4>How it works</h4>
-<ol>
-<li><strong>Segmentation</strong>: Cellpose-based nuclear segmentation on DAPI channel</li>
-<li><strong>Feature extraction</strong>: Variational Autoencoder (VAE) extracts features from 4-channel patches around each nucleus</li>
-<li><strong>Classification</strong>: Nearest-centroid classifier assigns cell types based on learned centroids</li>
-</ol>
-<h4>Output</h4>
-<p>Creates colored polygon overlays for each detected cell:</p>
-<ul>
-<li>Astrocytes (magenta)</li>
-<li>Neurons (cyan)</li>
-<li>OPCs - Oligodendrocyte Precursor Cells (lime)</li>
-<li>Dead Cells (gray)</li>
-</ul>
-<p>The classification results can be manually corrected through an interactive interface. Select any cell and use keyboard shortcuts to reassign its type: Shift+A (Astrocyte), Shift+N (Neuron), Shift+O (OPC), Shift+D (Dead Cell).</p>
-<hr />
-<hr />
-<h2>Technical Details</h2>
-<h3>Supported Image Formats</h3>
-<ul>
-<li><code>.czi</code> (Zeiss microscopy files, via napari-czifile2)</li>
-<li><code>.tiff</code>, <code>.tif</code></li>
-<li><code>.png</code>, <code>.jpg</code></li>
-</ul>
-<h3>Cell Classification Model</h3>
-<ul>
-<li><strong>Feature extraction</strong>: Variational Autoencoder (VAE) with 2304-dimensional latent space</li>
-<li><strong>Classifier</strong>: Scikit-learn Nearest Centroid</li>
-<li><strong>Input</strong>: 224×224 pixel patches from 4 channels (DAPI, BF, Tuj1, RFP)</li>
-<li><strong>Output</strong>: 4 cell type classes</li>
-</ul>
-<h3>Requirements</h3>
-<ul>
-<li>Python ≥ 3.10</li>
-<li>CUDA-capable GPU (optional, for faster processing)</li>
-<li>Model weights are automatically downloaded on first use via Hugging Face Hub</li>
-</ul>
-<hr />
-<h2>Citation</h2>
-<p>If you use this plugin in your research, please cite:</p>
-<pre><code><div class="highlight"><pre><span></span><span class="n">TUM</span><span class="o">.</span><span class="n">ai</span> <span class="n">Neurogenesis</span> <span class="n">Napari</span> <span class="n">Plugin</span>
-<span class="n">Technical</span> <span class="n">University</span> <span class="n">of</span> <span class="n">Munich</span>
-<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">tum</span><span class="o">-</span><span class="n">ai</span><span class="o">/</span><span class="n">neurogenesis_napari</span>
+<p>If napari is not already installed, you can install <code>nagini3d-napari</code> with napari and Qt via:</p>
+<pre><code><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;nagini3d-napari[all]&quot;</span>
 </pre></div>
 </code></pre>
-<hr />
+<p>To install latest development version :</p>
+<pre><code><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">git</span><span class="o">+</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">QuentinRapilly</span><span class="o">/</span><span class="n">nagini3d</span><span class="o">-</span><span class="n">napari</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</code></pre>
+<h2>Contributing</h2>
+<p>Contributions are very welcome. Tests can be run with <a href="https://tox.readthedocs.io/en/latest/">tox</a>, please ensure
+the coverage at least stays the same before you submit a pull request.</p>
 <h2>License</h2>
-<p>MIT License - see <a href="LICENSE">LICENSE</a> file for details.</p>
+<p>Distributed under the terms of the <a href="http://www.gnu.org/licenses/gpl-3.0.txt">GNU GPL v3.0</a> license,
+&quot;nagini3d-napari&quot; is free and open source software</p>
+<h2>Issues</h2>
+<p>If you encounter any problems, please <a href="https://github.com/QuentinRapilly/nagini3d-napari/issues">file an issue</a> along with a detailed description.</p>
 
 
                                     </div>
@@ -395,7 +264,7 @@
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.1.0a2</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.1.0</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -405,7 +274,7 @@
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2025-12-07</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2025-12-08</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -415,7 +284,7 @@
                                                     released<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2025-07-29</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2025-12-08</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -426,7 +295,8 @@
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
                                                     <li class="MetadataList_textItem__KKmMN">
-                                                            MIT
+                                                            GNU GENERAL PUBLIC LICENSE
+   ...
                                                     </li>
                                                 </ul>
                                             </div>
@@ -502,7 +372,7 @@
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">
                                                     Requirements<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">cellpose==3.1.1.2</li><li class="MetadataList_textItem__KKmMN">huggingface-hub>=0.33.0</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">napari-czifile2</li><li class="MetadataList_textItem__KKmMN">napari[pyqt5]</li><li class="MetadataList_textItem__KKmMN">numpy==1.26.4</li><li class="MetadataList_textItem__KKmMN">opencv-python==4.11.0.86</li><li class="MetadataList_textItem__KKmMN">pandas==2.3.0</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">sam2==1.1.0</li><li class="MetadataList_textItem__KKmMN">scikit-image==0.25.2</li><li class="MetadataList_textItem__KKmMN">scikit-learn==1.2.2</li><li class="MetadataList_textItem__KKmMN">tifffile<=2023.4.12</li><li class="MetadataList_textItem__KKmMN">torch==2.7.1</li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">scikit-learn</li><li class="MetadataList_textItem__KKmMN">torch==2.1.0</li><li class="MetadataList_textItem__KKmMN">torchvision==0.16.0</li><li class="MetadataList_textItem__KKmMN">nagini3d==0.2.2</li><li class="MetadataList_textItem__KKmMN">napari[all]; extra == "all"</li></ul>
                                             </div>
                                         </div>
                                     </div>
