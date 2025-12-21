@@ -1,11 +1,11 @@
 [
     {
         "plugin_id": 0,
-        "html_filename": "napari-tmidas.html"
+        "html_filename": "quanti-fret.html"
     },
     {
         "plugin_id": 1,
-        "html_filename": "quanti-fret.html"
+        "html_filename": "napari-tmidas.html"
     },
     {
         "plugin_id": 2,
@@ -21,31 +21,31 @@
     },
     {
         "plugin_id": 5,
-        "html_filename": "napari-czitools.html"
-    },
-    {
-        "plugin_id": 6,
-        "html_filename": "napari-large-image-importer.html"
-    },
-    {
-        "plugin_id": 7,
         "html_filename": "napari-segmentation-toolbox.html"
     },
     {
-        "plugin_id": 8,
-        "html_filename": "napari-3d-label-eraser.html"
+        "plugin_id": 6,
+        "html_filename": "napari-czitools.html"
     },
     {
-        "plugin_id": 9,
+        "plugin_id": 7,
+        "html_filename": "napari-large-image-importer.html"
+    },
+    {
+        "plugin_id": 8,
         "html_filename": "motile-tracker.html"
     },
     {
+        "plugin_id": 9,
+        "html_filename": "napari-3d-label-eraser.html"
+    },
+    {
         "plugin_id": 10,
-        "html_filename": "napari-copick.html"
+        "html_filename": "napari-crop.html"
     },
     {
         "plugin_id": 11,
-        "html_filename": "napari-crop.html"
+        "html_filename": "napari-copick.html"
     },
     {
         "plugin_id": 12,
@@ -57,11 +57,11 @@
     },
     {
         "plugin_id": 14,
-        "html_filename": "neurogenesis-napari.html"
+        "html_filename": "ndevio.html"
     },
     {
         "plugin_id": 15,
-        "html_filename": "ndevio.html"
+        "html_filename": "neurogenesis-napari.html"
     },
     {
         "plugin_id": 16,
@@ -73,11 +73,11 @@
     },
     {
         "plugin_id": 18,
-        "html_filename": "ndev-settings.html"
+        "html_filename": "napari-data-inspection.html"
     },
     {
         "plugin_id": 19,
-        "html_filename": "napari-data-inspection.html"
+        "html_filename": "ndev-settings.html"
     },
     {
         "plugin_id": 20,
@@ -97,43 +97,43 @@
     },
     {
         "plugin_id": 24,
-        "html_filename": "napari-ndev.html"
-    },
-    {
-        "plugin_id": 25,
         "html_filename": "napari-clusters-plotter.html"
     },
     {
-        "plugin_id": 26,
-        "html_filename": "brainglobe-utils.html"
+        "plugin_id": 25,
+        "html_filename": "napari-ndev.html"
     },
     {
-        "plugin_id": 27,
+        "plugin_id": 26,
         "html_filename": "movement.html"
     },
     {
-        "plugin_id": 28,
-        "html_filename": "napari-omero-downloader-cci.html"
+        "plugin_id": 27,
+        "html_filename": "brainglobe-utils.html"
     },
     {
-        "plugin_id": 29,
+        "plugin_id": 28,
         "html_filename": "fishfeats.html"
     },
     {
-        "plugin_id": 30,
+        "plugin_id": 29,
         "html_filename": "napari-signal-classifier.html"
     },
     {
+        "plugin_id": 30,
+        "html_filename": "napari-omero-downloader-cci.html"
+    },
+    {
         "plugin_id": 31,
-        "html_filename": "napari-wsi.html"
+        "html_filename": "napari-signal-selector.html"
     },
     {
         "plugin_id": 32,
-        "html_filename": "psf-analysis-cfim.html"
+        "html_filename": "napari-wsi.html"
     },
     {
         "plugin_id": 33,
-        "html_filename": "napari-signal-selector.html"
+        "html_filename": "psf-analysis-cfim.html"
     },
     {
         "plugin_id": 34,
@@ -181,11 +181,11 @@
     },
     {
         "plugin_id": 45,
-        "html_filename": "napari-spatialdata.html"
+        "html_filename": "seu-3d.html"
     },
     {
         "plugin_id": 46,
-        "html_filename": "seu-3d.html"
+        "html_filename": "napari-spatialdata.html"
     },
     {
         "plugin_id": 47,
@@ -217,11 +217,11 @@
     },
     {
         "plugin_id": 54,
-        "html_filename": "napari-convpaint.html"
+        "html_filename": "napari-sc3d-viewer.html"
     },
     {
         "plugin_id": 55,
-        "html_filename": "napari-sc3d-viewer.html"
+        "html_filename": "napari-convpaint.html"
     },
     {
         "plugin_id": 56,
@@ -233,11 +233,11 @@
     },
     {
         "plugin_id": 58,
-        "html_filename": "napari-lattice.html"
+        "html_filename": "epicure.html"
     },
     {
         "plugin_id": 59,
-        "html_filename": "epicure.html"
+        "html_filename": "napari-lattice.html"
     },
     {
         "plugin_id": 60,
@@ -269,11 +269,11 @@
     },
     {
         "plugin_id": 67,
-        "html_filename": "napari-trackastra.html"
+        "html_filename": "napari-nninteractive.html"
     },
     {
         "plugin_id": 68,
-        "html_filename": "napari-nninteractive.html"
+        "html_filename": "napari-trackastra.html"
     },
     {
         "plugin_id": 69,
@@ -317,11 +317,11 @@
     },
     {
         "plugin_id": 79,
-        "html_filename": "orseg.html"
+        "html_filename": "orchardseg.html"
     },
     {
         "plugin_id": 80,
-        "html_filename": "orchardseg.html"
+        "html_filename": "orseg.html"
     },
     {
         "plugin_id": 81,
@@ -333,11 +333,11 @@
     },
     {
         "plugin_id": 83,
-        "html_filename": "samcell-napari.html"
+        "html_filename": "brainglobe-registration.html"
     },
     {
         "plugin_id": 84,
-        "html_filename": "brainglobe-registration.html"
+        "html_filename": "samcell-napari.html"
     },
     {
         "plugin_id": 85,
@@ -377,11 +377,11 @@
     },
     {
         "plugin_id": 94,
-        "html_filename": "ilastik-napari.html"
+        "html_filename": "napari-filaments.html"
     },
     {
         "plugin_id": 95,
-        "html_filename": "napari-filaments.html"
+        "html_filename": "ilastik-napari.html"
     },
     {
         "plugin_id": 96,
@@ -393,11 +393,11 @@
     },
     {
         "plugin_id": 98,
-        "html_filename": "set-calibration.html"
+        "html_filename": "napari-noise2vst.html"
     },
     {
         "plugin_id": 99,
-        "html_filename": "napari-noise2vst.html"
+        "html_filename": "set-calibration.html"
     },
     {
         "plugin_id": 100,
@@ -409,11 +409,11 @@
     },
     {
         "plugin_id": 102,
-        "html_filename": "biaplotter.html"
+        "html_filename": "napari-fluoresfm.html"
     },
     {
         "plugin_id": 103,
-        "html_filename": "napari-fluoresfm.html"
+        "html_filename": "biaplotter.html"
     },
     {
         "plugin_id": 104,
@@ -425,15 +425,15 @@
     },
     {
         "plugin_id": 106,
-        "html_filename": "napari-bigfish.html"
-    },
-    {
-        "plugin_id": 107,
         "html_filename": "napari-sam4is.html"
     },
     {
-        "plugin_id": 108,
+        "plugin_id": 107,
         "html_filename": "napari-simpleannotate.html"
+    },
+    {
+        "plugin_id": 108,
+        "html_filename": "napari-bigfish.html"
     },
     {
         "plugin_id": 109,
@@ -441,15 +441,15 @@
     },
     {
         "plugin_id": 110,
-        "html_filename": "skan.html"
+        "html_filename": "fspi-analysis.html"
     },
     {
         "plugin_id": 111,
-        "html_filename": "napari-automatic-range.html"
+        "html_filename": "skan.html"
     },
     {
         "plugin_id": 112,
-        "html_filename": "fspi-analysis.html"
+        "html_filename": "napari-automatic-range.html"
     },
     {
         "plugin_id": 113,
@@ -473,7 +473,7 @@
     },
     {
         "plugin_id": 118,
-        "html_filename": "napari-laber-manager.html"
+        "html_filename": "napari-threedee.html"
     },
     {
         "plugin_id": 119,
@@ -481,7 +481,7 @@
     },
     {
         "plugin_id": 120,
-        "html_filename": "napari-threedee.html"
+        "html_filename": "napari-laber-manager.html"
     },
     {
         "plugin_id": 121,
@@ -497,11 +497,11 @@
     },
     {
         "plugin_id": 124,
-        "html_filename": "lsfm-fusion-napari.html"
+        "html_filename": "lsfm-destripe-napari.html"
     },
     {
         "plugin_id": 125,
-        "html_filename": "lsfm-destripe-napari.html"
+        "html_filename": "lsfm-fusion-napari.html"
     },
     {
         "plugin_id": 126,
@@ -521,11 +521,11 @@
     },
     {
         "plugin_id": 130,
-        "html_filename": "napari-hsi-analysis.html"
+        "html_filename": "napari-pyav.html"
     },
     {
         "plugin_id": 131,
-        "html_filename": "napari-pyav.html"
+        "html_filename": "napari-hsi-analysis.html"
     },
     {
         "plugin_id": 132,
@@ -533,19 +533,19 @@
     },
     {
         "plugin_id": 133,
-        "html_filename": "napari-timelapse-processor.html"
-    },
-    {
-        "plugin_id": 134,
         "html_filename": "napari-spotiflow.html"
     },
     {
+        "plugin_id": 134,
+        "html_filename": "napari-timelapse-processor.html"
+    },
+    {
         "plugin_id": 135,
-        "html_filename": "napari-tapenade-processing.html"
+        "html_filename": "napari-vedo-bridge.html"
     },
     {
         "plugin_id": 136,
-        "html_filename": "brendan-beads.html"
+        "html_filename": "napari-tapenade-processing.html"
     },
     {
         "plugin_id": 137,
@@ -553,7 +553,7 @@
     },
     {
         "plugin_id": 138,
-        "html_filename": "napari-vedo-bridge.html"
+        "html_filename": "brendan-beads.html"
     },
     {
         "plugin_id": 139,
@@ -565,11 +565,11 @@
     },
     {
         "plugin_id": 141,
-        "html_filename": "napari-nuclephaser.html"
+        "html_filename": "napari-afmreader.html"
     },
     {
         "plugin_id": 142,
-        "html_filename": "napari-afmreader.html"
+        "html_filename": "napari-nuclephaser.html"
     },
     {
         "plugin_id": 143,
@@ -577,11 +577,11 @@
     },
     {
         "plugin_id": 144,
-        "html_filename": "brainglobe-segmentation.html"
+        "html_filename": "napari-activelearning.html"
     },
     {
         "plugin_id": 145,
-        "html_filename": "napari-activelearning.html"
+        "html_filename": "brainglobe-segmentation.html"
     },
     {
         "plugin_id": 146,
@@ -601,11 +601,11 @@
     },
     {
         "plugin_id": 150,
-        "html_filename": "napari-molecule-reader.html"
+        "html_filename": "cut-detector.html"
     },
     {
         "plugin_id": 151,
-        "html_filename": "cut-detector.html"
+        "html_filename": "napari-molecule-reader.html"
     },
     {
         "plugin_id": 152,
@@ -781,11 +781,11 @@
     },
     {
         "plugin_id": 195,
-        "html_filename": "napari-bbox.html"
+        "html_filename": "multireg.html"
     },
     {
         "plugin_id": 196,
-        "html_filename": "multireg.html"
+        "html_filename": "napari-bbox.html"
     },
     {
         "plugin_id": 197,
@@ -817,15 +817,15 @@
     },
     {
         "plugin_id": 204,
-        "html_filename": "poser-napari.html"
-    },
-    {
-        "plugin_id": 205,
         "html_filename": "napari-swc-reader.html"
     },
     {
+        "plugin_id": 205,
+        "html_filename": "poser-napari.html"
+    },
+    {
         "plugin_id": 206,
-        "html_filename": "napari-lf.html"
+        "html_filename": "napari-smlmlab.html"
     },
     {
         "plugin_id": 207,
@@ -833,27 +833,27 @@
     },
     {
         "plugin_id": 208,
-        "html_filename": "napari-smlmlab.html"
-    },
-    {
-        "plugin_id": 209,
-        "html_filename": "napari-bacseg.html"
-    },
-    {
-        "plugin_id": 210,
-        "html_filename": "napari-ctc-io.html"
-    },
-    {
-        "plugin_id": 211,
         "html_filename": "napari-cosmos-ts.html"
     },
     {
+        "plugin_id": 209,
+        "html_filename": "napari-ctc-io.html"
+    },
+    {
+        "plugin_id": 210,
+        "html_filename": "napari-bacseg.html"
+    },
+    {
+        "plugin_id": 211,
+        "html_filename": "napari-lf.html"
+    },
+    {
         "plugin_id": 212,
-        "html_filename": "fish-scan.html"
+        "html_filename": "organelle-segmenter-plugin.html"
     },
     {
         "plugin_id": 213,
-        "html_filename": "organelle-segmenter-plugin.html"
+        "html_filename": "fish-scan.html"
     },
     {
         "plugin_id": 214,
@@ -1001,11 +1001,11 @@
     },
     {
         "plugin_id": 250,
-        "html_filename": "napari-mm3.html"
+        "html_filename": "napari-basicpy.html"
     },
     {
         "plugin_id": 251,
-        "html_filename": "napari-basicpy.html"
+        "html_filename": "napari-mm3.html"
     },
     {
         "plugin_id": 252,
@@ -1013,11 +1013,11 @@
     },
     {
         "plugin_id": 253,
-        "html_filename": "napari-apple.html"
+        "html_filename": "napari-blossom.html"
     },
     {
         "plugin_id": 254,
-        "html_filename": "napari-blossom.html"
+        "html_filename": "napari-apple.html"
     },
     {
         "plugin_id": 255,
@@ -1085,11 +1085,11 @@
     },
     {
         "plugin_id": 271,
-        "html_filename": "cryocanvas.html"
+        "html_filename": "napari-potential-field-navigation.html"
     },
     {
         "plugin_id": 272,
-        "html_filename": "napari-potential-field-navigation.html"
+        "html_filename": "cryocanvas.html"
     },
     {
         "plugin_id": 273,
@@ -1153,11 +1153,11 @@
     },
     {
         "plugin_id": 288,
-        "html_filename": "darth-d.html"
+        "html_filename": "napari-3d-ortho-viewer.html"
     },
     {
         "plugin_id": 289,
-        "html_filename": "napari-3d-ortho-viewer.html"
+        "html_filename": "darth-d.html"
     },
     {
         "plugin_id": 290,
@@ -1177,11 +1177,11 @@
     },
     {
         "plugin_id": 294,
-        "html_filename": "napari-sif-reader.html"
+        "html_filename": "napari-psf-simulator.html"
     },
     {
         "plugin_id": 295,
-        "html_filename": "napari-psf-simulator.html"
+        "html_filename": "napari-sif-reader.html"
     },
     {
         "plugin_id": 296,
@@ -1225,11 +1225,11 @@
     },
     {
         "plugin_id": 306,
-        "html_filename": "napari-ism.html"
+        "html_filename": "spots-in-yeasts.html"
     },
     {
         "plugin_id": 307,
-        "html_filename": "spots-in-yeasts.html"
+        "html_filename": "napari-ism.html"
     },
     {
         "plugin_id": 308,
@@ -1249,11 +1249,11 @@
     },
     {
         "plugin_id": 312,
-        "html_filename": "napari-superres.html"
+        "html_filename": "napari-merge-stardist-masks.html"
     },
     {
         "plugin_id": 313,
-        "html_filename": "napari-merge-stardist-masks.html"
+        "html_filename": "napari-superres.html"
     },
     {
         "plugin_id": 314,
@@ -1289,11 +1289,11 @@
     },
     {
         "plugin_id": 322,
-        "html_filename": "tootapari.html"
+        "html_filename": "napari-stable-diffusion.html"
     },
     {
         "plugin_id": 323,
-        "html_filename": "napari-stable-diffusion.html"
+        "html_filename": "tootapari.html"
     },
     {
         "plugin_id": 324,
@@ -1325,11 +1325,11 @@
     },
     {
         "plugin_id": 331,
-        "html_filename": "psfmodels.html"
+        "html_filename": "napari-amdtrk.html"
     },
     {
         "plugin_id": 332,
-        "html_filename": "napari-amdtrk.html"
+        "html_filename": "psfmodels.html"
     },
     {
         "plugin_id": 333,
@@ -1413,15 +1413,15 @@
     },
     {
         "plugin_id": 353,
-        "html_filename": "napari-roi.html"
-    },
-    {
-        "plugin_id": 354,
         "html_filename": "napping.html"
     },
     {
-        "plugin_id": 355,
+        "plugin_id": 354,
         "html_filename": "napari-tyssue.html"
+    },
+    {
+        "plugin_id": 355,
+        "html_filename": "napari-roi.html"
     },
     {
         "plugin_id": 356,
@@ -1445,11 +1445,11 @@
     },
     {
         "plugin_id": 361,
-        "html_filename": "napari-macrokit.html"
+        "html_filename": "napari-result-stack.html"
     },
     {
         "plugin_id": 362,
-        "html_filename": "napari-result-stack.html"
+        "html_filename": "napari-macrokit.html"
     },
     {
         "plugin_id": 363,
@@ -1537,11 +1537,11 @@
     },
     {
         "plugin_id": 384,
-        "html_filename": "napari-splineit.html"
+        "html_filename": "napari-cookiecut.html"
     },
     {
         "plugin_id": 385,
-        "html_filename": "napari-cookiecut.html"
+        "html_filename": "napari-splineit.html"
     },
     {
         "plugin_id": 386,
@@ -1677,11 +1677,11 @@
     },
     {
         "plugin_id": 419,
-        "html_filename": "napari-imc.html"
+        "html_filename": "napari-czifile2.html"
     },
     {
         "plugin_id": 420,
-        "html_filename": "napari-czifile2.html"
+        "html_filename": "napari-imc.html"
     },
     {
         "plugin_id": 421,
@@ -1705,11 +1705,11 @@
     },
     {
         "plugin_id": 426,
-        "html_filename": "napari-animated-gif-io.html"
+        "html_filename": "napari-workflow-optimizer.html"
     },
     {
         "plugin_id": 427,
-        "html_filename": "napari-workflow-optimizer.html"
+        "html_filename": "napari-animated-gif-io.html"
     },
     {
         "plugin_id": 428,
@@ -1757,11 +1757,11 @@
     },
     {
         "plugin_id": 439,
-        "html_filename": "napari-mouse-controls.html"
+        "html_filename": "napari-tabu.html"
     },
     {
         "plugin_id": 440,
-        "html_filename": "napari-tabu.html"
+        "html_filename": "napari-mouse-controls.html"
     },
     {
         "plugin_id": 441,
