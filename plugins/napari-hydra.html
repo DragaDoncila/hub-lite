@@ -4,20 +4,20 @@
 
 <head>
     <meta charset="utf-8" />
-    <link href="../plugins/napari-yolopt.html" rel="canonical" />
+    <link href="../plugins/napari-hydra.html" rel="canonical" />
     <meta content="width=device-width,initial-scale=1" name="viewport" />
     <meta
-        content="napari-yolopt, Not available, napari hub, napari, hub, plugin, image analysis, imaging, chan zuckerberg initiative"
+        content="napari-hydra, H. Romão, T. De, A. Yakimovich, napari hub, napari, hub, plugin, image analysis, imaging, chan zuckerberg initiative"
         name="keywords" />
-    <meta content="Detect overlapping Pt particles using Yolo" name="description" />
-    <meta content="Detect overlapping Pt particles using Yolo" property="og:description" />
-    <meta content="Detect overlapping Pt particles using Yolo." name="twitter:description" />
-    <meta content="YoloPt - napari Plugin - Not available" property="og:title" />
-    <meta content="YoloPt - napari Plugin - Not available" name="twitter:title" />
+    <meta content="Napari Hydra Plugin - GUI-based nested object detection" name="description" />
+    <meta content="Napari Hydra Plugin - GUI-based nested object detection" property="og:description" />
+    <meta content="Napari Hydra Plugin - GUI-based nested object detection." name="twitter:description" />
+    <meta content="napari-hydra - napari Plugin - H. Romão, T. De, A. Yakimovich" property="og:title" />
+    <meta content="napari-hydra - napari Plugin - H. Romão, T. De, A. Yakimovich" name="twitter:title" />
     <meta content="article" property="og:type" />
-    <meta content="../plugins/napari-yolopt.html" property="og:url" />
+    <meta content="../plugins/napari-hydra.html" property="og:url" />
     <meta content="@napari_imaging" name="twitter:site" />
-    <title>YoloPt - napari Plugin - Not available</title>
+    <title>napari-hydra - napari Plugin - H. Romão, T. De, A. Yakimovich</title>
 
     <meta content="2" name="next-head-count" />
     <meta content="#80d1ff" name="theme-color" />
@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.3.3</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.0.5</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -90,7 +90,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">First released<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-02-23</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-01-29</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -99,8 +99,7 @@
                                         <p class="font-bold whitespace-nowrap">License<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
                                             <li class="MetadataList_textItem__KKmMN">
-                                                Copyright (c) 2026, 
-All right...
+                                                BSD-3-Clause
                                             </li>
                                         </ul>
                                     </div>
@@ -145,7 +144,7 @@ All right...
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Python versions supported<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.10">3.10</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.11">3.11</a></li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.9">3.9</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.10">3.10</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.11">3.11</a></li></ul>
                                     </div>
                                 </div>
                                 <div class="text-sm">
@@ -157,7 +156,7 @@ All right...
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Requirements<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">tifffile</li><li class="MetadataList_textItem__KKmMN">scipy</li><li class="MetadataList_textItem__KKmMN">ultralytics</li><li class="MetadataList_textItem__KKmMN">hyperspy</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">superqt</li><li class="MetadataList_textItem__KKmMN">shapely</li><li class="MetadataList_textItem__KKmMN">tqdm</li><li class="MetadataList_textItem__KKmMN">napari[all]; extra == "all"</li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">napari[all]</li><li class="MetadataList_textItem__KKmMN">csbdeep>=0.7.4</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">numba</li><li class="MetadataList_textItem__KKmMN">imageio</li><li class="MetadataList_textItem__KKmMN">stardist>=0.9.1</li><li class="MetadataList_textItem__KKmMN">tensorflow>=2.6</li><li class="MetadataList_textItem__KKmMN">typing_extensions>=4.12</li><li class="MetadataList_textItem__KKmMN">csbdeep[tf1]>=0.7.4; extra == "tf1"</li><li class="MetadataList_textItem__KKmMN">pytest>=7.2.0; extra == "test"</li><li class="MetadataList_textItem__KKmMN">pyyaml>=6.0; extra == "test"</li><li class="MetadataList_textItem__KKmMN">bioimageio.core>=0.5.0; extra == "bioimageio"</li><li class="MetadataList_textItem__KKmMN">importlib-metadata; extra == "bioimageio"</li></ul>
                                     </div>
                                 </div>
                             </div>
@@ -169,26 +168,26 @@ All right...
                         <article
                             class="w-full col-span-2 row-start-1 screen-875:col-span-3 screen-1150:col-start-1 screen-1425:col-start-2">
                                 <div class="container" style="display: flex; flex-direction: column;">
-                                    <h1 class="font-bold text-4xl" style="margin-bottom: 20px;" >YoloPt</h1>
+                                    <h1 class="font-bold text-4xl" style="margin-bottom: 20px;" >napari-hydra</h1>
                                 </div>
 
                                 
    <div class="flex items-center" style="gap: 20px; ; align-items: center;"">
-        <a class="underline flex" href="https://pypi.org/project/napari-yolopt/" rel="noreferrer" target="_blank">
-        <img src="../static/images/PyPI_logo.svg.png" alt="PyPI" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">napari-yolopt</span>
+        <a class="underline flex" href="https://pypi.org/project/napari-hydra/" rel="noreferrer" target="_blank">
+        <img src="../static/images/PyPI_logo.svg.png" alt="PyPI" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">napari-hydra</span>
     </a>
     
-        <a class="underline flex" href="https://github.com/jules-vanaret/napari-yolopt/issues" rel="noreferrer" target="_blank">
-            <img src="../static/images/GitHub_Invertocat_Logo.svg.png" alt="GitHub" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">jules-vanaret/napari-yolop</span>
+        <a class="underline flex" href="https://github.com/plaque2/napari-hydra/issues" rel="noreferrer" target="_blank">
+            <img src="../static/images/GitHub_Invertocat_Logo.svg.png" alt="GitHub" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">plaque2/napari-hydra</span>
         </a>
         </div>
 
                                 <div class="flex justify-between items-center my-6">
-                                    <h2 class="text-lg">Detect overlapping Pt particles using Yolo</h2>
+                                    <h2 class="text-lg">Napari Hydra Plugin - GUI-based nested object detection</h2>
                                 </div>
                                 <ul class="PluginAuthors_authors__hs3zO">
                                     <li class="inline">
-                                        <span class="text-[11px] screen-495:text-[14px] font-semibold">Not available</span>
+                                        <span class="text-[11px] screen-495:text-[14px] font-semibold">H. Romão, T. De, A. Yakimovich</span>
                                     </li>
                             </ul>
                             <div class="screen-1425:hidden mt-sds-xl mb-sds-xxl"><a
@@ -210,28 +209,54 @@ All right...
                                 <div class="flex items-center justify-between mb-sds-xxl">
                                     <div class="Markdown_markdown__QZ95j">
 
-                                        <p><a href="https://github.com/jules-vanaret/napari-yolopt/raw/main/LICENSE"><img src="https://img.shields.io/pypi/l/napari-yolopt.svg?color=green" alt="License BSD-3" /></a>
-<a href="https://pypi.org/project/napari-yolopt"><img src="https://img.shields.io/pypi/v/napari-yolopt.svg?color=green" alt="PyPI" /></a>
-<a href="https://python.org"><img src="https://img.shields.io/pypi/pyversions/napari-yolopt.svg?color=green" alt="Python Version" /></a>
-<a href="https://github.com/jules-vanaret/napari-yolopt/actions"><img src="https://github.com/jules-vanaret/napari-yolopt/workflows/tests/badge.svg" alt="tests" /></a>
-<a href="https://codecov.io/gh/jules-vanaret/napari-yolopt"><img src="https://codecov.io/gh/jules-vanaret/napari-yolopt/branch/main/graph/badge.svg" alt="codecov" /></a>
-<a href="https://napari-hub.org/plugins/napari-yolopt"><img src="https://img.shields.io/endpoint?url=https://api.napari-hub.org/shields/napari-yolopt" alt="napari hub" /></a>
-<a href="https://napari.org/stable/plugins/index.html"><img src="https://img.shields.io/badge/plugin-npe2-blue?link=https://napari.org/stable/plugins/index.html" alt="npe2" /></a>
-<a href="https://github.com/copier-org/copier"><img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/copier-org/copier/master/img/badge/badge-grayscale-inverted-border-purple.json" alt="Copier" /></a></p>
-<p>Detect overlapping Platinum particles using Yolo</p>
-<hr />
-<p>This <a href="https://github.com/napari/napari">napari</a> plugin was generated with <a href="https://copier.readthedocs.io/en/stable/">copier</a> using the <a href="https://github.com/napari/napari-plugin-template">napari-plugin-template</a> (None).</p>
+                                        <p>A <a href="https://napari.org">napari</a> plugin for <strong>single-shot nested instance segmentation</strong> of biomedical objects using <a href="https://arxiv.org/abs/2504.12078">HydraStarDist</a> — a branched deep learning architecture built on <a href="https://github.com/stardist/stardist">StarDist</a>.</p>
+<p>Napari-Hydra enables GUI-based detection, segmentation, and quantification of spatially correlated, star-convex objects (e.g. viral plaques nested within tissue culture wells) directly from digital photographs — no microscopy required.</p>
+<h2>How to Cite Us</h2>
+<p>If you use this plugin or the underlying methods in your research, please cite the following:</p>
+<blockquote>
+<p>De, T., Thangamani, S., Urbański, A., &amp; Yakimovich, A. (2025). A digital photography dataset for Vaccinia Virus plaque quantification using Deep Learning. <em>Scientific Data</em>, <em>12</em>, 719. <a href="https://doi.org/10.1038/s41597-025-05030-8">https://doi.org/10.1038/s41597-025-05030-8</a></p>
+</blockquote>
+<blockquote>
+<p>De, T., Urbanski, A., &amp; Yakimovich, A. (2025). Single-shot Star-convex Polygon-based Instance Segmentation for Spatially-correlated Biomedical Objects. <em>arXiv preprint arXiv:2504.12078</em>. <a href="https://doi.org/10.48550/arXiv.2504.12078">https://doi.org/10.48550/arXiv.2504.12078</a></p>
+</blockquote>
+<h2>Overview</h2>
+<p>Traditional virological plaque assays rely on manual counting — a process that is laborious, subjective, and error-prone. Napari-Hydra addresses this by providing an end-to-end deep learning pipeline accessible through napari's graphical interface.</p>
+<h3>What is HydraStarDist?</h3>
+<p>HydraStarDist (HSD) extends the StarDist architecture with a <strong>joint encoder and branched decoders</strong>, enabling simultaneous detection of two categories of nested objects in a single forward pass. This is in contrast to conventional approaches that require independent models for each object type (e.g. one for wells, one for plaques).</p>
+<p>The shared encoder implicitly captures spatial correlations between nested objects (e.g. plaques can only appear within wells), resulting in more meaningful representations and improved joint detection accuracy.</p>
+<h3>Key Features</h3>
+<ul>
+<li><strong>Single-shot prediction</strong> — detect and segment both wells and plaques simultaneously</li>
+<li><strong>Interactive thresholding</strong> — tune probability and NMS thresholds per object class</li>
+<li><strong>Per-well plaque counting</strong> — automatic quantification with per-well breakdown</li>
+<li><strong>Model fine-tuning</strong> — adapt pre-trained models to your own data directly from the GUI</li>
+<li><strong>Stack support</strong> — process time-lapse image stacks with frame-by-frame results</li>
+<li><strong>Export</strong> — save prediction summaries including plaque counts and morphometrics</li>
+</ul>
 <h2>Installation</h2>
-<p>You can install <code>napari-yolopt</code> via <a href="https://pypi.org/project/pip/">pip</a>:</p>
-<pre><code><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">napari</span><span class="o">-</span><span class="n">yolopt</span>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>napari-hydra
 </pre></div>
 </code></pre>
-<p>or via the Napari plugin manager under Napari -&gt; Plugins -&gt; Install/Uninstall Packages.</p>
+<p>Or install in development mode:</p>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/plaque2/napari-hydra.git
+<span class="nb">cd</span><span class="w"> </span>napari-hydra
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[test]&quot;</span>
+</pre></div>
+</code></pre>
+<h2>Usage</h2>
+<p>Launch napari with the plugin:</p>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>napari<span class="w"> </span>-w<span class="w"> </span>napari-hydra
+</pre></div>
+</code></pre>
+<ol>
+<li><strong>Load an image</strong> — drag and drop or use <code>File &gt; Open</code> to load a plaque assay photograph.</li>
+<li><strong>Run Prediction</strong> — select the image layer and model, then click <strong>Run Prediction</strong>. Wells and plaques are detected simultaneously and displayed as label overlays.</li>
+<li><strong>Count</strong> — click <strong>Count</strong> to compute per-well plaque counts.</li>
+<li><strong>Tune</strong> — fine-tune the model on your own annotated data using the <strong>Tune Model</strong> button. Fine-tuned models are saved as new timestamped copies, preserving the original.</li>
+<li><strong>Export</strong> — save a prediction summary with plaque counts and areas.</li>
+</ol>
 <h2>License</h2>
-<p>Distributed under the terms of the <a href="http://opensource.org/licenses/BSD-3-Clause">BSD-3</a> license,
-&quot;napari-yolopt&quot; is free and open source software</p>
-<h2>Issues</h2>
-<p>If you encounter any problems, please <a href="https://github.com/jules-vanaret/napari-yolopt/issues">file an issue</a> along with a detailed description.</p>
+<p>BSD-3-Clause</p>
 
 
                                     </div>
@@ -247,7 +272,7 @@ All right...
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.3.3</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.0.5</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -267,7 +292,7 @@ All right...
                                                     released<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-02-23</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-01-29</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -278,8 +303,7 @@ All right...
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
                                                     <li class="MetadataList_textItem__KKmMN">
-                                                            Copyright (c) 2026, 
-All right...
+                                                            BSD-3-Clause
                                                     </li>
                                                 </ul>
                                             </div>
@@ -336,7 +360,7 @@ All right...
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">Python versions
                                                     supported<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.10">3.10</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.11">3.11</a></li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.9">3.9</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.10">3.10</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.11">3.11</a></li></ul>
                                             </div>
                                         </div>
                                         <div class="text-sm">
@@ -355,7 +379,7 @@ All right...
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">
                                                     Requirements<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">tifffile</li><li class="MetadataList_textItem__KKmMN">scipy</li><li class="MetadataList_textItem__KKmMN">ultralytics</li><li class="MetadataList_textItem__KKmMN">hyperspy</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">superqt</li><li class="MetadataList_textItem__KKmMN">shapely</li><li class="MetadataList_textItem__KKmMN">tqdm</li><li class="MetadataList_textItem__KKmMN">napari[all]; extra == "all"</li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">napari[all]</li><li class="MetadataList_textItem__KKmMN">csbdeep>=0.7.4</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">numba</li><li class="MetadataList_textItem__KKmMN">imageio</li><li class="MetadataList_textItem__KKmMN">stardist>=0.9.1</li><li class="MetadataList_textItem__KKmMN">tensorflow>=2.6</li><li class="MetadataList_textItem__KKmMN">typing_extensions>=4.12</li><li class="MetadataList_textItem__KKmMN">csbdeep[tf1]>=0.7.4; extra == "tf1"</li><li class="MetadataList_textItem__KKmMN">pytest>=7.2.0; extra == "test"</li><li class="MetadataList_textItem__KKmMN">pyyaml>=6.0; extra == "test"</li><li class="MetadataList_textItem__KKmMN">bioimageio.core>=0.5.0; extra == "bioimageio"</li><li class="MetadataList_textItem__KKmMN">importlib-metadata; extra == "bioimageio"</li></ul>
                                             </div>
                                         </div>
                                     </div>
