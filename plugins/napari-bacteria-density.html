@@ -4,20 +4,20 @@
 
 <head>
     <meta charset="utf-8" />
-    <link href="../plugins/epitools.html" rel="canonical" />
+    <link href="../plugins/napari-bacteria-density.html" rel="canonical" />
     <meta content="width=device-width,initial-scale=1" name="viewport" />
     <meta
-        content="epitools, Yanlan Mao, napari hub, napari, hub, plugin, image analysis, imaging, chan zuckerberg initiative"
+        content="napari-bacteria-density, Clément H. Benedetti, napari hub, napari, hub, plugin, image analysis, imaging, chan zuckerberg initiative"
         name="keywords" />
-    <meta content="Quantifying 2D cell shape and epithelial tissue dynamics" name="description" />
-    <meta content="Quantifying 2D cell shape and epithelial tissue dynamics" property="og:description" />
-    <meta content="Quantifying 2D cell shape and epithelial tissue dynamics." name="twitter:description" />
-    <meta content="EpiTools - napari Plugin - Yanlan Mao" property="og:title" />
-    <meta content="EpiTools - napari Plugin - Yanlan Mao" name="twitter:title" />
+    <meta content="A Napari plugin to measure the density of bacteria vs the distance within tubular organs" name="description" />
+    <meta content="A Napari plugin to measure the density of bacteria vs the distance within tubular organs" property="og:description" />
+    <meta content="A Napari plugin to measure the density of bacteria vs the distance within tubular organs." name="twitter:description" />
+    <meta content="Bacteria Density Tools - napari Plugin - Clément H. Benedetti" property="og:title" />
+    <meta content="Bacteria Density Tools - napari Plugin - Clément H. Benedetti" name="twitter:title" />
     <meta content="article" property="og:type" />
-    <meta content="../plugins/epitools.html" property="og:url" />
+    <meta content="../plugins/napari-bacteria-density.html" property="og:url" />
     <meta content="@napari_imaging" name="twitter:site" />
-    <title>EpiTools - napari Plugin - Yanlan Mao</title>
+    <title>Bacteria Density Tools - napari Plugin - Clément H. Benedetti</title>
 
     <meta content="2" name="next-head-count" />
     <meta content="#80d1ff" name="theme-color" />
@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.1.2</li>
+                                            <li class="MetadataList_textItem__KKmMN">1.0.0</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -90,7 +90,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">First released<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2023-05-04</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-03-04</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -99,7 +99,7 @@
                                         <p class="font-bold whitespace-nowrap">License<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
                                             <li class="MetadataList_textItem__KKmMN">
-                                                BSD 3-Clause
+                                                MIT
                                             </li>
                                         </ul>
                                     </div>
@@ -112,19 +112,19 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Plugin type<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=reader">Reader</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=writer">Writer</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=widget">Widget</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=sample_data">Sample_data</a></li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=widget">Widget</a></li></ul>
                                     </div>
                                 </div>
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Open extension<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?readerFileExtensions=*.tif">*.tif</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?readerFileExtensions=*.tiff">*.tiff</a></li></ul>
+                                        
                                     </div>
                                 </div>
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Save extension<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?writerFileExtensions=.tif">.tif</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?writerFileExtensions=.tiff">.tiff</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?writerFileExtensions=.tif">.tif</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?writerFileExtensions=.tiff">.tiff</a></li></ul>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -144,7 +144,7 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Python versions supported<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.10">3.10</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.11">3.11</a></li></ul>
                                     </div>
                                 </div>
                                 <div class="text-sm">
@@ -156,7 +156,7 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Requirements<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">PartSeg</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">matplotlib</li><li class="MetadataList_textItem__KKmMN">napari-easytrack</li><li class="MetadataList_textItem__KKmMN">napari>=0.5.0</li><li class="MetadataList_textItem__KKmMN">networkx</li><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">pandas</li><li class="MetadataList_textItem__KKmMN">pydantic<2</li><li class="MetadataList_textItem__KKmMN">scikit-image>=0.20</li><li class="MetadataList_textItem__KKmMN">scipy</li><li class="MetadataList_textItem__KKmMN">black; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">mypy; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pre-commit; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pyqt5; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">ruff; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">tox; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">myst-parser; extra == "docs"</li><li class="MetadataList_textItem__KKmMN">pydata-sphinx-theme; extra == "docs"</li><li class="MetadataList_textItem__KKmMN">pytz; extra == "docs"</li><li class="MetadataList_textItem__KKmMN">sphinx; extra == "docs"</li><li class="MetadataList_textItem__KKmMN">sphinx-autobuild; extra == "docs"</li><li class="MetadataList_textItem__KKmMN">sphinx_autodoc_typehints; extra == "docs"</li><li class="MetadataList_textItem__KKmMN">sphinxcontrib-video; extra == "docs"</li><li class="MetadataList_textItem__KKmMN">types-pytz; extra == "docs"</li><li class="MetadataList_textItem__KKmMN">napari-segment-blobs-and-things-with-membranes; extra == "wf"</li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">matplotlib</li><li class="MetadataList_textItem__KKmMN">scipy</li><li class="MetadataList_textItem__KKmMN">pandas</li><li class="MetadataList_textItem__KKmMN">tifffile</li><li class="MetadataList_textItem__KKmMN">termcolor</li><li class="MetadataList_textItem__KKmMN">shapely</li><li class="MetadataList_textItem__KKmMN">rasterio</li><li class="MetadataList_textItem__KKmMN">napari[all]; extra == "all"</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari[qt]; extra == "testing"</li></ul>
                                     </div>
                                 </div>
                             </div>
@@ -168,26 +168,26 @@
                         <article
                             class="w-full col-span-2 row-start-1 screen-875:col-span-3 screen-1150:col-start-1 screen-1425:col-start-2">
                                 <div class="container" style="display: flex; flex-direction: column;">
-                                    <h1 class="font-bold text-4xl" style="margin-bottom: 20px;" >EpiTools</h1>
+                                    <h1 class="font-bold text-4xl" style="margin-bottom: 20px;" >Bacteria Density Tools</h1>
                                 </div>
 
                                 
    <div class="flex items-center" style="gap: 20px; ; align-items: center;"">
-        <a class="underline flex" href="https://pypi.org/project/epitools/" rel="noreferrer" target="_blank">
-        <img src="../static/images/PyPI_logo.svg.png" alt="PyPI" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">epitools</span>
+        <a class="underline flex" href="https://pypi.org/project/napari-bacteria-density/" rel="noreferrer" target="_blank">
+        <img src="../static/images/PyPI_logo.svg.png" alt="PyPI" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">napari-bacteria-density</span>
     </a>
     
-        <a class="underline flex" href="https://github.com/epitools/epitools/issues" rel="noreferrer" target="_blank">
-            <img src="../static/images/GitHub_Invertocat_Logo.svg.png" alt="GitHub" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">epitools/epitools</span>
+        <a class="underline flex" href="https://github.com/MontpellierRessourcesImagerie/napari-bacteria-density/issues" rel="noreferrer" target="_blank">
+            <img src="../static/images/GitHub_Invertocat_Logo.svg.png" alt="GitHub" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">MontpellierRessourcesImagerie/napari-bacteria-density</span>
         </a>
         </div>
 
                                 <div class="flex justify-between items-center my-6">
-                                    <h2 class="text-lg">Quantifying 2D cell shape and epithelial tissue dynamics</h2>
+                                    <h2 class="text-lg">A Napari plugin to measure the density of bacteria vs the distance within tubular organs</h2>
                                 </div>
                                 <ul class="PluginAuthors_authors__hs3zO">
                                     <li class="inline">
-                                        <span class="text-[11px] screen-495:text-[14px] font-semibold">Yanlan Mao</span>
+                                        <span class="text-[11px] screen-495:text-[14px] font-semibold">Clément H. Benedetti</span>
                                     </li>
                             </ul>
                             <div class="screen-1425:hidden mt-sds-xl mb-sds-xxl"><a
@@ -209,61 +209,69 @@
                                 <div class="flex items-center justify-between mb-sds-xxl">
                                     <div class="Markdown_markdown__QZ95j">
 
-                                        <p><a href="https://doi.org/10.5281/zenodo.17650102"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.17650102.svg" alt="DOI" /></a>
-<a href="https://raw.githubusercontent.com/epitools/epitools/main/LICENCE.md"><img src="https://img.shields.io/pypi/l/epitools.svg?color=green" alt="Licence" /></a>
-<a href="https://pypi.org/project/epitools"><img src="https://img.shields.io/pypi/v/epitools.svg?color=green" alt="PyPI" /></a>
-<a href="https://python.org"><img src="https://img.shields.io/pypi/pyversions/epitools.svg?color=green" alt="Python Version" /></a>
-<a href="https://github.com/epitools/epitools/actions/workflows/test.yml"><img src="https://github.com/epitools/epitools/actions/workflows/test.yml/badge.svg" alt="tests" /></a>
-<a href="https://epitools.readthedocs.io/en/latest/?badge=latest"><img src="https://readthedocs.org/projects/epitools/badge/?version=latest" alt="Documentation" /></a>
-<a href="https://coveralls.io/github/epitools/epitools?branch=main"><img src="https://coveralls.io/repos/github/epitools/epitools/badge.svg?branch=main" alt="coverage" /></a>
-<a href="https://napari-hub.org/plugins/epitools"><img src="https://img.shields.io/endpoint?url=https://api.napari-hub.org/shields/epitools" alt="napari hub" /></a></p>
-<h1>Welcome to EpiTools!</h1>
-<p>EpiTools is a Python package and associated <a href="https://napari.org/stable/">napari</a> plugin to extract the membrane signal from epithelial tissues and analyze it with the aid of computer vision.</p>
-<p>The development of EpiTools was inspired by the challenges in analyzing time-lapses of growing Drosophila imaginal discs.</p>
-<p>The folded morphology, the very small apical cell surfaces and the long time series required a new automated cell recognition to accurately study growth dynamics.</p>
-<h2>Installation</h2>
-<p>First, install <a href="https://napari.org/index.html#installation">napari</a>.</p>
-<p>The recommended way to install <code>EpiTools</code> is via
-<a href="https://pypi.org/project/pip">pip</a></p>
-<pre><code class="language-sh"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>epitools
-</pre></div>
-</code></pre>
-<p>To install the latest development version of <code>EpiTools</code> clone this repository
-and run</p>
-<pre><code class="language-sh"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
-</pre></div>
-</code></pre>
-<p>If working on Apple Silicon make sure to also install the following package from
-<a href="https://conda-forge.org">conda-forge</a>.</p>
-<pre><code class="language-sh"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>pyqt
-</pre></div>
-</code></pre>
-<h3>Recommended Companion Napari Plugins</h3>
-<p>To also install the recommended plugins for the <code>EpiTools</code> workflow run</p>
-<pre><code class="language-sh"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>epitools<span class="o">[</span>wf<span class="o">]</span>
-</pre></div>
-</code></pre>
-<p>and</p>
-<pre><code class="language-sh"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.<span class="o">[</span>wf<span class="o">]</span>
-</pre></div>
-</code></pre>
-<p>When installing with Apple Mac OS X terminal, you might need to add '&quot;' to [wf] as in:</p>
-<pre><code class="language-sh"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.<span class="s2">&quot;[wf]&quot;</span>
-</pre></div>
-</code></pre>
-<p>If working on Apple Silicon make sure to also install the following package from
-<a href="https://conda-forge.org">conda-forge</a></p>
-<pre><code class="language-sh"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>cvxopt
-</pre></div>
-</code></pre>
-<p>which is required for <a href="https://github.com/quantumjot/btrack">btrack</a>.</p>
-<h2>Issues</h2>
-<p>If you encounter any problems, please
-<a href="https://github.com/epitools/epitools/issues">file an issue</a> along with a
-detailed description.</p>
-<h2>Contributing</h2>
-<p>Contributions are very welcome. Tests can be run with <a href="https://tox.wiki">tox</a>,
-please ensure the coverage at least stays the same before you submit a pull request.</p>
+                                        <img width="3800" height="2122" alt="nbd" src="https://github.com/user-attachments/assets/e748fbff-72c4-4c90-8026-5f1558e4d743" />
+<h2>Install</h2>
+<ul>
+<li>Make sure that you installed <a href="https://git-scm.com/downloads">Git</a> on your system.</li>
+<li>Make sure that you installed a Python environments manager (like <a href="https://repo.anaconda.com/miniconda/">Miniconda</a>).</li>
+<li>Open a terminal and create a new environment using the command <code>conda create -n bacteria-density -y python=3.10</code>.</li>
+<li>Activate the newly created environment using <code>conda activate bacteria-density</code>.</li>
+<li>Install the development version of the plugin using <code>pip install git+https://github.com/MontpellierRessourcesImagerie/bacteria-density.git</code>.</li>
+<li>If you want to use it through a GUI, install Napari alongside it with <code>pip install napari[all]</code>.</li>
+<li>To calibrate your images, you will need to install the calibration tool using <code>pip install set-calibration</code>.</li>
+<li>If your images are not TIFF, you will need to install ImageJ's bridge using <code>pip install napari-imagej</code>.</li>
+</ul>
+<h2>Usage</h2>
+<ul>
+<li>Open a new terminal and activate the environment containing Napari using <code>conda activate bacteria-density</code>.</li>
+<li>Launch Napari with the command <code>napari</code>.</li>
+<li>In the top-bar, within the &quot;Plugins&quot; menu, you should find <code>ImageJ2</code>, <code>Scale tool</code> &amp; <code>Density vs. distance</code>.</li>
+<li>Start by using <code>ImageJ2</code> to open your image and import it in Napari. In the left column, you should now see one layer per channel. You can rename them as you wish.</li>
+<li>You can now close the <code>ImageJ2</code> panel.</li>
+<li>You should now open <code>Scale tool</code> to provide the physical size of voxels. Don't forget that in Napari, the order is ZYX instead of XYZ.</li>
+<li>Once you're done providing the scale, you can close the <code>Scale tool</code> panel.</li>
+<li>You can now open the <code>Density vs. distance</code> panel.</li>
+</ul>
+<h2>Process the image</h2>
+<h4>1. Segmentation</h4>
+<ul>
+<li>In the dropdown menu, select the layer corresponding to the nuclei.</li>
+</ul>
+<h4>2. Measures</h4>
+<ul>
+<li>For each channel in which you want to make intensity measurements, indicate the layer (in the dropdown menu) and provide a name for what it contains (instead of the &quot;---&quot; in the box on the right). This name is used to name the columns in the results table.</li>
+</ul>
+<h4>3. ROIs</h4>
+<ul>
+<li>Above the &quot;layers list&quot; panel, add a new &quot;Shape layer&quot;.</li>
+<li>Add polygons for each region that you would like to process.</li>
+<li>Use the <code>F1</code>, <code>F2</code>, <code>F3</code> &amp; <code>F4</code> buttons to change the edge color of these polygons. Each color represents a filament. If several areas share a same color, it means that they are part of the same filament and were cut for some reason (obstacle, crossing, ...).
+<ul>
+<li>1: Red</li>
+<li>2: Green</li>
+<li>3: Blue</li>
+<li>4: Yellow</li>
+</ul>
+</li>
+<li>Add a new &quot;Points layer&quot;. In the &quot;layers control&quot; panel, switch to the &quot;Add points&quot; mode.</li>
+<li>For each filament (each color), add a point approximately where the filament starts. There should be exactly one point per color.</li>
+<li>In the dropdown menus of the ROIs box of the plugin, provide the new shape and point layers.</li>
+</ul>
+<h4>4. Settings</h4>
+<ul>
+<li>Using the &quot;Set output folder&quot;, provide the path to an empty directory.</li>
+<li>Select the binning length using the input below (binning of measures along the skeleton).</li>
+<li>Select the list of measurements that you would like to process.</li>
+</ul>
+<h4>5. Workflow</h4>
+<ul>
+<li>From this point, you can click on each button from top to bottom:</li>
+<li><strong>Chunk images:</strong> Will export a copy of each selected area in the working directory.</li>
+<li><strong>Skeletonize:</strong> Will create a mask and a skeleton of the corresponding branch. An outline of the mask will be displayed.</li>
+<li><strong>Make medial path:</strong> Will process the path over the organ and assemble the fragments. You can check the result by searching for the middle of the stack using the slider under the image.</li>
+<li><strong>Measure:</strong> Will perform the measures and export the CSV.</li>
+<li><strong>Create Plots:</strong> Export the plots as PNG with a dashed-line between segments.</li>
+</ul>
 
 
                                     </div>
@@ -279,7 +287,7 @@ please ensure the coverage at least stays the same before you submit a pull requ
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.1.2</li>
+                                                    <li class="MetadataList_textItem__KKmMN">1.0.0</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -299,7 +307,7 @@ please ensure the coverage at least stays the same before you submit a pull requ
                                                     released<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2023-05-04</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-03-04</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -310,7 +318,7 @@ please ensure the coverage at least stays the same before you submit a pull requ
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
                                                     <li class="MetadataList_textItem__KKmMN">
-                                                            BSD 3-Clause
+                                                            MIT
                                                     </li>
                                                 </ul>
                                             </div>
@@ -336,21 +344,21 @@ please ensure the coverage at least stays the same before you submit a pull requ
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">Plugin
                                                     type<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=reader">Reader</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=writer">Writer</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=widget">Widget</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=sample_data">Sample_data</a></li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=widget">Widget</a></li></ul>
                                             </div>
                                         </div>
                                         <div class="text-sm">
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">Open
                                                     extension<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?readerFileExtensions=*.tif">*.tif</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?readerFileExtensions=*.tiff">*.tiff</a></li></ul>
+                                                    
                                             </div>
                                         </div>
                                         <div class="text-sm">
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">Save
                                                     extension<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?writerFileExtensions=.tif">.tif</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?writerFileExtensions=.tiff">.tiff</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?writerFileExtensions=.tif">.tif</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?writerFileExtensions=.tiff">.tiff</a></li></ul>
+                                                    
                                             </div>
                                         </div>
                                     </div>
@@ -367,7 +375,7 @@ please ensure the coverage at least stays the same before you submit a pull requ
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">Python versions
                                                     supported<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.10">3.10</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.11">3.11</a></li></ul>
                                             </div>
                                         </div>
                                         <div class="text-sm">
@@ -386,7 +394,7 @@ please ensure the coverage at least stays the same before you submit a pull requ
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">
                                                     Requirements<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">PartSeg</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">matplotlib</li><li class="MetadataList_textItem__KKmMN">napari-easytrack</li><li class="MetadataList_textItem__KKmMN">napari>=0.5.0</li><li class="MetadataList_textItem__KKmMN">networkx</li><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">pandas</li><li class="MetadataList_textItem__KKmMN">pydantic<2</li><li class="MetadataList_textItem__KKmMN">scikit-image>=0.20</li><li class="MetadataList_textItem__KKmMN">scipy</li><li class="MetadataList_textItem__KKmMN">black; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">mypy; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pre-commit; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pyqt5; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">ruff; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">tox; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">myst-parser; extra == "docs"</li><li class="MetadataList_textItem__KKmMN">pydata-sphinx-theme; extra == "docs"</li><li class="MetadataList_textItem__KKmMN">pytz; extra == "docs"</li><li class="MetadataList_textItem__KKmMN">sphinx; extra == "docs"</li><li class="MetadataList_textItem__KKmMN">sphinx-autobuild; extra == "docs"</li><li class="MetadataList_textItem__KKmMN">sphinx_autodoc_typehints; extra == "docs"</li><li class="MetadataList_textItem__KKmMN">sphinxcontrib-video; extra == "docs"</li><li class="MetadataList_textItem__KKmMN">types-pytz; extra == "docs"</li><li class="MetadataList_textItem__KKmMN">napari-segment-blobs-and-things-with-membranes; extra == "wf"</li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">matplotlib</li><li class="MetadataList_textItem__KKmMN">scipy</li><li class="MetadataList_textItem__KKmMN">pandas</li><li class="MetadataList_textItem__KKmMN">tifffile</li><li class="MetadataList_textItem__KKmMN">termcolor</li><li class="MetadataList_textItem__KKmMN">shapely</li><li class="MetadataList_textItem__KKmMN">rasterio</li><li class="MetadataList_textItem__KKmMN">napari[all]; extra == "all"</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari[qt]; extra == "testing"</li></ul>
                                             </div>
                                         </div>
                                     </div>
