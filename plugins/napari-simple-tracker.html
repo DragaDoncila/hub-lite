@@ -4,20 +4,20 @@
 
 <head>
     <meta charset="utf-8" />
-    <link href="../plugins/napari-reco-plugin.html" rel="canonical" />
+    <link href="../plugins/napari-simple-tracker.html" rel="canonical" />
     <meta content="width=device-width,initial-scale=1" name="viewport" />
     <meta
-        content="napari-reco-plugin, Clément Capdeville, napari hub, napari, hub, plugin, image analysis, imaging, chan zuckerberg initiative"
+        content="napari-simple-tracker, Hirota Aoyagi, napari hub, napari, hub, plugin, image analysis, imaging, chan zuckerberg initiative"
         name="keywords" />
-    <meta content="A Napari plugin for tomographic reconstruction using the ASTRA Toolbox, with optional Paganin phase retrieval filter for phase-contrast data." name="description" />
-    <meta content="A Napari plugin for tomographic reconstruction using the ASTRA Toolbox, with optional Paganin phase retrieval filter for phase-contrast data." property="og:description" />
-    <meta content="A Napari plugin for tomographic reconstruction using the ASTRA Toolbox, with optional Paganin phase retrieval filter for phase-contrast data.." name="twitter:description" />
-    <meta content="Reconstruction Plugin - napari Plugin - Clément Capdeville" property="og:title" />
-    <meta content="Reconstruction Plugin - napari Plugin - Clément Capdeville" name="twitter:title" />
+    <meta content="napari plugin for ROI tracking and FRAP analysis in time-lapse images" name="description" />
+    <meta content="napari plugin for ROI tracking and FRAP analysis in time-lapse images" property="og:description" />
+    <meta content="napari plugin for ROI tracking and FRAP analysis in time-lapse images." name="twitter:description" />
+    <meta content="Napari Simple Tracker - napari Plugin - Hirota Aoyagi" property="og:title" />
+    <meta content="Napari Simple Tracker - napari Plugin - Hirota Aoyagi" name="twitter:title" />
     <meta content="article" property="og:type" />
-    <meta content="../plugins/napari-reco-plugin.html" property="og:url" />
+    <meta content="../plugins/napari-simple-tracker.html" property="og:url" />
     <meta content="@napari_imaging" name="twitter:site" />
-    <title>Reconstruction Plugin - napari Plugin - Clément Capdeville</title>
+    <title>Napari Simple Tracker - napari Plugin - Hirota Aoyagi</title>
 
     <meta content="2" name="next-head-count" />
     <meta content="#80d1ff" name="theme-color" />
@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.1.4</li>
+                                            <li class="MetadataList_textItem__KKmMN">1.1.8</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -90,7 +90,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">First released<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-04-03</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-04-08</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -112,19 +112,19 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Plugin type<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=reader">Reader</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=writer">Writer</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=widget">Widget</a></li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=widget">Widget</a></li></ul>
                                     </div>
                                 </div>
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Open extension<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?readerFileExtensions=*.nxs">*.nxs</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?readerFileExtensions=*.tdf">*.tdf</a></li></ul>
+                                        
                                     </div>
                                 </div>
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Save extension<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?writerFileExtensions=.tif">.tif</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?writerFileExtensions=.raw">.raw</a></li></ul>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -144,19 +144,19 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Python versions supported<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.9">3.9</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.10">3.10</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.11">3.11</a></li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.10">3.10</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.11">3.11</a></li></ul>
                                     </div>
                                 </div>
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Operating system<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">OS Independent</li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="flex justify-between items-center"><span class="text-napari-gray font-normal lowercase">Information not submitted</span></li></ul>
                                     </div>
                                 </div>
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Requirements<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">h5py</li><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">scipy</li><li class="MetadataList_textItem__KKmMN">tqdm</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">matplotlib>=3.5</li><li class="MetadataList_textItem__KKmMN">dask[array]</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">napari>=0.4.18</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari[pyqt5]; extra == "testing"</li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">magicgui>=0.8</li><li class="MetadataList_textItem__KKmMN">matplotlib>=3.8</li><li class="MetadataList_textItem__KKmMN">numpy>=1.24</li><li class="MetadataList_textItem__KKmMN">pandas>=2.0</li><li class="MetadataList_textItem__KKmMN">qtpy>=2.4</li><li class="MetadataList_textItem__KKmMN">scikit-image>=0.25</li></ul>
                                     </div>
                                 </div>
                             </div>
@@ -168,26 +168,26 @@
                         <article
                             class="w-full col-span-2 row-start-1 screen-875:col-span-3 screen-1150:col-start-1 screen-1425:col-start-2">
                                 <div class="container" style="display: flex; flex-direction: column;">
-                                    <h1 class="font-bold text-4xl" style="margin-bottom: 20px;" >Reconstruction Plugin</h1>
+                                    <h1 class="font-bold text-4xl" style="margin-bottom: 20px;" >Napari Simple Tracker</h1>
                                 </div>
 
                                 
    <div class="flex items-center" style="gap: 20px; ; align-items: center;"">
-        <a class="underline flex" href="https://pypi.org/project/napari-reco-plugin/" rel="noreferrer" target="_blank">
-        <img src="../static/images/PyPI_logo.svg.png" alt="PyPI" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">napari-reco-plugin</span>
+        <a class="underline flex" href="https://pypi.org/project/napari-simple-tracker/" rel="noreferrer" target="_blank">
+        <img src="../static/images/PyPI_logo.svg.png" alt="PyPI" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">napari-simple-tracker</span>
     </a>
     
-        <a class="underline flex" href="https://github.com/Clementcmoi/Reconstruction-napari-plugin" rel="noreferrer" target="_blank">
-            <img src="../static/images/GitHub_Invertocat_Logo.svg.png" alt="GitHub" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">Clementcmoi/Reconstruction-napari-plugin</span>
+        <a class="underline flex" href="https://github.com/Aohirovet/Napari_Simple_Tracker/blob/main/docs/USAGE.md" rel="noreferrer" target="_blank">
+            <img src="../static/images/GitHub_Invertocat_Logo.svg.png" alt="GitHub" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">Aohirovet/Napari_Simple_Tracker</span>
         </a>
         </div>
 
                                 <div class="flex justify-between items-center my-6">
-                                    <h2 class="text-lg">A Napari plugin for tomographic reconstruction using the ASTRA Toolbox, with optional Paganin phase retrieval filter for phase-contrast data.</h2>
+                                    <h2 class="text-lg">napari plugin for ROI tracking and FRAP analysis in time-lapse images</h2>
                                 </div>
                                 <ul class="PluginAuthors_authors__hs3zO">
                                     <li class="inline">
-                                        <span class="text-[11px] screen-495:text-[14px] font-semibold">Clément Capdeville</span>
+                                        <span class="text-[11px] screen-495:text-[14px] font-semibold">Hirota Aoyagi</span>
                                     </li>
                             </ul>
                             <div class="screen-1425:hidden mt-sds-xl mb-sds-xxl"><a
@@ -209,112 +209,106 @@
                                 <div class="flex items-center justify-between mb-sds-xxl">
                                     <div class="Markdown_markdown__QZ95j">
 
-                                        <p>A Napari plugin for tomographic reconstruction using the <a href="https://www.astra-toolbox.com/">ASTRA Toolbox</a>, with optional Paganin phase retrieval filter for phase-contrast data.</p>
-<p>Supported reconstruction algorithms: <strong>FBP</strong>, <strong>BP</strong>, <strong>SIRT</strong>, <strong>SART</strong>, <strong>CGLS</strong> — all available in CPU or GPU (CUDA) mode.</p>
+                                        <p><a href="https://pypi.org/project/napari-simple-tracker/1.1.8/"><img src="https://img.shields.io/badge/PyPI-1.1.8-blue" alt="PyPI version 1.1.8" /></a>
+<a href="https://pypi.org/project/napari-simple-tracker/"><img src="https://img.shields.io/badge/Python-3.10--3.14-green" alt="Python 3.10-3.14" /></a>
+<a href="https://napari-hub.org/plugins/napari-simple-tracker.html"><img src="https://img.shields.io/badge/napari--hub-plugin-orange" alt="napari hub" /></a></p>
+<p><code>Napari_Simple_Tracker</code> is a lightweight, easy-to-use napari plugin for ROI tracking and FRAP analysis in time-lapse imaging data.<br />
+It is intentionally simple while still providing the core tools needed for routine quantitative analysis.</p>
+<ul>
+<li>Simple: point-based interaction with minimal configuration</li>
+<li>Practical: tracking, intensity plotting, CSV export, and session save/load are included</li>
+<li>Readable: ROI masks and track IDs are displayed directly in the napari viewer</li>
+</ul>
+<h2>Capabilities</h2>
+<h3><code>Simple_Tracker</code></h3>
+<ul>
+<li>Multi ROI tracking</li>
+<li>Linear interpolation across frames</li>
+<li>Mean intensity measurement within circular ROIs</li>
+<li>Plot generation</li>
+<li>CSV export</li>
+<li>Session save/load</li>
+</ul>
+<h3><code>Simple_FRAP_analysis</code></h3>
+<ul>
+<li>FRAP analysis using a main ROI, with optional reference and background ROIs</li>
+<li>Background correction</li>
+<li>Double normalization</li>
+<li>Full-scale normalization</li>
+<li>Plot generation</li>
+<li>CSV export</li>
+<li>Session save/load</li>
+</ul>
+<h2>Examples</h2>
+<h3><code>Simple_Tracker</code></h3>
+<p><img src="https://raw.githubusercontent.com/Aohirovet/Napari_Simple_Tracker/main/Simple_Tracker.gif" alt="Simple Tracker demo" /></p>
+<h3><code>Multiple_track</code></h3>
+<p><img src="https://raw.githubusercontent.com/Aohirovet/Napari_Simple_Tracker/main/Multiple_track.gif" alt="Multiple track demo" /></p>
+<h3><code>Simple_FRAP_analysis</code></h3>
+<p><img src="https://raw.githubusercontent.com/Aohirovet/Napari_Simple_Tracker/main/FRAP_Analysis.gif" alt="FRAP Analysis demo" /></p>
 <h2>Installation</h2>
-<h3>Option 1 — Install from Napari Hub (recommended)</h3>
-<p>Once published, the plugin can be installed directly from the Napari plugin manager:</p>
+<p>This package is published on PyPI as <code>napari-simple-tracker</code>.</p>
+<h3>Install with pip</h3>
+<p>Install the plugin in an environment where <code>napari</code> is already installed:</p>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>napari-simple-tracker
+</pre></div>
+</code></pre>
+<h3>Install from napari</h3>
 <ol>
-<li>Open <strong>Napari</strong></li>
-<li>Go to <strong>Plugins &gt; Install/Uninstall Plugins</strong></li>
-<li>Search for <strong>&quot;napari-reco-plugin&quot;</strong></li>
-<li>Click <strong>Install</strong></li>
+<li>Launch napari.</li>
+<li>Open <code>Plugins -&gt; Install/Uninstall Plugins...</code>.</li>
+<li>Use <code>Install by name/URL</code>.</li>
+<li>Enter the package name <code>napari-simple-tracker</code> and install it.</li>
 </ol>
-<p>Alternatively, install via pip:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>napari-reco-plugin
+<h3>Install from source</h3>
+<p>To install the latest local version from this repository:</p>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Aohirovet/Napari_Simple_Tracker.git
+<span class="nb">cd</span><span class="w"> </span>Napari_Simple_Tracker
+python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>.
 </pre></div>
 </code></pre>
-<hr />
-<h3>Option 2 — Manual installation (development)</h3>
-<h4>1. Create and activate a conda environment</h4>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>napari-env<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.12
-conda<span class="w"> </span>activate<span class="w"> </span>napari-env
-</pre></div>
-</code></pre>
-<h4>2. Install main dependencies</h4>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>napari<span class="w"> </span>pyqt
-conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>astra-toolbox<span class="w"> </span>-c<span class="w"> </span>nvidia<span class="w"> </span>astra-toolbox
-
-<span class="c1"># Ensure compatibility with ASTRA</span>
-pip<span class="w"> </span>install<span class="w"> </span><span class="nv">numpy</span><span class="o">==</span><span class="m">1</span>.26.4
-
-<span class="c1"># Install CuPy depending on your CUDA version</span>
-pip<span class="w"> </span>install<span class="w"> </span>cupy-cuda12x<span class="w">  </span><span class="c1"># or cupy-cuda11x</span>
-</pre></div>
-</code></pre>
-<h4>3. Clone the repository</h4>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Clementcmoi/Reconstruction-napari-plugin.git
-<span class="nb">cd</span><span class="w"> </span>Reconstruction-napari-plugin
-</pre></div>
-</code></pre>
-<h4>4. Install the plugin</h4>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
-</pre></div>
-</code></pre>
-<hr />
-<h2>Requirements</h2>
-<h3>Core</h3>
-<ul>
-<li>Python ≥ 3.9</li>
-<li>Napari</li>
-<li>ASTRA Toolbox</li>
-</ul>
-<h3>Optional (for GPU acceleration)</h3>
-<ul>
-<li>CUDA Toolkit</li>
-<li>CuPy</li>
-</ul>
-<blockquote>
-<p>⚠️ GPU dependencies are not installed automatically. You must install them manually according to your system configuration.</p>
-</blockquote>
-<hr />
+<p>If you use a dedicated environment for napari, activate it before running the install command.</p>
 <h2>Usage</h2>
-<p>Start Napari:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>napari
+<p>After installation, open napari and launch either widget from:</p>
+<p><code>Plugins -&gt; Napari Simple Tracker -&gt; Simple_Tracker</code></p>
+<p>or</p>
+<p><code>Plugins -&gt; Napari Simple Tracker -&gt; Simple_FRAP_analysis</code></p>
+<h2>Quick Start</h2>
+<pre><code class="language-text"><div class="highlight"><pre><span></span>Open image
+  -&gt; place Points
+  -&gt; open plugin
+  -&gt; run analysis
+  -&gt; inspect masks, plots, and CSV output
 </pre></div>
 </code></pre>
-<p>Then open the plugin via:</p>
-<pre><code><div class="highlight"><pre><span></span><span class="n">Plugins</span> <span class="o">&gt;</span> <span class="n">Reconstruction</span> <span class="n">Plugin</span>
-</pre></div>
-</code></pre>
-<p>Available tools:</p>
-<ul>
-<li><strong>Reconstruction</strong></li>
-<li><strong>Multi Paganin</strong></li>
-</ul>
-<hr />
-<h2>Launchers Templates</h2>
-<p>Template scripts for launching Napari with the correct environment are available in the <code>launchers/</code> folder.</p>
-<h3>Usage</h3>
+<h3><code>Simple_Tracker</code></h3>
 <ol>
-<li>
-<p>Copy a <code>.bat</code> file from <code>launchers/</code></p>
-</li>
-<li>
-<p>Edit:</p>
-<ul>
-<li><code>&lt;path_to_conda&gt;</code> → your Anaconda/Miniconda path</li>
-<li><code>&lt;your_napari_env&gt;</code> → your environment name</li>
-</ul>
-</li>
-<li>
-<p>Double-click to launch</p>
-</li>
+<li>Load a time-series image in napari.</li>
+<li>Create one <code>Points</code> layer for each object to be tracked.</li>
+<li>Mark the object center across multiple frames.</li>
+<li>Open <code>Plugins -&gt; Napari Simple Tracker -&gt; Simple_Tracker</code>.</li>
+<li>Press <code>Run Simple Tracker</code>.</li>
 </ol>
-<h3>Desktop shortcut (optional)</h3>
+<h3><code>Simple_FRAP_analysis</code></h3>
+<ol>
+<li>Load a time-series image in napari.</li>
+<li>Create <code>Points</code> layers for the main ROI.</li>
+<li>Create one <code>Points</code> layer for the reference ROI.</li>
+<li>Optionally create one <code>Points</code> layer for the background ROI.</li>
+<li>Open <code>Plugins -&gt; Napari Simple Tracker -&gt; Simple_FRAP_analysis</code>.</li>
+<li>Select the relevant layers and ROI radii, then press <code>Run FRAP Analysis</code>.</li>
+</ol>
+<h2>Documentation</h2>
+<p>Detailed usage notes, supported image dimensions, output columns, session behavior, and common errors are documented here:</p>
 <ul>
-<li>Right-click <code>.bat</code> → <strong>Send to Desktop</strong></li>
-<li>(Optional) Change icon via shortcut properties</li>
+<li><a href="https://github.com/Aohirovet/Napari_Simple_Tracker/blob/main/docs/USAGE.md">Usage guide index</a></li>
+<li><a href="https://github.com/Aohirovet/Napari_Simple_Tracker/blob/main/docs/USAGE_SIMPLE_TRACKER.md">Simple Tracker guide</a></li>
+<li><a href="https://github.com/Aohirovet/Napari_Simple_Tracker/blob/main/docs/USAGE_FRAP.md">FRAP Analysis guide</a></li>
 </ul>
-<hr />
-<h2>Project Structure</h2>
-<ul>
-<li>Plugin source code: <code>src/reco_plugin/</code></li>
-<li>Plugin manifest: <code>src/reco_plugin/napari.yaml</code></li>
-</ul>
-<hr />
+<h2>Release Note</h2>
+<p>For every new public release, increment the version in <code>pyproject.toml</code> before publishing to PyPI or expecting changes to appear on napari-hub.</p>
 <h2>License</h2>
-<p>This project is licensed under the GNU General Public License v3.0 (GPL-3.0), in compliance with the <a href="https://www.astra-toolbox.com/">ASTRA Toolbox license</a>.</p>
+<p>MIT License</p>
 
 
                                     </div>
@@ -330,7 +324,7 @@ pip<span class="w"> </span>install<span class="w"> </span>cupy-cuda12x<span clas
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.1.4</li>
+                                                    <li class="MetadataList_textItem__KKmMN">1.1.8</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -350,7 +344,7 @@ pip<span class="w"> </span>install<span class="w"> </span>cupy-cuda12x<span clas
                                                     released<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-04-03</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-04-08</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -387,21 +381,21 @@ pip<span class="w"> </span>install<span class="w"> </span>cupy-cuda12x<span clas
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">Plugin
                                                     type<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=reader">Reader</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=writer">Writer</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=widget">Widget</a></li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=widget">Widget</a></li></ul>
                                             </div>
                                         </div>
                                         <div class="text-sm">
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">Open
                                                     extension<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?readerFileExtensions=*.nxs">*.nxs</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?readerFileExtensions=*.tdf">*.tdf</a></li></ul>
+                                                    
                                             </div>
                                         </div>
                                         <div class="text-sm">
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">Save
                                                     extension<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?writerFileExtensions=.tif">.tif</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?writerFileExtensions=.raw">.raw</a></li></ul>
+                                                    
                                             </div>
                                         </div>
                                     </div>
@@ -418,7 +412,7 @@ pip<span class="w"> </span>install<span class="w"> </span>cupy-cuda12x<span clas
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">Python versions
                                                     supported<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.9">3.9</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.10">3.10</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.11">3.11</a></li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.10">3.10</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.11">3.11</a></li></ul>
                                             </div>
                                         </div>
                                         <div class="text-sm">
@@ -437,7 +431,7 @@ pip<span class="w"> </span>install<span class="w"> </span>cupy-cuda12x<span clas
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">
                                                     Requirements<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">h5py</li><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">scipy</li><li class="MetadataList_textItem__KKmMN">tqdm</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">matplotlib>=3.5</li><li class="MetadataList_textItem__KKmMN">dask[array]</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">napari>=0.4.18</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari[pyqt5]; extra == "testing"</li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">magicgui>=0.8</li><li class="MetadataList_textItem__KKmMN">matplotlib>=3.8</li><li class="MetadataList_textItem__KKmMN">numpy>=1.24</li><li class="MetadataList_textItem__KKmMN">pandas>=2.0</li><li class="MetadataList_textItem__KKmMN">qtpy>=2.4</li><li class="MetadataList_textItem__KKmMN">scikit-image>=0.25</li></ul>
                                             </div>
                                         </div>
                                     </div>
