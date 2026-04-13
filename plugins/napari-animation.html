@@ -4,20 +4,20 @@
 
 <head>
     <meta charset="utf-8" />
-    <link href="../plugins/napari-stitcher.html" rel="canonical" />
+    <link href="../plugins/napari-animation.html" rel="canonical" />
     <meta content="width=device-width,initial-scale=1" name="viewport" />
     <meta
-        content="napari-stitcher, Marvin Albert, napari hub, napari, hub, plugin, image analysis, imaging, chan zuckerberg initiative"
+        content="napari-animation, Nicholas Sofroniew, Alister Burt, Guillaume Witz, Faris Abouakil, Talley Lambert, napari contributors, napari hub, napari, hub, plugin, image analysis, imaging, chan zuckerberg initiative"
         name="keywords" />
-    <meta content="Stitch napari image layers in 2-3D+t" name="description" />
-    <meta content="Stitch napari image layers in 2-3D+t" property="og:description" />
-    <meta content="Stitch napari image layers in 2-3D+t." name="twitter:description" />
-    <meta content="napari-stitcher - napari Plugin - Marvin Albert" property="og:title" />
-    <meta content="napari-stitcher - napari Plugin - Marvin Albert" name="twitter:title" />
+    <meta content="A plugin for making animations in napari" name="description" />
+    <meta content="A plugin for making animations in napari" property="og:description" />
+    <meta content="A plugin for making animations in napari." name="twitter:description" />
+    <meta content="napari-animation - napari Plugin - Nicholas Sofroniew, Alister Burt, Guillaume Witz, Faris Abouakil, Talley Lambert, napari contributors" property="og:title" />
+    <meta content="napari-animation - napari Plugin - Nicholas Sofroniew, Alister Burt, Guillaume Witz, Faris Abouakil, Talley Lambert, napari contributors" name="twitter:title" />
     <meta content="article" property="og:type" />
-    <meta content="../plugins/napari-stitcher.html" property="og:url" />
+    <meta content="../plugins/napari-animation.html" property="og:url" />
     <meta content="@napari_imaging" name="twitter:site" />
-    <title>napari-stitcher - napari Plugin - Marvin Albert</title>
+    <title>napari-animation - napari Plugin - Nicholas Sofroniew, Alister Burt, Guillaume Witz, Faris Abouakil, Talley Lambert, napari contributors</title>
 
     <meta content="2" name="next-head-count" />
     <meta content="#80d1ff" name="theme-color" />
@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.1.4</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.0.10</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -90,7 +90,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">First released<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2024-10-18</li>
+                                            <li class="MetadataList_textItem__KKmMN">2021-04-23</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -112,19 +112,19 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Plugin type<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=reader">Reader</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=writer">Writer</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=widget">Widget</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=sample_data">Sample_data</a></li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=widget">Widget</a></li></ul>
                                     </div>
                                 </div>
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Open extension<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?readerFileExtensions=*.czi">*.czi</a></li></ul>
+                                        
                                     </div>
                                 </div>
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Save extension<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?writerFileExtensions=.tif">.tif</a></li></ul>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -144,7 +144,7 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Python versions supported<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.11">3.11</a></li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.10">3.10</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.11">3.11</a></li></ul>
                                     </div>
                                 </div>
                                 <div class="text-sm">
@@ -156,7 +156,7 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Requirements<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">dask</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">multiscale_spatial_image</li><li class="MetadataList_textItem__KKmMN">multiview-stitcher[czi,itk-elastix]>=0.1.49</li><li class="MetadataList_textItem__KKmMN">napari</li><li class="MetadataList_textItem__KKmMN">numpy>=1.18</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">spatial_image</li><li class="MetadataList_textItem__KKmMN">tifffile>=2022.7.28</li><li class="MetadataList_textItem__KKmMN">tqdm</li><li class="MetadataList_textItem__KKmMN">xarray</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing-no-gui"</li><li class="MetadataList_textItem__KKmMN">multiview-stitcher[czi]>=0.1.47; extra == "testing-no-gui"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing-no-gui"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing-no-gui"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing-no-gui"</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">multiview-stitcher[czi]>=0.1.47; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt5; extra == "testing"</li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">imageio</li><li class="MetadataList_textItem__KKmMN">imageio-ffmpeg</li><li class="MetadataList_textItem__KKmMN">napari>=0.5</li><li class="MetadataList_textItem__KKmMN">npe2</li><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">scipy</li><li class="MetadataList_textItem__KKmMN">superqt</li><li class="MetadataList_textItem__KKmMN">tqdm>=4.56.0</li></ul>
                                     </div>
                                 </div>
                             </div>
@@ -168,26 +168,26 @@
                         <article
                             class="w-full col-span-2 row-start-1 screen-875:col-span-3 screen-1150:col-start-1 screen-1425:col-start-2">
                                 <div class="container" style="display: flex; flex-direction: column;">
-                                    <h1 class="font-bold text-4xl" style="margin-bottom: 20px;" >napari-stitcher</h1>
+                                    <h1 class="font-bold text-4xl" style="margin-bottom: 20px;" >napari-animation</h1>
                                 </div>
 
                                 
    <div class="flex items-center" style="gap: 20px; ; align-items: center;"">
-        <a class="underline flex" href="https://pypi.org/project/napari-stitcher/" rel="noreferrer" target="_blank">
-        <img src="../static/images/PyPI_logo.svg.png" alt="PyPI" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">napari-stitcher</span>
+        <a class="underline flex" href="https://pypi.org/project/napari-animation/" rel="noreferrer" target="_blank">
+        <img src="../static/images/PyPI_logo.svg.png" alt="PyPI" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">napari-animation</span>
     </a>
     
-        <a class="underline flex" href="https://github.com/multiview-stitcher/napari-stitcher/issues" rel="noreferrer" target="_blank">
-            <img src="../static/images/GitHub_Invertocat_Logo.svg.png" alt="GitHub" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">multiview-stitcher/napari-stitcher</span>
+        <a class="underline flex" href="https://github.com/napari/napari-animation" rel="noreferrer" target="_blank">
+            <img src="../static/images/GitHub_Invertocat_Logo.svg.png" alt="GitHub" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">napari/napari-animation</span>
         </a>
         </div>
 
                                 <div class="flex justify-between items-center my-6">
-                                    <h2 class="text-lg">Stitch napari image layers in 2-3D+t</h2>
+                                    <h2 class="text-lg">A plugin for making animations in napari</h2>
                                 </div>
                                 <ul class="PluginAuthors_authors__hs3zO">
                                     <li class="inline">
-                                        <span class="text-[11px] screen-495:text-[14px] font-semibold">Marvin Albert</span>
+                                        <span class="text-[11px] screen-495:text-[14px] font-semibold">Nicholas Sofroniew, Alister Burt, Guillaume Witz, Faris Abouakil, Talley Lambert, napari contributors</span>
                                     </li>
                             </ul>
                             <div class="screen-1425:hidden mt-sds-xl mb-sds-xxl"><a
@@ -209,43 +209,135 @@
                                 <div class="flex items-center justify-between mb-sds-xxl">
                                     <div class="Markdown_markdown__QZ95j">
 
-                                        <p><a href="https://napari-hub.org/plugins/napari-stitcher"><img src="https://img.shields.io/endpoint?url=https://api.napari-hub.org/shields/napari-stitcher" alt="napari hub" /></a>
-<a href="https://github.com/multiview-stitcher/napari-stitcher/raw/main/LICENSE"><img src="https://img.shields.io/pypi/l/napari-stitcher.svg?color=green" alt="License {{cookiecutter.license}}" /></a>
-<a href="https://pypi.org/project/napari-stitcher"><img src="https://img.shields.io/pypi/v/napari-stitcher.svg?color=green" alt="PyPI" /></a>
-<a href="https://python.org"><img src="https://img.shields.io/pypi/pyversions/napari-stitcher.svg?color=green" alt="Python Version" /></a>
-<a href="https://github.com/multiview-stitcher/napari-stitcher/actions"><img src="https://github.com/multiview-stitcher/napari-stitcher/actions/workflows/test_and_deploy.yml/badge.svg" alt="tests" /></a>
-<a href="https://codecov.io/gh/multiview-stitcher/napari-stitcher"><img src="https://codecov.io/gh/multiview-stitcher/napari-stitcher/branch/main/graph/badge.svg" alt="codecov" /></a>
-<a href="https://zenodo.org/doi/10.5281/zenodo.14176362"><img src="https://zenodo.org/badge/697999800.svg" alt="DOI" /></a></p>
-<h1>napari-stitcher</h1>
-<p>A napari plugin for stitching large multi-positioning datasets in 2/3D+t using <a href="https://github.com/multiview-stitcher/multiview-stitcher"><code>multiview-stitcher</code></a>.</p>
-<p><img src="docs/images/napari-stitcher-loaded-mosaic-annotated.png" alt="" />
-<small>Image data by Arthur Michaut @ Jérôme Gros Lab @ Institut Pasteur.</small></p>
-<h4>Quick guide:</h4>
-<ol>
-<li>Directly stitch napari layers: Use napari to load, visualize and <a href="prearrangement.md">preposition</a> the tiles to be stitched.</li>
-<li>When working with multi-channel data, stick to the following <a href="naming_convention.md">naming convention</a>: <code>{tile} :: {channel}</code>.</li>
-<li>Load either all or just a subset of the layers into the plugin.</li>
-<li>Choose registration options: registration channel, binning and more.</li>
-<li>Stitching = registration (refining the positions, optional) + fusion (joining the tiles into a single image).</li>
-<li>The registration result is shown in the viewer and the fused channels are added as new layers.</li>
-</ol>
-<h2>Demo</h2>
-<p><a href="https://github.com/user-attachments/assets/8773e49f-af18-4ff3-ab2f-2a5f1b1cadf2">https://github.com/user-attachments/assets/8773e49f-af18-4ff3-ab2f-2a5f1b1cadf2</a></p>
-<p><small>This demo uses the awesome <a href="https://github.com/napari-threedee/napari-threedee"><code>napari-threedee</code></a> for prepositioning the tiles. Image data: <a href="https://imagej.net/plugins/bigstitcher/">BigStitcher</a>.</small></p>
-<h2>Documentation</h2>
-<p>Head over to the <a href="https://multiview-stitcher.github.io/napari-stitcher/main/">user guide</a> for more details.</p>
+                                        <p><a href="https://github.com/napari/napari-animation/raw/main/LICENSE"><img src="https://img.shields.io/pypi/l/napari-animation.svg?color=green" alt="License" /></a>
+<a href="https://pypi.org/project/napari-animation"><img src="https://img.shields.io/pypi/v/napari-animation.svg?color=green" alt="PyPI" /></a>
+<a href="https://python.org"><img src="https://img.shields.io/pypi/pyversions/napari-animation.svg?color=green" alt="Python Version" /></a>
+<a href="https://github.com/napari/napari-animation/actions"><img src="https://github.com/napari/napari-animation/actions/workflows/test_and_deploy.yml/badge.svg" alt="tests" /></a>
+<a href="https://codecov.io/gh/napari/napari-animation"><img src="https://codecov.io/gh/napari/napari-animation/branch/main/graph/badge.svg" alt="codecov" /></a></p>
+<p><strong>napari-animation</strong> is a plugin for making animations in <a href="https://napari.org">napari</a>.</p>
+<p align="center">
+  <img width="500" src="https://user-images.githubusercontent.com/7307488/196110138-6c4663b1-67b2-4c79-97b7-57b706d1d49c.gif">
+</p>
+<hr />
+<p><a href="https://twitter.com/Merlin_Lange">Merlin Lange</a> used <em>napari-animation</em> to create one of <a href="https://www.nature.com/immersive/d41586-022-03051-6/index.html">Nature's best science images for September 2022</a></p>
+<hr />
+<p>This plugin is built on <a href="https://github.com/guiwitz/naparimovie"><code>naparimovie</code></a> from <a href="https://github.com/guiwitz">@guiwitz</a>. <code>naparimovie</code> was submitted to napari in <a href="https://github.com/napari/napari/pull/780">PR#851</a> before napari plugin infrastructure existed.</p>
+<hr />
+<h2>Overview</h2>
+<p><strong>napari-animation</strong> provides a framework for the creation of animations in napari. The plugin contains:</p>
+<ul>
+<li>an easy to use GUI for creating animations interactively;</li>
+<li>a Python package for the programmatic creation of animations.</li>
+</ul>
+<p>This plugin remains under development and contributions are very welcome, please open an issue to discuss potential improvements.</p>
+<p>You can read the documentation at <a href="https://napari.org/napari-animation">https://napari.org/napari-animation</a></p>
 <h2>Installation</h2>
-<p>You can install <code>napari-stitcher</code> via <code>pip</code>:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>napari-stitcher
+<h3>PyPI</h3>
+<p><code>napari-animation</code> is available through the Python package index and can be installed using <code>pip</code>.</p>
+<pre><code class="language-sh"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>napari-animation
 </pre></div>
 </code></pre>
-<p>For more installation options, see the <a href="https://multiview-stitcher.github.io/napari-stitcher/main/installation/">installation docs</a>.</p>
+<pre><code class="language-{warning}"><div class="highlight"><pre><span></span><span class="err">`</span><span class="n">napari</span><span class="o">-</span><span class="n">animation</span><span class="err">`</span> <span class="n">uses</span> <span class="err">`</span><span class="n">ffmpeg</span><span class="err">`</span> <span class="n">to</span> <span class="n">export</span> <span class="n">animations</span><span class="o">.</span> <span class="n">If</span> <span class="n">you</span> <span class="n">are</span> <span class="n">using</span> <span class="n">a</span> <span class="n">macOS</span> <span class="n">arm64</span> <span class="n">computer</span> <span class="p">(</span><span class="n">Apple</span> <span class="n">Silicon</span> <span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span> <span class="n">M1</span><span class="p">,</span> <span class="n">M2</span> <span class="n">processor</span><span class="p">)</span>
+<span class="n">the</span> <span class="n">PyPI</span> <span class="n">package</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">include</span> <span class="n">the</span> <span class="n">needed</span> <span class="n">binary</span> <span class="k">for</span> <span class="n">your</span> <span class="n">platform</span><span class="o">.</span> <span class="n">You</span> <span class="n">will</span> <span class="n">need</span> <span class="n">to</span> <span class="n">install</span> <span class="err">`</span><span class="n">ffmpeg</span><span class="err">`</span> <span class="n">using</span>
+<span class="err">`</span><span class="n">conda</span><span class="err">`</span> <span class="kn">from</span><span class="w"> </span><span class="nn">the</span> <span class="p">[</span><span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">channel</span><span class="p">](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">conda</span><span class="o">-</span><span class="n">forge</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">docs</span><span class="o">/</span><span class="c1">#what-is-conda-forge) (`conda install -c conda-forge ffmpeg`)</span>
+<span class="ow">or</span> <span class="n">using</span> <span class="p">[</span><span class="err">`</span><span class="n">homebrew</span><span class="err">`</span><span class="p">](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">brew</span><span class="o">.</span><span class="n">sh</span><span class="p">)</span> <span class="p">(</span><span class="err">`</span><span class="n">brew</span> <span class="n">install</span> <span class="n">ffmpeg</span><span class="err">`</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</code></pre>
+<h3>Conda</h3>
+<p><code>napari-animation</code> is also available for install using <code>conda</code> through the <a href="https://conda-forge.org/docs/#what-is-conda-forge">conda-forge channel</a>.</p>
+<pre><code class="language-sh"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>napari-animation
+</pre></div>
+</code></pre>
+<h3>Local</h3>
+<p>You can clone this repository and install locally with</p>
+<pre><code><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="o">.</span>
+</pre></div>
+</code></pre>
+<h3>Interactive use</h3>
+<p><strong>napari-animation</strong> can be used interactively.</p>
+<p>An animation is created by capturing <a href="https://en.wikipedia.org/wiki/Key_frame">keyframes</a> containing the current viewer state.</p>
+<p align="center">
+  <img width="600" src="https://user-images.githubusercontent.com/7307488/196113682-96ce0da3-fa5c-411e-8fb1-52dc3a8f96b6.png">
+</p>
+<p>To activate the GUI, select <strong>napari-animation: wizard</strong> from the <em>plugins menu</em></p>
+<p align="center">
+  <img width="200" src="https://user-images.githubusercontent.com/7307488/196114466-56cb5985-0d79-4cfa-96f1-38cf3ccfbc48.png">
+</p>
+<h3>Scripting</h3>
+<p><strong>napari-animation</strong> can also be run programatically, allowing for reproducible, scripted creation of animations.</p>
+<pre><code class="language-python"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">napari_animation</span><span class="w"> </span><span class="kn">import</span> <span class="n">Animation</span>
+
+<span class="n">animation</span> <span class="o">=</span> <span class="n">Animation</span><span class="p">(</span><span class="n">viewer</span><span class="p">)</span>
+
+<span class="n">viewer</span><span class="o">.</span><span class="n">dims</span><span class="o">.</span><span class="n">ndisplay</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">viewer</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">angles</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">90.0</span><span class="p">)</span>
+<span class="n">animation</span><span class="o">.</span><span class="n">capture_keyframe</span><span class="p">()</span>
+<span class="n">viewer</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">zoom</span> <span class="o">=</span> <span class="mf">2.4</span>
+<span class="n">animation</span><span class="o">.</span><span class="n">capture_keyframe</span><span class="p">()</span>
+<span class="n">viewer</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">angles</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">7.0</span><span class="p">,</span> <span class="mf">15.7</span><span class="p">,</span> <span class="mf">62.4</span><span class="p">)</span>
+<span class="n">animation</span><span class="o">.</span><span class="n">capture_keyframe</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
+<span class="n">viewer</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">angles</span> <span class="o">=</span> <span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">24.4</span><span class="p">,</span> <span class="o">-</span><span class="mf">36.7</span><span class="p">)</span>
+<span class="n">animation</span><span class="o">.</span><span class="n">capture_keyframe</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
+<span class="n">viewer</span><span class="o">.</span><span class="n">reset_view</span><span class="p">()</span>
+<span class="n">viewer</span><span class="o">.</span><span class="n">camera</span><span class="o">.</span><span class="n">angles</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">90.0</span><span class="p">)</span>
+<span class="n">animation</span><span class="o">.</span><span class="n">capture_keyframe</span><span class="p">()</span>
+<span class="n">animation</span><span class="o">.</span><span class="n">animate</span><span class="p">(</span><span class="s1">&#39;demo.mov&#39;</span><span class="p">,</span> <span class="n">canvas_only</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</code></pre>
+<h2>Examples</h2>
+<p>Examples can be found in our <a href="https://napari.org/napari-animation/gallery">Examples gallery</a>, generated from <a href="https://github.com/napari/napari-animation/tree/main/examples">our example scripts</a>. Simple examples for both interactive and headless
+use of the plugin follow.</p>
 <h2>Contributing</h2>
-<p>Contributions are very welcome. Tests can be run with <code>tox</code>.</p>
+<p>Contributions are very welcome and a detailed contributing guide is coming soon.
+In the meantime, clone this repository and install it in editable mode using <code>pip</code>:</p>
+<pre><code><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="o">.</span> <span class="o">--</span><span class="n">group</span> <span class="n">dev</span>
+</pre></div>
+</code></pre>
+<p>We recommend using a virtual environment.</p>
+<pre><code class="language-{important}"><div class="highlight"><pre><span></span><span class="n">Ensure</span> <span class="n">you</span> <span class="n">have</span> <span class="n">a</span> <span class="n">suitable</span> <span class="n">Qt</span> <span class="n">backend</span> <span class="k">for</span> <span class="n">napari</span><span class="err">!</span> <span class="n">We</span> <span class="n">recommend</span> <span class="err">`</span><span class="n">PyQt6</span><span class="err">`</span><span class="o">.</span>
+<span class="n">For</span> <span class="n">more</span> <span class="n">information</span><span class="p">,</span> <span class="n">see</span> <span class="n">the</span> <span class="n">napari</span> <span class="p">[</span><span class="n">Qt</span> <span class="n">backend</span> <span class="n">installation</span> <span class="n">guide</span><span class="p">](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">napari</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">stable</span><span class="o">/</span><span class="n">tutorials</span><span class="o">/</span><span class="n">fundamentals</span><span class="o">/</span><span class="n">installation</span><span class="o">.</span><span class="n">html</span><span class="c1">#choosing-a-different-qt-backend)</span>
+</pre></div>
+</code></pre>
+<p>To set up your development installation, clone this repository, navigate to the clone folder, and install napari-animation in editable mode using <code>pip</code>.</p>
+<pre><code class="language-sh"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>nap-anim<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.13
+conda<span class="w"> </span>activate<span class="w"> </span>nap-anim
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.<span class="w"> </span>--group<span class="w"> </span>dev<span class="w"> </span>pyqt6
+</pre></div>
+</code></pre>
+<p>Tests are run with <code>pytest</code>.
+You can make sure your <code>[dev]</code> installation is working properly by running
+<code>pytest .</code> from within the repository.</p>
+<pre><code class="language-{note}"><div class="highlight"><pre><span></span><span class="n">We</span> <span class="n">use</span> <span class="p">[</span><span class="err">`</span><span class="n">pre</span><span class="o">-</span><span class="n">commit</span><span class="err">`</span><span class="p">](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">pre</span><span class="o">-</span><span class="n">commit</span><span class="o">.</span><span class="n">com</span><span class="p">)</span> <span class="n">to</span> <span class="n">sort</span> <span class="n">imports</span> <span class="ow">and</span> <span class="n">lint</span> <span class="k">with</span>
+<span class="p">[</span><span class="err">`</span><span class="n">ruff</span><span class="err">`</span><span class="p">](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">astral</span><span class="o">-</span><span class="n">sh</span><span class="o">/</span><span class="n">ruff</span><span class="p">)</span> <span class="n">automatically</span> <span class="n">prior</span> <span class="n">to</span> <span class="n">each</span> <span class="n">commit</span><span class="o">.</span>
+<span class="n">To</span> <span class="n">minmize</span> <span class="n">test</span> <span class="n">errors</span> <span class="n">when</span> <span class="n">submitting</span> <span class="n">pull</span> <span class="n">requests</span><span class="p">,</span> <span class="n">please</span> <span class="n">install</span> <span class="err">`</span><span class="n">pre</span><span class="o">-</span><span class="n">commit</span><span class="err">`</span>
+<span class="ow">in</span> <span class="n">your</span> <span class="n">environment</span> <span class="k">as</span> <span class="n">follows</span><span class="p">:</span>
+
+<span class="err">`</span><span class="n">pre</span><span class="o">-</span><span class="n">commit</span> <span class="n">install</span><span class="err">`</span>
+</pre></div>
+</code></pre>
+<h2>Documentation</h2>
+<p>The documentation is available at <a href="https://napari.org/napari-animation">https://napari.org/napari-animation</a></p>
+<p>The documentation for napari-animation is built with <a href="https://www.spinx-doc.org">Sphinx</a> and the <a href="https://github.com/napari/napari-sphinx-theme">napari Sphinx Theme</a>.</p>
+<h3>Building docs locally</h3>
+<p>After installing the documentation dependencies with</p>
+<pre><code class="language-sh"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.<span class="w"> </span>--group<span class="w"> </span>doc
+</pre></div>
+</code></pre>
+<p>you can see a local version of the documentation by running</p>
+<pre><code class="language-sh"><div class="highlight"><pre><span></span>make<span class="w"> </span>docs
+</pre></div>
+</code></pre>
+<p>Open up the <code>docs/_build/index.html</code> file in your browser, and you'll see the home page of the docs being displayed.</p>
+<h3>Deploying docs</h3>
+<p>The napari-animation documentation is automatically built and deployed to the website
+whenever the main branch is updated, or a new release is tagged.
+This is controlled by the <a href="https://github.com/napari/napari-animation/blob/main/.github/workflows/deploy_docs.yml">deploy_docs.yml</a> github actions script.</p>
+<p>You can also manually trigger a documenation re-build and deployment <a href="https://github.com/napari/napari-animation/actions/workflows/deploy_docs.yml">from the github actions tab</a>.</p>
 <h2>License</h2>
-<p>Distributed under the terms of the [BSD-3] license, &quot;napari-stitcher&quot; is free and open source software</p>
+<p>Distributed under the terms of the <a href="http://opensource.org/licenses/BSD-3-Clause">BSD-3 license</a>,
+<code>napari-animation</code> is free and open source software.</p>
 <h2>Issues</h2>
-<p>If you encounter any problems, please <a href="https://github.com/multiview-stitcher/napari-stitcher/issues">file an issue</a> along with a detailed description.</p>
+<p>If you encounter any problems, please <a href="https://github.com/napari/napari-animation/issues">file an issue</a> along with a detailed description.</p>
 
 
                                     </div>
@@ -261,7 +353,7 @@
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.1.4</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.0.10</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -281,7 +373,7 @@
                                                     released<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2024-10-18</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2021-04-23</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -318,21 +410,21 @@
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">Plugin
                                                     type<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=reader">Reader</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=writer">Writer</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=widget">Widget</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=sample_data">Sample_data</a></li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=widget">Widget</a></li></ul>
                                             </div>
                                         </div>
                                         <div class="text-sm">
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">Open
                                                     extension<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?readerFileExtensions=*.czi">*.czi</a></li></ul>
+                                                    
                                             </div>
                                         </div>
                                         <div class="text-sm">
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">Save
                                                     extension<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?writerFileExtensions=.tif">.tif</a></li></ul>
+                                                    
                                             </div>
                                         </div>
                                     </div>
@@ -349,7 +441,7 @@
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">Python versions
                                                     supported<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.11">3.11</a></li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.10">3.10</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.11">3.11</a></li></ul>
                                             </div>
                                         </div>
                                         <div class="text-sm">
@@ -368,7 +460,7 @@
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">
                                                     Requirements<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">dask</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">multiscale_spatial_image</li><li class="MetadataList_textItem__KKmMN">multiview-stitcher[czi,itk-elastix]>=0.1.49</li><li class="MetadataList_textItem__KKmMN">napari</li><li class="MetadataList_textItem__KKmMN">numpy>=1.18</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">spatial_image</li><li class="MetadataList_textItem__KKmMN">tifffile>=2022.7.28</li><li class="MetadataList_textItem__KKmMN">tqdm</li><li class="MetadataList_textItem__KKmMN">xarray</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing-no-gui"</li><li class="MetadataList_textItem__KKmMN">multiview-stitcher[czi]>=0.1.47; extra == "testing-no-gui"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing-no-gui"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing-no-gui"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing-no-gui"</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">multiview-stitcher[czi]>=0.1.47; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt5; extra == "testing"</li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">imageio</li><li class="MetadataList_textItem__KKmMN">imageio-ffmpeg</li><li class="MetadataList_textItem__KKmMN">napari>=0.5</li><li class="MetadataList_textItem__KKmMN">npe2</li><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">scipy</li><li class="MetadataList_textItem__KKmMN">superqt</li><li class="MetadataList_textItem__KKmMN">tqdm>=4.56.0</li></ul>
                                             </div>
                                         </div>
                                     </div>
