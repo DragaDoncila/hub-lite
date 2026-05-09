@@ -4,20 +4,20 @@
 
 <head>
     <meta charset="utf-8" />
-    <link href="../plugins/napari-morans-i.html" rel="canonical" />
+    <link href="../plugins/napari-cilia-assistant.html" rel="canonical" />
     <meta content="width=device-width,initial-scale=1" name="viewport" />
     <meta
-        content="napari-morans-i, Lukas Jarzembowski, napari hub, napari, hub, plugin, image analysis, imaging, chan zuckerberg initiative"
+        content="napari-cilia-assistant, Wulin Teo, napari hub, napari, hub, plugin, image analysis, imaging, chan zuckerberg initiative"
         name="keywords" />
-    <meta content="A simple plugin that computes Local Moran's I spatial-autocorrelation maps of 2-D images in napari." name="description" />
-    <meta content="A simple plugin that computes Local Moran's I spatial-autocorrelation maps of 2-D images in napari." property="og:description" />
-    <meta content="A simple plugin that computes Local Moran's I spatial-autocorrelation maps of 2-D images in napari.." name="twitter:description" />
-    <meta content="Moran's I - napari Plugin - Lukas Jarzembowski" property="og:title" />
-    <meta content="Moran's I - napari Plugin - Lukas Jarzembowski" name="twitter:title" />
+    <meta content="A napari plugin for measuring ciliary beat frequency from high-speed microscopy videos." name="description" />
+    <meta content="A napari plugin for measuring ciliary beat frequency from high-speed microscopy videos." property="og:description" />
+    <meta content="A napari plugin for measuring ciliary beat frequency from high-speed microscopy videos.." name="twitter:description" />
+    <meta content="Cilia Assistant - napari Plugin - Wulin Teo" property="og:title" />
+    <meta content="Cilia Assistant - napari Plugin - Wulin Teo" name="twitter:title" />
     <meta content="article" property="og:type" />
-    <meta content="../plugins/napari-morans-i.html" property="og:url" />
+    <meta content="../plugins/napari-cilia-assistant.html" property="og:url" />
     <meta content="@napari_imaging" name="twitter:site" />
-    <title>Moran's I - napari Plugin - Lukas Jarzembowski</title>
+    <title>Cilia Assistant - napari Plugin - Wulin Teo</title>
 
     <meta content="2" name="next-head-count" />
     <meta content="#80d1ff" name="theme-color" />
@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">1.0</li>
+                                            <li class="MetadataList_textItem__KKmMN">1.0.3</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -99,7 +99,7 @@
                                         <p class="font-bold whitespace-nowrap">License<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
                                             <li class="MetadataList_textItem__KKmMN">
-                                                BSD-3-Clause
+                                                MIT
                                             </li>
                                         </ul>
                                     </div>
@@ -112,7 +112,7 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Plugin type<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=widget">Widget</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=sample_data">Sample_data</a></li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=widget">Widget</a></li></ul>
                                     </div>
                                 </div>
                                 <div class="text-sm">
@@ -156,7 +156,7 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Requirements<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy>=1.21</li><li class="MetadataList_textItem__KKmMN">scipy>=1.7</li><li class="MetadataList_textItem__KKmMN">magicgui>=0.7</li><li class="MetadataList_textItem__KKmMN">qtpy>=2.0</li><li class="MetadataList_textItem__KKmMN">napari</li><li class="MetadataList_textItem__KKmMN">napari[all]; extra == "all"</li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">napari</li><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">scipy</li><li class="MetadataList_textItem__KKmMN">opencv-python</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">matplotlib</li></ul>
                                     </div>
                                 </div>
                             </div>
@@ -168,26 +168,26 @@
                         <article
                             class="w-full col-span-2 row-start-1 screen-875:col-span-3 screen-1150:col-start-1 screen-1425:col-start-2">
                                 <div class="container" style="display: flex; flex-direction: column;">
-                                    <h1 class="font-bold text-4xl" style="margin-bottom: 20px;" >Moran's I</h1>
+                                    <h1 class="font-bold text-4xl" style="margin-bottom: 20px;" >Cilia Assistant</h1>
                                 </div>
 
                                 
    <div class="flex items-center" style="gap: 20px; ; align-items: center;"">
-        <a class="underline flex" href="https://pypi.org/project/napari-morans-i/" rel="noreferrer" target="_blank">
-        <img src="../static/images/PyPI_logo.svg.png" alt="PyPI" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">napari-morans-i</span>
+        <a class="underline flex" href="https://pypi.org/project/napari-cilia-assistant/" rel="noreferrer" target="_blank">
+        <img src="../static/images/PyPI_logo.svg.png" alt="PyPI" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">napari-cilia-assistant</span>
     </a>
     
-        <a class="underline flex" href="https://github.com/lukasjarzembowski/napari-morans-i/issues" rel="noreferrer" target="_blank">
-            <img src="../static/images/GitHub_Invertocat_Logo.svg.png" alt="GitHub" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">lukasjarzembowski/napari-morans-</span>
+        <a class="underline flex" href="https://github.com/wulinteousa2-hash/napari-cilia-assistant/issues" rel="noreferrer" target="_blank">
+            <img src="../static/images/GitHub_Invertocat_Logo.svg.png" alt="GitHub" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">wulinteousa2-hash/napari-cilia-assistan</span>
         </a>
         </div>
 
                                 <div class="flex justify-between items-center my-6">
-                                    <h2 class="text-lg">A simple plugin that computes Local Moran's I spatial-autocorrelation maps of 2-D images in napari.</h2>
+                                    <h2 class="text-lg">A napari plugin for measuring ciliary beat frequency from high-speed microscopy videos.</h2>
                                 </div>
                                 <ul class="PluginAuthors_authors__hs3zO">
                                     <li class="inline">
-                                        <span class="text-[11px] screen-495:text-[14px] font-semibold">Lukas Jarzembowski</span>
+                                        <span class="text-[11px] screen-495:text-[14px] font-semibold">Wulin Teo</span>
                                     </li>
                             </ul>
                             <div class="screen-1425:hidden mt-sds-xl mb-sds-xxl"><a
@@ -209,255 +209,71 @@
                                 <div class="flex items-center justify-between mb-sds-xxl">
                                     <div class="Markdown_markdown__QZ95j">
 
-                                        <p><a href="https://github.com/lukasjarzembowski/napari-morans-i/raw/main/LICENSE"><img src="https://img.shields.io/pypi/l/napari-morans-i.svg?color=green" alt="License BSD-3" /></a>
-<a href="https://pypi.org/project/napari-morans-i"><img src="https://img.shields.io/pypi/v/napari-morans-i.svg?color=green" alt="PyPI" /></a>
-<a href="https://python.org"><img src="https://img.shields.io/pypi/pyversions/napari-morans-i.svg?color=green" alt="Python Version" /></a>
-<a href="https://github.com/lukasjarzembowski/napari-morans-i/actions"><img src="https://github.com/lukasjarzembowski/napari-morans-i/workflows/tests/badge.svg" alt="tests" /></a>
-<a href="https://codecov.io/gh/lukasjarzembowski/napari-morans-i"><img src="https://codecov.io/gh/lukasjarzembowski/napari-morans-i/branch/main/graph/badge.svg" alt="codecov" /></a>
-<a href="https://napari-hub.org/plugins/napari-morans-i"><img src="https://img.shields.io/endpoint?url=https://api.napari-hub.org/shields/napari-morans-i" alt="napari hub" /></a>
-<a href="https://napari.org/stable/plugins/index.html"><img src="https://img.shields.io/badge/plugin-npe2-blue?link=https://napari.org/stable/plugins/index.html" alt="npe2" /></a>
-<a href="https://github.com/copier-org/copier"><img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/copier-org/copier/master/img/badge/badge-grayscale-inverted-border-purple.json" alt="Copier" /></a></p>
-<p>A <a href="https://napari.org">napari</a> plugin that computes <strong>Local Moran's I</strong> spatial-autocorrelation maps
-of 2-D images, with a permutation-test–based significance map and a categorical
-cluster map (HH / LL / HL / LH / NS).</p>
-<p>It is a Python port of the MATLAB reference implementation
-<a href="https://github.com/dcsabaCD225/Moran_Matlab/blob/main/moran_local.m"><code>moran_local.m</code></a>
-used in:</p>
-<blockquote>
-<p>Dávid Cs. <em>et al.</em>, <strong>&quot;An image segmentation method based on the spatial correlation coefficient of Local Moran’s I - identification of A-type potassium channel clusters in the thalamus&quot;</strong>,
-<em>eLife</em> (2024). <a href="https://doi.org/10.7554/eLife.89361.2">https://doi.org/10.7554/eLife.89361.1</a>)</p>
-</blockquote>
-<p>This code was entirely created using Claude Opus 4.7 (2026-05-06). Prompts have been archived in the <code>prompts.txt</code> file.</p>
-<hr />
-<h2>Demo</h2>
-<p><img src="demo.gif" alt="Demo of the plugin" /></p>
-<h2>Features</h2>
+                                        <p><code>napari-cilia-assistant</code> is a napari plugin for measuring ciliary beat frequency (CBF) from high-speed AVI microscopy videos.</p>
+<p><img src="docs/ui.png" alt="Cilia Assistant UI" /></p>
+<p><a href="docs/ui.mp4">Watch the demo video</a></p>
+<h2>Install</h2>
+<p>Install conda-forge first:
+<a href="https://conda-forge.org/download/">https://conda-forge.org/download/</a></p>
+<p>Then open a terminal and run:</p>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>cilia-assistant<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11<span class="w"> </span>-y
+conda<span class="w"> </span>activate<span class="w"> </span>cilia-assistant
+conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>napari<span class="w"> </span>pyqt<span class="w"> </span>git<span class="w"> </span>-y
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/wulinteousa2-hash/napari-cilia-assistant.git
+<span class="nb">cd</span><span class="w"> </span>napari-cilia-assistant
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
+napari
+</pre></div>
+</code></pre>
+<p>In napari, open <code>Plugins &gt; Cilia Assistant</code>.</p>
+<h2>What It Does</h2>
 <ul>
-<li><strong>Layer chooser</strong> — operates on any 2-D <code>Image</code> layer in the current viewer.</li>
-<li><strong>Configurable Moran order</strong> — controls the size of the Gaussian
-neighbourhood kernel <code>(2·order + 1)²</code>.</li>
-<li><strong>Four standard significance levels</strong> — 0.05, 0.01, 0.001, 0.0001.</li>
-<li><strong>Permutation test</strong> with user-defined number of repeats (default <em>n</em> = 200).</li>
-<li><strong>Threaded execution</strong> via <code>napari.qt.threading.thread_worker</code>, with a live
-progress bar and a <em>Cancel</em> button — the viewer stays responsive throughout.</li>
-<li><strong>Three output layers</strong> added back to the viewer for inspection:
-<table>
-<thead>
-<tr>
-<th>Suffix</th>
-<th>Type</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>_LocalI</code></td>
-<td>Image</td>
-<td>Local Moran's I per pixel (continuous)</td>
-</tr>
-<tr>
-<td><code>_Significance</code></td>
-<td>Image</td>
-<td>Binary mask: pixels with <em>p</em> ≤ sig_level</td>
-</tr>
-<tr>
-<td><code>_Clusters</code></td>
-<td>Labels</td>
-<td>Categorical cluster code (see legend below)</td>
-</tr>
-</tbody>
-</table>
-</li>
+<li>Opens one AVI video through the napari widget.</li>
+<li>Reads video metadata such as FPS, frame count, size, and duration.</li>
+<li>Loads AVI data as a grayscale <code>T, Y, X</code> image stack.</li>
+<li>Lets the user draw/edit a rectangular ROI over active cilia.</li>
+<li>Measures ROI mean-intensity change over time.</li>
+<li>Estimates CBF using FFT and peak-interval checks.</li>
+<li>Creates a kymograph layer from the selected ROI.</li>
+<li>Exports the last ROI signal and FFT spectrum as CSV files.</li>
+<li>Copies or saves the current measurement graph.</li>
 </ul>
-<h3>Cluster legend</h3>
-<table>
-<thead>
-<tr>
-<th>Code</th>
-<th>Class</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0</td>
-<td>NS</td>
-<td>Not significant</td>
-</tr>
-<tr>
-<td>1</td>
-<td>HH</td>
-<td>High-value pixel surrounded by high-value neighbours</td>
-</tr>
-<tr>
-<td>2</td>
-<td>LL</td>
-<td>Low-value pixel surrounded by low-value neighbours</td>
-</tr>
-<tr>
-<td>3</td>
-<td>LH</td>
-<td>Low-value pixel surrounded by high-value neighbours</td>
-</tr>
-<tr>
-<td>4</td>
-<td>HL</td>
-<td>High-value pixel surrounded by low-value neighbours</td>
-</tr>
-</tbody>
-</table>
-<p>These codes match the original MATLAB source one-for-one.</p>
-<hr />
-<h2>Usage</h2>
+<h2>Basic Workflow</h2>
 <ol>
-<li>Launch napari and open or drag-drop an image.</li>
-<li>Open <strong>Plugins → Moran's I Analysis</strong>.</li>
-<li>(Optional) Try the bundled demo via <strong>File → Open Sample → napari-morans-i:
-Moran's I sample (blocks)</strong>.</li>
-<li>Choose the input image layer, the Moran <em>order</em>, the significance level,
-and the number of permutations.</li>
-<li>Click <strong>Calculate</strong>. Progress is reported live; <strong>Cancel</strong> stops the
-permutation test cleanly.</li>
-<li>Inspect the three new layers added to the viewer.</li>
+<li>Open napari.</li>
+<li>Open <code>Plugins &gt; Cilia Assistant</code>.</li>
+<li>Click <strong>Open AVI</strong>.</li>
+<li>Confirm the FPS. Correct it manually if the AVI metadata are wrong.</li>
+<li>Click <strong>Create / Edit ROI Rectangle</strong>.</li>
+<li>Move/resize the ROI over visibly beating cilia.</li>
+<li>Set the expected CBF search range, for example <code>3-25 Hz</code>.</li>
+<li>Click <strong>Measure CBF from Selected ROI</strong>.</li>
+<li>Review the trace, FFT peak, peak-interval result, and kymograph.</li>
+<li>Export the CSV files if the result is usable.</li>
 </ol>
-<hr />
-<hr />
-<p>This <a href="https://napari.org">napari</a> plugin was generated with <a href="https://copier.readthedocs.io/en/stable/">copier</a> using the <a href="https://github.com/napari/napari-plugin-template">napari-plugin-template</a> (None).</p>
-<!--
-Don't miss the full getting started guide to set up your new package:
-https://github.com/napari/napari-plugin-template#getting-started
-
-and review the napari docs for plugin developers:
-https://napari.org/stable/plugins/index.html
--->
-<h2>Installation</h2>
-<p>You can install <code>napari-morans-i</code> via <a href="https://pypi.org/project/pip/">pip</a>:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>napari-morans-i
-</pre></div>
-</code></pre>
-<p>If napari is not already installed, you can install <code>napari-morans-i</code> with napari and Qt via:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;napari-morans-i[all]&quot;</span>
-</pre></div>
-</code></pre>
-<p>To install latest development version:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/lukasjarzembowski/napari-morans-i.git
-</pre></div>
-</code></pre>
-<hr />
-<h2>Algorithm — step-by-step</h2>
-<p>The implementation lives in <code>napari_morans_i/_core.py</code> and reproduces the
-MATLAB script step-for-step. Each step has a corresponding pure function so it
-is independently testable.</p>
-<h3>1. Z-normalisation (<code>z_normalize</code>)</h3>
-<p>Convert the input image <em>X</em> into z-scores using the <strong>sample</strong> standard
-deviation (<code>ddof=1</code>), to match MATLAB's default <code>std</code>:</p>
-<pre><code><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="n">X</span> <span class="err">−</span> <span class="n">mean</span><span class="p">(</span><span class="n">X</span><span class="p">))</span> <span class="o">/</span> <span class="n">std</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</code></pre>
-<p>If the image is constant (<code>std = 0</code>) we short-circuit to an all-zeros array.</p>
-<h3>2. Gaussian neighbourhood weights (<code>gaussian_weight_matrix</code>)</h3>
-<p>Build a <code>(2·order + 1) × (2·order + 1)</code> Gaussian kernel <code>W</code> with
-<code>σ = (order + 1) / 1.7</code> and <strong>the centre cell zeroed</strong>, exactly as in the
-MATLAB reference. Zeroing the centre means each pixel never contributes to
-its own neighbourhood average.</p>
-<h3>3. Lagged values (<code>local_morans_i</code>)</h3>
-<p>Two zero-padded 2-D convolutions (<code>scipy.signal.convolve2d</code>,
-<code>mode='same'</code>, <code>boundary='fill'</code>):</p>
-<pre><code><div class="highlight"><pre><span></span><span class="n">WZ</span>  <span class="o">=</span> <span class="n">conv2</span><span class="p">(</span><span class="n">z</span><span class="p">,</span>         <span class="n">W</span><span class="p">,</span> <span class="s1">&#39;same&#39;</span><span class="p">)</span>   <span class="c1"># weighted sum of neighbours</span>
-<span class="n">nS</span>  <span class="o">=</span> <span class="n">conv2</span><span class="p">(</span><span class="n">ones_like</span><span class="p">(</span><span class="n">z</span><span class="p">),</span> <span class="n">W</span><span class="p">,</span> <span class="s1">&#39;same&#39;</span><span class="p">)</span>   <span class="c1"># normaliser, edge-correction</span>
-<span class="n">lagged</span> <span class="o">=</span> <span class="n">WZ</span> <span class="o">/</span> <span class="n">nS</span>                    <span class="c1"># mean of standardised neighbours</span>
-<span class="n">local_i</span> <span class="o">=</span> <span class="n">z</span> <span class="o">*</span> <span class="n">lagged</span>                <span class="c1"># Local Moran&#39;s I per pixel</span>
-</pre></div>
-</code></pre>
-<p>The <code>nS</code> normaliser corrects for kernel weight that &quot;falls off the edge&quot; of
-the image, which is why we use zero-padding rather than a periodic boundary.</p>
-<h3>4. Global Moran's I (<code>global_morans_i</code>)</h3>
-<p>The global statistic is the <strong>OLS slope</strong> of <code>lagged</code> regressed on <code>z</code> —
-i.e. <code>cov(z, lagged) / var(z)</code>. Computed with <code>numpy.polyfit</code>. Returns
-<code>0.0</code> when <code>z</code> has zero variance.</p>
-<h3>5. Permutation test (<code>_permutation_pass</code>, inside <code>morans_compute</code>)</h3>
-<p>For each repetition <code>1…n_repeats</code>:</p>
+<h2>Output</h2>
+<ul>
+<li><strong>FFT CBF:</strong> dominant frequency in the selected search range.</li>
+<li><strong>Peak-interval CBF:</strong> independent check based on repeated peaks in the ROI signal.</li>
+<li><strong>Kymograph:</strong> visual audit of periodic motion in the ROI.</li>
+<li><strong>CSV export:</strong> raw ROI time-intensity signal and FFT power spectrum.</li>
+</ul>
+<h2>Good Measurement Practice</h2>
+<ul>
+<li>Use videos with known FPS.</li>
+<li>Keep temperature, medium, and timing consistent across samples.</li>
+<li>Place the ROI on active cilia, not static tissue, debris, or whole-frame motion.</li>
+<li>Use multiple ROIs/videos and biological replicates for group comparisons.</li>
+<li>Treat whole-frame motion frequency as exploratory only.</li>
+</ul>
+<h2>Limitations</h2>
+<p>This plugin measures beat frequency, not full ciliary waveform or clinical diagnostic beat pattern. A sample can have a normal CBF but abnormal waveform or poor flow generation. Always review the raw video and kymograph before interpreting the number.</p>
+<h2>References</h2>
 <ol>
-<li>Shuffle <code>z</code> to obtain <code>z_perm</code>.</li>
-<li>Recompute the permuted lagged map and <code>local_i_perm</code>.</li>
-<li><strong>Sign-aware tally</strong>: for each pixel, increment a counter when
-<code>local_i_perm</code> lies in the same tail (positive vs. negative) as the
-observed <code>local_i_obs</code> and has equal-or-greater magnitude.</li>
+<li>Chilvers MA, O'Callaghan C. Analysis of ciliary beat pattern and beat frequency using digital high speed imaging: comparison with the photomultiplier and photodiode methods. <em>Thorax</em>. 2000;55:314-317. doi:10.1136/thorax.55.4.314</li>
+<li>Jackson CL, Bottier M. Methods for the assessment of human airway ciliary function. <em>European Respiratory Journal</em>. 2022;60:2102300. doi:10.1183/13993003.02300-2021</li>
+<li>Francis R. A Simple Method for Imaging and Quantifying Respiratory Cilia Motility in Mouse Models. <em>Methods and Protocols</em>. 2025;8:113. doi:10.3390/mps8050113</li>
 </ol>
-<p>After <code>n_repeats</code> permutations, the pseudo <em>p</em>-value per pixel is
-<code>(count + 1) / (n_repeats + 1)</code> — the standard <code>+1</code> correction that keeps
-<em>p</em> strictly positive. Sign-aware tallying matches the MATLAB reference
-and is <strong>not</strong> equivalent to a two-sided absolute-value test.</p>
-<h3>6. Cluster classification (<code>classify_clusters</code>)</h3>
-<p>Threshold the <em>p</em>-values at the user-chosen significance level, then
-classify each significant pixel by the signs of <code>z</code> and <code>lagged</code>:</p>
-<table>
-<thead>
-<tr>
-<th><code>z</code></th>
-<th><code>lagged</code></th>
-<th>label</th>
-<th>code</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>≥ 0</td>
-<td>≥ 0</td>
-<td>HH</td>
-<td>1</td>
-</tr>
-<tr>
-<td>&lt; 0</td>
-<td>&lt; 0</td>
-<td>LL</td>
-<td>2</td>
-</tr>
-<tr>
-<td>&lt; 0</td>
-<td>≥ 0</td>
-<td>LH</td>
-<td>3</td>
-</tr>
-<tr>
-<td>≥ 0</td>
-<td>&lt; 0</td>
-<td>HL</td>
-<td>4</td>
-</tr>
-</tbody>
-</table>
-<p>Non-significant pixels get code <code>0</code> (NS).</p>
-<h3>Threading model</h3>
-<p>The whole pipeline is exposed as a <em>generator</em> (<code>morans_compute</code>) that yields
-integer progress percentages in <code>[0, 100]</code>. The widget wraps it in
-<code>@napari.qt.threading.thread_worker</code>:</p>
-<pre><code class="language-python"><div class="highlight"><pre><span></span><span class="nd">@thread_worker</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">_run</span><span class="p">():</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="k">yield from</span> <span class="n">morans_compute</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="err">…</span><span class="p">,</span> <span class="n">sig_level</span><span class="o">=</span><span class="err">…</span><span class="p">,</span> <span class="n">n_repeats</span><span class="o">=</span><span class="err">…</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">result</span>
-</pre></div>
-</code></pre>
-<p><code>yield from</code> automatically forwards every progress integer to the worker's
-<code>yielded</code> Qt-signal (which drives the progress bar) and forwards the final
-return value to the <code>returned</code> signal (which adds the output layers).</p>
-<p><code>Cancel</code> calls <code>worker.quit()</code>, which stops the generator at its next
-<code>yield</code>, leaving the viewer responsive at all times.</p>
-<hr />
-<h2>Citation</h2>
-<p>If you use this plugin in academic work, please cite both the original paper</p>
-<blockquote>
-<p>Dávid Cs. <em>et al.</em> (2024). <em>eLife</em>, <a href="https://doi.org/10.7554/eLife.89361.2">doi:10.7554/eLife.89361.1</a></p>
-</blockquote>
-<p>and napari (Sofroniew <em>et al.</em>, 2022, doi:10.5281/zenodo.3555620).</p>
-<h2>Contributing</h2>
-<p>Contributions are very welcome. Tests can be run with <a href="https://tox.readthedocs.io/en/latest/">tox</a>, please ensure
-the coverage at least stays the same before you submit a pull request.</p>
-<h2>License</h2>
-<p>Distributed under the terms of the <a href="http://opensource.org/licenses/BSD-3-Clause">BSD-3</a> license,
-&quot;napari-morans-i&quot; is free and open source software</p>
-<h2>Issues</h2>
-<p>If you encounter any problems, please <a href="https://github.com/lukasjarzembowski/napari-morans-i/issues">file an issue</a> along with a detailed description.</p>
 
 
                                     </div>
@@ -473,7 +289,7 @@ the coverage at least stays the same before you submit a pull request.</p>
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">1.0</li>
+                                                    <li class="MetadataList_textItem__KKmMN">1.0.3</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -504,7 +320,7 @@ the coverage at least stays the same before you submit a pull request.</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
                                                     <li class="MetadataList_textItem__KKmMN">
-                                                            BSD-3-Clause
+                                                            MIT
                                                     </li>
                                                 </ul>
                                             </div>
@@ -530,7 +346,7 @@ the coverage at least stays the same before you submit a pull request.</p>
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">Plugin
                                                     type<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=widget">Widget</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=sample_data">Sample_data</a></li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=widget">Widget</a></li></ul>
                                             </div>
                                         </div>
                                         <div class="text-sm">
@@ -580,7 +396,7 @@ the coverage at least stays the same before you submit a pull request.</p>
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">
                                                     Requirements<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy>=1.21</li><li class="MetadataList_textItem__KKmMN">scipy>=1.7</li><li class="MetadataList_textItem__KKmMN">magicgui>=0.7</li><li class="MetadataList_textItem__KKmMN">qtpy>=2.0</li><li class="MetadataList_textItem__KKmMN">napari</li><li class="MetadataList_textItem__KKmMN">napari[all]; extra == "all"</li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">napari</li><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">scipy</li><li class="MetadataList_textItem__KKmMN">opencv-python</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">matplotlib</li></ul>
                                             </div>
                                         </div>
                                     </div>
