@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">4.2.9</li>
+                                            <li class="MetadataList_textItem__KKmMN">4.2.10</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -229,6 +229,7 @@
 <li>Added <code>Scan Full Image by Tiles</code> for Advanced <code>Exemplar segmentation</code> when large-image local inference is enabled.</li>
 <li>The local ROI size becomes the tile size, so a 6k x 6k image can be processed as many smaller SAM3 calls instead of one oversized inference.</li>
 <li>Added <code>Tile overlap</code> control, default <code>15%</code>, to reduce edge misses between neighboring tiles.</li>
+<li>Added <code>Merge seam-split objects</code>, enabled by default, to reconnect objects cut by straight tile boundaries after stitching.</li>
 <li>Composed all tile results into <code>SAM3 tiled exemplar labels</code> with full original image shape.</li>
 <li>Renamed the normal run action in this mode to <code>Run Current ROI Only</code>, making the difference between one local test tile and full-image scanning clear.</li>
 <li>Added clearer progress and output naming so users can tell whether they ran a single ROI or a full tiled scan.</li>
@@ -991,7 +992,7 @@ nvrtc: error: invalid value for --gpu-architecture
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">4.2.9</li>
+                                                    <li class="MetadataList_textItem__KKmMN">4.2.10</li>
                                                 </ul>
                                             </div>
                                         </div>
