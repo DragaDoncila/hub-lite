@@ -4,20 +4,20 @@
 
 <head>
     <meta charset="utf-8" />
-    <link href="../plugins/napari-deeplabcut.html" rel="canonical" />
+    <link href="../plugins/napari-czi.html" rel="canonical" />
     <meta content="width=device-width,initial-scale=1" name="viewport" />
     <meta
-        content="napari-deeplabcut, Team DeepLabCut, led by Jessy Lauer, napari hub, napari, hub, plugin, image analysis, imaging, chan zuckerberg initiative"
+        content="napari-czi, Noemi Bosio, napari hub, napari, hub, plugin, image analysis, imaging, chan zuckerberg initiative"
         name="keywords" />
-    <meta content="napari + DeepLabCut annotation tool" name="description" />
-    <meta content="napari + DeepLabCut annotation tool" property="og:description" />
-    <meta content="napari + DeepLabCut annotation tool." name="twitter:description" />
-    <meta content="napari-deeplabcut - napari Plugin - Team DeepLabCut, led by Jessy Lauer" property="og:title" />
-    <meta content="napari-deeplabcut - napari Plugin - Team DeepLabCut, led by Jessy Lauer" name="twitter:title" />
+    <meta content="Support for .czi files" name="description" />
+    <meta content="Support for .czi files" property="og:description" />
+    <meta content="Support for .czi files." name="twitter:description" />
+    <meta content="napari CZI Reader - napari Plugin - Noemi Bosio" property="og:title" />
+    <meta content="napari CZI Reader - napari Plugin - Noemi Bosio" name="twitter:title" />
     <meta content="article" property="og:type" />
-    <meta content="../plugins/napari-deeplabcut.html" property="og:url" />
+    <meta content="../plugins/napari-czi.html" property="og:url" />
     <meta content="@napari_imaging" name="twitter:site" />
-    <title>napari-deeplabcut - napari Plugin - Team DeepLabCut, led by Jessy Lauer</title>
+    <title>napari CZI Reader - napari Plugin - Noemi Bosio</title>
 
     <meta content="2" name="next-head-count" />
     <meta content="#80d1ff" name="theme-color" />
@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.3.1.0</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.1.0</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -90,7 +90,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">First released<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2022-06-03</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-05-19</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -99,7 +99,7 @@
                                         <p class="font-bold whitespace-nowrap">License<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
                                             <li class="MetadataList_textItem__KKmMN">
-                                                LGPL-3.0-only
+                                                BSD-3-Clause
                                             </li>
                                         </ul>
                                     </div>
@@ -112,19 +112,19 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Plugin type<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=reader">Reader</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=writer">Writer</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=widget">Widget</a></li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=reader">Reader</a></li></ul>
                                     </div>
                                 </div>
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Open extension<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?readerFileExtensions=*.h5">*.h5</a></li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?readerFileExtensions=*.czi">*.czi</a></li></ul>
                                     </div>
                                 </div>
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Save extension<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?writerFileExtensions=.h5">.h5</a></li></ul>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -156,7 +156,7 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Requirements<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">dask-image</li><li class="MetadataList_textItem__KKmMN">matplotlib>=3.3</li><li class="MetadataList_textItem__KKmMN">napari==0.6.6</li><li class="MetadataList_textItem__KKmMN">natsort</li><li class="MetadataList_textItem__KKmMN">numpy<2,>=1.18.5</li><li class="MetadataList_textItem__KKmMN">opencv-python-headless</li><li class="MetadataList_textItem__KKmMN">pandas</li><li class="MetadataList_textItem__KKmMN">pyside6>=6.4.2</li><li class="MetadataList_textItem__KKmMN">pyyaml</li><li class="MetadataList_textItem__KKmMN">qtpy>=2.4</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">scipy</li><li class="MetadataList_textItem__KKmMN">shiboken6>=6.4.2</li><li class="MetadataList_textItem__KKmMN">tables</li><li class="MetadataList_textItem__KKmMN">pillow; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pre-commit; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">tox; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">torch; extra == "tracking"</li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">dask</li><li class="MetadataList_textItem__KKmMN">pylibCZIrw</li><li class="MetadataList_textItem__KKmMN">napari</li><li class="MetadataList_textItem__KKmMN">napari[all]; extra == "all"</li></ul>
                                     </div>
                                 </div>
                             </div>
@@ -168,26 +168,26 @@
                         <article
                             class="w-full col-span-2 row-start-1 screen-875:col-span-3 screen-1150:col-start-1 screen-1425:col-start-2">
                                 <div class="container" style="display: flex; flex-direction: column;">
-                                    <h1 class="font-bold text-4xl" style="margin-bottom: 20px;" >napari-deeplabcut</h1>
+                                    <h1 class="font-bold text-4xl" style="margin-bottom: 20px;" >napari CZI Reader</h1>
                                 </div>
 
                                 
    <div class="flex items-center" style="gap: 20px; ; align-items: center;"">
-        <a class="underline flex" href="https://pypi.org/project/napari-deeplabcut/" rel="noreferrer" target="_blank">
-        <img src="../static/images/PyPI_logo.svg.png" alt="PyPI" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">napari-deeplabcut</span>
+        <a class="underline flex" href="https://pypi.org/project/napari-czi/" rel="noreferrer" target="_blank">
+        <img src="../static/images/PyPI_logo.svg.png" alt="PyPI" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">napari-czi</span>
     </a>
     
-        <a class="underline flex" href="https://github.com/DeepLabCut/napari-deeplabcut/issues" rel="noreferrer" target="_blank">
-            <img src="../static/images/GitHub_Invertocat_Logo.svg.png" alt="GitHub" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">DeepLabCut/napari-deeplabcu</span>
+        <a class="underline flex" href="https://github.com/CCI-GU-Sweden/napari-czi/issues" rel="noreferrer" target="_blank">
+            <img src="../static/images/GitHub_Invertocat_Logo.svg.png" alt="GitHub" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">CCI-GU-Sweden/napari-cz</span>
         </a>
         </div>
 
                                 <div class="flex justify-between items-center my-6">
-                                    <h2 class="text-lg">napari + DeepLabCut annotation tool</h2>
+                                    <h2 class="text-lg">Support for .czi files</h2>
                                 </div>
                                 <ul class="PluginAuthors_authors__hs3zO">
                                     <li class="inline">
-                                        <span class="text-[11px] screen-495:text-[14px] font-semibold">Team DeepLabCut, led by Jessy Lauer</span>
+                                        <span class="text-[11px] screen-495:text-[14px] font-semibold">Noemi Bosio</span>
                                     </li>
                             </ul>
                             <div class="screen-1425:hidden mt-sds-xl mb-sds-xxl"><a
@@ -209,273 +209,45 @@
                                 <div class="flex items-center justify-between mb-sds-xxl">
                                     <div class="Markdown_markdown__QZ95j">
 
-                                        <img src="https://images.squarespace-cdn.com/content/v1/57f6d51c9f74566f55ecf271/1d409ffe-c9f4-47e1-bde2-3010c1c40455/naparidlc.png?format=750w" width="450" title="napari-deeplabcut" alt="napari+deeplabcut" align="right" vspace="80">
-<p><a href="https://deeplabcut.github.io/DeepLabCut/docs/gui/napari_GUI.html">📚 Plugin Documentation</a> |
-<a href="https://deeplabcut.github.io/DeepLabCut/docs/installation.html">🛠️ DeepLabCut Installation</a> |
-<a href="https://www.deeplabcut.org">🌎 DeepLabCut Home Page</a> |</p>
-<p><a href="https://www.gnu.org/licenses/lgpl-3.0"><img src="https://img.shields.io/badge/License-LGPL%203.0-blue.svg" alt="License: LGPL-3.0" /></a>
-<a href="https://pypi.org/project/napari-deeplabcut"><img src="https://img.shields.io/pypi/v/napari-deeplabcut.svg?color=green" alt="PyPI" /></a>
-<a href="https://python.org"><img src="https://img.shields.io/pypi/pyversions/napari-deeplabcut.svg?color=green" alt="Python Version" /></a>
-<a href="https://github.com/DeepLabCut/napari-deeplabcut/actions/workflows/test_and_deploy.yml"><img src="https://github.com/DeepLabCut/napari-deeplabcut/actions/workflows/test_and_deploy.yml/badge.svg?branch=main" alt="tests" /></a>
-<a href="https://codecov.io/gh/DeepLabCut/napari-deeplabcut"><img src="https://codecov.io/gh/DeepLabCut/napari-deeplabcut/branch/main/graph/badge.svg" alt="codecov" /></a>
-<a href="https://napari-hub.org/plugins/napari-deeplabcut"><img src="https://img.shields.io/endpoint?url=https://api.napari-hub.org/shields/napari-deeplabcut" alt="napari hub" /></a></p>
-<p>A napari plugin for keypoint annotation and label refinement, also used within DeepLabCut.</p>
+                                        <p><a href="https://github.com/CCI-GU-Sweden/napari-czi/raw/main/LICENSE"><img src="https://img.shields.io/pypi/l/napari-czi.svg?color=green" alt="License MIT" /></a>
+<a href="https://pypi.org/project/napari-czi"><img src="https://img.shields.io/pypi/v/napari-czi.svg?color=green" alt="PyPI" /></a>
+<a href="https://python.org"><img src="https://img.shields.io/pypi/pyversions/napari-czi.svg?color=green" alt="Python Version" /></a>
+<a href="https://github.com/CCI-GU-Sweden/napari-czi/actions"><img src="https://github.com/CCI-GU-Sweden/napari-czi/workflows/tests/badge.svg" alt="tests" /></a>
+<a href="https://codecov.io/gh/CCI-GU-Sweden/napari-czi"><img src="https://codecov.io/gh/CCI-GU-Sweden/napari-czi/branch/main/graph/badge.svg" alt="codecov" /></a>
+<a href="https://napari-hub.org/plugins/napari-czi"><img src="https://img.shields.io/endpoint?url=https://api.napari-hub.org/shields/napari-czi" alt="napari hub" /></a>
+<a href="https://napari.org/stable/plugins/index.html"><img src="https://img.shields.io/badge/plugin-npe2-blue?link=https://napari.org/stable/plugins/index.html" alt="npe2" /></a>
+<a href="https://github.com/copier-org/copier"><img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/copier-org/copier/master/img/badge/badge-grayscale-inverted-border-purple.json" alt="Copier" /></a></p>
+<p>Support for .czi files</p>
 <hr />
-<h2>Installation</h2>
-<p>If you installed <code>DeepLabCut[gui]</code>, this plugin is already included.</p>
-<p>You can also install <code>napari-deeplabcut</code> as a standalone keypoint annotation plugin without using the full DeepLabCut GUI.</p>
-<h3>Standard install</h3>
-<p>Using <code>pip</code> (e.g. in a <code>conda</code> environment):</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>napari-deeplabcut
-</pre></div>
-</code></pre>
-<p>Using <code>uv</code>:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>uv<span class="w"> </span>venv<span class="w"> </span>-p<span class="w"> </span><span class="m">3</span>.12<span class="w"> </span><span class="c1"># create a new virtual environment with Python 3.12</span>
-<span class="nb">source</span><span class="w"> </span>.venv/bin/activate<span class="w"> </span><span class="c1"># activate the virtual environment. Use the relevant command for your OS/shell if different.</span>
-uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>napari-deeplabcut
-</pre></div>
-</code></pre>
-<blockquote>
-<p>[!NOTE]
-A conda environment or uv venv is not strictly required. Please use your preferred package manager!</p>
-</blockquote>
-<h3>Latest development version</h3>
-<p>Using <code>pip</code>:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/DeepLabCut/napari-deeplabcut.git
-</pre></div>
-</code></pre>
-<hr />
-<h2>Usage</h2>
-<h3>Main documentation</h3>
-<p>Please see the <a href="https://deeplabcut.github.io/DeepLabCut/docs/gui/napari/basic_usage.html">official plugin documentation</a> for detailed usage instructions.</p>
-<h3>Standalone usage</h3>
-<p>Start napari:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>napari
-</pre></div>
-</code></pre>
-<p>Then activate the plugin in:</p>
-<blockquote>
-<p><strong>Plugins → napari-deeplabcut: Keypoint controls</strong></p>
-</blockquote>
-<p>Accepted files such as <code>config.yaml</code>, image folders, videos, and <code>.h5</code> annotation files can be loaded either by dragging them onto the canvas or through the <strong>File</strong> menu.</p>
-<blockquote>
-<p>[!TIP]
-The widget opens automatically when drag-and-dropping a compatible labeled-data folder.</p>
-</blockquote>
-<h3>Recommended way to get started</h3>
-<p>The easiest way to start labeling from scratch is:</p>
-<ol>
-<li>Open (or drag-and-drop) an image-only folder from your computer, or within a DeepLabCut project's <code>labeled-data</code> directory</li>
-</ol>
-<ul>
-<li>This means that only the images are loaded, without any existing annotations</li>
-</ul>
-<ol start="2">
-<li>Open (or drag-and-drop) the <code>config.yaml</code> from your project</li>
-</ol>
-<p>This creates:</p>
-<ul>
-<li>an <strong>Image</strong> layer with the images (or video frames), and</li>
-<li>an empty <strong>Points</strong> layer populated with the keypoint metadata from the config.</li>
-</ul>
-<p>You may then start annotating in the points layer that was created.</p>
-<blockquote>
-<p>[!NOTE]
-If you load a folder from outside a DeepLabCut project and try to save a Points layer, you will be prompted to provide the config.yaml file
-used by the project. You may then move the labeled data folder into your project directory for downstream use.</p>
-</blockquote>
-<p><a href="https://youtu.be/hsA9IB5r73E">🎥 DEMO</a></p>
-<hr />
-<h2>Tools and shortcuts</h2>
-<ul>
-<li><code>2</code> / <code>3</code>: switch between labeling and selection mode when a Points layer is active</li>
-<li><code>4</code>: enable pan &amp; zoom</li>
-<li><code>M</code>: cycle through sequential, quick, and cycle annotation modes</li>
-<li><code>E</code>: toggle edge coloring</li>
-<li><code>F</code>: toggle between individual and body-part coloring modes</li>
-<li><code>V</code>: toggle visibility of the selected layer</li>
-<li><code>Backspace</code>: delete selected point(s)</li>
-<li><code>Ctrl+C</code> / <code>Ctrl+V</code>: copy and paste selected points</li>
-<li>Double-click the current frame number to jump to a specific frame</li>
-</ul>
-<blockquote>
-<p>[!TIP]
-Press the &quot;View shortcuts&quot; button in the dock widget for a reference.</p>
-</blockquote>
-<p>Additional dock controls include:</p>
-<ul>
-<li><strong>Warn on overwrite</strong>: enable or disable confirmation prompts when saving would overwrite existing annotations</li>
-<li><strong>Show trails</strong>: display keypoint trails over time in the main viewer</li>
-<li><strong>Show trajectories</strong>: open a trajectory plot in a separate dock widget</li>
-<li><strong>Show color scheme</strong>: display the active/configured color mapping reference</li>
-<li><strong>Video tools</strong>: extract the current frame and store crop coordinates for videos</li>
-</ul>
-<hr />
-<h2>Saving layers</h2>
-<p>Use:</p>
-<blockquote>
-<p><strong>File → Save Selected Layer(s)...</strong></p>
-</blockquote>
-<p>or the shortcut:</p>
-<pre><code class="language-text"><div class="highlight"><pre><span></span>Ctrl+S
-</pre></div>
-</code></pre>
-<h3>Keypoint save behavior</h3>
-<p>Keypoint annotations are automatically saved into the corresponding dataset folder as:</p>
-<pre><code class="language-text"><div class="highlight"><pre><span></span>CollectedData_&lt;ScorerName&gt;.h5
-</pre></div>
-</code></pre>
-<p>For convenience, the companion <code>.csv</code> file is written in the same folder.</p>
-<h3>Important notes</h3>
-<ul>
-<li>DeepLabCut uses the <strong>H5</strong> file as the authoritative annotation file.</li>
-<li>Before saving, make sure the <strong>Points</strong> layer you want to save is selected.
-<ul>
-<li>The plugin will not save if several Points layers are selected at the same time, to avoid ambiguity.</li>
-</ul>
-</li>
-<li>Saving a <code>machinelabels...</code> layer does <strong>not</strong> write back to the machine labels file.
-Instead, refined annotations are written into the appropriate <code>CollectedData...</code> file.</li>
-<li>If saving would overwrite existing annotations, the plugin will prompt for confirmation.
-<ul>
-<li>While labeling, confirmation can be disabled by unchecking the &quot;Warn on overwrite&quot; option in the dock widget.</li>
-</ul>
-</li>
-<li>Several plugin functions implicitly expect <code>config.yaml</code> to be present two folders up from the saved <code>CollectedData...</code> file, so make sure to keep the config in the project directory structure for best results. Fallback behaviors are present but may not cover all edge cases.
-<ul>
-<li>If you save a Points layer without a config file present in the expected location, you will be prompted to provide the path to the config file that matches the dataset you are working on. The plugin will then save the points and metadata into the correct folder based on the config path provided. Afterwards, it is recommended to move the dataset folder into the correct location within the project directory structure for best compatibility with other DeepLabCut functions. Please edit the <code>config.yaml</code> file if needed to update the paths to the videos and image folders.</li>
-</ul>
-</li>
-</ul>
-<hr />
-<h2>Video support</h2>
-<p>Videos can be opened directly in the GUI.</p>
-<p>When a video is loaded, the plugin enables a small video action panel that can be used to:</p>
-<ul>
-<li>Extract the current frame into the dataset</li>
-<li>Optionally export existing machine labels for that frame</li>
-<li>Define and save crop coordinates to the DLC <code>config.yaml</code></li>
-</ul>
-<p>Keypoints in video-based workflows can be edited and saved in the same way as ordinary image-folder workflows.</p>
-<hr />
-<h2>Workflow (outside of DLC GUI)</h2>
-<p>Suggested workflows depend on what is already present in the dataset folder.</p>
-<p>Please note this describes the workflow when napari is launched as a standalone application, outside of the DeepLabCut GUI.</p>
-<h3>1) Labeling from scratch</h3>
-<p>Use this when the image folder does <strong>not</strong> yet contain a <code>CollectedData_&lt;ScorerName&gt;.h5</code> file.</p>
-<ol>
-<li>Open a folder of extracted images</li>
-<li>Open the corresponding DeepLabCut <code>config.yaml</code></li>
-<li>Select the created <strong>Points</strong> layer</li>
-<li>Start labeling</li>
-<li>Save the points layer with <code>Ctrl+S</code></li>
-</ol>
-<p>After saving, the folder should now contain:</p>
-<pre><code class="language-text"><div class="highlight"><pre><span></span>CollectedData_&lt;ScorerName&gt;.h5
-CollectedData_&lt;ScorerName&gt;.csv
-</pre></div>
-</code></pre>
-<hr />
-<h3>2) Resuming labeling</h3>
-<p>Use this when the folder already contains a <code>CollectedData_&lt;ScorerName&gt;.h5</code> file.</p>
-<p>Open (or drag-and-drop) the folder in napari. The existing keypoint metadata and annotations will be loaded from the H5 file, so loading <code>config.yaml</code> is not needed nor recommended.</p>
-<p>However, loading the config is still useful if:</p>
-<ul>
-<li>The project’s bodyparts changed</li>
-<li>You would like to refresh the configured color scheme from the project config</li>
-</ul>
-<hr />
-<h3>3) Refining machine labels</h3>
-<p>Use this when the folder contains a machine predictions file such as:</p>
-<pre><code class="language-text"><div class="highlight"><pre><span></span>machinelabels-iter&lt;...&gt;.h5
-</pre></div>
-</code></pre>
-<p>Open the folder in napari.</p>
-<p>If both a <code>CollectedData...</code> file and a <code>machinelabels...</code> file are present:</p>
-<ul>
-<li>Edit the <code>machinelabels</code> layer to refine predictions</li>
-<li>Optionally use edge coloring (<code>E</code>) to highlight low-confidence labels</li>
-<li>Save the selected <code>machinelabels</code> layer to merge refinements into <code>CollectedData</code></li>
-</ul>
-<p>If the folder contains only <code>machinelabels...</code> and no <code>CollectedData...</code>, refined annotations will still be saved into a new <code>CollectedData...</code> target.</p>
-<hr />
-<h2>Workflow flowchart</h2>
-<pre><code class="language-mermaid"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="p">{</span><span class="n">init</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;flowchart&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;htmlLabels&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">}}</span> <span class="p">}</span><span class="o">%%</span>
-<span class="n">graph</span> <span class="n">TD</span>
-  <span class="n">id1</span><span class="p">[</span><span class="n">What</span> <span class="n">stage</span> <span class="n">of</span> <span class="n">labeling</span><span class="err">?</span><span class="p">]</span>
-  <span class="n">id2</span><span class="p">[</span><span class="n">deeplabcut</span><span class="o">.</span><span class="n">label_frames</span><span class="p">]</span>
-  <span class="n">id3</span><span class="p">[</span><span class="n">deeplabcut</span><span class="o">.</span><span class="n">refine_labels</span><span class="p">]</span>
-  <span class="n">id4</span><span class="p">[</span><span class="n">Add</span> <span class="n">labels</span> <span class="n">to</span><span class="p">,</span> <span class="ow">or</span> <span class="n">modify</span> <span class="ow">in</span><span class="p">,</span>
- <span class="err">`</span><span class="n">CollectedData</span><span class="o">...</span><span class="err">`</span> <span class="n">layer</span> <span class="ow">and</span> <span class="n">save</span> <span class="n">that</span> <span class="n">layer</span><span class="p">]</span>
-  <span class="n">id5</span><span class="p">[</span><span class="n">Modify</span> <span class="n">labels</span> <span class="ow">in</span> <span class="err">`</span><span class="n">machinelabels</span><span class="err">`</span> <span class="n">layer</span> <span class="ow">and</span> <span class="n">save</span>
- <span class="n">which</span> <span class="n">will</span> <span class="n">create</span> <span class="ow">or</span> <span class="n">update</span> <span class="err">`</span><span class="n">CollectedData</span><span class="o">...</span><span class="err">`</span><span class="p">]</span>
-  <span class="n">id6</span><span class="p">[</span><span class="n">Have</span> <span class="n">you</span> <span class="n">refined</span> <span class="n">some</span> <span class="n">labels</span> <span class="kn">from</span><span class="w"> </span><span class="nn">the</span> <span class="n">most</span> <span class="n">recent</span> <span class="n">iteration</span> <span class="ow">and</span> <span class="n">saved</span> <span class="n">already</span><span class="err">?</span><span class="p">]</span>
-  <span class="n">id7</span><span class="p">[</span><span class="s2">&quot;All extracted frames are already saved in `CollectedData...`.</span>
-<span class="mf">1.</span> <span class="n">Hide</span> <span class="ow">or</span> <span class="n">remove</span> <span class="nb">all</span> <span class="err">`</span><span class="n">machinelabels</span><span class="err">`</span> <span class="n">layers</span><span class="o">.</span>
-<span class="mf">2.</span> <span class="n">Continue</span> <span class="n">working</span> <span class="ow">in</span> <span class="err">`</span><span class="n">CollectedData</span><span class="err">`</span><span class="o">.</span><span class="s2">&quot;]</span>
-  <span class="n">id8</span><span class="p">[</span><span class="s2">&quot;1. Keep only the most recent `machinelabels` layer.</span>
-<span class="mf">2.</span> <span class="n">Select</span> <span class="n">it</span> <span class="ow">and</span> <span class="n">press</span> <span class="err">`</span><span class="n">E</span><span class="err">`</span> <span class="n">to</span> <span class="n">show</span> <span class="n">edges</span><span class="o">.</span>
-<span class="mf">3.</span> <span class="n">Refine</span> <span class="n">labels</span> <span class="ow">in</span> <span class="err">`</span><span class="n">machinelabels</span><span class="err">`</span><span class="o">.</span>
-<span class="mf">4.</span> <span class="n">Save</span> <span class="n">to</span> <span class="n">merge</span> <span class="n">into</span> <span class="err">`</span><span class="n">CollectedData</span><span class="err">`</span><span class="o">.</span>
-<span class="o">-</span> <span class="n">If</span> <span class="n">you</span> <span class="n">revisit</span> <span class="n">the</span> <span class="n">dataset</span> <span class="n">later</span><span class="p">,</span> <span class="n">you</span> <span class="n">can</span> <span class="k">continue</span> <span class="n">working</span> <span class="ow">in</span> <span class="err">`</span><span class="n">CollectedData</span><span class="err">`</span><span class="o">.</span><span class="s2">&quot;]</span>
+<p>This <a href="https://github.com/napari/napari">napari</a> plugin was generated with <a href="https://copier.readthedocs.io/en/stable/">copier</a> using the <a href="https://github.com/napari/napari-plugin-template">napari-plugin-template</a> (None).</p>
+<!--
+Don't miss the full getting started guide to set up your new package:
+https://github.com/napari/napari-plugin-template#getting-started
 
-  <span class="n">id1</span> <span class="o">--&gt;|</span><span class="n">I</span> <span class="n">need</span> <span class="n">to</span> <span class="n">manually</span> <span class="n">label</span> <span class="n">new</span> <span class="n">frames</span>
- <span class="ow">or</span> <span class="n">fix</span> <span class="n">existing</span> <span class="n">labels</span><span class="o">|</span><span class="n">id2</span>
-  <span class="n">id1</span> <span class="o">--&gt;|</span><span class="n">I</span> <span class="n">need</span> <span class="n">to</span> <span class="n">refine</span> <span class="n">outlier</span> <span class="n">frames</span>
- <span class="kn">from</span><span class="w"> </span><span class="nn">analyzed</span> <span class="n">videos</span><span class="o">|</span><span class="n">id3</span>
-  <span class="n">id2</span> <span class="o">--&gt;</span> <span class="n">id4</span>
-  <span class="n">id3</span> <span class="o">--&gt;|</span><span class="n">I</span> <span class="n">only</span> <span class="n">have</span> <span class="n">a</span> <span class="err">`</span><span class="n">machinelabels</span><span class="o">...</span><span class="err">`</span> <span class="n">file</span><span class="o">|</span><span class="n">id5</span>
-  <span class="n">id3</span> <span class="o">--&gt;|</span><span class="n">I</span> <span class="n">have</span> <span class="n">both</span> <span class="err">`</span><span class="n">machinelabels</span><span class="err">`</span> <span class="ow">and</span> <span class="err">`</span><span class="n">CollectedData</span><span class="err">`</span> <span class="n">files</span><span class="o">|</span><span class="n">id6</span>
-  <span class="n">id6</span> <span class="o">--&gt;|</span><span class="n">yes</span><span class="o">|</span><span class="n">id7</span>
-  <span class="n">id6</span> <span class="o">--&gt;|</span><span class="n">no</span><span class="p">,</span> <span class="n">I</span> <span class="n">just</span> <span class="n">extracted</span> <span class="n">outliers</span><span class="o">|</span><span class="n">id8</span>
+and review the napari docs for plugin developers:
+https://napari.org/stable/plugins/index.html
+-->
+<h2>Installation</h2>
+<p>You can install <code>napari-czi</code> via <a href="https://pypi.org/project/pip/">pip</a>:</p>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>napari-czi
 </pre></div>
 </code></pre>
-<hr />
-<h2>Labeling multiple image folders</h2>
-<p>Only one dataset folder should be worked on at a time.</p>
-<p>After finishing a folder:</p>
-<ol>
-<li>Save the relevant <strong>Points</strong> layer</li>
-<li>Remove the current layers from the viewer</li>
-<li>Open the next folder</li>
-</ol>
-<p>This keeps plugin operation and saving unambiguous.</p>
-<hr />
-<h2>Defining crop coordinates</h2>
-<p>To store crop coordinates in a DLC project:</p>
-<ol>
-<li>Open the video from the project’s <code>videos</code> folder</li>
-<li>Enable cropping in the video tools</li>
-<li>Draw a rectangle in the newly created crop layer (the tool is selected by default)</li>
-<li>Click <strong>Store crop coordinates</strong> after checking the coordinates in the widget.</li>
-</ol>
-<p>The crop coordinates are then written back to the project configuration.</p>
-<hr />
+<p>If napari is not already installed, you can install <code>napari-czi</code> with napari and Qt via:</p>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;napari-czi[all]&quot;</span>
+</pre></div>
+</code></pre>
+<p>To install latest development version:</p>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/CCI-GU-Sweden/napari-czi.git
+</pre></div>
+</code></pre>
 <h2>Contributing</h2>
-<p>Contributions are welcome.</p>
-<p>Tests can be run locally with <a href="https://tox.readthedocs.io/en/latest/">tox</a>.
-Please note we use pre-commit hooks to run linters and formatters on changed files, so make sure to install the pre-commit dependencies:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>pre-commit
-pre-commit<span class="w"> </span>install
-</pre></div>
-</code></pre>
-<h3>Development install</h3>
-<p>Clone the repository and install it in editable mode.</p>
-<p>Using <code>pip</code>:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
-</pre></div>
-</code></pre>
-<p>If you need development dependencies as well, use the project’s <code>dev</code> extra:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.<span class="o">[</span>dev<span class="o">]</span><span class="w"> </span><span class="c1"># includes pre-commit</span>
-</pre></div>
-</code></pre>
+<p>Contributions are very welcome. Tests can be run with <a href="https://tox.readthedocs.io/en/latest/">tox</a>, please ensure
+the coverage at least stays the same before you submit a pull request.</p>
 <h2>License</h2>
-<p>Distributed under the terms of the <a href="https://www.gnu.org/licenses/lgpl-3.0">LGPL-3.0</a>.</p>
+<p>Distributed under the terms of the <a href="http://opensource.org/licenses/BSD-3-Clause">BSD-3-Clause</a> license,
+&quot;napari-czi&quot; is free and open source software</p>
 <h2>Issues</h2>
-<p>If you encounter any problems, please <a href="https://github.com/DeepLabCut/napari-deeplabcut/issues">file an issue</a> with a detailed description and, if possible, a minimal reproducible example.</p>
-<h2>Acknowledgements</h2>
-<p>This <a href="https://github.com/napari/napari">napari</a> plugin was originally generated with <a href="https://github.com/audreyr/cookiecutter">Cookiecutter</a> using <a href="https://github.com/napari">@napari</a>'s <a href="https://github.com/napari/cookiecutter-napari-plugin">cookiecutter-napari-plugin</a> template.</p>
-<p>We thank the Chan Zuckerberg Initiative (CZI) for funding the initial development of this work!</p>
+<p>If you encounter any problems, please <a href="https://github.com/CCI-GU-Sweden/napari-czi/issues">file an issue</a> along with a detailed description.</p>
 
 
                                     </div>
@@ -491,7 +263,7 @@ pre-commit<span class="w"> </span>install
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.3.1.0</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.1.0</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -511,7 +283,7 @@ pre-commit<span class="w"> </span>install
                                                     released<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2022-06-03</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-05-19</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -522,7 +294,7 @@ pre-commit<span class="w"> </span>install
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
                                                     <li class="MetadataList_textItem__KKmMN">
-                                                            LGPL-3.0-only
+                                                            BSD-3-Clause
                                                     </li>
                                                 </ul>
                                             </div>
@@ -548,21 +320,21 @@ pre-commit<span class="w"> </span>install
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">Plugin
                                                     type<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=reader">Reader</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=writer">Writer</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=widget">Widget</a></li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=reader">Reader</a></li></ul>
                                             </div>
                                         </div>
                                         <div class="text-sm">
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">Open
                                                     extension<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?readerFileExtensions=*.h5">*.h5</a></li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?readerFileExtensions=*.czi">*.czi</a></li></ul>
                                             </div>
                                         </div>
                                         <div class="text-sm">
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">Save
                                                     extension<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?writerFileExtensions=.h5">.h5</a></li></ul>
+                                                    
                                             </div>
                                         </div>
                                     </div>
@@ -598,7 +370,7 @@ pre-commit<span class="w"> </span>install
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">
                                                     Requirements<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">dask-image</li><li class="MetadataList_textItem__KKmMN">matplotlib>=3.3</li><li class="MetadataList_textItem__KKmMN">napari==0.6.6</li><li class="MetadataList_textItem__KKmMN">natsort</li><li class="MetadataList_textItem__KKmMN">numpy<2,>=1.18.5</li><li class="MetadataList_textItem__KKmMN">opencv-python-headless</li><li class="MetadataList_textItem__KKmMN">pandas</li><li class="MetadataList_textItem__KKmMN">pyside6>=6.4.2</li><li class="MetadataList_textItem__KKmMN">pyyaml</li><li class="MetadataList_textItem__KKmMN">qtpy>=2.4</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">scipy</li><li class="MetadataList_textItem__KKmMN">shiboken6>=6.4.2</li><li class="MetadataList_textItem__KKmMN">tables</li><li class="MetadataList_textItem__KKmMN">pillow; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pre-commit; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">tox; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">torch; extra == "tracking"</li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">dask</li><li class="MetadataList_textItem__KKmMN">pylibCZIrw</li><li class="MetadataList_textItem__KKmMN">napari</li><li class="MetadataList_textItem__KKmMN">napari[all]; extra == "all"</li></ul>
                                             </div>
                                         </div>
                                     </div>
