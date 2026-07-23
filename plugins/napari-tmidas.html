@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.5.9</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.5.10</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-07-13</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-07-23</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -223,7 +223,7 @@
 <h2>✨ Key Features</h2>
 <p>🤖 <strong>AI Methods Built-In</strong></p>
 <ul>
-<li>Virtual staining (VisCy) • Denoising (CAREamics) • Spot detection (Spotiflow) • Segmentation (Cellpose, Convpaint) • Tracking (Trackastra, Ultrack)</li>
+<li>Virtual staining (VisCy) • Denoising (CAREamics) • Spot detection (Spotiflow) • Segmentation (Cellpose, Convpaint) • Tracking (Trackastra, HOCT, Ultrack)</li>
 <li>Auto-install in isolated environments • No dependency conflicts • GPU acceleration</li>
 </ul>
 <p>🔄 <strong>Universal File Conversion</strong></p>
@@ -301,6 +301,11 @@ napari
 <td><a href="docs/trackastra_tracking.md">Guide</a></td>
 </tr>
 <tr>
+<td>🧬 <strong>HOCT</strong></td>
+<td>Transformer-based cell tracking (Higher-Order Cell Tracking Transformer)</td>
+<td><a href="docs/hoct_tracking.md">Guide</a></td>
+</tr>
+<tr>
 <td>🔗 <strong>Ultrack</strong></td>
 <td>Cell tracking based on segmentation ensemble</td>
 <td><a href="docs/ultrack_tracking.md">Guide</a></td>
@@ -319,7 +324,7 @@ napari
 <h3>Advanced Features</h3>
 <ul>
 <li><a href="docs/crop_anything.md">Batch Crop Anything</a> - Interactive object cropping with SAM2</li>
-<li><a href="docs/batch_label_inspection.md">Batch Label Inspection</a> - Manual label verification and editing</li>
+<li><a href="docs/batch_label_inspection.md">Batch Label Inspection</a> - Manual label verification and editing, with one-click delete/relabel across all timepoints, click-to-split for merged objects, and click-to-merge-neighbors for over-segmented ones</li>
 <li><a href="docs/multichannel_processing.md">Multichannel Processing</a> - Channel selection and per-channel processing</li>
 </ul>
 <h2>💻 Installation</h2>
@@ -395,7 +400,7 @@ tox
 <p>Built with <a href="https://github.com/napari/napari">napari</a> and powered by:</p>
 <p><strong>AI/ML Methods:</strong></p>
 <ul>
-<li><a href="https://github.com/MouseLand/cellpose">Cellpose</a> • <a href="https://github.com/guiwitz/napari-convpaint">Convpaint</a> • <a href="https://github.com/mehta-lab/VisCy">VisCy</a> • <a href="https://github.com/CAREamics/careamics">CAREamics</a> • <a href="https://github.com/weigertlab/spotiflow">Spotiflow</a> • <a href="https://github.com/weigertlab/trackastra">Trackastra</a> • <a href="https://github.com/royerlab/ultrack">Ultrack</a> • <a href="https://github.com/facebookresearch/segment-anything-2">SAM2</a></li>
+<li><a href="https://github.com/MouseLand/cellpose">Cellpose</a> • <a href="https://github.com/guiwitz/napari-convpaint">Convpaint</a> • <a href="https://github.com/mehta-lab/VisCy">VisCy</a> • <a href="https://github.com/CAREamics/careamics">CAREamics</a> • <a href="https://github.com/weigertlab/spotiflow">Spotiflow</a> • <a href="https://github.com/weigertlab/trackastra">Trackastra</a> • <a href="https://github.com/royerlab/hoct">HOCT</a> • <a href="https://github.com/royerlab/ultrack">Ultrack</a> • <a href="https://github.com/facebookresearch/segment-anything-2">SAM2</a></li>
 </ul>
 <p><strong>Core Scientific Stack:</strong></p>
 <ul>
@@ -421,7 +426,7 @@ tox
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.5.9</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.5.10</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -431,7 +436,7 @@ tox
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-07-13</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-07-23</li>
                                                 </ul>
                                             </div>
                                         </div>
