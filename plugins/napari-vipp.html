@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.13.0a1</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.13.0a4</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-08-06</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-08-09</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -236,9 +236,9 @@ and batch publication only after source reverification. See the
 <a href="docs/architecture.md#scientific-integrity-boundaries">scientific integrity boundaries</a>
 and the contributor <a href="CONTRIBUTING.md#scientific-behavior-requirements">scientific behavior requirements</a>.</p>
 <h2>Install And Open</h2>
-<p>VIPP 0.13.0a1 supports CPython 3.12 and 3.13. If napari is not already
+<p>VIPP 0.13.0a4 supports CPython 3.12 and 3.13. If napari is not already
 installed, install it with a Qt backend at the same time:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;napari[pyqt6]&gt;=0.6&quot;</span><span class="w"> </span><span class="s2">&quot;napari-vipp==0.13.0a1&quot;</span>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;napari[pyqt6]&gt;=0.6&quot;</span><span class="w"> </span><span class="s2">&quot;napari-vipp==0.13.0a4&quot;</span>
 vipp
 </pre></div>
 </code></pre>
@@ -251,16 +251,18 @@ native Windows machine with a compatible NVIDIA driver, the self-contained
 CUDA 13 route is:</p>
 <pre><code class="language-powershell"><div class="highlight"><pre><span></span><span class="n">py</span> <span class="p">-</span><span class="n">3</span><span class="p">.</span><span class="n">12</span> <span class="n">-m</span> <span class="n">venv</span> <span class="s2">&quot;.venv-vipp-gpu-cu13&quot;</span>
 <span class="p">&amp;</span> <span class="s2">&quot;.\.venv-vipp-gpu-cu13\Scripts\python.exe&quot;</span> <span class="n">-m</span> <span class="n">pip</span> <span class="n">install</span> <span class="p">-</span><span class="n">-upgrade</span> <span class="n">pip</span>
-<span class="p">&amp;</span> <span class="s2">&quot;.\.venv-vipp-gpu-cu13\Scripts\python.exe&quot;</span> <span class="n">-m</span> <span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;napari[pyqt6]&gt;=0.6&quot;</span> <span class="s2">&quot;napari-vipp[gpu-cuda13]==0.13.0a1&quot;</span>
+<span class="p">&amp;</span> <span class="s2">&quot;.\.venv-vipp-gpu-cu13\Scripts\python.exe&quot;</span> <span class="n">-m</span> <span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;napari[pyqt6]&gt;=0.6&quot;</span> <span class="s2">&quot;napari-vipp[gpu-cuda13]==0.13.0a4&quot;</span>
 <span class="p">&amp;</span> <span class="s2">&quot;.\.venv-vipp-gpu-cu13\Scripts\vipp-compute-doctor.exe&quot;</span> <span class="p">-</span><span class="n">-track</span> <span class="n">cuda13</span>
 <span class="p">&amp;</span> <span class="s2">&quot;.\.venv-vipp-gpu-cu13\Scripts\vipp.exe&quot;</span>
 </pre></div>
 </code></pre>
 <p>This installs the exact NumPy, SciPy, scikit-image, CuPy, and CUDA package
-versions used by the public admission policy. Public GPU admission in this
-alpha is intentionally narrower than package installation: the reviewed
-native-Windows evidence is for the recorded CUDA 13 / RTX 5090 environment.
-Other hardware, Linux, unsupported dtypes or parameters, and missing optional
+versions used by the public admission policy. On native Windows with CPython
+3.12, Auto, Prefer GPU, and explicit Custom GPU choices can use an NVIDIA CUDA
+device with compute capability 7.5 or newer when CUDA runtime API 13.2, driver
+API 13.3 or newer, and the exact scientific/provider gates pass. The GPU model
+is recorded for provenance rather than used as an allowlist. Linux,
+unsupported dtypes or parameters, insufficient memory, and missing optional
 providers remain on the scientifically authoritative CPU path with a visible
 reason. Only the NVIDIA display driver is a machine-wide prerequisite; this
 standard route does not need a separate CUDA Toolkit, <code>nvcc</code>, Visual Studio, or
@@ -268,7 +270,7 @@ CMake. macOS is CPU-only in this alpha. The standard extra also omits cuCIM;
 Windows users can optionally build the pinned cuCIM 26.6.0 source locally and
 approve that wheel in the same environment. Without it, the affected nodes
 remain on CPU. See the
-<a href="https://rensutheart.github.io/vipp-mkdocs/0.13.0a1/getting-started/windows-cuda/">Windows CUDA and cuCIM guide</a>
+<a href="https://rensutheart.github.io/vipp-mkdocs/0.13.0a4/getting-started/windows-cuda/">Windows CUDA and cuCIM guide</a>
 and <a href="#gpu-execution-and-development-environment">GPU scope and setup</a> before
 using accelerated results.</p>
 <p>In napari, open:</p>
@@ -409,7 +411,7 @@ current limitations.</p>
 <h2>Documentation</h2>
 <ul>
 <li><a href="https://rensutheart.github.io/vipp-mkdocs/">Published VIPP documentation</a></li>
-<li><a href="CHANGELOG.md#0130a1---2026-08-06">Categorized 0.13.0a1 release notes</a></li>
+<li><a href="CHANGELOG.md#0130a4---2026-08-09">Categorized 0.13.0a4 release notes</a></li>
 <li><a href="docs/README.md">Documentation index</a></li>
 <li><a href="docs/user-guide.md">User guide</a></li>
 <li><a href="docs/io-user-guide.md">Image import and export</a></li>
@@ -598,10 +600,11 @@ subnormal samples, squares, and outputs rather than silently changing a
 threshold decision. GPU progress advances only after each 64-row tile is
 synchronized; cancellation occurs between tiles. Calls outside the reviewed
 region, missing CUDA/CuPy, and unqualified platforms visibly remain on CPU.</p>
-<p>The source-current full-profile RTX 5090 record passed all 10 exact admission
-cases, all 10 matched rejection cases, cancellation/cleanup, and bitwise parity
-for all 18 timed workloads. Representative transfer-inclusive speedups were
-23.57x for a 512² radius-0.5 plane, 55.23x for a 512² radius-2 plane, 170.95x
+<p>The historical pre-0.13.0a3 full-profile RTX 5090 record passed all 10 exact
+admission cases, all 10 matched rejection cases, cancellation/cleanup, and
+bitwise parity for all 18 timed workloads. Representative transfer-inclusive
+speedups were 23.57x for a 512² radius-0.5 plane, 55.23x for a 512² radius-2
+plane, 170.95x
 for a 2048² radius-10 plane, and 93.62x for an 8×512² radius-2 stack. On this
 host, radius 0.5 first cleared both Auto gates at 512²: its 20.13-ms absolute
 saving just exceeded the 20-ms gate, while its paired 95% speedup lower bound
@@ -660,9 +663,10 @@ are included in optimization, and the public table always ends device
 residency. Tiny cuCIM region-properties/Euler lookup caches are primed once in
 a separate module-owned pool; every transactional execution pool must still
 return to zero.</p>
-<p>The source-current RTX 5090 record passed all 11 admission cases, all 11 matched
-rejections, both lifecycle cases, and clean private-pool teardown. Full-public
-speedups were 1.87x for 1024² morphology, 16.37x for 2048² morphology plus
+<p>The historical pre-0.13.0a4 RTX 5090 record passed all 11 admission cases, all
+11 matched rejections, both lifecycle cases, and clean private-pool teardown.
+Full-public speedups were 1.87x for 1024² morphology, 16.37x for 2048²
+morphology plus
 <code>uint16</code> intensity, 7.28x for a 32×256×256 intensity volume, and 23.90x for a
 64×512×512 confocal-like intensity volume. CPU was correctly faster for small
 256²/512² images and for the measured 6×512² float32 intensity stack. These are
@@ -848,12 +852,35 @@ scikit-image 0.26.0. VIPP records those versions in the compute-environment
 fingerprint and visibly keeps nodes on CPU if any are missing or different;
 broader dependency versions require their own parity matrix rather than an
 implicit compatibility claim.</p>
-<p>Public admission currently matches the recorded native-Windows host exactly:
-CUDA runtime API 13.2 (<code>13020</code>), driver API 13.3 (<code>13030</code>), CuPy/CuPyX 14.1.1,
-and an NVIDIA GeForce RTX 5090 with compute capability 12.0. A different CUDA
-runtime, driver, model, or compute capability visibly keeps the node on CPU
-until that environment has its own reviewed evidence. Provider-level developer
-qualification can still run directly outside this public gate.</p>
+<p>Public Auto, Prefer-GPU, and explicit Custom GPU admission use a compatible-
+device rule rather than a model-name allowlist. The pinned native-Windows CUDA
+13 stack and synchronized provider probes must pass, CUDA runtime API 13.2 is
+required, the driver API must be 13.3 or newer, and the NVIDIA device must
+report compute capability 7.5 or newer. Auto remains evidence- and workload-
+driven and may correctly select CPU; Prefer GPU requests every scientifically
+and operationally eligible public GPU implementation even when CPU is faster.
+<strong>Find fastest pipeline…</strong> remains available to run exact node and changed-
+output whole-pipeline parity before proposing a measured Custom assignment.</p>
+<p>Reference evidence includes the retained RTX 5090 operation matrices and
+source-current 0.13.0a4 RTX 4050 Laptop GPU runs. On that RTX 4050, all 13
+bundled workflows completed independently in CPU, Auto, and Prefer-GPU modes;
+both accelerated modes selected real CUDA nodes and passed the selected nodes'
+declared parity contracts without fallback or cleanup failure. The exact
+0.13.0a3 tagged wheel also passed end-to-end local qualification, Find Fastest,
+applied CuPyX median execution, bitwise CPU parity, no-fallback execution,
+cleanup, and terminal-memory checks on the same system. These records establish
+bounded evidence for their exact hosts and revisions; they are not portable
+performance promises or a guarantee of bitwise identity on every compatible
+GPU.</p>
+<p>Compatible GPUs can show minor device-dependent floating-point differences
+because CUDA hardware, drivers, compiler paths, and reduction order can differ.
+VIPP still enforces each implementation's declared parity contract. For
+reproducibility, retain the exact GPU model and compute capability, NVIDIA
+driver, CUDA driver/runtime and toolkit-package versions, Python,
+CuPy/CuPyX/cuCIM, NumPy, SciPy, scikit-image, actual implementation IDs,
+workflow, and input identities. Validate consequential results against the CPU
+reference and review results before combining runs from different
+environments.</p>
 <p>The machine still needs a compatible NVIDIA driver. Select <code>--track cuda12</code> for
 the separate <code>.venv-gpu-cu12</code> qualification-only environment; CUDA 12 is
 outside the current public admission region. The project also
@@ -876,7 +903,7 @@ writes the approval record without replacing VIPP with an editable checkout.
 When the remaining environment and workload gates pass, Subtract Background,
 Rolling-Ball Background, and the admitted basic measurements can use cuCIM;
 otherwise they visibly fall back to CPU. Follow the
-<a href="https://rensutheart.github.io/vipp-mkdocs/0.13.0a1/getting-started/windows-cuda/">Windows CUDA and local cuCIM guide</a>;
+<a href="https://rensutheart.github.io/vipp-mkdocs/0.13.0a4/getting-started/windows-cuda/">Windows CUDA and local cuCIM guide</a>;
 the <a href="docs/cucim-windows-source-evaluation.md">cuCIM source evaluation</a> records
 the technical evidence, and
 <a href="scripts/build_cucim_windows.ps1"><code>scripts/build_cucim_windows.ps1</code></a> implements
@@ -916,9 +943,21 @@ guidance, and report suspected vulnerabilities privately through
 <a href="SECURITY.md">SECURITY.md</a>. All project interactions follow the
 <a href="CODE_OF_CONDUCT.md">Code of Conduct</a>.</p>
 <h2>0.13 Alpha Highlights</h2>
-<p><code>0.13.0a1</code> is the current alpha. It is VIPP's first usable, evidence-gated GPU
-release while retaining CPU as the portable scientific reference path:</p>
+<p><code>0.13.0a4</code> is the current alpha. It admits compatible CUDA 13 GPUs across Auto,
+Prefer GPU, and explicit Custom choices without a model-name allowlist, while
+retaining the local Find-Fastest and Sigma fixes from <code>0.13.0a3</code>, the fresh-
+graph compute corrections from <code>0.13.0a2</code>, and the portable scientific CPU
+reference path introduced in <code>0.13.0a1</code>:</p>
 <ul>
+<li>exact per-port planning descriptors for <code>Split Channels</code>, with unresolved
+downstream projections kept unresolved until a deterministic contract or
+concrete value is available;</li>
+<li>compatible native-Windows CUDA 13 admission for NVIDIA compute capability
+7.5 or newer, with driver API 13.3 or newer and exact runtime, scientific-
+stack, provider, memory, and workload gates recorded by policy artifact v8;</li>
+<li>local Find-Fastest qualification for secondary NVIDIA GPUs that pass the
+pinned CUDA 13/provider gates and exact parity, plus a CuPy 14.1.1 Sigma
+kernel compile fix;</li>
 <li>toolbar <code>CPU</code>/<code>Auto</code>/<code>Prefer GPU</code>/<code>Custom</code> policy, per-node
 CPU/CuPy/cuCIM choices and
 actual-run badges, setup diagnostics, RAM/VRAM reporting, node benchmarking,
@@ -948,12 +987,13 @@ with guarded <code>QYX -&gt; ZYX</code> batch suggestions, Crop Stack type prese
 new Sigma Filter and ImageJ Auto Threshold nodes, plus substantial cache,
 optimizer, progress, cancellation, and publication hardening.</li>
 </ul>
-<p>GPU support is not complete or generally cross-platform in this alpha. Linux
-and RTX 40-series qualification, Apple acceleration, general cuCIM packaging,
-and additional node providers remain planned. Colocalization and ImageJ
+<p>GPU support is not complete or generally cross-platform in this alpha. Native
+Linux qualification, broader multi-architecture reproducibility evidence,
+Apple acceleration, general cuCIM packaging, and additional node providers
+remain planned. Colocalization and ImageJ
 compatibility work also changes some numerical results; review the scientific
 compatibility notes before comparing old and new analyses. See the categorized
-<a href="CHANGELOG.md#0130a1---2026-08-06">0.13.0a1 release notes</a>, the
+<a href="CHANGELOG.md#0130a4---2026-08-09">0.13.0a4 release notes</a>, the
 <a href="docs/user-guide.md#save-workflow-json">upgrade and workflow contract</a>, and
 <a href="docs/planning.md">planning.md</a> for the remaining milestones.</p>
 <h2>Citation, Acknowledgement, And License</h2>
@@ -978,7 +1018,7 @@ citation can be added when available.</p>
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.13.0a1</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.13.0a4</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -988,7 +1028,7 @@ citation can be added when available.</p>
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-08-06</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-08-09</li>
                                                 </ul>
                                             </div>
                                         </div>
