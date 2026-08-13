@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.13.0a5</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.13.0a6</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-08-12</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-08-13</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -211,8 +211,8 @@
 
                                         <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/branding/vipp-logo-dark.svg">
-    <img src="docs/assets/branding/vipp-logo.svg" alt="VIPP" width="420">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/rensutheart/napari-vipp/main/docs/assets/branding/vipp-logo-dark.svg">
+    <img src="https://raw.githubusercontent.com/rensutheart/napari-vipp/main/docs/assets/branding/vipp-logo.svg" alt="VIPP" width="420">
   </picture>
 </p>
 <h1>VIPP — Visual Image Processing Platform</h1>
@@ -241,8 +241,8 @@ and <a href="CONTRIBUTING.md#scientific-behavior-requirements">scientific behavi
 <h2>Quick Start</h2>
 <h3>Windows Installer (Recommended Path)</h3>
 <p>The normal experience is one Windows <code>.exe</code>: download
-<a href="https://github.com/rensutheart/napari-vipp/releases/download/v0.13.0a5/VIPP-Setup-0.13.0a5-Windows-x86_64-UNSIGNED.exe"><code>VIPP-Setup-0.13.0a5-Windows-x86_64-UNSIGNED.exe</code></a>
-from the official <code>v0.13.0a5</code> release, double-click it, and keep the recommended
+<a href="https://github.com/rensutheart/napari-vipp/releases/download/v0.13.0a6/VIPP-Setup-0.13.0a6-Windows-x86_64-UNSIGNED.exe"><code>VIPP-Setup-0.13.0a6-Windows-x86_64-UNSIGNED.exe</code></a>
+from the official <code>v0.13.0a6</code> release, double-click it, and keep the recommended
 managed VIPP environment. Review CPU or qualified NVIDIA GPU setup, then launch
 VIPP from the shortcuts it creates. A supported 64-bit Python is a separate prerequisite;
 if it is missing, setup links to the official Python 3.12.10 installer and lets
@@ -261,7 +261,7 @@ separately afterward.</p>
 so Windows will show <strong>Unknown publisher</strong> and may show
 <strong>Windows protected your PC</strong>. Download only the explicitly named
 <code>-UNSIGNED.exe</code> from the official
-<a href="https://github.com/rensutheart/napari-vipp/releases/tag/v0.13.0a5"><code>v0.13.0a5</code> GitHub release</a>,
+<a href="https://github.com/rensutheart/napari-vipp/releases/tag/v0.13.0a6"><code>v0.13.0a6</code> GitHub release</a>,
 verify its SHA-256 against the attached <code>SHA256SUMS</code> file, then select
 <strong>More info &gt; Run anyway</strong>. Stop if the hash differs or antivirus identifies
 a threat; never disable Windows security. The <a href="docs/quick-start.md">Quick Start</a>
@@ -269,11 +269,15 @@ gives the exact verification steps and a manual fallback.</p>
 </blockquote>
 <p>The <a href="docs/quick-start.md">VIPP Quick Start</a> explains the installer-first flow,
 current manual commands, CPU/GPU choices, prerequisites, the advanced
-existing-napari route, update/repair/uninstall behavior, and a first workflow.</p>
+existing-napari route, update/repair/uninstall behavior, and a first workflow.
+After a standard CUDA installation passes Compute Doctor, the separate
+<a href="https://github.com/rensutheart/napari-vipp/releases/download/v0.13.0a6/napari-vipp-cucim-installer-0.13.0a6-windows.zip"><code>0.13.0a6</code> cuCIM add-on</a>
+can build the optional pinned provider locally. It contains no prebuilt cuCIM
+wheel; verify the ZIP against the release checksum before extracting it.</p>
 <h3>Manual Installation (Advanced And Non-Windows)</h3>
-<p>VIPP <code>0.13.0a5</code> supports CPython 3.12 and 3.13. Create and activate a dedicated
+<p>VIPP <code>0.13.0a6</code> supports CPython 3.12 and 3.13. Create and activate a dedicated
 virtual environment, then install:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;napari[pyqt6]&gt;=0.6&quot;</span><span class="w"> </span><span class="s2">&quot;napari-vipp==0.13.0a5&quot;</span>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;napari[pyqt6]&gt;=0.6&quot;</span><span class="w"> </span><span class="s2">&quot;napari-vipp==0.13.0a6&quot;</span>
 vipp
 </pre></div>
 </code></pre>
@@ -291,7 +295,7 @@ GPU packages to a general napari environment by hand.</p>
 nodes from left to right to inspect parameters, previews, metadata, and
 outputs. <strong>Deterministic Batch &amp; Provenance</strong> is a self-contained introduction
 to collection processing.</p>
-<p><img src="docs/assets/user-guide/vipp-example-chooser.png" alt="VIPP example workflow chooser" /></p>
+<p><img src="https://raw.githubusercontent.com/rensutheart/napari-vipp/main/docs/assets/user-guide/vipp-example-chooser.png" alt="VIPP example workflow chooser" /></p>
 <h2>What VIPP Supports</h2>
 <table>
 <thead>
@@ -303,7 +307,7 @@ to collection processing.</p>
 <tbody>
 <tr>
 <td>Graph authoring</td>
-<td>Searchable node palette and canvas, typed ports, dynamic outputs, cycle prevention, undo/redo, graph notes, named tunnels, insert-on-wire, saved positions, and auto-layout.</td>
+<td>Searchable node palette and canvas, typed ports, multi-node selection and movement, copy/paste and exact-operation value transfer, dynamic outputs, cycle prevention, undo/redo, graph notes, named tunnels, insert-on-wire or before-tunnel editing, saved positions, and auto-layout.</td>
 </tr>
 <tr>
 <td>Images and metadata</td>
@@ -368,14 +372,14 @@ batch configuration, source-axis declarations, export, and scientific review.</p
 <p>Reader packages should be installed with the Python interpreter from the exact
 environment that launches VIPP, never a global/base Python. Keep the VIPP
 version pinned and restart napari afterward. For example:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;napari-vipp[nd2]==0.13.0a5&quot;</span>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;napari-vipp[nd2]==0.13.0a6&quot;</span>
 </pre></div>
 </code></pre>
 <p>Available extras include <code>nd2</code>, <code>czi</code>, <code>microscope</code>, and <code>bioformats</code>. See
 <a href="docs/io-user-guide.md">Image import and export</a> for formats, limitations, and
 the matching commands.</p>
 <h2>Windows Installer And Startup</h2>
-<p>VIPP <code>0.13.0a5</code> provides a novice-facing Windows setup window, automatic CPU/GPU
+<p>VIPP <code>0.13.0a6</code> provides a novice-facing Windows setup window, automatic CPU/GPU
 recommendation, exact dependency review, transactional install/update/repair,
 owned shortcuts, independent CPU/GPU Apps &amp; Features entries, ownership-safe
 uninstall, and acceptance checks. It installs into a private managed location
@@ -411,16 +415,13 @@ and <a href="docs/windows-installation-planner.md">Windows installation planner<
 <a href="SUPPORT.md">SUPPORT.md</a> for help, report vulnerabilities privately through
 <a href="SECURITY.md">SECURITY.md</a>, and follow the <a href="CODE_OF_CONDUCT.md">Code of Conduct</a>.</p>
 <h2>Current Alpha</h2>
-<p><code>0.13.0a5</code> adds the installer-first Windows experience, branded launchers, and
-the optional verified local cuCIM add-on. It retains compatible NVIDIA CUDA 13
-admission without a model-name allowlist and the exact software, scientific,
-memory, and workload gates from <code>0.13.0a4</code>. The 0.13 series also adds portable
-compute intent,
-actual implementation provenance, unified interactive/batch/export execution,
-workflow schema 4, batch schema 3, independent workflow tabs, expanded
-measurements/restoration, and substantial I/O, graph, progress, cancellation,
-and publication hardening.</p>
-<p>See the categorized <a href="CHANGELOG.md#0130a5---2026-08-12">0.13.0a5 release notes</a>
+<p><code>0.13.0a6</code> adds multi-node graph copy/paste, exact-operation <strong>Paste Values</strong>,
+insertion before named tunnels, a clearer Compute Doctor, strict qualification
+of every public GPU implementation, Imaris <code>.ims</code> import, multi-series batch
+items, and a microscope-metadata node. It retains the installer-first Windows
+experience, compatible NVIDIA CUDA 13 admission, and the optional verified
+local cuCIM build.</p>
+<p>See the categorized <a href="CHANGELOG.md#0130a6---2026-08-13">0.13.0a6 release notes</a>
 and <a href="docs/planning.md">roadmap</a> for details and remaining milestones.</p>
 <h2>Citation, Acknowledgement, And License</h2>
 <p>If VIPP contributes to your work, acknowledge <code>napari-vipp</code> and link to the
@@ -444,7 +445,7 @@ citation can be added when available.</p>
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.13.0a5</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.13.0a6</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -454,7 +455,7 @@ citation can be added when available.</p>
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-08-12</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-08-13</li>
                                                 </ul>
                                             </div>
                                         </div>
