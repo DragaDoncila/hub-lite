@@ -12,12 +12,12 @@
     <meta content="Flim (fluorescence lifetime) image data opening, processing and analysis" name="description" />
     <meta content="Flim (fluorescence lifetime) image data opening, processing and analysis" property="og:description" />
     <meta content="Flim (fluorescence lifetime) image data opening, processing and analysis." name="twitter:description" />
-    <meta content="Flopa - napari Plugin - Zuzana Cockova" property="og:title" />
-    <meta content="Flopa - napari Plugin - Zuzana Cockova" name="twitter:title" />
+    <meta content="FLOPA - napari Plugin - Zuzana Cockova" property="og:title" />
+    <meta content="FLOPA - napari Plugin - Zuzana Cockova" name="twitter:title" />
     <meta content="article" property="og:type" />
     <meta content="../plugins/napari-flopa.html" property="og:url" />
     <meta content="@napari_imaging" name="twitter:site" />
-    <title>Flopa - napari Plugin - Zuzana Cockova</title>
+    <title>FLOPA - napari Plugin - Zuzana Cockova</title>
 
     <meta content="2" name="next-head-count" />
     <meta content="#80d1ff" name="theme-color" />
@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.1.0</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.1.1</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-07-28</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-08-14</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -156,7 +156,7 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Requirements<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">xarray</li><li class="MetadataList_textItem__KKmMN">scipy</li><li class="MetadataList_textItem__KKmMN">matplotlib<3.11</li><li class="MetadataList_textItem__KKmMN">superqt</li><li class="MetadataList_textItem__KKmMN">tttrkit==0.1.0rc2</li><li class="MetadataList_textItem__KKmMN">napari[all]; extra == "all"</li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">xarray</li><li class="MetadataList_textItem__KKmMN">scipy</li><li class="MetadataList_textItem__KKmMN">matplotlib>3.6</li><li class="MetadataList_textItem__KKmMN">superqt</li><li class="MetadataList_textItem__KKmMN">tttrkit</li><li class="MetadataList_textItem__KKmMN">napari[all]; extra == "all"</li></ul>
                                     </div>
                                 </div>
                             </div>
@@ -168,7 +168,7 @@
                         <article
                             class="w-full col-span-2 row-start-1 screen-875:col-span-3 screen-1150:col-start-1 screen-1425:col-start-2">
                                 <div class="container" style="display: flex; flex-direction: column;">
-                                    <h1 class="font-bold text-4xl" style="margin-bottom: 20px;" >Flopa</h1>
+                                    <h1 class="font-bold text-4xl" style="margin-bottom: 20px;" >FLOPA</h1>
                                 </div>
 
                                 
@@ -210,11 +210,9 @@
                                     <div class="Markdown_markdown__QZ95j">
 
                                         <p><a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green.svg" alt="License MIT" /></a>
-<a href="https://napari.org/stable/plugins/index.html"><img src="https://img.shields.io/badge/plugin-npe2-blue" alt="npe2" /></a></p>
-<!-- Enable these badges once the package is published to PyPI:
-[![PyPI](https://img.shields.io/pypi/v/napari-flopa.svg?color=green)](https://pypi.org/project/napari-flopa)
-[![Python Version](https://img.shields.io/pypi/pyversions/napari-flopa.svg?color=green)](https://python.org)
--->
+<a href="https://napari.org/stable/plugins/index.html"><img src="https://img.shields.io/badge/plugin-npe2-blue" alt="npe2" /></a>
+<a href="https://pypi.org/project/napari-flopa"><img src="https://img.shields.io/pypi/v/napari-flopa.svg?color=green" alt="PyPI" /></a>
+<a href="https://python.org"><img src="https://img.shields.io/pypi/pyversions/napari-flopa.svg?color=green" alt="Python Version" /></a></p>
 <blockquote>
 <p><strong>Work in progress</strong> — the plugin is functional but under active development. Expect breaking changes between versions.</p>
 </blockquote>
@@ -222,25 +220,80 @@
 <h2>Features</h2>
 <ul>
 <li><strong>Process PTU</strong> — reconstruct <code>.ptu</code> files into xarray datasets (photon count, mean arrival time, phasor, TCSPC histogram); supports multi-frame, multi-sequence and multi-detector data</li>
-<li><strong>FLIM View</strong> — interactive display with histogram contrast sliders for intensity and lifetime; FLIM RGB composite; export to TIFF/PNG</li>
+<li><strong>FLIM View</strong> — interactive display with histogram contrast sliders for intensity and lifetime; FLIM RGB composite; export to TIFF</li>
 <li><strong>Phasor</strong> — phasor plot with calibration, smoothing, per-object or per-pixel scatter, monoexponential lifetime semi-circle overlay</li>
 <li><strong>Decay</strong> — TCSPC decay plot with aggregation, normalisation and log scale</li>
-<li><strong>Batch</strong> — <strong>NOW DISABLED</strong> process a folder of <code>.ptu</code> files with a shared scan config and export images, phasor tables and decay tables; config saved/loaded as json</li>
+<li><strong>Batch</strong> — process a folder of <code>.ptu</code> files (opt. with masks) with a shared scan config and export images, phasor tables and decay tables; config saved/loaded as json</li>
+</ul>
+<h2>Requirements</h2>
+<ul>
+<li>Python ≥ 3.11</li>
+<li><a href="https://github.com/napari/napari">napari</a> with a Qt backend</li>
 </ul>
 <h2>Installation</h2>
-<blockquote>
-<p>⚠️ Not yet released on PyPI. Install from source:</p>
-</blockquote>
-<pre><code><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">cockovaz</span><span class="o">/</span><span class="n">napari</span><span class="o">-</span><span class="n">flopa</span>
-<span class="n">cd</span> <span class="n">napari</span><span class="o">-</span><span class="n">flopa</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="s2">&quot;.[all]&quot;</span>
+<p>Install into the environment where napari runs. Pick one:</p>
+<p><strong>From PyPI</strong></p>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>napari-flopa<span class="w">            </span><span class="c1"># plugin only, for an existing napari install</span>
+pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;napari-flopa[all]&quot;</span><span class="w">     </span><span class="c1"># plugin + napari + Qt</span>
 </pre></div>
 </code></pre>
-<!-- Once released on PyPI, installation will be:
-
-    pip install napari-flopa           # plugin only
-    pip install "napari-flopa[all]"    # with napari + Qt included
--->
+<p>Use the plain (non-<code>[all]</code>) form when you already have napari installed.</p>
+<p><strong>From source</strong></p>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/cockovaz/napari-flopa
+<span class="nb">cd</span><span class="w"> </span>napari-flopa
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[all]&quot;</span><span class="w">      </span><span class="c1"># editable install, napari + Qt included</span>
+</pre></div>
+</code></pre>
+<p>The <code>napari_flopa.core</code> package (I/O, reconstruction, image and phasor maths) imports
+no GUI libraries, so it can be used from a plain script or notebook without napari.</p>
+<h2>Getting started</h2>
+<p><strong>1. Open the plugin.</strong> Start napari and choose <strong>Plugins → FLOPA → FLIM Analysis</strong>.</p>
+<p><strong>2. Load a file.</strong> In the <strong>File</strong> tab, click <strong>Load Demo</strong> for the bundled demo
+dataset, or <strong>Read PTU…</strong> for your own. The header is parsed and the scan parameters
+are filled in; the coloured dot beside each field says where its value came from —
+file metadata, a default, an estimate, or your own edit.</p>
+<p><strong>3. Set the scan geometry.</strong> Frames, lines, pixels, sequences and accumulations must match how the image
+was actually acquired, because the raw file is a stream of photon and marker events
+with no image shape of its own. The header supplies what it knows; fill in the rest.
+<strong>Analyze Markers</strong> inspects the marker events and suggests dimensions.</p>
+<p><strong>4. Reconstruct.</strong> Pick what to compute under <strong>Output</strong>:</p>
+<ul>
+<li><em>Intensity</em> — photon-count image only, the fastest</li>
+<li><em>Int. + τ</em> — adds the mean arrival time (lifetime) image</li>
+<li><em>All</em> — adds phasor coordinates and the TCSPC decay (enables the
+<strong>Phasor</strong> and <strong>Decay</strong> tabs)</li>
+</ul>
+<p><strong>5. Look at the result.</strong> The <strong>FLIM View</strong> dock opens at the bottom, with a
+histogram for Intensity and one for Lifetime. Each has two sliders: the <strong>cyan</strong> one
+sets the display contrast, the <strong>red</strong> one a threshold range. <strong>→ Generate Int./Lt.
+Mask</strong> turns that range into a napari Labels layer. Intensity, lifetime and the FLIM RGB composite can be exported from here.</p>
+<p><strong>6. Analyse.</strong> <strong>Phasor</strong> plots g/s per object or per pixel — apply a calibration
+factor, pick a Labels layer to colour by object or to restrict the plot to a region.
+<strong>Decay</strong> plots the TCSPC curves, with <strong>From View</strong> to follow the frame/detector
+currently shown in FLIM View.</p>
+<p><strong>7. Reuse the settings.</strong> Use <strong>Batch</strong> tab to run a whole folder of <code>.ptu</code> files with identical settings.</p>
+<h2>Data model</h2>
+<p>Reading and reconstructing <code>.ptu</code> files is done by <strong><a href="https://github.com/panekdal/tttrkit">tttrkit</a></strong> (imported as
+<code>tttrkit.ptuio</code>), a separate package developed alongside this plugin. It is a
+normal dependency and is installed automatically — see <a href="https://github.com/panekdal/tttrkit">tttrkit</a> for the raw
+TTTR parsing, scan reconstruction and phasor maths that sit underneath the GUI.</p>
+<p>Reconstruction produces a single <code>xarray.Dataset</code> holding up to five variables.</p>
+<p>Four of them are images and share the dimensions
+<code>(frame, sequence, line, pixel, channel)</code>: <code>photon_count</code>, <code>mean_arrival_time</code>,
+<code>phasor_g</code> and <code>phasor_s</code>. Here <code>line</code> and <code>pixel</code> are the spatial axes and
+<code>channel</code> is the detector axis.</p>
+<p>The fifth, <code>tcspc_histogram</code>, is the global decay: its
+dimensions are <code>(frame, channel, tcspc_channel)</code> with no spatial axes.</p>
+<h2>Roadmap</h2>
+<p>Planned updates:</p>
+<ul>
+<li><strong>Interactive phasor</strong> — lasso a region of the plot and paint the matching pixels
+back into the image as a napari Labels layer</li>
+<li><strong>Decay fitting</strong> — extract lifetimes from the TCSPC curves</li>
+<li><strong>Region-wise decay</strong> — curves per mask and per object, not only per frame/detector</li>
+<li><strong>Wider import support</strong> — <code>.ptu</code> from further scanning systems, and other formats
+(<code>.sdt</code>, …)</li>
+</ul>
 <h2>License</h2>
 <p>Distributed under the terms of the <a href="http://opensource.org/licenses/MIT">MIT</a> license.
 <code>napari-flopa</code> is free and open source software.</p>
@@ -261,7 +314,7 @@
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.1.0</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.1.1</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -271,7 +324,7 @@
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-07-28</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-08-14</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -368,7 +421,7 @@
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">
                                                     Requirements<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">xarray</li><li class="MetadataList_textItem__KKmMN">scipy</li><li class="MetadataList_textItem__KKmMN">matplotlib<3.11</li><li class="MetadataList_textItem__KKmMN">superqt</li><li class="MetadataList_textItem__KKmMN">tttrkit==0.1.0rc2</li><li class="MetadataList_textItem__KKmMN">napari[all]; extra == "all"</li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">xarray</li><li class="MetadataList_textItem__KKmMN">scipy</li><li class="MetadataList_textItem__KKmMN">matplotlib>3.6</li><li class="MetadataList_textItem__KKmMN">superqt</li><li class="MetadataList_textItem__KKmMN">tttrkit</li><li class="MetadataList_textItem__KKmMN">napari[all]; extra == "all"</li></ul>
                                             </div>
                                         </div>
                                     </div>
