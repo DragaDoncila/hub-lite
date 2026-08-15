@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.13.0a6</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.13.0a7</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-08-13</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-08-15</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -240,9 +240,13 @@ after successful batch validation. See the
 and <a href="CONTRIBUTING.md#scientific-behavior-requirements">scientific behavior requirements</a>.</p>
 <h2>Quick Start</h2>
 <h3>Windows Installer (Recommended Path)</h3>
+<p>The <code>0.13.0a7</code> links below become valid only when the official
+<code>v0.13.0a7</code> GitHub prerelease and checksum sidecars are public. Until then, use
+the published <code>0.13.0a6</code> release or an explicitly marked development checkout;
+do not download a file from a guessed asset URL.</p>
 <p>The normal experience is one Windows <code>.exe</code>: download
-<a href="https://github.com/rensutheart/napari-vipp/releases/download/v0.13.0a6/VIPP-Setup-0.13.0a6-Windows-x86_64-UNSIGNED.exe"><code>VIPP-Setup-0.13.0a6-Windows-x86_64-UNSIGNED.exe</code></a>
-from the official <code>v0.13.0a6</code> release, double-click it, and keep the recommended
+<a href="https://github.com/rensutheart/napari-vipp/releases/download/v0.13.0a7/VIPP-Setup-0.13.0a7-Windows-x86_64-UNSIGNED.exe"><code>VIPP-Setup-0.13.0a7-Windows-x86_64-UNSIGNED.exe</code></a>
+from the official <code>v0.13.0a7</code> release, double-click it, and keep the recommended
 managed VIPP environment. Review CPU or qualified NVIDIA GPU setup, then launch
 VIPP from the shortcuts it creates. A supported 64-bit Python is a separate prerequisite;
 if it is missing, setup links to the official Python 3.12.10 installer and lets
@@ -256,12 +260,30 @@ used for Windows temporary files and VIPP installer records; CPU setup needs at
 least 1 GiB there. Setup names the exact location if that check fails. The
 standard GPU installation works without cuCIM; that optional add-on is installed
 separately afterward.</p>
+<p>For <code>0.13.0a7</code>, one-click managed installation uses only two fixed per-track
+roots. Windows supplies the canonical Local App Data directory through
+<code>SHGetKnownFolderPath(FOLDERID_LocalAppData)</code>; setup appends
+<code>VIPP\environments\cpu</code> or <code>VIPP\environments\cuda13</code>. Custom managed roots are
+not accepted. The CUDA path must contain ASCII characters only because the
+pinned CuPy 14.1.1 runtime cannot reliably compile CUDA kernels from a Windows
+environment path containing characters such as <code>Å</code> or <code>é</code>. Spaces are
+supported. If canonical Local App Data contains a non-ASCII character, the
+one-click CUDA route is unavailable and setup offers CPU instead. The fixed CPU
+root remains supported with Unicode paths.</p>
+<p>Expert-selected existing environments remain a separate, non-mutating route;
+setup does not move, edit, or turn them into managed installations. If an older
+installer-owned CUDA copy is already in an incompatible path, setup will not
+update or repair it in place. After any separately recorded recovery from an
+earlier interrupted transaction, the newly blocked selection performs no new
+mutation of that copy. It can be removed through its ownership-bound Windows
+Apps uninstaller, but this account cannot use one-click CUDA until its canonical
+Local App Data path is ASCII-compatible.</p>
 <blockquote>
 <p><strong>Unsigned alpha:</strong> this release is intentionally not Authenticode-signed,
 so Windows will show <strong>Unknown publisher</strong> and may show
 <strong>Windows protected your PC</strong>. Download only the explicitly named
 <code>-UNSIGNED.exe</code> from the official
-<a href="https://github.com/rensutheart/napari-vipp/releases/tag/v0.13.0a6"><code>v0.13.0a6</code> GitHub release</a>,
+<a href="https://github.com/rensutheart/napari-vipp/releases/tag/v0.13.0a7"><code>v0.13.0a7</code> GitHub release</a>,
 verify its SHA-256 against the attached <code>SHA256SUMS</code> file, then select
 <strong>More info &gt; Run anyway</strong>. Stop if the hash differs or antivirus identifies
 a threat; never disable Windows security. The <a href="docs/quick-start.md">Quick Start</a>
@@ -271,13 +293,13 @@ gives the exact verification steps and a manual fallback.</p>
 current manual commands, CPU/GPU choices, prerequisites, the advanced
 existing-napari route, update/repair/uninstall behavior, and a first workflow.
 After a standard CUDA installation passes Compute Doctor, the separate
-<a href="https://github.com/rensutheart/napari-vipp/releases/download/v0.13.0a6/napari-vipp-cucim-installer-0.13.0a6-windows.zip"><code>0.13.0a6</code> cuCIM add-on</a>
+<a href="https://github.com/rensutheart/napari-vipp/releases/download/v0.13.0a7/napari-vipp-cucim-installer-0.13.0a7-windows.zip"><code>0.13.0a7</code> cuCIM add-on</a>
 can build the optional pinned provider locally. It contains no prebuilt cuCIM
 wheel; verify the ZIP against the release checksum before extracting it.</p>
 <h3>Manual Installation (Advanced And Non-Windows)</h3>
-<p>VIPP <code>0.13.0a6</code> supports CPython 3.12 and 3.13. Create and activate a dedicated
+<p>VIPP <code>0.13.0a7</code> supports CPython 3.12 and 3.13. Create and activate a dedicated
 virtual environment, then install:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;napari[pyqt6]&gt;=0.6&quot;</span><span class="w"> </span><span class="s2">&quot;napari-vipp==0.13.0a6&quot;</span>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;napari[pyqt6]&gt;=0.6&quot;</span><span class="w"> </span><span class="s2">&quot;napari-vipp==0.13.0a7&quot;</span>
 vipp
 </pre></div>
 </code></pre>
@@ -372,14 +394,14 @@ batch configuration, source-axis declarations, export, and scientific review.</p
 <p>Reader packages should be installed with the Python interpreter from the exact
 environment that launches VIPP, never a global/base Python. Keep the VIPP
 version pinned and restart napari afterward. For example:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;napari-vipp[nd2]==0.13.0a6&quot;</span>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;napari-vipp[nd2]==0.13.0a7&quot;</span>
 </pre></div>
 </code></pre>
 <p>Available extras include <code>nd2</code>, <code>czi</code>, <code>microscope</code>, and <code>bioformats</code>. See
 <a href="docs/io-user-guide.md">Image import and export</a> for formats, limitations, and
 the matching commands.</p>
 <h2>Windows Installer And Startup</h2>
-<p>VIPP <code>0.13.0a6</code> provides a novice-facing Windows setup window, automatic CPU/GPU
+<p>VIPP <code>0.13.0a7</code> provides a novice-facing Windows setup window, automatic CPU/GPU
 recommendation, exact dependency review, transactional install/update/repair,
 owned shortcuts, independent CPU/GPU Apps &amp; Features entries, ownership-safe
 uninstall, and acceptance checks. It installs into a private managed location
@@ -415,13 +437,14 @@ and <a href="docs/windows-installation-planner.md">Windows installation planner<
 <a href="SUPPORT.md">SUPPORT.md</a> for help, report vulnerabilities privately through
 <a href="SECURITY.md">SECURITY.md</a>, and follow the <a href="CODE_OF_CONDUCT.md">Code of Conduct</a>.</p>
 <h2>Current Alpha</h2>
-<p><code>0.13.0a6</code> adds multi-node graph copy/paste, exact-operation <strong>Paste Values</strong>,
-insertion before named tunnels, a clearer Compute Doctor, strict qualification
-of every public GPU implementation, Imaris <code>.ims</code> import, multi-series batch
-items, and a microscope-metadata node. It retains the installer-first Windows
-experience, compatible NVIDIA CUDA 13 admission, and the optional verified
-local cuCIM build.</p>
-<p>See the categorized <a href="CHANGELOG.md#0130a6---2026-08-13">0.13.0a6 release notes</a>
+<p><code>0.13.0a7</code> adds visible one-click dtype repairs for GPU-blocked nodes, keeps
+scientifically inconclusive optimizer results available for inspection, and
+presents implementation timings as readable grouped rows. It also adds a
+reviewed GPU-resident segmentation corridor through thresholding, boolean mask
+cleanup, and connected components, plus a broader documented CPU/GPU agreement
+region for Richardson-Lucy deconvolution. CPU remains the portable reference,
+and unsupported inputs or parameters continue to use it visibly.</p>
+<p>See the categorized <a href="CHANGELOG.md#0130a7---2026-08-14">0.13.0a7 release notes</a>
 and <a href="docs/planning.md">roadmap</a> for details and remaining milestones.</p>
 <h2>Citation, Acknowledgement, And License</h2>
 <p>If VIPP contributes to your work, acknowledge <code>napari-vipp</code> and link to the
@@ -445,7 +468,7 @@ citation can be added when available.</p>
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.13.0a6</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.13.0a7</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -455,7 +478,7 @@ citation can be added when available.</p>
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-08-13</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-08-15</li>
                                                 </ul>
                                             </div>
                                         </div>
