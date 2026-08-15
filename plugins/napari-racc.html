@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.3.0</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.3.1</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-07-21</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-08-15</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -228,8 +228,8 @@ RACC volume on the right.</p>
 <li>linked analysis/display cutoffs with optional display-only channel thresholds</li>
 <li>independent RACC display minimum without changing the numeric result</li>
 <li>synchronized translucent, maximum-intensity, and additive 3D rendering modes</li>
-<li>separate intensity and RACC opacity controls, plus background suppression for
-clearer deep structures</li>
+<li>3D-only intensity and RACC opacity controls, plus background suppression for
+clearer deep structures without making 2D slices or fixed MIPs faint</li>
 <li>transparent zero-valued RACC voxels for clean volume rendering</li>
 <li>thresholded RGB overlay volume with selectable probe colors</li>
 <li>side-by-side overlay/RACC and 3D-derived MIP views</li>
@@ -266,12 +266,14 @@ uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </s
 <li>Keep <code>Link channel cutoffs to analysis thresholds</code> enabled for a directly
 comparable intensity view, or disable it to clean up the display without
 changing the analysis.</li>
-<li>Choose <code>Translucent</code>, <code>Maximum intensity (MIP)</code>, or <code>Additive</code> under
-<code>3D rendering</code>; the selection is applied to both the intensity overlay and
-the RACC volume.</li>
-<li>Use the RACC display minimum and background suppression to remove weak haze,
-then set the intensity and RACC opacities independently from 0 to 100. These
-display controls do not change the calculated or exported RACC values.</li>
+<li>Choose <code>Translucent</code>, <code>Maximum intensity (MIP)</code>, or <code>Additive</code> with the
+<code>Rendering method</code> control under <code>3D volume rendering</code>; the selection is
+applied to both the intensity overlay and the RACC volume.</li>
+<li>Under <code>Display mapping</code>, use the channel cutoffs and RACC display minimum to
+remove weak haze in both 2D and 3D. Under <code>3D volume rendering</code>, set the
+intensity/RACC opacities and background suppression. Those volume controls
+are deliberately ignored in single-slice and fixed <code>2D Z-MIPs</code> views. None
+of these display controls changes the calculated or exported RACC values.</li>
 <li>Use <code>Overlay</code>, <code>RACC</code>, <code>3D side by side</code>, and <code>2D Z-MIPs</code> to switch views.</li>
 <li>Press <code>Export RACC TIFF</code> to save the numeric RACC result stack for use in
 other software.</li>
@@ -321,7 +323,7 @@ the rights holder. See <code>LICENSE</code>, <code>NOTICE</code>, and <code>PATE
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.3.0</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.3.1</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -331,7 +333,7 @@ the rights holder. See <code>LICENSE</code>, <code>NOTICE</code>, and <code>PATE
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-07-21</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-08-15</li>
                                                 </ul>
                                             </div>
                                         </div>
