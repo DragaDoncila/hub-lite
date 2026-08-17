@@ -272,19 +272,19 @@ As for <a href="https://github.com/napari/napari">napari</a>, <a href="https://g
 </code></pre>
 <h4>Installation of the surface computation module</h4>
 <p>To install the surface computation enabled version it is necessary to use Python 3.9 (until <a href="https://vtk.org/">VTK</a> is ported to Python 3.10) and you can run one of the following commands:</p>
-<pre><code class="language-shell"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">&#39;.[pyvista]&#39;</span>
+<pre><code class="language-shell"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">'.[pyvista]'</span>
 </pre></div>
 </code></pre>
 <p>from the correct folder or</p>
-<pre><code class="language-shell"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">&#39;napari-sc3D-viewer[pyvista]&#39;</span>
+<pre><code class="language-shell"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">'napari-sc3D-viewer[pyvista]'</span>
 </pre></div>
 </code></pre>
 <p>or</p>
-<pre><code class="language-shell"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span><span class="s1">&#39;napari-sc3D-viewer[pyvista]&#39;</span>
+<pre><code class="language-shell"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span><span class="s1">'napari-sc3D-viewer[pyvista]'</span>
 </pre></div>
 </code></pre>
 <p>to install directly from pip or</p>
-<pre><code class="language-shell"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">&#39;napari-sc3D-viewer[pyvista] @ git+https://github.com/GuignardLab/napari-sc3D-viewer.git&#39;</span>
+<pre><code class="language-shell"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">'napari-sc3D-viewer[pyvista] @ git+https://github.com/GuignardLab/napari-sc3D-viewer.git'</span>
 </pre></div>
 </code></pre>
 <p>to install the latest version</p>
@@ -304,9 +304,9 @@ As for <a href="https://github.com/napari/napari">napari</a>, <a href="https://g
 <p>The expected dataset is a <a href="https://scanpy.readthedocs.io/en/latest/index.html">scanpy</a>/<a href="https://anndata.readthedocs.io/en/latest/">anndata</a> h5ad file together with an optional json file that maps cluster id numbers to actual tissue/cluster name.</p>
 <p>The json file should look like that:</p>
 <pre><code class="language-json"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;1&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Endoderm&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;2&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Heart&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;10&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Anterior neuroectoderm&quot;</span>
+<span class="w">    </span><span class="nt">"1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Endoderm"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Heart"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"10"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Anterior neuroectoderm"</span>
 <span class="p">}</span>
 </pre></div>
 </code></pre>

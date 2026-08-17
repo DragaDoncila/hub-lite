@@ -214,12 +214,12 @@
 <p>The panel is the quickest way to use HaemoLynx: it builds a settings form from
 the schema, checks the settings before anything runs, and runs the pipeline in a
 background thread while each stage's results appear in the viewer.</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;napari[all]&quot;</span><span class="w"> </span>--index-url<span class="w"> </span>https://test.pypi.org/simple/<span class="w"> </span>--extra-index-url<span class="w"> </span>https://pypi.org/simple<span class="w"> </span><span class="nv">HaemoLynx</span><span class="o">==</span><span class="m">0</span>.1.0
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"napari[all]"</span><span class="w"> </span>--index-url<span class="w"> </span>https://test.pypi.org/simple/<span class="w"> </span>--extra-index-url<span class="w"> </span>https://pypi.org/simple<span class="w"> </span><span class="nv">HaemoLynx</span><span class="o">==</span><span class="m">0</span>.1.0
 napari<span class="w">                             </span><span class="c1"># Plugins -&gt; HaemoLynx -&gt; Pipeline settings</span>
 </pre></div>
 </code></pre>
 <p>Once we have a pypi project and its not a test then do this</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;HaemoLynx[napari]&quot;</span><span class="w">    </span><span class="c1"># needs Python 3.11+ (napari&#39;s floor, not ours)</span>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"HaemoLynx[napari]"</span><span class="w">    </span><span class="c1"># needs Python 3.11+ (napari's floor, not ours)</span>
 napari<span class="w">                             </span><span class="c1"># Plugins -&gt; HaemoLynx -&gt; Pipeline settings</span>
 </pre></div>
 </code></pre>
@@ -294,7 +294,7 @@ can tick back on.</p>
 <p>The panel's own tests build real Qt widgets, so they need napari and a display.
 They are marked <code>gui</code>, skipped without one, and CI runs them on 3.11 under
 xvfb:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>pytest<span class="w"> </span>-m<span class="w"> </span>gui<span class="w">           </span><span class="c1"># with &quot;HaemoLynx[napari]&quot; installed</span>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>pytest<span class="w"> </span>-m<span class="w"> </span>gui<span class="w">           </span><span class="c1"># with "HaemoLynx[napari]" installed</span>
 </pre></div>
 </code></pre>
 <p>The library itself never imports napari; the extra is optional, and the panel is
@@ -309,7 +309,7 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 </pre></div>
 </code></pre>
 <p>To work on HaemoLynx itself, take the development extras as well:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[dev]&quot;</span>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">".[dev]"</span>
 </pre></div>
 </code></pre>
 <p><code>pyproject.toml</code> is the single source of truth for dependencies. Add the
@@ -322,7 +322,7 @@ every stage of the pipeline one cell at a time, with a plot after each, and
 explains what each stage is for. It is the fastest way to see what HaemoLynx
 does.</p>
 <p>Open it and run all cells — that is the whole setup:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;HaemoLynx[notebook]&quot;</span>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"HaemoLynx[notebook]"</span>
 jupyter<span class="w"> </span>notebook<span class="w"> </span>tutorials/pipeline_tutorial.ipynb
 </pre></div>
 </code></pre>
@@ -437,8 +437,8 @@ their dependencies, and exits non-zero if anything would fail partway through.</
 <p>Values are checked against the schema when the config loads, so a typo or an
 out-of-range number fails immediately rather than halfway through a long run:</p>
 <pre><code><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="n">configuration</span> <span class="n">problems</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">Unknown</span> <span class="n">setting</span> <span class="s1">&#39;inptu_path&#39;</span><span class="o">.</span> <span class="n">Did</span> <span class="n">you</span> <span class="n">mean</span><span class="p">:</span> <span class="n">input_path</span><span class="err">?</span>
-  <span class="o">-</span> <span class="n">Setting</span> <span class="s1">&#39;small_vessel_mask_min_overlap_fraction&#39;</span> <span class="ow">is</span> <span class="mf">5.0</span><span class="p">,</span> <span class="n">above</span> <span class="n">its</span> <span class="n">maximum</span> <span class="mf">1.0</span><span class="o">.</span>
+  <span class="o">-</span> <span class="n">Unknown</span> <span class="n">setting</span> <span class="s1">'inptu_path'</span><span class="o">.</span> <span class="n">Did</span> <span class="n">you</span> <span class="n">mean</span><span class="p">:</span> <span class="n">input_path</span><span class="err">?</span>
+  <span class="o">-</span> <span class="n">Setting</span> <span class="s1">'small_vessel_mask_min_overlap_fraction'</span> <span class="ow">is</span> <span class="mf">5.0</span><span class="p">,</span> <span class="n">above</span> <span class="n">its</span> <span class="n">maximum</span> <span class="mf">1.0</span><span class="o">.</span>
 </pre></div>
 </code></pre>
 <h3>Adding a setting</h3>
@@ -459,9 +459,9 @@ file and run from it, with no copy of this repository involved:</p>
 <pre><code class="language-python"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">haemolynx.pipeline</span><span class="w"> </span><span class="kn">import</span> <span class="n">default_schema</span><span class="p">,</span> <span class="n">resolve_settings</span><span class="p">,</span> <span class="n">run_pipeline_stages</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">haemolynx.pipeline</span><span class="w"> </span><span class="kn">import</span> <span class="n">write_default_config</span>
 
-<span class="n">write_default_config</span><span class="p">(</span><span class="s2">&quot;my_config.yaml&quot;</span><span class="p">)</span>   <span class="c1"># every setting, commented, at its default</span>
+<span class="n">write_default_config</span><span class="p">(</span><span class="s2">"my_config.yaml"</span><span class="p">)</span>   <span class="c1"># every setting, commented, at its default</span>
 <span class="c1"># edit my_config.yaml, then:</span>
-<span class="n">settings</span> <span class="o">=</span> <span class="n">resolve_settings</span><span class="p">(</span><span class="n">schema</span><span class="o">=</span><span class="n">default_schema</span><span class="p">(),</span> <span class="n">config_path</span><span class="o">=</span><span class="s2">&quot;my_config.yaml&quot;</span><span class="p">)</span>
+<span class="n">settings</span> <span class="o">=</span> <span class="n">resolve_settings</span><span class="p">(</span><span class="n">schema</span><span class="o">=</span><span class="n">default_schema</span><span class="p">(),</span> <span class="n">config_path</span><span class="o">=</span><span class="s2">"my_config.yaml"</span><span class="p">)</span>
 <span class="n">graph</span> <span class="o">=</span> <span class="n">run_pipeline_stages</span><span class="p">(</span><span class="n">settings</span><span class="p">,</span> <span class="n">default_schema</span><span class="p">())</span>
 </pre></div>
 </code></pre>
@@ -483,7 +483,7 @@ notebook, not the generated <code>pipeline_tutorial.py</code>; regenerate that w
 <h2>Testing</h2>
 <p>From the repository root:</p>
 <pre><code class="language-bash"><div class="highlight"><pre><span></span>pytest<span class="w"> </span>-s<span class="w">               </span><span class="c1"># everything</span>
-pytest<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;not slow&quot;</span><span class="w">    </span><span class="c1"># skip the slow integration tests</span>
+pytest<span class="w"> </span>-m<span class="w"> </span><span class="s2">"not slow"</span><span class="w">    </span><span class="c1"># skip the slow integration tests</span>
 </pre></div>
 </code></pre>
 <h3>Does this branch change the numbers?</h3>

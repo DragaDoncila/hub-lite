@@ -236,7 +236,7 @@ Herearii Metuarea, Abdoul djalil Ousseni hamza, Walter Guerra,  Andrea Patocchi,
 </pre></div>
 </code></pre>
 <p>If napari is not already installed, you can install <code>deepphenotree</code> with <strong>napari</strong> and <strong>Qt</strong> via:</p>
-<pre><code><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;deepphenotree[all]&quot;</span>
+<pre><code><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="s2">"deepphenotree[all]"</span>
 </pre></div>
 </code></pre>
 <p>To install latest development version :</p>
@@ -255,14 +255,14 @@ Herearii Metuarea, Abdoul djalil Ousseni hamza, Walter Guerra,  Andrea Patocchi,
 <pre><code><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">deepphenotree._sample_data</span><span class="w"> </span><span class="kn">import</span> <span class="n">DeepPhenoTreeData</span>
 
 <span class="c1"># Flowering data</span>
-<span class="n">data_flower</span> <span class="o">=</span> <span class="n">DeepPhenoTreeData</span><span class="p">(</span><span class="s1">&#39;Flowering&#39;</span><span class="p">)</span>
+<span class="n">data_flower</span> <span class="o">=</span> <span class="n">DeepPhenoTreeData</span><span class="p">(</span><span class="s1">'Flowering'</span><span class="p">)</span>
 <span class="n">images</span> <span class="o">=</span> <span class="n">data_flower</span><span class="o">.</span><span class="n">data</span> <span class="c1"># Dimension : (5120, 5120, 3, 4)</span>
-<span class="n">country</span> <span class="o">=</span> <span class="n">data_flower</span><span class="o">.</span><span class="n">names</span> <span class="c1"># [&#39;Belgium&#39;, &#39;Italy&#39;, &#39;Spain&#39;, &#39;Switzerland&#39;]</span>
+<span class="n">country</span> <span class="o">=</span> <span class="n">data_flower</span><span class="o">.</span><span class="n">names</span> <span class="c1"># ['Belgium', 'Italy', 'Spain', 'Switzerland']</span>
 
 <span class="c1"># Fruitlet data</span>
-<span class="n">data_fruitlet</span> <span class="o">=</span> <span class="n">DeepPhenoTreeData</span><span class="p">(</span><span class="s1">&#39;Fruitlet&#39;</span><span class="p">)</span>
+<span class="n">data_fruitlet</span> <span class="o">=</span> <span class="n">DeepPhenoTreeData</span><span class="p">(</span><span class="s1">'Fruitlet'</span><span class="p">)</span>
 <span class="c1"># Fruit data</span>
-<span class="n">data_fruit</span> <span class="o">=</span> <span class="n">DeepPhenoTreeData</span><span class="p">(</span><span class="s1">&#39;Fruit&#39;</span><span class="p">)</span>
+<span class="n">data_fruit</span> <span class="o">=</span> <span class="n">DeepPhenoTreeData</span><span class="p">(</span><span class="s1">'Fruit'</span><span class="p">)</span>
 </pre></div>
 </code></pre>
 <h4>2. Run inference</h4>
@@ -270,15 +270,15 @@ Herearii Metuarea, Abdoul djalil Ousseni hamza, Walter Guerra,  Andrea Patocchi,
 <span class="n">image</span> <span class="o">=</span> <span class="c1"># Your RGB image</span>
 
 <span class="c1"># Flowering task</span>
-<span class="n">infer</span> <span class="o">=</span> <span class="n">YoloInferencer</span><span class="p">(</span><span class="s2">&quot;Flowering&quot;</span><span class="p">)</span>
+<span class="n">infer</span> <span class="o">=</span> <span class="n">YoloInferencer</span><span class="p">(</span><span class="s2">"Flowering"</span><span class="p">)</span>
 <span class="n">bbx</span> <span class="o">=</span> <span class="n">infer</span><span class="o">.</span><span class="n">predict_boxes</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 
 <span class="c1"># Fruitlet task</span>
-<span class="n">infer</span> <span class="o">=</span> <span class="n">YoloInferencer</span><span class="p">(</span><span class="s2">&quot;Fruitlet&quot;</span><span class="p">)</span>
+<span class="n">infer</span> <span class="o">=</span> <span class="n">YoloInferencer</span><span class="p">(</span><span class="s2">"Fruitlet"</span><span class="p">)</span>
 <span class="n">bbx</span> <span class="o">=</span> <span class="n">infer</span><span class="o">.</span><span class="n">predict_boxes</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 
 <span class="c1"># Fruit task</span>
-<span class="n">infer</span> <span class="o">=</span> <span class="n">YoloInferencer</span><span class="p">(</span><span class="s2">&quot;Fruit&quot;</span><span class="p">)</span>
+<span class="n">infer</span> <span class="o">=</span> <span class="n">YoloInferencer</span><span class="p">(</span><span class="s2">"Fruit"</span><span class="p">)</span>
 <span class="n">bbx</span> <span class="o">=</span> <span class="n">infer</span><span class="o">.</span><span class="n">predict_boxes</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 </pre></div>
 </code></pre>

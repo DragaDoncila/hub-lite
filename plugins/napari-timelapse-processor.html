@@ -234,7 +234,7 @@
 
 <span class="n">image_4d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>  <span class="c1"># 10 timepoints of 32x32x32 data</span>
 <span class="n">converter</span> <span class="o">=</span> <span class="n">TimelapseConverter</span><span class="p">()</span>
-<span class="n">list_of_images</span> <span class="o">=</span> <span class="n">converter</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">image_4d</span><span class="p">,</span> <span class="n">layertype</span><span class="o">=</span><span class="s1">&#39;napari.types.ImageData&#39;</span><span class="p">)</span>
+<span class="n">list_of_images</span> <span class="o">=</span> <span class="n">converter</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="n">image_4d</span><span class="p">,</span> <span class="n">layertype</span><span class="o">=</span><span class="s1">'napari.types.ImageData'</span><span class="p">)</span>
 </pre></div>
 </code></pre>
 <p><strong>Stacking example usage:</strong></p>
@@ -245,7 +245,7 @@
 <span class="n">converter</span> <span class="o">=</span> <span class="n">TimelapseConverter</span><span class="p">()</span>
 
 <span class="c1"># stack the points into a single 4D layer</span>
-<span class="n">stacked_points</span> <span class="o">=</span> <span class="n">converter</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">random_points</span><span class="p">,</span> <span class="n">layertype</span><span class="o">=</span><span class="s1">&#39;napari.types.PointsData&#39;</span><span class="p">)</span>
+<span class="n">stacked_points</span> <span class="o">=</span> <span class="n">converter</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">random_points</span><span class="p">,</span> <span class="n">layertype</span><span class="o">=</span><span class="s1">'napari.types.PointsData'</span><span class="p">)</span>
 </pre></div>
 </code></pre>
 <p>The <code>TimeLapseConverter</code> class also supports (un)stacking the <code>napari.layers.Layer</code> type (and its above-listed subclasses). Importantly, <code>features</code> that are associated with the respective layer are also (un)stacked.</p>
@@ -262,7 +262,7 @@
 <span class="n">points</span> <span class="o">=</span> <span class="p">[</span><span class="n">Points</span><span class="p">(</span><span class="n">random_points</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">properties</span><span class="o">=</span><span class="n">random_features</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
 
 <span class="n">converter</span> <span class="o">=</span> <span class="n">TimelapseConverter</span><span class="p">()</span>
-<span class="n">stacked_points</span> <span class="o">=</span> <span class="n">converter</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">layertype</span><span class="o">=</span><span class="s1">&#39;napari.layers.Points&#39;</span><span class="p">)</span>
+<span class="n">stacked_points</span> <span class="o">=</span> <span class="n">converter</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">layertype</span><span class="o">=</span><span class="s1">'napari.layers.Points'</span><span class="p">)</span>
 </pre></div>
 </code></pre>
 <h2>frame_by_frame</h2>
@@ -285,7 +285,7 @@
 <pre><code class="language-python"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">napari_timelapse_processor</span><span class="w"> </span><span class="kn">import</span> <span class="n">frame_by_frame</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">my_function</span><span class="p">(</span><span class="n">image</span><span class="p">:</span> <span class="s1">&#39;napari.types.ImageData&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;napari.types.ImageData&#39;</span><span class="p">:</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">my_function</span><span class="p">(</span><span class="n">image</span><span class="p">:</span> <span class="s1">'napari.types.ImageData'</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">'napari.types.ImageData'</span><span class="p">:</span>
     <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">image</span>
 
 <span class="n">image_4d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>  <span class="c1"># 10 timepoints of 32x32x32 data</span>
@@ -298,7 +298,7 @@
 <pre><code class="language-python"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">napari_timelapse_processor</span><span class="w"> </span><span class="kn">import</span> <span class="n">frame_by_frame</span>
 
 <span class="nd">@frame_by_frame</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">my_function</span><span class="p">(</span><span class="n">image</span><span class="p">:</span> <span class="s1">&#39;napari.types.ImageData&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;napari.types.ImageData&#39;</span><span class="p">:</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">my_function</span><span class="p">(</span><span class="n">image</span><span class="p">:</span> <span class="s1">'napari.types.ImageData'</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">'napari.types.ImageData'</span><span class="p">:</span>
     <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">image</span>
 </pre></div>
 </code></pre>

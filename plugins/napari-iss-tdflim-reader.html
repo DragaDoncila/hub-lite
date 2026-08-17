@@ -260,8 +260,8 @@ Each file is a ZIP archive produced by the ISS ALBA FLIM system and contains:</p
 <li>📐 Spatial calibration (<code>XResolution</code>/<code>YResolution</code> tags + <code>unit</code>) preserved for Fiji/ImageJ</li>
 <li>⏱️ Time-axis interval (<code>finterval</code>) embedded for FLIM cubes</li>
 <li>🏷️ Full acquisition metadata (channel IDs, ADC resolution, TAC range, …) stored as JSON in the TIFF <code>Info</code> field — visible in Fiji via <strong>Image › Info…</strong> and recoverable in Python via:<pre><code class="language-python"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">json</span><span class="o">,</span><span class="w"> </span><span class="nn">tifffile</span>
-<span class="k">with</span> <span class="n">tifffile</span><span class="o">.</span><span class="n">TiffFile</span><span class="p">(</span><span class="s1">&#39;my_file.tif&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">tf</span><span class="p">:</span>
-    <span class="n">meta</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">imagej_metadata</span><span class="p">[</span><span class="s1">&#39;Info&#39;</span><span class="p">])</span>
+<span class="k">with</span> <span class="n">tifffile</span><span class="o">.</span><span class="n">TiffFile</span><span class="p">(</span><span class="s1">'my_file.tif'</span><span class="p">)</span> <span class="k">as</span> <span class="n">tf</span><span class="p">:</span>
+    <span class="n">meta</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">imagej_metadata</span><span class="p">[</span><span class="s1">'Info'</span><span class="p">])</span>
 </pre></div>
 </code></pre>
 </li>
@@ -274,7 +274,7 @@ Each file is a ZIP archive produced by the ISS ALBA FLIM system and contains:</p
 </pre></div>
 </code></pre>
 <p>To install with napari and all optional dependencies (including Qt backend and compression support):</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;napari-iss-tdflim-reader[all]&quot;</span>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"napari-iss-tdflim-reader[all]"</span>
 </pre></div>
 </code></pre>
 <p>Install the latest development version directly from GitHub:</p>

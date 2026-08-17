@@ -250,8 +250,8 @@ headless analysis pipeline — install the base package:</p>
 required and will <strong>not</strong> be installed.</p>
 <pre><code class="language-python"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pyphenix</span><span class="w"> </span><span class="kn">import</span> <span class="n">OperaPhenixReader</span>
 
-<span class="n">reader</span> <span class="o">=</span> <span class="n">OperaPhenixReader</span><span class="p">(</span><span class="s2">&quot;/path/to/experiment&quot;</span><span class="p">)</span>
-<span class="n">data</span><span class="p">,</span> <span class="n">metadata</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="n">read_data</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="s2">&quot;D&quot;</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">reader</span> <span class="o">=</span> <span class="n">OperaPhenixReader</span><span class="p">(</span><span class="s2">"/path/to/experiment"</span><span class="p">)</span>
+<span class="n">data</span><span class="p">,</span> <span class="n">metadata</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="n">read_data</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="s2">"D"</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 </pre></div>
 </code></pre>
 <h4>Plate overview images (no napari required)</h4>
@@ -262,10 +262,10 @@ are visually comparable.</p>
 <pre><code class="language-python"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pyphenix</span><span class="w"> </span><span class="kn">import</span> <span class="n">generate_plate_overview</span>
 
 <span class="n">generate_plate_overview</span><span class="p">(</span>
-    <span class="n">experiment_path</span><span class="o">=</span><span class="s2">&quot;/path/to/experiment&quot;</span><span class="p">,</span>
-    <span class="n">output_dir</span><span class="o">=</span><span class="s2">&quot;/path/to/overviews&quot;</span><span class="p">,</span>
+    <span class="n">experiment_path</span><span class="o">=</span><span class="s2">"/path/to/experiment"</span><span class="p">,</span>
+    <span class="n">output_dir</span><span class="o">=</span><span class="s2">"/path/to/overviews"</span><span class="p">,</span>
     <span class="c1"># Optional overrides — all have sensible defaults:</span>
-    <span class="n">field</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>        <span class="c1"># &#39;stitched&#39;, an int field index, or None (first field)</span>
+    <span class="n">field</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>        <span class="c1"># 'stitched', an int field index, or None (first field)</span>
     <span class="n">channels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>     <span class="c1"># subset of channel IDs, or None (all acquired)</span>
     <span class="n">timepoint</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>    <span class="c1"># int, or None (first timepoint)</span>
     <span class="n">z_slices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>     <span class="c1"># int / list / None (all Z planes, max-projected)</span>
@@ -280,13 +280,13 @@ input parameters, plate-wide contrast limits, channel→colormap assignments,
 and pyphenix version.</p>
 <h4>Full GUI install (napari widget)</h4>
 <p>To use the interactive napari widget, install with the <code>napari</code> extra:</p>
-<pre><code><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;pyphenix[napari]&quot;</span>
+<pre><code><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="s2">"pyphenix[napari]"</span>
 </pre></div>
 </code></pre>
 <p>This additionally installs <code>napari</code>, <code>qtpy</code>, and <code>pandas</code>.</p>
 <pre><code class="language-python"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pyphenix</span><span class="w"> </span><span class="kn">import</span> <span class="n">launch_viewer</span>
 
-<span class="n">viewer</span><span class="p">,</span> <span class="n">widget</span> <span class="o">=</span> <span class="n">launch_viewer</span><span class="p">(</span><span class="s2">&quot;/path/to/experiment&quot;</span><span class="p">)</span>
+<span class="n">viewer</span><span class="p">,</span> <span class="n">widget</span> <span class="o">=</span> <span class="n">launch_viewer</span><span class="p">(</span><span class="s2">"/path/to/experiment"</span><span class="p">)</span>
 </pre></div>
 </code></pre>
 <p>Alternatively, if napari is already installed in your environment, the base

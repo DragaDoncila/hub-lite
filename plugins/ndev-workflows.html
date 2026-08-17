@@ -235,7 +235,7 @@
 </pre></div>
 </code></pre>
 <p>If napari is not already installed, you can install <code>ndev-workflows</code> with napari and Qt via:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;ndev-workflows[all]&quot;</span>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"ndev-workflows[all]"</span>
 </pre></div>
 </code></pre>
 <hr />
@@ -245,19 +245,19 @@
 
 <span class="c1"># Create workflow</span>
 <span class="n">workflow</span> <span class="o">=</span> <span class="n">Workflow</span><span class="p">()</span>
-<span class="n">workflow</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;blurred&quot;</span><span class="p">,</span> <span class="n">gaussian</span><span class="p">,</span> <span class="s2">&quot;input_image&quot;</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
-<span class="n">workflow</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;input_image&quot;</span><span class="p">,</span> <span class="n">my_image</span><span class="p">)</span>
+<span class="n">workflow</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">"blurred"</span><span class="p">,</span> <span class="n">gaussian</span><span class="p">,</span> <span class="s2">"input_image"</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
+<span class="n">workflow</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">"input_image"</span><span class="p">,</span> <span class="n">my_image</span><span class="p">)</span>
 
 <span class="c1"># Execute</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">workflow</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;blurred&quot;</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">workflow</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"blurred"</span><span class="p">)</span>
 
 <span class="c1"># Save</span>
-<span class="n">save_workflow</span><span class="p">(</span><span class="s2">&quot;pipeline.yaml&quot;</span><span class="p">,</span> <span class="n">workflow</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;My Pipeline&quot;</span><span class="p">)</span>
+<span class="n">save_workflow</span><span class="p">(</span><span class="s2">"pipeline.yaml"</span><span class="p">,</span> <span class="n">workflow</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">"My Pipeline"</span><span class="p">)</span>
 
 <span class="c1"># Load and reuse</span>
-<span class="n">loaded</span> <span class="o">=</span> <span class="n">load_workflow</span><span class="p">(</span><span class="s2">&quot;pipeline.yaml&quot;</span><span class="p">)</span>
-<span class="n">loaded</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;input_image&quot;</span><span class="p">,</span> <span class="n">new_image</span><span class="p">)</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">loaded</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;blurred&quot;</span><span class="p">)</span>
+<span class="n">loaded</span> <span class="o">=</span> <span class="n">load_workflow</span><span class="p">(</span><span class="s2">"pipeline.yaml"</span><span class="p">)</span>
+<span class="n">loaded</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">"input_image"</span><span class="p">,</span> <span class="n">new_image</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">loaded</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"blurred"</span><span class="p">)</span>
 </pre></div>
 </code></pre>
 <hr />
@@ -265,7 +265,7 @@
 <p>Saved workflows use a safe, human-readable format:</p>
 <pre><code class="language-yaml"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Nucleus Segmentation</span>
 <span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Gaussian blur and thresholding</span>
-<span class="nt">modified</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;2025-12-22&#39;</span>
+<span class="nt">modified</span><span class="p">:</span><span class="w"> </span><span class="s">'2025-12-22'</span>
 
 <span class="nt">inputs</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">raw_image</span>
@@ -304,8 +304,8 @@ pip<span class="w"> </span>install<span class="w"> </span>napari-segment-blobs-a
 </code></pre>
 <h3>Lazy Loading</h3>
 <p>Inspect workflows without importing functions:</p>
-<pre><code class="language-python"><div class="highlight"><pre><span></span><span class="n">workflow</span> <span class="o">=</span> <span class="n">load_workflow</span><span class="p">(</span><span class="s2">&quot;untrusted.yaml&quot;</span><span class="p">,</span> <span class="n">lazy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">workflow</span><span class="o">.</span><span class="n">tasks</span><span class="p">)</span>  <span class="c1"># Safe - doesn&#39;t execute</span>
+<pre><code class="language-python"><div class="highlight"><pre><span></span><span class="n">workflow</span> <span class="o">=</span> <span class="n">load_workflow</span><span class="p">(</span><span class="s2">"untrusted.yaml"</span><span class="p">,</span> <span class="n">lazy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">workflow</span><span class="o">.</span><span class="n">tasks</span><span class="p">)</span>  <span class="c1"># Safe - doesn't execute</span>
 </pre></div>
 </code></pre>
 <hr />

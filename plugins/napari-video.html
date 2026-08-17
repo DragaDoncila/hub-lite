@@ -225,7 +225,7 @@
 <pre><code class="language-shell"><div class="highlight"><pre><span></span>import<span class="w"> </span>napari
 from<span class="w"> </span>napari_video.napari_video<span class="w"> </span>import<span class="w"> </span>VideoReaderNP
 
-<span class="nv">path</span><span class="o">=</span><span class="s1">&#39;video.mp4&#39;</span>
+<span class="nv">path</span><span class="o">=</span><span class="s1">'video.mp4'</span>
 <span class="nv">vr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>VideoReaderNP<span class="o">(</span>path<span class="o">)</span>
 with<span class="w"> </span>napari.gui_qt<span class="o">()</span>:
 <span class="w">    </span><span class="nv">viewer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>napari.view_image<span class="o">(</span>vr,<span class="w"> </span><span class="nv">name</span><span class="o">=</span>path<span class="o">)</span>
@@ -234,7 +234,7 @@ with<span class="w"> </span>napari.gui_qt<span class="o">()</span>:
 <h2>Internals</h2>
 <p><code>napari_video.napari_video.VideoReaderNP</code> exposes a video with a numpy-like interface, using opencv as a backend.</p>
 <p>For instance, open a video:</p>
-<pre><code class="language-python"><div class="highlight"><pre><span></span><span class="n">vr</span> <span class="o">=</span> <span class="n">VideoReaderNP</span><span class="p">(</span><span class="s1">&#39;video.avi&#39;</span><span class="p">)</span>
+<pre><code class="language-python"><div class="highlight"><pre><span></span><span class="n">vr</span> <span class="o">=</span> <span class="n">VideoReaderNP</span><span class="p">(</span><span class="s1">'video.avi'</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">vr</span><span class="p">)</span>
 </pre></div>
 </code></pre>

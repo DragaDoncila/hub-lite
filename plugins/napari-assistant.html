@@ -247,7 +247,7 @@ Note: This plugin is not compatible with napari 0.6.0 and later.</p>
 <h2>For developers</h2>
 <p>If you want to make your napari-plugin accessible from the napari-assistant, consider programming functions with a simple
 interface that consume images, labels, integers, floats and strings. Annotate input and return types, e.g. like this:</p>
-<pre><code class="language-python"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">example_function_widget</span><span class="p">(</span><span class="n">image</span><span class="p">:</span> <span class="s2">&quot;napari.types.ImageData&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;napari.types.LabelsData&quot;</span><span class="p">:</span>
+<pre><code class="language-python"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">example_function_widget</span><span class="p">(</span><span class="n">image</span><span class="p">:</span> <span class="s2">"napari.types.ImageData"</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">"napari.types.LabelsData"</span><span class="p">:</span>
     <span class="kn">from</span><span class="w"> </span><span class="nn">skimage.filters</span><span class="w"> </span><span class="kn">import</span> <span class="n">threshold_otsu</span>
     <span class="n">binary_image</span> <span class="o">=</span> <span class="n">image</span> <span class="o">&gt;</span> <span class="n">threshold_otsu</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 

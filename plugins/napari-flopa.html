@@ -234,14 +234,14 @@
 <p>Install into the environment where napari runs. Pick one:</p>
 <p><strong>From PyPI</strong></p>
 <pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>napari-flopa<span class="w">            </span><span class="c1"># plugin only, for an existing napari install</span>
-pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;napari-flopa[all]&quot;</span><span class="w">     </span><span class="c1"># plugin + napari + Qt</span>
+pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"napari-flopa[all]"</span><span class="w">     </span><span class="c1"># plugin + napari + Qt</span>
 </pre></div>
 </code></pre>
 <p>Use the plain (non-<code>[all]</code>) form when you already have napari installed.</p>
 <p><strong>From source</strong></p>
 <pre><code class="language-bash"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/cockovaz/napari-flopa
 <span class="nb">cd</span><span class="w"> </span>napari-flopa
-pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[all]&quot;</span><span class="w">      </span><span class="c1"># editable install, napari + Qt included</span>
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">".[all]"</span><span class="w">      </span><span class="c1"># editable install, napari + Qt included</span>
 </pre></div>
 </code></pre>
 <p>The <code>napari_flopa.core</code> package (I/O, reconstruction, image and phasor maths) imports

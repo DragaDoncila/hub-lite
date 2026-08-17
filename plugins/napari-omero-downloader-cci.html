@@ -345,13 +345,13 @@ napari
 <h2>Troubleshooting</h2>
 <h3>❌ &quot;No Qt bindings found&quot;</h3>
 <p>Install napari with Qt:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;napari[qt]&quot;</span>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"napari[qt]"</span>
 </pre></div>
 </code></pre>
 <h3>❌ &quot;Cannot import Ice&quot;</h3>
 <p>This means the correct zeroc-ice wheel was not installed.
 Check your Python version (3.8–3.12) and OS match the supported versions. Search for the correct wheel on <a href="https://github.com/glencoesoftware">Glencoe</a>, then you can install them with (for example, windows and python 3.10):</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>@<span class="w"> </span><span class="s2">&quot;zeroc-ice @ https://github.com/glencoesoftware/zeroc-ice-py-win-x86_64/releases/download/20240325/zeroc_ice-3.6.5-cp310-cp310-win_amd64.whl&quot;</span>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>@<span class="w"> </span><span class="s2">"zeroc-ice @ https://github.com/glencoesoftware/zeroc-ice-py-win-x86_64/releases/download/20240325/zeroc_ice-3.6.5-cp310-cp310-win_amd64.whl"</span>
 </pre></div>
 </code></pre>
 <p>Do <strong>NOT</strong> install directly zeroc-ice from pip: it will fail.</p>
@@ -361,7 +361,7 @@ Check your Python version (3.8–3.12) and OS match the supported versions. Sear
 </pre></div>
 </code></pre>
 <p>If needed, force the reinstall of omero for the correct version:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span><span class="s2">&quot;omero-py == 5.21.2&quot;</span>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span><span class="s2">"omero-py == 5.21.2"</span>
 </pre></div>
 </code></pre>
 <h2>Contributing</h2>

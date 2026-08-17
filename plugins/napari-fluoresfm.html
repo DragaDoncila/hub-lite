@@ -240,7 +240,7 @@ https://napari.org/stable/plugins/index.html
 </pre></div>
 </code></pre>
 <p>Then, install <code>napari</code>.</p>
-<pre><code><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="s2">&quot;napari[all]&quot;</span>
+<pre><code><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="s2">"napari[all]"</span>
 </pre></div>
 </code></pre>
 <p>To use GPU for inference and training, you should install the GPU version of PyTorch. You can use <code>nvcc -V</code> to check the cuda version. Then install the corresponding version of PyTorch by check the <a href="https://pytorch.org/get-started/previous-versions/">table</a> provided by PyTorch. For example, if you have <code>cuda 12.4</code>, you should install the following version of PyTorch.</p>
@@ -249,7 +249,7 @@ https://napari.org/stable/plugins/index.html
 </code></pre>
 <p>We recommend you using Linux for training and inference, as the <code>triton</code> support for Windows is not stable. And the with Linux system, the acceleration of <code>triton</code> is much better than Windows, which allow larger <code>batch size</code> and <code>patch size</code> to be used in training and inference.</p>
 <p>If you are using Windows, you should install the <code>triton</code> package first according the PyTorch version you installed. Please check this <a href="https://github.com/woct0rdho/triton-windows?tab=readme-ov-file#3-pytorch">link</a> for more details.</p>
-<pre><code><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="s2">&quot;triton-windows&lt;3.3&quot;</span>
+<pre><code><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="s2">"triton-windows&lt;3.3"</span>
 </pre></div>
 </code></pre>
 <h2>Installation</h2>

@@ -343,7 +343,7 @@ Omega will automatically detect which providers you have configured.</p>
 <p>If you have a <a href="https://github.com/settings/tokens">GitHub personal access token</a>, Omega can use
 models from the <a href="https://github.com/marketplace/models">GitHub Models marketplace</a> (GPT-4o, Llama,
 Phi, Mistral, and more) for free with rate limits. Just set the <code>GITHUB_TOKEN</code> environment variable:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">GITHUB_TOKEN</span><span class="o">=</span><span class="s2">&quot;ghp_your_token_here&quot;</span>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">GITHUB_TOKEN</span><span class="o">=</span><span class="s2">"ghp_your_token_here"</span>
 </pre></div>
 </code></pre>
 <p>Omega auto-detects this token on startup and registers all available GitHub Models.</p>
@@ -351,12 +351,12 @@ Phi, Mistral, and more) for free with rate limits. Just set the <code>GITHUB_TOK
 <p>You can connect Omega to any OpenAI-compatible API (Azure OpenAI, local LLMs via Ollama/vLLM, or
 third-party providers) by adding entries to <code>~/.omega/config.yaml</code>:</p>
 <pre><code class="language-yaml"><div class="highlight"><pre><span></span><span class="nt">custom_endpoints</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Azure</span><span class="nv"> </span><span class="s">GPT-4&quot;</span>
-<span class="w">    </span><span class="nt">base_url</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;https://my-resource.openai.azure.com/openai/deployments/gpt-4/v1&quot;</span>
-<span class="w">    </span><span class="nt">api_key_env</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;AZURE_OPENAI_API_KEY&quot;</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Local</span><span class="nv"> </span><span class="s">Ollama&quot;</span>
-<span class="w">    </span><span class="nt">base_url</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;http://localhost:11434/v1&quot;</span>
-<span class="w">    </span><span class="nt">api_key_env</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;OLLAMA_API_KEY&quot;</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">"Azure</span><span class="nv"> </span><span class="s">GPT-4"</span>
+<span class="w">    </span><span class="nt">base_url</span><span class="p">:</span><span class="w"> </span><span class="s">"https://my-resource.openai.azure.com/openai/deployments/gpt-4/v1"</span>
+<span class="w">    </span><span class="nt">api_key_env</span><span class="p">:</span><span class="w"> </span><span class="s">"AZURE_OPENAI_API_KEY"</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">"Local</span><span class="nv"> </span><span class="s">Ollama"</span>
+<span class="w">    </span><span class="nt">base_url</span><span class="p">:</span><span class="w"> </span><span class="s">"http://localhost:11434/v1"</span>
+<span class="w">    </span><span class="nt">api_key_env</span><span class="p">:</span><span class="w"> </span><span class="s">"OLLAMA_API_KEY"</span>
 </pre></div>
 </code></pre>
 <p>Each endpoint requires a <code>base_url</code> and an <code>api_key_env</code> (the name of the environment variable
@@ -365,8 +365,8 @@ built-in providers.</p>
 <h3>Extending Omega with custom tools</h3>
 <p>External packages can register new tools for Omega via Python entry points. Create a class that
 subclasses <code>BaseOmegaTool</code> and declare it in your <code>pyproject.toml</code>:</p>
-<pre><code class="language-toml"><div class="highlight"><pre><span></span><span class="k">[project.entry-points.</span><span class="s2">&quot;napari_chatgpt.tools&quot;</span><span class="k">]</span>
-<span class="n">my_tool</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;my_package.tools:MyCustomTool&quot;</span>
+<pre><code class="language-toml"><div class="highlight"><pre><span></span><span class="k">[project.entry-points.</span><span class="s2">"napari_chatgpt.tools"</span><span class="k">]</span>
+<span class="n">my_tool</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"my_package.tools:MyCustomTool"</span>
 </pre></div>
 </code></pre>
 <p>Omega discovers and loads these tools automatically on startup. See the

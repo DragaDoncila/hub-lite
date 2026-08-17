@@ -236,7 +236,7 @@
 <h2>try it out now!</h2>
 <p><a href="https://docs.astral.sh/uv/getting-started/installation/#standalone-installer">Install uv</a> to try napari.
 Then launch the program in a terminal window with the command:</p>
-<pre><code class="language-sh"><div class="highlight"><pre><span></span>uvx<span class="w"> </span><span class="s2">&quot;napari[all]&quot;</span>
+<pre><code class="language-sh"><div class="highlight"><pre><span></span>uvx<span class="w"> </span><span class="s2">"napari[all]"</span>
 </pre></div>
 </code></pre>
 <p>In the <code>File</code> menu, select <code>Open Sample</code> and select a sample image to get started.</p>
@@ -244,7 +244,7 @@ Then launch the program in a terminal window with the command:</p>
 <p>For a full installation, we recommend installing napari into a virtual environment, like this:</p>
 <pre><code class="language-sh"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-y<span class="w"> </span>-n<span class="w"> </span>napari-env<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11
 conda<span class="w"> </span>activate<span class="w"> </span>napari-env
-python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;napari[all]&quot;</span>
+python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"napari[all]"</span>
 </pre></div>
 </code></pre>
 <p>If you prefer conda over pip, you can replace the last line with: <code>conda install -c conda-forge napari pyqt6</code></p>
@@ -264,7 +264,7 @@ From inside an IPython shell, you can open up an interactive viewer by calling</
 <span class="kn">import</span><span class="w"> </span><span class="nn">napari</span>
 
 <span class="n">viewer</span><span class="p">,</span> <span class="n">layers</span> <span class="o">=</span> <span class="n">napari</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">cells3d</span><span class="p">(),</span> <span class="n">channel_axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ndisplay</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">napari</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>  <span class="c1"># start the &quot;event loop&quot; and show the viewer</span>
+<span class="n">napari</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>  <span class="c1"># start the "event loop" and show the viewer</span>
 </pre></div>
 </code></pre>
 <h2>features</h2>

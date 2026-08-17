@@ -293,7 +293,7 @@ conda<span class="w"> </span>activate<span class="w"> </span>nnInteractive
 </pre></div>
 </code></pre>
 <p><strong>2. Add the <code>[local]</code> extra</strong> (pulls the full nnInteractive backend + nnU-Net):</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;napari-nninteractive[local]&quot;</span>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"napari-nninteractive[local]"</span>
 </pre></div>
 </code></pre>
 <p>Quote the brackets so your shell does not treat them as a glob (required in zsh / macOS). Model weights are downloaded automatically on first use; this can take a couple of minutes depending on your connection.</p>
@@ -305,7 +305,7 @@ conda<span class="w"> </span>activate<span class="w"> </span>nnInteractive
 <pre><code class="language-bash"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/MIC-DKFZ/napari-nninteractive
 <span class="nb">cd</span><span class="w"> </span>napari-nninteractive
 pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.<span class="w">                 </span><span class="c1"># remote client (torch-free) — the default</span>
-pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[local]&quot;</span><span class="w">        </span><span class="c1"># local inference — also install PyTorch first (see Step 3)</span>
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">".[local]"</span><span class="w">        </span><span class="c1"># local inference — also install PyTorch first (see Step 3)</span>
 </pre></div>
 </code></pre>
 <h2>Getting Started</h2>
@@ -340,7 +340,7 @@ model weights are loaded once and shared. The napari client has no GPU requireme
 <span class="w">    </span>--fold<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--port<span class="w"> </span><span class="m">1527</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--max-sessions<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--api-key<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>openssl<span class="w"> </span>rand<span class="w"> </span>-hex<span class="w"> </span><span class="m">32</span><span class="k">)</span><span class="s2">&quot;</span>
+<span class="w">    </span>--api-key<span class="w"> </span><span class="s2">"</span><span class="k">$(</span>openssl<span class="w"> </span>rand<span class="w"> </span>-hex<span class="w"> </span><span class="m">32</span><span class="k">)</span><span class="s2">"</span>
 </pre></div>
 </code></pre>
 <p>Share the printed API key with your users via whatever channel you use for shared credentials. For a single-user setup over SSH (no API key, no exposed port), see the SSH-tunnel section in the full docs linked below.</p>
@@ -368,7 +368,7 @@ image with the model <strong>baked in</strong> (a GPU host with the
 <a href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html">NVIDIA Container Toolkit</a>
 is required):</p>
 <pre><code class="language-bash"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>--gpus<span class="w"> </span>all<span class="w"> </span>-p<span class="w"> </span><span class="m">1527</span>:1527<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-e<span class="w"> </span><span class="nv">NN_INTERACTIVE_API_KEY</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>openssl<span class="w"> </span>rand<span class="w"> </span>-hex<span class="w"> </span><span class="m">32</span><span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-e<span class="w"> </span><span class="nv">NN_INTERACTIVE_API_KEY</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span>openssl<span class="w"> </span>rand<span class="w"> </span>-hex<span class="w"> </span><span class="m">32</span><span class="k">)</span><span class="s2">"</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>ghcr.io/mic-dkfz/nninteractive-server:latest
 </pre></div>
 </code></pre>

@@ -336,7 +336,7 @@ https://napari.org/stable/plugins/index.html
 </pre></div>
 </code></pre>
 <p>If napari is not already installed, you can install <code>napari-morans-i</code> with napari and Qt via:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;napari-morans-i[all]&quot;</span>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"napari-morans-i[all]"</span>
 </pre></div>
 </code></pre>
 <p>To install latest development version:</p>
@@ -363,10 +363,10 @@ its own neighbourhood average.</p>
 <h3>3. Lagged values (<code>local_morans_i</code>)</h3>
 <p>Two zero-padded 2-D convolutions (<code>scipy.signal.convolve2d</code>,
 <code>mode='same'</code>, <code>boundary='fill'</code>):</p>
-<pre><code><div class="highlight"><pre><span></span><span class="n">WZ</span>  <span class="o">=</span> <span class="n">conv2</span><span class="p">(</span><span class="n">z</span><span class="p">,</span>         <span class="n">W</span><span class="p">,</span> <span class="s1">&#39;same&#39;</span><span class="p">)</span>   <span class="c1"># weighted sum of neighbours</span>
-<span class="n">nS</span>  <span class="o">=</span> <span class="n">conv2</span><span class="p">(</span><span class="n">ones_like</span><span class="p">(</span><span class="n">z</span><span class="p">),</span> <span class="n">W</span><span class="p">,</span> <span class="s1">&#39;same&#39;</span><span class="p">)</span>   <span class="c1"># normaliser, edge-correction</span>
+<pre><code><div class="highlight"><pre><span></span><span class="n">WZ</span>  <span class="o">=</span> <span class="n">conv2</span><span class="p">(</span><span class="n">z</span><span class="p">,</span>         <span class="n">W</span><span class="p">,</span> <span class="s1">'same'</span><span class="p">)</span>   <span class="c1"># weighted sum of neighbours</span>
+<span class="n">nS</span>  <span class="o">=</span> <span class="n">conv2</span><span class="p">(</span><span class="n">ones_like</span><span class="p">(</span><span class="n">z</span><span class="p">),</span> <span class="n">W</span><span class="p">,</span> <span class="s1">'same'</span><span class="p">)</span>   <span class="c1"># normaliser, edge-correction</span>
 <span class="n">lagged</span> <span class="o">=</span> <span class="n">WZ</span> <span class="o">/</span> <span class="n">nS</span>                    <span class="c1"># mean of standardised neighbours</span>
-<span class="n">local_i</span> <span class="o">=</span> <span class="n">z</span> <span class="o">*</span> <span class="n">lagged</span>                <span class="c1"># Local Moran&#39;s I per pixel</span>
+<span class="n">local_i</span> <span class="o">=</span> <span class="n">z</span> <span class="o">*</span> <span class="n">lagged</span>                <span class="c1"># Local Moran's I per pixel</span>
 </pre></div>
 </code></pre>
 <p>The <code>nS</code> normaliser corrects for kernel weight that &quot;falls off the edge&quot; of

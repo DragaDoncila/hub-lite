@@ -259,7 +259,7 @@ conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 <h3>2. Install napari-aicsimageio and bioformats</h3>
 <p>Required if you want to open other files than <code>.tif</code> e.g. <code>.stk. </code>.</p>
 <p><strong>Note:</strong> See <a href="https://www.napari-hub.org/plugins/napari-aicsimageio">napari-aicsimageio</a> for more information about opening images.</p>
-<pre><code class="language-shell"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>openjdk<span class="w"> </span>bioformats_jar<span class="w"> </span><span class="s2">&quot;aicsimageio[all]&quot;</span><span class="w"> </span>napari-aicsimageio
+<pre><code class="language-shell"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>openjdk<span class="w"> </span>bioformats_jar<span class="w"> </span><span class="s2">"aicsimageio[all]"</span><span class="w"> </span>napari-aicsimageio
 
 conda<span class="w"> </span>deactivate
 conda<span class="w"> </span>activate<span class="w"> </span>psf-analysis
@@ -278,7 +278,7 @@ This will change the <code>Microscope</code> text field to a drop down menu and 
 <pre><code class="language-yaml"><div class="highlight"><pre><span></span><span class="nt">microscopes</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TIRF</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Zeiss Z1</span>
-<span class="nt">output_path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;D:\\psf_analysis\\measurements&quot;</span>
+<span class="nt">output_path</span><span class="p">:</span><span class="w"> </span><span class="s">"D:\\psf_analysis\\measurements"</span>
 </pre></div>
 </code></pre>
 <p>To use this config navigate to <code>Plugins &gt; napari-psf-analysis &gt; Set Config</code> and select the config file.</p>

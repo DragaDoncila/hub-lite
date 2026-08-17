@@ -240,7 +240,7 @@ to display them (separate / blended / grid).</li>
 Open Data bucket, showcasing gribberish's remote + indexed reading.</li>
 </ul>
 <h2>Installation</h2>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;napari-gribberish[all]&quot;</span><span class="w">   </span><span class="c1"># includes napari + Qt</span>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"napari-gribberish[all]"</span><span class="w">   </span><span class="c1"># includes napari + Qt</span>
 </pre></div>
 </code></pre>
 <p>If you already have napari installed:</p>
@@ -248,7 +248,7 @@ Open Data bucket, showcasing gribberish's remote + indexed reading.</li>
 </pre></div>
 </code></pre>
 <p>Latest development version:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;git+https://github.com/ianhi/napari-gribberish.git&quot;</span>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"git+https://github.com/ianhi/napari-gribberish.git"</span>
 </pre></div>
 </code></pre>
 <blockquote>
@@ -260,7 +260,7 @@ Open Data bucket, showcasing gribberish's remote + indexed reading.</li>
 <pre><code class="language-python"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">napari</span>
 
 <span class="n">viewer</span> <span class="o">=</span> <span class="n">napari</span><span class="o">.</span><span class="n">Viewer</span><span class="p">()</span>
-<span class="n">viewer</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;forecast.grib2&quot;</span><span class="p">,</span> <span class="n">plugin</span><span class="o">=</span><span class="s2">&quot;napari-gribberish&quot;</span><span class="p">)</span>
+<span class="n">viewer</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">"forecast.grib2"</span><span class="p">,</span> <span class="n">plugin</span><span class="o">=</span><span class="s2">"napari-gribberish"</span><span class="p">)</span>
 <span class="n">napari</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </pre></div>
 </code></pre>
@@ -292,7 +292,7 @@ panel (bottom-left) automatically uses a cyclic colormap:</p>
 directly with:</p>
 <pre><code class="language-python"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">xarray</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xr</span>
 
-<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s2">&quot;forecast.grib2&quot;</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;gribberish&quot;</span><span class="p">,</span> <span class="n">collapse_groups</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s2">"forecast.grib2"</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">"gribberish"</span><span class="p">,</span> <span class="n">collapse_groups</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </code></pre>
 <h2>Contributing</h2>

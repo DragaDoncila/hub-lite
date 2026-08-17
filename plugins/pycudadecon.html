@@ -278,13 +278,13 @@ setup.</p>
 <pre><code class="language-python"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pycudadecon</span><span class="w"> </span><span class="kn">import</span> <span class="n">decon</span>
 
 <span class="c1"># pass filenames of an image and a PSF</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">decon</span><span class="p">(</span><span class="s1">&#39;/path/to/3D_image.tif&#39;</span><span class="p">,</span> <span class="s1">&#39;/path/to/3D_psf.tif&#39;</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">decon</span><span class="p">(</span><span class="s1">'/path/to/3D_image.tif'</span><span class="p">,</span> <span class="s1">'/path/to/3D_psf.tif'</span><span class="p">)</span>
 
 <span class="c1"># decon also accepts numpy arrays</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">decon</span><span class="p">(</span><span class="n">img_array</span><span class="p">,</span> <span class="n">psf_array</span><span class="p">)</span>
 
 <span class="c1"># the image source can also be a sequence of arrays or paths</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">decon</span><span class="p">([</span><span class="n">img_array</span><span class="p">,</span> <span class="s1">&#39;/path/to/3D_image.tif&#39;</span><span class="p">],</span> <span class="n">psf_array</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">decon</span><span class="p">([</span><span class="n">img_array</span><span class="p">,</span> <span class="s1">'/path/to/3D_image.tif'</span><span class="p">],</span> <span class="n">psf_array</span><span class="p">)</span>
 
 <span class="c1"># see docstrings for additional parameter options</span>
 </pre></div>
@@ -294,9 +294,9 @@ setup.</p>
 <span class="kn">from</span><span class="w"> </span><span class="nn">glob</span><span class="w"> </span><span class="kn">import</span> <span class="n">glob</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">tifffile</span>
 
-<span class="n">image_folder</span> <span class="o">=</span> <span class="s1">&#39;/path/to/some_images/&#39;</span>
-<span class="n">imlist</span> <span class="o">=</span> <span class="n">glob</span><span class="p">(</span><span class="n">image_folder</span> <span class="o">+</span> <span class="s1">&#39;*488*.tif&#39;</span><span class="p">)</span>
-<span class="n">otf_path</span> <span class="o">=</span> <span class="s1">&#39;/path/to/pregenerated_otf.tif&#39;</span>
+<span class="n">image_folder</span> <span class="o">=</span> <span class="s1">'/path/to/some_images/'</span>
+<span class="n">imlist</span> <span class="o">=</span> <span class="n">glob</span><span class="p">(</span><span class="n">image_folder</span> <span class="o">+</span> <span class="s1">'*488*.tif'</span><span class="p">)</span>
+<span class="n">otf_path</span> <span class="o">=</span> <span class="s1">'/path/to/pregenerated_otf.tif'</span>
 
 <span class="k">with</span> <span class="n">tifffile</span><span class="o">.</span><span class="n">TiffFile</span><span class="p">(</span><span class="n">imlist</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="k">as</span> <span class="n">tf</span><span class="p">:</span>
     <span class="n">imshape</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">series</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
@@ -310,7 +310,7 @@ setup.</p>
 </code></pre>
 <p>If you have a 3D PSF volume, the <a href="https://www.talleylambert.com/pycudadecon/otf.html#pycudadecon.TemporaryOTF"><code>pycudadecon.TemporaryOTF</code></a> context manager facilitates temporary OTF generation...</p>
 <pre><code class="language-python"><div class="highlight"><pre><span></span> <span class="c1"># continuing with the variables from the previous example...</span>
- <span class="n">psf_path</span> <span class="o">=</span> <span class="s2">&quot;/path/to/psf_3D.tif&quot;</span>
+ <span class="n">psf_path</span> <span class="o">=</span> <span class="s2">"/path/to/psf_3D.tif"</span>
  <span class="k">with</span> <span class="n">TemporaryOTF</span><span class="p">(</span><span class="n">psf</span><span class="p">)</span> <span class="k">as</span> <span class="n">otf</span><span class="p">:</span>
      <span class="k">with</span> <span class="n">RLContext</span><span class="p">(</span><span class="n">imshape</span><span class="p">,</span> <span class="n">otf</span><span class="o">.</span><span class="n">path</span><span class="p">,</span> <span class="n">dz</span><span class="p">)</span> <span class="k">as</span> <span class="n">ctx</span><span class="p">:</span>
          <span class="k">for</span> <span class="n">impath</span> <span class="ow">in</span> <span class="n">imlist</span><span class="p">:</span>

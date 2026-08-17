@@ -256,7 +256,7 @@ https://napari.org/stable/plugins/index.html
 <pre><code class="language-python"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">napari</span>
 
 <span class="n">viewer</span> <span class="o">=</span> <span class="n">napari</span><span class="o">.</span><span class="n">Viewer</span><span class="p">(</span><span class="n">ndisplay</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">viewer</span><span class="o">.</span><span class="n">open_sample</span><span class="p">(</span><span class="s1">&#39;napari-meshio&#39;</span><span class="p">,</span> <span class="s1">&#39;bunny&#39;</span><span class="p">)</span>
+<span class="n">viewer</span><span class="o">.</span><span class="n">open_sample</span><span class="p">(</span><span class="s1">'napari-meshio'</span><span class="p">,</span> <span class="s1">'bunny'</span><span class="p">)</span>
 </pre></div>
 </code></pre>
 <h3>Read surface data from file</h3>
@@ -266,7 +266,7 @@ https://napari.org/stable/plugins/index.html
 <pre><code class="language-python"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">napari</span>
 
 <span class="n">viewer</span> <span class="o">=</span> <span class="n">napari</span><span class="o">.</span><span class="n">Viewer</span><span class="p">(</span><span class="n">ndisplay</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">viewer</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;path/to/surface/mesh/file.stl&quot;</span><span class="p">)</span>  <span class="c1"># change this to your mesh filename</span>
+<span class="n">viewer</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">"path/to/surface/mesh/file.stl"</span><span class="p">)</span>  <span class="c1"># change this to your mesh filename</span>
 </pre></div>
 </code></pre>
 <h3>Save surface data</h3>
@@ -278,8 +278,8 @@ https://napari.org/stable/plugins/index.html
 <li>Mac: <code>⌘</code> + <code>S</code></li>
 </ul>
 <p>Or, save surface layers from python with:</p>
-<pre><code class="language-python"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;bunny.stl&quot;</span>
-<span class="n">viewer</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="s1">&#39;bunny&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+<pre><code class="language-python"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s2">"bunny.stl"</span>
+<span class="n">viewer</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="s1">'bunny'</span><span class="p">]</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
 </pre></div>
 </code></pre>
 <p><em>Note: this code example assumes you have the Stanford bunny example dataset loaded.</em></p>

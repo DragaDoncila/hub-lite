@@ -241,11 +241,11 @@ Originally developed as part of napari-ndev (as a spiritual successor to <a href
 </pre></div>
 </code></pre>
 <p>If you would like to try out ndevio, you can run napari in a temporary environment with <a href="https://docs.astral.sh/uv/">uv</a>:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>uvx<span class="w"> </span>--with<span class="w"> </span>ndevio<span class="w"> </span>-p<span class="w"> </span><span class="m">3</span>.13<span class="w"> </span><span class="s2">&quot;napari[all]&quot;</span>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>uvx<span class="w"> </span>--with<span class="w"> </span>ndevio<span class="w"> </span>-p<span class="w"> </span><span class="m">3</span>.13<span class="w"> </span><span class="s2">"napari[all]"</span>
 </pre></div>
 </code></pre>
 <p>You can even try an example remote zarr image, like from the <a href="https://idr.github.io/ome-ngff-samples/">OME-NGFF samples</a>:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>uvx<span class="w"> </span>--with<span class="w"> </span>ndevio<span class="w"> </span>--with<span class="w"> </span>pyqt6<span class="w"> </span>-p<span class="w"> </span><span class="m">3</span>.13<span class="w"> </span><span class="s2">&quot;napari&gt;=0.7.0&quot;</span><span class="w"> </span>--plugin<span class="w"> </span>ndevio<span class="w"> </span><span class="s2">&quot;https://uk1s3.embassy.ebi.ac.uk/idr/zarr/v0.4/idr0048A/9846152.zarr/&quot;</span>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>uvx<span class="w"> </span>--with<span class="w"> </span>ndevio<span class="w"> </span>--with<span class="w"> </span>pyqt6<span class="w"> </span>-p<span class="w"> </span><span class="m">3</span>.13<span class="w"> </span><span class="s2">"napari&gt;=0.7.0"</span><span class="w"> </span>--plugin<span class="w"> </span>ndevio<span class="w"> </span><span class="s2">"https://uk1s3.embassy.ebi.ac.uk/idr/zarr/v0.4/idr0048A/9846152.zarr/"</span>
 </pre></div>
 </code></pre>
 <p>To contibute to ndevio or experiment with the latest features, see <a href="CONTRIBUTING.md">Contributing.md</a> for development setup instructions. Conda-forge availability is coming soon!</p>
@@ -295,7 +295,7 @@ See the <a href="https://bioio-devs.github.io/bioio/">bioio documentation</a> fo
 <span class="kn">from</span><span class="w"> </span><span class="nn">napari</span><span class="w"> </span><span class="kn">import</span> <span class="n">Viewer</span>
 
 <span class="c1"># Load image with automatic metadata extraction</span>
-<span class="n">img</span> <span class="o">=</span> <span class="n">nImage</span><span class="p">(</span><span class="s2">&quot;path/to/image.czi&quot;</span><span class="p">)</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">nImage</span><span class="p">(</span><span class="s2">"path/to/image.czi"</span><span class="p">)</span>
 
 <span class="c1"># Because nImage subclasses BioImage, all BioImage methods are available</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">dims</span><span class="p">)</span>               <span class="c1"># e.g., &lt;Dimensions [T: 15, C: 4, Z: 1, Y: 256, X: 256]&gt;</span>
@@ -304,8 +304,8 @@ See the <a href="https://bioio-devs.github.io/bioio/">bioio documentation</a> fo
 <span class="nb">print</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">reference_xarray</span><span class="p">)</span>   <span class="c1"># e.g., xarray.DataArray with dims (T, Y, X) and shape (15, 256, 256)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">layer_data</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>      <span class="c1"># e.g. the highest resolution array; a list is returned for multiscale image support</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">layer_scale</span><span class="p">)</span>        <span class="c1"># e.g., (1.0, 0.2, 0.2) - time interval + physical scale per dimension, napari ready</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">layer_axis_labels</span><span class="p">)</span>  <span class="c1"># e.g., (&#39;T&#39;, &#39;Y&#39;, &#39;X&#39;)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">layer_units</span><span class="p">)</span>        <span class="c1"># e.g., (&#39;s&#39;, &#39;µm&#39;, &#39;µm&#39;)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">layer_axis_labels</span><span class="p">)</span>  <span class="c1"># e.g., ('T', 'Y', 'X')</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">layer_units</span><span class="p">)</span>        <span class="c1"># e.g., ('s', 'µm', 'µm')</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">layer_metadata</span><span class="p">)</span>     <span class="c1"># e.g., a dictionary containing the 1) full BioImage object, 2) raw_image metadata and 3) OME metadata (if parsed) - accessible via `viewer.layers[n].metadata`</span>
 
 <span class="c1"># A convenience method to get napari LayerDataTuples with nImage metadata for napari</span>

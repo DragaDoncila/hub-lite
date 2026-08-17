@@ -299,7 +299,7 @@ wheel; verify the ZIP against the release checksum before extracting it.</p>
 <h3>Manual Installation (Advanced And Non-Windows)</h3>
 <p>VIPP <code>0.13.0a7</code> supports CPython 3.12 and 3.13. Create and activate a dedicated
 virtual environment, then install:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;napari[pyqt6]&gt;=0.6&quot;</span><span class="w"> </span><span class="s2">&quot;napari-vipp==0.13.0a7&quot;</span>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"napari[pyqt6]&gt;=0.6"</span><span class="w"> </span><span class="s2">"napari-vipp==0.13.0a7"</span>
 vipp
 </pre></div>
 </code></pre>
@@ -394,7 +394,7 @@ batch configuration, source-axis declarations, export, and scientific review.</p
 <p>Reader packages should be installed with the Python interpreter from the exact
 environment that launches VIPP, never a global/base Python. Keep the VIPP
 version pinned and restart napari afterward. For example:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;napari-vipp[nd2]==0.13.0a7&quot;</span>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"napari-vipp[nd2]==0.13.0a7"</span>
 </pre></div>
 </code></pre>
 <p>Available extras include <code>nd2</code>, <code>czi</code>, <code>microscope</code>, and <code>bioformats</code>. See
@@ -427,7 +427,7 @@ and <a href="docs/windows-installation-planner.md">Windows installation planner<
 <h2>Development</h2>
 <pre><code class="language-powershell"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">-m</span> <span class="n">venv</span> <span class="p">.</span><span class="n">venv</span>
 <span class="p">.</span><span class="n">venv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">Activate</span><span class="p">.</span><span class="n">ps1</span>
-<span class="n">python</span> <span class="n">-m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">-e</span> <span class="s2">&quot;.[dev]&quot;</span>
+<span class="n">python</span> <span class="n">-m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">-e</span> <span class="s2">".[dev]"</span>
 <span class="n">python</span> <span class="n">-m</span> <span class="n">npe2</span> <span class="n">validate</span> <span class="n">src</span><span class="p">/</span><span class="n">napari_vipp</span><span class="p">/</span><span class="n">napari</span><span class="p">.</span><span class="n">yaml</span>
 <span class="n">python</span> <span class="n">-m</span> <span class="n">ruff</span> <span class="n">check</span> <span class="p">.</span>
 <span class="n">python</span> <span class="n">-m</span> <span class="n">pytest</span>

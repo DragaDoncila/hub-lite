@@ -241,10 +241,10 @@
 
 <span class="c1"># Add data to viewer</span>
 <span class="n">viewer</span> <span class="o">=</span> <span class="n">napari</span><span class="o">.</span><span class="n">Viewer</span><span class="p">()</span>
-<span class="n">label_layer</span> <span class="o">=</span> <span class="n">viewer</span><span class="o">.</span><span class="n">add_labels</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;3D object&#39;</span><span class="p">)</span>
+<span class="n">label_layer</span> <span class="o">=</span> <span class="n">viewer</span><span class="o">.</span><span class="n">add_labels</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">'3D object'</span><span class="p">)</span>
 
 <span class="c1"># save the layer as 3D printable file to disc</span>
-<span class="n">napari</span><span class="o">.</span><span class="n">save_layers</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;/some/path/test.stl&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">label_layer</span><span class="p">])</span>
+<span class="n">napari</span><span class="o">.</span><span class="n">save_layers</span><span class="p">(</span><span class="sa">r</span><span class="s1">'/some/path/test.stl'</span><span class="p">,</span> <span class="p">[</span><span class="n">label_layer</span><span class="p">])</span>
 </pre></div>
 </code></pre>
 <h3>Sample data</h3>

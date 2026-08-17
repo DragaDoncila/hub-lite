@@ -242,7 +242,7 @@ through napari's plugin manager only does the pip part.</p>
 <h3>Step 1 — environment</h3>
 <p>Create a Python 3.10 env pinned to <code>numpy&lt;2</code> (the <code>bioio-bioformats</code> VSI reader is
 pinned &lt;2, and nnU-Net / the imaging stack share the 1.x ABI).</p>
-<pre><code class="language-powershell"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="n">-n</span> <span class="n">pentachrome</span> <span class="n">python</span><span class="p">=</span><span class="n">3</span><span class="p">.</span><span class="n">10</span> <span class="s2">&quot;numpy&lt;2&quot;</span> <span class="n">-y</span>
+<pre><code class="language-powershell"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="n">-n</span> <span class="n">pentachrome</span> <span class="n">python</span><span class="p">=</span><span class="n">3</span><span class="p">.</span><span class="n">10</span> <span class="s2">"numpy&lt;2"</span> <span class="n">-y</span>
 <span class="n">conda</span> <span class="n">activate</span> <span class="n">pentachrome</span>
 </pre></div>
 </code></pre>
@@ -260,7 +260,7 @@ need Step 1 and Step 3 in the same environment.</p>
 <p><strong>Already installed?</strong> To pull a newer release into the same env, upgrade just the
 plugin (leaves PyTorch, nnU-Net, and weights untouched); restart napari afterwards:</p>
 <pre><code class="language-powershell"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="p">-</span><span class="n">-upgrade</span> <span class="n">pentachrome-plugin</span>
-<span class="n">pip</span> <span class="n">show</span> <span class="n">pentachrome-plugin</span>        <span class="c"># check the &quot;Version:&quot; line</span>
+<span class="n">pip</span> <span class="n">show</span> <span class="n">pentachrome-plugin</span>        <span class="c"># check the "Version:" line</span>
 </pre></div>
 </code></pre>
 <h3>Step 3 — model weights</h3>
@@ -307,7 +307,7 @@ so the CUDA wheel wins:</p>
 </tbody>
 </table>
 <p>Verify (in the same env):</p>
-<pre><code class="language-powershell"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">-c</span> <span class="s2">&quot;import torch; print(torch.__version__, torch.version.cuda, torch.cuda.is_available())&quot;</span>
+<pre><code class="language-powershell"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">-c</span> <span class="s2">"import torch; print(torch.__version__, torch.version.cuda, torch.cuda.is_available())"</span>
 </pre></div>
 </code></pre>
 <p>You want a version ending in <code>+cuXXX</code> (not <code>+cpu</code>), a CUDA number, and <code>True</code>.
@@ -329,7 +329,7 @@ its Extract / Analyze / Statistics steps.</p>
 checkout instead of from PyPI (<code>cd</code> into the plugin directory first, or pass the
 absolute path):</p>
 <pre><code class="language-powershell"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">pentachrome</span>
-<span class="nb">cd </span><span class="s2">&quot;...\pentachrome_plugin&quot;</span>
+<span class="nb">cd </span><span class="s2">"...\pentachrome_plugin"</span>
 <span class="n">pip</span> <span class="n">install</span> <span class="n">-e</span> <span class="p">.</span>
 </pre></div>
 </code></pre>

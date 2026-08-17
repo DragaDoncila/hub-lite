@@ -261,8 +261,8 @@ the CuPy <a href="https://docs.cupy.dev/en/stable/install.html">installation ins
 <span class="kn">import</span><span class="w"> </span><span class="nn">napari</span>
 
 <span class="n">viewer</span> <span class="o">=</span> <span class="n">napari</span><span class="o">.</span><span class="n">Viewer</span><span class="p">()</span>
-<span class="k">with</span> <span class="n">parameter_override</span><span class="p">(</span><span class="n">angle</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;my image&quot;</span><span class="p">):</span>
-    <span class="n">viewer</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;path/to/folder&quot;</span><span class="p">,</span> <span class="n">plugin</span><span class="o">=</span><span class="s2">&quot;ndtiffs&quot;</span><span class="p">)</span>
+<span class="k">with</span> <span class="n">parameter_override</span><span class="p">(</span><span class="n">angle</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">"my image"</span><span class="p">):</span>
+    <span class="n">viewer</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">"path/to/folder"</span><span class="p">,</span> <span class="n">plugin</span><span class="o">=</span><span class="s2">"ndtiffs"</span><span class="p">)</span>
 </pre></div>
 </code></pre>
 <p>Valid keys for <code>parameter_override</code> include:</p>
@@ -285,7 +285,7 @@ the CuPy <a href="https://docs.cupy.dev/en/stable/install.html">installation ins
 <h2>Debugging</h2>
 <p>To monitor file io and deskew activity, enter the following in the napari console:</p>
 <pre><code class="language-python"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
-<span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;napari_ndtiffs&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="s1">&#39;DEBUG&#39;</span><span class="p">)</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">'napari_ndtiffs'</span><span class="p">)</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="s1">'DEBUG'</span><span class="p">)</span>
 </pre></div>
 </code></pre>
 <h2>Contributing</h2>

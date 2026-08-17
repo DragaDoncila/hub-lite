@@ -236,7 +236,7 @@ and launch the Harpy napari interface with <code>Interactive</code>.</p>
 <span class="kn">from</span><span class="w"> </span><span class="nn">napari_harpy</span><span class="w"> </span><span class="kn">import</span> <span class="n">Interactive</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">napari_harpy.datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">blobs_multi_region</span>
 
-<span class="n">zarr_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">tempfile</span><span class="o">.</span><span class="n">mkdtemp</span><span class="p">())</span> <span class="o">/</span> <span class="s2">&quot;blobs_multi_region.zarr&quot;</span>
+<span class="n">zarr_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">tempfile</span><span class="o">.</span><span class="n">mkdtemp</span><span class="p">())</span> <span class="o">/</span> <span class="s2">"blobs_multi_region.zarr"</span>
 
 <span class="n">sdata</span> <span class="o">=</span> <span class="n">blobs_multi_region</span><span class="p">()</span>
 <span class="n">sdata</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">zarr_path</span><span class="p">)</span>
@@ -298,15 +298,15 @@ selection is read from the exported classifier's <code>source_channels</code> me
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">napari_harpy</span><span class="w"> </span><span class="kn">import</span> <span class="n">headless</span>
 
-<span class="n">sdata</span> <span class="o">=</span> <span class="n">read_zarr</span><span class="p">(</span><span class="s2">&quot;experiment.zarr&quot;</span><span class="p">)</span>
+<span class="n">sdata</span> <span class="o">=</span> <span class="n">read_zarr</span><span class="p">(</span><span class="s2">"experiment.zarr"</span><span class="p">)</span>
 
 <span class="n">result</span> <span class="o">=</span> <span class="n">headless</span><span class="o">.</span><span class="n">apply_classifier_with_feature_extraction_from_path</span><span class="p">(</span>
     <span class="n">sdata</span><span class="p">,</span>
-    <span class="s2">&quot;classifier.harpy-classifier.joblib&quot;</span><span class="p">,</span>
-    <span class="n">table_name</span><span class="o">=</span><span class="s2">&quot;table_multi&quot;</span><span class="p">,</span>
-    <span class="n">labels_name</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;sample_1_labels&quot;</span><span class="p">,</span> <span class="s2">&quot;sample_2_labels&quot;</span><span class="p">],</span>
-    <span class="n">coordinate_system</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;sample_1&quot;</span><span class="p">,</span> <span class="s2">&quot;sample_2&quot;</span><span class="p">],</span>
-    <span class="n">image_name</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;sample_1_image&quot;</span><span class="p">,</span> <span class="s2">&quot;sample_2_image&quot;</span><span class="p">],</span>
+    <span class="s2">"classifier.harpy-classifier.joblib"</span><span class="p">,</span>
+    <span class="n">table_name</span><span class="o">=</span><span class="s2">"table_multi"</span><span class="p">,</span>
+    <span class="n">labels_name</span><span class="o">=</span><span class="p">[</span><span class="s2">"sample_1_labels"</span><span class="p">,</span> <span class="s2">"sample_2_labels"</span><span class="p">],</span>
+    <span class="n">coordinate_system</span><span class="o">=</span><span class="p">[</span><span class="s2">"sample_1"</span><span class="p">,</span> <span class="s2">"sample_2"</span><span class="p">],</span>
+    <span class="n">image_name</span><span class="o">=</span><span class="p">[</span><span class="s2">"sample_1_image"</span><span class="p">,</span> <span class="s2">"sample_2_image"</span><span class="p">],</span>
 <span class="p">)</span>
 </pre></div>
 </code></pre>

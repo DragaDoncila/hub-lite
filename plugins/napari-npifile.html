@@ -231,20 +231,20 @@ settings when opening arrays in napari.</p>
 <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">))</span>
 
 <span class="c1"># save it without napari metadata</span>
-<span class="n">np</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;quick_example.npy&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">"quick_example.npy"</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
 
 <span class="c1"># save it with napari metadata</span>
 <span class="n">napari_npifile</span><span class="o">.</span><span class="n">write_npi</span><span class="p">(</span>
-    <span class="s2">&quot;quick_example.npi&quot;</span><span class="p">,</span>
+    <span class="s2">"quick_example.npi"</span><span class="p">,</span>
     <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
     <span class="n">layer_attributes</span><span class="o">=</span><span class="p">{</span>
-        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;foo&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;colormap&quot;</span><span class="p">:</span> <span class="s2">&quot;magma&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;contrast_limits&quot;</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">),</span>
+        <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"foo"</span><span class="p">,</span>
+        <span class="s2">"colormap"</span><span class="p">:</span> <span class="s2">"magma"</span><span class="p">,</span>
+        <span class="s2">"contrast_limits"</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">),</span>
     <span class="p">},</span>
     <span class="n">viewer_settings</span><span class="o">=</span><span class="p">{</span>
-        <span class="s2">&quot;axis_labels&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;T&quot;</span><span class="p">,</span> <span class="s2">&quot;Z&quot;</span><span class="p">,</span> <span class="s2">&quot;Y&quot;</span><span class="p">,</span> <span class="s2">&quot;X&quot;</span><span class="p">],</span>
-        <span class="s2">&quot;scale_bar_properties&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;visible&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;px&quot;</span><span class="p">,</span> <span class="s2">&quot;font_size&quot;</span><span class="p">:</span> <span class="mf">40.0</span><span class="p">},</span>
+        <span class="s2">"axis_labels"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"T"</span><span class="p">,</span> <span class="s2">"Z"</span><span class="p">,</span> <span class="s2">"Y"</span><span class="p">,</span> <span class="s2">"X"</span><span class="p">],</span>
+        <span class="s2">"scale_bar_properties"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"visible"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">"unit"</span><span class="p">:</span> <span class="s2">"px"</span><span class="p">,</span> <span class="s2">"font_size"</span><span class="p">:</span> <span class="mf">40.0</span><span class="p">},</span>
     <span class="p">},</span>
 <span class="p">)</span>
 
@@ -293,7 +293,7 @@ supported format:</p>
 <li>programmatically using:<pre><code class="language-python"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">napari</span>
 
 <span class="n">viewer</span> <span class="o">=</span> <span class="n">napari</span><span class="o">.</span><span class="n">Viewer</span><span class="p">()</span>
-<span class="n">viewer</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;myfile.npi&quot;</span><span class="p">,</span> <span class="n">plugin</span><span class="o">=</span><span class="s2">&quot;napari-npifile&quot;</span><span class="p">)</span>
+<span class="n">viewer</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">"myfile.npi"</span><span class="p">,</span> <span class="n">plugin</span><span class="o">=</span><span class="s2">"napari-npifile"</span><span class="p">)</span>
 
 <span class="n">napari</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </pre></div>
@@ -319,10 +319,10 @@ file over time, making it ideal for loops.</p>
 <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
 
 <span class="n">napari_npifile</span><span class="o">.</span><span class="n">write_npi</span><span class="p">(</span>
-    <span class="s2">&quot;single.npi&quot;</span><span class="p">,</span>
+    <span class="s2">"single.npi"</span><span class="p">,</span>
     <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
-    <span class="n">layer_attributes</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;layer0&quot;</span><span class="p">,</span> <span class="s2">&quot;colormap&quot;</span><span class="p">:</span> <span class="s2">&quot;magma&quot;</span><span class="p">},</span>
-    <span class="n">viewer_settings</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;axis_labels&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Z&quot;</span><span class="p">,</span> <span class="s2">&quot;Y&quot;</span><span class="p">,</span> <span class="s2">&quot;X&quot;</span><span class="p">]},</span>
+    <span class="n">layer_attributes</span><span class="o">=</span><span class="p">{</span><span class="s2">"name"</span><span class="p">:</span> <span class="s2">"layer0"</span><span class="p">,</span> <span class="s2">"colormap"</span><span class="p">:</span> <span class="s2">"magma"</span><span class="p">},</span>
+    <span class="n">viewer_settings</span><span class="o">=</span><span class="p">{</span><span class="s2">"axis_labels"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"Z"</span><span class="p">,</span> <span class="s2">"Y"</span><span class="p">,</span> <span class="s2">"X"</span><span class="p">]},</span>
 <span class="p">)</span>
 </pre></div>
 </code></pre>
@@ -335,15 +335,15 @@ file over time, making it ideal for loops.</p>
     <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">)),</span>
 <span class="p">]</span>
 <span class="n">layer_attributes_seq</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;first&quot;</span><span class="p">,</span> <span class="s2">&quot;colormap&quot;</span><span class="p">:</span> <span class="s2">&quot;gray&quot;</span><span class="p">},</span>
-    <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;second&quot;</span><span class="p">,</span> <span class="s2">&quot;colormap&quot;</span><span class="p">:</span> <span class="s2">&quot;green&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"name"</span><span class="p">:</span> <span class="s2">"first"</span><span class="p">,</span> <span class="s2">"colormap"</span><span class="p">:</span> <span class="s2">"gray"</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">"name"</span><span class="p">:</span> <span class="s2">"second"</span><span class="p">,</span> <span class="s2">"colormap"</span><span class="p">:</span> <span class="s2">"green"</span><span class="p">},</span>
 <span class="p">]</span>
 
 <span class="n">napari_npifile</span><span class="o">.</span><span class="n">write_multilayer_npi</span><span class="p">(</span>
-    <span class="s2">&quot;multi.npi&quot;</span><span class="p">,</span>
+    <span class="s2">"multi.npi"</span><span class="p">,</span>
     <span class="n">data_seq</span><span class="o">=</span><span class="n">data_seq</span><span class="p">,</span>
     <span class="n">layer_attributes_seq</span><span class="o">=</span><span class="n">layer_attributes_seq</span><span class="p">,</span>
-    <span class="n">viewer_settings</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;axis_labels&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Z&quot;</span><span class="p">,</span> <span class="s2">&quot;Y&quot;</span><span class="p">,</span> <span class="s2">&quot;X&quot;</span><span class="p">]},</span>
+    <span class="n">viewer_settings</span><span class="o">=</span><span class="p">{</span><span class="s2">"axis_labels"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"Z"</span><span class="p">,</span> <span class="s2">"Y"</span><span class="p">,</span> <span class="s2">"X"</span><span class="p">]},</span>
 <span class="p">)</span>
 </pre></div>
 </code></pre>
@@ -353,25 +353,25 @@ file over time, making it ideal for loops.</p>
 
 <span class="c1"># prepare writer</span>
 <span class="n">writer</span> <span class="o">=</span> <span class="n">napari_npifile</span><span class="o">.</span><span class="n">NpiWriter_v1</span><span class="p">(</span>
-    <span class="n">out_path</span><span class="o">=</span><span class="s2">&quot;out.npi&quot;</span><span class="p">,</span>
+    <span class="n">out_path</span><span class="o">=</span><span class="s2">"out.npi"</span><span class="p">,</span>
     <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 <span class="p">)</span>
 
 <span class="c1"># viewer settings are saved once and are used for all layers</span>
 <span class="n">writer</span><span class="o">.</span><span class="n">write_viewer_settings</span><span class="p">(</span>
     <span class="p">{</span>
-        <span class="s2">&quot;axis_labels&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;T&quot;</span><span class="p">,</span> <span class="s2">&quot;K&quot;</span><span class="p">,</span> <span class="s2">&quot;Z&quot;</span><span class="p">,</span> <span class="s2">&quot;Y&quot;</span><span class="p">,</span> <span class="s2">&quot;X&quot;</span><span class="p">],</span>
-        <span class="s2">&quot;grid_properties&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;enabled&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;shape&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="s2">&quot;spacing&quot;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">},</span>
-        <span class="s2">&quot;scale_bar_properties&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;visible&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;unit&quot;</span><span class="p">:</span> <span class="s2">&quot;px&quot;</span><span class="p">,</span> <span class="s2">&quot;gridded&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
+        <span class="s2">"axis_labels"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"T"</span><span class="p">,</span> <span class="s2">"K"</span><span class="p">,</span> <span class="s2">"Z"</span><span class="p">,</span> <span class="s2">"Y"</span><span class="p">,</span> <span class="s2">"X"</span><span class="p">],</span>
+        <span class="s2">"grid_properties"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"enabled"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">"shape"</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="s2">"spacing"</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">},</span>
+        <span class="s2">"scale_bar_properties"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"visible"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">"unit"</span><span class="p">:</span> <span class="s2">"px"</span><span class="p">,</span> <span class="s2">"gridded"</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
     <span class="p">}</span>
 <span class="p">)</span>
 
 <span class="c1"># layers are written one at a time, each with individual attributes</span>
 <span class="n">data1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">))</span>
-<span class="n">writer</span><span class="o">.</span><span class="n">write_layer</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data1</span><span class="p">,</span> <span class="n">attributes</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;colormap&quot;</span><span class="p">:</span> <span class="s2">&quot;cyan&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;foo&quot;</span><span class="p">})</span>
+<span class="n">writer</span><span class="o">.</span><span class="n">write_layer</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data1</span><span class="p">,</span> <span class="n">attributes</span><span class="o">=</span><span class="p">{</span><span class="s2">"colormap"</span><span class="p">:</span> <span class="s2">"cyan"</span><span class="p">,</span> <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"foo"</span><span class="p">})</span>
 
 <span class="n">data2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">))</span>
-<span class="n">writer</span><span class="o">.</span><span class="n">write_layer</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data2</span><span class="p">,</span> <span class="n">attributes</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;colormap&quot;</span><span class="p">:</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">})</span>
+<span class="n">writer</span><span class="o">.</span><span class="n">write_layer</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data2</span><span class="p">,</span> <span class="n">attributes</span><span class="o">=</span><span class="p">{</span><span class="s2">"colormap"</span><span class="p">:</span> <span class="s2">"green"</span><span class="p">,</span> <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"bar"</span><span class="p">})</span>
 </pre></div>
 </code></pre>
 <h4>Incremental writing</h4>
@@ -411,7 +411,7 @@ used.</p>
 <h4>Examples</h4>
 <p>Standard ZIP compression:</p>
 <pre><code class="language-python"><div class="highlight"><pre><span></span><span class="n">napari_npifile</span><span class="o">.</span><span class="n">write_npi</span><span class="p">(</span>
-    <span class="n">out_path</span><span class="o">=</span><span class="s2">&quot;compressed.npi&quot;</span><span class="p">,</span>
+    <span class="n">out_path</span><span class="o">=</span><span class="s2">"compressed.npi"</span><span class="p">,</span>
     <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
     <span class="n">compression</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 <span class="p">)</span>
@@ -421,15 +421,15 @@ used.</p>
 <pre><code class="language-python"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">zipfile</span>
 
 <span class="n">napari_npifile</span><span class="o">.</span><span class="n">write_npi</span><span class="p">(</span>
-  <span class="n">out_path</span><span class="o">=</span><span class="s2">&quot;compressed.npi&quot;</span><span class="p">,</span>
+  <span class="n">out_path</span><span class="o">=</span><span class="s2">"compressed.npi"</span><span class="p">,</span>
   <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
-  <span class="n">compression</span><span class="o">=</span><span class="s2">&quot;lzma&quot;</span><span class="p">,</span>
+  <span class="n">compression</span><span class="o">=</span><span class="s2">"lzma"</span><span class="p">,</span>
 <span class="p">)</span>
 
 <span class="c1"># both are identical</span>
 
 <span class="n">napari_npifile</span><span class="o">.</span><span class="n">write_npi</span><span class="p">(</span>
-  <span class="n">out_path</span><span class="o">=</span><span class="s2">&quot;compressed.npi&quot;</span><span class="p">,</span>
+  <span class="n">out_path</span><span class="o">=</span><span class="s2">"compressed.npi"</span><span class="p">,</span>
   <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
   <span class="n">compression</span><span class="o">=</span><span class="n">zipfile</span><span class="o">.</span><span class="n">ZIP_LZMA</span><span class="p">,</span>
 <span class="p">)</span>
@@ -437,9 +437,9 @@ used.</p>
 </code></pre>
 <p>Specifying a compression level:</p>
 <pre><code class="language-python"><div class="highlight"><pre><span></span><span class="n">napari_npifile</span><span class="o">.</span><span class="n">write_npi</span><span class="p">(</span>
-    <span class="n">out_path</span><span class="o">=</span><span class="s2">&quot;compressed.npi&quot;</span><span class="p">,</span>
+    <span class="n">out_path</span><span class="o">=</span><span class="s2">"compressed.npi"</span><span class="p">,</span>
     <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
-    <span class="n">compression</span><span class="o">=</span><span class="s2">&quot;DEFLATED&quot;</span><span class="p">,</span>
+    <span class="n">compression</span><span class="o">=</span><span class="s2">"DEFLATED"</span><span class="p">,</span>
     <span class="n">compresslevel</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
@@ -482,7 +482,7 @@ added alongside it, leaving existing code using <code>NpiWriter_v1</code> fully 
 <h3>Current Version Details (<code>v1</code>)</h3>
 <h4>Archive Layout</h4>
 <pre><code class="language-text"><div class="highlight"><pre><span></span>example.npi                  # this is just a ZIP archive
-├── metadata.json            # contains {&quot;npi_format&quot;: &quot;v1&quot;}
+├── metadata.json            # contains {"npi_format": "v1"}
 ├── viewer_settings.json     # dictionary with global viewer settings - see below
 └── layers
     ├── 00000000             # each layer is stored under a sequential numeric key

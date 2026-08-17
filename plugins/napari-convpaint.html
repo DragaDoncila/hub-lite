@@ -239,7 +239,7 @@ This tool, that comes both as a napari plugin and an intuitive Python API, can b
 <h2>API</h2>
 <p>You can use the Convpaint API in a fashion very similar to the napari plugin. The <code>ConvpaintModel</code> class combines a feature extractor and a classifier model, and holds all the parameters defining the model.</p>
 <p>Initialize a <code>ConvpaintModel</code> object, train its classifier and use it to segment an image:</p>
-<pre><code class="language-Python"><div class="highlight"><pre><span></span><span class="n">cp_model</span> <span class="o">=</span> <span class="n">ConvpaintModel</span><span class="p">(</span><span class="s2">&quot;dino&quot;</span><span class="p">)</span> <span class="c1"># alternatively use vgg, cellpose or gaussian</span>
+<pre><code class="language-Python"><div class="highlight"><pre><span></span><span class="n">cp_model</span> <span class="o">=</span> <span class="n">ConvpaintModel</span><span class="p">(</span><span class="s2">"dino"</span><span class="p">)</span> <span class="c1"># alternatively use vgg, cellpose or gaussian</span>
 <span class="n">cp_model</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">annotations</span><span class="p">)</span>
 <span class="n">segmentation</span> <span class="o">=</span> <span class="n">cp_model</span><span class="o">.</span><span class="n">segment</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 </pre></div>

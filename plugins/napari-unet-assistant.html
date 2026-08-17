@@ -314,7 +314,7 @@ python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </sp
 </pre></div>
 </code></pre>
 <p>Use <code>models</code> to install all optional model backends at once. If your shell treats square brackets specially, quote the requirement:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;napari-unet-assistant[models]&quot;</span>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"napari-unet-assistant[models]"</span>
 </pre></div>
 </code></pre>
 <p>If the extras command does not install the backend package, install the backend dependency directly:</p>
@@ -324,15 +324,15 @@ python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </sp
 </pre></div>
 </code></pre>
 <p>For a development checkout, install the extras from the repository root:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[models]&quot;</span>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">".[models]"</span>
 </pre></div>
 </code></pre>
 <p>For the GitHub version, put the extras before the <code>@</code> URL:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;napari-unet-assistant[models] @ git+https://github.com/wulinteousa2-hash/napari-unet-assistant.git&quot;</span>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"napari-unet-assistant[models] @ git+https://github.com/wulinteousa2-hash/napari-unet-assistant.git"</span>
 </pre></div>
 </code></pre>
 <p>You can verify that the optional packages are available with:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import monai; import segmentation_models_pytorch; import nnunetv2; print(&#39;optional model backends ok&#39;)&quot;</span>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"import monai; import segmentation_models_pytorch; import nnunetv2; print('optional model backends ok')"</span>
 </pre></div>
 </code></pre>
 <p>If this import check fails, napari will still load the built-in U-Net backend, but the missing optional model source will not be usable until its package is installed in the active environment. After installing a source, restart napari and select it from the <code>Model source</code> dropdown.</p>

@@ -217,11 +217,11 @@
 <hr />
 <h2>Installation via pip</h2>
 <p>You can install <code>napari-wsi</code> via <a href="https://github.com/pypa/pip">pip</a>:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;napari-wsi[all]&gt;=1.0&quot;</span>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"napari-wsi[all]&gt;=1.0"</span>
 </pre></div>
 </code></pre>
 <p>This automatically installs all optional backends, as a shortcut for:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;napari-wsi[openslide,rasterio,wsidicom]&gt;=1.0&quot;</span>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"napari-wsi[openslide,rasterio,wsidicom]&gt;=1.0"</span>
 </pre></div>
 </code></pre>
 <p>In addition, to be able to read images using the <code>openslide</code> backend, it is
@@ -229,7 +229,7 @@ required to install the OpenSlide library itself, for example by installing the
 <a href="https://pypi.org/project/openslide-bin/">openslide-bin</a> python package (also via <a href="https://github.com/pypa/pip">pip</a>).</p>
 <h2>Installation via conda</h2>
 <p>You can also install <code>napari-wsi</code> via <a href="https://conda-forge.org/">conda</a>:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span><span class="s2">&quot;napari-wsi&gt;=1.0&quot;</span>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span><span class="s2">"napari-wsi&gt;=1.0"</span>
 </pre></div>
 </code></pre>
 <p>This already installs all optional dependencies, including OpenSlide.</p>
@@ -256,7 +256,7 @@ from the command line or from a python script:</p>
 <pre><code class="language-python"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">napari</span><span class="w"> </span><span class="kn">import</span> <span class="n">Viewer</span>
 
 <span class="n">viewer</span> <span class="o">=</span> <span class="n">Viewer</span><span class="p">()</span>
-<span class="n">viewer</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;CMU-1.svs&quot;</span><span class="p">,</span> <span class="n">plugin</span><span class="o">=</span><span class="s2">&quot;napari-wsi&quot;</span><span class="p">)</span>
+<span class="n">viewer</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">"CMU-1.svs"</span><span class="p">,</span> <span class="n">plugin</span><span class="o">=</span><span class="s2">"napari-wsi"</span><span class="p">)</span>
 </pre></div>
 </code></pre>
 <p>It is also possible to use the different backend classes directly, in which case
@@ -267,9 +267,9 @@ some more features are available, for example:</p>
 <span class="n">viewer</span> <span class="o">=</span> <span class="n">Viewer</span><span class="p">()</span>
 
 <span class="c1"># Display the image in the sRGB color space and a physical coordinate system:</span>
-<span class="n">store</span> <span class="o">=</span> <span class="n">OpenSlideStore</span><span class="p">(</span><span class="s2">&quot;CMU-1.svs&quot;</span><span class="p">,</span> <span class="n">color_space</span><span class="o">=</span><span class="s2">&quot;sRGB&quot;</span><span class="p">)</span>
+<span class="n">store</span> <span class="o">=</span> <span class="n">OpenSlideStore</span><span class="p">(</span><span class="s2">"CMU-1.svs"</span><span class="p">,</span> <span class="n">color_space</span><span class="o">=</span><span class="s2">"sRGB"</span><span class="p">)</span>
 <span class="p">(</span><span class="n">layer</span><span class="p">,)</span> <span class="o">=</span> <span class="n">store</span><span class="o">.</span><span class="n">to_viewer</span><span class="p">(</span><span class="n">viewer</span><span class="p">,</span> <span class="n">spatial_transform</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="k">assert</span> <span class="n">layer</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;color_space&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;sRGB&quot;</span>
+<span class="k">assert</span> <span class="n">layer</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">"color_space"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"sRGB"</span>
 
 <span class="c1"># Display a scale bar to indicate milli- or micrometers, depending on the zoom level:</span>
 <span class="n">viewer</span><span class="o">.</span><span class="n">scale_bar</span><span class="o">.</span><span class="n">visible</span> <span class="o">=</span> <span class="kc">True</span>
@@ -282,8 +282,8 @@ some more features are available, for example:</p>
 <span class="kn">from</span><span class="w"> </span><span class="nn">wsidicom</span><span class="w"> </span><span class="kn">import</span> <span class="n">WsiDicomWebClient</span>
 
 <span class="n">viewer</span> <span class="o">=</span> <span class="n">Viewer</span><span class="p">()</span>
-<span class="n">client</span> <span class="o">=</span> <span class="n">WsiDicomWebClient</span><span class="o">.</span><span class="n">create_client</span><span class="p">(</span><span class="s2">&quot;...&quot;</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="n">HTTPBasicAuth</span><span class="p">(</span><span class="s2">&quot;...&quot;</span><span class="p">,</span> <span class="s2">&quot;...&quot;</span><span class="p">))</span>
-<span class="n">store</span> <span class="o">=</span> <span class="n">WSIDicomStore</span><span class="p">(</span><span class="n">client</span><span class="o">=</span><span class="n">client</span><span class="p">,</span> <span class="n">study_uid</span><span class="o">=</span><span class="s2">&quot;...&quot;</span><span class="p">,</span> <span class="n">series_uids</span><span class="o">=</span><span class="s2">&quot;...&quot;</span><span class="p">)</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">WsiDicomWebClient</span><span class="o">.</span><span class="n">create_client</span><span class="p">(</span><span class="s2">"..."</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="n">HTTPBasicAuth</span><span class="p">(</span><span class="s2">"..."</span><span class="p">,</span> <span class="s2">"..."</span><span class="p">))</span>
+<span class="n">store</span> <span class="o">=</span> <span class="n">WSIDicomStore</span><span class="p">(</span><span class="n">client</span><span class="o">=</span><span class="n">client</span><span class="p">,</span> <span class="n">study_uid</span><span class="o">=</span><span class="s2">"..."</span><span class="p">,</span> <span class="n">series_uids</span><span class="o">=</span><span class="s2">"..."</span><span class="p">)</span>
 <span class="n">store</span><span class="o">.</span><span class="n">to_viewer</span><span class="p">(</span><span class="n">viewer</span><span class="p">)</span>
 </pre></div>
 </code></pre>

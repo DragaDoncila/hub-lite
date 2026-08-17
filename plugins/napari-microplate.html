@@ -323,10 +323,10 @@ plugin:</p>
 <pre><code class="language-python"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">napari_microplate._pipeline</span><span class="w"> </span><span class="kn">import</span> <span class="n">MicroplatePipeline</span>
 
 <span class="n">pipe</span> <span class="o">=</span> <span class="n">MicroplatePipeline</span><span class="p">()</span>          <span class="c1"># loads weights lazily on first run</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">pipe</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;plate.png&quot;</span><span class="p">)</span>       <span class="c1"># path to a raw microplate image</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">pipe</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">"plate.png"</span><span class="p">)</span>       <span class="c1"># path to a raw microplate image</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;boxes&quot;</span><span class="p">])</span>               <span class="c1"># [(x1,y1,x2,y2,conf), ...]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;classes&quot;</span><span class="p">])</span>             <span class="c1"># [0, 1, 2, ...]  (0=Growth,1=NoGrowth,2=NoAgar)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s2">"boxes"</span><span class="p">])</span>               <span class="c1"># [(x1,y1,x2,y2,conf), ...]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s2">"classes"</span><span class="p">])</span>             <span class="c1"># [0, 1, 2, ...]  (0=Growth,1=NoGrowth,2=NoAgar)</span>
 </pre></div>
 </code></pre>
 <h2>License</h2>

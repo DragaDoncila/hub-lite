@@ -233,7 +233,7 @@
 </pre></div>
 </code></pre>
 <p>If napari (Qt backend included) is not yet installed, use:</p>
-<pre><code><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="s2">&quot;gfap-segmenter[all]&quot;</span>
+<pre><code><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="s2">"gfap-segmenter[all]"</span>
 </pre></div>
 </code></pre>
 <h3>GPU support</h3>
@@ -301,16 +301,16 @@
 <li>
 <p><strong>Check via Python</strong>:</p>
 <pre><code class="language-python"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;CUDA available: </span><span class="si">{</span><span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"CUDA available: </span><span class="si">{</span><span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;CUDA device: </span><span class="si">{</span><span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">get_device_name</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;CUDA version: </span><span class="si">{</span><span class="n">torch</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">cuda</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"CUDA device: </span><span class="si">{</span><span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">get_device_name</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"CUDA version: </span><span class="si">{</span><span class="n">torch</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">cuda</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </code></pre>
 </li>
 <li>
 <p><strong>Check PyTorch CUDA support</strong> (command line):</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import torch; print(&#39;CUDA available:&#39;, torch.cuda.is_available()); print(&#39;CUDA version:&#39;, torch.version.cuda if torch.cuda.is_available() else &#39;N/A&#39;)&quot;</span>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"import torch; print('CUDA available:', torch.cuda.is_available()); print('CUDA version:', torch.version.cuda if torch.cuda.is_available() else 'N/A')"</span>
 </pre></div>
 </code></pre>
 </li>
@@ -332,7 +332,7 @@
 </li>
 <li>
 <p><strong>Using PyTorch</strong> (after PyTorch is installed):</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import torch; print(torch.version.cuda)&quot;</span>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"import torch; print(torch.version.cuda)"</span>
 </pre></div>
 </code></pre>
 </li>
@@ -350,7 +350,7 @@ pip<span class="w"> </span>install<span class="w"> </span>torch<span class="w"> 
 <li>
 <p><strong>CUDA driver mismatch</strong>: Your CUDA driver version may not match the PyTorch CUDA version. Check compatibility:</p>
 <pre><code class="language-bash"><div class="highlight"><pre><span></span>nvidia-smi<span class="w">  </span><span class="c1"># Shows driver version</span>
-python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import torch; print(torch.version.cuda)&quot;</span><span class="w">  </span><span class="c1"># Shows PyTorch CUDA version</span>
+python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"import torch; print(torch.version.cuda)"</span><span class="w">  </span><span class="c1"># Shows PyTorch CUDA version</span>
 </pre></div>
 </code></pre>
 <p>The driver version should be &gt;= the PyTorch CUDA version.</p>

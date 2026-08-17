@@ -328,13 +328,13 @@ The following Extensions and Backends are available.</p>
 
 <span class="c1"># --------------------------- READER ------------------------------------------</span>
 <span class="c1"># Replace file extension and backend name to your custom function</span>
-<span class="nd">@register_loader</span><span class="p">(</span><span class="s2">&quot;image&quot;</span><span class="p">,</span> <span class="s2">&quot;.png&quot;</span><span class="p">,</span> <span class="s2">&quot;.jpg&quot;</span><span class="p">,</span> <span class="s2">&quot;.jpeg&quot;</span><span class="p">,</span> <span class="s2">&quot;.bmp&quot;</span><span class="p">,</span> <span class="n">backend</span><span class="o">=</span><span class="s2">&quot;imageio&quot;</span><span class="p">)</span>  <span class="c1"># To Register Image Loading</span>
-<span class="nd">@register_loader</span><span class="p">(</span><span class="s2">&quot;mask&quot;</span><span class="p">,</span> <span class="s2">&quot;.png&quot;</span><span class="p">,</span> <span class="s2">&quot;.bmp&quot;</span><span class="p">,</span> <span class="n">backend</span><span class="o">=</span><span class="s2">&quot;imageio&quot;</span><span class="p">)</span> <span class="c1"># To Register Label Loading</span>
+<span class="nd">@register_loader</span><span class="p">(</span><span class="s2">"image"</span><span class="p">,</span> <span class="s2">".png"</span><span class="p">,</span> <span class="s2">".jpg"</span><span class="p">,</span> <span class="s2">".jpeg"</span><span class="p">,</span> <span class="s2">".bmp"</span><span class="p">,</span> <span class="n">backend</span><span class="o">=</span><span class="s2">"imageio"</span><span class="p">)</span>  <span class="c1"># To Register Image Loading</span>
+<span class="nd">@register_loader</span><span class="p">(</span><span class="s2">"mask"</span><span class="p">,</span> <span class="s2">".png"</span><span class="p">,</span> <span class="s2">".bmp"</span><span class="p">,</span> <span class="n">backend</span><span class="o">=</span><span class="s2">"imageio"</span><span class="p">)</span> <span class="c1"># To Register Label Loading</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">load_custom</span><span class="p">(</span><span class="n">file</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="nb">dict</span><span class="p">]:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Load a file and return (data, metadata).</span>
 <span class="sd">    metadata can be empty or include keys like: spacing, origin, direction, shear, dtype, etc.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="c1"># data = iio.imread(file)  # example for imageio</span>
     <span class="n">data</span> <span class="o">=</span> <span class="o">...</span>  <span class="c1"># TODO: replace</span>
     <span class="n">meta</span> <span class="o">=</span> <span class="p">{}</span>   <span class="c1"># TODO: replace</span>

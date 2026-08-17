@@ -246,7 +246,7 @@
 <span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">napari_result_stack</span><span class="w"> </span><span class="kn">import</span> <span class="n">Stored</span>
 
-<span class="n">button</span> <span class="o">=</span> <span class="n">PushButton</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;Click!&quot;</span><span class="p">)</span>
+<span class="n">button</span> <span class="o">=</span> <span class="n">PushButton</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">"Click!"</span><span class="p">)</span>
 
 <span class="nd">@button</span><span class="o">.</span><span class="n">changed</span><span class="o">.</span><span class="n">connect</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">_record_now</span><span class="p">():</span>
@@ -270,8 +270,8 @@
 <span class="k">def</span><span class="w"> </span><span class="nf">f1</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">Stored</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Stored</span><span class="p">[</span><span class="nb">float</span><span class="p">]:</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 
-<span class="n">viewer</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">add_dock_widget</span><span class="p">(</span><span class="n">f0</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;returns a DataFrame&quot;</span><span class="p">)</span>
-<span class="n">viewer</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">add_dock_widget</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;mean of a DataFrame&quot;</span><span class="p">)</span>
+<span class="n">viewer</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">add_dock_widget</span><span class="p">(</span><span class="n">f0</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">"returns a DataFrame"</span><span class="p">)</span>
+<span class="n">viewer</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">add_dock_widget</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">"mean of a DataFrame"</span><span class="p">)</span>
 </pre></div>
 </code></pre>
 <hr />

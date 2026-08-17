@@ -223,7 +223,7 @@
 <p>Create a macro object, decorate functions with <code>record</code> method and run!</p>
 <pre><code class="language-python"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">napari_macrokit</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_macro</span>
 
-<span class="n">macro</span> <span class="o">=</span> <span class="n">get_macro</span><span class="p">(</span><span class="s2">&quot;my-plugin-specifier&quot;</span><span class="p">)</span>  <span class="c1"># get macro object</span>
+<span class="n">macro</span> <span class="o">=</span> <span class="n">get_macro</span><span class="p">(</span><span class="s2">"my-plugin-specifier"</span><span class="p">)</span>  <span class="c1"># get macro object</span>
 
 <span class="c1"># define a function</span>
 <span class="nd">@macro</span><span class="o">.</span><span class="n">record</span>
@@ -250,7 +250,7 @@ More simply, you can double-decorate functions with <code>record</code> and <cod
 <span class="kn">from</span><span class="w"> </span><span class="nn">napari.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">ImageData</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">napari_macrokit</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_macro</span>
 
-<span class="n">macro</span> <span class="o">=</span> <span class="n">get_macro</span><span class="p">(</span><span class="s2">&quot;my-plugin-specifier&quot;</span><span class="p">)</span>  <span class="c1"># get macro object</span>
+<span class="n">macro</span> <span class="o">=</span> <span class="n">get_macro</span><span class="p">(</span><span class="s2">"my-plugin-specifier"</span><span class="p">)</span>  <span class="c1"># get macro object</span>
 
 <span class="c1"># define recordable magicgui</span>
 <span class="nd">@magicgui</span>
@@ -266,7 +266,7 @@ More simply, you can double-decorate functions with <code>record</code> and <cod
 <p>Running add twice in GUI and you'll find macro updated like below.</p>
 <pre><code class="language-python"><div class="highlight"><pre><span></span><span class="n">macro</span>
 <span class="c1"># Out</span>
-<span class="c1"># &gt;&gt;&gt; image0 = add(viewer.layers[&#39;Image&#39;].data, 0.06)</span>
+<span class="c1"># &gt;&gt;&gt; image0 = add(viewer.layers['Image'].data, 0.06)</span>
 <span class="c1"># &gt;&gt;&gt; image1 = add(image0, 0.12)</span>
 </pre></div>
 </code></pre>
@@ -278,7 +278,7 @@ More simply, you can double-decorate functions with <code>record</code> and <cod
 <span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">ndimage</span> <span class="k">as</span> <span class="n">ndi</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">napari_macrokit</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_macro</span>
 
-<span class="n">macro</span> <span class="o">=</span> <span class="n">get_macro</span><span class="p">(</span><span class="s2">&quot;napari-module-0&quot;</span><span class="p">)</span>
+<span class="n">macro</span> <span class="o">=</span> <span class="n">get_macro</span><span class="p">(</span><span class="s2">"napari-module-0"</span><span class="p">)</span>
 
 <span class="nd">@macro</span><span class="o">.</span><span class="n">record</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">gaussian_filter</span><span class="p">(</span><span class="n">image</span><span class="p">:</span> <span class="n">ImageData</span><span class="p">,</span> <span class="n">sigma</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ImageData</span><span class="p">:</span>
@@ -294,7 +294,7 @@ More simply, you can double-decorate functions with <code>record</code> and <cod
 <span class="kn">from</span><span class="w"> </span><span class="nn">napari.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">ImageData</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">napari_macrokit</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_macro</span>
-<span class="n">macro</span> <span class="o">=</span> <span class="n">get_macro</span><span class="p">(</span><span class="s2">&quot;napari-module-1&quot;</span><span class="p">)</span>
+<span class="n">macro</span> <span class="o">=</span> <span class="n">get_macro</span><span class="p">(</span><span class="s2">"napari-module-1"</span><span class="p">)</span>
 
 <span class="nd">@macro</span><span class="o">.</span><span class="n">record</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">estimate_background</span><span class="p">(</span><span class="n">image</span><span class="p">:</span> <span class="n">ImageData</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>

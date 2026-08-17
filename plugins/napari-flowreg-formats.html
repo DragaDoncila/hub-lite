@@ -332,12 +332,12 @@
 <span class="n">viewer</span> <span class="o">=</span> <span class="n">napari</span><span class="o">.</span><span class="n">Viewer</span><span class="p">()</span>
 
 <span class="c1"># automatic: the structure is detected from the file</span>
-<span class="n">viewer</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;recording.tif&quot;</span><span class="p">,</span> <span class="n">plugin</span><span class="o">=</span><span class="s2">&quot;napari-flowreg-formats&quot;</span><span class="p">)</span>
+<span class="n">viewer</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">"recording.tif"</span><span class="p">,</span> <span class="n">plugin</span><span class="o">=</span><span class="s2">"napari-flowreg-formats"</span><span class="p">)</span>
 
 <span class="c1"># explicit: fold a flat ScanImage page sequence into volumes</span>
 <span class="k">for</span> <span class="n">data</span><span class="p">,</span> <span class="n">meta</span><span class="p">,</span> <span class="n">layer_type</span> <span class="ow">in</span> <span class="n">load</span><span class="p">(</span>
-    <span class="s2">&quot;scanimage_volumes.tif&quot;</span><span class="p">,</span>
-    <span class="n">ImportSpec</span><span class="p">(</span><span class="n">is_3d</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">slices_per_volume</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">frames_per_slice</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">lazy</span><span class="o">=</span><span class="s2">&quot;always&quot;</span><span class="p">),</span>
+    <span class="s2">"scanimage_volumes.tif"</span><span class="p">,</span>
+    <span class="n">ImportSpec</span><span class="p">(</span><span class="n">is_3d</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">slices_per_volume</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">frames_per_slice</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">lazy</span><span class="o">=</span><span class="s2">"always"</span><span class="p">),</span>
 <span class="p">):</span>
     <span class="n">viewer</span><span class="o">.</span><span class="n">_add_layer_from_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">meta</span><span class="p">,</span> <span class="n">layer_type</span><span class="p">)</span>
 

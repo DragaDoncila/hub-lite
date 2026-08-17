@@ -236,20 +236,20 @@
 <pre><code class="language-python"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">_save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="n">pm</span> <span class="o">=</span> <span class="n">npe2</span><span class="o">.</span><span class="n">PluginManager</span><span class="o">.</span><span class="n">instance</span><span class="p">()</span>
 
-    <span class="n">outdir</span> <span class="o">=</span> <span class="s2">&quot;TRA&quot;</span>
+    <span class="n">outdir</span> <span class="o">=</span> <span class="s2">"TRA"</span>
     <span class="n">writer_contrib</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">get_writer</span><span class="p">(</span>
         <span class="n">outdir</span><span class="p">,</span>
-        <span class="p">[</span><span class="s2">&quot;labels&quot;</span><span class="p">,</span> <span class="s2">&quot;tracks&quot;</span><span class="p">],</span>
-        <span class="s2">&quot;napari-ctc-io&quot;</span><span class="p">,</span>
+        <span class="p">[</span><span class="s2">"labels"</span><span class="p">,</span> <span class="s2">"tracks"</span><span class="p">],</span>
+        <span class="s2">"napari-ctc-io"</span><span class="p">,</span>
     <span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 
     <span class="n">save_layers</span><span class="p">(</span>
         <span class="n">path</span><span class="o">=</span><span class="n">outdir</span><span class="p">,</span>
         <span class="n">layers</span><span class="o">=</span><span class="p">[</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_viewer</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="s2">&quot;masks_tracked&quot;</span><span class="p">],</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_viewer</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="s2">&quot;tracks&quot;</span><span class="p">],</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_viewer</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="s2">"masks_tracked"</span><span class="p">],</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_viewer</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="s2">"tracks"</span><span class="p">],</span>
         <span class="p">],</span>
-        <span class="n">plugin</span><span class="o">=</span><span class="s2">&quot;napari-ctc-io&quot;</span><span class="p">,</span>
+        <span class="n">plugin</span><span class="o">=</span><span class="s2">"napari-ctc-io"</span><span class="p">,</span>
         <span class="n">_writer</span><span class="o">=</span><span class="n">writer_contrib</span><span class="p">,</span>
     <span class="p">)</span>
 </pre></div>
