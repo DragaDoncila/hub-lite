@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.3.0</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.3.5</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-08-05</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-08-19</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -236,7 +236,9 @@ See <a href="#deferred-deprecation-of-plugin-managed-labels">the deferred deprec
 <li>Stable per-neuron box colors derived from zero-based ROI identity.</li>
 <li>Checkable neuron list with a separate active neuron.</li>
 <li>All/None controls and cumulative Q/W navigation.</li>
+<li>Fixed canvas shortcuts for Z-slice and time-frame navigation.</li>
 <li>Active-neuron highlighting and view centering.</li>
+<li>Session-only whole-viewer rotation and screen-axis flip controls.</li>
 <li>View-preserving Z-layer display synchronized across Image and ROI overlays.</li>
 <li>Zero-based ROI annotation with optional Excel import/export.</li>
 <li>Optional Labels overlay with independent checked/unchecked alpha and exact
@@ -274,12 +276,27 @@ and compatibility decisions.</p>
 clearing IDs already checked.</li>
 <li>Use <strong>All</strong> or <strong>None</strong> to check every ID or clear all checked/active IDs.</li>
 </ol>
+<p>With the napari canvas focused, use G/H for the previous/next Z slice in 2D,
+J/K for the previous/next time frame of a 4D Image, and Shift-J/Shift-K to
+move backward/forward by 10 time frames. Navigation stops at the data bounds
+rather than wrapping. In an individual Z layer, G/H stays within that layer's
+half-open Z range.</p>
 <p>The active row is bold and remains the current row. Unchecking the active ID
 clears the active state; unchecking another ID does not change the active
 neuron.</p>
 <p>The ROI array defines the neuron list. You do not need a Labels layer for
 selection, box rendering, annotation, centering, time navigation, or Z-layer
 display.</p>
+<h2>Worm orientation</h2>
+<p>The <strong>Worm Orientation</strong> panel rotates the complete viewer clockwise by 0°,
+90°, 180°, or 270° and can flip the final screen horizontally or vertically.
+Image, ROI boxes, optional text, Labels, and Z-layer views stay aligned because
+the controls change only napari's viewer axes and camera orientation. Source
+arrays and layer transforms are not modified.</p>
+<p><strong>Reset</strong> restores the viewer orientation captured for the current session.
+Closing the widget also restores that orientation. If you use napari's native
+transpose or camera-orientation controls, the resulting view becomes the new
+session baseline and the plugin controls return to their default state.</p>
 <h2>Optional Labels overlay</h2>
 <p>Select a Labels layer only when you need the mask overlay. Its shape, axes,
 scale, translation, and units must match the selected Image layer. The ROI
@@ -442,7 +459,7 @@ live in <code>src/napari_worm_neuron_annotator/_widget.py</code>.</p>
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.3.0</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.3.5</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -452,7 +469,7 @@ live in <code>src/napari_worm_neuron_annotator/_widget.py</code>.</p>
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-08-05</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-08-19</li>
                                                 </ul>
                                             </div>
                                         </div>
