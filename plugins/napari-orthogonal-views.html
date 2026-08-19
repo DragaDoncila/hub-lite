@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.3.0</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.4.0</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-07-28</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-08-19</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -156,7 +156,7 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Requirements<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">napari<0.8,>=0.5</li><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">opencv-python-headless</li><li class="MetadataList_textItem__KKmMN">napari[all]; extra == "all"</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari[qt]; extra == "testing"</li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">napari<0.9,>=0.5</li><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">superqt</li><li class="MetadataList_textItem__KKmMN">opencv-python-headless</li><li class="MetadataList_textItem__KKmMN">napari[all]; extra == "all"</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari[qt]; extra == "testing"</li></ul>
                                     </div>
                                 </div>
                             </div>
@@ -260,7 +260,7 @@ Pressing <code>T</code> on the keyboard will center all views to the current mou
 <p>By default, all events (including label editing such as painting) are synced across all views. The different views share the same underlying data array and undo/redo history.</p>
 <h2>Syncing properties</h2>
 <p>By default, all layer properties should be synced between the layer on the main viewer and the orthoviews. However, it is possible to have more finegrained control over the synced properties via the <code>set_sync_filters</code> function, as long as it is specified <em>before</em> the orthogonal views are activated.</p>
-<p>For example, to disable syncing of all properties on Tracks layers and specifically the contour property on Labels layers:</p>
+<p>For example, to disable syncing of all properties on Tracks layers and specifically the <code>contour</code> property on Labels layers:</p>
 <pre><code><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">napari_orthogonal_views.ortho_view_manager</span><span class="w"> </span><span class="kn">import</span> <span class="n">_get_manager</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">napari.layers</span><span class="w"> </span><span class="kn">import</span> <span class="n">Tracks</span><span class="p">,</span> <span class="n">Labels</span>
 <span class="n">m</span> <span class="o">=</span> <span class="n">_get_manager</span><span class="p">(</span><span class="n">viewer</span><span class="p">)</span>
@@ -277,6 +277,59 @@ Pressing <code>T</code> on the keyboard will center all views to the current mou
 </pre></div>
 </code></pre>
 <p>Then add 3D data (e.g. File &gt; Open Sample &gt; napari builtins &gt; Balls (3D)). Activate the labels layer and change the contour value. You should see that the contour property is not synced from main viewer to orthoviews now.</p>
+<h2>Layer hooks</h2>
+<p>Some syncing cannot be expressed as a property copy: painting on a Labels layer, undo/redo, and the point selection each need their own wiring, because they do not emit an event that the property syncing can pick up. These are implemented as <em>layer hooks</em> in <code>layer_sync_hooks.py</code>, and are installed automatically.</p>
+<p>A hook is called once per layer, per orthogonal view:</p>
+<pre><code class="language-python"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">my_hook</span><span class="p">(</span><span class="n">orig_layer</span><span class="p">,</span> <span class="n">copied_layer</span><span class="p">):</span>
+    <span class="c1"># do something to the layers, e.g. connect a signal to a handler</span>
+    <span class="n">orig_layer</span><span class="o">.</span><span class="n">events</span><span class="o">.</span><span class="n">some_signal</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">my_handler</span><span class="p">)</span>
+    <span class="c1"># return a cleanup callable that disconnects the signal again</span>
+    <span class="k">return</span> <span class="p">[</span><span class="k">lambda</span><span class="p">:</span> <span class="n">orig_layer</span><span class="o">.</span><span class="n">events</span><span class="o">.</span><span class="n">some_signal</span><span class="o">.</span><span class="n">disconnect</span><span class="p">(</span><span class="n">my_handler</span><span class="p">)]</span>
+</pre></div>
+</code></pre>
+<p>Layers can be removed while the orthogonal views stay open, so a hook has to report what it did. It returns an iterable mixing <code>(signal, handler)</code> pairs it connected and zero-argument callables that undo anything else; returning <code>None</code> means it left nothing behind.</p>
+<h3>Adding behavior</h3>
+<p><code>register_layer_hook</code> attaches an extra hook to a layer type. This can be useful if you want the main viewer to respond in a certain way to events of specific layer (sub)classes occuring on the ortho views. For example:</p>
+<pre><code class="language-python"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">napari_orthogonal_views.ortho_view_manager</span><span class="w"> </span><span class="kn">import</span> <span class="n">_get_manager</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">napari.layers</span><span class="w"> </span><span class="kn">import</span> <span class="n">Labels</span>
+
+<span class="n">m</span> <span class="o">=</span> <span class="n">_get_manager</span><span class="p">(</span><span class="n">viewer</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">report_clicks</span><span class="p">(</span><span class="n">orig_layer</span><span class="p">,</span> <span class="n">copied_layer</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">click</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="n">orig_layer</span><span class="o">.</span><span class="n">selected_label</span> <span class="o">=</span> <span class="n">layer</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span>
+            <span class="n">event</span><span class="o">.</span><span class="n">position</span><span class="p">,</span>
+            <span class="n">view_direction</span><span class="o">=</span><span class="n">event</span><span class="o">.</span><span class="n">view_direction</span><span class="p">,</span>
+            <span class="n">dims_displayed</span><span class="o">=</span><span class="n">event</span><span class="o">.</span><span class="n">dims_displayed</span><span class="p">,</span>
+            <span class="n">world</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="n">copied_layer</span><span class="o">.</span><span class="n">mouse_drag_callbacks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">click</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">[</span><span class="k">lambda</span><span class="p">:</span> <span class="n">copied_layer</span><span class="o">.</span><span class="n">mouse_drag_callbacks</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">click</span><span class="p">)]</span>
+
+<span class="n">m</span><span class="o">.</span><span class="n">register_layer_hook</span><span class="p">(</span><span class="n">Labels</span><span class="p">,</span> <span class="n">report_clicks</span><span class="p">)</span>
+</pre></div>
+</code></pre>
+<p>allows the original layer in the main viewer to respond to click events in the ortho views. The property 'selected_label' will then automatically sync to the ortho views as well.</p>
+<h3>Overriding the built-in behavior</h3>
+<p>The built-in hooks are keyed by name (<code>labels_undo_redo</code>, <code>labels_paint</code>, <code>points_selection</code>) so a single one can be replaced without disturbing the others. Use this to keep the default behavior and add to it:</p>
+<pre><code class="language-python"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">napari_orthogonal_views.layer_sync_hooks</span><span class="w"> </span><span class="kn">import</span> <span class="n">sync_labels_paint</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">paint_and_recount</span><span class="p">(</span><span class="n">orig_layer</span><span class="p">,</span> <span class="n">copied_layer</span><span class="p">):</span>
+    <span class="n">cleanup</span> <span class="o">=</span> <span class="n">sync_labels_paint</span><span class="p">(</span><span class="n">orig_layer</span><span class="p">,</span> <span class="n">copied_layer</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">on_paint</span><span class="p">(</span><span class="n">_event</span><span class="p">):</span>
+        <span class="n">my_app</span><span class="o">.</span><span class="n">recount_labels</span><span class="p">(</span><span class="n">orig_layer</span><span class="p">)</span>
+
+    <span class="n">copied_layer</span><span class="o">.</span><span class="n">events</span><span class="o">.</span><span class="n">paint</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">on_paint</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">[</span><span class="o">*</span><span class="n">cleanup</span><span class="p">,</span> <span class="p">(</span><span class="n">copied_layer</span><span class="o">.</span><span class="n">events</span><span class="o">.</span><span class="n">paint</span><span class="p">,</span> <span class="n">on_paint</span><span class="p">)]</span>
+
+<span class="n">m</span><span class="o">.</span><span class="n">set_layer_hook</span><span class="p">(</span><span class="s2">"labels_paint"</span><span class="p">,</span> <span class="n">paint_and_recount</span><span class="p">)</span>
+</pre></div>
+</code></pre>
+<p>Passing <code>None</code> disables a built-in entirely. <code>set_layer_hook</code> and <code>register_layer_hook</code> may be called after the orthogonal views are shown; the change then applies to layers added from that point on.</p>
+<h2>Changing the ortho view layer counterparts</h2>
+<p>By default, the plugin will create shallow copies of each layer when activating the orthogonal views. These copies are of the same layer type but share the underlying data arrays with the original, to avoid duplication of the data. <code>OrthoViewManager.set_copy_layer</code> allows to change the copy layer function to a custom function: for example, instead of creating a copy of the same layer type, you can specify that the ortho views should make a copy of a specific layer subclass that has slightly different behavior, or that certain layer types should not be copied but produce an empty dummy layer in the ortho views instead.</p>
 <h2>Screen recording</h2>
 <p>The 'Screen recording' tab offers a quick way to save a stitched image of the viewer with its orthogonal views. It is also possible to slide along a given axis and record a movie that is saved as a .avi file.</p>
 <h2>Known issues and ongoing work</h2>
@@ -307,7 +360,7 @@ the coverage at least stays the same before you submit a pull request.</p>
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.3.0</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.4.0</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -317,7 +370,7 @@ the coverage at least stays the same before you submit a pull request.</p>
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-07-28</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-08-19</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -414,7 +467,7 @@ the coverage at least stays the same before you submit a pull request.</p>
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">
                                                     Requirements<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">napari<0.8,>=0.5</li><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">opencv-python-headless</li><li class="MetadataList_textItem__KKmMN">napari[all]; extra == "all"</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari[qt]; extra == "testing"</li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">napari<0.9,>=0.5</li><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">superqt</li><li class="MetadataList_textItem__KKmMN">opencv-python-headless</li><li class="MetadataList_textItem__KKmMN">napari[all]; extra == "all"</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari[qt]; extra == "testing"</li></ul>
                                             </div>
                                         </div>
                                     </div>

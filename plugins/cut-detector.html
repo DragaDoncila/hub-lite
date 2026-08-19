@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">1.8.1</li>
+                                            <li class="MetadataList_textItem__KKmMN">1.8.2</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-08-14</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-08-19</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -246,7 +246,7 @@ https://napari.org/stable/plugins/index.html
 conda<span class="w"> </span>activate<span class="w"> </span>cut_detector
 </pre></div>
 </code></pre>
-<h3>Package installation</h3>
+<h3>CPU installation</h3>
 <p>Once in the dedicated environment, our package can be installed via <a href="https://pypi.org/project/pip/">pip</a>:</p>
 <pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>cut_detector
 </pre></div>
@@ -257,14 +257,14 @@ conda<span class="w"> </span>activate<span class="w"> </span>cut_detector
 pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
 </pre></div>
 </code></pre>
-<h3>GPU</h3>
-<p>We highly recommend to use GPU to speed up segmentation. To use your NVIDIA GPU, the first step is to download the dedicated driver from <a href="https://www.nvidia.com/Download/index.aspx?lang=en-us">NVIDIA</a>.</p>
-<p>Next we need to remove the CPU version of torch:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>uninstall<span class="w"> </span>torch<span class="w"> </span>torchvision
+<h3>GPU installation</h3>
+<p>We strongly recommend using a GPU to accelerate segmentation. To install Cut-Detector with GPU support, first follow the CPU installation steps.</p>
+<p>Next, to use your NVIDIA GPU, the first step is to download the dedicated driver from <a href="https://www.nvidia.com/Download/index.aspx?lang=en-us">NVIDIA</a>. We then need to remove the CPU version of <code>torch</code>. Note that <code>numpy</code> is also removed here to be able to choose its version later with <code>conda</code>, which is required for other dependencies. Run the following command:</p>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>uninstall<span class="w"> </span>torch<span class="w"> </span>torchvision<span class="w"> </span>numpy
 </pre></div>
 </code></pre>
-<p>The GPU version of torch to be installed can be found <a href="https://pytorch.org/get-started/locally/">here</a>. You may choose the CUDA version supported by your GPU, and install it with conda. This package has been developed with the version 11.6, installed with this command:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span><span class="nv">pytorch</span><span class="o">==</span><span class="m">1</span>.12.1<span class="w"> </span><span class="nv">torchvision</span><span class="o">==</span><span class="m">0</span>.13.1<span class="w"> </span>pytorch-cuda<span class="o">=</span><span class="m">11</span>.6<span class="w"> </span>-c<span class="w"> </span>pytorch<span class="w"> </span>-c<span class="w"> </span>nvidia
+<p>The GPU version of <code>torch</code> to be installed can be found <a href="https://pytorch.org/get-started/locally/">here</a>. You may choose the CUDA version supported by your GPU, and install it with conda. This package has been developed with the version 11.6, installed with this command:</p>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span><span class="nv">pytorch</span><span class="o">==</span><span class="m">1</span>.12.1<span class="w"> </span><span class="nv">torchvision</span><span class="o">==</span><span class="m">0</span>.13.1<span class="w"> </span><span class="nv">numpy</span><span class="o">==</span><span class="m">1</span>.26.4<span class="w"> </span><span class="nv">torchaudio</span><span class="o">==</span><span class="m">0</span>.12.1<span class="w"> </span><span class="nv">cudatoolkit</span><span class="o">=</span><span class="m">11</span>.6<span class="w"> </span><span class="s2">"mkl=2023.2.0"</span><span class="w"> </span>-c<span class="w"> </span>pytorch<span class="w"> </span>-c<span class="w"> </span>conda-forge
 </pre></div>
 </code></pre>
 <h2>Getting started</h2>
@@ -276,8 +276,10 @@ napari
 </code></pre>
 <p>Once open, click on <code>Plugins</code> &gt; <code>Cut Detector</code> &gt; <code>Single Video</code>.</p>
 <p>Note that <code>Folder</code> is the equivalent of <code>Single Video</code>, but it processes all <code>.tif</code> files contained in a specific folder rather than a single video file. <code>Divisions Matching</code> and <code>Distribution Comparison</code> are more specialized features intended for advanced users and developers. Additional details can be found in the <a href="https://github.com/15bonte/cut-detector/tree/main/developers">developers</a> folder.</p>
-<h3>Test video</h3>
-<p>The video <code>test_data.tif</code> can be downloaded from Zenodo for testing. Once downloaded, open it in napari.</p>
+<h3>Test videos</h3>
+<p>A demo video containing a single cell division can be downloaded <a href="https://github.com/15bonte/cut-detector-models/blob/main/data/videos/example_video.tif">here</a>. We recommend first running Cut-Detector on this video to verify that the installation and setup are working properly.</p>
+<p>For a more realistic analysis, we provide a representative example of our time-lapse microscopy data (test_data.tif) on <a href="https://zenodo.org/records/21528406">Zenodo</a>. Running Cut-Detector on this video takes approximately 1 hour on a standard CPU and 8 minutes on a standard GPU.</p>
+<p>Once downloaded, open the video in napari.</p>
 <h3>Running Cut Detector</h3>
 <p>Before running the analysis, several settings can be modified:</p>
 <ul>
@@ -296,7 +298,7 @@ napari
 pip<span class="w"> </span>install<span class="w"> </span>cut-detector<span class="w"> </span>--upgrade
 </pre></div>
 </code></pre>
-<h2>Definitions</h2>
+<h2>Documentation</h2>
 <p>Each detected cell division is labeled with one of the following categories:</p>
 <ul>
 <li>NORMAL: Division happening as expected, where (at least) 1 micro-tubule cut is detected.</li>
@@ -352,7 +354,7 @@ the coverage at least stays the same before you submit a pull request.</p>
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">1.8.1</li>
+                                                    <li class="MetadataList_textItem__KKmMN">1.8.2</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -362,7 +364,7 @@ the coverage at least stays the same before you submit a pull request.</p>
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-08-14</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-08-19</li>
                                                 </ul>
                                             </div>
                                         </div>
