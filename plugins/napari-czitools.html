@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.0.11</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.12.0</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-04-10</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-08-21</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -156,7 +156,7 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Requirements<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">superqt</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">pyqtgraph</li><li class="MetadataList_textItem__KKmMN">czitools>=0.16.0</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-timeout; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-forked; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt5; extra == "testing"</li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">superqt</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">pyqtgraph</li><li class="MetadataList_textItem__KKmMN">czitools>=0.20.0</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-timeout; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-forked; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt6!=6.11.0,!=6.11.1,>=6.7; extra == "testing"</li></ul>
                                     </div>
                                 </div>
                             </div>
@@ -225,7 +225,11 @@
 <li><a href="#wellplate-data">Wellplate Data</a></li>
 </ul>
 </li>
-<li><a href="#advanced-czi-reader-czireadtools-plugin">Advanced CZI Reader (CziReadTools) plugin</a></li>
+<li><a href="#advanced-czi-reader-czireadtools-plugin">Advanced CZI Reader (CziReadTools) plugin</a>
+<ul>
+<li><a href="#lazy-loading">Lazy Loading</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#current-limitations">Current Limitations</a>
@@ -233,7 +237,12 @@
 <li><a href="#future-plans">Future plans</a></li>
 </ul>
 </li>
-<li><a href="#contributing">Contributing</a></li>
+<li><a href="#contributing">Contributing</a>
+<ul>
+<li><a href="#running-tests">Running Tests</a></li>
+<li><a href="#recent-compatibility-notes">Recent Compatibility Notes</a></li>
+</ul>
+</li>
 <li><a href="#license">License</a></li>
 <li><a href="#issues">Issues</a></li>
 </ul>
@@ -244,7 +253,7 @@
 <p><a href="https://github.com/sebi06/napari-czitools/raw/main/LICENSE"><img src="https://img.shields.io/pypi/l/napari-czitools.svg?color=green" alt="License MIT" /></a>
 <a href="https://pypi.org/project/napari-czitools"><img src="https://img.shields.io/pypi/v/napari-czitools.svg?color=green" alt="PyPI" /></a>
 <a href="https://python.org"><img src="https://img.shields.io/pypi/pyversions/napari-czitools.svg?color=green" alt="Python Version" /></a>
-<a href="https://github.com/sebi06/napari-czitools/actions"><img src="https://github.com/sebi06/napari-czitools/workflows/tests/badge.svg" alt="tests" /></a>
+<a href="https://github.com/sebi06/napari-czitools/actions/workflows/test_and_deploy_pypi.yml"><img src="https://github.com/sebi06/napari-czitools/actions/workflows/test_and_deploy_pypi.yml/badge.svg" alt="tests" /></a>
 <a href="https://codecov.io/gh/sebi06/napari-czitools"><img src="https://codecov.io/gh/sebi06/napari-czitools/branch/main/graph/badge.svg" alt="codecov" /></a>
 <a href="https://napari-hub.org/plugins/napari-czitools"><img src="https://img.shields.io/endpoint?url=https://api.napari-hub.org/shields/napari-czitools" alt="napari hub" /></a>
 <a href="https://napari.org/stable/plugins/index.html"><img src="https://img.shields.io/badge/plugin-npe2-blue?link=https://napari.org/stable/plugins/index.html" alt="npe2" /></a>
@@ -265,24 +274,25 @@ https://napari.org/stable/plugins/index.html
 <pre><code><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">napari</span><span class="o">-</span><span class="n">czitools</span>
 </pre></div>
 </code></pre>
+<p>The current release requires Python 3.12 or 3.13 and <code>czitools&gt;=0.20.0</code>.</p>
 <p>To install latest development version :</p>
 <pre><code><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">git</span><span class="o">+</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">sebi06</span><span class="o">/</span><span class="n">napari</span><span class="o">-</span><span class="n">czitools</span><span class="o">.</span><span class="n">git</span>
 </pre></div>
 </code></pre>
 <h2>Supported Operating Systems</h2>
-<p>Currently this only tested on:</p>
+<p>The test suite runs on Python 3.12 and 3.13 for:</p>
 <ul>
 <li>Linux</li>
 <li>Windows</li>
+<li>macOS</li>
 </ul>
-<p>MacOS is not supported yet out of the box yet, but <a href="https://pypi.org/project/czitools/">czitools</a> uses <a href="https://pypi.org/project/pylibCZIrw/">pylibCZIrw</a>. But it should be possible to install it manually: <a href="https://pypi.scm.io/#/package/pylibczirw">MaxOS wheels for pylibCZIrw</a> (read and write CZI files on MacOS).</p>
 <h2>Usage - Core Functionalities</h2>
 <p>The plugin provides a reader for CZI files and allows to load the image data into <a href="https://github.com/napari/napari">napari</a>. It also reads the metadata from the CZI file and displays it in the metadata panel of <a href="https://github.com/napari/napari">napari</a>.</p>
 <h3>Open Complete CZI Files</h3>
 <ul>
 <li>Open complete CZI Files and display the metadata in Napari using the <a href="https://pypi.org/project/czitools/">czitools</a> package</li>
 </ul>
-<p><img src="./readme_images/file_open_mdtable_lls7.png" alt="Open complete CZI file" /></p>
+<p><img src="https://github.com/sebi06/napari-czitools/raw/main/readme_images/file_open_mdtable_lls7.png" alt="Open complete CZI file" /></p>
 <ul>
 <li>Open different CZI Image sample data</li>
 <li>if not found locally in current directory <code>../src/napari_czitools/sample_data</code> it will be opened from remote repository (might be slow)</li>
@@ -316,7 +326,7 @@ https://napari.org/stable/plugins/index.html
 <li>This allows to read parts of a CZI image dataset</li>
 <li>Important - when reading a subset the metadata will still reflects the size of the complete CZI</li>
 </ul>
-<p><img src="./readme_images/load_pixel1.png" alt="Advanced CZI Reader - Plugin" /></p>
+<p><img src="https://github.com/sebi06/napari-czitools/raw/main/readme_images/load_pixel1.png" alt="Advanced CZI Reader - Plugin" /></p>
 <ul>
 <li>Example for reading a subset
 <ul>
@@ -326,16 +336,49 @@ https://napari.org/stable/plugins/index.html
 </ul>
 </li>
 </ul>
-<p><img src="./readme_images/load_pixel2.png" alt="Advanced CZI Reader - Plugin" /></p>
-<h2>Current Limitations</h2>
-<p>The plugin is still in its very early stage, therefor expect bugs and breaking changes</p>
+<p><img src="https://github.com/sebi06/napari-czitools/raw/main/readme_images/load_pixel2.png" alt="Advanced CZI Reader - Plugin" /></p>
+<h4>Lazy Loading</h4>
+<p>The <strong>Lazy Loading</strong> checkbox is enabled by default. It controls which
+<code>czitools</code> reader is used after <strong>Load Pixel Data</strong> is pressed:</p>
 <ul>
-<li>reading CZI with multiple scenes only works when the scenes have equal size</li>
+<li><strong>Enabled:</strong> the plugin calls <code>read_tools.read_stacks</code> with the selected
+scene, time, channel, and Z ranges. This scene-aware path can return one
+xarray stack for equal-sized scenes or a list of stacks when scene shapes
+differ. The plugin creates one napari image layer per channel and appends a
+scene suffix to layer names when separate scene stacks are returned.</li>
+<li><strong>Disabled:</strong> the plugin calls <code>read_tools.read_6darray</code> and constructs one
+regular array in <code>STCZYX(A)</code> order. This eager path requires selected scenes
+to have compatible shapes.</li>
+</ul>
+<p>The checkbox selects the stack-oriented reader, but the widget currently calls
+it with <code>use_dask=False</code>. Pixel data is therefore read while the load action is
+running before the layers are added to napari. In other words, the default UI
+option is scene-aware and memory-friendlier for differently shaped scenes, but
+it is not Dask-backed on-demand loading.</p>
+<p>True lazy pixel loading is available through the Python reader API by combining
+<code>use_lazy=True</code> with <code>use_dask=True</code>:</p>
+<pre><code class="language-python"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">napari_czitools._reader</span><span class="w"> </span><span class="kn">import</span> <span class="n">reader_function_adv</span>
+
+<span class="n">reader_function_adv</span><span class="p">(</span>
+    <span class="s2">"image.czi"</span><span class="p">,</span>
+    <span class="n">use_lazy</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">use_dask</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</code></pre>
+<p>In this mode, <code>czitools</code> reads the CZI metadata and builds xarray objects backed
+by Dask task graphs first. The individual CZI pixel planes are not loaded at
+that point. Napari receives the Dask-backed channel layers and triggers the
+required reads when image data is accessed or displayed. Disabling
+<code>use_lazy</code>, even with <code>use_dask=True</code>, still reads all pixels eagerly before
+wrapping the result in a Dask array.</p>
+<h2>Current Limitations</h2>
+<p>The plugin is still in its early stages; expect bugs and breaking changes.</p>
+<ul>
 <li>opening the sample CZI files will not display the CZI metadata right now</li>
 </ul>
 <h3>Future plans</h3>
 <ul>
-<li>allow reading individual scenes when scenes have different sizes</li>
 <li>upgrade <a href="https://pypi.org/project/pylibCZIrw/">pylibCZIrw</a> to allow use <a href="https://pypi.org/project/bioio-czi/">bioio-czi</a> for even better reading</li>
 <li>export of metadata table</li>
 </ul>
@@ -345,35 +388,32 @@ https://napari.org/stable/plugins/index.html
 the coverage at least stays the same before you submit a pull request.</p>
 <h3>Running Tests</h3>
 <p>Install test dependencies first (recommended for full local coverage):</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">".[testing]"</span>
+<pre><code><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span><span class="o">.</span><span class="p">[</span><span class="n">testing</span><span class="p">]</span><span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span>
 </pre></div>
 </code></pre>
 <p>This installs <code>pytest-qt</code>, which provides the <code>qtbot</code> fixture used by
 napari/Qt tests.</p>
 <p><strong>Windows/macOS:</strong></p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>pytest
+<pre><code><div class="highlight"><pre><span></span><span class="n">pytest</span>
 </pre></div>
 </code></pre>
 <p><strong>Linux (recommended - use tox):</strong></p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>tox<span class="w"> </span>-e<span class="w"> </span>py312-linux
+<pre><code><div class="highlight"><pre><span></span><span class="n">tox</span> <span class="o">-</span><span class="n">e</span> <span class="n">py312</span><span class="o">-</span><span class="n">linux</span>
 </pre></div>
 </code></pre>
 <p>(Replace <code>py312</code> with your Python version: <code>py312</code> or <code>py313</code>)</p>
 <p><strong>Linux (direct pytest):</strong></p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>pytest<span class="w"> </span>-v<span class="w"> </span>--forked<span class="w"> </span>--color<span class="o">=</span>yes
+<pre><code><div class="highlight"><pre><span></span><span class="n">pytest</span> <span class="o">-</span><span class="n">v</span> <span class="o">--</span><span class="n">forked</span> <span class="o">--</span><span class="n">color</span><span class="o">=</span><span class="n">yes</span>
 </pre></div>
 </code></pre>
 <p>Note: The <code>--forked</code> flag is required on Linux to prevent CZI + Qt crashes by running each test in its own process. This flag is not available on Windows.</p>
 <h3>Recent Compatibility Notes</h3>
 <ul>
-<li><code>czitools&gt;=0.14.0</code> is supported.</li>
-<li><code>czitools==0.15.0</code> changed <code>read_tools.read_stacks</code> to return
-<code>(array6d, dims, num_stacks, metadata)</code>.</li>
-<li>The plugin now supports both 3-value and 4-value <code>read_stacks</code>
-return signatures for backward compatibility.</li>
-<li>Newer <code>czitools</code> may return scene data as a list of xarray stacks when lazy
-reading is enabled. The plugin now handles both single-stack and scene-list
-outputs when creating channel layers.</li>
+<li><code>czitools&gt;=0.20.0</code> is required.</li>
+<li><code>read_tools.read_stacks</code> returns
+<code>(arrays_or_list, dims, num_stacks, metadata)</code>. The plugin handles both a
+single stacked xarray object and a list containing one xarray stack per
+scene.</li>
 <li>Channel extraction uses positional indexing to support channel coordinates
 represented by names (for example <code>&quot;DAPI&quot;</code>, <code>&quot;EGFP&quot;</code>) instead of numeric
 labels.</li>
@@ -397,7 +437,6 @@ enabling single-frame extraction (e.g. T=4-4 to read one timepoint).</li>
 <h1>Disclaimer</h1>
 <p>The software &amp; scripts are free to use for everybody. The author undertakes no warranty concerning the use of this plugins and scripts. Use them on your own risk.</p>
 <p>By using this plugin you agree to this disclaimer.</p>
-<p>Version: 2025.08.20</p>
 
 
                                     </div>
@@ -413,7 +452,7 @@ enabling single-frame extraction (e.g. T=4-4 to read one timepoint).</li>
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.0.11</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.12.0</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -423,7 +462,7 @@ enabling single-frame extraction (e.g. T=4-4 to read one timepoint).</li>
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-04-10</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-08-21</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -520,7 +559,7 @@ enabling single-frame extraction (e.g. T=4-4 to read one timepoint).</li>
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">
                                                     Requirements<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">superqt</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">pyqtgraph</li><li class="MetadataList_textItem__KKmMN">czitools>=0.16.0</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-timeout; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-forked; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt5; extra == "testing"</li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">superqt</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">pyqtgraph</li><li class="MetadataList_textItem__KKmMN">czitools>=0.20.0</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-timeout; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-forked; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt6!=6.11.0,!=6.11.1,>=6.7; extra == "testing"</li></ul>
                                             </div>
                                         </div>
                                     </div>
