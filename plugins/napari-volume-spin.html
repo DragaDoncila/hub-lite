@@ -4,20 +4,20 @@
 
 <head>
     <meta charset="utf-8" />
-    <link href="../plugins/epicure.html" rel="canonical" />
+    <link href="../plugins/napari-volume-spin.html" rel="canonical" />
     <meta content="width=device-width,initial-scale=1" name="viewport" />
     <meta
-        content="epicure, Gaëlle Letort, napari hub, napari, hub, plugin, image analysis, imaging, chan zuckerberg initiative"
+        content="napari-volume-spin, Marcel Issler, napari hub, napari, hub, plugin, image analysis, imaging, chan zuckerberg initiative"
         name="keywords" />
-    <meta content="Napari plugin to manually correct epithelia segmentation in movies" name="description" />
-    <meta content="Napari plugin to manually correct epithelia segmentation in movies" property="og:description" />
-    <meta content="Napari plugin to manually correct epithelia segmentation in movies." name="twitter:description" />
-    <meta content="EpiCure - napari Plugin - Gaëlle Letort" property="og:title" />
-    <meta content="EpiCure - napari Plugin - Gaëlle Letort" name="twitter:title" />
+    <meta content="Imaris-style continuous 3D spin animation controls for napari, with looping GIF/MP4 export" name="description" />
+    <meta content="Imaris-style continuous 3D spin animation controls for napari, with looping GIF/MP4 export" property="og:description" />
+    <meta content="Imaris-style continuous 3D spin animation controls for napari, with looping GIF/MP4 export." name="twitter:description" />
+    <meta content="Volume Spin - napari Plugin - Marcel Issler" property="og:title" />
+    <meta content="Volume Spin - napari Plugin - Marcel Issler" name="twitter:title" />
     <meta content="article" property="og:type" />
-    <meta content="../plugins/epicure.html" property="og:url" />
+    <meta content="../plugins/napari-volume-spin.html" property="og:url" />
     <meta content="@napari_imaging" name="twitter:site" />
-    <title>EpiCure - napari Plugin - Gaëlle Letort</title>
+    <title>Volume Spin - napari Plugin - Marcel Issler</title>
 
     <meta content="2" name="next-head-count" />
     <meta content="#80d1ff" name="theme-color" />
@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">1.6.4</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.1.0</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -90,7 +90,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">First released<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2024-10-18</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-08-24</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -99,7 +99,7 @@
                                         <p class="font-bold whitespace-nowrap">License<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
                                             <li class="MetadataList_textItem__KKmMN">
-                                                BSD 3-Clause
+                                                BSD-3-Clause
                                             </li>
                                         </ul>
                                     </div>
@@ -144,7 +144,7 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Python versions supported<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.9">3.9</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.10">3.10</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.11">3.11</a></li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.11">3.11</a></li></ul>
                                     </div>
                                 </div>
                                 <div class="text-sm">
@@ -156,7 +156,7 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Requirements<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">napari[all]</li><li class="MetadataList_textItem__KKmMN">vispy</li><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">bioio</li><li class="MetadataList_textItem__KKmMN">bioio-bioformats</li><li class="MetadataList_textItem__KKmMN">bioio-tifffile</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">opencv-python-headless<4.9.0</li><li class="MetadataList_textItem__KKmMN">roifile</li><li class="MetadataList_textItem__KKmMN">PyQt6-WebEngine</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">scipy</li><li class="MetadataList_textItem__KKmMN">xlsxwriter</li><li class="MetadataList_textItem__KKmMN">plotly</li><li class="MetadataList_textItem__KKmMN">kaleido</li><li class="MetadataList_textItem__KKmMN">imagecodecs</li><li class="MetadataList_textItem__KKmMN">edt</li><li class="MetadataList_textItem__KKmMN">packaging</li><li class="MetadataList_textItem__KKmMN">laptrack>=0.15.0</li><li class="MetadataList_textItem__KKmMN">joblib</li><li class="MetadataList_textItem__KKmMN">appose</li><li class="MetadataList_textItem__KKmMN">geff</li><li class="MetadataList_textItem__KKmMN">PyQt5; extra == "pyqt5"</li><li class="MetadataList_textItem__KKmMN">PyQtWebEngine; extra == "pyqt5"</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt5; extra == "testing"</li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">napari</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">vispy</li><li class="MetadataList_textItem__KKmMN">imageio[ffmpeg]</li><li class="MetadataList_textItem__KKmMN">pillow</li><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">napari[all]; extra == "all"</li></ul>
                                     </div>
                                 </div>
                             </div>
@@ -168,26 +168,26 @@
                         <article
                             class="w-full col-span-2 row-start-1 screen-875:col-span-3 screen-1150:col-start-1 screen-1425:col-start-2">
                                 <div class="container" style="display: flex; flex-direction: column;">
-                                    <h1 class="font-bold text-4xl" style="margin-bottom: 20px;" >EpiCure</h1>
+                                    <h1 class="font-bold text-4xl" style="margin-bottom: 20px;" >Volume Spin</h1>
                                 </div>
 
                                 
    <div class="flex items-center" style="gap: 20px; ; align-items: center;"">
-        <a class="underline flex" href="https://pypi.org/project/epicure/" rel="noreferrer" target="_blank">
-        <img src="../static/images/PyPI_logo.svg.png" alt="PyPI" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">epicure</span>
+        <a class="underline flex" href="https://pypi.org/project/napari-volume-spin/" rel="noreferrer" target="_blank">
+        <img src="../static/images/PyPI_logo.svg.png" alt="PyPI" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">napari-volume-spin</span>
     </a>
     
-        <a class="underline flex" href="https://github.com/Image-Analysis-Hub/Epicure/issues" rel="noreferrer" target="_blank">
-            <img src="../static/images/GitHub_Invertocat_Logo.svg.png" alt="GitHub" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">Image-Analysis-Hub/Epicure</span>
+        <a class="underline flex" href="https://github.com/Macl-I/napari-volume-spin/issues" rel="noreferrer" target="_blank">
+            <img src="../static/images/GitHub_Invertocat_Logo.svg.png" alt="GitHub" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">Macl-I/napari-volume-spin</span>
         </a>
         </div>
 
                                 <div class="flex justify-between items-center my-6">
-                                    <h2 class="text-lg">Napari plugin to manually correct epithelia segmentation in movies</h2>
+                                    <h2 class="text-lg">Imaris-style continuous 3D spin animation controls for napari, with looping GIF/MP4 export</h2>
                                 </div>
                                 <ul class="PluginAuthors_authors__hs3zO">
                                     <li class="inline">
-                                        <span class="text-[11px] screen-495:text-[14px] font-semibold">Gaëlle Letort</span>
+                                        <span class="text-[11px] screen-495:text-[14px] font-semibold">Marcel Issler</span>
                                     </li>
                             </ul>
                             <div class="screen-1425:hidden mt-sds-xl mb-sds-xxl"><a
@@ -209,67 +209,90 @@
                                 <div class="flex items-center justify-between mb-sds-xxl">
                                     <div class="Markdown_markdown__QZ95j">
 
-                                        <p><a href="https://github.com/Image-Analysis-Hub/Epicure/blob/main/LICENSE"><img src="https://img.shields.io/pypi/l/epicure.svg?color=green" alt="License BSD-3" /></a>
-<a href="https://pypi.org/project/epicure"><img src="https://img.shields.io/pypi/v/epicure.svg?color=green" alt="PyPI" /></a>
-<a href="https://python.org"><img src="https://img.shields.io/pypi/pyversions/epicure.svg?color=green" alt="Python Version" /></a>
-<a href="https://napari-hub.org/plugins/epicure"><img src="https://img.shields.io/endpoint?url=https://api.napari-hub.org/shields/epicure" alt="napari hub" /></a>
-<a href="https://doi.org/10.5281/zenodo.13952184"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.13952184.svg" alt="DOI" /></a>
-<img src="https://github.com/Image-Analysis-Hub/Epicure/actions/workflows/cross-platform.yml/badge.svg" alt="Tests" /></p>
-<img src=https://github.com/Image-Analysis-Hub/Epicure/blob/main/docs/imgs/epicure_logo.png caption="EpiCure logo" align="left"/> 
-</br></br>
-<p align="center"><b>Napari plugin to ease manual correction of epithelia segmentation in movies</b></p>
-</br></br>
-<p>To analyse individual cell trajectory from epithelia movies marked for cell-cell junctions, a very precise segmentation and tracking is required.
-Several tools such as TissuAnalyzer, <a href="https://github.com/baigouy/EPySeg">Epyseg</a>, <a href="https://www.cellpose.org/">CellPose</a> or <a href="https://github.com/jeanollion/distnet2d">Dist2Net</a> perform very good segmentation (~5% of errors).
-However, this still implies a high amount of cells to correct manually.</p>
-<p>EpiCure allows to decrease the burden of this task.
-Several features are proposed to ease the manual correction of the segmented movies, such as error detection, numerous shortcuts for editing the segmentation, option for tracking, display and measure/export options.
-EpiCure detect segmentation errors by taking advantage of temporal information.
-When a correction is done at a given frame, EpiCure relink the track to adjust for the changes.</p>
-<blockquote>
-<p><strong>See the full <a href="https://image-analysis-hub.github.io/Epicure/">documentation here</a></strong></p>
-</blockquote>
-<p><img src="https://github.com/Image-Analysis-Hub/Epicure/blob/main/docs/imgs/EpiGen.png" alt="EpiCure interface" title="EpiCure interface" /></p>
-<h2>Installation</h2>
-<h3>Install plugin</h3>
-<p>To install EpiCure on a fresh python virtual environment, type inside the environement:</p>
-<pre><code><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">epicure</span>
-</pre></div>
-</code></pre>
-<p>Then launch <code>Napari</code>, and the plugin should be visible in the <code>Plugins</code> list.</p>
-<p>If you already have an environment with <code>Napari</code> installed, you can also install it directly in <code>Napari&gt;Plugins&gt;Install/Uninstall plugins</code></p>
-<h3>Install code</h3>
-<p>To have the code to be able to modify it, clone this repository. You can use <code>pip install -e .</code> so that everytime you update the code, the plugin will be updated.</p>
-<h2>Dependencies</h2>
-<p>The input files of EpiCure can be already tracked or not.
-Tracking options are proposed in EpiCure:</p>
+                                        <p><a href="https://github.com/Macl-I/napari-volume-spin/raw/main/LICENSE"><img src="https://img.shields.io/pypi/l/napari-volume-spin.svg?color=green" alt="License BSD-3" /></a>
+<a href="https://pypi.org/project/napari-volume-spin"><img src="https://img.shields.io/pypi/v/napari-volume-spin.svg?color=green" alt="PyPI" /></a>
+<a href="https://python.org"><img src="https://img.shields.io/pypi/pyversions/napari-volume-spin.svg?color=green" alt="Python Version" /></a>
+<a href="https://github.com/Macl-I/napari-volume-spin/actions"><img src="https://github.com/Macl-I/napari-volume-spin/workflows/tests/badge.svg" alt="tests" /></a>
+<a href="https://codecov.io/gh/Macl-I/napari-volume-spin"><img src="https://codecov.io/gh/Macl-I/napari-volume-spin/branch/main/graph/badge.svg" alt="codecov" /></a>
+<a href="https://napari-hub.org/plugins/napari-volume-spin"><img src="https://img.shields.io/endpoint?url=https://api.napari-hub.org/shields/napari-volume-spin" alt="napari hub" /></a>
+<a href="https://napari.org/stable/plugins/index.html"><img src="https://img.shields.io/badge/plugin-npe2-blue?link=https://napari.org/stable/plugins/index.html" alt="npe2" /></a>
+<a href="https://github.com/copier-org/copier"><img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/copier-org/copier/master/img/badge/badge-grayscale-inverted-border-purple.json" alt="Copier" /></a></p>
+<p>Imaris-style continuous 3D spin animation controls for napari, with looping GIF/MP4 export</p>
+<hr />
+<p>This <a href="https://github.com/napari/napari">napari</a> plugin was generated with <a href="https://copier.readthedocs.io/en/stable/">copier</a> using the <a href="https://github.com/napari/napari-plugin-template">napari-plugin-template</a>.</p>
+<h2>Demo</h2>
+<!-- Record a short screen capture of the plugin in action (Spin Controls -> Export -> Compress)
+     and save it as docs/demo.gif (or docs/demo.mp4), then this will render on GitHub/PyPI/napari hub. -->
+<p><img src="docs/demo.gif" alt="napari-volume-spin demo" /></p>
+<h2>Features</h2>
+<p><code>napari-volume-spin</code> adds a <strong>Volume Spin Controls</strong> dock widget with three
+tabs that mimics Imaris's continuous 3D rotation animation:</p>
+<p><strong>Spin Controls tab</strong></p>
 <ul>
-<li>Laptrack centroids</li>
-<li>Laptrack overlaps</li>
+<li><strong>Play / Pause</strong> a continuous spin of the 3D camera around the currently
+viewed volume.</li>
+<li>Choose the screen-relative rotation <strong>axis</strong>: X (pitch), Y (roll), or Z (yaw).</li>
+<li>Adjust <strong>spin speed</strong> (0.05–1.0 degrees/frame) via a linked slider and spin box.</li>
+</ul>
+<p><strong>Export tab</strong></p>
+<ul>
+<li><strong>Export a looping GIF or MP4</strong> of the current axis/speed settings: a full
+360° rotation is captured automatically so the animation loops seamlessly,
+and you are always prompted for the save location.</li>
+<li><strong>Loop Axis</strong>: for multi-dimensional images (e.g. a time series), pick an
+extra (non-displayed) axis to page through frame-by-frame while the camera
+keeps spinning — the number of captured frames then matches that axis's
+length instead of a fixed 360° rotation, and the FPS field controls
+playback speed of the resulting file.</li>
+<li>A <strong>progress bar</strong> and <strong>Cancel</strong> button are shown while frames are captured;
+the (often slower) file encoding step runs in a background thread so napari
+stays fully interactive.</li>
+</ul>
+<p><strong>Compress tab</strong></p>
+<ul>
+<li><strong>Compress Animation...</strong> shrinks an existing GIF/MP4/WebP/MOV/AVI file.
+Choose a compression <strong>scheme</strong> — WebP or MP4 use lossy, per-frame
+(JPEG-like) image compression instead of GIF's 256-color palette, which
+avoids the choppy banding/dithering artifacts a plain palette-based GIF
+produces. Compression automatically tries progressively lower
+scale/quality tiers until the output is under 25 MB (handy for e-mail
+attachments), while never dropping below 24 fps.</li>
 </ul>
 <h2>Usage</h2>
-<p>Refer to the <a href="https://image-analysis-hub.github.io/Epicure/">documentation</a> for documentation of the different steps possible in the pipeline.</p>
-<h2>References</h2>
-<p>If you use EpiCure, thank you for citing our work:</p>
-<p>EpiCure is not published yet, you can cite it using Zenodo for now: <a href="https://doi.org/10.5281/zenodo.13952184">https://doi.org/10.5281/zenodo.13952184</a></p>
-<h3>Dataset</h3>
-<p>The dataset presented in our main EpiCure publication is available on zenodo: <a href="10.5281/zenodo.20607705">10.5281/zenodo.20607705</a>.</p>
-<h2>Contributing and Feedback</h2>
-<p>EpiCure is mainly developed in CNRS UMR3738, in the <a href="https://research.pasteur.fr/en/department/developmental-stem-cell-biology/">Developmental and Stem Cell Biology Department</a> of Institut Pasteur.
-If you have a question on using EpiCure or ask to add a feature, either file an issue or write in the <a href="https://forum.image.sc/">imagesc forum</a>.</p>
-<p>Any contribution is most welcome.
-Do not hesitate to contact us beforehand through <a href="https://github.com/Image-Analysis-Hub/epicure/issues/">filing an issue</a> (choose &quot;Other questions/comments&quot; type).
-To suggest the addition of a new feature, you can also contact us by filing an issue choosing the &quot;Feature request&quot; option.</p>
-<p>If you encounter a code related issue using EpiCure, please <a href="https://github.com/Image-Analysis-Hub/epicure/issues">file an issue</a> in this repository.</p>
-<p>To facilitate contributions, we added a pixi file in the repository.
-Developers can run:</p>
-<ul>
-<li><code>pixi run build</code> to install locally the plugin and test it manually</li>
-<li><code>pixi run test</code> to run locally the tests from the <code>src/tests</code> directory</li>
-<li><code>pixi run build-doc</code> to locally build the documentation pages. The documentation will be build in the <code>site</code> folder in the repository. The file <code>site\index.html</code> can be open in a browser to see the generated documentation.</li>
-</ul>
-<p>The code API can be found <a href="https://image-analysis-hub.github.io/Epicure/api/epicure.html">here</a> in the online documentation.
-Examples of using EpiCure without opening the interface can be found in the test files and the repository notebooks.</p>
+<ol>
+<li>Open napari with a 3D (or higher-dimensional) volume layer and switch to
+3D display (<code>ndisplay=3</code>).</li>
+<li>Open <code>Plugins &gt; napari-volume-spin: Volume Spin Controls</code>.</li>
+<li>On the <strong>Spin Controls</strong> tab, pick a rotation axis and speed, then click
+<strong>Play Spin</strong> to start the continuous animation.</li>
+<li>Switch to the <strong>Export</strong> tab, choose <strong>GIF</strong> or <strong>MP4</strong>, an FPS, and
+optionally a <strong>Loop Axis</strong> (for multi-dimensional images), then click
+<strong>Export Looping Animation...</strong>. Use <strong>Cancel</strong> to abort mid-capture.</li>
+<li>If the resulting file is too large (e.g. for e-mail), switch to the
+<strong>Compress</strong> tab, pick a compression scheme, and click <strong>Compress
+Animation...</strong> to save a smaller copy.</li>
+</ol>
+<h2>Installation</h2>
+<p>You can install <code>napari-volume-spin</code> via <a href="https://pypi.org/project/pip/">pip</a>:</p>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>napari-volume-spin
+</pre></div>
+</code></pre>
+<p>If napari is not already installed, you can install <code>napari-volume-spin</code> with napari and Qt via:</p>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"napari-volume-spin[all]"</span>
+</pre></div>
+</code></pre>
+<p>To install latest development version:</p>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/Macl-I/napari-volume-spin.git
+</pre></div>
+</code></pre>
+<h2>Contributing</h2>
+<p>Contributions are very welcome. Tests can be run with <a href="https://tox.readthedocs.io/en/latest/">tox</a>, please ensure
+the coverage at least stays the same before you submit a pull request.</p>
+<h2>License</h2>
+<p>Distributed under the terms of the <a href="http://opensource.org/licenses/BSD-3-Clause">BSD-3</a> license,
+&quot;napari-volume-spin&quot; is free and open source software</p>
+<h2>Issues</h2>
+<p>If you encounter any problems, please <a href="https://github.com/Macl-I/napari-volume-spin/issues">file an issue</a> along with a detailed description.</p>
 
 
                                     </div>
@@ -285,7 +308,7 @@ Examples of using EpiCure without opening the interface can be found in the test
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">1.6.4</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.1.0</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -305,7 +328,7 @@ Examples of using EpiCure without opening the interface can be found in the test
                                                     released<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2024-10-18</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-08-24</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -316,7 +339,7 @@ Examples of using EpiCure without opening the interface can be found in the test
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
                                                     <li class="MetadataList_textItem__KKmMN">
-                                                            BSD 3-Clause
+                                                            BSD-3-Clause
                                                     </li>
                                                 </ul>
                                             </div>
@@ -373,7 +396,7 @@ Examples of using EpiCure without opening the interface can be found in the test
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">Python versions
                                                     supported<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.9">3.9</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.10">3.10</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.11">3.11</a></li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.11">3.11</a></li></ul>
                                             </div>
                                         </div>
                                         <div class="text-sm">
@@ -392,7 +415,7 @@ Examples of using EpiCure without opening the interface can be found in the test
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">
                                                     Requirements<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">napari[all]</li><li class="MetadataList_textItem__KKmMN">vispy</li><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">bioio</li><li class="MetadataList_textItem__KKmMN">bioio-bioformats</li><li class="MetadataList_textItem__KKmMN">bioio-tifffile</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">opencv-python-headless<4.9.0</li><li class="MetadataList_textItem__KKmMN">roifile</li><li class="MetadataList_textItem__KKmMN">PyQt6-WebEngine</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">scipy</li><li class="MetadataList_textItem__KKmMN">xlsxwriter</li><li class="MetadataList_textItem__KKmMN">plotly</li><li class="MetadataList_textItem__KKmMN">kaleido</li><li class="MetadataList_textItem__KKmMN">imagecodecs</li><li class="MetadataList_textItem__KKmMN">edt</li><li class="MetadataList_textItem__KKmMN">packaging</li><li class="MetadataList_textItem__KKmMN">laptrack>=0.15.0</li><li class="MetadataList_textItem__KKmMN">joblib</li><li class="MetadataList_textItem__KKmMN">appose</li><li class="MetadataList_textItem__KKmMN">geff</li><li class="MetadataList_textItem__KKmMN">PyQt5; extra == "pyqt5"</li><li class="MetadataList_textItem__KKmMN">PyQtWebEngine; extra == "pyqt5"</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt5; extra == "testing"</li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">napari</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">vispy</li><li class="MetadataList_textItem__KKmMN">imageio[ffmpeg]</li><li class="MetadataList_textItem__KKmMN">pillow</li><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">napari[all]; extra == "all"</li></ul>
                                             </div>
                                         </div>
                                     </div>
