@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.12.0</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.12.1</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-08-21</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-08-24</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -156,7 +156,7 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Requirements<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">superqt</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">pyqtgraph</li><li class="MetadataList_textItem__KKmMN">czitools>=0.20.0</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-timeout; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-forked; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt6!=6.11.0,!=6.11.1,>=6.7; extra == "testing"</li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">superqt</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">pyqtgraph</li><li class="MetadataList_textItem__KKmMN">czitools>=0.21.0</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-timeout; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-forked; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt6!=6.11.0,!=6.11.1,>=6.7; extra == "testing"</li></ul>
                                     </div>
                                 </div>
                             </div>
@@ -341,37 +341,58 @@ https://napari.org/stable/plugins/index.html
 <p>The <strong>Lazy Loading</strong> checkbox is enabled by default. It controls which
 <code>czitools</code> reader is used after <strong>Load Pixel Data</strong> is pressed:</p>
 <ul>
-<li><strong>Enabled:</strong> the plugin calls <code>read_tools.read_stacks</code> with the selected
-scene, time, channel, and Z ranges. This scene-aware path can return one
-xarray stack for equal-sized scenes or a list of stacks when scene shapes
-differ. The plugin creates one napari image layer per channel and appends a
-scene suffix to layer names when separate scene stacks are returned.</li>
+<li><strong>Enabled:</strong> the plugin calls <code>read_tools.read_stacks</code> with <code>use_dask=True</code>
+and the selected scene, time, channel, and Z ranges. This scene-aware path
+returns Dask-backed xarray stacks — one per equal-sized scene group, or a
+list when scene shapes differ. Pixel planes are read only when napari asks
+for them. The plugin creates one napari image layer per channel and appends
+a scene suffix to layer names when separate scene stacks are returned.</li>
 <li><strong>Disabled:</strong> the plugin calls <code>read_tools.read_6darray</code> and constructs one
-regular array in <code>STCZYX(A)</code> order. This eager path requires selected scenes
-to have compatible shapes.</li>
+regular NumPy array in <code>STCZYX(A)</code> order. This eager path loads every
+selected plane into RAM and requires the selected scenes to have compatible
+shapes.</li>
 </ul>
-<p>The checkbox selects the stack-oriented reader, but the widget currently calls
-it with <code>use_dask=False</code>. Pixel data is therefore read while the load action is
-running before the layers are added to napari. In other words, the default UI
-option is scene-aware and memory-friendlier for differently shaped scenes, but
-it is not Dask-backed on-demand loading.</p>
-<p>True lazy pixel loading is available through the Python reader API by combining
-<code>use_lazy=True</code> with <code>use_dask=True</code>:</p>
+<h5>Gigapixel CZIs (whole-slide, large 2D scans)</h5>
+<p>For files whose individual 2D planes are larger than about 256 MB uncompressed
+(for example a <code>93,555 × 138,996</code> <code>uint16</code> plane ≈ 24 GB), <code>czitools</code>
+automatically switches to spatial Y/X tiling: each Dask chunk becomes one
+ROI-based read via <code>pylibCZIrw</code>, so napari only fetches the tiles that
+intersect the current viewport instead of full planes. Small planes keep the
+faster whole-plane path.</p>
+<p>On top of tiling, lazy mode also enables <strong>multiscale rendering</strong>. The plugin
+calls <code>czitools.read_tools.read_stacks_multiscale</code> to detect the CZI's stored
+pyramid levels (via <code>pylibCZIrw</code> subblock enumeration) and hands napari one
+lazy Dask array per level as <code>viewer.add_image(..., multiscale=True)</code>. This
+lets napari render the coarsest level immediately from a single GPU texture
+and stream finer tiles on zoom. If the coarsest stored level is still larger
+than the GPU texture limit (~16k px per edge), extra synthetic coarser
+levels are added on the fly using libCZI's C++ resampler. Files without any
+on-disk pyramid degrade transparently to a single-level &quot;pyramid&quot; and behave
+as before.</p>
+<p>To keep opening these files usable, the plugin also passes an explicit
+<code>contrast_limits</code> argument to <code>viewer.add_image</code> (derived from the CZI's
+embedded display settings). Without this, napari would auto-scan every chunk
+of the Dask array to determine the display range and materialize the entire
+plane in RAM before the first pixel is shown.</p>
+<h5>Advanced Python usage</h5>
+<p>The Python reader API forwards the same lazy behaviour:</p>
 <pre><code class="language-python"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">napari_czitools._reader</span><span class="w"> </span><span class="kn">import</span> <span class="n">reader_function_adv</span>
 
 <span class="n">reader_function_adv</span><span class="p">(</span>
     <span class="s2">"image.czi"</span><span class="p">,</span>
-    <span class="n">use_lazy</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">use_dask</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">use_lazy</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>        <span class="c1"># widget checkbox — read_stacks path</span>
+    <span class="n">use_dask</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>        <span class="c1"># required for on-demand reads</span>
+    <span class="n">use_multiscale</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># napari renders coarse-level tiles first</span>
+    <span class="n">max_coarse_edge</span><span class="o">=</span><span class="mi">8192</span><span class="p">,</span> <span class="c1"># coarsest pyramid edge target (px)</span>
 <span class="p">)</span>
 </pre></div>
 </code></pre>
-<p>In this mode, <code>czitools</code> reads the CZI metadata and builds xarray objects backed
-by Dask task graphs first. The individual CZI pixel planes are not loaded at
-that point. Napari receives the Dask-backed channel layers and triggers the
-required reads when image data is accessed or displayed. Disabling
-<code>use_lazy</code>, even with <code>use_dask=True</code>, still reads all pixels eagerly before
-wrapping the result in a Dask array.</p>
+<p>With <code>use_lazy=True</code>, <code>czitools</code> reads the CZI metadata and builds Dask task
+graphs first — individual pixel planes are not loaded at that point. When
+<code>use_multiscale=True</code> (the default) the plugin also constructs a per-level
+pyramid so napari can render gigapixel planes without materialising layer 0.
+Disabling <code>use_lazy</code>, even with <code>use_dask=True</code>, still reads all pixels
+eagerly before wrapping the result in a Dask array.</p>
 <h2>Current Limitations</h2>
 <p>The plugin is still in its early stages; expect bugs and breaking changes.</p>
 <ul>
@@ -452,7 +473,7 @@ enabling single-frame extraction (e.g. T=4-4 to read one timepoint).</li>
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.12.0</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.12.1</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -462,7 +483,7 @@ enabling single-frame extraction (e.g. T=4-4 to read one timepoint).</li>
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-08-21</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-08-24</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -559,7 +580,7 @@ enabling single-frame extraction (e.g. T=4-4 to read one timepoint).</li>
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">
                                                     Requirements<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">superqt</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">pyqtgraph</li><li class="MetadataList_textItem__KKmMN">czitools>=0.20.0</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-timeout; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-forked; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt6!=6.11.0,!=6.11.1,>=6.7; extra == "testing"</li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">superqt</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">pyqtgraph</li><li class="MetadataList_textItem__KKmMN">czitools>=0.21.0</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-timeout; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-forked; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt6!=6.11.0,!=6.11.1,>=6.7; extra == "testing"</li></ul>
                                             </div>
                                         </div>
                                     </div>

@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.3.6</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.3.9</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -229,7 +229,9 @@ synchronize them.</p>
 <li>Dynamic 2D bounding rectangles and 3D 12-edge wireframes.</li>
 <li>Stable per-neuron box colors derived from zero-based ROI identity.</li>
 <li>Checkable neuron list with a separate active neuron.</li>
-<li>All/None controls and cumulative Q/W navigation.</li>
+<li>Digital/biological multi-neuron search with explicit match selection.</li>
+<li>All/None controls, cumulative Q/W navigation, and checked-only Shift+Q/W.</li>
+<li>Optional Biological, Digital, or combined selected-box text.</li>
 <li>Fixed canvas shortcuts for Z-slice and time-frame navigation.</li>
 <li>Active-neuron highlighting and view centering.</li>
 <li>Session-only whole-viewer rotation and screen-axis flip controls.</li>
@@ -290,6 +292,24 @@ session baseline and the plugin controls return to their default state.</p>
 <p>The legacy <code>LabelManager</code> Python and command aliases remain available for
 compatibility. The public widget name is <code>NeuronAnnotatorWidget</code>, and napari
 lists only that widget.</p>
+<h2>Neuron selection and search</h2>
+<p>The neuron tree keeps persistent checked identities separate from the one
+active identity. Q/W moves through valid neurons and checks each activated
+identity. Shift+Q/W moves only through already checked neurons that are valid
+at the current time and, in Layer mode, belong to the active Z range. Both
+forms of navigation wrap in zero-based digital-ID order.</p>
+<p>The search field accepts comma-separated digital IDs and biological-name
+fragments. Numeric tokens match an ID exactly; other tokens use a
+case-insensitive biological-name substring match. Typing highlights every
+matching tree row without changing selection or moving the view. Enter cycles
+through matches one at a time, checking and making only that match active.
+<strong>Check matches</strong> adds all matches to the existing checked set without
+changing the active neuron.</p>
+<p>Search covers all global ROI identities, including observations missing at
+the current time or outside the active Z range. Those results remain gray and
+cannot move the current view until they become navigable. Search highlighting
+is confined to the tree; image highlighting continues to use the existing
+selected and active overlay layers.</p>
 <h2>Z-layer display</h2>
 <p>The compact <strong>Z Layers</strong> panel separates a 3D volume along Z so individual
 depth ranges can be rendered without the other ranges obscuring them:</p>
@@ -375,11 +395,12 @@ all IDs in the selected layer, while <strong>None</strong> empties both box laye
 optional text overlay. Checked identities that are missing at the current time
 remain checked but are temporarily omitted from the geometry.</p>
 <p>Enable <strong>Show selected box labels</strong> to place one text label at the center of
-each currently rendered checked box. The text uses the annotation table's
-<code>biological</code> value when present and otherwise falls back to the zero-based
-<code>neuron_id</code>. The third <code>annotation</code> column is not used for box labels. The
-option is off by default. Use <strong>Text color</strong> to choose a session-only label
-color that contrasts with the current Image colormap.</p>
+each currently rendered checked box. <strong>Label text</strong> selects Biological,
+Digital, or <code>Digital + biological</code> text. Biological is the default and falls
+back to the zero-based <code>neuron_id</code> when empty; the combined form is written as
+<code>12 · AVA</code> and also falls back to the ID. The third <code>annotation</code> column is not
+used for box labels. The option is off by default. Use <strong>Text color</strong> to choose
+a session-only label color that contrasts with the current Image colormap.</p>
 <p>In 2D mode, the plugin draws four rectangle edges only when the current z
 slice intersects the box's half-open z range.</p>
 <p>In 3D mode, each box is represented by 12 vector edges. Overlapping boxes
@@ -426,7 +447,7 @@ live in <code>src/napari_worm_neuron_annotator/_widget.py</code>.</p>
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.3.6</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.3.9</li>
                                                 </ul>
                                             </div>
                                         </div>
