@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.1.0</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.1.1</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-07-16</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-08-25</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -308,6 +308,7 @@
 <li>Adjust the <strong>minimum overlap</strong> for the tiling (optional, see <a href="https://pypi.org/project/cztile/">cztile</a> for details).</li>
 <li>Select the <strong>layer</strong> to be segmented.</li>
 <li>Toggle <strong>Use GPU for inference</strong> checkbox to enable / disable using a GPU (Nvidia) for the segmentation (experimental feature).</li>
+<li>Toggle <strong>Convert RGB→BGR</strong> if the model was trained on BGR-ordered channels — see <a href="#rgb-vs-bgr-channel-order">RGB vs. BGR channel order</a> below.</li>
 <li>Press <strong>Segment Selected Image Layer</strong> to run the segmentation.</li>
 </ul>
 <p><img src="https://github.com/sebi06/napari-czann-segment/raw/main/readme_images/napari_czann3.png" alt="Napari - Image successfully segmented" /></p>
@@ -316,9 +317,41 @@ Another example is shown below demonstrating a simple &quot;Grain Size Analysis&
 <p><img src="https://github.com/sebi06/napari-czann-segment/raw/main/readme_images/grainsize_czann_napari.png" alt="Napari - Simple Grain Size Analysis" /></p>
 <h3>Remarks</h3>
 <blockquote>
-<p><strong>IMPORTANT</strong>: Currently the plugin only supports using models trained on a <strong>single channel</strong> image. Therefore, make sure that during the training on <a href="https://www.apeer.com">APEER</a> or somewhere else the correct inputs images are used.
-It is quite simple to train a single RGB image, which actually has three channels, load this image in <a href="https://github.com/napari/napari">napari</a> and notice only then that the model will not work, because the image will 3 channels inside <a href="https://github.com/napari/napari">napari</a>.</p>
+<p><strong>IMPORTANT</strong>: Currently the plugin only supports using models trained on a <strong>single channel</strong> image (grayscale) or a <strong>3-channel color</strong> image (RGB / BGR). Multi-channel fluorescence images with more than 3 channels are not supported. Make sure that during training on <a href="https://www.apeer.com">APEER</a> or elsewhere the correct input images are used.
+It is quite simple to accidentally train a single RGB image (3 channels) and notice only later that the model will not work as expected inside <a href="https://github.com/napari/napari">napari</a>.</p>
 </blockquote>
+<h3>RGB vs. BGR channel order</h3>
+<p><a href="https://github.com/napari/napari">napari</a> always loads and stores color images in <strong>RGB</strong> order (red-green-blue). However, models trained using ZEN's <em>SplitRgb</em> pipeline or saved with the <code>Bgr24</code> / <code>Bgra32</code> pixel type expect channels in <strong>BGR</strong> order (blue-green-red). Running such a model without channel reordering will produce incorrect or degraded segmentation results.</p>
+<p>The plugin handles this with the <strong>Convert RGB→BGR</strong> checkbox:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Model / file type</th>
+<th style="text-align:left">Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>.czseg</code> with <code>Bgr24</code> or <code>Bgra32</code> pixel type</td>
+<td style="text-align:left">Auto-detected — checkbox is set automatically</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>.czseg</code> with <code>Rgb24</code> / <code>Gray8</code> / <code>Gray16</code> etc.</td>
+<td style="text-align:left">Auto-detected — no conversion needed</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>.czann</code> / <code>.czmodel</code></td>
+<td style="text-align:left">Auto-detection not possible — toggle checkbox manually if the model was trained on BGR input</td>
+</tr>
+</tbody>
+</table>
+<p><strong>When do you need it?</strong></p>
+<ul>
+<li>The model was trained inside ZEN (ZEN SplitRgb path) → enable the checkbox.</li>
+<li>The model was trained on standard RGB images (e.g. APEER, own Jupyter notebook) → leave the checkbox off.</li>
+<li>The input image is grayscale (single channel) → the checkbox has no effect.</li>
+</ul>
+<p>The checkbox can always be toggled manually to override the auto-detected value.</p>
 <h2>CPU vs. GPU Inference</h2>
 <h3>CPU (default - works everywhere)</h3>
 <p>CPU inference via <a href="https://pypi.org/project/onnxruntime/">ONNX-CPU</a> works on <strong>all platforms</strong> (Windows, Linux, macOS including Apple Silicon):</p>
@@ -481,7 +514,7 @@ It is quite simple to train a single RGB image, which actually has three channel
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.1.0</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.1.1</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -491,7 +524,7 @@ It is quite simple to train a single RGB image, which actually has three channel
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-07-16</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-08-25</li>
                                                 </ul>
                                             </div>
                                         </div>
