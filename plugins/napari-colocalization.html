@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.2.0</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.3.0</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-08-03</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-08-26</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -210,6 +210,7 @@
                                     <div class="Markdown_markdown__QZ95j">
 
                                         <p align="center">
+  <!-- TODO: replace with final logo -->
   <img src="https://raw.githubusercontent.com/DBI-INFRA/napari-colocalization/main/docs/img/logo.png" alt="napari-colocalization logo" width="160"/>
 </p>
 <h1>napari-colocalization</h1>
@@ -239,20 +240,26 @@ results table plus an intensity-vs-intensity density plot.</p>
 <em>correlation</em> — Pearson (PCC), Spearman rank (SRCC) and Li's Intensity
 Correlation Quotient (ICQ) — and two of <em>co-occurrence</em> — Manders'
 overlap coefficient with split coefficients (r, k1, k2) and Manders'
-thresholded coefficients tM1/tM2.</li>
+thresholded coefficients tM1/tM2. Pearson and Manders are on by default,
+one from each family.</li>
 <li><strong>Pairwise or all-to-all</strong> mode: analyse two grayscale layers, or every
 channel pair within a single multi-channel layer.</li>
 <li><strong>2D and 3D</strong> support natively (no time-series for now).</li>
 <li><strong>Region-restricted analysis</strong> via a Shapes or Labels layer - each non-zero
-region is reported on its own row.</li>
+region is reported on its own row, computed on that region's bounding-box
+crop so masks with many regions stay fast.</li>
 <li><strong>Manders thresholds</strong>: choose <strong>Costes auto</strong> (orthogonal-regression
 bisection, matched to Fiji Coloc 2), a per-channel <strong>auto-threshold</strong>
 (Otsu, Li, Triangle, Yen, Mean, IsoData → thresholded tM1/tM2), or <strong>Manual</strong>.</li>
 <li><strong>Per-Z-slice mode</strong>: analyse each plane of a stack separately (one row
 per slice), à la JACoP B's &quot;consider Z slices separately&quot;.</li>
-<li><strong>Interactive results</strong>: in-widget table, density plot of the selected row,
-multi-row selection that highlights all matching shapes/labels in the viewer,
-and an optional <strong>fixed-axes</strong> cytofluorogram for comparable plots.</li>
+<li><strong>Interactive results</strong>: in-widget table with numeric sorting and per-column
+header tooltips, density plot of the selected row, multi-row selection that
+highlights all matching shapes/labels in the viewer, and an optional
+<strong>fixed-axes</strong> cytofluorogram for comparable plots. Plots follow napari's
+light/dark theme.</li>
+<li><strong>Cancellable runs</strong>: analysis runs on a background thread with a progress
+bar; the Run button turns into <strong>Cancel</strong> while a run is in flight.</li>
 <li><strong>Diagnostics tab</strong>: single-pair diagnostic plots - Costes randomization
 significance test (observed PCC vs a scrambled null, with p-value/z-score),
 Van Steensel cross-correlation function (CCF), and Li intensity correlation
@@ -294,11 +301,14 @@ are also provided.</p>
 </li>
 <li>
 <p>Open the widget: <strong>Plugins → Colocalization Analysis</strong>. Two image layers
-<code>channel_a</code> and <code>channel_b</code> are auto-selected for pairwise mode.</p>
+<code>channel_a</code> and <code>channel_b</code> are auto-selected for pairwise mode, with
+<strong>Pearson</strong> and <strong>Manders</strong> checked and the Manders threshold group
+(<strong>Costes (auto)</strong>) below them.</p>
 </li>
 <li>
-<p>Click <strong>Run</strong>. The results table populates with a single row (the whole
-image), and the density plot below shows the intensity pairs with the
+<p>Click <strong>Run</strong>. A progress bar tracks the run - the button reads <strong>Cancel</strong>
+until it finishes. The results table then populates with a single row (the
+whole image), and the density plot below shows the intensity pairs with the
 metric values overlaid.</p>
 </li>
 </ol>
@@ -320,7 +330,10 @@ viewer.</li>
 single number per region: the <strong>Costes randomization</strong> significance test (the
 observed PCC against a block-scrambled null, with a p-value and z-score), the
 <strong>Van Steensel</strong> cross-correlation function, and <strong>Li's intensity correlation
-analysis</strong>.</p>
+analysis</strong>. The randomization test is where significance comes from: the
+results table reports coefficients only, since per-pixel correlation p-values
+are not valid on spatially autocorrelated image data
+(<a href="docs/metrics.md#why-there-are-no-per-pixel-p-values">details</a>).</p>
 <p align="center">
   <img src="https://raw.githubusercontent.com/DBI-INFRA/napari-colocalization/main/docs/img/widget_diagnostics.png" alt="Diagnostics tab - Costes randomization" width="780"/>
 </p>
@@ -344,6 +357,7 @@ and how the Costes auto-threshold works.</li>
 (<code>pearson</code>, <code>spearman</code>, <code>li_icq</code>, <code>manders</code>, <code>overlap</code>,
 <code>costes_threshold</code>, <code>costes_regression</code>, <code>analyse_pairwise</code>,
 <code>analyse_all_to_all</code>) from scripts or notebooks.</li>
+<li><strong><a href="CHANGELOG.md">Changelog</a></strong> - what changed in each release.</li>
 </ul>
 <h2>Related projects</h2>
 <ul>
@@ -394,7 +408,7 @@ licence; <code>napari-colocalization</code> is free and open-source software.</p
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.2.0</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.3.0</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -404,7 +418,7 @@ licence; <code>napari-colocalization</code> is free and open-source software.</p
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-08-03</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-08-26</li>
                                                 </ul>
                                             </div>
                                         </div>

@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.3.9</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.4.0</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-08-24</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-08-26</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -237,6 +237,8 @@ synchronize them.</p>
 <li>Session-only whole-viewer rotation and screen-axis flip controls.</li>
 <li>View-preserving Z-layer display synchronized across Image and ROI overlays.</li>
 <li>Zero-based ROI annotation with optional Excel import/export.</li>
+<li>Opt-in 2D proofreading of box centers, dimensions, missing observations,
+and added neurons using a non-destructive JSON sidecar.</li>
 </ul>
 <h2>Installation</h2>
 <p>Install into an existing napari environment:</p>
@@ -409,6 +411,35 @@ visually, but one box does not erase the identity of another.</p>
 <p>Vectors and the transparent Points text layer are derived display data. They
 are removed when the ROI is unloaded or the widget closes and are not saved
 as a separate annotation format.</p>
+<p>The proofreading target is a separate, session-only Vectors layer. It is drawn
+as two thin orthogonal line segments (rather than a Points marker), with a
+default half-length of 8 data units and an edge width of 1 pixel. These display
+constants are independent of the neuron box dimensions.</p>
+<h2>2D proofreading</h2>
+<p>Proofreading is off by default and is available only in napari's 2D display
+with Z view set to <strong>All</strong>. Select the source Image layer, turn proofreading
+on, then make an unmodified short left-click on the Image to lock a fixed
+crosshair target. Moving the pointer does not move this target. Then use:</p>
+<ul>
+<li>F7 to delete the active neuron's observation at the current volume;</li>
+<li>F8 to place a missing active observation at the locked target;</li>
+<li>F9 to add a provisional neuron at the locked target using the default
+width/height/depth of <code>7/7/3</code>;</li>
+<li>F12 to discard an unapplied size draft and leave proofreading mode.</li>
+</ul>
+<p>Successful F8/F9 placement clears the target. Changing time or Z, or leaving
+proofreading mode, also clears it. F8 never moves a box that is already
+present. Width, height, and depth accept positive floating-point values;
+<strong>Apply size</strong> changes every currently valid
+observation of the active neuron while preserving its centers. Delete-all is
+explicitly confirmed and removes the active ID's observations from every raw
+volume without deleting or renumbering its identity. Added IDs can be retired;
+retired numeric IDs remain reserved and are not reused.</p>
+<p><strong>Save proof edits</strong> writes canonical sparse edits to a JSON sidecar. The
+original ROI NPY remains read-only. <strong>Export corrected NPY</strong> creates a separate
+array with stable neuron indices; deleted geometry uses NaN in the first six
+fields. If an Image's shape or spatial metadata changes, proofreading pauses
+until a compatible Image is restored.</p>
 <h2>Annotation</h2>
 <p>The <code>digital</code> column stores the zero-based ROI <code>neuron_id</code>.</p>
 <p>The table follows the loaded ROI identities. Existing biological names and
@@ -447,7 +478,7 @@ live in <code>src/napari_worm_neuron_annotator/_widget.py</code>.</p>
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.3.9</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.4.0</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -457,7 +488,7 @@ live in <code>src/napari_worm_neuron_annotator/_widget.py</code>.</p>
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-08-24</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-08-26</li>
                                                 </ul>
                                             </div>
                                         </div>
