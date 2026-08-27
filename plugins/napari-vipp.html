@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.14.0a1</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.14.0a2</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-08-26</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-08-27</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -240,12 +240,12 @@ after successful batch validation. See the
 and <a href="CONTRIBUTING.md#scientific-behavior-requirements">scientific behavior requirements</a>.</p>
 <h2>Quick Start</h2>
 <h3>Windows Installer (Recommended Path)</h3>
-<p>VIPP <code>0.14.0a1</code> is published as an official GitHub prerelease with checksum
+<p>VIPP <code>0.14.0a2</code> is published as an official GitHub prerelease with checksum
 sidecars and as an exact-version package on PyPI. Use only those official
 release surfaces; do not download a file from a guessed asset URL.</p>
 <p>The normal experience is one Windows <code>.exe</code>: download
-<a href="https://github.com/rensutheart/napari-vipp/releases/download/v0.14.0a1/VIPP-Setup-0.14.0a1-Windows-x86_64-UNSIGNED.exe"><code>VIPP-Setup-0.14.0a1-Windows-x86_64-UNSIGNED.exe</code></a>
-from the official <code>v0.14.0a1</code> release, double-click it, and keep the recommended
+<a href="https://github.com/rensutheart/napari-vipp/releases/download/v0.14.0a2/VIPP-Setup-0.14.0a2-Windows-x86_64-UNSIGNED.exe"><code>VIPP-Setup-0.14.0a2-Windows-x86_64-UNSIGNED.exe</code></a>
+from the official <code>v0.14.0a2</code> release, double-click it, and keep the recommended
 managed VIPP environment. Review CPU or qualified NVIDIA GPU setup, then launch
 VIPP from the shortcuts it creates. A supported 64-bit Python is a separate prerequisite;
 if it is missing, setup links to the official Python 3.12.10 installer and lets
@@ -266,7 +266,7 @@ enforced disk minimums above and not a VRAM comparison. Setup reports its phase
 and elapsed time, keeps indeterminate work visibly active, preserves the latest
 concrete activity through quiet periods, and exposes its setup log. Byte
 progress appears only when a trustworthy total exists.</p>
-<p>For <code>0.14.0a1</code>, one-click managed installation uses only two fixed per-track
+<p>For <code>0.14.0a2</code>, one-click managed installation uses only two fixed per-track
 roots. Windows supplies the canonical Local App Data directory through
 <code>SHGetKnownFolderPath(FOLDERID_LocalAppData)</code>; setup appends
 <code>VIPP\environments\cpu</code> or <code>VIPP\environments\cuda13</code>. Custom managed roots are
@@ -289,7 +289,7 @@ Local App Data path is ASCII-compatible.</p>
 so Windows will show <strong>Unknown publisher</strong> and may show
 <strong>Windows protected your PC</strong>. Download only the explicitly named
 <code>-UNSIGNED.exe</code> from the official
-<a href="https://github.com/rensutheart/napari-vipp/releases/tag/v0.14.0a1"><code>v0.14.0a1</code> GitHub release</a>,
+<a href="https://github.com/rensutheart/napari-vipp/releases/tag/v0.14.0a2"><code>v0.14.0a2</code> GitHub release</a>,
 verify its SHA-256 against the attached <code>SHA256SUMS</code> file, then select
 <strong>More info &gt; Run anyway</strong>. Stop if the hash differs or antivirus identifies
 a threat; never disable Windows security. The <a href="docs/quick-start.md">Quick Start</a>
@@ -298,10 +298,31 @@ gives the exact verification steps and a manual fallback.</p>
 <p>The <a href="docs/quick-start.md">VIPP Quick Start</a> explains the installer-first flow,
 current manual commands, CPU/GPU choices, prerequisites, the advanced
 existing-napari route, update/repair/uninstall behavior, and a first workflow.</p>
-<h3>Manual Installation (Advanced And Non-Windows)</h3>
-<p>VIPP <code>0.14.0a1</code> supports CPython 3.12 and 3.13. Create and activate a dedicated
+<h3>macOS Installer (Recommended Path)</h3>
+<p>Download the offline package for your Mac from the official <code>v0.14.0a2</code>
+release:</p>
+<ul>
+<li><a href="https://github.com/rensutheart/napari-vipp/releases/download/v0.14.0a2/VIPP-0.14.0a2-macOS-arm64-UNSIGNED.pkg">Apple Silicon (<code>arm64</code>) PKG</a>
+(<a href="https://github.com/rensutheart/napari-vipp/releases/download/v0.14.0a2/SHA256SUMS-macOS-arm64-0.14.0a2.txt">SHA-256 file</a>)</li>
+<li><a href="https://github.com/rensutheart/napari-vipp/releases/download/v0.14.0a2/VIPP-0.14.0a2-macOS-x86_64-UNSIGNED.pkg">Intel (<code>x86_64</code>) PKG</a>
+(<a href="https://github.com/rensutheart/napari-vipp/releases/download/v0.14.0a2/SHA256SUMS-macOS-x86_64-0.14.0a2.txt">SHA-256 file</a>)</li>
+</ul>
+<p>The package installs a private CPU-only environment under <code>~/Library/vipp</code>
+and creates <code>~/Applications/VIPP.app</code>; it does not need a separately installed
+Python. Allow approximately 3 GB of free disk space. The alpha is explicitly
+unsigned and not notarized. Verify the matching architecture-specific
+<code>SHA256SUMS-macOS-*.txt</code> file before opening it. If macOS blocks the verified
+package, open <strong>System Settings &gt; Privacy &amp; Security</strong>, confirm the VIPP
+package name, choose <strong>Open Anyway</strong>, and approve the installer. Do not bypass
+the warning if the checksum differs or the package came from another source.</p>
+<p>The <a href="packaging/macos/README.md">macOS packaging guide</a> documents the pinned
+offline build, managed layout, architecture split, lifecycle checks, removal,
+and future Developer ID/notarization path. A DMG is unnecessary because the PKG
+is already double-clickable and performs the installation itself.</p>
+<h3>Manual Installation (Advanced And Portable)</h3>
+<p>VIPP <code>0.14.0a2</code> supports CPython 3.12 and 3.13. Create and activate a dedicated
 virtual environment, then install:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"napari[pyqt6]&gt;=0.6"</span><span class="w"> </span><span class="s2">"napari-vipp==0.14.0a1"</span>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"napari[pyqt6]&gt;=0.6"</span><span class="w"> </span><span class="s2">"napari-vipp==0.14.0a2"</span>
 vipp
 </pre></div>
 </code></pre>
@@ -395,14 +416,14 @@ batch configuration, source-axis declarations, export, and scientific review.</p
 <p>Reader packages should be installed with the Python interpreter from the exact
 environment that launches VIPP, never a global/base Python. Keep the VIPP
 version pinned and restart napari afterward. For example:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"napari-vipp[nd2]==0.14.0a1"</span>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"napari-vipp[nd2]==0.14.0a2"</span>
 </pre></div>
 </code></pre>
 <p>Available extras include <code>nd2</code>, <code>czi</code>, <code>microscope</code>, and <code>bioformats</code>. See
 <a href="docs/io-user-guide.md">Image import and export</a> for formats, limitations, and
 the matching commands.</p>
 <h2>Windows Installer And Startup</h2>
-<p>VIPP <code>0.14.0a1</code> provides a novice-facing Windows setup window, automatic CPU/GPU
+<p>VIPP <code>0.14.0a2</code> provides a novice-facing Windows setup window, automatic CPU/GPU
 recommendation, exact dependency review, transactional install/update/repair,
 owned shortcuts, independent CPU/GPU Apps &amp; Features entries, ownership-safe
 uninstall, and acceptance checks. It installs into a private managed location
@@ -438,15 +459,13 @@ and <a href="docs/windows-installation-planner.md">Windows installation planner<
 <a href="SUPPORT.md">SUPPORT.md</a> for help, report vulnerabilities privately through
 <a href="SECURITY.md">SECURITY.md</a>, and follow the <a href="CODE_OF_CONDUCT.md">Code of Conduct</a>.</p>
 <h2>Current Alpha</h2>
-<p><code>0.14.0a1</code> makes scientific image selection explicit and durable across
-interactive, batch, generated, replay, export, checkpoint, manifest, and
-provenance paths. It adds truthful microscope-reader contracts, local
-OME-Zarr presentation preview without changing level-0 analysis, reviewed
-per-sample numeric parameters, clearer retained Batch behavior, and
-understandable Windows setup capacity and activity reporting. CPU remains the
-portable reference, and unsupported inputs, parameters, environments, or
-memory conditions continue to use it visibly.</p>
-<p>See the categorized <a href="CHANGELOG.md#0140a1---2026-08-26">0.14.0a1 release notes</a>
+<p><code>0.14.0a2</code> adds native Apple Silicon and Intel installers and fixes PySide6
+compatibility in dialogs, menus, rendering, and delayed Qt callbacks. The
+SourceItem, reader, batch-override, OME-Zarr preview, workflow, and scientific
+contracts introduced in <code>0.14.0a1</code> remain unchanged. CPU remains the portable
+reference, and unsupported inputs, parameters, environments, or memory
+conditions continue to use it visibly.</p>
+<p>See the categorized <a href="CHANGELOG.md#0140a2---2026-08-27">0.14.0a2 release notes</a>
 and <a href="docs/planning.md">roadmap</a> for details and remaining milestones.</p>
 <h2>Citation, Acknowledgement, And License</h2>
 <p>If VIPP contributes to your work, acknowledge <code>napari-vipp</code> and link to the
@@ -470,7 +489,7 @@ citation can be added when available.</p>
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.14.0a1</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.14.0a2</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -480,7 +499,7 @@ citation can be added when available.</p>
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-08-26</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-08-27</li>
                                                 </ul>
                                             </div>
                                         </div>
