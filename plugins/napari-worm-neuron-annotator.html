@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.4.1</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.4.2</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-08-27</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-08-28</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -429,17 +429,32 @@ width/height/depth of <code>7/7/3</code>;</li>
 </ul>
 <p>Successful F8/F9 placement clears the target. Changing time or Z, or leaving
 proofreading mode, also clears it. F8 never moves a box that is already
-present. Width, height, and depth accept positive floating-point values;
-<strong>Apply size</strong> changes every currently valid
-observation of the active neuron while preserving its centers. Delete-all is
-explicitly confirmed and removes the active ID's observations from every raw
-volume without deleting or renumbering its identity. Added IDs can be retired;
+present. Width, height, and depth accept positive floating-point values.
+<strong>Apply current t</strong> changes only the locked observation at the current Image
+time, preserving its center and leaving other volumes untouched.
+<strong>Apply to all existing…</strong> is an explicit opt-in operation that changes the
+size of every existing observation for that neuron; missing observations are
+not created and all centers remain unchanged. Delete-all is explicitly
+confirmed and removes the active ID's observations from every raw volume
+without deleting or renumbering its identity. Added IDs can be retired;
 retired numeric IDs remain reserved and are not reused.</p>
-<p><strong>Save proof edits</strong> writes canonical sparse edits to a JSON sidecar. The
-original ROI NPY remains read-only. <strong>Export corrected NPY</strong> creates a separate
-array with stable neuron indices; deleted geometry uses NaN in the first six
-fields. If an Image's shape or spatial metadata changes, proofreading pauses
-until a compatible Image is restored.</p>
+<p>The current-neuron line reports the final state relative to the raw ROI using
+<code>(moved)</code>, <code>(resized)</code>, <code>(moved + resized)</code>, <code>(placed)</code>, <code>(deleted)</code>, or
+<code>(added)</code> markers. These markers remain visible after saving; the separate
+<code>Unsaved proof edits</code> indicator only describes changes since the most recent
+save/load snapshot. A size edit that has not yet been applied is shown as an
+<code>Unapplied size draft</code> and is never written to a sidecar without an explicit
+Apply/Discard decision.</p>
+<p><strong>Save proof edits</strong> writes canonical sparse edits to a schema-v2 JSON sidecar
+(<code>changed_fields</code> records whether each patch changes presence, center, and/or
+size). Existing schema-v1 sidecars are accepted and kept clean in memory; the
+next explicit save upgrades the same file in place. The current sidecar path
+is retained for subsequent saves, while <strong>Save As…</strong> switches that path.
+Cancel or validation/permission failures leave the working state and path
+unchanged. The original ROI NPY remains read-only. <strong>Export corrected NPY</strong>
+creates a separate array with stable neuron indices; deleted geometry uses NaN
+in the first six fields. If an Image's shape or spatial metadata changes,
+proofreading pauses until a compatible Image is restored.</p>
 <h2>Annotation</h2>
 <p>The <code>digital</code> column stores the zero-based ROI <code>neuron_id</code>.</p>
 <p>The table follows the loaded ROI identities. Existing biological names and
@@ -478,7 +493,7 @@ live in <code>src/napari_worm_neuron_annotator/_widget.py</code>.</p>
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.4.1</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.4.2</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -488,7 +503,7 @@ live in <code>src/napari_worm_neuron_annotator/_widget.py</code>.</p>
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-08-27</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-08-28</li>
                                                 </ul>
                                             </div>
                                         </div>

@@ -4,20 +4,20 @@
 
 <head>
     <meta charset="utf-8" />
-    <link href="../plugins/napari-nuclephaser.html" rel="canonical" />
+    <link href="../plugins/trackin.html" rel="canonical" />
     <meta content="width=device-width,initial-scale=1" name="viewport" />
     <meta
-        content="napari-nuclephaser, Nikita Voloshin, napari hub, napari, hub, plugin, image analysis, imaging, chan zuckerberg initiative"
+        content="trackin, Mihaela Mihaylova, napari hub, napari, hub, plugin, image analysis, imaging, chan zuckerberg initiative"
         name="keywords" />
-    <meta content="A Napari plugin to detect and count nuclei on phase contrast images" name="description" />
-    <meta content="A Napari plugin to detect and count nuclei on phase contrast images" property="og:description" />
-    <meta content="A Napari plugin to detect and count nuclei on phase contrast images." name="twitter:description" />
-    <meta content="NuclePhaser - napari Plugin - Nikita Voloshin" property="og:title" />
-    <meta content="NuclePhaser - napari Plugin - Nikita Voloshin" name="twitter:title" />
+    <meta content="A human-in-the-loop cell tracking tool." name="description" />
+    <meta content="A human-in-the-loop cell tracking tool." property="og:description" />
+    <meta content="A human-in-the-loop cell tracking tool.." name="twitter:description" />
+    <meta content="Trackin - napari Plugin - Mihaela Mihaylova" property="og:title" />
+    <meta content="Trackin - napari Plugin - Mihaela Mihaylova" name="twitter:title" />
     <meta content="article" property="og:type" />
-    <meta content="../plugins/napari-nuclephaser.html" property="og:url" />
+    <meta content="../plugins/trackin.html" property="og:url" />
     <meta content="@napari_imaging" name="twitter:site" />
-    <title>NuclePhaser - napari Plugin - Nikita Voloshin</title>
+    <title>Trackin - napari Plugin - Mihaela Mihaylova</title>
 
     <meta content="2" name="next-head-count" />
     <meta content="#80d1ff" name="theme-color" />
@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.4.1</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.1.1</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -90,7 +90,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">First released<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2025-04-02</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-08-28</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -99,7 +99,8 @@
                                         <p class="font-bold whitespace-nowrap">License<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
                                             <li class="MetadataList_textItem__KKmMN">
-                                                MIT
+                                                GNU GENERAL PUBLIC LICENSE
+   ...
                                             </li>
                                         </ul>
                                     </div>
@@ -144,7 +145,7 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Python versions supported<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.10">3.10</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.11">3.11</a></li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.9">3.9</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.10">3.10</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.11">3.11</a></li></ul>
                                     </div>
                                 </div>
                                 <div class="text-sm">
@@ -156,7 +157,7 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Requirements<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">setuptools==80.10.2</li><li class="MetadataList_textItem__KKmMN">wheel</li><li class="MetadataList_textItem__KKmMN">napari</li><li class="MetadataList_textItem__KKmMN">ultralytics==8.3.141</li><li class="MetadataList_textItem__KKmMN">yolov5</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">sahi==0.12.5</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">torch==2.8.0</li><li class="MetadataList_textItem__KKmMN">pathlib</li><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">typing</li><li class="MetadataList_textItem__KKmMN">pandas</li><li class="MetadataList_textItem__KKmMN">openpyxl</li><li class="MetadataList_textItem__KKmMN">seaborn</li><li class="MetadataList_textItem__KKmMN">opencv-python</li><li class="MetadataList_textItem__KKmMN">imagecodecs</li><li class="MetadataList_textItem__KKmMN">scikit-learn==1.7.2</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-mock; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt5; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">opencv-python-headless; extra == "testing"</li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">napari[pyqt5]>=0.5.0</li><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt5; extra == "testing"</li></ul>
                                     </div>
                                 </div>
                             </div>
@@ -168,26 +169,26 @@
                         <article
                             class="w-full col-span-2 row-start-1 screen-875:col-span-3 screen-1150:col-start-1 screen-1425:col-start-2">
                                 <div class="container" style="display: flex; flex-direction: column;">
-                                    <h1 class="font-bold text-4xl" style="margin-bottom: 20px;" >NuclePhaser</h1>
+                                    <h1 class="font-bold text-4xl" style="margin-bottom: 20px;" >Trackin</h1>
                                 </div>
 
                                 
    <div class="flex items-center" style="gap: 20px; ; align-items: center;"">
-        <a class="underline flex" href="https://pypi.org/project/napari-nuclephaser/" rel="noreferrer" target="_blank">
-        <img src="../static/images/PyPI_logo.svg.png" alt="PyPI" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">napari-nuclephaser</span>
+        <a class="underline flex" href="https://pypi.org/project/trackin/" rel="noreferrer" target="_blank">
+        <img src="../static/images/PyPI_logo.svg.png" alt="PyPI" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">trackin</span>
     </a>
     
-        <a class="underline flex" href="https://github.com/nikvo1/napari-nuclephaser/issues" rel="noreferrer" target="_blank">
-            <img src="../static/images/GitHub_Invertocat_Logo.svg.png" alt="GitHub" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">nikvo1/napari-nuclephaser</span>
+        <a class="underline flex" href="https://github.com/mihaela-mihaylova/trackin/issues" rel="noreferrer" target="_blank">
+            <img src="../static/images/GitHub_Invertocat_Logo.svg.png" alt="GitHub" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">mihaela-mihaylova/trackin</span>
         </a>
         </div>
 
                                 <div class="flex justify-between items-center my-6">
-                                    <h2 class="text-lg">A Napari plugin to detect and count nuclei on phase contrast images</h2>
+                                    <h2 class="text-lg">A human-in-the-loop cell tracking tool.</h2>
                                 </div>
                                 <ul class="PluginAuthors_authors__hs3zO">
                                     <li class="inline">
-                                        <span class="text-[11px] screen-495:text-[14px] font-semibold">Nikita Voloshin</span>
+                                        <span class="text-[11px] screen-495:text-[14px] font-semibold">Mihaela Mihaylova</span>
                                     </li>
                             </ul>
                             <div class="screen-1425:hidden mt-sds-xl mb-sds-xxl"><a
@@ -209,234 +210,67 @@
                                 <div class="flex items-center justify-between mb-sds-xxl">
                                     <div class="Markdown_markdown__QZ95j">
 
-                                        <p><a href="https://github.com/nikvo1/napari-nuclephaser/raw/main/LICENSE"><img src="https://img.shields.io/pypi/l/napari-nuclephaser.svg?color=green" alt="License MIT" /></a>
-<a href="https://pypi.org/project/napari-nuclephaser"><img src="https://img.shields.io/pypi/v/napari-nuclephaser.svg?color=green" alt="PyPI" /></a>
-<a href="https://python.org"><img src="https://img.shields.io/pypi/pyversions/napari-nuclephaser.svg?color=green" alt="Python Version" /></a>
-<a href="https://github.com/nikvo1/napari-nuclephaser/actions"><img src="https://github.com/nikvo1/napari-nuclephaser/workflows/tests/badge.svg" alt="tests" /></a>
-<a href="https://napari-hub.org/plugins/napari-nuclephaser"><img src="https://img.shields.io/endpoint?url=https://api.napari-hub.org/shields/napari-nuclephaser" alt="napari hub" /></a>
-<a href="https://napari.org/stable/plugins/index.html"><img src="https://img.shields.io/badge/plugin-npe2-blue?link=https://napari.org/stable/plugins/index.html" alt="npe2" /></a>
-<a href="https://github.com/copier-org/copier"><img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/copier-org/copier/master/img/badge/badge-grayscale-inverted-border-purple.json" alt="Copier" /></a>
-<a href="https://pepy.tech/project/napari-nuclephaser"><img src="https://static.pepy.tech/badge/napari-nuclephaser" alt="Downloads" /></a>
-<img src="https://img.shields.io/badge/YOLO-%23111F68.svg?style=flat&amp;logo=yolo&amp;logoColor=white" alt="YOLO" /></p>
-<p>❗❗❗WARNING❗❗❗ Further description isn't displayed correctly at Napari Hub. For correctly displayed description, visit our <a href="https://github.com/nikvo1/napari-nuclephaser">GITHUB PAGE</a>.</p>
-<p>A Napari plugin for automated cell nuclei detection, proliferation and population growth analysis, and single-cell tracking in brightfield and fluorescent nuclei timelapse microscopy images.</p>
-<p>napari-nuclephaser is an open-source Napari plugin designed for scientists who need to measure cell proliferation rates, analyze population growth, and perform individual cell tracking on timelapse microscopy images. It utilizes <a href="https://docs.ultralytics.com/">Ultralytics</a> YOLO object detection models and <a href="https://github.com/obss/sahi">obss/sahi</a> sliced inference methods to detect cell nuclei on brightfield and fluorescent images of any size, including large whole slide ones. Learn more with <a href="https://napari-nuclephaser.readthedocs.io/en/latest/index.html">documentation</a> and <a href="https://www.biorxiv.org/content/10.1101/2025.05.13.653705v1">paper</a>.</p>
-<p>❗❗❗WARNING❗❗❗ Nuclephaser &gt;= 0.4.0 uses modified sliced inference algorithm. Prediction results with same models and parameters using NuclePhaser &lt; 0.4.0 and &gt;= 0.4.0 will not reproduce exactly! There will be slight difference in bounding boxes geometry / points location (less errors), but the difference in nuclei count should be minimal (if any).</p>
-<p>⭐NEW⭐ If default NuclePhaser models aren't accurate enough on your specific use case, you can finetune them for free with cloud GPU using <a href="https://colab.research.google.com/drive/1hKMVQqYS0I_GrkYvdz23tPc8FCv2oJvh?usp=sharing">Google Colab NuclePhaser finetuning notebook</a>. It is specifically designed for users without coding experience.</p>
-<p>⭐NEW⭐ NuclePhaser &gt;= 0.2.5 supports calibration on multiple images (with Calibrate with points widget), which provides more stable detection across time series.</p>
-<p>⭐NEW⭐ NuclePhaser &gt;= 0.3.0 supports Test-Time Augmentations, which can increase accuracy by sacrificing inference time. Learn more with <a href="https://napari-nuclephaser.readthedocs.io/en/latest/index.html">documentation</a>.</p>
-<p>⭐NEW⭐ NuclePhaser &gt;= 0.4.0 supports Dynamic Confidence threshold, which allows adapting to changing microscopy conditions, such as contrast, defocus, magnification and cell density. Learn more with <a href="https://napari-nuclephaser.readthedocs.io/en/latest/index.html">documentation</a>.</p>
-<h2>Nuclei detection</h2>
-<p>We trained a series of <a href="https://github.com/ultralytics/yolov5">YOLOv5</a> and <a href="https://github.com/ultralytics/ultralytics">YOLOv11</a> models to detect nuclei on phase contrast images. It can be used for counting cells or for individual cell tracking (using nuclei detections as tracking markers). Prominent features of this approach are:</p>
-<ul>
-<li>Napari-nuclephaser plugin includes <a href="https://github.com/obss/sahi">obss/sahi</a> functionality, allowing detection on images of arbitrary sizes.</li>
-</ul>
-<p align="center">
-	<picture>
-	  <source media="(prefers-color-scheme: dark)" srcset=https://github.com/user-attachments/assets/aa321f17-b0e2-4161-8a69-cb732d7065a7 height=400>
-	  <img alt="Image didn't load" src=https://github.com/user-attachments/assets/fe4d6436-3490-4c06-8ddd-7c797976f407 height=400>
-	</picture>
-</p>
-<ul>
-<li>YOLO models are fast, providing reasonable inference speed even with CPU.</li>
-<li>Ability to predict and automatically count nuclei on stacks of images, making it convenient for cell population growth studies and individual cell tracking.</li>
-</ul>
-<p align="center">
-	<picture>
-	  <source media="(prefers-color-scheme: dark)" srcset=https://github.com/user-attachments/assets/feba9a99-1d37-4962-a2e6-175052aa4925>
-	  <img alt="Image didn't load" src="https://github.com/user-attachments/assets/c7e4d0e6-44c1-4268-aae5-6bb78500d928">
-	</picture>
- </p>
-<ul>
-<li>Calibration algorithm that allows measuring accuracy for each specific use case.</li>
-</ul>
-<h2>Calibration algorithm</h2>
-<p>Result of object detection model inference is highly dependent on <em>confidence threshold</em> parameter.</p>
-<p align="center">
-  <picture>
-  	<source media="(prefers-color-scheme: dark)" srcset=https://github.com/user-attachments/assets/8a13085f-c7ea-45f0-8931-6851f21b68a0 height="300">
-  	<img alt="Image didn't load" src=https://github.com/user-attachments/assets/89f76cd7-2db7-4241-bc35-36d23332b2b5 height="300">
-  </picture>
-</p>
-<p>We created several calibration (finding optimal confidence threshold) algorithms that allow adjusting models to specific use cases (cell types, magnifications, illumination settings, cameras etc.):</p>
-<ul>
-<li>Calibration using known number of objects on an image. Doesn't produce accuracy metrics.</li>
-<li>Calibration using fluorescent nuclei stain image (for example, DAPI image). Produces accuracy metrics.</li>
-<li>Calibration using manual annotation of nuclei. Produces accuracy metrics.</li>
-</ul>
-<p>Apart from optimal confidence threshold search, these algorithms return accuracy metrics for specific use cases. Given that the calibration image is large, only part of it is used for search of threshold, while the second part is used for evaluation model's accuracy.
-Accuracy metrics are <a href="https://en.wikipedia.org/wiki/Mean_absolute_percentage_error">Mean Absolute Percentage Error (MAPE)</a> and prediction-ground truth scatterplot, which shows how well model performs with different densities of cells.</p>
-<p>NEW! If default NuclePhaser models aren't accurate enough on your specific use case, you can finetune them for free with cloud GPU using <a href="https://colab.research.google.com/drive/1hKMVQqYS0I_GrkYvdz23tPc8FCv2oJvh?usp=sharing">Google Colab NuclePhaser finetuning notebook</a>. It is specifically designed for users without coding experience.</p>
-<p>Learn more about calibration in <a href="https://napari-nuclephaser.readthedocs.io/en/latest/Biological%20tasks%20guidelines/Individual%20cells%20tracking.html">documentation</a>.</p>
-<p align="center">
-  <picture>
-  <source media="(prefers-color-scheme: dark)" srcset=https://github.com/user-attachments/assets/6d89e22b-2728-40fb-839d-3c6681e29c97>
-  <img alt="Image didn't load" src=https://github.com/user-attachments/assets/6a574845-4ad2-4802-b0f8-f1d908aa585a>
-  </picture>
-</p>
-<h2>Cell Proliferation Measurement &amp; Population Growth Analysis</h2>
-<p>With NuclePhaser you can reconstruct population growth curves from timelapse images of growing cell population by counting number of nuclei on each image. Key features of this approach are:</p>
-<ul>
-<li>No special equipment, reagents or dyes required, only regular culture plastic and cell growth medium, microscope with mechanical stage and a PC (even without GPU).</li>
-<li><a href="https://napari-nuclephaser.readthedocs.io/en/latest/General%20information/Confidence%20threshold%20calibration.html">Accuracy measurement for each specific use case</a>, so you will be sure the tool is working with appropriate precision.</li>
-<li>Measuring the number of cells, not the area occupied by cells, which can be significantly influenced by spreading/narrowing of cells.</li>
-<li>Complete reproducibility of results with metadata.txt files saved for each experiment (results obtained with NuclePhaser &lt; 0.4.0 and NuclePhaser &gt;= 0.4.0 may slightly differ).</li>
-</ul>
-<p align="center">
-  <picture>
-  <source media="(prefers-color-scheme: dark)" srcset=https://github.com/user-attachments/assets/47b6cee0-7f4a-440f-84ed-de2a5aa2aa36>
-  <img alt="Image didn't load" src=https://github.com/user-attachments/assets/5a084f1a-f977-41fa-b4be-55f37bdf9996>
-  </picture>
-</p>
-<p>For more detailed information about how NuclePhaser can be used for cell proliferation measurement &amp; population growth analysis, visit our <a href="https://napari-nuclephaser.readthedocs.io/en/latest/Biological%20tasks%20guidelines/Population%20growth%20curves.html#">documentation</a>.</p>
-<h2>Individual cell tracking</h2>
-<p>NuclePhaser can be used as an assistant for individual cells tracking. This task is extremely difficult, and manual tracking is still the only method with 100% proof against false tracks. With NuclePhaser, you can significantly simplify manual tracking: instead of marking each cell on each image, you can predict nuclei location with NuclePhaser and then correct the result, which is <strong>much</strong> faster. Learn more in <a href="https://napari-nuclephaser.readthedocs.io/en/latest/Biological%20tasks%20guidelines/Individual%20cells%20tracking.html">documentation</a>.</p>
-<h2>Models</h2>
-<p>Currently only YOLOv5n, YOLOv5s, YOLOv11n and YOLOv11s models, as well as fluorescent nuclei detector YOLOv5n are downloaded automatically with pip install napari-nuclephaser. To use larger models, download them with these links (Zenodo):</p>
-<div align="center">
-<p>Fluorescent nuclei detectors</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Model</th>
-<th style="text-align:center">Link</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">Fluorescence_v5n</td>
-<td style="text-align:center"><a href="https://zenodo.org/records/15388030/files/Fluorescence_v5n.pt?download=1">Donwload</a></td>
-</tr>
-<tr>
-<td style="text-align:center">Fluorescence_v5s</td>
-<td style="text-align:center"><a href="https://zenodo.org/records/15388030/files/Fluorescence_v5s.pt?download=1">Donwload</a></td>
-</tr>
-<tr>
-<td style="text-align:center">Fluorescence_v5m</td>
-<td style="text-align:center"><a href="https://zenodo.org/records/15388030/files/Fluorescence_v5m.pt?download=1">Donwload</a></td>
-</tr>
-<tr>
-<td style="text-align:center">Fluorescence_v5l</td>
-<td style="text-align:center"><a href="https://zenodo.org/records/15388030/files/Fluorescence_v5l.pt?download=1">Donwload</a></td>
-</tr>
-<tr>
-<td style="text-align:center">Fluorescence_v5x</td>
-<td style="text-align:center"><a href="https://zenodo.org/records/15388030/files/Fluorescence_v5x.pt?download=1">Donwload</a></td>
-</tr>
-<tr>
-<td style="text-align:center">Fluorescence_v11n</td>
-<td style="text-align:center"><a href="https://zenodo.org/records/15388030/files/Fluorescence_v11n.pt?download=1">Donwload</a></td>
-</tr>
-<tr>
-<td style="text-align:center">Fluorescence_v11s</td>
-<td style="text-align:center"><a href="https://zenodo.org/records/15388030/files/Fluorescence_v11s.pt?download=1">Donwload</a></td>
-</tr>
-<tr>
-<td style="text-align:center">Fluorescence_v11m</td>
-<td style="text-align:center"><a href="https://zenodo.org/records/15388030/files/Fluorescence_v11m.pt?download=1">Donwload</a></td>
-</tr>
-<tr>
-<td style="text-align:center">Fluorescence_v11l</td>
-<td style="text-align:center"><a href="https://zenodo.org/records/15388030/files/Fluorescence_v11l.pt?download=1">Donwload</a></td>
-</tr>
-<tr>
-<td style="text-align:center">Fluorescence_v11x</td>
-<td style="text-align:center"><a href="https://zenodo.org/records/15388030/files/Fluorescence_v11x.pt?download=1">Donwload</a></td>
-</tr>
-</tbody>
-</table>
-<p>Brighfield nuclei detectors</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Model</th>
-<th style="text-align:center">Link</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">Brightfield_v5n</td>
-<td style="text-align:center"><a href="https://zenodo.org/records/15388030/files/Brightfield_v5n.pt?download=1">Donwload</a></td>
-</tr>
-<tr>
-<td style="text-align:center">Brightfield_v5s</td>
-<td style="text-align:center"><a href="https://zenodo.org/records/15388030/files/Brightfield_v5s.pt?download=1">Donwload</a></td>
-</tr>
-<tr>
-<td style="text-align:center">Brightfield_v5m</td>
-<td style="text-align:center"><a href="https://zenodo.org/records/15388030/files/Brightfield_v5m.pt?download=1">Donwload</a></td>
-</tr>
-<tr>
-<td style="text-align:center">Brightfield_v5l</td>
-<td style="text-align:center"><a href="https://zenodo.org/records/15388030/files/Brightfield_v5l.pt?download=1">Donwload</a></td>
-</tr>
-<tr>
-<td style="text-align:center">Brightfield_v5x</td>
-<td style="text-align:center"><a href="https://zenodo.org/records/15388030/files/Brightfield_v5x.pt?download=1">Donwload</a></td>
-</tr>
-<tr>
-<td style="text-align:center">Brightfield_v11n</td>
-<td style="text-align:center"><a href="https://zenodo.org/records/15388030/files/Brightfield_v11n.pt?download=1">Donwload</a></td>
-</tr>
-<tr>
-<td style="text-align:center">Brightfield_v11s</td>
-<td style="text-align:center"><a href="https://zenodo.org/records/15388030/files/Brightfield_v11s.pt?download=1">Donwload</a></td>
-</tr>
-<tr>
-<td style="text-align:center">Brightfield_v11m</td>
-<td style="text-align:center"><a href="https://zenodo.org/records/15388030/files/Brightfield_v11m.pt?download=1">Donwload</a></td>
-</tr>
-<tr>
-<td style="text-align:center">Brightfield_v11l</td>
-<td style="text-align:center"><a href="https://zenodo.org/records/15388030/files/Brightfield_v11l.pt?download=1">Donwload</a></td>
-</tr>
-<tr>
-<td style="text-align:center">Brightfield_v11x</td>
-<td style="text-align:center"><a href="https://zenodo.org/records/15388030/files/Brightfield_v11x.pt?download=1">Donwload</a></td>
-</tr>
-</tbody>
-</table>
-</div>
-<blockquote>
-<p>[!NOTE]
-Feel free to use the models published here without the plugin!</p>
-</blockquote>
-<h1>Plugin functionality</h1>
-<p>napari-nuclephaser plugin offers following widgets:</p>
-<ul>
-<li>Widget for inference on single image. Result can be in the form of points or boxes with or without confidence scores. Automatically returns number of cells in the name of result layer.</li>
-<li>Widget for inference on stack of images. Optionally can create .csv or .xlsx file at given location with counting results.</li>
-<li>Widget for calibration using known number of cells.</li>
-<li>Widget for calibration using fluorescent nuclei image (fluorescent nuclei detection model is used as a perfect predictor).</li>
-<li>Widget for calibration using manual annotations.</li>
-<li>Widget for transforming Napari Points layer into Labels layer, which allows turning detection in tracking algorithms-digestible form (in particular, <a href="https://github.com/quantumjot/btrack">btrack</a>).</li>
-<li>Widget for counting number of points in Points layer.</li>
-</ul>
-<p>Learn more about widgets and their functionality at <a href="https://napari-nuclephaser.readthedocs.io/en/latest/index.html">documentation</a>.</p>
-<h2>Citation</h2>
-<p>If you use NuclePhaser in your work, please cite our preprint:</p>
-<pre><code class="language-bibtex"><div class="highlight"><pre><span></span><span class="nd">@article</span> <span class="p">{</span><span class="n">Voloshin2025</span><span class="mf">.05.13.653705</span><span class="p">,</span>
-	<span class="n">author</span> <span class="o">=</span> <span class="p">{</span><span class="n">Voloshin</span><span class="p">,</span> <span class="n">Nikita</span> <span class="ow">and</span> <span class="n">Putlyaev</span><span class="p">,</span> <span class="n">Egor</span> <span class="ow">and</span> <span class="n">Chechekhina</span><span class="p">,</span> <span class="n">Elizaveta</span> <span class="ow">and</span> <span class="n">Usachev</span><span class="p">,</span> <span class="n">Vladimir</span> <span class="ow">and</span> <span class="n">Karagyaur</span><span class="p">,</span> <span class="n">Maxim</span> <span class="ow">and</span> <span class="n">Bozov</span><span class="p">,</span> <span class="n">Kirill</span> <span class="ow">and</span> <span class="n">Grigorieva</span><span class="p">,</span> <span class="n">Olga</span> <span class="ow">and</span> <span class="n">Tyurin</span><span class="o">-</span><span class="n">Kuzmin</span><span class="p">,</span> <span class="n">Pyotr</span> <span class="ow">and</span> <span class="n">Kulebyakin</span><span class="p">,</span> <span class="n">Konstantin</span><span class="p">},</span>
-	<span class="n">title</span> <span class="o">=</span> <span class="p">{</span><span class="n">NuclePhaser</span><span class="p">:</span> <span class="n">a</span> <span class="n">YOLO</span><span class="o">-</span><span class="n">based</span> <span class="n">framework</span> <span class="k">for</span> <span class="n">cell</span> <span class="n">nuclei</span> <span class="n">detection</span> <span class="ow">and</span> <span class="n">counting</span> <span class="ow">in</span> <span class="n">phase</span> <span class="n">contrast</span> <span class="n">images</span> <span class="n">of</span> <span class="n">arbitrary</span> <span class="n">size</span> <span class="k">with</span> <span class="n">support</span> <span class="n">of</span> <span class="n">fast</span> <span class="n">calibration</span> <span class="ow">and</span> <span class="n">testing</span> <span class="n">on</span> <span class="n">specific</span> <span class="n">use</span> <span class="n">cases</span><span class="p">},</span>
-	<span class="n">year</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2025</span><span class="p">},</span>
-	<span class="n">doi</span> <span class="o">=</span> <span class="p">{</span><span class="mf">10.1101</span><span class="o">/</span><span class="mf">2025.05.13.653705</span><span class="p">},</span>
-	<span class="n">URL</span> <span class="o">=</span> <span class="p">{</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">biorxiv</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">early</span><span class="o">/</span><span class="mi">2025</span><span class="o">/</span><span class="mi">05</span><span class="o">/</span><span class="mi">16</span><span class="o">/</span><span class="mf">2025.05.13.653705</span><span class="p">},</span>
-	<span class="n">eprint</span> <span class="o">=</span> <span class="p">{</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">biorxiv</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">early</span><span class="o">/</span><span class="mi">2025</span><span class="o">/</span><span class="mi">05</span><span class="o">/</span><span class="mi">16</span><span class="o">/</span><span class="mf">2025.05.13.653705</span><span class="o">.</span><span class="n">full</span><span class="o">.</span><span class="n">pdf</span><span class="p">},</span>
-	<span class="n">journal</span> <span class="o">=</span> <span class="p">{</span><span class="n">bioRxiv</span><span class="p">}</span>
-<span class="p">}</span>
+                                        <p><a href="https://github.com/mihaela-mihaylova/trackin/raw/main/LICENSE"><img src="https://img.shields.io/pypi/l/trackin.svg?color=green" alt="License GNU GPL v3.0" /></a>
+<a href="https://pypi.org/project/trackin"><img src="https://img.shields.io/pypi/v/trackin.svg?color=green" alt="PyPI" /></a>
+<a href="https://python.org"><img src="https://img.shields.io/pypi/pyversions/trackin.svg?color=green" alt="Python Version" /></a>
+<a href="https://github.com/mihaela-mihaylova/trackin/actions"><img src="https://github.com/mihaela-mihaylova/trackin/workflows/tests/badge.svg" alt="tests" /></a>
+<a href="https://codecov.io/gh/mihaela-mihaylova/trackin"><img src="https://codecov.io/gh/mihaela-mihaylova/trackin/branch/main/graph/badge.svg" alt="codecov" /></a>
+<a href="https://napari-hub.org/plugins/trackin"><img src="https://img.shields.io/endpoint?url=https://api.napari-hub.org/shields/trackin" alt="napari hub" /></a></p>
+<p>A human-in-the-loop cell tracking tool.</p>
+<hr />
+<p>This <a href="https://github.com/napari/napari">napari</a> plugin was generated with <a href="https://github.com/audreyr/cookiecutter">Cookiecutter</a> using <a href="https://github.com/napari">@napari</a>'s <a href="https://github.com/napari/cookiecutter-napari-plugin">cookiecutter-napari-plugin</a> template.</p>
+<!--
+Don't miss the full getting started guide to set up your new package:
+https://github.com/napari/cookiecutter-napari-plugin#getting-started
+
+and review the napari docs for plugin developers:
+https://napari.org/stable/plugins/index.html
+-->
+<h2>Installation</h2>
+<p>You can install <code>trackin</code> via <a href="https://pypi.org/project/pip/">pip</a>:</p>
+<pre><code><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">trackin</span>
 </pre></div>
 </code></pre>
-<h2>Installation</h2>
-<p>For detailed installation instructions, visit our <a href="https://napari-nuclephaser.readthedocs.io/en/latest/Installation/Installation.html">documentation</a>.</p>
+<p>To install latest development version :</p>
+<pre><code><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">git</span><span class="o">+</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">mihaela</span><span class="o">-</span><span class="n">mihaylova</span><span class="o">/</span><span class="n">trackin</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</code></pre>
+<h2>Getting Started</h2>
+<ol>
+<li>Launch napari (<code>napari</code> from the command line) and open the plugin via
+<strong>Plugins &gt; trackin &gt; Trackin</strong>.</li>
+<li>Click <strong>Load Images</strong> and select a folder of per-frame image files.
+Files must be named with numeric filenames (e.g. <code>0.png</code>, <code>1.png</code>, ...),
+one per frame, in a supported format: <code>jpg</code>, <code>jpeg</code>, <code>png</code>, <code>tif</code>, <code>tiff</code>,
+<code>bmp</code>, or <code>gif</code>.</li>
+<li>Click <strong>Load Detections</strong> and select a CSV of detections for those
+frames. Required columns: <code>tframe</code>, <code>y</code>, <code>x</code>. Optional columns:
+<code>displ_y</code>, <code>displ_x</code> (default to <code>0</code> if omitted), and <code>track_no</code> (include
+it if the detections already belong to tracks from a prior run).</li>
+<li>Step through frames with the arrow keys or the frame slider, and
+left-click a detection to add it to the current track (this also
+advances to the next frame). Shift-click on the image to add a detection
+that's missing; right-click, or <strong>D</strong>, to delete one.</li>
+<li>Use <strong>Shift+Q</strong> to accept the current track, <strong>W</strong> to save a segment
+without ending it, <strong>Shift+Z</strong> to delete a segment, and <strong>X</strong> to remove
+all outgoing connections from the current node. The in-app <strong>?</strong> button
+lists the full set of mouse and keyboard shortcuts.</li>
+<li>Optionally, click <strong>Add Track File</strong> to load a <code>track_session_*.csv</code>
+from a previous session so newly accepted tracks continue its track
+numbering instead of restarting from 1. It must have exactly these
+columns, in this order: <code>tframe, y, x, displ_y, displ_x, track_no</code>.</li>
+</ol>
+<p>Accepted tracks are appended to a <code>track_session_*.csv</code> file saved next to
+the detections CSV; any detections not yet assigned to a track are kept in
+an <code>upd_*.csv</code> file in the same folder.</p>
 <h2>Contributing</h2>
 <p>Contributions are very welcome. Tests can be run with <a href="https://tox.readthedocs.io/en/latest/">tox</a>, please ensure
 the coverage at least stays the same before you submit a pull request.</p>
 <h2>License</h2>
-<p>Distributed under the terms of the <a href="http://opensource.org/licenses/MIT">MIT</a> license,
-&quot;napari-nuclephaser&quot; is free and open source software</p>
+<p>Distributed under the terms of the <a href="http://www.gnu.org/licenses/gpl-3.0.txt">GNU GPL v3.0</a> license,
+&quot;trackin&quot; is free and open source software</p>
 <h2>Issues</h2>
-<p>If you encounter any problems, please <a href="https://github.com/nikvo1/napari-nuclephaser/issues">file an issue</a> along with a detailed description.</p>
-<p>This <a href="https://github.com/napari/napari">napari</a> plugin was generated with <a href="https://copier.readthedocs.io/en/stable/">copier</a> using the <a href="https://github.com/napari/napari-plugin-template">napari-plugin-template</a>.</p>
+<p>If you encounter any problems, please <a href="https://github.com/mihaela-mihaylova/trackin/issues">file an issue</a> along with a detailed description.</p>
 
 
                                     </div>
@@ -452,7 +286,7 @@ the coverage at least stays the same before you submit a pull request.</p>
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.4.1</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.1.1</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -472,7 +306,7 @@ the coverage at least stays the same before you submit a pull request.</p>
                                                     released<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2025-04-02</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-08-28</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -483,7 +317,8 @@ the coverage at least stays the same before you submit a pull request.</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
                                                     <li class="MetadataList_textItem__KKmMN">
-                                                            MIT
+                                                            GNU GENERAL PUBLIC LICENSE
+   ...
                                                     </li>
                                                 </ul>
                                             </div>
@@ -540,7 +375,7 @@ the coverage at least stays the same before you submit a pull request.</p>
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">Python versions
                                                     supported<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.10">3.10</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.11">3.11</a></li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.9">3.9</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.10">3.10</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.11">3.11</a></li></ul>
                                             </div>
                                         </div>
                                         <div class="text-sm">
@@ -559,7 +394,7 @@ the coverage at least stays the same before you submit a pull request.</p>
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">
                                                     Requirements<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">setuptools==80.10.2</li><li class="MetadataList_textItem__KKmMN">wheel</li><li class="MetadataList_textItem__KKmMN">napari</li><li class="MetadataList_textItem__KKmMN">ultralytics==8.3.141</li><li class="MetadataList_textItem__KKmMN">yolov5</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">sahi==0.12.5</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">torch==2.8.0</li><li class="MetadataList_textItem__KKmMN">pathlib</li><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">typing</li><li class="MetadataList_textItem__KKmMN">pandas</li><li class="MetadataList_textItem__KKmMN">openpyxl</li><li class="MetadataList_textItem__KKmMN">seaborn</li><li class="MetadataList_textItem__KKmMN">opencv-python</li><li class="MetadataList_textItem__KKmMN">imagecodecs</li><li class="MetadataList_textItem__KKmMN">scikit-learn==1.7.2</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-mock; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt5; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">opencv-python-headless; extra == "testing"</li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">napari[pyqt5]>=0.5.0</li><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt5; extra == "testing"</li></ul>
                                             </div>
                                         </div>
                                     </div>
