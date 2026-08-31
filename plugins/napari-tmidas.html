@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.5.14</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.5.15</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-08-27</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-08-31</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -235,6 +235,7 @@
 <p>⚡ <strong>Batch Processing</strong></p>
 <ul>
 <li>Process entire folders with one click • 40+ processing functions • Progress tracking &amp; quality control</li>
+<li>One <strong>Dimension Order</strong> setting, shared by every function — set it once per batch, not per function</li>
 </ul>
 <p>� <strong>Interactive Workflow</strong></p>
 <ul>
@@ -259,6 +260,9 @@ napari
 <p>Then find napari-tmidas in the <strong>Plugins</strong> menu. <a href="https://www.youtube.com/@macromeer/videos">Watch video tutorials →</a></p>
 <blockquote>
 <p><strong>💡 Tip</strong>: AI methods (SAM2, Cellpose, Spotiflow, etc.) auto-install into isolated environments on first use - no manual setup required!</p>
+</blockquote>
+<blockquote>
+<p><strong>⚠️ Before a batch run</strong>: set <strong>Dimension Order</strong> (top of the batch widget) to match your data — <code>TZYX</code> for a 3D time series, <code>ZYX</code> for a Z-stack, <code>TYX</code> for a 2D movie. Most microscopy TIFFs carry no usable axis metadata, so on <code>Auto</code> a function that builds 3D objects cannot tell Z from T: it will either stop with an error or label the same object once per Z slice. The widget reads each file's rank up front, shows it next to the dropdown, and warns before the run starts.</p>
 </blockquote>
 <h2>📖 Documentation</h2>
 <h3>AI-Powered Methods</h3>
@@ -376,17 +380,18 @@ python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </sp
 <p>Interactive object selection and cropping with SAM2.</p>
 </details>
 <h2>📋 TODO</h2>
-<h3>Memory-Efficient Zarr Streaming</h3>
-<p><strong>Current Limitation</strong>: Processing functions pre-allocate full output arrays in memory before writing to zarr. For large TZYX time series (e.g., 100 timepoints × 1024×1024×20), this requires ~8+ GB peak memory even when using zarr output.</p>
-<p><strong>Planned Enhancement</strong>: Implement incremental zarr writing across all processing functions:</p>
+<h3>Memory-Efficient Streaming</h3>
+<p>Most of this is done. Batch processing no longer materializes whole stacks: the worker keeps large inputs lazy and streams results back to disk block by block (256 MB budget), 15 functions map their existing body over blocks via the <code>@chunked</code> decorator, and 6 more own their I/O outright via <code>skip_load</code>. Measured end to end on a real <code>(31, 2, 57, 2720, 2720)</code> uint16 acquisition — 52 GB dense — Gamma Correction peaks at <strong>3.15 GB RSS</strong> in 8.8 min, byte-identical to the dense path. Convpaint prediction, Cellpose segmentation and Trackastra tracking all write per-timepoint now. The mechanism is documented in <a href="src/napari_tmidas/processing_functions/_chunked.py"><code>_chunked.py</code></a>, and the behaviour is pinned by <code>TestZarrOutputStreaming</code>, <code>TestSplitChannelsStreaming</code>, <code>TestLazyTiffLoading</code>, <code>TestCLAHEDaskMemory</code> and <code>TestRollingBallPerPlane</code>.</p>
+<p>What is left:</p>
 <ul>
-<li>Process one timepoint at a time</li>
-<li>Write directly to zarr array on disk</li>
-<li>Keep only single timepoint in memory (~80 MB vs 8 GB)</li>
-<li>Maintain OME-Zarr metadata and chunking</li>
+<li><strong>CAREamics denoising and VisCy virtual staining still run dense.</strong> Both allocate the full output array and take the input as a NumPy array. Neither has been audited for real — that needs their dedicated virtualenvs installed.</li>
+<li><strong>~14 registered functions still scale linearly with input size.</strong> That is now a known list rather than an unknown one. Each needs either a <code>@chunked</code> conversion or a check that it cannot take one: functions using global statistics (<code>Convert to 8-bit</code> rescales by the whole-stack min/max) and functions with cross-block topology (<code>Mirror Labels</code>) both resist it.</li>
+<li><strong>The structural decision.</strong> Dense functions opt into laziness one at a time, by accepting <code>_source_filepath</code>. Whether to keep converting them individually or change the worker's contract for all of them at once is still open.</li>
 </ul>
-<p><strong>Impact</strong>: Enable processing of arbitrarily large time series limited only by disk space, not RAM. Critical for high-throughput microscopy workflows.</p>
-<p><strong>Affected Functions</strong>: Convpaint prediction, Cellpose segmentation, CAREamics denoising, VisCy virtual staining, Trackastra tracking, and all batch processing operations with zarr output.</p>
+<h3>Other Known Issues</h3>
+<ul>
+<li><code>Resize Zarr by YX Scale (OME-Zarr native)</code> writes <strong>zarr v3</strong> stores: attributes live in <code>zarr.json</code> (multiscales nested under an <code>ome</code> key), not in a v2 <code>.zattrs</code>. Anything downstream that reads <code>.zattrs</code> directly will find no file there — use <a href="src/napari_tmidas/processing_functions/ome_output_utils.py"><code>ome_output_utils._read_root_attrs()</code></a>, which handles both layouts.</li>
+</ul>
 <h2>🤝 Contributing</h2>
 <p>Contributions are welcome! Please ensure tests pass before submitting PRs:</p>
 <pre><code class="language-sh"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>tox
@@ -427,7 +432,7 @@ tox
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.5.14</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.5.15</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -437,7 +442,7 @@ tox
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-08-27</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-08-31</li>
                                                 </ul>
                                             </div>
                                         </div>
