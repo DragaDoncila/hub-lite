@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.4.2</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.4.3</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-09-01</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-09-03</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -312,7 +312,7 @@ Pressing <code>T</code> on the keyboard will center all views to the current mou
 </code></pre>
 <p>allows the original layer in the main viewer to respond to click events in the ortho views. The property 'selected_label' will then automatically sync to the ortho views as well.</p>
 <h3>Overriding the built-in behavior</h3>
-<p>The built-in hooks are keyed by name (<code>labels_undo_redo</code>, <code>labels_paint</code>, <code>points_selection</code>) so a single one can be replaced without disturbing the others. Use this to keep the default behavior and add to it:</p>
+<p>The built-in hooks are keyed by name (<code>layer_tool</code>, <code>labels_undo_redo</code>, <code>labels_paint</code>, <code>points_selection</code>) so a single one can be replaced without disturbing the others. Use this to keep the default behavior and add to it:</p>
 <pre><code class="language-python"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">napari_orthogonal_views.layer_sync_hooks</span><span class="w"> </span><span class="kn">import</span> <span class="n">sync_labels_paint</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">paint_and_recount</span><span class="p">(</span><span class="n">orig_layer</span><span class="p">,</span> <span class="n">copied_layer</span><span class="p">):</span>
@@ -360,7 +360,7 @@ the coverage at least stays the same before you submit a pull request.</p>
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.4.2</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.4.3</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -370,7 +370,7 @@ the coverage at least stays the same before you submit a pull request.</p>
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-09-01</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-09-03</li>
                                                 </ul>
                                             </div>
                                         </div>
