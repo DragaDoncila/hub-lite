@@ -4,20 +4,20 @@
 
 <head>
     <meta charset="utf-8" />
-    <link href="../plugins/napari-worm-neuron-annotator.html" rel="canonical" />
+    <link href="../plugins/napari-maskel.html" rel="canonical" />
     <meta content="width=device-width,initial-scale=1" name="viewport" />
     <meta
-        content="napari-worm-neuron-annotator, JH Wang, napari hub, napari, hub, plugin, image analysis, imaging, chan zuckerberg initiative"
+        content="napari-maskel, Not available, napari hub, napari, hub, plugin, image analysis, imaging, chan zuckerberg initiative"
         name="keywords" />
-    <meta content="Navigate and annotate neuron box ROIs on image volumes in napari" name="description" />
-    <meta content="Navigate and annotate neuron box ROIs on image volumes in napari" property="og:description" />
-    <meta content="Navigate and annotate neuron box ROIs on image volumes in napari." name="twitter:description" />
-    <meta content="Worm Neuron Annotator - napari Plugin - JH Wang" property="og:title" />
-    <meta content="Worm Neuron Annotator - napari Plugin - JH Wang" name="twitter:title" />
+    <meta content="napari plugin for maskel: skeletonization and feature extraction for branching structures" name="description" />
+    <meta content="napari plugin for maskel: skeletonization and feature extraction for branching structures" property="og:description" />
+    <meta content="napari plugin for maskel: skeletonization and feature extraction for branching structures." name="twitter:description" />
+    <meta content="Maskel - napari Plugin - Not available" property="og:title" />
+    <meta content="Maskel - napari Plugin - Not available" name="twitter:title" />
     <meta content="article" property="og:type" />
-    <meta content="../plugins/napari-worm-neuron-annotator.html" property="og:url" />
+    <meta content="../plugins/napari-maskel.html" property="og:url" />
     <meta content="@napari_imaging" name="twitter:site" />
-    <title>Worm Neuron Annotator - napari Plugin - JH Wang</title>
+    <title>Maskel - napari Plugin - Not available</title>
 
     <meta content="2" name="next-head-count" />
     <meta content="#80d1ff" name="theme-color" />
@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.4.3</li>
+                                            <li class="MetadataList_textItem__KKmMN">1.3.0</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -90,7 +90,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">First released<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-07-30</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-09-07</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -99,7 +99,7 @@
                                         <p class="font-bold whitespace-nowrap">License<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
                                             <li class="MetadataList_textItem__KKmMN">
-                                                BSD-3-Clause
+                                                MIT
                                             </li>
                                         </ul>
                                     </div>
@@ -150,13 +150,13 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Operating system<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">OS Independent</li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="flex justify-between items-center"><span class="text-napari-gray font-normal lowercase">Information not submitted</span></li></ul>
                                     </div>
                                 </div>
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Requirements<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">napari<0.9,>=0.8</li><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">napari[all]<0.9,>=0.8; extra == "all"</li><li class="MetadataList_textItem__KKmMN">openpyxl>=3.1; extra == "excel"</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari[pyqt6]<0.9,>=0.8; extra == "testing"</li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">maskel<3.0.0,>=2.0.1</li><li class="MetadataList_textItem__KKmMN">pandas</li><li class="MetadataList_textItem__KKmMN">napari</li><li class="MetadataList_textItem__KKmMN">napari-assistant>=0.6.0</li><li class="MetadataList_textItem__KKmMN">napari-simpleitk-image-processing>=0.4.9</li><li class="MetadataList_textItem__KKmMN">napari-skimage>=0.6.0</li><li class="MetadataList_textItem__KKmMN">pyyaml>=6.0.3</li><li class="MetadataList_textItem__KKmMN">superqt</li><li class="MetadataList_textItem__KKmMN">pytest>=9.0.2; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">napari[pyqt6]; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">mkdocs>=1.6; extra == "docs"</li><li class="MetadataList_textItem__KKmMN">mkdocs-material>=9.5; extra == "docs"</li></ul>
                                     </div>
                                 </div>
                             </div>
@@ -168,26 +168,26 @@
                         <article
                             class="w-full col-span-2 row-start-1 screen-875:col-span-3 screen-1150:col-start-1 screen-1425:col-start-2">
                                 <div class="container" style="display: flex; flex-direction: column;">
-                                    <h1 class="font-bold text-4xl" style="margin-bottom: 20px;" >Worm Neuron Annotator</h1>
+                                    <h1 class="font-bold text-4xl" style="margin-bottom: 20px;" >Maskel</h1>
                                 </div>
 
                                 
    <div class="flex items-center" style="gap: 20px; ; align-items: center;"">
-        <a class="underline flex" href="https://pypi.org/project/napari-worm-neuron-annotator/" rel="noreferrer" target="_blank">
-        <img src="../static/images/PyPI_logo.svg.png" alt="PyPI" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">napari-worm-neuron-annotator</span>
+        <a class="underline flex" href="https://pypi.org/project/napari-maskel/" rel="noreferrer" target="_blank">
+        <img src="../static/images/PyPI_logo.svg.png" alt="PyPI" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">napari-maskel</span>
     </a>
     
-        <a class="underline flex" href="https://github.com/Wenlab/napari-worm-neuron-annotator/issues" rel="noreferrer" target="_blank">
-            <img src="../static/images/GitHub_Invertocat_Logo.svg.png" alt="GitHub" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">Wenlab/napari-worm-neuron-annotator</span>
+        <a class="underline flex" href="https://github.com/bionetslab/napari-maskel/releases" rel="noreferrer" target="_blank">
+            <img src="../static/images/GitHub_Invertocat_Logo.svg.png" alt="GitHub" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">bionetslab/napari-maskel</span>
         </a>
         </div>
 
                                 <div class="flex justify-between items-center my-6">
-                                    <h2 class="text-lg">Navigate and annotate neuron box ROIs on image volumes in napari</h2>
+                                    <h2 class="text-lg">napari plugin for maskel: skeletonization and feature extraction for branching structures</h2>
                                 </div>
                                 <ul class="PluginAuthors_authors__hs3zO">
                                     <li class="inline">
-                                        <span class="text-[11px] screen-495:text-[14px] font-semibold">JH Wang</span>
+                                        <span class="text-[11px] screen-495:text-[14px] font-semibold">Not available</span>
                                     </li>
                             </ul>
                             <div class="screen-1425:hidden mt-sds-xl mb-sds-xxl"><a
@@ -209,313 +209,22 @@
                                 <div class="flex items-center justify-between mb-sds-xxl">
                                     <div class="Markdown_markdown__QZ95j">
 
-                                        <p><code>napari-worm-neuron-annotator</code> is a napari plugin for navigating and annotating
-read-only neuron bounding-box ROIs on 3D or 4D Image volumes.</p>
-<p>The plugin keeps each data source in a separate role:</p>
-<ul>
-<li>the Image layer supplies the spatial axes, world transform, and Z-navigation
-context;</li>
-<li>the ROI array supplies neuron identity and box geometry;</li>
-<li>runtime <code>Vectors</code> and <code>Points</code> layers show boxes and optional text without
-writing them into a dense mask.</li>
-</ul>
-<p>The plugin does not modify Image or ROI source data. Ordinary napari <code>Labels</code>
-layers may coexist in the viewer, but this plugin does not select, modify, or
-synchronize them.</p>
-<h2>Features</h2>
-<ul>
-<li>Image + ROI operation independent of Labels layers.</li>
-<li>Read-only loading of <code>(T,N,K)</code> ROI NPY arrays.</li>
-<li>Dynamic 2D bounding rectangles and 3D 12-edge wireframes.</li>
-<li>Stable per-neuron box colors derived from zero-based ROI identity.</li>
-<li>Checkable neuron list with a separate active neuron.</li>
-<li>Digital/biological multi-neuron search with explicit match selection.</li>
-<li>All/None controls, cumulative Q/W navigation, and checked-only Shift+Q/W.</li>
-<li>Optional Biological, Digital, or combined selected-box text.</li>
-<li>Fixed canvas shortcuts for Z-slice and time-frame navigation.</li>
-<li>Active-neuron highlighting and view centering.</li>
-<li>Session-only whole-viewer rotation and screen-axis flip controls.</li>
-<li>View-preserving Z-layer display synchronized across Image and ROI overlays.</li>
-<li>Zero-based ROI annotation with optional Excel import/export.</li>
-<li>Opt-in 2D proofreading of box centers, dimensions, missing observations,
-and added neurons using a non-destructive JSON sidecar.</li>
-</ul>
-<h2>Installation</h2>
-<p>Install into an existing napari environment:</p>
-<pre><code class="language-text"><div class="highlight"><pre><span></span>pip install napari-worm-neuron-annotator
-</pre></div>
-</code></pre>
-<p>For a fresh environment, install napari with its default Qt 6 backend:</p>
-<pre><code class="language-text"><div class="highlight"><pre><span></span>pip install "napari-worm-neuron-annotator[all]"
-</pre></div>
-</code></pre>
-<p>Excel support alone is available through:</p>
-<pre><code class="language-text"><div class="highlight"><pre><span></span>pip install "napari-worm-neuron-annotator[excel]"
-</pre></div>
-</code></pre>
-<p>The base plugin does not install or select a Qt binding. The napari
-environment owns the Qt backend; the convenience <code>all</code> extra delegates that
-choice to napari.</p>
-<p>This release targets Python 3.11–3.14 and napari 0.8.x. See the
-<a href="docs/napari-0.8-migration.md">napari 0.8 migration notes</a> for the dependency
-and compatibility decisions.</p>
-<h2>Image + ROI workflow</h2>
+                                        <h5>Simon Wittmann, Dominik Pysch, Anna Möller</h5>
+<p><a href="https://pypi.org/project/napari-maskel/"><img src="https://img.shields.io/pypi/v/napari-maskel.svg" alt="PyPI version" /></a>
+<a href="https://www.python.org/"><img src="https://img.shields.io/badge/python-3.14+-blue.svg" alt="Python version" /></a>
+<a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green.svg" alt="License" /></a></p>
+<p>napari plugin for <a href="https://github.com/bionetslab/maskel">maskel</a>: skeletonization and graph-based feature extraction for branching biological structures — vasculature, fibers, neurites, and other network-like objects — with interactive visualization of branches and node features.</p>
+<h2>Quick start</h2>
 <ol>
-<li>Open an Image layer with <code>(z,y,x)</code> or <code>(t,z,y,x)</code> axes.</li>
-<li>Open <code>Plugins &gt; Worm Neuron Annotator</code>.</li>
-<li>Select the Image layer, then load the ROI NPY file.</li>
-<li>Click a neuron row to check and activate that ID.</li>
-<li>Use the checkbox column to add or remove IDs from the persistent set.</li>
-<li>Use Q and W to check and activate the previous or next valid ID without
-clearing IDs already checked.</li>
-<li>Use <strong>All</strong> or <strong>None</strong> to check every ID or clear all checked/active IDs.</li>
+<li>Install napari itself first if you haven't, with a Qt backend (e.g. <code>pip install &quot;napari[all]&quot;</code>), then the plugin: <code>pip install napari-maskel</code> (this also installs <code>maskel</code>).</li>
+<li>In napari, open a segmentation mask (2D or 3D) and convert it to a <strong>labels layer</strong>.</li>
+<li>Run <strong>Analyze mask (Maskel)</strong> from the Plugins menu, pick that layer as the input, and configure the extraction/cleanup parameters.</li>
+<li>Click <strong>Analyze mask</strong> to add the resulting branches/nodes/summary/radius layers to the viewer, and inspect them with napari's built-in feature table widget.</li>
 </ol>
-<p>With the napari canvas focused, use G/H for the previous/next Z slice in 2D,
-J/K for the previous/next time frame of a 4D Image, and Shift-J/Shift-K to
-move backward/forward by 10 time frames. Navigation stops at the data bounds
-rather than wrapping. In an individual Z layer, G/H stays within that layer's
-half-open Z range.</p>
-<p>The active row is bold and remains the current row. Unchecking the active ID
-clears the active state; unchecking another ID does not change the active
-neuron.</p>
-<p>The ROI array defines the neuron list. Labels layers are not used for
-selection, box rendering, annotation, centering, time navigation, or Z-layer
-display.</p>
-<h2>Worm orientation</h2>
-<p>The <strong>Worm Orientation</strong> panel rotates the complete viewer clockwise by 0°,
-90°, 180°, or 270° and can flip the final screen horizontally or vertically.
-Image, ROI boxes, optional text, and Z-layer views stay aligned because
-the controls change only napari's viewer axes and camera orientation. Source
-arrays and layer transforms are not modified.</p>
-<p><strong>Reset</strong> restores the viewer orientation captured for the current session.
-Closing the widget also restores that orientation. If you use napari's native
-transpose or camera-orientation controls, the resulting view becomes the new
-session baseline and the plugin controls return to their default state.</p>
-<p>The legacy <code>LabelManager</code> Python and command aliases remain available for
-compatibility. The public widget name is <code>NeuronAnnotatorWidget</code>, and napari
-lists only that widget.</p>
-<h2>Neuron selection and search</h2>
-<p>The neuron tree keeps persistent checked identities separate from the one
-active identity. Q/W moves through valid neurons and checks each activated
-identity. Shift+Q/W moves only through already checked neurons that are valid
-at the current time and, in Layer mode, belong to the active Z range. Both
-forms of navigation wrap in zero-based digital-ID order.</p>
-<p>The search field accepts comma-separated digital IDs and biological-name
-fragments. Numeric tokens match an ID exactly; other tokens use a
-case-insensitive biological-name substring match. Typing highlights every
-matching tree row without changing selection or moving the view. Enter cycles
-through matches one at a time, checking and making only that match active.
-<strong>Check matches</strong> adds all matches to the existing checked set without
-changing the active neuron.</p>
-<p>Search covers all global ROI identities, including observations missing at
-the current time or outside the active Z range. Those results remain gray and
-cannot move the current view until they become navigable. Search highlighting
-is confined to the tree; image highlighting continues to use the existing
-selected and active overlay layers.</p>
-<h2>Z-layer display</h2>
-<p>The compact <strong>Z Layers</strong> panel separates a 3D volume along Z so individual
-depth ranges can be rendered without the other ranges obscuring them:</p>
-<ol>
-<li>Select a compatible Image layer.</li>
-<li>Inspect the current-time curve showing how many pixels in each Z slice are
-strictly above the editable threshold (default <code>170</code>). Click the curve to
-add or remove a cut, or enter explicit cuts such as <code>4,10</code>.</li>
-<li>Click <strong>Split</strong>.</li>
-<li>Use <strong>Show</strong> to select <code>All</code> or one generated layer.</li>
-</ol>
-<p>Cuts use half-open Python ranges. For a volume with 18 Z slices, <code>4,10</code>
-creates <code>[0,4)</code>, <code>[4,10)</code>, and <code>[10,18)</code>. A boundary slice belongs to the
-following layer.</p>
-<p><strong>All</strong> displays every generated Image layer using additive blending and all
-currently valid checked/active ROI overlays. <strong>Layer k</strong> displays only that
-Image range and the overlays whose box center Z belongs to the range. A box
-that crosses a cut is shown whole in the one layer containing its center.</p>
-<p>Checked and active neuron identities remain global. In an individual layer,
-Q/W navigates only neurons assigned to that layer; other neurons remain in
-the list, are shown in gray, and keep operable checkboxes. Activating a gray
-row does not move the view outside the selected Z layer.</p>
-<p>Generated Image layers use slices of NumPy arrays, memory maps, or Dask
-arrays rather than full-size zero-filled copies. Direct Zarr arrays should
-be wrapped as Dask arrays before splitting. The Image source must have
-<code>(z,y,x)</code> or <code>(t,z,y,x)</code> axes, axis-aligned volume depiction, and no clipping
-planes. <strong>Clear</strong> removes generated Image layers and restores the source Image
-visibility captured before splitting. Normal napari eye icons may still
-override visibility until the next <strong>Show</strong> selection.</p>
-<h3>Launch the validated 20260304_w3_immobile dataset</h3>
-<p>The repository includes a ready-to-use launcher for the git-ignored local
-dataset at <code>data/20260304_w3_immobile_npy</code>:</p>
-<pre><code class="language-text"><div class="highlight"><pre><span></span>pixi run launch-actual
-</pre></div>
-</code></pre>
-<p>It memory-maps <code>volumes.npy</code> and <code>neuron_point_tuple.npy</code>, opens napari, docks
-the navigator, and loads all 120 ROI identities.</p>
-<h2>ROI input format</h2>
-<p>The ROI loader accepts a numeric NumPy array with shape:</p>
-<pre><code class="language-text"><div class="highlight"><pre><span></span>(T, N, K), K &gt;= 6
-</pre></div>
-</code></pre>
-<p>The first six fields are:</p>
-<pre><code class="language-text"><div class="highlight"><pre><span></span>x_center, y_center, z_scaled, width, height, depth_scaled
-</pre></div>
-</code></pre>
-<p>Additional fields are ignored. The neuron ID is the index on the <code>N</code> axis:</p>
-<pre><code class="language-text"><div class="highlight"><pre><span></span>neuron_id = 0 ... N - 1
-</pre></div>
-</code></pre>
-<p>NaN, infinite values, non-positive sizes, and time points outside the source
-array are treated as missing observations. Missing neurons remain in the
-checkable list so that their global identity is stable, but Q/W skips them at
-the current time point.</p>
-<h3>Coordinate and time mapping</h3>
-<p>The plugin requires the selected Image layer to have one of these axis orders:</p>
-<pre><code class="language-text"><div class="highlight"><pre><span></span>(z, y, x)
-(t, z, y, x)
-</pre></div>
-</code></pre>
-<p><code>z_divisor</code>, defaulting to 5, converts source z and depth coordinates:</p>
-<pre><code class="language-text"><div class="highlight"><pre><span></span>z_index = z_scaled / z_divisor
-depth_in_slices = depth_scaled / z_divisor
-</pre></div>
-</code></pre>
-<p>For a viewer that displays a cropped or strided time range:</p>
-<pre><code class="language-text"><div class="highlight"><pre><span></span>source_t = volume_start + viewer_t * volume_stride
-</pre></div>
-</code></pre>
-<p>Configure <code>volume_start</code> and <code>volume_stride</code> before loading the NPY.</p>
-<p>The derived ROI overlay layers copy scale, translation, axis labels, and
-units from the Image layer. Do not apply the z scale a second time in the ROI
-coordinates.</p>
-<h2>2D and 3D box display</h2>
-<p>Two managed Vectors layers are created after loading an ROI file:</p>
-<ul>
-<li><code>Neuron boxes – selected</code>: checked, currently valid boxes colored by their
-stable <code>neuron_id</code> palette;</li>
-<li><code>Neuron box – active</code>: the active box with a thick yellow outline.</li>
-</ul>
-<p>Initially only the first valid neuron is checked and active. <strong>All</strong> includes
-all IDs in the selected layer, while <strong>None</strong> empties both box layers and the
-optional text overlay. Checked identities that are missing at the current time
-remain checked but are temporarily omitted from the geometry.</p>
-<p>Enable <strong>Show selected box labels</strong> to place one text label at the center of
-each currently rendered checked box. <strong>Label text</strong> selects Biological,
-Digital, or <code>Digital + biological</code> text. Biological is the default and falls
-back to the zero-based <code>neuron_id</code> when empty; the combined form is written as
-<code>12 · AVA</code> and also falls back to the ID. The third <code>annotation</code> column is not
-used for box labels. The option is off by default. Use <strong>Text color</strong> to choose
-a session-only label color that contrasts with the current Image colormap.</p>
-<p>Use <strong>Show neuron overlays</strong> or F10 to temporarily hide/show the plugin's
-selected box, active box, and optional box-label layers while keeping Image,
-Z-derived Image, Labels, and user-created layers unchanged. This display-only
-toggle preserves checked and active neuron state and is disabled during
-proofreading.</p>
-<p>In 2D mode, the plugin draws four rectangle edges only when the current z
-slice intersects the box's half-open z range.</p>
-<p>In 3D mode, each box is represented by 12 vector edges. Overlapping boxes
-remain independent vector records with a <code>neuron_id</code> feature. They may overlap
-visually, but one box does not erase the identity of another.</p>
-<p>Vectors and the transparent Points text layer are derived display data. They
-are removed when the ROI is unloaded or the widget closes and are not saved
-as a separate annotation format.</p>
-<p>The proofreading target is a separate, session-only Vectors layer. It is drawn
-as two thin orthogonal line segments (rather than a Points marker), with a
-default half-length of 8 data units and an edge width of 1 pixel. These display
-constants are independent of the neuron box dimensions.</p>
-<h2>2D proofreading</h2>
-<p>Proofreading is off by default and is available only in napari's 2D display
-with Z view set to <strong>All</strong>. Select the source Image layer, turn proofreading
-on, then make an unmodified short left-click on the Image to lock a fixed
-crosshair target. Moving the pointer does not move this target. Then use:</p>
-<ul>
-<li>F7 to delete the active neuron's observation at the current volume;</li>
-<li>F8 to place a missing active observation at the locked target;</li>
-<li>F9 to add a provisional neuron at the locked target using the default
-width/height/depth of <code>7/7/3</code>;</li>
-<li>F12 to discard an unapplied size draft and leave proofreading mode.</li>
-</ul>
-<p>Successful F8/F9 placement clears the target. Changing time or Z, or leaving
-proofreading mode, also clears it. F8 never moves a box that is already
-present. Width, height, and depth accept positive floating-point values.
-<strong>Apply current t</strong> changes only the locked observation at the current Image
-time, preserving its center and leaving other volumes untouched.
-<strong>Apply to all existing…</strong> is an explicit opt-in operation that changes the
-size of every existing observation for that neuron; missing observations are
-not created and all centers remain unchanged. Delete-all is explicitly
-confirmed and removes the active ID's observations from every raw volume
-without deleting or renumbering its identity. Added IDs can be retired;
-retired numeric IDs remain reserved and are not reused.</p>
-<p>The current-neuron line reports the final state relative to the raw ROI using
-<code>(moved)</code>, <code>(resized)</code>, <code>(moved + resized)</code>, <code>(placed)</code>, <code>(deleted)</code>, or
-<code>(added)</code> markers. These markers remain visible after saving; the separate
-<code>Unsaved proof edits</code> indicator only describes changes since the most recent
-save/load snapshot. A size edit that has not yet been applied is shown as an
-<code>Unapplied size draft</code> and is never written to a sidecar without an explicit
-Apply/Discard decision.</p>
-<p><strong>Discard scope</strong> controls what <strong>Discard changes</strong> restores to the most recent
-successful Save/Load state. It defaults to <code>Current t · active neuron</code>; the
-other choices restore <code>All t · active neuron</code> or <code>All unsaved edits</code>. Current-t
-discard uses the configured Image-time to raw-volume mapping. Discarding one
-neuron does not affect unsaved edits belonging to other neurons. The two
-broader scopes require confirmation.</p>
-<p><strong>Save proof edits</strong> writes canonical sparse edits to a schema-v2 JSON sidecar
-(<code>changed_fields</code> records whether each patch changes presence, center, and/or
-size). Existing schema-v1 sidecars are accepted and kept clean in memory; the
-next explicit save upgrades the same file in place. The current sidecar path
-is retained for subsequent saves, while <strong>Save As…</strong> switches that path.
-Cancel or validation/permission failures leave the working state and path
-unchanged. The original ROI NPY remains read-only. <strong>Export corrected NPY</strong>
-creates a separate array with stable neuron indices; deleted geometry uses NaN
-in the first six fields. If an Image's shape or spatial metadata changes,
-proofreading pauses until a compatible Image is restored.</p>
-<p>Applied unsaved edits are also protected automatically every 30 seconds for a
-file-backed ROI. Recovery snapshots live beside the ROI in
-<code>&lt;ROI filename&gt;.proofread-recovery/</code>; they contain both the complete working
-state and the last saved/loaded baseline, but never an unapplied size draft.
-The <strong>Recovery…</strong> dialog lists snapshots and requires an explicit Restore or
-Delete—recovery is never loaded automatically. Protection continues while
-proofreading is off or its Image is detached. If the ROI file changes on disk,
-automatic writes pause and formal saves are refused until the ROI is reloaded.
-The status line reports the last protected time or a write failure; recovery
-does not clear the separate unsaved-edits indicator. With normal local I/O, a
-crash can lose roughly the latest 30 seconds plus snapshot processing time.
-Snapshots include the saved baseline, so they can be larger than the formal
-JSON. Unresolved snapshots from other sessions are retained until handled.</p>
-<p>Restoring a snapshot preserves provisional neuron IDs and Discard's saved
-baseline. If the original formal JSON has changed or disappeared, the next
-save requires <strong>Save As…</strong>. A read-only recovery directory is reported without
-repeated dialogs, and writes are retried on later timer ticks.</p>
-<p>Before replacing an existing formal JSON, Save/Save As preserves its exact
-previous bytes in <code>&lt;formal filename&gt;.history/</code>. The newest 10 distinct
-versions are retained, duplicate/no-op saves do not create backups, and an
-externally changed bound file must be saved with <strong>Save As…</strong>. <strong>History…</strong>
-loads an older version as unsaved working state over the current saved
-baseline; saving that rollback follows the same backup rules and never reuses
-an added neuron ID.
-History files cannot be overwritten even if opened through <strong>Load…</strong>. A backup
-failure leaves the formal JSON and unsaved edits intact; a failure to prune old
-history is reported separately after an otherwise successful save.</p>
-<h2>Annotation</h2>
-<p>The <code>digital</code> column stores the zero-based ROI <code>neuron_id</code>.</p>
-<p>The table follows the loaded ROI identities. Existing biological names and
-annotation text are preserved by identity when the ROI source changes.
-Activating a neuron selects its annotation row. Selecting a table row checks
-and activates the corresponding neuron without clearing other checked IDs.
-The <code>biological</code> value is also displayed in the neuron list.</p>
-<p>The complete navigator is vertically scrollable when the napari dock is
-shorter than its controls.</p>
-<p>Excel operations support <code>.xlsx</code> workbooks. Saving and loading do not apply an
-implicit <code>+1</code> or <code>-1</code> conversion.</p>
-<h2>Development</h2>
-<p>Run tests and lint from the repository root:</p>
-<pre><code class="language-text"><div class="highlight"><pre><span></span>pixi run pytest -q
-pixi run -e excel pytest -q
-pixi run ruff check .
-</pre></div>
-</code></pre>
-<p>The repository uses a <code>src</code> layout. Pure ROI parsing and geometry live in
-<code>src/napari_worm_neuron_annotator/_roi.py</code>; Qt and napari lifecycle behavior
-live in <code>src/napari_worm_neuron_annotator/_widget.py</code>.</p>
+<p><img src="https://raw.githubusercontent.com/bionetslab/napari-maskel/main/docs/assets/screenshots/3d-binary-features.png" alt="3D binary mask analyzed in napari-maskel" /></p>
+<p>See the <a href="https://bionetslab.github.io/napari-maskel/">full documentation</a> for every configurable parameter, the 2D multi-label workflow, and sharing recipes with the <a href="https://bionetslab.github.io/maskel/">maskel</a> CLI for batch processing.</p>
 <h2>License</h2>
-<p>Distributed under the BSD-3-Clause license.</p>
+<p>napari-maskel is released under the <strong>MIT License</strong>. See <a href="LICENSE">LICENSE</a> for details.</p>
 
 
                                     </div>
@@ -531,7 +240,7 @@ live in <code>src/napari_worm_neuron_annotator/_widget.py</code>.</p>
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.4.3</li>
+                                                    <li class="MetadataList_textItem__KKmMN">1.3.0</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -551,7 +260,7 @@ live in <code>src/napari_worm_neuron_annotator/_widget.py</code>.</p>
                                                     released<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-07-30</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-09-07</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -562,7 +271,7 @@ live in <code>src/napari_worm_neuron_annotator/_widget.py</code>.</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
                                                     <li class="MetadataList_textItem__KKmMN">
-                                                            BSD-3-Clause
+                                                            MIT
                                                     </li>
                                                 </ul>
                                             </div>
@@ -638,7 +347,7 @@ live in <code>src/napari_worm_neuron_annotator/_widget.py</code>.</p>
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">
                                                     Requirements<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">napari<0.9,>=0.8</li><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">napari[all]<0.9,>=0.8; extra == "all"</li><li class="MetadataList_textItem__KKmMN">openpyxl>=3.1; extra == "excel"</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari[pyqt6]<0.9,>=0.8; extra == "testing"</li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">maskel<3.0.0,>=2.0.1</li><li class="MetadataList_textItem__KKmMN">pandas</li><li class="MetadataList_textItem__KKmMN">napari</li><li class="MetadataList_textItem__KKmMN">napari-assistant>=0.6.0</li><li class="MetadataList_textItem__KKmMN">napari-simpleitk-image-processing>=0.4.9</li><li class="MetadataList_textItem__KKmMN">napari-skimage>=0.6.0</li><li class="MetadataList_textItem__KKmMN">pyyaml>=6.0.3</li><li class="MetadataList_textItem__KKmMN">superqt</li><li class="MetadataList_textItem__KKmMN">pytest>=9.0.2; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">napari[pyqt6]; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">mkdocs>=1.6; extra == "docs"</li><li class="MetadataList_textItem__KKmMN">mkdocs-material>=9.5; extra == "docs"</li></ul>
                                             </div>
                                         </div>
                                     </div>
