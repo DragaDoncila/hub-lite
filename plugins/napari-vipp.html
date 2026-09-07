@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.14.0a3</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.15.0a1</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-08-29</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-09-06</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -256,8 +256,8 @@ available for supported filtering, restoration, segmentation and measurement
 operations.</li>
 </ul>
 <h2>Install</h2>
-<p>The current published release is
-<a href="https://github.com/rensutheart/napari-vipp/releases/tag/v0.14.0a3"><code>v0.14.0a3</code></a>.</p>
+<p>For this version, use the
+<a href="https://github.com/rensutheart/napari-vipp/releases/tag/v0.15.0a1"><code>v0.15.0a1</code> release page</a>.</p>
 <table>
 <thead>
 <tr>
@@ -268,15 +268,15 @@ operations.</li>
 <tbody>
 <tr>
 <td>Windows 64-bit</td>
-<td>Download <code>VIPP-Setup-0.14.0a3-Windows-x86_64-UNSIGNED.exe</code> from the release page. The setup application creates and manages a dedicated VIPP environment. A supported 64-bit Python is a separate prerequisite.</td>
+<td>Download <code>VIPP-Setup-0.15.0a1-Windows-x86_64-UNSIGNED.exe</code> from the release page. The setup application creates and manages a dedicated VIPP environment. A supported 64-bit Python is a separate prerequisite.</td>
 </tr>
 <tr>
 <td>macOS Apple Silicon</td>
-<td>Download <code>VIPP-0.14.0a3-macOS-arm64-UNSIGNED.pkg</code>. The package is self-contained and CPU-only.</td>
+<td>Download <code>VIPP-0.15.0a1-macOS-arm64-UNSIGNED.pkg</code>. The package is self-contained and CPU-only.</td>
 </tr>
 <tr>
 <td>macOS Intel</td>
-<td>Download <code>VIPP-0.14.0a3-macOS-x86_64-UNSIGNED.pkg</code>. The package is self-contained and CPU-only.</td>
+<td>Download <code>VIPP-0.15.0a1-macOS-x86_64-UNSIGNED.pkg</code>. The package is self-contained and CPU-only.</td>
 </tr>
 <tr>
 <td>Linux or an existing Python environment</td>
@@ -287,11 +287,14 @@ operations.</li>
 <p>The desktop installers are unsigned alpha builds. Download them only from the
 official release, verify the matching SHA-256 file, and follow the
 <a href="docs/quick-start.md">Quick Start</a> for the exact platform instructions.</p>
-<p>For a manual installation, use a dedicated CPython 3.12 or 3.13 environment:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"napari[pyqt6]&gt;=0.6"</span><span class="w"> </span><span class="s2">"napari-vipp==0.14.0a3"</span>
+<p>For a manual installation, use a dedicated CPython 3.12 or 3.13 environment.
+On Windows or Linux:</p>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"napari[pyqt6]&gt;=0.6"</span><span class="w"> </span><span class="s2">"napari-vipp==0.15.0a1"</span>
 vipp
 </pre></div>
 </code></pre>
+<p>On macOS, replace <code>&quot;napari[pyqt6]&gt;=0.6&quot;</code> with <code>&quot;napari[pyside6]&gt;=0.6&quot;</code>.
+The macOS route is CPU-only.</p>
 <p>Inside an existing napari session, open:</p>
 <pre><code class="language-text"><div class="highlight"><pre><span></span>Plugins &gt; VIPP Workflow (napari-vipp)
 </pre></div>
@@ -299,7 +302,7 @@ vipp
 <h2>Try A Bundled Workflow</h2>
 <p>No external data is needed for the first run:</p>
 <ol>
-<li>Launch VIPP and select <strong>Open example...</strong>.</li>
+<li>Launch VIPP, open the gear menu, and select <strong>Open example…</strong>.</li>
 <li>Open <strong>Red-Channel Label Cleanup</strong>.</li>
 <li>Select the nodes from left to right. Inspect their parameters, previews,
 histograms, metadata and outputs.</li>
@@ -414,7 +417,7 @@ DOI or manuscript citation will be added when available.</p>
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.14.0a3</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.15.0a1</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -424,7 +427,7 @@ DOI or manuscript citation will be added when available.</p>
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-08-29</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-09-06</li>
                                                 </ul>
                                             </div>
                                         </div>
