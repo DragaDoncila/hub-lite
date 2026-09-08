@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.1.1</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.1.2</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-08-25</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-09-08</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -229,6 +229,16 @@
 </pre></div>
 </code></pre>
 <p>See <a href="#cpu-vs-gpu-inference">CPU vs. GPU Inference</a> for detailed GPU setup instructions.</p>
+<h2>Compatibility</h2>
+<h3>napari-czitools 0.12.1+</h3>
+<p><strong>Fixed (v0.1.1+):</strong> The plugin now fully supports napari-czitools 0.12.1 and later, which introduced multiscale pyramid rendering for CZI files. In v0.1.1, we fixed a critical issue where the plugin would receive downsampled/coarse-resolution image data instead of full-resolution data for inference.</p>
+<p><strong>What changed:</strong></p>
+<ul>
+<li>The plugin now correctly extracts full-resolution data (finest pyramid level) from multiscale image layers</li>
+<li>Segmentation results are now accurate when using CZI files with multiscale display pyramids</li>
+<li>The fix is fully backward compatible with single-scale images and older napari-czitools versions</li>
+</ul>
+<p><strong>For users:</strong> Simply update to napari-czann-segment v0.1.1 or later. No changes to your workflow are needed. See <a href="docs/COMPATIBILITY_STATUS.md">COMPATIBILITY_STATUS.md</a> for technical details.</p>
 <h2>What does the plugin do</h2>
 <p>The plugin allows you to:</p>
 <ul>
@@ -514,7 +524,7 @@ It is quite simple to accidentally train a single RGB image (3 channels) and not
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.1.1</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.1.2</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -524,7 +534,7 @@ It is quite simple to accidentally train a single RGB image (3 channels) and not
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-08-25</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-09-08</li>
                                                 </ul>
                                             </div>
                                         </div>
