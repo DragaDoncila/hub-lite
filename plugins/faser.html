@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.3.6</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.4.0</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2024-12-25</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-09-12</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -99,7 +99,7 @@
                                         <p class="font-bold whitespace-nowrap">License<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
                                             <li class="MetadataList_textItem__KKmMN">
-                                                MIT
+                                                Unavailable
                                             </li>
                                         </ul>
                                     </div>
@@ -156,7 +156,7 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Requirements<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">matplotlib>=3.9.2</li><li class="MetadataList_textItem__KKmMN">numpy<2</li><li class="MetadataList_textItem__KKmMN">psygnal>=0.11.1</li><li class="MetadataList_textItem__KKmMN">pydantic>2</li><li class="MetadataList_textItem__KKmMN">python-slugify>=8.0.4</li><li class="MetadataList_textItem__KKmMN">qtpy>=2.4.2</li><li class="MetadataList_textItem__KKmMN">superqt>=0.6.7</li><li class="MetadataList_textItem__KKmMN">tifffile>=2024.8.30</li><li class="MetadataList_textItem__KKmMN">rich-click>=1.8.3; extra == 'cli'</li><li class="MetadataList_textItem__KKmMN">pyqt5>=5.15.11; extra == 'full'</li><li class="MetadataList_textItem__KKmMN">rich-click>=1.8.3; extra == 'full'</li><li class="MetadataList_textItem__KKmMN">numba>=0.60.0; extra == 'numba'</li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy<2</li><li class="MetadataList_textItem__KKmMN">pydantic>2</li><li class="MetadataList_textItem__KKmMN">matplotlib>=3.9.2</li><li class="MetadataList_textItem__KKmMN">python-slugify>=8.0.4</li><li class="MetadataList_textItem__KKmMN">tifffile>=2024.8.30</li><li class="MetadataList_textItem__KKmMN">psygnal>=0.11.1</li><li class="MetadataList_textItem__KKmMN">qtpy>=2.4.2</li><li class="MetadataList_textItem__KKmMN">superqt>=0.6.7</li><li class="MetadataList_textItem__KKmMN">rich-click>=1.8.5</li><li class="MetadataList_textItem__KKmMN">rich-click>=1.8.3 ; extra == 'cli'</li><li class="MetadataList_textItem__KKmMN">pyqt5>=5.15.11 ; extra == 'full'</li><li class="MetadataList_textItem__KKmMN">rich-click>=1.8.3 ; extra == 'full'</li><li class="MetadataList_textItem__KKmMN">numba>=0.60.0 ; extra == 'numba'</li></ul>
                                     </div>
                                 </div>
                             </div>
@@ -215,6 +215,9 @@ focusing by using a vectorial model of the electromagnetic field, enabling explo
 of geometrical and optical parameters on imaging performance in advanced applications. The
 software supports various beam profiles, including those used in STED microscopy, and allows for
 the simulation of common experimental conditions such as a cranial window and a coverslip tilt.</p>
+<p>The simulator itself is implemented in Rust (<code>faser._core</code>) and uses all available CPU cores;
+a pure numpy reference implementation is kept alongside it for validation
+(<code>faser.generators.vectorial.stephane.generate_psf_numpy</code>).</p>
 <p>We provide to prefered ways to use faser:</p>
 <h2>Faser as a Napari Plugin</h2>
 <p>The recommended way to install faser is as a Napari plugin, which provides a user-friendly GUI for interactively exploring the PSF simulation. This can be done via:</p>
@@ -318,6 +321,16 @@ However faser can also be used as a library, and the CLI application is useful f
 <span class="err">╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯</span>
 </pre></div>
 </code></pre>
+<h2>Building from source</h2>
+<p>Binary wheels are published for Linux, macOS and Windows. Installing from a source
+checkout compiles the native backend, which needs a Rust toolchain (<a href="https://rustup.rs">https://rustup.rs</a>):</p>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>uv<span class="w"> </span>sync<span class="w">            </span><span class="c1"># or: pip install -e .</span>
+</pre></div>
+</code></pre>
+<p>For local development after editing <code>rust/src/lib.rs</code>:</p>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>uvx<span class="w"> </span>maturin<span class="w"> </span>develop<span class="w"> </span>--release
+</pre></div>
+</code></pre>
 
 
                                     </div>
@@ -333,7 +346,7 @@ However faser can also be used as a library, and the CLI application is useful f
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.3.6</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.4.0</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -343,7 +356,7 @@ However faser can also be used as a library, and the CLI application is useful f
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2024-12-25</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-09-12</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -364,7 +377,7 @@ However faser can also be used as a library, and the CLI application is useful f
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
                                                     <li class="MetadataList_textItem__KKmMN">
-                                                            MIT
+                                                            Unavailable
                                                     </li>
                                                 </ul>
                                             </div>
@@ -440,7 +453,7 @@ However faser can also be used as a library, and the CLI application is useful f
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">
                                                     Requirements<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">matplotlib>=3.9.2</li><li class="MetadataList_textItem__KKmMN">numpy<2</li><li class="MetadataList_textItem__KKmMN">psygnal>=0.11.1</li><li class="MetadataList_textItem__KKmMN">pydantic>2</li><li class="MetadataList_textItem__KKmMN">python-slugify>=8.0.4</li><li class="MetadataList_textItem__KKmMN">qtpy>=2.4.2</li><li class="MetadataList_textItem__KKmMN">superqt>=0.6.7</li><li class="MetadataList_textItem__KKmMN">tifffile>=2024.8.30</li><li class="MetadataList_textItem__KKmMN">rich-click>=1.8.3; extra == 'cli'</li><li class="MetadataList_textItem__KKmMN">pyqt5>=5.15.11; extra == 'full'</li><li class="MetadataList_textItem__KKmMN">rich-click>=1.8.3; extra == 'full'</li><li class="MetadataList_textItem__KKmMN">numba>=0.60.0; extra == 'numba'</li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy<2</li><li class="MetadataList_textItem__KKmMN">pydantic>2</li><li class="MetadataList_textItem__KKmMN">matplotlib>=3.9.2</li><li class="MetadataList_textItem__KKmMN">python-slugify>=8.0.4</li><li class="MetadataList_textItem__KKmMN">tifffile>=2024.8.30</li><li class="MetadataList_textItem__KKmMN">psygnal>=0.11.1</li><li class="MetadataList_textItem__KKmMN">qtpy>=2.4.2</li><li class="MetadataList_textItem__KKmMN">superqt>=0.6.7</li><li class="MetadataList_textItem__KKmMN">rich-click>=1.8.5</li><li class="MetadataList_textItem__KKmMN">rich-click>=1.8.3 ; extra == 'cli'</li><li class="MetadataList_textItem__KKmMN">pyqt5>=5.15.11 ; extra == 'full'</li><li class="MetadataList_textItem__KKmMN">rich-click>=1.8.3 ; extra == 'full'</li><li class="MetadataList_textItem__KKmMN">numba>=0.60.0 ; extra == 'numba'</li></ul>
                                             </div>
                                         </div>
                                     </div>
