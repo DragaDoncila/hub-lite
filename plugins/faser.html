@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.4.0</li>
+                                            <li class="MetadataList_textItem__KKmMN">2.1.0</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-09-12</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-09-13</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -327,10 +327,22 @@ checkout compiles the native backend, which needs a Rust toolchain (<a href="htt
 <pre><code class="language-bash"><div class="highlight"><pre><span></span>uv<span class="w"> </span>sync<span class="w">            </span><span class="c1"># or: pip install -e .</span>
 </pre></div>
 </code></pre>
-<p>For local development after editing <code>rust/src/lib.rs</code>:</p>
+<p>The Rust code is a small workspace in <code>rust/</code>: <code>rust/core</code> is the simulator itself
+(pure Rust, no Python dependency), <code>rust/src/lib.rs</code> is the thin pyo3 wrapper that
+becomes <code>faser._core</code>, and <code>rust/wasm</code> compiles the same core to WebAssembly for the
+website playground. For local development after editing the Rust code:</p>
 <pre><code class="language-bash"><div class="highlight"><pre><span></span>uvx<span class="w"> </span>maturin<span class="w"> </span>develop<span class="w"> </span>--release
+cargo<span class="w"> </span><span class="nb">test</span><span class="w"> </span>--manifest-path<span class="w"> </span>rust/Cargo.toml<span class="w"> </span>-p<span class="w"> </span>faser-core<span class="w"> </span>--features<span class="w"> </span>serde
 </pre></div>
 </code></pre>
+<h2>Website and playground</h2>
+<p>The documentation site at <a href="https://jhnnsrs.github.io/faser">https://jhnnsrs.github.io/faser</a> lives in <code>website/</code>
+(Next.js + Fumadocs, static export). Its playground runs the simulator in the
+browser: <code>rust/wasm</code> is built with <code>wasm-pack</code> into <code>website/public/wasm</code>, driven
+from a Web Worker, and the result is rendered with a three.js volume ray-marcher next
+to an idealized 3D microscope model that follows the parameters. See
+<a href="website/README.md"><code>website/README.md</code></a> for the local setup; the site is deployed
+by <code>.github/workflows/deploy.yml</code> on every push to <code>main</code>.</p>
 
 
                                     </div>
@@ -346,7 +358,7 @@ checkout compiles the native backend, which needs a Rust toolchain (<a href="htt
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.4.0</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2.1.0</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -356,7 +368,7 @@ checkout compiles the native backend, which needs a Rust toolchain (<a href="htt
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-09-12</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-09-13</li>
                                                 </ul>
                                             </div>
                                         </div>
