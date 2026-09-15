@@ -4,20 +4,20 @@
 
 <head>
     <meta charset="utf-8" />
-    <link href="../plugins/brillouin-imaging.html" rel="canonical" />
+    <link href="../plugins/napari-cell-gater.html" rel="canonical" />
     <meta content="width=device-width,initial-scale=1" name="viewport" />
     <meta
-        content="brillouin-imaging, Carlo Bevilacqua, Markus Körbel, napari hub, napari, hub, plugin, image analysis, imaging, chan zuckerberg initiative"
+        content="napari-cell-gater, Jose Nimo, Wouter-Michiel Vierdag, napari hub, napari, hub, plugin, image analysis, imaging, chan zuckerberg initiative"
         name="keywords" />
-    <meta content="A plugin to work with brim files, which contain Brillouin imaging data" name="description" />
-    <meta content="A plugin to work with brim files, which contain Brillouin imaging data" property="og:description" />
-    <meta content="A plugin to work with brim files, which contain Brillouin imaging data." name="twitter:description" />
-    <meta content="Brillouin Imaging - napari Plugin - Carlo Bevilacqua, Markus Körbel" property="og:title" />
-    <meta content="Brillouin Imaging - napari Plugin - Carlo Bevilacqua, Markus Körbel" name="twitter:title" />
+    <meta content="A napari plugin to perform cell marker gating for multiplexed immunofluorescent imaging" name="description" />
+    <meta content="A napari plugin to perform cell marker gating for multiplexed immunofluorescent imaging" property="og:description" />
+    <meta content="A napari plugin to perform cell marker gating for multiplexed immunofluorescent imaging." name="twitter:description" />
+    <meta content="napari-cell-gater - napari Plugin - Jose Nimo, Wouter-Michiel Vierdag" property="og:title" />
+    <meta content="napari-cell-gater - napari Plugin - Jose Nimo, Wouter-Michiel Vierdag" name="twitter:title" />
     <meta content="article" property="og:type" />
-    <meta content="../plugins/brillouin-imaging.html" property="og:url" />
+    <meta content="../plugins/napari-cell-gater.html" property="og:url" />
     <meta content="@napari_imaging" name="twitter:site" />
-    <title>Brillouin Imaging - napari Plugin - Carlo Bevilacqua, Markus Körbel</title>
+    <title>napari-cell-gater - napari Plugin - Jose Nimo, Wouter-Michiel Vierdag</title>
 
     <meta content="2" name="next-head-count" />
     <meta content="#80d1ff" name="theme-color" />
@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.4.1</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.5.2</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -90,7 +90,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">First released<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2025-08-13</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-09-15</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -99,7 +99,7 @@
                                         <p class="font-bold whitespace-nowrap">License<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
                                             <li class="MetadataList_textItem__KKmMN">
-                                                GNU LESSER GENERAL PUBLIC LICE...
+                                                BSD-3-Clause
                                             </li>
                                         </ul>
                                     </div>
@@ -112,13 +112,13 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Plugin type<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=reader">Reader</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=widget">Widget</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=sample_data">Sample_data</a></li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=widget">Widget</a></li></ul>
                                     </div>
                                 </div>
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Open extension<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?readerFileExtensions=*.brim.zip">*.brim.zip</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?readerFileExtensions=*.brim.zarr">*.brim.zarr</a></li></ul>
+                                        
                                     </div>
                                 </div>
                                 <div class="text-sm">
@@ -144,7 +144,7 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Python versions supported<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.11">3.11</a></li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.10">3.10</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.11">3.11</a></li></ul>
                                     </div>
                                 </div>
                                 <div class="text-sm">
@@ -156,7 +156,7 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Requirements<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">brimfile[remote-store]<2.0.0,>=1.6.0</li><li class="MetadataList_textItem__KKmMN">matplotlib; extra == "plotting"</li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">loguru</li><li class="MetadataList_textItem__KKmMN">napari</li><li class="MetadataList_textItem__KKmMN">dask-image</li><li class="MetadataList_textItem__KKmMN">matplotlib</li><li class="MetadataList_textItem__KKmMN">pandas</li><li class="MetadataList_textItem__KKmMN">packaging</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pre-commit; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">ruff; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">tox; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">hatchling; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">PyQt5; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">sphinx; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">myst-parser; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">sphinx-rtd-theme; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">twine; extra == "dev"</li></ul>
                                     </div>
                                 </div>
                             </div>
@@ -168,26 +168,26 @@
                         <article
                             class="w-full col-span-2 row-start-1 screen-875:col-span-3 screen-1150:col-start-1 screen-1425:col-start-2">
                                 <div class="container" style="display: flex; flex-direction: column;">
-                                    <h1 class="font-bold text-4xl" style="margin-bottom: 20px;" >Brillouin Imaging</h1>
+                                    <h1 class="font-bold text-4xl" style="margin-bottom: 20px;" >napari-cell-gater</h1>
                                 </div>
 
                                 
    <div class="flex items-center" style="gap: 20px; ; align-items: center;"">
-        <a class="underline flex" href="https://pypi.org/project/brillouin-imaging/" rel="noreferrer" target="_blank">
-        <img src="../static/images/PyPI_logo.svg.png" alt="PyPI" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">brillouin-imaging</span>
+        <a class="underline flex" href="https://pypi.org/project/napari-cell-gater/" rel="noreferrer" target="_blank">
+        <img src="../static/images/PyPI_logo.svg.png" alt="PyPI" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">napari-cell-gater</span>
     </a>
     
-        <a class="underline flex" href="https://github.com/brillouin-imaging/brillouin-imaging-napari/issues" rel="noreferrer" target="_blank">
-            <img src="../static/images/GitHub_Invertocat_Logo.svg.png" alt="GitHub" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">brillouin-imaging/brillouin-imaging-napar</span>
+        <a class="underline flex" href="https://github.com/CosciaLab/napari-cell-gater#readme" rel="noreferrer" target="_blank">
+            <img src="../static/images/GitHub_Invertocat_Logo.svg.png" alt="GitHub" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">CosciaLab/napari-cell-gater#readme</span>
         </a>
         </div>
 
                                 <div class="flex justify-between items-center my-6">
-                                    <h2 class="text-lg">A plugin to work with brim files, which contain Brillouin imaging data</h2>
+                                    <h2 class="text-lg">A napari plugin to perform cell marker gating for multiplexed immunofluorescent imaging</h2>
                                 </div>
                                 <ul class="PluginAuthors_authors__hs3zO">
                                     <li class="inline">
-                                        <span class="text-[11px] screen-495:text-[14px] font-semibold">Carlo Bevilacqua, Markus Körbel</span>
+                                        <span class="text-[11px] screen-495:text-[14px] font-semibold">Jose Nimo, Wouter-Michiel Vierdag</span>
                                     </li>
                             </ul>
                             <div class="screen-1425:hidden mt-sds-xl mb-sds-xxl"><a
@@ -209,28 +209,135 @@
                                 <div class="flex items-center justify-between mb-sds-xxl">
                                     <div class="Markdown_markdown__QZ95j">
 
-                                        <h2>What is it?</h2>
-<p><em>brillouin-imaging</em> is a napari plugin to work with brim (<strong>Br</strong>illouin <strong>im</strong>aging) files, containing spectral data and metadata from Brillouin microscopy.</p>
-<p>More information about the scope and definition of the brim file format can be found <a href="https://github.com/brillouin-imaging/Brillouin-standard-file">here</a>.</p>
-<p>The brillouin-imaging plugin implements three contributions:</p>
+                                        <p><a href="https://github.com/CosciaLab/napari-cell-gater/raw/main/LICENSE"><img src="https://img.shields.io/pypi/l/napari-cell-gater.svg?color=green" alt="License BSD-3" /></a>
+<a href="https://pypi.org/project/napari-cell-gater"><img src="https://img.shields.io/pypi/v/napari-cell-gater.svg?color=green" alt="PyPI" /></a>
+<a href="https://python.org"><img src="https://img.shields.io/pypi/pyversions/napari-cell-gater.svg?color=green" alt="Python Version" /></a>
+<a href="https://github.com/CosciaLab/napari-cell-gater/actions/workflows/test_and_deploy.yml"><img src="https://github.com/CosciaLab/napari-cell-gater/actions/workflows/test_and_deploy.yml/badge.svg" alt="tests" /></a>
+<a href="https://codecov.io/gh/CosciaLab/napari-cell-gater"><img src="https://codecov.io/gh/CosciaLab/napari-cell-gater/branch/main/graph/badge.svg" alt="codecov" /></a></p>
+<p>A napari plugin to perform cell marker gating for multiplexed immunofluorescent imaging.</p>
+<p><code>napari-cell-gater</code> is part of the <a href="https://github.com/CosciaLab/openDVP">openDVP</a>
+ecosystem (<a href="https://coscialab.github.io/openDVP/">documentation</a>). Use it to pick, per
+sample and per marker, the intensity threshold that separates positive from negative
+cells — while looking at the image, the segmentation mask and the intensity
+distribution side by side.</p>
+<p><img src="https://raw.githubusercontent.com/CosciaLab/napari-cell-gater/main/docs/VisualWorkflow_highres.png" alt="Visual workflow of napari-cell-gater" /></p>
+<hr />
+<h2>Installation</h2>
+<p><code>napari-cell-gater</code> needs Python 3.10–3.12 and a working <a href="https://github.com/napari/napari">napari</a> installation
+(see the <a href="https://napari.org/stable/tutorials/fundamentals/installation">napari installation guide</a>).</p>
+<p>We recommend a fresh environment:</p>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>cell-gater<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11
+conda<span class="w"> </span>activate<span class="w"> </span>cell-gater
+pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"napari[all]"</span>
+pip<span class="w"> </span>install<span class="w"> </span>napari-cell-gater
+</pre></div>
+</code></pre>
+<p>or, with <a href="https://docs.astral.sh/uv/">uv</a>:</p>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>uv<span class="w"> </span>venv<span class="w"> </span>--python<span class="w"> </span><span class="m">3</span>.11<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"napari[all]"</span><span class="w"> </span>napari-cell-gater
+</pre></div>
+</code></pre>
+<p>To get the latest unreleased changes instead:</p>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/CosciaLab/napari-cell-gater.git@main
+</pre></div>
+</code></pre>
+<p>Then launch <code>napari</code> and open the plugin from <strong>Plugins → napari-cell-gater</strong>.</p>
+<h2>Inputs</h2>
+<p>You need three directories — images, segmentation masks and quantifications — with one
+file per sample:</p>
+<table>
+<thead>
+<tr>
+<th>Directory</th>
+<th>File per sample</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>images</td>
+<td><code>1.ome.tif</code> or <code>1.tif</code></td>
+<td>channel order must match the marker columns of the quantification csv</td>
+</tr>
+<tr>
+<td>masks</td>
+<td><code>1.tif</code></td>
+<td>label image; large masks can be slow to load</td>
+</tr>
+<tr>
+<td>quantifications</td>
+<td><code>1.csv</code></td>
+<td>one row per cell, one column per marker, plus morphology columns</td>
+</tr>
+</tbody>
+</table>
+<p>Assumptions:</p>
 <ul>
-<li>
-<p><em>reader</em><br />
-Allows to open brim files by implementing the <a href="https://napari.org/stable/plugins/building_a_plugin/guides.html#readers">reader contribution</a>.</p>
-</li>
-<li>
-<p><em>sample_data</em><br />
-Provides some sample Brillouin data through the <a href="https://napari.org/stable/plugins/building_a_plugin/guides.html#sample-data">sample data contribution</a>. Data are hosted on a S3 bucket.</p>
-</li>
-<li>
-<p><em>Spectra Analysis Tools widget</em><br />
-Inspetion and analysis tools by adding the <a href="https://napari.org/stable/plugins/building_a_plugin/guides.html#widgets">widget contribution</a>. One can view metadata, inspect individual spectra, create images based on the AUC of the PSD, and use a labels layer to calculate average Brillouin spectra and statistics for annotated or segmented regions.</p>
-</li>
+<li>Files are named after the sample (<code>1</code>, <code>2</code>, … or any shared stem), and the <strong>same</strong>
+stem is used in all three directories.</li>
+<li>Every sample must be present in all three directories.</li>
+<li>Any extra file in those directories can make the plugin fail — keep them clean.</li>
 </ul>
-<p>Example Screenshot of the Spectra Analysis Tools widget displaying the metadata of the opened drosophila_LSBM sample data:</p>
-<img width="800" height="470" alt="brillouin-imaging-napari-screenshot" src="https://raw.githubusercontent.com/brillouin-imaging/brillouin-imaging-napari/main/images/brillouin-imaging-napari-screenshot.png"/>
-<h2>How to install it</h2>
-<p><em>brillouin-imaging</em> can be installed from the napari plugin manager, as any standard napari plugin. More info can be found <a href="https://napari.org/stable/plugins/start_using_plugins/finding_and_installing_plugins.html">here</a>.</p>
+<p>A ready-to-run example dataset ships with the repository under
+<a href="https://github.com/CosciaLab/napari-cell-gater/blob/main/tests/test_data"><code>tests/test_data/</code></a> — 5 samples as <code>imgs/{1..5}.ome.tif</code>,
+<code>segs/{1..5}.tif</code> and <code>quants/{1..5}.csv</code>. Point the plugin at those three folders to
+try it out without preparing your own data.</p>
+<h2>Output</h2>
+<p>Gates are written to a csv with one row per sample/marker pair — see
+<a href="https://github.com/CosciaLab/napari-cell-gater/blob/main/gates_example.csv"><code>gates_example.csv</code></a>:</p>
+<pre><code class="language-csv"><div class="highlight"><pre><span></span><span class="n">sample_id</span><span class="p">,</span><span class="n">marker_id</span><span class="p">,</span><span class="n">gate_value</span>
+<span class="mi">68</span><span class="p">,</span><span class="n">Rabbit</span> <span class="n">IgG</span><span class="p">,</span><span class="mf">3478.531304347826</span>
+<span class="mi">68</span><span class="p">,</span><span class="n">Goat</span> <span class="n">IgG</span><span class="p">,</span><span class="mf">0.0</span>
+</pre></div>
+</code></pre>
+<p>Gate values are always saved in <strong>linear</strong> space, even when plotting in log10.
+The same file can be read back with <strong>Load existing gates</strong>.</p>
+<h2>How to use</h2>
+<ol>
+<li>Load your three directories with <strong>Load quantifications dir</strong>, <strong>Load image dir</strong>
+and <strong>Load mask dir</strong>. Optionally use <strong>Opt: Load channel map</strong> to supply an explicit
+channel-to-marker mapping.</li>
+<li>Set <strong>Select lowerbound marker column</strong> and <strong>Select upperbound marker column</strong> to
+the first and last quantification columns you want to gate. Pick the same bounds
+every session if you plan to save and reload gates.</li>
+<li>Optionally adjust <strong>Remove markers with prefix</strong> (default <code>DNA, DAPI</code>) to drop
+nuclear channels from the marker list.</li>
+<li>Click <strong>Validate input</strong>. On success the gating controls appear; on failure fix the
+inputs and validate again.</li>
+<li>Choose a <strong>sample</strong> and a <strong>marker</strong> from the dropdowns. Three layers load: the
+reference channel (<strong>Select reference channel</strong>), the segmentation mask, and the
+channel being gated. A plot of marker intensity (x) against <strong>Choose Y-axis</strong>
+(default <code>Area</code>) appears, with a slider underneath whose position is drawn as a
+vertical line.</li>
+<li>Tune the view: switch <strong>Plot type</strong> to <code>Hexbin</code> for dense clusters, and
+<strong>Logarithmic scale</strong> to <code>Yes</code> to plot in log10 (often easier to read). Adjust image
+contrast from the napari layer controls at the top left.</li>
+<li>Drag the slider to the threshold you think is correct, or type a value into
+<strong>Manual gate input</strong> and click <strong>Set gate manually</strong>.</li>
+<li>Click <strong>Plot Points</strong> to overlay the cells the current gate calls positive.</li>
+<li>Repeat steps 6–8 until you are satisfied, then click <strong>Save Gate</strong>. The first save
+asks where to write the gates csv; later saves reuse that path. Go back to step 5 for
+the next marker or sample.</li>
+</ol>
+<h2>Contributing</h2>
+<p>Contributions are very welcome. To set up a development install:</p>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/CosciaLab/napari-cell-gater.git
+<span class="nb">cd</span><span class="w"> </span>napari-cell-gater
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">".[dev]"</span>
+pytest
+</pre></div>
+</code></pre>
+<p>Please ensure test coverage at least stays the same before you submit a pull request.</p>
+<h2>Citation</h2>
+<p><code>napari-cell-gater</code> is developed as part of the <a href="https://github.com/CosciaLab/openDVP">openDVP</a>
+ecosystem. Until the paper is out, please cite this repository and the openDVP
+documentation at <a href="https://coscialab.github.io/openDVP/">https://coscialab.github.io/openDVP/</a>.</p>
+<!-- TODO: add journal citation + DOI on publication -->
+<h2>License</h2>
+<p>Distributed under the terms of the <a href="http://opensource.org/licenses/BSD-3-Clause">BSD-3</a> license,
+&quot;napari-cell-gater&quot; is free and open source software.</p>
+<h2>Issues</h2>
+<p>If you encounter any problems, please <a href="https://github.com/CosciaLab/napari-cell-gater/issues">file an issue</a> along with a detailed description.</p>
 
 
                                     </div>
@@ -246,7 +353,7 @@ Inspetion and analysis tools by adding the <a href="https://napari.org/stable/pl
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.4.1</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.5.2</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -266,7 +373,7 @@ Inspetion and analysis tools by adding the <a href="https://napari.org/stable/pl
                                                     released<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2025-08-13</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-09-15</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -277,7 +384,7 @@ Inspetion and analysis tools by adding the <a href="https://napari.org/stable/pl
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
                                                     <li class="MetadataList_textItem__KKmMN">
-                                                            GNU LESSER GENERAL PUBLIC LICE...
+                                                            BSD-3-Clause
                                                     </li>
                                                 </ul>
                                             </div>
@@ -303,14 +410,14 @@ Inspetion and analysis tools by adding the <a href="https://napari.org/stable/pl
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">Plugin
                                                     type<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=reader">Reader</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=widget">Widget</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=sample_data">Sample_data</a></li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=widget">Widget</a></li></ul>
                                             </div>
                                         </div>
                                         <div class="text-sm">
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">Open
                                                     extension<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?readerFileExtensions=*.brim.zip">*.brim.zip</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?readerFileExtensions=*.brim.zarr">*.brim.zarr</a></li></ul>
+                                                    
                                             </div>
                                         </div>
                                         <div class="text-sm">
@@ -334,7 +441,7 @@ Inspetion and analysis tools by adding the <a href="https://napari.org/stable/pl
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">Python versions
                                                     supported<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.11">3.11</a></li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.10">3.10</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.11">3.11</a></li></ul>
                                             </div>
                                         </div>
                                         <div class="text-sm">
@@ -353,7 +460,7 @@ Inspetion and analysis tools by adding the <a href="https://napari.org/stable/pl
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">
                                                     Requirements<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">brimfile[remote-store]<2.0.0,>=1.6.0</li><li class="MetadataList_textItem__KKmMN">matplotlib; extra == "plotting"</li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">loguru</li><li class="MetadataList_textItem__KKmMN">napari</li><li class="MetadataList_textItem__KKmMN">dask-image</li><li class="MetadataList_textItem__KKmMN">matplotlib</li><li class="MetadataList_textItem__KKmMN">pandas</li><li class="MetadataList_textItem__KKmMN">packaging</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pre-commit; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">ruff; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">tox; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">hatchling; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">PyQt5; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">sphinx; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">myst-parser; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">sphinx-rtd-theme; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">twine; extra == "dev"</li></ul>
                                             </div>
                                         </div>
                                     </div>

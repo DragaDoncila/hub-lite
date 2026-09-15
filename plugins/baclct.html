@@ -4,20 +4,20 @@
 
 <head>
     <meta charset="utf-8" />
-    <link href="../plugins/brillouin-imaging.html" rel="canonical" />
+    <link href="../plugins/baclct.html" rel="canonical" />
     <meta content="width=device-width,initial-scale=1" name="viewport" />
     <meta
-        content="brillouin-imaging, Carlo Bevilacqua, Markus Körbel, napari hub, napari, hub, plugin, image analysis, imaging, chan zuckerberg initiative"
+        content="baclct, Moritz Kunzmann, napari hub, napari, hub, plugin, image analysis, imaging, chan zuckerberg initiative"
         name="keywords" />
-    <meta content="A plugin to work with brim files, which contain Brillouin imaging data" name="description" />
-    <meta content="A plugin to work with brim files, which contain Brillouin imaging data" property="og:description" />
-    <meta content="A plugin to work with brim files, which contain Brillouin imaging data." name="twitter:description" />
-    <meta content="Brillouin Imaging - napari Plugin - Carlo Bevilacqua, Markus Körbel" property="og:title" />
-    <meta content="Brillouin Imaging - napari Plugin - Carlo Bevilacqua, Markus Körbel" name="twitter:title" />
+    <meta content="Bacteria tracking and life cycle state classification using graph neural networks and pretrained vision transformers" name="description" />
+    <meta content="Bacteria tracking and life cycle state classification using graph neural networks and pretrained vision transformers" property="og:description" />
+    <meta content="Bacteria tracking and life cycle state classification using graph neural networks and pretrained vision transformers." name="twitter:description" />
+    <meta content="BacLCT - napari Plugin - Moritz Kunzmann" property="og:title" />
+    <meta content="BacLCT - napari Plugin - Moritz Kunzmann" name="twitter:title" />
     <meta content="article" property="og:type" />
-    <meta content="../plugins/brillouin-imaging.html" property="og:url" />
+    <meta content="../plugins/baclct.html" property="og:url" />
     <meta content="@napari_imaging" name="twitter:site" />
-    <title>Brillouin Imaging - napari Plugin - Carlo Bevilacqua, Markus Körbel</title>
+    <title>BacLCT - napari Plugin - Moritz Kunzmann</title>
 
     <meta content="2" name="next-head-count" />
     <meta content="#80d1ff" name="theme-color" />
@@ -90,7 +90,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">First released<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2025-08-13</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-09-15</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -99,7 +99,7 @@
                                         <p class="font-bold whitespace-nowrap">License<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
                                             <li class="MetadataList_textItem__KKmMN">
-                                                GNU LESSER GENERAL PUBLIC LICE...
+                                                MIT
                                             </li>
                                         </ul>
                                     </div>
@@ -112,19 +112,19 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Plugin type<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=reader">Reader</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=widget">Widget</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=sample_data">Sample_data</a></li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=writer">Writer</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=widget">Widget</a></li></ul>
                                     </div>
                                 </div>
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Open extension<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?readerFileExtensions=*.brim.zip">*.brim.zip</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?readerFileExtensions=*.brim.zarr">*.brim.zarr</a></li></ul>
+                                        
                                     </div>
                                 </div>
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Save extension<!-- -->:</p>
-                                        
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?writerFileExtensions=.csv">.csv</a></li></ul>
                                     </div>
                                 </div>
                             </div>
@@ -144,19 +144,19 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Python versions supported<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.11">3.11</a></li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"></ul>
                                     </div>
                                 </div>
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Operating system<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">OS Independent</li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="flex justify-between items-center"><span class="text-napari-gray font-normal lowercase">Information not submitted</span></li></ul>
                                     </div>
                                 </div>
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Requirements<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">brimfile[remote-store]<2.0.0,>=1.6.0</li><li class="MetadataList_textItem__KKmMN">matplotlib; extra == "plotting"</li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">bioio-tifffile>=1.3.0</li><li class="MetadataList_textItem__KKmMN">bioio>=3.5.0</li><li class="MetadataList_textItem__KKmMN">dask</li><li class="MetadataList_textItem__KKmMN">fastremap</li><li class="MetadataList_textItem__KKmMN">hydra-colorlog>=1.2.0</li><li class="MetadataList_textItem__KKmMN">hydra-core>=1.3</li><li class="MetadataList_textItem__KKmMN">lightning>=2.5.5</li><li class="MetadataList_textItem__KKmMN">networkx</li><li class="MetadataList_textItem__KKmMN">omegaconf</li><li class="MetadataList_textItem__KKmMN">platformdirs</li><li class="MetadataList_textItem__KKmMN">polars>=1.35.0</li><li class="MetadataList_textItem__KKmMN">pooch</li><li class="MetadataList_textItem__KKmMN">pyarrow>=21.0.0</li><li class="MetadataList_textItem__KKmMN">pyyaml</li><li class="MetadataList_textItem__KKmMN">rustworkx>=0.17</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">scikit-learn</li><li class="MetadataList_textItem__KKmMN">scipy</li><li class="MetadataList_textItem__KKmMN">tifffile</li><li class="MetadataList_textItem__KKmMN">torch-geometric>=2.7</li><li class="MetadataList_textItem__KKmMN">torch>=2.0</li><li class="MetadataList_textItem__KKmMN">torchvision</li><li class="MetadataList_textItem__KKmMN">tqdm</li><li class="MetadataList_textItem__KKmMN">typer</li><li class="MetadataList_textItem__KKmMN">zarr</li><li class="MetadataList_textItem__KKmMN">magicgui; extra == 'napari'</li><li class="MetadataList_textItem__KKmMN">napari>=0.5; extra == 'napari'</li><li class="MetadataList_textItem__KKmMN">pyqt6; extra == 'napari'</li><li class="MetadataList_textItem__KKmMN">qtpy; extra == 'napari'</li><li class="MetadataList_textItem__KKmMN">superqt; extra == 'napari'</li><li class="MetadataList_textItem__KKmMN">vispy<0.16; extra == 'napari'</li><li class="MetadataList_textItem__KKmMN">cmap<0.8,>=0.7.2; extra == 'train'</li><li class="MetadataList_textItem__KKmMN">matplotlib; extra == 'train'</li><li class="MetadataList_textItem__KKmMN">py-ctcmetrics==1.3.2; extra == 'train'</li><li class="MetadataList_textItem__KKmMN">rich; extra == 'train'</li><li class="MetadataList_textItem__KKmMN">seaborn; extra == 'train'</li><li class="MetadataList_textItem__KKmMN">tensorboard>=2.20.0; extra == 'train'</li><li class="MetadataList_textItem__KKmMN">torchmetrics; extra == 'train'</li></ul>
                                     </div>
                                 </div>
                             </div>
@@ -168,26 +168,26 @@
                         <article
                             class="w-full col-span-2 row-start-1 screen-875:col-span-3 screen-1150:col-start-1 screen-1425:col-start-2">
                                 <div class="container" style="display: flex; flex-direction: column;">
-                                    <h1 class="font-bold text-4xl" style="margin-bottom: 20px;" >Brillouin Imaging</h1>
+                                    <h1 class="font-bold text-4xl" style="margin-bottom: 20px;" >BacLCT</h1>
                                 </div>
 
                                 
    <div class="flex items-center" style="gap: 20px; ; align-items: center;"">
-        <a class="underline flex" href="https://pypi.org/project/brillouin-imaging/" rel="noreferrer" target="_blank">
-        <img src="../static/images/PyPI_logo.svg.png" alt="PyPI" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">brillouin-imaging</span>
+        <a class="underline flex" href="https://pypi.org/project/baclct/" rel="noreferrer" target="_blank">
+        <img src="../static/images/PyPI_logo.svg.png" alt="PyPI" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">baclct</span>
     </a>
     
-        <a class="underline flex" href="https://github.com/brillouin-imaging/brillouin-imaging-napari/issues" rel="noreferrer" target="_blank">
-            <img src="../static/images/GitHub_Invertocat_Logo.svg.png" alt="GitHub" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">brillouin-imaging/brillouin-imaging-napar</span>
+        <a class="underline flex" href="https://github.com/bmcv/baclct/issues" rel="noreferrer" target="_blank">
+            <img src="../static/images/GitHub_Invertocat_Logo.svg.png" alt="GitHub" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">bmcv/baclc</span>
         </a>
         </div>
 
                                 <div class="flex justify-between items-center my-6">
-                                    <h2 class="text-lg">A plugin to work with brim files, which contain Brillouin imaging data</h2>
+                                    <h2 class="text-lg">Bacteria tracking and life cycle state classification using graph neural networks and pretrained vision transformers</h2>
                                 </div>
                                 <ul class="PluginAuthors_authors__hs3zO">
                                     <li class="inline">
-                                        <span class="text-[11px] screen-495:text-[14px] font-semibold">Carlo Bevilacqua, Markus Körbel</span>
+                                        <span class="text-[11px] screen-495:text-[14px] font-semibold">Moritz Kunzmann</span>
                                     </li>
                             </ul>
                             <div class="screen-1425:hidden mt-sds-xl mb-sds-xxl"><a
@@ -209,28 +209,172 @@
                                 <div class="flex items-center justify-between mb-sds-xxl">
                                     <div class="Markdown_markdown__QZ95j">
 
-                                        <h2>What is it?</h2>
-<p><em>brillouin-imaging</em> is a napari plugin to work with brim (<strong>Br</strong>illouin <strong>im</strong>aging) files, containing spectral data and metadata from Brillouin microscopy.</p>
-<p>More information about the scope and definition of the brim file format can be found <a href="https://github.com/brillouin-imaging/Brillouin-standard-file">here</a>.</p>
-<p>The brillouin-imaging plugin implements three contributions:</p>
-<ul>
-<li>
-<p><em>reader</em><br />
-Allows to open brim files by implementing the <a href="https://napari.org/stable/plugins/building_a_plugin/guides.html#readers">reader contribution</a>.</p>
-</li>
-<li>
-<p><em>sample_data</em><br />
-Provides some sample Brillouin data through the <a href="https://napari.org/stable/plugins/building_a_plugin/guides.html#sample-data">sample data contribution</a>. Data are hosted on a S3 bucket.</p>
-</li>
-<li>
-<p><em>Spectra Analysis Tools widget</em><br />
-Inspetion and analysis tools by adding the <a href="https://napari.org/stable/plugins/building_a_plugin/guides.html#widgets">widget contribution</a>. One can view metadata, inspect individual spectra, create images based on the AUC of the PSD, and use a labels layer to calculate average Brillouin spectra and statistics for annotated or segmented regions.</p>
-</li>
-</ul>
-<p>Example Screenshot of the Spectra Analysis Tools widget displaying the metadata of the opened drosophila_LSBM sample data:</p>
-<img width="800" height="470" alt="brillouin-imaging-napari-screenshot" src="https://raw.githubusercontent.com/brillouin-imaging/brillouin-imaging-napari/main/images/brillouin-imaging-napari-screenshot.png"/>
-<h2>How to install it</h2>
-<p><em>brillouin-imaging</em> can be installed from the napari plugin manager, as any standard napari plugin. More info can be found <a href="https://napari.org/stable/plugins/start_using_plugins/finding_and_installing_plugins.html">here</a>.</p>
+                                        <p>Code for the paper <a href="https://doi.org/10.1016/j.media.2026.104275"><em>Bacteria Tracking and Life Cycle State Classification using Graph
+Neural Networks and Pretrained Vision
+Transformers</em></a> (Medical Image Analysis,
+2026).</p>
+<p>BacLCT is a unified GNN-based method for simultaneous tracking, division detection, and
+life cycle state classification of bacteria in time-lapse microscopy. Segmented cells are
+represented as nodes of a graph and their interactions over time as multi-frame edges. A
+message-passing GNN classifies the graph edges as correspondence, division, or no
+correspondence, and the graph nodes as life cycle states. From these predictions,
+trajectories are reconstructed. The division and multi-frame predictions are used for
+segmentation error correction, such as for missed detections, early divisions, and
+incorrect merges. The node features combine learned features from a DINO-pretrained Vision
+Transformer with handcrafted single-object features, so no task-specific encoder has to be
+trained.</p>
+<p>BacLCT includes pre-trained models for tracking bacteria in bright field and phase
+contrast images, and for simultaneous tracking and life cycle state classification of <em>B.
+subtilis</em> spore germination and outgrowth in bright field images. It is also available as
+a napari plugin.</p>
+<p><strong>Documentation: <a href="https://baclct.readthedocs.io">https://baclct.readthedocs.io</a></strong> — getting started, user guide, and API
+reference.</p>
+<h2>Installation</h2>
+<p>It is recommended to install on a machine with a GPU. System requirements depend on the
+size of the image data and the number of objects in it. The smaller 2D sequences used in
+the paper (190 frames, ~500x500 px, ~10K objects) stayed below 8 GB of GPU and system
+RAM, while the larger ones (800 frames, ~1000x1000 px, &gt;100K objects) required 16 GB of
+GPU and 32 GB of system RAM. Inference also works without a GPU, but will be much
+slower.</p>
+<p>For inference and the napari plugin, install from PyPI into an environment (e.g., using
+<a href="https://docs.conda.io/projects/conda/en/stable/user-guide/getting-started.html">Conda</a>).
+If the environment should use a GPU, install
+<a href="https://pytorch.org/get-started/locally/">PyTorch</a> first.</p>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>baclct<span class="w">              </span><span class="c1"># inference</span>
+pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"baclct[napari]"</span><span class="w">    </span><span class="c1"># + the napari plugin</span>
+</pre></div>
+</code></pre>
+<p>For training, it is recommended to clone the repository and install locally.</p>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/bmcv/baclct
+<span class="nb">cd</span><span class="w"> </span>baclct
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">".[train]"</span><span class="w">       </span><span class="c1"># training</span>
+</pre></div>
+</code></pre>
+<p>Or let <a href="https://docs.astral.sh/uv/">uv</a> or <a href="https://pixi.sh/">Pixi</a> set up and run
+everything in one command:</p>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>pixi<span class="w"> </span>run<span class="w"> </span>baclct-track<span class="w"> </span>--help<span class="w">   </span><span class="c1"># check the install</span>
+uv<span class="w"> </span>run<span class="w"> </span>baclct-track<span class="w"> </span>--help
+</pre></div>
+</code></pre>
+<p>The Pixi environments are configured for Linux only and the full development environment
+is pinned in <code>pixi.lock</code>. Setup using uv also works on macOS and Windows. The
+<a href="https://baclct.readthedocs.io">documentation</a> lists the commands for the napari plugin
+and for training.</p>
+<h2>Usage</h2>
+<pre><code class="language-python"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tifffile</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">baclct</span><span class="w"> </span><span class="kn">import</span> <span class="n">BacLCT</span>
+
+<span class="n">images</span> <span class="o">=</span> <span class="n">tifffile</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s2">"images.tif"</span><span class="p">)</span>  <span class="c1"># (T, H, W)</span>
+<span class="n">masks</span> <span class="o">=</span> <span class="n">tifffile</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s2">"masks.tif"</span><span class="p">)</span>    <span class="c1"># instance segmentation</span>
+
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">BacLCT</span><span class="p">()</span>
+<span class="n">tracked_masks</span><span class="p">,</span> <span class="n">tracks</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">track</span><span class="p">(</span><span class="n">images</span><span class="p">,</span> <span class="n">masks</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s2">"baclct_track"</span><span class="p">)</span>
+</pre></div>
+</code></pre>
+<p><code>masks</code> must be an instance segmentation, one label per object; relabel a binary mask
+with <code>skimage.measure.label</code> first. Both <code>images</code> and <code>masks</code> may be <code>numpy</code> or <code>dask</code>
+arrays. <code>tracked_masks</code> are the input
+masks relabelled along their trajectories, and <code>tracks</code> has one row per cell and frame
+(<code>label</code>, <code>t</code>, the center coordinate, <code>parent</code>, and the single-cell features). If the
+model classifies life cycle states, <code>tracks</code> also has a state column. Pass <code>output_dir</code> to
+additionally export in <a href="https://celltrackingchallenge.net/datasets/">CTC format</a> or as
+flat CSV/TIF.</p>
+<p>The <code>baclct-track</code> CLI mirrors this API. It takes the two paths directly, or a dataset
+directory in one of three layouts, and then tracks every sequence in it. See <code>--help</code>.</p>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>baclct-track<span class="w"> </span>images.tif<span class="w"> </span>masks.tif<span class="w"> </span>-o<span class="w"> </span>outputs/<span class="w">   </span><span class="c1"># one sequence</span>
+baclct-track<span class="w"> </span>--data-dir<span class="w"> </span>data/<span class="w"> </span>-o<span class="w"> </span>outputs/<span class="w">       </span><span class="c1"># every sequence in a dataset</span>
+</pre></div>
+</code></pre>
+<p>The same runs interactively in napari. <code>baclct-napari</code> opens a sequence with the plugin
+docked and the layers preselected, reading the frames on demand so a long movie opens at
+once:</p>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>baclct-napari<span class="w"> </span>images.tif<span class="w"> </span>masks.tif
+</pre></div>
+</code></pre>
+<p>It takes the same tracking flags as <code>baclct-track</code>, and the plugin is also reachable the
+usual way, under <strong>Plugins → BacLCT</strong>.</p>
+<h3>Pre-trained Models</h3>
+<p>Three pre-trained models for bacteria tracking are available by name, optionally with life
+cycle state classification. They were trained on two datasets, each model on the subset
+listed in the table below: bright-field sequences of germinating and outgrowing <em>B.
+subtilis</em> spores with annotated trajectories and life cycle states
+(<a href="https://doi.org/10.5281/zenodo.21805068">https://doi.org/10.5281/zenodo.21805068</a>) and phase-contrast sequences of growing <em>C.
+glutamicum</em> microcolonies with annotated trajectories (TOIAM, <a href="https://doi.org/10.5281/zenodo.7260136">Seiffarth et al.
+2025</a>).</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Use case</th>
+<th>Trained on</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>baclct_track</code></td>
+<td>Bacteria tracking and division detection. Bright-field and phase-contrast. Default.</td>
+<td>Spores + TOIAM</td>
+</tr>
+<tr>
+<td><code>baclct_spore_classification_bf</code></td>
+<td>Bacteria tracking and division detection. Life cycle state classification for <em>B. subtilis</em> spore germination and outgrowth. Bright-field. Used in paper.</td>
+<td>Spores</td>
+</tr>
+<tr>
+<td><code>baclct_toiam_pc</code></td>
+<td>Bacteria tracking and division detection. Phase-contrast. Used in paper.</td>
+<td>TOIAM</td>
+</tr>
+</tbody>
+</table>
+<p>The models are downloaded automatically from the GitHub release on first use. A model is an
+experiment directory containing the config it was trained with and a checkpoint.</p>
+<h2>Training</h2>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>baclct-train<span class="w"> </span><span class="nv">dataset</span><span class="o">=</span>spores<span class="w"> </span><span class="nv">task</span><span class="o">=</span>tracking_with_states<span class="w"> </span><span class="nv">fold</span><span class="o">=</span><span class="m">0</span>
+baclct-train<span class="w"> </span><span class="nv">dataset</span><span class="o">=</span>toiam<span class="w"> </span><span class="nv">task</span><span class="o">=</span>tracking<span class="w"> </span><span class="nv">fold</span><span class="o">=</span><span class="m">0</span>
+</pre></div>
+</code></pre>
+<p>A run requires a configured <code>dataset</code> and <code>task</code> (see the directories in
+<code>src/baclct/config/</code>). The <code>dataset</code> defines the data and its graph parameters, and the
+<code>task</code> selects whether life cycle states and divisions are predicted. <code>fold</code> selects the
+cross-validation split and defaults to 0.</p>
+<p>Datasets are read from <code>paths.data_dir</code> in <a href="https://celltrackingchallenge.net/datasets/">CTC
+format</a>. Next to the sequences, a
+<code>splits.yaml</code> maps each fold to train, val, and test sequence IDs, and an optional
+<code>states.txt</code> holds per-cell life cycle states. The splits used in the paper are in
+<code>examples/splits/</code>. Caching is mandatory for training: node features, DINO embeddings, and
+candidate edges are always written under <code>paths.feature_dir</code> and stay below 1 GB for a
+typical sequence, growing to a few GB for long or very dense ones.</p>
+<p>To train on your own data, copy the annotated
+<a href="examples/configs/dataset/example.yaml"><code>examples/configs/dataset/example.yaml</code></a>, adjust the
+graph parameters to your images, and pass it with <code>--config-dir</code>:</p>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>baclct-train<span class="w"> </span>--config-dir<span class="w"> </span>examples/configs<span class="w"> </span><span class="nv">dataset</span><span class="o">=</span>example<span class="w"> </span><span class="nv">task</span><span class="o">=</span>tracking<span class="w"> </span><span class="nv">fold</span><span class="o">=</span><span class="m">0</span>
+</pre></div>
+</code></pre>
+<p>BacLCT is configured with <a href="https://hydra.cc">Hydra</a>, so any key can be overridden on the
+command line or swept with <code>--multirun</code>. See the
+<a href="https://baclct.readthedocs.io">documentation</a> for the config groups and for reproducing
+the paper's folds and ablations.</p>
+<h2>Citation</h2>
+<blockquote>
+<p>Kunzmann, M., Elizondo-Cantú, M. C., Bischofs, I. B., Rohr, K. Bacteria tracking and
+life cycle state classification using graph neural networks and pretrained vision
+transformers. <em>Medical Image Analysis</em>, 104275 (2026).
+<a href="https://doi.org/10.1016/j.media.2026.104275">doi:10.1016/j.media.2026.104275</a></p>
+</blockquote>
+<p>When using the models with DINO-pretrained ViT features, please also cite <a href="https://arxiv.org/abs/2104.14294">Caron et al.,
+ICCV 2021</a>.</p>
+<h2>Declaration of generative AI use</h2>
+<p>Parts of the codebase were developed with AI assistance (Claude Code). This was used
+primarily for refactoring, organizing code and tests (e.g., converting existing notebooks
+into integration tests), packaging and parts of the documentation (e.g., Sphinx),
+debugging, as well as runtime and memory optimization (e.g., replacing existing code with
+faster libraries). Some components, notably several tests and the napari plugin, started
+as generated drafts that were subsequently corrected, partly reimplemented, or heavily
+refactored manually. Core functionality was ported from the author's previous
+implementation of this work. Where new functionality was generated, it was validated
+against the previous implementation, existing benchmarks, or hand-written tests. All
+generated code was reviewed and validated by the author.</p>
 
 
                                     </div>
@@ -266,7 +410,7 @@ Inspetion and analysis tools by adding the <a href="https://napari.org/stable/pl
                                                     released<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2025-08-13</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-09-15</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -277,7 +421,7 @@ Inspetion and analysis tools by adding the <a href="https://napari.org/stable/pl
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
                                                     <li class="MetadataList_textItem__KKmMN">
-                                                            GNU LESSER GENERAL PUBLIC LICE...
+                                                            MIT
                                                     </li>
                                                 </ul>
                                             </div>
@@ -303,21 +447,21 @@ Inspetion and analysis tools by adding the <a href="https://napari.org/stable/pl
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">Plugin
                                                     type<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=reader">Reader</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=widget">Widget</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=sample_data">Sample_data</a></li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=writer">Writer</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=widget">Widget</a></li></ul>
                                             </div>
                                         </div>
                                         <div class="text-sm">
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">Open
                                                     extension<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?readerFileExtensions=*.brim.zip">*.brim.zip</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?readerFileExtensions=*.brim.zarr">*.brim.zarr</a></li></ul>
+                                                    
                                             </div>
                                         </div>
                                         <div class="text-sm">
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">Save
                                                     extension<!-- -->:</p>
-                                                    
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?writerFileExtensions=.csv">.csv</a></li></ul>
                                             </div>
                                         </div>
                                     </div>
@@ -334,7 +478,7 @@ Inspetion and analysis tools by adding the <a href="https://napari.org/stable/pl
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">Python versions
                                                     supported<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.11">3.11</a></li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"></ul>
                                             </div>
                                         </div>
                                         <div class="text-sm">
@@ -353,7 +497,7 @@ Inspetion and analysis tools by adding the <a href="https://napari.org/stable/pl
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">
                                                     Requirements<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">brimfile[remote-store]<2.0.0,>=1.6.0</li><li class="MetadataList_textItem__KKmMN">matplotlib; extra == "plotting"</li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">bioio-tifffile>=1.3.0</li><li class="MetadataList_textItem__KKmMN">bioio>=3.5.0</li><li class="MetadataList_textItem__KKmMN">dask</li><li class="MetadataList_textItem__KKmMN">fastremap</li><li class="MetadataList_textItem__KKmMN">hydra-colorlog>=1.2.0</li><li class="MetadataList_textItem__KKmMN">hydra-core>=1.3</li><li class="MetadataList_textItem__KKmMN">lightning>=2.5.5</li><li class="MetadataList_textItem__KKmMN">networkx</li><li class="MetadataList_textItem__KKmMN">omegaconf</li><li class="MetadataList_textItem__KKmMN">platformdirs</li><li class="MetadataList_textItem__KKmMN">polars>=1.35.0</li><li class="MetadataList_textItem__KKmMN">pooch</li><li class="MetadataList_textItem__KKmMN">pyarrow>=21.0.0</li><li class="MetadataList_textItem__KKmMN">pyyaml</li><li class="MetadataList_textItem__KKmMN">rustworkx>=0.17</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">scikit-learn</li><li class="MetadataList_textItem__KKmMN">scipy</li><li class="MetadataList_textItem__KKmMN">tifffile</li><li class="MetadataList_textItem__KKmMN">torch-geometric>=2.7</li><li class="MetadataList_textItem__KKmMN">torch>=2.0</li><li class="MetadataList_textItem__KKmMN">torchvision</li><li class="MetadataList_textItem__KKmMN">tqdm</li><li class="MetadataList_textItem__KKmMN">typer</li><li class="MetadataList_textItem__KKmMN">zarr</li><li class="MetadataList_textItem__KKmMN">magicgui; extra == 'napari'</li><li class="MetadataList_textItem__KKmMN">napari>=0.5; extra == 'napari'</li><li class="MetadataList_textItem__KKmMN">pyqt6; extra == 'napari'</li><li class="MetadataList_textItem__KKmMN">qtpy; extra == 'napari'</li><li class="MetadataList_textItem__KKmMN">superqt; extra == 'napari'</li><li class="MetadataList_textItem__KKmMN">vispy<0.16; extra == 'napari'</li><li class="MetadataList_textItem__KKmMN">cmap<0.8,>=0.7.2; extra == 'train'</li><li class="MetadataList_textItem__KKmMN">matplotlib; extra == 'train'</li><li class="MetadataList_textItem__KKmMN">py-ctcmetrics==1.3.2; extra == 'train'</li><li class="MetadataList_textItem__KKmMN">rich; extra == 'train'</li><li class="MetadataList_textItem__KKmMN">seaborn; extra == 'train'</li><li class="MetadataList_textItem__KKmMN">tensorboard>=2.20.0; extra == 'train'</li><li class="MetadataList_textItem__KKmMN">torchmetrics; extra == 'train'</li></ul>
                                             </div>
                                         </div>
                                     </div>
