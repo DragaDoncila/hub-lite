@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.4.2</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.5.0</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-08-29</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-09-20</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -224,8 +224,9 @@
 <p>❗❗❗WARNING❗❗❗ Nuclephaser &gt;= 0.4.0 uses modified sliced inference algorithm. Prediction results with same models and parameters using NuclePhaser &lt; 0.4.0 and &gt;= 0.4.0 will not reproduce exactly! There will be slight difference in bounding boxes geometry / points location (less errors), but the difference in nuclei count should be minimal (if any).</p>
 <p>⭐NEW⭐ If default NuclePhaser models aren't accurate enough on your specific use case, you can finetune them for free with cloud GPU using <a href="https://colab.research.google.com/drive/1hKMVQqYS0I_GrkYvdz23tPc8FCv2oJvh?usp=sharing">Google Colab NuclePhaser finetuning notebook</a>. It is specifically designed for users without coding experience.</p>
 <p>⭐NEW⭐ NuclePhaser &gt;= 0.2.5 supports calibration on multiple images (with Calibrate with points widget), which provides more stable detection across time series.</p>
-<p>⭐NEW⭐ NuclePhaser &gt;= 0.3.0 supports Test-Time Augmentations, which can increase accuracy by sacrificing inference time. Learn more with <a href="https://napari-nuclephaser.readthedocs.io/en/latest/index.html">documentation</a>.</p>
-<p>⭐NEW⭐ NuclePhaser &gt;= 0.4.0 supports Dynamic Confidence threshold, which allows adapting to changing microscopy conditions, such as contrast, defocus, magnification and cell density. Learn more with <a href="https://napari-nuclephaser.readthedocs.io/en/latest/index.html">documentation</a>.</p>
+<p>⭐NEW⭐ NuclePhaser &gt;= 0.3.0 supports Test-Time Augmentations, which can increase accuracy by sacrificing inference time. Learn more with <a href="https://napari-nuclephaser.readthedocs.io/en/latest/General%20information/Test-time%20augmentations%20%28TTA%29.html">documentation</a>.</p>
+<p>⭐NEW⭐ NuclePhaser &gt;= 0.4.0 supports Dynamic Confidence threshold, which allows adapting to changing microscopy conditions, such as contrast, defocus, magnification and cell density. Learn more with <a href="https://napari-nuclephaser.readthedocs.io/en/latest/General%20information/Dynamic%20confidence%20threshold.html">documentation</a>.</p>
+<p>⭐NEW⭐ NuclePhaser &gt;= 0.5.0 supports creating density maps of growing cell population that allow learning spatial density distribution characteristics and can serve as beautiful representative images for a publication figure. Learn more with <a href="https://napari-nuclephaser.readthedocs.io/en/latest/General%20information/Density%20maps.html">documentation</a>.</p>
 <h2>Nuclei detection</h2>
 <p>We trained a series of <a href="https://github.com/ultralytics/yolov5">YOLOv5</a> and <a href="https://github.com/ultralytics/ultralytics">YOLOv11</a> models to detect nuclei on phase contrast images. It can be used for counting cells or for individual cell tracking (using nuclei detections as tracking markers). Prominent features of this approach are:</p>
 <ul>
@@ -452,7 +453,7 @@ the coverage at least stays the same before you submit a pull request.</p>
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.4.2</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.5.0</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -462,7 +463,7 @@ the coverage at least stays the same before you submit a pull request.</p>
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-08-29</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-09-20</li>
                                                 </ul>
                                             </div>
                                         </div>
