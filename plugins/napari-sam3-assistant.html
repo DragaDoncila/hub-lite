@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">4.4.0</li>
+                                            <li class="MetadataList_textItem__KKmMN">4.5.0</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-05-25</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-09-23</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -211,7 +211,7 @@
 
                                         <p><a href="https://doi.org/10.5281/zenodo.20367206"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.20367206.svg" alt="DOI" /></a></p>
 <p><img src="docs/ui.png" alt="napari-sam3-assistant UI" /></p>
-<p>Latest version: <code>4.4.0</code></p>
+<p>Latest version: <code>4.5.0</code></p>
 <p><code>napari-sam3-assistant</code> is a napari plugin for local Segment Anything Model 3
 (SAM3) segmentation. It provides:</p>
 <ul>
@@ -252,6 +252,7 @@ candidates, merge labels/layers, inspect overlap, and export final masks.</li>
 <li><a href="docs/mask_operations.md">Mask operations</a></li>
 <li><a href="docs/troubleshooting.md">Troubleshooting</a></li>
 <li><a href="docs/huge_volume_mode.md">Huge Volume Mode</a></li>
+<li><a href="docs/workspace_manager.md">Workspace Manager</a></li>
 </ol>
 <p>Specialized setup:</p>
 <ul>
@@ -275,6 +276,13 @@ candidates, merge labels/layers, inspect overlap, and export final masks.</li>
 <li>Use <code>Mask Ops</code> or <code>Plugins &gt; SAM3 Mask Operations</code> when the preview needs
 cleanup, merge, or export.</li>
 </ol>
+<p>For a large image in <code>Simple &gt; Exemplar</code>, enable tiled inference, select the
+tile size and overlap, then use <code>Run Current ROI</code> to test the real scan-grid
+tile nearest the exemplar. If the preview is acceptable, use <code>Scan Full Image</code>.
+The preview and full scan share the same tile inference path: a tile containing
+the exemplar keeps its natural pixels and localized box, other tiles receive a
+context-preserving reference, and SAM3 instance IDs remain separate during
+composition.</p>
 <p>For full setup commands, see <a href="docs/installation.md">Installation</a>.</p>
 <h2>Requirements</h2>
 <ul>
@@ -366,7 +374,7 @@ receives the polygon's bounding rectangle, not the exact polygon contour.</p>
 <li>Review <code>SAM3 tiled exemplar labels</code> and <code>SAM3 tiled exemplar boxes</code>.</li>
 <li>Use <code>SAM3 Mask Operations</code> for cleanup, isolation, merge, and export.</li>
 </ol>
-<p>Tiled exemplar scans are a search workflow, not an exact repeat of <code>Run Current ROI Only</code>. The current tiled scan uses one exemplar crop as a visual reference for each tile by composing an exemplar-plus-tile image, then writes the tile-side result back to the full canvas. Multiple boxes in the current ROI can help <code>Run Current ROI Only</code> when they overlap that ROI, but tiled scan currently uses the first collected exemplar crop as the default reference for all tiles.</p>
+<p><code>Run Current ROI Only</code> snaps to the real scan-grid tile nearest the exemplar and uses the same inference path as <code>Scan Full Image by Tiles</code>. A tile containing the exemplar is processed with its natural pixels and the original box localized into that tile. Other tiles receive a context-preserving reference crop with the smaller original box retained inside it. SAM3 instance IDs remain separate during composition, including when neighboring masks touch. The final combined scan can still differ in overlapping regions because earlier tiles take precedence, and optional seam merging runs after all tile results are composed.</p>
 <p>Experimental folder batch loop:</p>
 <ol>
 <li>In Advanced <code>Exemplar segmentation</code>, load one representative image or crop.</li>
@@ -421,12 +429,12 @@ tasks rather than exact layout alone.</p>
 behavior, mask operation services, and static widget UI checks. It does not
 download SAM3 weights.</p>
 <h2>Citation</h2>
-<p>If you use <code>napari-sam3-assistant</code> in your work, please cite the Zenodo archive for version <code>4.4.0</code>:</p>
-<p>Teo, Wulin. (2026). <code>napari-sam3-assistant</code> (Version 4.4.0) [Computer software]. Zenodo. <a href="https://doi.org/10.5281/zenodo.20367206">https://doi.org/10.5281/zenodo.20367206</a></p>
+<p>If you use <code>napari-sam3-assistant</code> in your work, please cite the Zenodo archive for version <code>4.5.0</code>:</p>
+<p>Teo, Wulin. (2026). <code>napari-sam3-assistant</code> (Version 4.5.0) [Computer software]. Zenodo. <a href="https://doi.org/10.5281/zenodo.20367206">https://doi.org/10.5281/zenodo.20367206</a></p>
 <pre><code class="language-bibtex"><div class="highlight"><pre><span></span><span class="nd">@software</span><span class="p">{</span><span class="n">teo_2026_napari_sam3_assistant</span><span class="p">,</span>
   <span class="n">author</span> <span class="o">=</span> <span class="p">{</span><span class="n">Teo</span><span class="p">,</span> <span class="n">Wulin</span><span class="p">},</span>
   <span class="n">title</span> <span class="o">=</span> <span class="p">{</span><span class="n">napari</span><span class="o">-</span><span class="n">sam3</span><span class="o">-</span><span class="n">assistant</span><span class="p">},</span>
-  <span class="n">version</span> <span class="o">=</span> <span class="p">{</span><span class="mf">4.4.0</span><span class="p">},</span>
+  <span class="n">version</span> <span class="o">=</span> <span class="p">{</span><span class="mf">4.5.0</span><span class="p">},</span>
   <span class="n">year</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2026</span><span class="p">},</span>
   <span class="n">publisher</span> <span class="o">=</span> <span class="p">{</span><span class="n">Zenodo</span><span class="p">},</span>
   <span class="n">doi</span> <span class="o">=</span> <span class="p">{</span><span class="mf">10.5281</span><span class="o">/</span><span class="n">zenodo</span><span class="mf">.20367206</span><span class="p">},</span>
@@ -460,7 +468,7 @@ Methodist Research Institute.</p>
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">4.4.0</li>
+                                                    <li class="MetadataList_textItem__KKmMN">4.5.0</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -470,7 +478,7 @@ Methodist Research Institute.</p>
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-05-25</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-09-23</li>
                                                 </ul>
                                             </div>
                                         </div>
