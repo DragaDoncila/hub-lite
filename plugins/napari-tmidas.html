@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.5.15</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.5.16</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-08-31</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-09-25</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -156,7 +156,7 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Requirements<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy>=1.23.0</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">tqdm</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">scikit-image>=0.19.0</li><li class="MetadataList_textItem__KKmMN">pyqt5</li><li class="MetadataList_textItem__KKmMN">zarr>=3</li><li class="MetadataList_textItem__KKmMN">ome-zarr</li><li class="MetadataList_textItem__KKmMN">napari-ome-zarr</li><li class="MetadataList_textItem__KKmMN">nd2</li><li class="MetadataList_textItem__KKmMN">pylibCZIrw</li><li class="MetadataList_textItem__KKmMN">readlif</li><li class="MetadataList_textItem__KKmMN">tifffile<2025.5.21,>=2023.7.4</li><li class="MetadataList_textItem__KKmMN">tiffslide</li><li class="MetadataList_textItem__KKmMN">acquifer-napari</li><li class="MetadataList_textItem__KKmMN">psygnal>=0.9.0</li><li class="MetadataList_textItem__KKmMN">ome-zarr>=0.8.0</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest>=7.0.0; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-timeout; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt5; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">psygnal>=0.8.0; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari-tmidas[testing]; extra == "all"</li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy>=1.23.0</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">tqdm</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">scikit-image>=0.19.0</li><li class="MetadataList_textItem__KKmMN">pyqt5</li><li class="MetadataList_textItem__KKmMN">zarr>=3</li><li class="MetadataList_textItem__KKmMN">ome-zarr</li><li class="MetadataList_textItem__KKmMN">napari-ome-zarr</li><li class="MetadataList_textItem__KKmMN">nd2</li><li class="MetadataList_textItem__KKmMN">pylibCZIrw</li><li class="MetadataList_textItem__KKmMN">readlif</li><li class="MetadataList_textItem__KKmMN">tifffile<2025.5.21,>=2023.7.4</li><li class="MetadataList_textItem__KKmMN">tiffslide</li><li class="MetadataList_textItem__KKmMN">acquifer-napari</li><li class="MetadataList_textItem__KKmMN">psygnal>=0.9.0</li><li class="MetadataList_textItem__KKmMN">ome-zarr>=0.8.0</li><li class="MetadataList_textItem__KKmMN">uv</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest>=7.0.0; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-timeout; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt5; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">psygnal>=0.8.0; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari-tmidas[testing]; extra == "all"</li></ul>
                                     </div>
                                 </div>
                             </div>
@@ -246,20 +246,22 @@
 <li>Segmentation → Tracking → Quantification → Colocalization</li>
 </ul>
 <h2>🚀 Quick Start</h2>
-<p>Supports Python 3.11+; commands below use Python 3.12.</p>
-<pre><code class="language-sh"><div class="highlight"><pre><span></span><span class="c1"># Install napari and the plugin</span>
-mamba<span class="w"> </span>create<span class="w"> </span>-y<span class="w"> </span>-n<span class="w"> </span>napari-tmidas<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.12
-mamba<span class="w"> </span>activate<span class="w"> </span>napari-tmidas
-pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"napari[all]"</span>
-pip<span class="w"> </span>install<span class="w"> </span>napari-tmidas
+<p>Supports Python 3.11+; commands below use Python 3.12. We recommend installing with <a href="https://docs.astral.sh/uv/">uv</a>, which downloads Python for you — no conda needed.</p>
+<pre><code class="language-sh"><div class="highlight"><pre><span></span><span class="c1"># 1. Install uv (one-time; Windows: see Installation below)</span>
+curl<span class="w"> </span>-LsSf<span class="w"> </span>https://astral.sh/uv/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
 
-<span class="c1"># Launch napari</span>
+<span class="c1"># 2. Create an environment with napari and the plugin</span>
+uv<span class="w"> </span>venv<span class="w"> </span>--python<span class="w"> </span><span class="m">3</span>.12<span class="w"> </span>~/napari-tmidas-env
+<span class="nb">source</span><span class="w"> </span>~/napari-tmidas-env/bin/activate
+uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"napari[all]"</span><span class="w"> </span>napari-tmidas
+
+<span class="c1"># 3. Launch napari</span>
 napari
 </pre></div>
 </code></pre>
 <p>Then find napari-tmidas in the <strong>Plugins</strong> menu. <a href="https://www.youtube.com/@macromeer/videos">Watch video tutorials →</a></p>
 <blockquote>
-<p><strong>💡 Tip</strong>: AI methods (SAM2, Cellpose, Spotiflow, etc.) auto-install into isolated environments on first use - no manual setup required!</p>
+<p><strong>💡 Tip</strong>: AI methods (SAM2, Cellpose, Spotiflow, etc.) auto-install into isolated environments on first use - no manual setup required! They are built with <a href="https://docs.astral.sh/uv/">uv</a>, which also downloads a different Python where a method needs one. If you install packages through a mirror configured in <code>pip.conf</code> (uv does not read it), set <code>NAPARI_TMIDAS_NO_UV=1</code> to build them with pip instead.</p>
 </blockquote>
 <blockquote>
 <p><strong>⚠️ Before a batch run</strong>: set <strong>Dimension Order</strong> (top of the batch widget) to match your data — <code>TZYX</code> for a 3D time series, <code>ZYX</code> for a Z-stack, <code>TYX</code> for a 2D movie. Most microscopy TIFFs carry no usable axis metadata, so on <code>Auto</code> a function that builds 3D objects cannot tell Z from T: it will either stop with an error or label the same object once per Z slice. The widget reads each file's rank up front, shows it next to the dropdown, and warns before the run starts.</p>
@@ -333,31 +335,68 @@ napari
 <li><a href="docs/multichannel_processing.md">Multichannel Processing</a> - Channel selection and per-channel processing</li>
 </ul>
 <h2>💻 Installation</h2>
-<h3>Step 1: Install napari</h3>
-<pre><code class="language-sh"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>create<span class="w"> </span>-y<span class="w"> </span>-n<span class="w"> </span>napari-tmidas<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.12
-mamba<span class="w"> </span>activate<span class="w"> </span>napari-tmidas
-python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"napari[all]"</span>
+<h3>Recommended: uv</h3>
+<p><strong>1. Install uv</strong> (one-time). Close and reopen your terminal afterwards so <code>uv</code> is on your <code>PATH</code>.</p>
+<pre><code class="language-sh"><div class="highlight"><pre><span></span><span class="c1"># macOS / Linux</span>
+curl<span class="w"> </span>-LsSf<span class="w"> </span>https://astral.sh/uv/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
+
+<span class="c1"># Windows (PowerShell)</span>
+powershell<span class="w"> </span>-ExecutionPolicy<span class="w"> </span>ByPass<span class="w"> </span>-c<span class="w"> </span><span class="s2">"irm https://astral.sh/uv/install.ps1 | iex"</span>
 </pre></div>
 </code></pre>
-<h3>Step 2: Install napari-tmidas</h3>
+<p><strong>2. Create an environment and install napari with the plugin.</strong> uv downloads Python 3.12 if you don't have it. On Windows (PowerShell), write <code>$HOME\napari-tmidas-env</code> wherever these commands say <code>~/napari-tmidas-env</code>.</p>
+<pre><code class="language-sh"><div class="highlight"><pre><span></span>uv<span class="w"> </span>venv<span class="w"> </span>--python<span class="w"> </span><span class="m">3</span>.12<span class="w"> </span>~/napari-tmidas-env
+<span class="nb">source</span><span class="w"> </span>~/napari-tmidas-env/bin/activate<span class="w">      </span><span class="c1"># Windows: $HOME\napari-tmidas-env\Scripts\activate</span>
+uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"napari[all]"</span><span class="w"> </span>napari-tmidas
+</pre></div>
+</code></pre>
 <table>
 <thead>
 <tr>
 <th>Your Needs</th>
-<th>Command</th>
+<th>Command (in the activated environment)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Standard installation</strong></td>
-<td><code>pip install napari-tmidas</code></td>
+<td><code>uv pip install napari-tmidas</code></td>
 </tr>
 <tr>
 <td><strong>Want the latest dev features</strong></td>
-<td><code>pip install git+https://github.com/MercaderLabAnatomy/napari-tmidas.git</code></td>
+<td><code>uv pip install &quot;napari-tmidas @ git+https://github.com/MercaderLabAnatomy/napari-tmidas.git&quot;</code></td>
 </tr>
 </tbody>
 </table>
+<p><strong>3. Start napari</strong> whenever you want to use it: activate the environment, then run <code>napari</code>.</p>
+<pre><code class="language-sh"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>~/napari-tmidas-env/bin/activate<span class="w">      </span><span class="c1"># Windows: $HOME\napari-tmidas-env\Scripts\activate</span>
+napari
+</pre></div>
+</code></pre>
+<h3>Updating napari-tmidas</h3>
+<p>Activate the environment, then upgrade the package:</p>
+<pre><code class="language-sh"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>~/napari-tmidas-env/bin/activate<span class="w">      </span><span class="c1"># Windows: $HOME\napari-tmidas-env\Scripts\activate</span>
+
+<span class="c1"># Installed from PyPI (standard installation)</span>
+uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>napari-tmidas
+
+<span class="c1"># Installed from GitHub (dev version): fetches the newest commit</span>
+uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span><span class="s2">"napari-tmidas @ git+https://github.com/MercaderLabAnatomy/napari-tmidas.git"</span>
+
+<span class="c1"># Check which version you have</span>
+uv<span class="w"> </span>pip<span class="w"> </span>show<span class="w"> </span>napari-tmidas
+</pre></div>
+</code></pre>
+<p><code>--upgrade</code> also brings napari-tmidas's dependencies (which can include napari) up to their newest compatible versions. To upgrade only napari-tmidas and leave everything else as it is, use <code>uv pip install --upgrade-package napari-tmidas napari-tmidas</code> instead. The AI methods' own environments in <code>~/.napari-tmidas/envs</code> are separate and are left as they are. If one misbehaves after an update, delete its folder (e.g. <code>~/.napari-tmidas/envs/cellpose</code>) and it is rebuilt the next time you use that method. To update uv itself, run <code>uv self update</code>.</p>
+<details>
+<summary><b>Alternative: conda / mamba</b></summary>
+<pre><code class="language-sh"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>create<span class="w"> </span>-y<span class="w"> </span>-n<span class="w"> </span>napari-tmidas<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.12
+mamba<span class="w"> </span>activate<span class="w"> </span>napari-tmidas
+python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"napari[all]"</span><span class="w"> </span>napari-tmidas
+</pre></div>
+</code></pre>
+<p>Update with <code>python -m pip install --upgrade napari-tmidas</code> inside the activated environment. conda is not needed by the AI methods: their environments are built with uv either way.</p>
+</details>
 <h2>🖼️ Screenshots</h2>
 <details>
 <summary><b>File Conversion Widget</b></summary>
@@ -393,11 +432,14 @@ python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </sp
 <li><code>Resize Zarr by YX Scale (OME-Zarr native)</code> writes <strong>zarr v3</strong> stores: attributes live in <code>zarr.json</code> (multiscales nested under an <code>ome</code> key), not in a v2 <code>.zattrs</code>. Anything downstream that reads <code>.zattrs</code> directly will find no file there — use <a href="src/napari_tmidas/processing_functions/ome_output_utils.py"><code>ome_output_utils._read_root_attrs()</code></a>, which handles both layouts.</li>
 </ul>
 <h2>🤝 Contributing</h2>
-<p>Contributions are welcome! Please ensure tests pass before submitting PRs:</p>
-<pre><code class="language-sh"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>tox
-tox
+<p>Contributions are welcome! Development uses <a href="https://docs.astral.sh/uv/">uv</a>; dependency versions are pinned in <code>uv.lock</code>, which CI installs exactly. Please ensure tests pass before submitting PRs:</p>
+<pre><code class="language-sh"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/MercaderLabAnatomy/napari-tmidas.git
+<span class="nb">cd</span><span class="w"> </span>napari-tmidas
+uv<span class="w"> </span>sync<span class="w">                          </span><span class="c1"># creates .venv with the package and dev tools</span>
+uv<span class="w"> </span>run<span class="w"> </span>pytest<span class="w"> </span>-m<span class="w"> </span><span class="s2">"not slow"</span><span class="w">      </span><span class="c1"># run the test suite</span>
 </pre></div>
 </code></pre>
+<p>After changing dependencies in <code>pyproject.toml</code>, run <code>uv lock</code> and commit the updated <code>uv.lock</code>. <code>tox</code> still works for testing against a fresh resolve.</p>
 <h2>📄 License</h2>
 <p>BSD-3 License - see <a href="LICENSE">LICENSE</a> for details.</p>
 <h2>🐛 Issues</h2>
@@ -432,7 +474,7 @@ tox
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.5.15</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.5.16</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -442,7 +484,7 @@ tox
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-08-31</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-09-25</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -539,7 +581,7 @@ tox
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">
                                                     Requirements<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy>=1.23.0</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">tqdm</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">scikit-image>=0.19.0</li><li class="MetadataList_textItem__KKmMN">pyqt5</li><li class="MetadataList_textItem__KKmMN">zarr>=3</li><li class="MetadataList_textItem__KKmMN">ome-zarr</li><li class="MetadataList_textItem__KKmMN">napari-ome-zarr</li><li class="MetadataList_textItem__KKmMN">nd2</li><li class="MetadataList_textItem__KKmMN">pylibCZIrw</li><li class="MetadataList_textItem__KKmMN">readlif</li><li class="MetadataList_textItem__KKmMN">tifffile<2025.5.21,>=2023.7.4</li><li class="MetadataList_textItem__KKmMN">tiffslide</li><li class="MetadataList_textItem__KKmMN">acquifer-napari</li><li class="MetadataList_textItem__KKmMN">psygnal>=0.9.0</li><li class="MetadataList_textItem__KKmMN">ome-zarr>=0.8.0</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest>=7.0.0; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-timeout; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt5; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">psygnal>=0.8.0; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari-tmidas[testing]; extra == "all"</li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy>=1.23.0</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">tqdm</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">scikit-image>=0.19.0</li><li class="MetadataList_textItem__KKmMN">pyqt5</li><li class="MetadataList_textItem__KKmMN">zarr>=3</li><li class="MetadataList_textItem__KKmMN">ome-zarr</li><li class="MetadataList_textItem__KKmMN">napari-ome-zarr</li><li class="MetadataList_textItem__KKmMN">nd2</li><li class="MetadataList_textItem__KKmMN">pylibCZIrw</li><li class="MetadataList_textItem__KKmMN">readlif</li><li class="MetadataList_textItem__KKmMN">tifffile<2025.5.21,>=2023.7.4</li><li class="MetadataList_textItem__KKmMN">tiffslide</li><li class="MetadataList_textItem__KKmMN">acquifer-napari</li><li class="MetadataList_textItem__KKmMN">psygnal>=0.9.0</li><li class="MetadataList_textItem__KKmMN">ome-zarr>=0.8.0</li><li class="MetadataList_textItem__KKmMN">uv</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest>=7.0.0; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-timeout; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt5; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">psygnal>=0.8.0; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari-tmidas[testing]; extra == "all"</li></ul>
                                             </div>
                                         </div>
                                     </div>
