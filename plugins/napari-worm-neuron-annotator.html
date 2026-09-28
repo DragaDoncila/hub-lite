@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.4.3</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.4.4</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-09-07</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-09-28</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -281,6 +281,32 @@ neuron.</p>
 <p>The ROI array defines the neuron list. Labels layers are not used for
 selection, box rendering, annotation, centering, time navigation, or Z-layer
 display.</p>
+<h2>Behavior display</h2>
+<p>The optional <strong>Behavior</strong> panel loads a read-only <code>.xlsx</code> workbook. Each
+worksheet name is one behavior label, and each non-empty data row uses the
+first two columns as the zero-based start volume and duration in volumes. A
+single optional textual header row is accepted. For example, the row <code>10, 3</code> is active
+on volumes 10, 11, and 12: behavior intervals are half-open
+<code>[start, start + duration)</code>.</p>
+<p>Behavior volumes use the same mapping shown in the ROI panel:</p>
+<pre><code class="language-text"><div class="highlight"><pre><span></span>volume = Volume start + Image time * Stride
+</pre></div>
+</code></pre>
+<p>The mapping also works before an ROI is loaded. A 3D Image has no time axis,
+so it always displays behavior for <code>Volume start</code>; Z slices are not treated as
+volumes. If behaviors overlap, their worksheet labels are shown on separate
+lines in workbook order.</p>
+<p>Behavior text defaults to 20 pt, is white, and is fixed to the upper-right
+corner of the napari canvas, so it remains in place while panning or zooming.
+<strong>Show behavior</strong> hides the text without unloading events. <strong>Unload</strong> clears
+the current behavior data and restores the viewer text overlay, including its
+prior font size, from before the workbook was loaded. When an ROI is loaded,
+<strong>Save edits</strong> writes behavior labels and their half-open volume intervals
+into the proofread JSON; loading that JSON restores them without the original
+workbook. Older proofread JSON files without behavior data still load
+normally. The <code>excel</code> extra is needed
+to import <code>.xlsx</code>, but not to load saved behavior from JSON. Behavior display
+does not create or modify Image, Labels, Points, or Vectors layers.</p>
 <h2>Worm orientation</h2>
 <p>The <strong>Worm Orientation</strong> panel rotates the complete viewer clockwise by 0°,
 90°, 180°, or 270° and can flip the final screen horizontally or vertically.
@@ -343,10 +369,12 @@ visibility captured before splitting. Normal napari eye icons may still
 override visibility until the next <strong>Show</strong> selection.</p>
 <h3>Launch the validated 20260304_w3_immobile dataset</h3>
 <p>The repository includes a ready-to-use launcher for the git-ignored local
-dataset at <code>data/20260304_w3_immobile_npy</code>:</p>
+dataset configured in <code>scripts/launch_20260304_w3_immobile.py</code>:</p>
 <pre><code class="language-text"><div class="highlight"><pre><span></span>pixi run launch-actual
 </pre></div>
 </code></pre>
+<p>Pixi selects the <code>excel</code> environment for this task, enabling both annotation
+and Behavior XLSX import without adding Excel dependencies to the base plugin.</p>
 <p>It memory-maps <code>volumes.npy</code> and <code>neuron_point_tuple.npy</code>, opens napari, docks
 the navigator, and loads all 120 ROI identities.</p>
 <h2>ROI input format</h2>
@@ -531,7 +559,7 @@ live in <code>src/napari_worm_neuron_annotator/_widget.py</code>.</p>
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.4.3</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.4.4</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -541,7 +569,7 @@ live in <code>src/napari_worm_neuron_annotator/_widget.py</code>.</p>
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-09-07</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-09-28</li>
                                                 </ul>
                                             </div>
                                         </div>

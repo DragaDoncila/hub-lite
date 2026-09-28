@@ -4,20 +4,20 @@
 
 <head>
     <meta charset="utf-8" />
-    <link href="../plugins/napari-voxtell.html" rel="canonical" />
+    <link href="../plugins/carltonlab-napari-tools.html" rel="canonical" />
     <meta content="width=device-width,initial-scale=1" name="viewport" />
     <meta
-        content="napari-voxtell, Benjamin Hamm, Maximilian Rokuss, napari hub, napari, hub, plugin, image analysis, imaging, chan zuckerberg initiative"
+        content="carltonlab-napari-tools, Carlos Rodriguez, napari hub, napari, hub, plugin, image analysis, imaging, chan zuckerberg initiative"
         name="keywords" />
-    <meta content="Voxtell - Text-promptable segmentation plugin for Napari" name="description" />
-    <meta content="Voxtell - Text-promptable segmentation plugin for Napari" property="og:description" />
-    <meta content="Voxtell - Text-promptable segmentation plugin for Napari." name="twitter:description" />
-    <meta content="VoxTell - napari Plugin - Benjamin Hamm, Maximilian Rokuss" property="og:title" />
-    <meta content="VoxTell - napari Plugin - Benjamin Hamm, Maximilian Rokuss" name="twitter:title" />
+    <meta content="A napari plugin for manual and automated foci counting in microscopy images, developed for RAD-51 foci in C. elegans gonads." name="description" />
+    <meta content="A napari plugin for manual and automated foci counting in microscopy images, developed for RAD-51 foci in C. elegans gonads." property="og:description" />
+    <meta content="A napari plugin for manual and automated foci counting in microscopy images, developed for RAD-51 foci in C. elegans gonads.." name="twitter:description" />
+    <meta content="Carltonlab Count Tool - napari Plugin - Carlos Rodriguez" property="og:title" />
+    <meta content="Carltonlab Count Tool - napari Plugin - Carlos Rodriguez" name="twitter:title" />
     <meta content="article" property="og:type" />
-    <meta content="../plugins/napari-voxtell.html" property="og:url" />
+    <meta content="../plugins/carltonlab-napari-tools.html" property="og:url" />
     <meta content="@napari_imaging" name="twitter:site" />
-    <title>VoxTell - napari Plugin - Benjamin Hamm, Maximilian Rokuss</title>
+    <title>Carltonlab Count Tool - napari Plugin - Carlos Rodriguez</title>
 
     <meta content="2" name="next-head-count" />
     <meta content="#80d1ff" name="theme-color" />
@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.2.0</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.1.0a1</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -90,7 +90,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">First released<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2025-12-27</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-09-28</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -99,8 +99,7 @@
                                         <p class="font-bold whitespace-nowrap">License<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
                                             <li class="MetadataList_textItem__KKmMN">
-                                                Apache License
-               ...
+                                                Copyright (c) 2025, Carlos Rod...
                                             </li>
                                         </ul>
                                     </div>
@@ -113,13 +112,13 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Plugin type<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=reader">Reader</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=widget">Widget</a></li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=widget">Widget</a></li></ul>
                                     </div>
                                 </div>
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Open extension<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?readerFileExtensions=*.nii">*.nii</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?readerFileExtensions=*.nii.gz">*.nii.gz</a></li></ul>
+                                        
                                     </div>
                                 </div>
                                 <div class="text-sm">
@@ -145,7 +144,7 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Python versions supported<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.10">3.10</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.11">3.11</a></li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.11">3.11</a></li></ul>
                                     </div>
                                 </div>
                                 <div class="text-sm">
@@ -157,7 +156,7 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Requirements<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">napari[all]</li><li class="MetadataList_textItem__KKmMN">napari-nifti</li><li class="MetadataList_textItem__KKmMN">httpx</li><li class="MetadataList_textItem__KKmMN">blosc2</li><li class="MetadataList_textItem__KKmMN">voxtell>=0.1.2</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt5; extra == "testing"</li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">napari</li><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">matplotlib</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">ndevio</li><li class="MetadataList_textItem__KKmMN">bioio-tifffile</li><li class="MetadataList_textItem__KKmMN">bioio-dv</li><li class="MetadataList_textItem__KKmMN">multiview-stitcher>=0.1.37</li><li class="MetadataList_textItem__KKmMN">mrc</li><li class="MetadataList_textItem__KKmMN">tifffile</li><li class="MetadataList_textItem__KKmMN">pandas>=2.2.3</li><li class="MetadataList_textItem__KKmMN">scipy</li><li class="MetadataList_textItem__KKmMN">dask</li><li class="MetadataList_textItem__KKmMN">platformdirs</li><li class="MetadataList_textItem__KKmMN">superqt</li><li class="MetadataList_textItem__KKmMN">zarr</li><li class="MetadataList_textItem__KKmMN">bioimageio-spec>=0.5.14.2</li><li class="MetadataList_textItem__KKmMN">napari[all]; extra == "all"</li><li class="MetadataList_textItem__KKmMN">cellpose; extra == "segmentation"</li><li class="MetadataList_textItem__KKmMN">spotiflow; extra == "segmentation"</li><li class="MetadataList_textItem__KKmMN">torch; extra == "segmentation"</li><li class="MetadataList_textItem__KKmMN">cupy-cuda12x; extra == "gpu-cuda12"</li><li class="MetadataList_textItem__KKmMN">napari[all]; extra == "full-cpu"</li><li class="MetadataList_textItem__KKmMN">cellpose; extra == "full-cpu"</li><li class="MetadataList_textItem__KKmMN">spotiflow; extra == "full-cpu"</li><li class="MetadataList_textItem__KKmMN">torch; extra == "full-cpu"</li><li class="MetadataList_textItem__KKmMN">napari[all]; extra == "full-cuda12"</li><li class="MetadataList_textItem__KKmMN">cellpose; extra == "full-cuda12"</li><li class="MetadataList_textItem__KKmMN">spotiflow; extra == "full-cuda12"</li><li class="MetadataList_textItem__KKmMN">torch; extra == "full-cuda12"</li><li class="MetadataList_textItem__KKmMN">cupy-cuda12x; extra == "full-cuda12"</li></ul>
                                     </div>
                                 </div>
                             </div>
@@ -169,26 +168,26 @@
                         <article
                             class="w-full col-span-2 row-start-1 screen-875:col-span-3 screen-1150:col-start-1 screen-1425:col-start-2">
                                 <div class="container" style="display: flex; flex-direction: column;">
-                                    <h1 class="font-bold text-4xl" style="margin-bottom: 20px;" >VoxTell</h1>
+                                    <h1 class="font-bold text-4xl" style="margin-bottom: 20px;" >Carltonlab Count Tool</h1>
                                 </div>
 
                                 
    <div class="flex items-center" style="gap: 20px; ; align-items: center;"">
-        <a class="underline flex" href="https://pypi.org/project/napari-voxtell/" rel="noreferrer" target="_blank">
-        <img src="../static/images/PyPI_logo.svg.png" alt="PyPI" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">napari-voxtell</span>
+        <a class="underline flex" href="https://pypi.org/project/carltonlab-napari-tools/" rel="noreferrer" target="_blank">
+        <img src="../static/images/PyPI_logo.svg.png" alt="PyPI" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">carltonlab-napari-tools</span>
     </a>
     
-        <a class="underline flex" href="https://github.com/MIC-DKFZ/napari-voxtell" rel="noreferrer" target="_blank">
-            <img src="../static/images/GitHub_Invertocat_Logo.svg.png" alt="GitHub" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">MIC-DKFZ/napari-voxtell</span>
+        <a class="underline flex" href="https://github.com/carltonlab/carltonlab-napari-tools/issues" rel="noreferrer" target="_blank">
+            <img src="../static/images/GitHub_Invertocat_Logo.svg.png" alt="GitHub" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">carltonlab/carltonlab-napari-tools</span>
         </a>
         </div>
 
                                 <div class="flex justify-between items-center my-6">
-                                    <h2 class="text-lg">Voxtell - Text-promptable segmentation plugin for Napari</h2>
+                                    <h2 class="text-lg">A napari plugin for manual and automated foci counting in microscopy images, developed for RAD-51 foci in C. elegans gonads.</h2>
                                 </div>
                                 <ul class="PluginAuthors_authors__hs3zO">
                                     <li class="inline">
-                                        <span class="text-[11px] screen-495:text-[14px] font-semibold">Benjamin Hamm, Maximilian Rokuss</span>
+                                        <span class="text-[11px] screen-495:text-[14px] font-semibold">Carlos Rodriguez</span>
                                     </li>
                             </ul>
                             <div class="screen-1425:hidden mt-sds-xl mb-sds-xxl"><a
@@ -210,182 +209,124 @@
                                 <div class="flex items-center justify-between mb-sds-xxl">
                                     <div class="Markdown_markdown__QZ95j">
 
-                                        <div align="center">
-<p><a href="https://arxiv.org/abs/2511.11450"><img src="https://img.shields.io/badge/arXiv-2511.11450-B31B1B.svg" alt="arXiv" /></a> 
-<a href="https://github.com/MIC-DKFZ/VoxTell"><img src="https://img.shields.io/badge/GitHub-VoxTell-181717?logo=github&amp;logoColor=white" alt="GitHub" /></a> 
-<a href="https://huggingface.co/mrokuss/VoxTell"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Model-VoxTell-yellow" alt="Hugging Face" /></a> 
-<a href="https://github.com/gomesgustavoo/voxtell-web-plugin"><img src="https://img.shields.io/badge/web-tool-4CAF50" alt="web tool" /></a> 
-<a href="https://github.com/CCI-Bonn/OHIF-AI"><img src="https://img.shields.io/badge/OHIF-integration-101332" alt="OHIF integration" /></a> 
-<a href="https://github.com/lassoan/SlicerVoxTell"><img src="https://badgen.net/badge/3D%20Slicer/plugin/1f65b0ff?icon=https://raw.githubusercontent.com/Slicer/slicer.org/bc48de2b885e9bb4a725a24ab44b86273014f0ea/assets/img/3D-Slicer-Mark.svg" alt="3D Slicer" /></a>
-<a href="https://github.com/MIC-DKFZ/napari-voxtell"><img src="https://badgen.net/badge/napari/plugin/80d1ff?icon=https://raw.githubusercontent.com/napari/napari/8b74cdfb205338a20a2e63dcbba048007ecd2309/src/napari/resources/logos/gradient-plain-light.svg" alt="napari" /></a> </p>
-</div>
-<img src="https://raw.githubusercontent.com/MIC-DKFZ/napari-voxtell/main/imgs/Logos/VoxTellPluginLogo.png" alt="VoxTell Logo"/>
-<h2>Description</h2>
-<p><strong>napari-voxtell</strong> integrates <a href="https://github.com/MIC-DKFZ/VoxTell">VoxTell</a>, a 3D vision-language segmentation model, into the napari ecosystem. This plugin enables text-based prompting for volumetric medical image segmentation, offering an alternative to traditional interaction methods such as bounding boxes, point clicks, or manual brush strokes, used e.g. in our <a href="https://github.com/MIC-DKFZ/napari-nninteractive">nnInteractive plugin</a>.</p>
-<p>VoxTell accepts free-form text descriptions (e.g., &quot;liver&quot;, &quot;aortic arch&quot;, &quot;brain tumor&quot;) to generate 3D segmentation masks. As an experimental research tool, napari-voxtell is designed to facilitate exploration and prototyping in medical image analysis workflows rather than production clinical use.</p>
-<p><strong>Note:</strong> VoxTell is an ongoing research project and may produce variable results depending on anatomical region, imaging modality, and prompt specificity. Users should validate outputs carefully and not rely on this tool for clinical decision-making without expert review.</p>
-<h2>Features</h2>
-<ul>
-<li>🗣️ <strong>Text-based prompting</strong>: Segment anatomical structures and pathologies using natural language descriptions.</li>
-<li>🧠 <strong>Multi-modality support</strong>: Compatible with CT, MRI, and PET volumetric data.</li>
-<li>🔌 <strong>Seamless napari integration</strong>: Select image layers and visualize results directly within the napari viewer.</li>
-<li>⚙️ <strong>Flexible model loading</strong>: Switch between model versions or load custom checkpoints for experimentation.</li>
-</ul>
-<h2>Important: Image Orientation and Spacing</h2>
-<ul>
-<li>
-<p>⚠️ <strong>Image Orientation (Critical)</strong>: For correct anatomical localization (e.g., distinguishing left from right), images <strong>must be in RAS orientation</strong>. VoxTell was trained on data reoriented using <a href="https://github.com/MIC-DKFZ/nnUNet/blob/86606c53ef9f556d6f024a304b52a48378453641/nnunetv2/imageio/nibabel_reader_writer.py#L101">this specific reader</a>. To make this robust, this plugin ships its own <strong>VoxTell reader</strong> that opens <code>.nii.gz</code> files through exactly that reader (see <a href="#getting-started">Getting Started</a>), and it reorients results back to the image's original orientation on save. A quick way to spot a mismatch is if a simple prompt like &quot;liver&quot; fails and segments e.g. parts of the spleen instead.</p>
-</li>
-<li>
-<p><strong>Image Spacing</strong>: The model does not resample images to a standardized spacing for faster inference. Performance may degrade on images with very uncommon voxel spacings (e.g., super high-resolution brain MRI). In such cases, consider resampling the image to a more typical clinical spacing (e.g., 1.5×1.5×1.5 mm³) before segmentation.</p>
-</li>
-</ul>
-<h2>Installation</h2>
-<h3>1. Create a virtual environment</h3>
-<p>VoxTell supports Python 3.10+ and works with Conda, pip, or any other virtual environment. Here's an example using Conda:</p>
-<pre><code><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">voxtell</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.12</span>
-<span class="n">conda</span> <span class="n">activate</span> <span class="n">voxtell</span>
-</pre></div>
-</code></pre>
-<h3>2. Install PyTorch</h3>
-<p>Install PyTorch compatible with your CUDA version. For example, for Ubuntu with a modern Nvidia GPU:</p>
-<pre><code><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">torch</span> <span class="n">torchvision</span> <span class="o">--</span><span class="n">index</span><span class="o">-</span><span class="n">url</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">download</span><span class="o">.</span><span class="n">pytorch</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">whl</span><span class="o">/</span><span class="n">cu126</span>
-</pre></div>
-</code></pre>
-<p>Any PyTorch &gt;= 2.1.2 works except the 2.9.x series, which has a 3D-convolution memory
-regression (<a href="https://github.com/pytorch/pytorch/issues/166122">pytorch#166122</a>; also excluded by
-VoxTell and nnU-Net).</p>
-<p><em>For other configurations (Mac, CPU, different CUDA versions), please refer to the <a href="https://pytorch.org/get-started/previous-versions/">PyTorch Get Started</a> page.</em></p>
-<h3>3. Install napari-voxtell</h3>
-<p>Install the latest release from PyPI (this also installs
-<a href="https://github.com/MIC-DKFZ/VoxTell">VoxTell</a> 0.1.2 or newer for local inference):</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>napari-voxtell
-</pre></div>
-</code></pre>
-<p>For the development version (the <code>main</code> branch, which may contain unreleased changes), install
-directly from GitHub:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"git+https://github.com/MIC-DKFZ/napari-voxtell.git"</span>
-</pre></div>
-</code></pre>
-<p>For development, clone and install in editable mode (you can also use <a href="https://docs.astral.sh/uv/">uv</a>):</p>
-<pre><code><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">MIC</span><span class="o">-</span><span class="n">DKFZ</span><span class="o">/</span><span class="n">napari</span><span class="o">-</span><span class="n">voxtell</span><span class="o">.</span><span class="n">git</span>
-<span class="n">cd</span> <span class="n">napari</span><span class="o">-</span><span class="n">voxtell</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="o">.</span>
-</pre></div>
-</code></pre>
-<blockquote>
-<p><strong>Note:</strong> Model weights are automatically downloaded from Hugging Face on first use. This may take a few minutes depending on your internet connection.</p>
-</blockquote>
-<h2>Getting Started</h2>
-<p>You can launch the plugin in three ways.</p>
-<blockquote>
-<p>[!IMPORTANT]
-When opening a <code>.nii.gz</code> file, choose the <strong>VoxTell</strong> reader (not <code>napari-nifti</code>). The VoxTell
-reader reorients the volume to <strong>RAS</strong> using the same <code>NibabelIOWithReorient</code> reader the model was
-trained with, which is required for correct left/right and organ localization. Volumes opened with
-other readers may be mis-oriented and produce wrong-side / wrong-organ masks.</p>
-</blockquote>
-<p><strong>Option A: Start napari and activate manually</strong></p>
-<pre><code><div class="highlight"><pre><span></span><span class="n">napari</span>
-</pre></div>
-</code></pre>
-<p>Then go to <strong>Plugins</strong> &gt; <strong>napari-voxtell</strong>.</p>
-<p><strong>Option B: Start napari with the widget open</strong></p>
-<pre><code><div class="highlight"><pre><span></span><span class="n">napari</span> <span class="o">-</span><span class="n">w</span> <span class="n">napari</span><span class="o">-</span><span class="n">voxtell</span>
-</pre></div>
-</code></pre>
-<p><strong>Option C: Open an image directly with the widget</strong></p>
-<pre><code><div class="highlight"><pre><span></span><span class="n">napari</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">your</span><span class="o">/</span><span class="n">image</span><span class="o">.</span><span class="n">nii</span><span class="o">.</span><span class="n">gz</span> <span class="o">-</span><span class="n">w</span> <span class="n">napari</span><span class="o">-</span><span class="n">voxtell</span>
-</pre></div>
-</code></pre>
-<h2>Usage</h2>
-<ol>
-<li><strong>Initialize the Model</strong>:
-<ul>
-<li>Open the VoxTell widget.</li>
-<li>Select your model version from the dropdown (or paste a local custom model path).</li>
-<li>Click <strong>Initialize</strong>. This downloads model weights on first use and takes some time while the model loads.</li>
-</ul>
-</li>
-<li><strong>Select Input</strong>:
-<ul>
-<li>Choose the target image layer from the dropdown menu (opened with the <strong>VoxTell</strong> reader — see above).</li>
-</ul>
-</li>
-<li><strong>Prompt</strong>:
-<ul>
-<li>Type a text description of each structure of interest (e.g., &quot;right kidney&quot;, &quot;lung lesion&quot;, &quot;brainstem&quot;), <strong>one prompt per line</strong>.</li>
-<li>Or pick a group from the <strong>preset</strong> dropdown and click <strong>Add</strong> to append it.</li>
-</ul>
-</li>
-<li><strong>Choose output mode</strong> (optional):
-<ul>
-<li>Leave <strong>Separate layer per prompt</strong> off for one combined multi-label layer, or turn it on for one binary layer per prompt.</li>
-<li>Optionally enable <strong>Keep largest only</strong> and/or set an <strong>Output name</strong>.</li>
-</ul>
-</li>
-<li><strong>Segment</strong>:
-<ul>
-<li>Click <strong>Submit</strong>. Results appear as new Labels layer(s); the in-widget colour legend maps each colour to its prompt.</li>
-</ul>
-</li>
-<li><strong>Save</strong> (optional):
-<ul>
-<li>Use <strong>Save segmentations as NIfTI</strong> to merge all VoxTell layers of the selected image into one labelmap (label values follow prompt line order) in the image's original orientation, alongside a JSON legend.</li>
-</ul>
-</li>
-</ol>
+                                        <p><a href="https://github.com/carltonlab/carltonlab-napari-tools/blob/main/LICENSE"><img src="https://img.shields.io/github/license/carltonlab/carltonlab-napari-tools.svg?color=green" alt="License BSD-3" /></a>
+<a href="https://www.python.org/"><img src="https://img.shields.io/badge/python-3.11%2B-blue.svg" alt="Python 3.11+" /></a>
+<a href="https://github.com/carltonlab/carltonlab-napari-tools/actions/workflows/test_and_deploy.yml"><img src="https://github.com/carltonlab/carltonlab-napari-tools/actions/workflows/test_and_deploy.yml/badge.svg" alt="tests" /></a>
+<a href="https://napari-hub.org/plugins/carltonlab-napari-tools"><img src="https://img.shields.io/endpoint?url=https://api.napari-hub.org/shields/carltonlab-napari-tools" alt="napari hub" /></a>
+<a href="https://napari.org/stable/plugins/index.html"><img src="https://img.shields.io/badge/plugin-npe2-blue?link=https://napari.org/stable/plugins/index.html" alt="npe2" /></a>
+<a href="https://github.com/copier-org/copier"><img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/copier-org/copier/master/img/badge/badge-grayscale-inverted-border-purple.json" alt="Copier" /></a></p>
+<h2>About the plugin</h2>
+<p>Work in progress, please expect bugs V0.1.0</p>
+<p>This napari plugin is a tool designed to computationally count the number of foci in microscopy of
+<em>C. elegans</em> gonads. It has two operational methods, manual and automatic counting. It uses
+<a href="https://github.com/ndev-kit/ndevio">ndevio</a> to extract the required metadata and
+<a href="https://github.com/multiview-stitcher/multiview-stitcher">multiview-stitcher</a> to stitch the gonad
+tiles into a single image.</p>
 <p align="center">
-    <img src="https://raw.githubusercontent.com/MIC-DKFZ/napari-voxtell/main/imgs/gui.png" alt="napari-voxtell GUI">
+  <img src="https://raw.githubusercontent.com/carltonlab/carltonlab-napari-tools/main/docs/images/stitched_image_example.png" alt="Example of a stitched gonad image">
 </p>
-<p>Please carefully review all segmentation outputs. Model performance varies with anatomical complexity, imaging quality, spacing, and prompt clarity. This tool is intended for research exploration, not validated clinical workflows.</p>
-<h2>Remote inference (run the GUI on a laptop, the model on a workstation)</h2>
-<p>The plugin can run the napari GUI locally while inference runs on a remote GPU machine
-(workstation or cluster). Loading, display and saving stay identical to local mode — only
-the inference is offloaded over HTTP.</p>
-<ol>
-<li><strong>On the GPU machine</strong>, install the server and run it (see the VoxTell repo):<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"voxtell[server]"</span>
-voxtell-server<span class="w"> </span>--host<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>--port<span class="w"> </span><span class="m">1527</span>
+<p>The tool was designed for RAD-51 foci counting in 4D images (CZYX) since it is the most common assay
+for quantification of DSBs in <em>C. elegans</em> but can be used to count other foci in any image.</p>
+<p>It features multi-gonad project creation where all genotypes and gonads are mixed after individual
+nuclei are selected (manual or automatic) and are scored in a blind manner to minimize human bias.</p>
+<p>We recommend using the automatic process, which uses a trained <code>cellpose</code> model to segment the
+nuclei. By default, it uses our trained model:
+<a href="https://bioimage.io/#/artifacts/sneaky-panda">https://bioimage.io/#/artifacts/sneaky-panda</a>.</p>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/carltonlab/carltonlab-napari-tools/main/docs/images/meiotic_nuclei_segmentation_model_v1.png" alt="Example of meiotic nuclei segmentation">
+</p>
+<p>For the automatic counting, it uses <code>spotiflow</code> with a default model and then point filtering
+based on user provided parameters such as expected foci volume, channel (usually DAPI)
+co-localization and more.</p>
+<p>It'll export the data as plots that can be organized by genotype similar to the conventional RAD-51
+scoring figures commonly used in papers.</p>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/carltonlab/carltonlab-napari-tools/main/docs/images/plot_example.svg" alt="Example of generated foci-counting plots">
+</p>
+<p>It also writes all the intermediate files for troubleshooting, data archive and manual inspection.
+Formats are <code>OME-Zarr</code> for tiles and stitched images, <code>TIFF</code> files for cropped nuclei, <code>CSV</code> files
+for foci coordinates and feature tables. All which are easy to inspect even without the tool.</p>
+<p>You can also do the entire counting and refinement of the data using the manual process.</p>
+<h2>Installation</h2>
+<h3>Install from PyPI or napari Hub</h3>
+<p>Install the plugin in napari:</p>
+<ul>
+<li>
+<p>In napari, open <strong>Plugins → Install/Uninstall Plugins…</strong>, search for
+<code>carltonlab-napari-tools</code>, select it, and click <strong>Install</strong>. Restart napari if
+prompted.</p>
+</li>
+<li>
+<p>If <strong>Install/Uninstall Plugins…</strong> isn't available, install the
+<a href="https://napari.org/napari-plugin-manager/">napari plugin manager</a> in the
+same environment as napari.</p>
+</li>
+<li>
+<p>Or, in the Python environment used by napari, run:</p>
+<pre><code class="language-sh"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>carltonlab-napari-tools
 </pre></div>
 </code></pre>
 </li>
-<li><strong>From your laptop</strong>, forward the port over SSH (the server binds to localhost by default):<pre><code class="language-bash"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>-N<span class="w"> </span>-L<span class="w"> </span><span class="m">1527</span>:127.0.0.1:1527<span class="w"> </span>your-workstation
+</ul>
+<p>The commands above install the plugin's base dependencies. For automatic
+segmentation, install the matching extra in the same Python environment:</p>
+<p>For CPU:</p>
+<pre><code class="language-sh"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"carltonlab-napari-tools[full-cpu]"</span>
 </pre></div>
 </code></pre>
-</li>
-<li><strong>In the widget</strong>, set <strong>Inference Location → Remote server</strong>, enter <code>http://127.0.0.1:1527</code>,
-click <strong>Connect</strong>, then open an image and <strong>Submit</strong> as usual. The image is uploaded to the
-server on the first Submit; the progress bar and <strong>Cancel</strong> work exactly as in local mode.</li>
-</ol>
-<p>For a trusted LAN you can instead bind the server to <code>0.0.0.0</code> and set an API key
-(<code>voxtell-server --host 0.0.0.0 --api-key ...</code>, then paste the key into the widget).</p>
-<h2>Citation</h2>
-<p>If you use <code>napari-voxtell</code> in your research, please cite our paper:</p>
-<pre><code class="language-bibtex"><div class="highlight"><pre><span></span><span class="nd">@inproceedings</span><span class="p">{</span><span class="n">rokuss2026voxtell</span><span class="p">,</span>
-      <span class="n">title</span><span class="o">=</span><span class="p">{</span><span class="n">Voxtell</span><span class="p">:</span> <span class="n">Free</span><span class="o">-</span><span class="n">text</span> <span class="n">promptable</span> <span class="n">universal</span> <span class="mi">3</span><span class="n">d</span> <span class="n">medical</span> <span class="n">image</span> <span class="n">segmentation</span><span class="p">},</span>
-      <span class="n">author</span><span class="o">=</span><span class="p">{</span><span class="n">Rokuss</span><span class="p">,</span> <span class="n">Maximilian</span> <span class="ow">and</span> <span class="n">Langenberg</span><span class="p">,</span> <span class="n">Moritz</span> <span class="ow">and</span> <span class="n">Kirchhoff</span><span class="p">,</span> <span class="n">Yannick</span> <span class="ow">and</span> <span class="n">Isensee</span><span class="p">,</span> <span class="n">Fabian</span> <span class="ow">and</span> <span class="n">Hamm</span><span class="p">,</span> <span class="n">Benjamin</span> <span class="ow">and</span> <span class="n">Ulrich</span><span class="p">,</span> <span class="n">Constantin</span> <span class="ow">and</span> <span class="n">Regnery</span><span class="p">,</span> <span class="n">Sebastian</span> <span class="ow">and</span> <span class="n">Bauer</span><span class="p">,</span> <span class="n">Lukas</span> <span class="ow">and</span> <span class="n">Katsigiannopulos</span><span class="p">,</span> <span class="n">Efthimios</span> <span class="ow">and</span> <span class="n">Norajitra</span><span class="p">,</span> <span class="n">Tobias</span> <span class="ow">and</span> <span class="n">Maier</span><span class="o">-</span><span class="n">Hein</span><span class="p">,</span> <span class="n">Klaus</span><span class="p">},</span>
-      <span class="n">booktitle</span><span class="o">=</span><span class="p">{</span><span class="n">Proceedings</span> <span class="n">of</span> <span class="n">the</span> <span class="n">IEEE</span><span class="o">/</span><span class="n">CVF</span> <span class="n">Conference</span> <span class="n">on</span> <span class="n">Computer</span> <span class="n">Vision</span> <span class="ow">and</span> <span class="n">Pattern</span> <span class="n">Recognition</span><span class="p">},</span>
-      <span class="n">pages</span><span class="o">=</span><span class="p">{</span><span class="mi">37538</span><span class="o">--</span><span class="mi">37557</span><span class="p">},</span>
-      <span class="n">year</span><span class="o">=</span><span class="p">{</span><span class="mi">2026</span><span class="p">}</span>
-<span class="p">}</span>
+<p>For CUDA 12:</p>
+<pre><code class="language-sh"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"carltonlab-napari-tools[full-cuda12]"</span>
 </pre></div>
 </code></pre>
-<h2>License</h2>
-<p>This repository is licensed under the <strong>Apache-2.0 License</strong>.</p>
-<p><strong>Important:</strong> The default model checkpoints downloaded by this plugin are licensed under <strong>Creative Commons Attribution-NonCommercial-ShareAlike 4.0 (CC-BY-NC-SA 4.0)</strong>. Please review the <a href="https://huggingface.co/mrokuss/VoxTell">Hugging Face Model Card</a> for details regarding model usage and limitations.</p>
+<p>Depending on your system, you may need a different PyTorch build for CUDA.</p>
+<h3>Install from source</h3>
+<p>Clone the repository and enter its directory:</p>
+<pre><code class="language-sh"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:carltonlab/carltonlab-napari-tools.git
+<span class="nb">cd</span><span class="w"> </span>carltonlab-napari-tools
+</pre></div>
+</code></pre>
+<p>Select what segmentation you'll be using (Automatic workflow only).</p>
+<p>For the manual workflow, install napari and Qt without the segmentation
+models:</p>
+<pre><code class="language-sh"><div class="highlight"><pre><span></span>uv<span class="w"> </span>sync<span class="w"> </span>--extra<span class="w"> </span>all
+</pre></div>
+</code></pre>
+<p>For automatic segmentation on CPU, use:</p>
+<pre><code class="language-sh"><div class="highlight"><pre><span></span>uv<span class="w"> </span>sync<span class="w"> </span>--extra<span class="w"> </span>full-cpu
+</pre></div>
+</code></pre>
+<p>For automatic segmentation with CUDA 12, use:</p>
+<pre><code class="language-sh"><div class="highlight"><pre><span></span>uv<span class="w"> </span>sync<span class="w"> </span>--extra<span class="w"> </span>full-cuda12
+</pre></div>
+</code></pre>
+<p>We highly recommend using a GPU for the segmentation. Depending on the setup, you might need to
+install a different <code>PyTorch</code> version.</p>
+<p>For our workflow, with approximately 2 × 50 × 1024 × 1024 (CZYX) images,
+segmentation and foci counting use about 6 GB
+of VRAM.</p>
+<h2>Running</h2>
+<p>Launch napari from the environment where you installed the plugin:</p>
+<ul>
+<li>If you installed it through napari's plugin manager, pip, or conda, launch
+napari as you normally do.</li>
+<li>If you installed from source using uv, run this from the repository directory:</li>
+</ul>
+<pre><code class="language-sh"><div class="highlight"><pre><span></span>uv<span class="w"> </span>run<span class="w"> </span>napari
+</pre></div>
+</code></pre>
+<p>Then, use the Plugins menu to launch the tool.</p>
 <h2>Contributing</h2>
-<p>Contributions are welcome! Please feel free to submit a Pull Request or open an issue for bugs and feature requests.</p>
-<h2>📬 Contact</h2>
-<p>Special shoutout to <a href="https://github.com/hammb">Benjamin Hamm</a> who created the first version of this plugin. For questions, issues, or collaborations, please contact:</p>
-<p>📧 <a href="mailto:maximilian.rokuss@dkfz-heidelberg.de">maximilian.rokuss@dkfz-heidelberg.de</a> / <a href="mailto:benjamin.hamm@dkfz-heidelberg.de">benjamin.hamm@dkfz-heidelberg.de</a></p>
-<hr />
-<h2>Acknowledgments</h2>
-<p>The remote (client/server) inference mode is inspired by MIC-DKFZ's
-<a href="https://github.com/MIC-DKFZ/nnInteractive">nnInteractive</a> and
-<a href="https://github.com/MIC-DKFZ/napari-nninteractive">napari-nninteractive</a> (Apache-2.0).</p>
-<p align="left">
-  <img src="https://raw.githubusercontent.com/MIC-DKFZ/napari-voxtell/main/imgs/Logos/DKFZ_Logo.png" width="500">
-</p>
+<p>Contributions are very welcome.</p>
+<h2>Acknowledgements</h2>
+<p>This plugin uses <a href="https://github.com/ndev-kit/ndevio">ndevio</a> for image metadata
+and <a href="https://github.com/multiview-stitcher/multiview-stitcher">multiview-stitcher</a>
+for image stitching.</p>
+<p>If you use <code>multiview-stitcher</code> in published research, cite its
+<a href="https://doi.org/10.5281/zenodo.13151252">Zenodo record</a>.</p>
+<h2>License</h2>
+<p>Distributed under the terms of the
+<a href="https://opensource.org/licenses/BSD-3-Clause">BSD-3</a> license,
+&quot;carltonlab-napari-tools&quot; is free and open source software</p>
 
 
                                     </div>
@@ -401,7 +342,7 @@ server on the first Submit; the progress bar and <strong>Cancel</strong> work ex
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.2.0</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.1.0a1</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -421,7 +362,7 @@ server on the first Submit; the progress bar and <strong>Cancel</strong> work ex
                                                     released<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2025-12-27</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-09-28</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -432,8 +373,7 @@ server on the first Submit; the progress bar and <strong>Cancel</strong> work ex
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
                                                     <li class="MetadataList_textItem__KKmMN">
-                                                            Apache License
-               ...
+                                                            Copyright (c) 2025, Carlos Rod...
                                                     </li>
                                                 </ul>
                                             </div>
@@ -459,14 +399,14 @@ server on the first Submit; the progress bar and <strong>Cancel</strong> work ex
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">Plugin
                                                     type<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=reader">Reader</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=widget">Widget</a></li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=widget">Widget</a></li></ul>
                                             </div>
                                         </div>
                                         <div class="text-sm">
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">Open
                                                     extension<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?readerFileExtensions=*.nii">*.nii</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?readerFileExtensions=*.nii.gz">*.nii.gz</a></li></ul>
+                                                    
                                             </div>
                                         </div>
                                         <div class="text-sm">
@@ -490,7 +430,7 @@ server on the first Submit; the progress bar and <strong>Cancel</strong> work ex
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">Python versions
                                                     supported<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.10">3.10</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.11">3.11</a></li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.11">3.11</a></li></ul>
                                             </div>
                                         </div>
                                         <div class="text-sm">
@@ -509,7 +449,7 @@ server on the first Submit; the progress bar and <strong>Cancel</strong> work ex
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">
                                                     Requirements<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">napari[all]</li><li class="MetadataList_textItem__KKmMN">napari-nifti</li><li class="MetadataList_textItem__KKmMN">httpx</li><li class="MetadataList_textItem__KKmMN">blosc2</li><li class="MetadataList_textItem__KKmMN">voxtell>=0.1.2</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt5; extra == "testing"</li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">napari</li><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">matplotlib</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">ndevio</li><li class="MetadataList_textItem__KKmMN">bioio-tifffile</li><li class="MetadataList_textItem__KKmMN">bioio-dv</li><li class="MetadataList_textItem__KKmMN">multiview-stitcher>=0.1.37</li><li class="MetadataList_textItem__KKmMN">mrc</li><li class="MetadataList_textItem__KKmMN">tifffile</li><li class="MetadataList_textItem__KKmMN">pandas>=2.2.3</li><li class="MetadataList_textItem__KKmMN">scipy</li><li class="MetadataList_textItem__KKmMN">dask</li><li class="MetadataList_textItem__KKmMN">platformdirs</li><li class="MetadataList_textItem__KKmMN">superqt</li><li class="MetadataList_textItem__KKmMN">zarr</li><li class="MetadataList_textItem__KKmMN">bioimageio-spec>=0.5.14.2</li><li class="MetadataList_textItem__KKmMN">napari[all]; extra == "all"</li><li class="MetadataList_textItem__KKmMN">cellpose; extra == "segmentation"</li><li class="MetadataList_textItem__KKmMN">spotiflow; extra == "segmentation"</li><li class="MetadataList_textItem__KKmMN">torch; extra == "segmentation"</li><li class="MetadataList_textItem__KKmMN">cupy-cuda12x; extra == "gpu-cuda12"</li><li class="MetadataList_textItem__KKmMN">napari[all]; extra == "full-cpu"</li><li class="MetadataList_textItem__KKmMN">cellpose; extra == "full-cpu"</li><li class="MetadataList_textItem__KKmMN">spotiflow; extra == "full-cpu"</li><li class="MetadataList_textItem__KKmMN">torch; extra == "full-cpu"</li><li class="MetadataList_textItem__KKmMN">napari[all]; extra == "full-cuda12"</li><li class="MetadataList_textItem__KKmMN">cellpose; extra == "full-cuda12"</li><li class="MetadataList_textItem__KKmMN">spotiflow; extra == "full-cuda12"</li><li class="MetadataList_textItem__KKmMN">torch; extra == "full-cuda12"</li><li class="MetadataList_textItem__KKmMN">cupy-cuda12x; extra == "full-cuda12"</li></ul>
                                             </div>
                                         </div>
                                     </div>
