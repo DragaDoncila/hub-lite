@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.14.0</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.15.0</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-07-21</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-10-01</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -156,7 +156,7 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Requirements<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">dask[array]>=2023.1.0</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">napari>=0.7.1</li><li class="MetadataList_textItem__KKmMN">numpy>=1.24</li><li class="MetadataList_textItem__KKmMN">pandas>=1.5</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">scipy>=1.9</li><li class="MetadataList_textItem__KKmMN">pyqt5; extra == 'dev'</li><li class="MetadataList_textItem__KKmMN">pytest; extra == 'dev'</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == 'dev'</li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">dask[array]>=2023.1.0</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">napari>=0.7.1</li><li class="MetadataList_textItem__KKmMN">numpy>=1.24</li><li class="MetadataList_textItem__KKmMN">pandas>=1.5</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">scipy>=1.9</li><li class="MetadataList_textItem__KKmMN">pyarrow; extra == 'dev'</li><li class="MetadataList_textItem__KKmMN">pyqt5; extra == 'dev'</li><li class="MetadataList_textItem__KKmMN">pytest; extra == 'dev'</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == 'dev'</li><li class="MetadataList_textItem__KKmMN">zarr>=2.16; extra == 'dev'</li></ul>
                                     </div>
                                 </div>
                             </div>
@@ -288,6 +288,34 @@ uses (default <code>min(4, cpu count)</code>). More workers can mean more decode
 chunks held in memory at once — turn it down (even to 1) if a measurement is
 still using too much RAM; turn it up if you have RAM to spare and want it
 faster.</p>
+<h2>patchworks object tables</h2>
+<p><a href="https://github.com/imcf/patchworks">patchworks</a> measures every object once,
+on the cluster, and stores the table next to the labels
+(<code>image.zarr/labels/&lt;name&gt;/table</code>). This plugin uses it:</p>
+<ul>
+<li><strong>Loaded instead of measured.</strong> Pick a Labels layer that has a table and
+it shows straight away: sizes, centroids, bounding boxes and which object
+of another label image each one belongs to (<code>cyto_labels_id</code>), with no
+voxel read. With patchworks installed, it is the <em>reviewed</em> table:
+objects rejected in <code>patchworks review</code> are gone, joined ones combined,
+and cilia carry their length and position in the cell (apical, basal,
+lateral, central). <strong>Load patchworks object table</strong> reloads it;
+<strong>Measure</strong> adds intensities, keeping the table's columns.</li>
+<li><strong>Parents and children together.</strong> Selecting a cell also lights up its
+nuclei and cilia in their own layers (magenta); selecting a cilium lights
+up its cell (cyan).</li>
+<li><strong>No scan for ids.</strong> The table lists every object, so measuring skips
+the whole-volume &quot;scanning for objects&quot; pass even when the ids are not
+sequential.</li>
+<li><strong>Framing by the real extent.</strong> Clicking a row zooms to the object's
+bounding box, so a long thin cilium is framed along its length.</li>
+</ul>
+<p>The table is found from the layer metadata patchworks' viewer sets, or from
+the store path when an OME-Zarr reader opened it. A table computed from
+other labels than the ones stored (after a re-segmentation) is refused,
+never shown against the wrong objects.</p>
+<p>Tables can also be saved and reloaded as <strong>Parquet</strong> (<code>.parquet</code>, needs
+<code>pyarrow</code>): typed, compressed and much faster than CSV for large tables.</p>
 <h2>Measurements</h2>
 <table>
 <thead>
@@ -363,7 +391,7 @@ pytest
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.14.0</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.15.0</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -373,7 +401,7 @@ pytest
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-07-21</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-10-01</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -470,7 +498,7 @@ pytest
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">
                                                     Requirements<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">dask[array]>=2023.1.0</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">napari>=0.7.1</li><li class="MetadataList_textItem__KKmMN">numpy>=1.24</li><li class="MetadataList_textItem__KKmMN">pandas>=1.5</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">scipy>=1.9</li><li class="MetadataList_textItem__KKmMN">pyqt5; extra == 'dev'</li><li class="MetadataList_textItem__KKmMN">pytest; extra == 'dev'</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == 'dev'</li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">dask[array]>=2023.1.0</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">napari>=0.7.1</li><li class="MetadataList_textItem__KKmMN">numpy>=1.24</li><li class="MetadataList_textItem__KKmMN">pandas>=1.5</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">scipy>=1.9</li><li class="MetadataList_textItem__KKmMN">pyarrow; extra == 'dev'</li><li class="MetadataList_textItem__KKmMN">pyqt5; extra == 'dev'</li><li class="MetadataList_textItem__KKmMN">pytest; extra == 'dev'</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == 'dev'</li><li class="MetadataList_textItem__KKmMN">zarr>=2.16; extra == 'dev'</li></ul>
                                             </div>
                                         </div>
                                     </div>
