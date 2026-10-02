@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2.1.0</li>
+                                            <li class="MetadataList_textItem__KKmMN">3.0.0</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-09-05</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-10-02</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -237,16 +237,17 @@ without an extra, no Qt binding is installed and napari cannot open a window
 </code></pre>
 <h2>Usage</h2>
 <h3>Starting napari-storm</h3>
-<p>To start the program, run the napari_start.py, e.g. by navigating in your anaconda prompt to the location of the
-napri_start.py (root) and run it with:</p>
-<pre><code><div class="highlight"><pre><span></span><span class="n">python</span><span class="o">.</span><span class="n">exe</span> <span class="n">napari_start</span><span class="o">.</span><span class="n">py</span>
+<p>With the environment active -- an Anaconda Prompt after <code>conda activate napari-storm</code>, for
+example -- run:</p>
+<pre><code><div class="highlight"><pre><span></span><span class="n">napari</span><span class="o">-</span><span class="n">storm</span>
 </pre></div>
 </code></pre>
-<p>Or simply start the napari version that was just installed into your environment, e.g. again using the conda prompt:</p>
+<p>This opens napari with the napari-storm dock already docked on the right. <code>python -m napari_storm</code>
+does the same, and from a clone so does <code>python napari_start.py</code>.</p>
+<p>Or start napari itself and open the dock from the Plugins menu:</p>
 <pre><code><div class="highlight"><pre><span></span><span class="n">napari</span>
 </pre></div>
 </code></pre>
-<p>and then opening napari-storm in the plugins tab.</p>
 <h3>Importing data into napari-storm</h3>
 <p>Drag &amp; drop onto the dock widget supported file types (Picasso, ThunderSTORM, MINFLUX, etc.) directly into napari or use the import file dialog.</p>
 <p>MINFLUX data is read in both Abberior layouts: the original one, and the flat
@@ -257,36 +258,43 @@ dataset is a folder rather than a file; since a file dialog cannot select one,
 pick any file inside it and the whole dataset opens.</p>
 <p>If your file is not covered:</p>
 <ul>
-<li>one can either write a custom import function by following the instructions in the src/napari_storm/Custom_Import.py</li>
-<li>try the (experimental) file recognition import button, which will try to extract the headers of your file
-and lets you assign your data. This should work for any .hdf5, .csv or npy. file.</li>
+<li>one can either write a custom import function by following the instructions in
+<code>src/napari_storm/localization_dataset_types/Custom_Import.py</code>, then run it with the <strong>Custom</strong> button</li>
+<li>try the (experimental) <strong>Auto-detect Format</strong> button, which will try to extract the headers of your file
+and lets you assign your data. This should work for any .hdf5, .csv or .npy file.</li>
 </ul>
 <h3>Basic usage</h3>
-<p>When a dataset is imported you should be able to see 4 tabs in the widget: Data Controls, File Infos, Decorators and
-Data Filter. In the data controls tab you can change the render range, load
-a new file, merge the currently open dataset with another that from another file and change your view.
-There is also the option to change the colormap, adjust the contrast with the slider beneath the colormap picking as well
-as adding a scalebar or active rainbow colorcoding (for 3D datasets).</p>
+<p>When a dataset is imported you should be able to see five tabs in the widget: Data Controls, File Infos, Decorators,
+Data Filter and Data adjustment. In the data controls tab you can change the render range, load
+a new file, merge the currently open dataset with another file and change your view.
+There is also the option to change the colormap, add a scalebar or activate rainbow colour coding (for 3D datasets),
+and adjust the contrast with the slider beneath the colormap. The contrast acts on the reconstruction itself -- the
+Gaussians summed where they overlap -- so its lower handle hides sparse regions while keeping dense ones, and its upper
+handle sets how many overlapping localizations it takes to reach full brightness.</p>
 <p>The File Infos tab simply displays information on the currently opened datasets.</p>
-<p>In the decorators tab you can activate a grid plane and customize a lot of things for the grid as well as the render range box.</p>
+<p>In the decorators tab you can switch the rendering style from the scientific Gaussian to an alternative visualisation -- points, spheres,
+uncertainty ellipses and more -- activate a grid plane and customize a lot of things for the grid as well as the render range box.</p>
 <p>Last but not least is the data filter tab, which gives you the option to filter your displayed datasets by all properties available in the dataset.
-There you will find two sliders, where the top one lets you change the x-range of the displayed property and the other one controlls
+There you will find two sliders, where the top one lets you change the x-range of the displayed property and the other one controls
 the cut-off/cut-on of your filter. To apply the filter settings to the dataset simply press
 one of the apply buttons.</p>
 <h3>Tips</h3>
 <ul>
 <li>Double click or drag the tabs anywhere to detach them from the window. This way you have an overview over all of them at the same time</li>
-<li>For STORM/PALM ... datasets, it is possible to change the rendering options in the data controls tab to &quot;variabel gaussian mode&quot;, to include the uncertainty values or photon counts for the rendering</li>
+<li>For STORM/PALM ... datasets, it is possible to change the rendering options in the data controls tab to <strong>Variable-size gaussian</strong>, to include the uncertainty values or photon counts for the rendering</li>
 <li>hold shift and drag the mouse for panning</li>
 </ul>
 <h2>Documentation</h2>
-<p>There is a custom Q&amp;A GPT for this repo specifically, available at
+<p>Full documentation is at <strong><a href="https://napari-storm.readthedocs.io/">https://napari-storm.readthedocs.io/</a></strong> — a
+step-by-step tutorial, how the renderer works, and the embedding API for
+driving napari-storm from another application.</p>
+<p>There is also a custom Q&amp;A GPT for this repo specifically, available at
 <a href="https://chatgpt.com/g/g-68aebb6371a88191877094b48513d690-napari-storm-q-a">https://chatgpt.com/g/g-68aebb6371a88191877094b48513d690-napari-storm-q-a</a></p>
-<p>To access the documentation install the following packages (once):</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>mkdocs<span class="w"> </span>mkdocs-material<span class="w"> </span>mkdocstrings<span class="o">[</span>python<span class="o">]</span><span class="w"> </span>pymdown-extensions
+<p>To build the docs locally, install the pinned toolchain (once):</p>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>docs/requirements.txt
 </pre></div>
 </code></pre>
-<p>Then build and serve the docs:</p>
+<p>Then serve them with live reload:</p>
 <pre><code class="language-bash"><div class="highlight"><pre><span></span>mkdocs<span class="w"> </span>serve
 </pre></div>
 </code></pre>
@@ -323,7 +331,7 @@ documented the format first.</li>
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2.1.0</li>
+                                                    <li class="MetadataList_textItem__KKmMN">3.0.0</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -333,7 +341,7 @@ documented the format first.</li>
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-09-05</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-10-02</li>
                                                 </ul>
                                             </div>
                                         </div>
