@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.18.0</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.19.0</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-09-25</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-10-05</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -421,7 +421,7 @@ extracted folder (the one containing <code>Dataset001_Epithelium</code> and
   <span class="n">epithelium_raw</span><span class="o">/</span>            <span class="c1"># binary masks from Dataset001</span>
   <span class="n">epithelium_colored</span><span class="o">/</span>        <span class="c1"># RGB colorized masks (red epithelium)</span>
   <span class="n">multistructure_raw</span><span class="o">/</span>        <span class="c1"># 6-class masks from Dataset002</span>
-  <span class="n">multistructure_colored</span><span class="o">/</span>    <span class="c1"># RGB colorized masks (Elastin/Collagen/Nuclei/Mucins/Membrane/Goblets)</span>
+  <span class="n">multistructure_colored</span><span class="o">/</span>    <span class="c1"># RGB colorized masks (Elastin/Collagen/Nuclei/Mucins/Cells/Goblets)</span>
 </pre></div>
 </code></pre>
 <p>Colorized masks are added to the viewer as RGB image layers when the run finishes.</p>
@@ -525,7 +525,7 @@ needed (defaults match <code>Main.py</code>).</li>
 </tr>
 <tr>
 <td>Thickness mean/std (um)</td>
-<td>Medial-axis thickness of (membrane within eroded region) U goblets U nuclei</td>
+<td>Medial-axis thickness of the epithelium mask (since 0.17.0)</td>
 </tr>
 <tr>
 <td>Elastin / Collagen / Other %</td>
@@ -568,7 +568,7 @@ class (or a combination) without rerunning anything:</p>
 <ol>
 <li>Pick a source layer (the <strong>original</strong> TIFF, not a colorized mask).</li>
 <li>Tick one or more of <strong>Elastin</strong>, <strong>Collagen</strong>, <strong>Nuclei</strong>, <strong>Mucins</strong>,
-<strong>Cell Membrane</strong>, <strong>Goblets</strong>, <strong>Epithelium</strong>.</li>
+<strong>Cells</strong>, <strong>Goblets</strong>, <strong>Epithelium</strong>, <strong>Non-muscle cells</strong>, <strong>Muscle</strong>.</li>
 <li>Click one of:
 <ul>
 <li><strong>Show as mask</strong> — adds a new layer that's white everywhere except the
@@ -599,7 +599,7 @@ layer's pixels are taken from the viewer.</p>
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.18.0</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.19.0</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -609,7 +609,7 @@ layer's pixels are taken from the viewer.</p>
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-09-25</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-10-05</li>
                                                 </ul>
                                             </div>
                                         </div>
