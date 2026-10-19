@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.1.1</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.1.2</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-10-15</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-10-19</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -177,8 +177,8 @@
         <img src="../static/images/PyPI_logo.svg.png" alt="PyPI" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">napari-cellposesam</span>
     </a>
     
-        <a class="underline flex" href="https://github.com/MouseLand/cellpose-napari" rel="noreferrer" target="_blank">
-            <img src="../static/images/GitHub_Invertocat_Logo.svg.png" alt="GitHub" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">MouseLand/cellpose-napar</span>
+        <a class="underline flex" href="https://github.com/jeskowagner/napari-cellposesam/issues" rel="noreferrer" target="_blank">
+            <img src="../static/images/GitHub_Invertocat_Logo.svg.png" alt="GitHub" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">jeskowagner/napari-cellposesam</span>
         </a>
         </div>
 
@@ -254,6 +254,17 @@
 </pre></div>
 </code></pre>
 <p>If you have issues installing cellpose, see the <a href="https://cellpose.readthedocs.io/en/latest/installation.html">cellpose installation docs</a>.</p>
+<h3>Cellpose3 models</h3>
+<p>The plugin uses whichever cellpose version is installed. By default that is cellpose v4, which provides the Cellpose-SAM and CPDINO models. To use the Cellpose3 models (<code>cyto3</code>, <code>nuclei</code>, etc.), install cellpose v3 instead, in a separate environment:</p>
+<pre><code><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">napari</span><span class="o">-</span><span class="n">cellpose3</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.12</span>
+<span class="n">conda</span> <span class="n">activate</span> <span class="n">napari</span><span class="o">-</span><span class="n">cellpose3</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="s2">"napari[all]"</span> <span class="n">napari</span><span class="o">-</span><span class="n">cellposesam</span> <span class="s2">"cellpose&lt;4"</span>
+</pre></div>
+</code></pre>
+<p>An environment can only hold one cellpose version, so you cannot switch between v3 and v4 models from within the plugin.</p>
+<p>Don't install <code>cellpose-napari</code> next to this plugin. It lists the Cellpose3
+models, but with cellpose v4 installed it ignores the selected model and runs
+Cellpose-SAM, thus breaking it.</p>
 <h3>GPU</h3>
 <p>cellpose runs on CPU, NVIDIA GPUs (CUDA) and Apple silicon (MPS). For CUDA, install a CUDA build of torch following the <a href="https://pytorch.org/get-started/locally/">PyTorch instructions</a> before or after installing the plugin. The plugin uses the GPU automatically if torch can see one.</p>
 <h3>Optional: CPDINO models</h3>
@@ -266,6 +277,7 @@
 <pre><code><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">napari</span><span class="o">-</span><span class="n">cellposesam</span> <span class="n">cellpose</span>
 </pre></div>
 </code></pre>
+<p>In a cellpose v3 environment, use <code>&quot;cellpose&lt;4&quot;</code> instead of <code>cellpose</code>, or the upgrade moves you to v4.</p>
 <h2>Usage</h2>
 <p>Open napari with the plugin docked:</p>
 <pre><code><div class="highlight"><pre><span></span><span class="n">napari</span> <span class="o">-</span><span class="n">w</span> <span class="n">napari</span><span class="o">-</span><span class="n">cellposesam</span>
@@ -303,7 +315,7 @@
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.1.1</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.1.2</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -313,7 +325,7 @@
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-10-15</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-10-19</li>
                                                 </ul>
                                             </div>
                                         </div>
