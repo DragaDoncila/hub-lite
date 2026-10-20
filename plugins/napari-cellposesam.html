@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.1.2</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.2.0</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-10-19</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-10-20</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -156,7 +156,7 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Requirements<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">napari>=0.6</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">cellpose>=3</li><li class="MetadataList_textItem__KKmMN">imagecodecs</li><li class="MetadataList_textItem__KKmMN">sphinx>=3.0; extra == "docs"</li><li class="MetadataList_textItem__KKmMN">sphinxcontrib-apidoc; extra == "docs"</li><li class="MetadataList_textItem__KKmMN">sphinx_rtd_theme; extra == "docs"</li><li class="MetadataList_textItem__KKmMN">sphinx-prompt; extra == "docs"</li><li class="MetadataList_textItem__KKmMN">sphinx-autodoc-typehints; extra == "docs"</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt6; extra == "testing"</li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">napari>=0.6</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">cellpose==4.*</li><li class="MetadataList_textItem__KKmMN">imagecodecs</li><li class="MetadataList_textItem__KKmMN">sphinx>=3.0; extra == "docs"</li><li class="MetadataList_textItem__KKmMN">sphinxcontrib-apidoc; extra == "docs"</li><li class="MetadataList_textItem__KKmMN">sphinx_rtd_theme; extra == "docs"</li><li class="MetadataList_textItem__KKmMN">sphinx-prompt; extra == "docs"</li><li class="MetadataList_textItem__KKmMN">sphinx-autodoc-typehints; extra == "docs"</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt6; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">numba; extra == "testing"</li></ul>
                                     </div>
                                 </div>
                             </div>
@@ -215,16 +215,17 @@
 <a href="https://pypi.org/project/napari-cellposesam/"><img src="https://img.shields.io/pypi/pyversions/napari-cellposesam" alt="Python version" /></a>
 <a href="https://github.com/jeskowagner/napari-cellposesam/raw/main/LICENSE"><img src="https://img.shields.io/pypi/l/napari-cellposesam.svg?color=green" alt="License" /></a>
 <a href="https://www.cellpose.org"><img src="https://img.shields.io/website?url=https%3A%2F%2Fwww.cellpose.org" alt="website" /></a></p>
-<p>A <a href="https://github.com/napari/napari">napari</a> plugin for cell segmentation with <a href="https://github.com/MouseLand/cellpose">cellpose</a>, including Cellpose-SAM (cellpose v4).</p>
+<p>A <a href="https://github.com/napari/napari">napari</a> plugin for cell segmentation with <a href="https://github.com/MouseLand/cellpose">cellpose</a>, including Cellpose-SAM (cellpose 4).</p>
 <p>This is a fork of <a href="https://github.com/MouseLand/cellpose-napari">MouseLand/cellpose-napari</a>, the original plugin by Carsen Stringer. It adds:</p>
 <ul>
-<li>support for cellpose v4 and the Cellpose-SAM (<code>cpsam</code>) models, while still working with cellpose v3</li>
+<li>support for Cellpose-SAM (<code>cpsam</code>) and Cellpose3 models in the same
+environment and UI</li>
 <li>z/channel axis selection for 3D and 4D images</li>
 <li>compatibility with new napari versions</li>
 </ul>
 <p>The cellpose code was written by Carsen Stringer and Marius Pachitariu. To learn about Cellpose, read the <a href="https://t.co/kBMXmPp3Yn?amp=1"><strong>paper</strong></a> or watch this <a href="https://t.co/JChCsTD0SK?amp=1"><strong>talk</strong></a>.</p>
 <p>For problems with this plugin, open an <a href="https://github.com/jeskowagner/napari-cellposesam/issues">issue</a>. For problems with cellpose itself, open an <a href="https://github.com/MouseLand/cellpose/issues">issue</a> on the cellpose repo.</p>
-<p>If you use this plugin, please cite the <a href="https://www.nature.com/articles/s41592-020-01018-x">cellpose paper</a>, and the Cellpose-SAM paper if you use the <code>cpsam</code> models (see the <a href="https://github.com/MouseLand/cellpose">cellpose repo</a> for the reference):</p>
+<p>If you use this plugin, please cite the <a href="https://www.nature.com/articles/s41592-020-01018-x">cellpose paper</a>, the Cellpose3 paper if you use the Cellpose3 models, and the Cellpose-SAM paper if you use the <code>cpsam</code> models (see the <a href="https://github.com/MouseLand/cellpose">cellpose repo</a> for the references):</p>
 <pre><code class="language-bibtex"><div class="highlight"><pre><span></span><span class="nd">@article</span><span class="p">{</span><span class="n">stringer2021cellpose</span><span class="p">,</span>
   <span class="n">title</span><span class="o">=</span><span class="p">{</span><span class="n">Cellpose</span><span class="p">:</span> <span class="n">a</span> <span class="n">generalist</span> <span class="n">algorithm</span> <span class="k">for</span> <span class="n">cellular</span> <span class="n">segmentation</span><span class="p">},</span>
   <span class="n">author</span><span class="o">=</span><span class="p">{</span><span class="n">Stringer</span><span class="p">,</span> <span class="n">Carsen</span> <span class="ow">and</span> <span class="n">Wang</span><span class="p">,</span> <span class="n">Tim</span> <span class="ow">and</span> <span class="n">Michaelos</span><span class="p">,</span> <span class="n">Michalis</span> <span class="ow">and</span> <span class="n">Pachitariu</span><span class="p">,</span> <span class="n">Marius</span><span class="p">},</span>
@@ -255,18 +256,37 @@
 </code></pre>
 <p>If you have issues installing cellpose, see the <a href="https://cellpose.readthedocs.io/en/latest/installation.html">cellpose installation docs</a>.</p>
 <h3>Cellpose3 models</h3>
-<p>The plugin uses whichever cellpose version is installed. By default that is cellpose v4, which provides the Cellpose-SAM and CPDINO models. To use the Cellpose3 models (<code>cyto3</code>, <code>nuclei</code>, etc.), install cellpose v3 instead, in a separate environment:</p>
-<pre><code><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">napari</span><span class="o">-</span><span class="n">cellpose3</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.12</span>
-<span class="n">conda</span> <span class="n">activate</span> <span class="n">napari</span><span class="o">-</span><span class="n">cellpose3</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="s2">"napari[all]"</span> <span class="n">napari</span><span class="o">-</span><span class="n">cellposesam</span> <span class="s2">"cellpose&lt;4"</span>
+<p>The plugin installs cellpose 4, which provides the Cellpose-SAM and CPDINO models. The Cellpose3 models (<code>cyto3</code>, <code>nuclei</code>, etc.) are in the same model list. They need cellpose 3, which the plugin offers to download the first time you run one. It downloads cellpose 3.1.1.3 into a private folder without touching the installed cellpose, and installs <a href="https://numba.pydata.org">numba</a> if it is missing. The plugin then picks the right cellpose version for each model, including custom models.</p>
+<p>The private copy is in <code>~/.cellpose/napari-cellposesam/cellpose-3.1.1.3-format1/_cellpose3</code> (<code>~</code> is your user folder, also on Windows). To keep it elsewhere, set the environment variable <code>NAPARI_CELLPOSESAM_CACHE</code> to a folder that then takes the place of <code>~/.cellpose/napari-cellposesam</code>. To reset it, delete <code>~/.cellpose/napari-cellposesam</code> (or the folder <code>NAPARI_CELLPOSESAM_CACHE</code> names): the plugin offers to download cellpose 3 again the next time you run a Cellpose3 model.</p>
+<p>To run the same download ahead of time, so that napari never prompts:</p>
+<pre><code><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">napari_cellposesam</span> <span class="n">fetch</span><span class="o">-</span><span class="n">cellpose3</span>
 </pre></div>
 </code></pre>
-<p>An environment can only hold one cellpose version, so you cannot switch between v3 and v4 models from within the plugin.</p>
+<p>The download goes to the home folder of whoever runs the command. For an environment shared by several users, set <code>NAPARI_CELLPOSESAM_CACHE</code> to a shared folder, both when running the command and for everyone who uses the environment. Users only need read access to it.</p>
+<p>Both need internet access and pip in the environment. If the environment has no pip, as in some uv-created ones, the plugin asks you to install it first.</p>
 <p>Don't install <code>cellpose-napari</code> next to this plugin. It lists the Cellpose3
-models, but with cellpose v4 installed it ignores the selected model and runs
+models, but with cellpose 4 installed it ignores the selected model and runs
 Cellpose-SAM, thus breaking it.</p>
 <h3>GPU</h3>
-<p>cellpose runs on CPU, NVIDIA GPUs (CUDA) and Apple silicon (MPS). For CUDA, install a CUDA build of torch following the <a href="https://pytorch.org/get-started/locally/">PyTorch instructions</a> before or after installing the plugin. The plugin uses the GPU automatically if torch can see one.</p>
+<p>cellpose runs on CPU, NVIDIA GPUs (CUDA) and Apple silicon (MPS). The plugin uses a GPU automatically if torch can see one, for both the cellpose 4 and the Cellpose3 models.</p>
+<ul>
+<li>
+<p><strong>Apple silicon:</strong> nothing to do, the torch from PyPI supports MPS.</p>
+</li>
+<li>
+<p><strong>NVIDIA on Linux:</strong> the torch from PyPI is a CUDA build, so it usually works as installed.</p>
+</li>
+<li>
+<p><strong>NVIDIA on Windows:</strong> the torch from PyPI is CPU-only. Reinstall torch and torchvision together from the PyTorch index, with the CUDA version the <a href="https://pytorch.org/get-started/locally/">PyTorch selector</a> gives for your driver, e.g.:</p>
+<pre><code><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">force</span><span class="o">-</span><span class="n">reinstall</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">deps</span> <span class="n">torch</span> <span class="n">torchvision</span> <span class="o">--</span><span class="n">index</span><span class="o">-</span><span class="n">url</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">download</span><span class="o">.</span><span class="n">pytorch</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">whl</span><span class="o">/</span><span class="n">cu126</span>
+</pre></div>
+</code></pre>
+</li>
+</ul>
+<p>Check that torch sees the GPU:</p>
+<pre><code><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">c</span> <span class="s2">"import torch; print('cuda', torch.cuda.is_available(), 'mps', torch.backends.mps.is_available())"</span>
+</pre></div>
+</code></pre>
 <h3>Optional: CPDINO models</h3>
 <p>The CPDINO models need <a href="https://github.com/facebookresearch/dinov3">DINOv3</a>, which is not on PyPI and so is not installed automatically. The plugin offers to install it when you run segmentation with a CPDINO model, or install it yourself:</p>
 <pre><code><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">git</span><span class="o">+</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">facebookresearch</span><span class="o">/</span><span class="n">dinov3</span>
@@ -277,7 +297,8 @@ Cellpose-SAM, thus breaking it.</p>
 <pre><code><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">napari</span><span class="o">-</span><span class="n">cellposesam</span> <span class="n">cellpose</span>
 </pre></div>
 </code></pre>
-<p>In a cellpose v3 environment, use <code>&quot;cellpose&lt;4&quot;</code> instead of <code>cellpose</code>, or the upgrade moves you to v4.</p>
+<p>If you installed a CUDA build of torch, upgrade torch the same way you installed it, or pip may replace it with the CPU-only build.</p>
+<p>Coming from 0.1.x with a separate cellpose 3 environment (<code>cellpose&lt;4</code>): from 0.2.0 that environment is no longer needed, since one environment runs both the Cellpose3 and the cellpose 4 models. Upgrading it with the command above moves it to cellpose 4, and the plugin downloads cellpose 3 the first time you run a Cellpose3 model.</p>
 <h2>Usage</h2>
 <p>Open napari with the plugin docked:</p>
 <pre><code><div class="highlight"><pre><span></span><span class="n">napari</span> <span class="o">-</span><span class="n">w</span> <span class="n">napari</span><span class="o">-</span><span class="n">cellposesam</span>
@@ -299,6 +320,7 @@ Cellpose-SAM, thus breaking it.</p>
 <li><a href="https://napari.org">napari</a></li>
 <li><a href="https://napari.org/magicgui/">magicgui</a></li>
 <li><a href="https://github.com/MouseLand/cellpose">cellpose</a>, which in turn uses <a href="https://pytorch.org/">torch</a>, <a href="https://numpy.org/">numpy</a>, <a href="https://scipy.org/">scipy</a>, <a href="https://opencv.org/">opencv</a> and others</li>
+<li><a href="https://numba.pydata.org">numba</a>, which the plugin installs the first time you run a Cellpose3 model</li>
 </ul>
 
 
@@ -315,7 +337,7 @@ Cellpose-SAM, thus breaking it.</p>
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.1.2</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.2.0</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -325,7 +347,7 @@ Cellpose-SAM, thus breaking it.</p>
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-10-19</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-10-20</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -422,7 +444,7 @@ Cellpose-SAM, thus breaking it.</p>
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">
                                                     Requirements<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">napari>=0.6</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">cellpose>=3</li><li class="MetadataList_textItem__KKmMN">imagecodecs</li><li class="MetadataList_textItem__KKmMN">sphinx>=3.0; extra == "docs"</li><li class="MetadataList_textItem__KKmMN">sphinxcontrib-apidoc; extra == "docs"</li><li class="MetadataList_textItem__KKmMN">sphinx_rtd_theme; extra == "docs"</li><li class="MetadataList_textItem__KKmMN">sphinx-prompt; extra == "docs"</li><li class="MetadataList_textItem__KKmMN">sphinx-autodoc-typehints; extra == "docs"</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt6; extra == "testing"</li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">napari>=0.6</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">cellpose==4.*</li><li class="MetadataList_textItem__KKmMN">imagecodecs</li><li class="MetadataList_textItem__KKmMN">sphinx>=3.0; extra == "docs"</li><li class="MetadataList_textItem__KKmMN">sphinxcontrib-apidoc; extra == "docs"</li><li class="MetadataList_textItem__KKmMN">sphinx_rtd_theme; extra == "docs"</li><li class="MetadataList_textItem__KKmMN">sphinx-prompt; extra == "docs"</li><li class="MetadataList_textItem__KKmMN">sphinx-autodoc-typehints; extra == "docs"</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt6; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">numba; extra == "testing"</li></ul>
                                             </div>
                                         </div>
                                     </div>
