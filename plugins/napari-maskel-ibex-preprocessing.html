@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.1.0</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.2.0</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-10-19</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-10-20</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -216,11 +216,12 @@
 <a href="https://napari-hub.org/plugins/napari-maskel-ibex-preprocessing"><img src="https://img.shields.io/endpoint?url=https://api.napari-hub.org/shields/napari-maskel-ibex-preprocessing" alt="napari hub" /></a>
 <a href="https://github.com/uderhardtlab/napari-maskel-ibex-preprocessing/actions/workflows/tests.yml"><img src="https://github.com/uderhardtlab/napari-maskel-ibex-preprocessing/actions/workflows/tests.yml/badge.svg" alt="tests" /></a>
 <a href="https://github.com/uderhardtlab/napari-maskel-ibex-preprocessing/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-BSD_3--Clause-blue.svg" alt="License: BSD-3-Clause" /></a></p>
-<p>napari plugin and batch runner for light-sheet data of mouse peritoneum. It does three things:</p>
+<p>napari plugin and batch runner for light-sheet data of mouse peritoneum. It does four things:</p>
 <ul>
 <li>finds the <strong>outer surface of the muscle layer</strong> from the TOM20 channel;</li>
 <li>builds a <strong>CD34 fibroblast mask</strong>;</li>
-<li>keeps only the CD34 above the muscle (the <strong>submesothelial fibroblasts</strong>) and exports binary TIFFs, e.g. for Imaris or as input for MASKEL.</li>
+<li>keeps only the CD34 above the muscle (the <strong>submesothelial fibroblasts</strong>) and exports binary TIFFs, e.g. for Imaris or as input for MASKEL;</li>
+<li>detects the <strong>Cx43-positive volume</strong> (gap junctions) near the fibroblast mask, as an object table.</li>
 </ul>
 <p>The algorithms are in <code>napari_maskel_ibex_preprocessing.core</code> and use only numpy/scipy (no napari). Both the napari widget and the command-line runner use them.</p>
 <h2>Installation</h2>
@@ -250,7 +251,8 @@
 <li>Choose the <strong>muscle channel</strong> (TOM20) and the <strong>CD34 channel</strong>. For files from the reader, Channel_0 and Channel_3 are pre-selected.</li>
 <li>For fast tuning, draw a <strong>rectangle</strong> in a Shapes layer (2D view) and choose that layer as the <em>region</em>. Every step has <em>Run on region</em> (seconds to a minute) and <em>Run on full volume</em> (minutes). Both run in the background.
 <ul>
-<li><strong>1 Muscle surface:</strong> muscle mask, surface, height map <code>h</code> and the <strong>signed distance map</strong> <code>d = (z − h)·dz</code> (µm; &gt; 0 = mesothelium side).</li>
+<li><strong>1 Muscle surface:</strong> muscle mask, surface, height map <code>h</code> and the <strong>signed distance map</strong> <code>d = (z − h)·dz</code> (µm; &gt; 0 = mesothelium side).
+Two options guard the surface: <em>keep only the largest muscle component</em> (removes e.g. a hair lying on the tissue) and <em>macrophage columns (CD11b)</em>. A macrophage cluster on the muscle is bright in TOM20 too and would lift <code>h</code>; in columns whose top muscle voxels are CD11b⁺, <code>h</code> is taken from the neighbouring columns instead.</li>
 <li><strong>2 CD34 mask:</strong> CD34 mask, thresholded by hysteresis with a local, noise-based low threshold.</li>
 <li><strong>3 Distance filter:</strong> keeps CD34 components ≥ the minimum volume, then the part with <code>d &gt;</code> cutoff → <strong>fibroblast mask</strong>.</li>
 </ul>
@@ -260,6 +262,28 @@
 <li><em>distance mask</em>: 1 where <code>d &gt;</code> threshold (given in µm or in z slices), else 0;</li>
 <li><em>fibroblast mask</em>;</li>
 <li>optionally all results as a steps <code>.h5</code>.</li>
+</ul>
+</li>
+</ol>
+<h3>Cx43 window</h3>
+<p><em>Plugins &gt; MASKEL IBEX preprocessing &gt; Cx43 puncta</em>:</p>
+<ol>
+<li>Choose the <strong>Cx43 channel</strong> (Channel_2 is pre-selected) and the <strong>fibroblast mask</strong>. &quot;fibroblast mask FINAL [full]&quot; from the first window is pre-selected if present; it can also be a mask loaded from a TIFF on the same voxel grid.</li>
+<li>Run <em>4: Cx43 – run on region</em> or <em>run on full volume</em>:
+<ul>
+<li><strong>smoothed</strong> = Gaussian σ (Y, X) = (1.0, 0.7) px;</li>
+<li><strong>contrast</strong> = smoothed − local background (median over ~14.8 µm);</li>
+<li><strong>positive</strong> = contrast &gt; T (12 grey values), only within 2 µm of the fibroblast mask (anisotropic 3D distance);</li>
+<li><strong>objects</strong> = 26-connected; merged puncta are fine, since the positive volume is the quantity of interest.</li>
+</ul>
+</li>
+<li><em>Export object table CSV</em>. One row per object:
+<ul>
+<li>centroid in µm;</li>
+<li>voxels, volume;</li>
+<li>mean / max contrast, mean raw value;</li>
+<li>fraction inside the fibroblast mask;</li>
+<li>centroid distance to the mask.</li>
 </ul>
 </li>
 </ol>
@@ -277,6 +301,7 @@
 <ul>
 <li><code>&lt;stem&gt;_layers.h5</code>, <code>&lt;stem&gt;_cd34.h5</code>, <code>&lt;stem&gt;_submeso_cd34.h5</code>: intermediate steps;</li>
 <li><code>&lt;stem&gt;_tif\…_fibroblast_mask.tif</code> and <code>…_distance_gt&lt;T&gt;.tif</code>;</li>
+<li><code>&lt;stem&gt;_cx43pos.h5</code> (contrast, positive objects) and <code>&lt;stem&gt;_cx43_objects.csv</code>;</li>
 <li>a log file.</li>
 </ul>
 </li>
@@ -314,7 +339,17 @@
 </tr>
 <tr>
 <td>1</td>
-<td><code>h</code> = highest muscle z; empty columns from the nearest column; grey closing</td>
+<td>only the largest 26-connected muscle component is kept (removes objects lying on the tissue, e.g. a hair)</td>
+<td>on</td>
+</tr>
+<tr>
+<td>1</td>
+<td>macrophage columns (CD11b, Channel_4): CD11b⁺ (Otsu of the smoothed CD11b, σ (1, 2, 2) µm) muscle within the top 2 slices of a column → column dilated by 10 µm, its <code>h</code> taken from the neighbouring columns; skipped if &gt; 20 % of the columns</td>
+<td>on</td>
+</tr>
+<tr>
+<td>1</td>
+<td><code>h</code> = highest muscle z; empty and macrophage columns from the nearest column; grey closing</td>
 <td>disk 9.2 µm</td>
 </tr>
 <tr>
@@ -347,14 +382,29 @@
 <td>26-connected components of the whole CD34 mask; keep those ≥ the minimum volume, then <code>d &gt;</code> cutoff</td>
 <td>500 µm³; −4 µm</td>
 </tr>
+<tr>
+<td>4</td>
+<td>Cx43: Gaussian (pixels; tied to the line step in Y)</td>
+<td>σ (0, 1.0, 0.7) px</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Cx43: background = median of 4 × 4 px block means</td>
+<td>~14.8 µm</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Cx43: positive = contrast &gt; T, within the max. distance of the fibroblast mask</td>
+<td>T = 12; 2 µm</td>
+</tr>
 </tbody>
 </table>
 <p>The defaults were validated on <code>LSM 2026-07-20_B6-12w-naive_co1-s1-r1</code> (naive, round 1).</p>
 <h2>Development and releases</h2>
 <ul>
 <li><strong>Every push and pull request:</strong> <code>.github/workflows/tests.yml</code> runs the tests on Windows, Linux and macOS with Python 3.9–3.12. It also builds the package and checks it with <code>twine check</code>.</li>
-<li><strong>Release:</strong> set the new <code>version</code> in <code>pyproject.toml</code> and in <code>src/napari_maskel_ibex_preprocessing/__init__.py</code>, commit, then push a tag with the same version:<pre><code><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">tag</span> <span class="n">v0</span><span class="mf">.1.0</span>
-<span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">v0</span><span class="mf">.1.0</span>
+<li><strong>Release:</strong> set the new <code>version</code> in <code>pyproject.toml</code> and in <code>src/napari_maskel_ibex_preprocessing/__init__.py</code>, commit, then push a tag with the same version:<pre><code><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">tag</span> <span class="n">v0</span><span class="mf">.2.0</span>
+<span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">v0</span><span class="mf">.2.0</span>
 </pre></div>
 </code></pre>
 <code>.github/workflows/release.yml</code> builds the package, checks that the tag matches the version, and publishes to PyPI through trusted publishing.</li>
@@ -374,7 +424,7 @@
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.1.0</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.2.0</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -384,7 +434,7 @@
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-10-19</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-10-20</li>
                                                 </ul>
                                             </div>
                                         </div>
