@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.2.0</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.2.1</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-10-20</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-10-21</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -277,7 +277,12 @@ Cellpose-SAM, thus breaking it.</p>
 <p><strong>NVIDIA on Linux:</strong> the torch from PyPI is a CUDA build, so it usually works as installed.</p>
 </li>
 <li>
-<p><strong>NVIDIA on Windows:</strong> the torch from PyPI is CPU-only. Reinstall torch and torchvision together from the PyTorch index, with the CUDA version the <a href="https://pytorch.org/get-started/locally/">PyTorch selector</a> gives for your driver, e.g.:</p>
+<p><strong>NVIDIA on Windows:</strong> the torch from PyPI is CPU-only. In a fresh environment, install torch and torchvision from the PyTorch index first, with the CUDA version the <a href="https://pytorch.org/get-started/locally/">PyTorch selector</a> gives for your driver, then napari and the plugin, e.g.:</p>
+<pre><code><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">torch</span> <span class="n">torchvision</span> <span class="o">--</span><span class="n">index</span><span class="o">-</span><span class="n">url</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">download</span><span class="o">.</span><span class="n">pytorch</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">whl</span><span class="o">/</span><span class="n">cu126</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="s2">"napari[all]"</span> <span class="n">napari</span><span class="o">-</span><span class="n">cellposesam</span>
+</pre></div>
+</code></pre>
+<p>If the plugin is already installed, reinstall torch and torchvision together instead:</p>
 <pre><code><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">force</span><span class="o">-</span><span class="n">reinstall</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">deps</span> <span class="n">torch</span> <span class="n">torchvision</span> <span class="o">--</span><span class="n">index</span><span class="o">-</span><span class="n">url</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">download</span><span class="o">.</span><span class="n">pytorch</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">whl</span><span class="o">/</span><span class="n">cu126</span>
 </pre></div>
 </code></pre>
@@ -337,7 +342,7 @@ Cellpose-SAM, thus breaking it.</p>
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.2.0</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.2.1</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -347,7 +352,7 @@ Cellpose-SAM, thus breaking it.</p>
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-10-20</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-10-21</li>
                                                 </ul>
                                             </div>
                                         </div>
