@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">1.1.0</li>
+                                            <li class="MetadataList_textItem__KKmMN">1.1.1</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-10-11</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-10-21</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -209,10 +209,12 @@
                                 <div class="flex items-center justify-between mb-sds-xxl">
                                     <div class="Markdown_markdown__QZ95j">
 
-                                        <p>The <strong>napari-etsam</strong> plugin runs ETSAM inside <a href="https://napari.org">napari</a>, a free image viewer for multi-dimensional data. You open a tomogram, install and activate plugin, click <strong>Segment membranes</strong>. The membrane mask appears as an new label layer that you can refine, inspect and save.</p>
+                                        <img src="https://raw.githubusercontent.com/jianlin-cheng/ETSAM/main/ETSAM_icon.svg" alt="ETSAM membrane icon" width="200" height="160" />
+<h1>ETSAM Plugin for napari</h1>
+<p>The <strong>napari-etsam</strong> plugin runs ETSAM inside <a href="https://napari.org">napari</a>, a free image viewer for multi-dimensional data. You open a tomogram, install and activate plugin, click <strong>Segment membranes</strong>. The membrane mask appears as an new label layer that you can refine, inspect and save.</p>
 <blockquote>
 <p><strong>Note</strong>
-On first start, the plugin installs ETSAM in its own environment (if not already installed using the <a href="https://jianlin-cheng.github.io/ETSAM/installation">ETSAM installer</a>).</p>
+On first start, if ETSAM is missing, click <strong>Install ETSAM</strong> to set it up in its own environment (or install it beforehand using the <a href="https://jianlin-cheng.github.io/ETSAM/installation">ETSAM installer</a>).</p>
 </blockquote>
 <p><img src="https://raw.githubusercontent.com/jianlin-cheng/ETSAM/main/docs/public/napari/napari-result.png" alt="ETSAM membrane segmentation overlaid on a tomogram in napari" /></p>
 <p><em>ETSAM membrane mask (yellow) on EMD-4949 in napari, with the ETSAM panel on the right.</em></p>
@@ -262,8 +264,10 @@ To install the plugin from a checkout of the <a href="https://github.com/jianlin
 </pre></div>
 </code></pre>
 </blockquote>
-<h3>2. First start: ETSAM is installed for you</h3>
-<p>ETSAM itself runs in its own environment, separate from napari. When you first open the ETSAM panel, the plugin looks for it and, if it is not installed yet, runs the <a href="https://jianlin-cheng.github.io/ETSAM/installation/#method-1-etsam-installer-recommended">ETSAM installer</a> in the background. The installer puts ETSAM into <code>~/etsam_env</code> (on Windows, <code>%USERPROFILE%\etsam_env</code>) and sets up the conda environment and the model weights (about 5 GB in total), so this takes a few minutes; the panel shows its progress. Subsequent use starts are immediate.</p>
+<h3>2. First start: click Install ETSAM</h3>
+<p>ETSAM itself runs in its own environment, separate from napari. When you open the ETSAM panel, the plugin checks whether ETSAM is installed. If it is missing on a supported computer, the panel shows an <strong>Install ETSAM</strong> button. Click it to start the <a href="https://jianlin-cheng.github.io/ETSAM/installation/#method-1-etsam-installer-recommended">ETSAM installer</a>. Opening the panel does not start an installation.</p>
+<p>Installation downloads about <strong>5 GB</strong> and may take <strong>10–15 minutes</strong>. Keep napari open until it finishes; the panel shows progress. The installer puts ETSAM into <code>~/etsam_env</code> (on Windows, <code>%USERPROFILE%\etsam_env</code>). Subsequent use starts immediately.</p>
+<p>ETSAM requires <strong>Linux or Windows and an NVIDIA GPU</strong>. macOS is not supported. Contributions are welcome to extend hardware/software support.</p>
 <h2>Segmenting a Tomogram</h2>
 <ol>
 <li><strong>Open the panel</strong>: <strong>Plugins ▸ ETSAM Membrane Segmentation (napari-etsam)</strong>.</li>
@@ -396,7 +400,7 @@ To install the plugin from a checkout of the <a href="https://github.com/jianlin
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">1.1.0</li>
+                                                    <li class="MetadataList_textItem__KKmMN">1.1.1</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -406,7 +410,7 @@ To install the plugin from a checkout of the <a href="https://github.com/jianlin
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-10-11</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-10-21</li>
                                                 </ul>
                                             </div>
                                         </div>
