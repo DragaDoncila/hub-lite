@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.2.0</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.2.1</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-10-20</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-10-23</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -252,7 +252,7 @@
 <li>For fast tuning, draw a <strong>rectangle</strong> in a Shapes layer (2D view) and choose that layer as the <em>region</em>. Every step has <em>Run on region</em> (seconds to a minute) and <em>Run on full volume</em> (minutes). Both run in the background.
 <ul>
 <li><strong>1 Muscle surface:</strong> muscle mask, surface, height map <code>h</code> and the <strong>signed distance map</strong> <code>d = (z − h)·dz</code> (µm; &gt; 0 = mesothelium side).
-Two options guard the surface: <em>keep only the largest muscle component</em> (removes e.g. a hair lying on the tissue) and <em>macrophage columns (CD11b)</em>. A macrophage cluster on the muscle is bright in TOM20 too and would lift <code>h</code>; in columns whose top muscle voxels are CD11b⁺, <code>h</code> is taken from the neighbouring columns instead.</li>
+Two options guard the surface: <em>remove muscle components smaller than 1 % of the largest</em> (removes e.g. a hair lying on the tissue, but keeps large separate pieces of real muscle) and <em>macrophage columns (CD11b)</em>. A macrophage cluster on the muscle is bright in TOM20 too and would lift <code>h</code>; in columns whose top muscle voxels are CD11b⁺, <code>h</code> is taken from the neighbouring columns instead.</li>
 <li><strong>2 CD34 mask:</strong> CD34 mask, thresholded by hysteresis with a local, noise-based low threshold.</li>
 <li><strong>3 Distance filter:</strong> keeps CD34 components ≥ the minimum volume, then the part with <code>d &gt;</code> cutoff → <strong>fibroblast mask</strong>.</li>
 </ul>
@@ -339,8 +339,8 @@ Two options guard the surface: <em>keep only the largest muscle component</em> (
 </tr>
 <tr>
 <td>1</td>
-<td>only the largest 26-connected muscle component is kept (removes objects lying on the tissue, e.g. a hair)</td>
-<td>on</td>
+<td>26-connected muscle components smaller than a fraction of the largest are removed (objects lying on the tissue, e.g. a hair)</td>
+<td>1 %</td>
 </tr>
 <tr>
 <td>1</td>
@@ -403,8 +403,8 @@ Two options guard the surface: <em>keep only the largest muscle component</em> (
 <h2>Development and releases</h2>
 <ul>
 <li><strong>Every push and pull request:</strong> <code>.github/workflows/tests.yml</code> runs the tests on Windows, Linux and macOS with Python 3.9–3.12. It also builds the package and checks it with <code>twine check</code>.</li>
-<li><strong>Release:</strong> set the new <code>version</code> in <code>pyproject.toml</code> and in <code>src/napari_maskel_ibex_preprocessing/__init__.py</code>, commit, then push a tag with the same version:<pre><code><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">tag</span> <span class="n">v0</span><span class="mf">.2.0</span>
-<span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">v0</span><span class="mf">.2.0</span>
+<li><strong>Release:</strong> set the new <code>version</code> in <code>pyproject.toml</code> and in <code>src/napari_maskel_ibex_preprocessing/__init__.py</code>, commit, then push a tag with the same version:<pre><code><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">tag</span> <span class="n">v0</span><span class="mf">.2.1</span>
+<span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">v0</span><span class="mf">.2.1</span>
 </pre></div>
 </code></pre>
 <code>.github/workflows/release.yml</code> builds the package, checks that the tag matches the version, and publishes to PyPI through trusted publishing.</li>
@@ -424,7 +424,7 @@ Two options guard the surface: <em>keep only the largest muscle component</em> (
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.2.0</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.2.1</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -434,7 +434,7 @@ Two options guard the surface: <em>keep only the largest muscle component</em> (
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-10-20</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-10-23</li>
                                                 </ul>
                                             </div>
                                         </div>
