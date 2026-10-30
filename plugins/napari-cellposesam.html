@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.2.3</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.3.0</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-10-23</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-10-30</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -177,8 +177,8 @@
         <img src="../static/images/PyPI_logo.svg.png" alt="PyPI" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">napari-cellposesam</span>
     </a>
     
-        <a class="underline flex" href="https://github.com/jeskowagner/napari-cellposesam/issues" rel="noreferrer" target="_blank">
-            <img src="../static/images/GitHub_Invertocat_Logo.svg.png" alt="GitHub" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">jeskowagner/napari-cellposesam</span>
+        <a class="underline flex" href="https://github.com/DBI-INFRA/napari-cellposesam/issues" rel="noreferrer" target="_blank">
+            <img src="../static/images/GitHub_Invertocat_Logo.svg.png" alt="GitHub" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">DBI-INFRA/napari-cellposesam</span>
         </a>
         </div>
 
@@ -210,10 +210,10 @@
                                     <div class="Markdown_markdown__QZ95j">
 
                                         <p><a href="https://napari-cellposesam.readthedocs.io/en/latest/"><img src="https://readthedocs.org/projects/napari-cellposesam/badge/?version=latest" alt="Documentation Status" /></a>
-<a href="https://github.com/jeskowagner/napari-cellposesam/actions"><img src="https://github.com/jeskowagner/napari-cellposesam/actions/workflows/test_and_deploy.yml/badge.svg" alt="tests" /></a>
+<a href="https://github.com/DBI-INFRA/napari-cellposesam/actions"><img src="https://github.com/DBI-INFRA/napari-cellposesam/actions/workflows/test_and_deploy.yml/badge.svg" alt="tests" /></a>
 <a href="https://pypi.org/project/napari-cellposesam/"><img src="https://img.shields.io/pypi/v/napari-cellposesam" alt="PyPI version" /></a>
 <a href="https://pypi.org/project/napari-cellposesam/"><img src="https://img.shields.io/pypi/pyversions/napari-cellposesam" alt="Python version" /></a>
-<a href="https://github.com/jeskowagner/napari-cellposesam/raw/main/LICENSE"><img src="https://img.shields.io/pypi/l/napari-cellposesam.svg?color=green" alt="License" /></a>
+<a href="https://github.com/DBI-INFRA/napari-cellposesam/raw/main/LICENSE"><img src="https://img.shields.io/pypi/l/napari-cellposesam.svg?color=green" alt="License" /></a>
 <a href="https://www.cellpose.org"><img src="https://img.shields.io/website?url=https%3A%2F%2Fwww.cellpose.org" alt="website" /></a></p>
 <p>A <a href="https://github.com/napari/napari">napari</a> plugin for cell segmentation with <a href="https://github.com/MouseLand/cellpose">cellpose</a>, including Cellpose-SAM (cellpose 4).</p>
 <p>This is a fork of <a href="https://github.com/MouseLand/cellpose-napari">MouseLand/cellpose-napari</a>, the original plugin by Carsen Stringer. It adds:</p>
@@ -224,7 +224,7 @@ environment and UI</li>
 <li>compatibility with new napari versions</li>
 </ul>
 <p>The cellpose code was written by Carsen Stringer and Marius Pachitariu. To learn about Cellpose, read the <a href="https://t.co/kBMXmPp3Yn?amp=1"><strong>paper</strong></a> or watch this <a href="https://t.co/JChCsTD0SK?amp=1"><strong>talk</strong></a>.</p>
-<p>For problems with this plugin, open an <a href="https://github.com/jeskowagner/napari-cellposesam/issues">issue</a>. For problems with cellpose itself, open an <a href="https://github.com/MouseLand/cellpose/issues">issue</a> on the cellpose repo.</p>
+<p>For problems with this plugin, open an <a href="https://github.com/DBI-INFRA/napari-cellposesam/issues">issue</a>. For problems with cellpose itself, open an <a href="https://github.com/MouseLand/cellpose/issues">issue</a> on the cellpose repo.</p>
 <p>If you use this plugin, please cite the <a href="https://www.nature.com/articles/s41592-020-01018-x">cellpose paper</a>, the Cellpose3 paper if you use the Cellpose3 models, and the Cellpose-SAM paper if you use the <code>cpsam</code> models (see the <a href="https://github.com/MouseLand/cellpose">cellpose repo</a> for the references):</p>
 <pre><code class="language-bibtex"><div class="highlight"><pre><span></span><span class="nd">@article</span><span class="p">{</span><span class="n">stringer2021cellpose</span><span class="p">,</span>
   <span class="n">title</span><span class="o">=</span><span class="p">{</span><span class="n">Cellpose</span><span class="p">:</span> <span class="n">a</span> <span class="n">generalist</span> <span class="n">algorithm</span> <span class="k">for</span> <span class="n">cellular</span> <span class="n">segmentation</span><span class="p">},</span>
@@ -238,8 +238,24 @@ environment and UI</li>
 <span class="p">}</span>
 </pre></div>
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/jeskowagner/napari-cellposesam/main/docs/_static/gui.png" alt="napari-cellposesam segmenting the 2D sample image" /></p>
+<p><img src="https://raw.githubusercontent.com/DBI-INFRA/napari-cellposesam/main/docs/_static/gui.png" alt="napari-cellposesam segmenting the 2D sample image" /></p>
 <h2>Installation</h2>
+<h3>Installer</h3>
+<p>The installer sets up napari and napari-cellposesam with the PyTorch build for your computer, and adds a desktop shortcut that opens napari with the plugin. You do not need Python or conda.</p>
+<ul>
+<li>
+<p><strong>Windows:</strong> download <code>napari-cellposesam-setup.exe</code> from the newest <a href="https://github.com/DBI-INFRA/napari-cellposesam/releases">release</a> and run it.</p>
+</li>
+<li>
+<p><strong>macOS and Linux:</strong> open a terminal and run:</p>
+<pre><code><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">LsSf</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">DBI</span><span class="o">-</span><span class="n">INFRA</span><span class="o">/</span><span class="n">napari</span><span class="o">-</span><span class="n">cellposesam</span><span class="o">/</span><span class="n">main</span><span class="o">/</span><span class="n">installer</span><span class="o">/</span><span class="n">install</span><span class="o">.</span><span class="n">sh</span> <span class="o">|</span> <span class="n">sh</span>
+</pre></div>
+</code></pre>
+</li>
+</ul>
+<p>The installer offers to download the Cellpose-SAM model (about 1.2 GB) while it installs. The model goes to <code>~/.cellpose/models</code>, where any cellpose install finds it, so uninstalling keeps it.</p>
+<p><a href="installer/README.md">installer/README.md</a> has the other ways to install, and how to update and uninstall.</p>
+<h3>pip</h3>
 <p>Requires Python 3.11 or newer. We recommend a fresh environment, e.g. with conda:</p>
 <pre><code><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">napari</span><span class="o">-</span><span class="n">cellposesam</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.12</span>
 <span class="n">conda</span> <span class="n">activate</span> <span class="n">napari</span><span class="o">-</span><span class="n">cellposesam</span>
@@ -251,7 +267,7 @@ environment and UI</li>
 </code></pre>
 <p>Or install the plugin from the napari plugin manager (Plugins &gt; Install/Uninstall Plugins).</p>
 <p>To install the latest development version from GitHub:</p>
-<pre><code><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">git</span><span class="o">+</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">jeskowagner</span><span class="o">/</span><span class="n">napari</span><span class="o">-</span><span class="n">cellposesam</span>
+<pre><code><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">git</span><span class="o">+</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">DBI</span><span class="o">-</span><span class="n">INFRA</span><span class="o">/</span><span class="n">napari</span><span class="o">-</span><span class="n">cellposesam</span>
 </pre></div>
 </code></pre>
 <p>If you have issues installing cellpose, see the <a href="https://cellpose.readthedocs.io/en/latest/installation.html">cellpose installation docs</a>.</p>
@@ -342,7 +358,7 @@ Cellpose-SAM, thus breaking it.</p>
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.2.3</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.3.0</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -352,7 +368,7 @@ Cellpose-SAM, thus breaking it.</p>
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-10-23</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-10-30</li>
                                                 </ul>
                                             </div>
                                         </div>
