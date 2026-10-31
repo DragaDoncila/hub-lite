@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.1.1</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.1.2</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-10-30</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-10-31</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -156,7 +156,7 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Requirements<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">pyqt5<6,>=5.15.11; extra == "test"</li><li class="MetadataList_textItem__KKmMN">napari<0.7,>=0.6.2; extra == "test"</li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">pyqt6!=6.11.0,!=6.11.1,!=6.6.1,<7,>=6.5; extra == "test"</li><li class="MetadataList_textItem__KKmMN">napari<0.7,>=0.6.2; extra == "test"</li></ul>
                                     </div>
                                 </div>
                             </div>
@@ -209,131 +209,36 @@
                                 <div class="flex items-center justify-between mb-sds-xxl">
                                     <div class="Markdown_markdown__QZ95j">
 
-                                        <h2>Usage</h2>
+                                        <p>Blink selected layers in <a href="https://napari.org/">napari</a> to compare them visually.</p>
+<h2>Installation</h2>
+<p>Install the plugin with pip:</p>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>napari-flicker
+</pre></div>
+</code></pre>
+<p>You can also install it from napari via <strong>Plugins &gt; Install/Uninstall Plugins...</strong>
+and searching for <code>napari-flicker</code>.</p>
+<h2>Usage</h2>
 <p>Start napari with the plugin:</p>
 <pre><code class="language-bash"><div class="highlight"><pre><span></span>napari<span class="w"> </span>--with<span class="w"> </span>napari-flicker<span class="w"> </span><span class="s1">'Flicker Widget'</span>
 </pre></div>
 </code></pre>
-<h2>Development</h2>
-<p>Start development environment with the following command:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span><span class="c1"># pixi can be installed with nix if you don't have it yet</span>
-<span class="c1"># $ nix develop</span>
-pixi<span class="w"> </span>shell<span class="w"> </span>--environment<span class="w"> </span>development
-</pre></div>
-</code></pre>
-<p>After updating code in the environment, you can run the tests with:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span><span class="c1"># Run tests in the default test environment</span>
-pixi<span class="w"> </span>run<span class="w"> </span><span class="nb">test</span>
-
-<span class="c1"># Run tests in a specific Python version environment</span>
-pixi<span class="w"> </span>run<span class="w"> </span>--environment<span class="w"> </span>test-py311<span class="w"> </span><span class="nb">test</span>
-
-<span class="c1"># Run tests across all Python versions</span>
-pixi<span class="w"> </span>run<span class="w"> </span>test-all
-</pre></div>
-</code></pre>
-<p>Formatter and linter can be run with:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>pixi<span class="w"> </span>run<span class="w"> </span>--environment<span class="w"> </span>development<span class="w"> </span>pre-commit<span class="w"> </span>run<span class="w"> </span>--all-files
-</pre></div>
-</code></pre>
-<h2>Record of steps taken in initializing the repository</h2>
-<p>This repository is prepared by the follwowing command:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>gh<span class="w"> </span>repo<span class="w"> </span>create<span class="w"> </span>--private<span class="w"> </span>napari-flicker
-mkdir<span class="w"> </span>napari-flicker
-<span class="nb">cd</span><span class="w"> </span>napari-flicker
-git<span class="w"> </span>init
-pixi<span class="w"> </span>init<span class="w"> </span>--format<span class="w"> </span>pyproject
-<span class="c1"># add packages required for napari-plugin-template</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s1">'\n[tool.pixi.feature.development.dependencies]'</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>pyproject.toml
-<span class="nb">echo</span><span class="w"> </span><span class="s1">'\n[tool.pixi.feature.test.dependencies]'</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>pyproject.toml
-pixi<span class="w"> </span>workspace<span class="w"> </span>environment<span class="w"> </span>add<span class="w"> </span><span class="nb">test</span><span class="w"> </span>--feature<span class="w"> </span><span class="nb">test</span>
-pixi<span class="w"> </span>workspace<span class="w"> </span>environment<span class="w"> </span>add<span class="w"> </span>development<span class="w"> </span>--feature<span class="w"> </span>development<span class="w"> </span>--feature<span class="w"> </span><span class="nb">test</span>
-pixi<span class="w"> </span>add<span class="w"> </span>--feature<span class="w"> </span><span class="nb">test</span><span class="w"> </span>pytest<span class="w"> </span>pytest-cov<span class="w"> </span>pytest-qt<span class="w"> </span>napari
-pixi<span class="w"> </span>add<span class="w"> </span>--feature<span class="w"> </span><span class="nb">test</span><span class="w"> </span>--pypi<span class="w"> </span>pyqt5<span class="w"> </span>napari
-pixi<span class="w"> </span>add<span class="w"> </span>--feature<span class="w"> </span>development<span class="w"> </span>copier<span class="w"> </span>jinja2-time<span class="w"> </span>npe2<span class="w"> </span>pre-commit
-
-git<span class="w"> </span>add<span class="w"> </span>.
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Initial commit"</span>
-git<span class="w"> </span>branch<span class="w"> </span>-M<span class="w"> </span>main
-git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>git@github.com:amano-takahisa/napari-flicker.git
-git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
-</pre></div>
-</code></pre>
-<p>Enter to the <code>development</code> environment, and run copier</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>pixi<span class="w"> </span>shell<span class="w"> </span>--environment<span class="w"> </span>development
-copier<span class="w"> </span>copy<span class="w"> </span>--trust<span class="w"> </span>https://github.com/napari/napari-plugin-template<span class="w"> </span>tmp
-</pre></div>
-</code></pre>
-<p>Then, set anapari-plugin-template options as follows:</p>
-<pre><code class="language-console"><div class="highlight"><pre><span></span><span class="go">🎤 The name of your plugin, used to name the package and repository</span>
-<span class="go">   napari-flicker</span>
-<span class="go">🎤 Display name for your plugin in the napari GUI</span>
-<span class="go">   Flicker</span>
-<span class="go">🎤 Plugin module name, usually the same as the name of the plugin package, but lower</span>
-<span class="go">   napari_flicker</span>
-<span class="go">🎤 Short description of what your plugin does</span>
-<span class="go">   Blinking layers in napari</span>
-<span class="go">🎤 Email address</span>
-<span class="go">   amano.takahisa@gmail.com</span>
-<span class="go">🎤 Developer name</span>
-<span class="go">   Taka</span>
-<span class="go">🎤 Github user or organisation name</span>
-<span class="go">   amano-takahisa</span>
-<span class="go">🎤 Github repository URL</span>
-<span class="go">   https://github.com/amano-takahisa/napari-flicker</span>
-<span class="go">🎤 Include reader plugin?</span>
-<span class="go">   Yes</span>
-<span class="go">🎤 Include writer plugin?</span>
-<span class="go">   Yes</span>
-<span class="go">🎤 Include sample data plugin?</span>
-<span class="go">   Yes</span>
-<span class="go">🎤 Include widget plugin?</span>
-<span class="go">   Yes</span>
-<span class="go">🎤 Use git tags for automatic versioning?</span>
-<span class="go">   Yes</span>
-<span class="go">🎤 Install pre-commit? (Code formatting checks)</span>
-<span class="go">   Yes</span>
-<span class="go">🎤 Install dependabot? (Automatic security updates of dependency versions)</span>
-<span class="go">   Yes</span>
-<span class="go">🎤 Which licence do you want your plugin code to have?</span>
-<span class="go">   Apache Software License 2.0</span>
-</pre></div>
-</code></pre>
-<p>Move necessary files in tmp to the root directory.</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>rm<span class="w"> </span>-rf<span class="w"> </span>src
-mv<span class="w"> </span>tmp/.github<span class="w"> </span>.
-mv<span class="w"> </span>tmp/.napari-hub<span class="w"> </span>.
-mv<span class="w"> </span>tmp/src<span class="w"> </span>.
-cat<span class="w"> </span>tmp/.gitignore<span class="w"> </span>&gt;&gt;<span class="w"> </span>.gitignore
-mv<span class="w"> </span>tmp/.pre-commit-config.yaml<span class="w"> </span>.pre-commit-config.yaml
-mv<span class="w"> </span>tmp/LICENSE<span class="w"> </span>LICENSE
-mv<span class="w"> </span>tmp/MANIFEST.in<span class="w"> </span>MANIFEST.in
-<span class="c1"># tox.ini is no longer needed as we use pixi for testing</span>
-</pre></div>
-</code></pre>
-<p>And manually merge following files:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>pyproject.toml
-README.md
-</pre></div>
-</code></pre>
-<p>remove the tmp directory:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>rm<span class="w"> </span>-rf<span class="w"> </span>tmp
-</pre></div>
-</code></pre>
-<p>drop black from pre-commit configuration.</p>
-<p>format the code:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>.
-pixi<span class="w"> </span>shell<span class="w"> </span>--environment<span class="w"> </span>development
-pre-commit<span class="w"> </span>run<span class="w"> </span>--all-files
-pre-commit<span class="w"> </span>run<span class="w"> </span>--all-files
-</pre></div>
-</code></pre>
-<p>Finally, commit the changes:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>-u
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Initialize the napari-flicker plugin"</span>
-git<span class="w"> </span>push
-</pre></div>
-</code></pre>
+<p>Or open the widget from the menu: <strong>Plugins &gt; Flicker &gt; Flicker Widget</strong>.</p>
+<ol>
+<li>Load the layers you want to compare.</li>
+<li>Tick the layers you want to blink in the <strong>Available Layers</strong> list.</li>
+<li>Click <strong>Start Flicker</strong>. The selected layers toggle their visibility every
+0.5 seconds, so you can spot differences between them.</li>
+<li>Click <strong>Stop Flicker</strong> to stop.</li>
+</ol>
+<h2>Notes</h2>
+<ul>
+<li>Only <strong>Image</strong> and <strong>Labels</strong> layers can be flickered.</li>
+<li>The flicker interval is fixed at 0.5 seconds.</li>
+<li>All selected layers toggle together.</li>
+<li>The layer list updates automatically when layers are added to or removed
+from the viewer.</li>
+<li>Nothing happens if you start flickering without selecting a layer.</li>
+</ul>
 
 
                                     </div>
@@ -349,7 +254,7 @@ git<span class="w"> </span>push
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.1.1</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.1.2</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -359,7 +264,7 @@ git<span class="w"> </span>push
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-10-30</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-10-31</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -456,7 +361,7 @@ git<span class="w"> </span>push
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">
                                                     Requirements<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">pyqt5<6,>=5.15.11; extra == "test"</li><li class="MetadataList_textItem__KKmMN">napari<0.7,>=0.6.2; extra == "test"</li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">pyqt6!=6.11.0,!=6.11.1,!=6.6.1,<7,>=6.5; extra == "test"</li><li class="MetadataList_textItem__KKmMN">napari<0.7,>=0.6.2; extra == "test"</li></ul>
                                             </div>
                                         </div>
                                     </div>

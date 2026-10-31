@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.1.6</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.1.7</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-10-29</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-10-31</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -156,7 +156,7 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Requirements<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy>=1.21.0</li><li class="MetadataList_textItem__KKmMN">magicgui>=0.5.0</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">torch>=2.0.0</li><li class="MetadataList_textItem__KKmMN">torchvision>=0.15.0</li><li class="MetadataList_textItem__KKmMN">tqdm>=4.62.0</li><li class="MetadataList_textItem__KKmMN">pillow>=9.0.0</li><li class="MetadataList_textItem__KKmMN">matplotlib>=3.5.0</li><li class="MetadataList_textItem__KKmMN">opencv-python</li><li class="MetadataList_textItem__KKmMN">tifffile</li><li class="MetadataList_textItem__KKmMN">napari[all]</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest>=8.3.5; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt>=4.4.0; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-xvfb>=3.0.0; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov>=6.0; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt5>=5.15.11; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">black; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">ruff; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">mypy; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pre-commit; extra == "dev"</li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy>=1.21.0</li><li class="MetadataList_textItem__KKmMN">magicgui>=0.5.0</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">torch>=2.0.0</li><li class="MetadataList_textItem__KKmMN">torchvision>=0.15.0</li><li class="MetadataList_textItem__KKmMN">tqdm>=4.62.0</li><li class="MetadataList_textItem__KKmMN">pillow>=9.0.0</li><li class="MetadataList_textItem__KKmMN">matplotlib>=3.5.0</li><li class="MetadataList_textItem__KKmMN">opencv-python</li><li class="MetadataList_textItem__KKmMN">tifffile</li><li class="MetadataList_textItem__KKmMN">napari</li><li class="MetadataList_textItem__KKmMN">napari[all]; extra == "all"</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest>=8.3.5; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt>=4.4.0; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-xvfb>=3.0.0; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov>=6.0; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt5>=5.15.11; python_version < "3.11" and extra == "testing"</li><li class="MetadataList_textItem__KKmMN">PyQt6>=6.7; python_version >= "3.11" and extra == "testing"</li><li class="MetadataList_textItem__KKmMN">black; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">ruff; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">mypy; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pre-commit; extra == "dev"</li></ul>
                                     </div>
                                 </div>
                             </div>
@@ -222,11 +222,15 @@
 <p><code>napari-DINOSim</code> enables zero-shot image segmentation by selecting reference points on an image. The plugin leverages DINOv2's powerful feature extraction capabilities to compute similarity maps and generate segmentation masks.</p>
 <p>For detailed information about the widget's functionality, UI elements, and usage instructions, please refer to the <a href="./docs/plugin_documentation.md">Plugin Documentation</a>. A simple <a href="./src/DINOSim_example.ipynb">example notebook</a> and an <a href="./src/DINOSim_advanced.ipynb">advanced notebook</a> are also available for programmatic use, showing how to load/save embeddings and references.</p>
 <h2>Installation</h2>
-<p>You can install <code>napari-DINOSim</code> via <a href="https://pypi.org/project/pip/">pip</a>:</p>
+<p>For a fresh environment, install <code>napari-DINOSim</code> with napari:</p>
+<pre><code class="language-sh"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"napari-dinosim[all]"</span>
+</pre></div>
+</code></pre>
+<p>When napari is already installed, including through the napari plugin manager, install only the plugin:</p>
 <pre><code class="language-sh"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>napari-dinosim
 </pre></div>
 </code></pre>
-<p>or from source using <a href="https://docs.conda.io/en/latest/miniconda.html">conda</a>:</p>
+<p>To install from source with <a href="https://docs.conda.io/en/latest/miniconda.html">conda</a>:</p>
 <pre><code class="language-bash"><div class="highlight"><pre><span></span><span class="c1"># Clone the repository</span>
 git<span class="w"> </span>clone<span class="w"> </span>https://github.com/AAitorG/napari-DINOSim.git
 <span class="nb">cd</span><span class="w"> </span>napari-DINOSim
@@ -278,7 +282,7 @@ The runtime will automatically fall back to CPU or Apple MPS if CUDA is unavaila
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.1.6</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.1.7</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -288,7 +292,7 @@ The runtime will automatically fall back to CPU or Apple MPS if CUDA is unavaila
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-10-29</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-10-31</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -385,7 +389,7 @@ The runtime will automatically fall back to CPU or Apple MPS if CUDA is unavaila
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">
                                                     Requirements<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy>=1.21.0</li><li class="MetadataList_textItem__KKmMN">magicgui>=0.5.0</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">torch>=2.0.0</li><li class="MetadataList_textItem__KKmMN">torchvision>=0.15.0</li><li class="MetadataList_textItem__KKmMN">tqdm>=4.62.0</li><li class="MetadataList_textItem__KKmMN">pillow>=9.0.0</li><li class="MetadataList_textItem__KKmMN">matplotlib>=3.5.0</li><li class="MetadataList_textItem__KKmMN">opencv-python</li><li class="MetadataList_textItem__KKmMN">tifffile</li><li class="MetadataList_textItem__KKmMN">napari[all]</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest>=8.3.5; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt>=4.4.0; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-xvfb>=3.0.0; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov>=6.0; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt5>=5.15.11; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">black; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">ruff; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">mypy; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pre-commit; extra == "dev"</li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy>=1.21.0</li><li class="MetadataList_textItem__KKmMN">magicgui>=0.5.0</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">torch>=2.0.0</li><li class="MetadataList_textItem__KKmMN">torchvision>=0.15.0</li><li class="MetadataList_textItem__KKmMN">tqdm>=4.62.0</li><li class="MetadataList_textItem__KKmMN">pillow>=9.0.0</li><li class="MetadataList_textItem__KKmMN">matplotlib>=3.5.0</li><li class="MetadataList_textItem__KKmMN">opencv-python</li><li class="MetadataList_textItem__KKmMN">tifffile</li><li class="MetadataList_textItem__KKmMN">napari</li><li class="MetadataList_textItem__KKmMN">napari[all]; extra == "all"</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest>=8.3.5; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt>=4.4.0; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-xvfb>=3.0.0; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov>=6.0; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt5>=5.15.11; python_version < "3.11" and extra == "testing"</li><li class="MetadataList_textItem__KKmMN">PyQt6>=6.7; python_version >= "3.11" and extra == "testing"</li><li class="MetadataList_textItem__KKmMN">black; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">ruff; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">mypy; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pre-commit; extra == "dev"</li></ul>
                                             </div>
                                         </div>
                                     </div>
