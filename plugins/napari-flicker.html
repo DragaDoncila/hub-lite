@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">1.0.0</li>
+                                            <li class="MetadataList_textItem__KKmMN">1.2.0</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-10-31</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-11-02</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -225,14 +225,16 @@ and searching for <code>napari-flicker</code>.</p>
 <p>Or open the widget from the menu: <strong>Plugins &gt; Flicker &gt; Flicker Widget</strong>.</p>
 <ol>
 <li>Load the layers you want to compare.</li>
-<li>Tick the layers you want to blink in the <strong>Available Layers</strong> list.</li>
+<li>Tick the layers you want to blink in the <strong>Available Layers</strong> list.
+<strong>Refresh Layers</strong> reloads that list from the viewer, keeping your ticks.</li>
 <li>Click <strong>Start Flicker</strong>. The selected layers toggle their visibility every
 0.5 seconds, so you can spot differences between them.</li>
-<li>Click <strong>Stop Flicker</strong> to stop.</li>
+<li>Click <strong>Stop Flicker</strong> to stop and restore each selected layer to the
+visibility it had when you clicked <strong>Start Flicker</strong>.</li>
 </ol>
 <h2>Notes</h2>
 <ul>
-<li>Only <strong>Image</strong> and <strong>Labels</strong> layers can be flickered.</li>
+<li><strong>Image</strong>, <strong>Labels</strong>, <strong>Shapes</strong> and <strong>Points</strong> layers can be flickered.</li>
 <li>The flicker interval is fixed at 0.5 seconds.</li>
 <li>All selected layers toggle together.</li>
 <li>The layer list updates automatically when layers are added to or removed
@@ -254,7 +256,7 @@ from the viewer.</li>
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">1.0.0</li>
+                                                    <li class="MetadataList_textItem__KKmMN">1.2.0</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -264,7 +266,7 @@ from the viewer.</li>
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-10-31</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-11-02</li>
                                                 </ul>
                                             </div>
                                         </div>
