@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.3.1</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.5.0</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-08-15</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-11-04</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -260,21 +260,30 @@ uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </s
 <li>Open napari.</li>
 <li>Open two image stacks or use <code>File &gt; Open Sample &gt; RACC</code>.</li>
 <li>Start the widget from <code>Plugins &gt; RACC (napari-racc)</code>.</li>
-<li>Select channel 1 and channel 2.</li>
-<li>Adjust thresholds manually or press <code>Costes thresholds</code>.</li>
+<li>On <strong>Analysis</strong>, select channel 1 and channel 2.</li>
+<li>Adjust the background thresholds or press <code>Estimate thresholds (Costes)</code>.
+Thresholds use the shared 0–255 working intensity scale. Review automatic
+estimates against the image background.</li>
 <li>Press <code>Run RACC</code>.</li>
-<li>Keep <code>Link channel cutoffs to analysis thresholds</code> enabled for a directly
-comparable intensity view, or disable it to clean up the display without
-changing the analysis.</li>
-<li>Choose <code>Translucent</code>, <code>Maximum intensity (MIP)</code>, or <code>Additive</code> with the
-<code>Rendering method</code> control under <code>3D volume rendering</code>; the selection is
-applied to both the intensity overlay and the RACC volume.</li>
-<li>Under <code>Display mapping</code>, use the channel cutoffs and RACC display minimum to
-remove weak haze in both 2D and 3D. Under <code>3D volume rendering</code>, set the
-intensity/RACC opacities and background suppression. Those volume controls
-are deliberately ignored in single-slice and fixed <code>2D Z-MIPs</code> views. None
-of these display controls changes the calculated or exported RACC values.</li>
-<li>Use <code>Overlay</code>, <code>RACC</code>, <code>3D side by side</code>, and <code>2D Z-MIPs</code> to switch views.</li>
+<li>For volume inputs, use <code>3D channels</code>, <code>3D RACC map</code>, or <code>3D side by side</code>.
+<code>2D Z max projection</code> compares fixed maximum-intensity projections along Z.
+A short note below the buttons explains this projection. With 2D inputs,
+the first three buttons are labelled 2D and the Z-projection action is disabled.</li>
+<li>On <strong>Appearance</strong>, expand <code>3D volume rendering</code> to adjust the rendering method,
+intensity/RACC opacities,
+and background suppression. These volume controls apply only to 3D views;
+slices and fixed Z-projections show retained pixels at full opacity.</li>
+<li>Expand <code>Visibility filters</code> for channel cutoffs and the RACC minimum.
+Leave <code>Link channel cutoffs to analysis thresholds</code> enabled for a directly
+comparable intensity view, or disable it to set display-only cutoffs.
+Expand <code>Colors</code> or <code>Scale &amp; bounding box</code> for other appearance controls.
+Appearance settings do not change the calculated or exported RACC values.</li>
+<li>On Analysis, expand <code>Advanced method settings</code> for theta and percentile,
+or <code>Analysis diagnostics</code> for the scatter plot. Use <code>Log intensity</code> to space
+both axes logarithmically and <code>Focus above thresholds</code> to emphasize the
+voxels that meet both thresholds. Turn off <code>Show fit guides</code> to inspect
+the histogram with only the channel threshold lines. <code>Update automatically</code>
+controls recalculation after analysis edits.</li>
 <li>Press <code>Export RACC TIFF</code> to save the numeric RACC result stack for use in
 other software.</li>
 </ol>
@@ -292,6 +301,14 @@ python<span class="w"> </span>-m<span class="w"> </span>build
 python<span class="w"> </span>scripts/launch_racc_examples.py<span class="w"> </span>--example<span class="w"> </span>2d
 </pre></div>
 </code></pre>
+<p>For a prepared presentation example, use:</p>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>python<span class="w"> </span>scripts/launch_racc_examples.py<span class="w"> </span>--example<span class="w"> </span>3d<span class="w"> </span>--demo
+</pre></div>
+</code></pre>
+<p>This loads a small, explicitly labelled synthetic example, calculates RACC,
+and opens the side-by-side comparison with Appearance selected. It uses no
+local legacy sample files. See <a href="https://github.com/rensutheart/napari-racc/blob/main/docs/DEMO_GUIDE.md">the demonstration guide</a>
+for a five-minute walkthrough and technical discussion points.</p>
 <p>Do not launch the napari viewer with <code>QT_QPA_PLATFORM=offscreen</code>; napari needs a
 real Qt/OpenGL context for the viewer on macOS.</p>
 <h2>Citation</h2>
@@ -323,7 +340,7 @@ the rights holder. See <code>LICENSE</code>, <code>NOTICE</code>, and <code>PATE
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.3.1</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.5.0</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -333,7 +350,7 @@ the rights holder. See <code>LICENSE</code>, <code>NOTICE</code>, and <code>PATE
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-08-15</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-11-04</li>
                                                 </ul>
                                             </div>
                                         </div>
