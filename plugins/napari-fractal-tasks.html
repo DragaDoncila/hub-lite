@@ -4,20 +4,20 @@
 
 <head>
     <meta charset="utf-8" />
-    <link href="../plugins/napari-workflow-tasks.html" rel="canonical" />
+    <link href="../plugins/napari-fractal-tasks.html" rel="canonical" />
     <meta content="width=device-width,initial-scale=1" name="viewport" />
     <meta
-        content="napari-workflow-tasks, Daniel Krentzel, napari hub, napari, hub, plugin, image analysis, imaging, chan zuckerberg initiative"
+        content="napari-fractal-tasks, Daniel Krentzel, Ruth Hornbachner, napari hub, napari, hub, plugin, image analysis, imaging, chan zuckerberg initiative"
         name="keywords" />
     <meta content="Install and run Fractal tasks on OME-Zarr images in napari" name="description" />
     <meta content="Install and run Fractal tasks on OME-Zarr images in napari" property="og:description" />
     <meta content="Install and run Fractal tasks on OME-Zarr images in napari." name="twitter:description" />
-    <meta content="Fractal Task Launcher - napari Plugin - Daniel Krentzel" property="og:title" />
-    <meta content="Fractal Task Launcher - napari Plugin - Daniel Krentzel" name="twitter:title" />
+    <meta content="Fractal Task Launcher - napari Plugin - Daniel Krentzel, Ruth Hornbachner" property="og:title" />
+    <meta content="Fractal Task Launcher - napari Plugin - Daniel Krentzel, Ruth Hornbachner" name="twitter:title" />
     <meta content="article" property="og:type" />
-    <meta content="../plugins/napari-workflow-tasks.html" property="og:url" />
+    <meta content="../plugins/napari-fractal-tasks.html" property="og:url" />
     <meta content="@napari_imaging" name="twitter:site" />
-    <title>Fractal Task Launcher - napari Plugin - Daniel Krentzel</title>
+    <title>Fractal Task Launcher - napari Plugin - Daniel Krentzel, Ruth Hornbachner</title>
 
     <meta content="2" name="next-head-count" />
     <meta content="#80d1ff" name="theme-color" />
@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.1.0</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.1.3</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -173,12 +173,12 @@
 
                                 
    <div class="flex items-center" style="gap: 20px; ; align-items: center;"">
-        <a class="underline flex" href="https://pypi.org/project/napari-workflow-tasks/" rel="noreferrer" target="_blank">
-        <img src="../static/images/PyPI_logo.svg.png" alt="PyPI" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">napari-workflow-tasks</span>
+        <a class="underline flex" href="https://pypi.org/project/napari-fractal-tasks/" rel="noreferrer" target="_blank">
+        <img src="../static/images/PyPI_logo.svg.png" alt="PyPI" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">napari-fractal-tasks</span>
     </a>
     
-        <a class="underline flex" href="https://github.com/krentzd/napari-workflow-tasks/issues" rel="noreferrer" target="_blank">
-            <img src="../static/images/GitHub_Invertocat_Logo.svg.png" alt="GitHub" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">krentzd/napari-workflow-tasks</span>
+        <a class="underline flex" href="https://github.com/krentzd/napari-fractal-tasks/issues" rel="noreferrer" target="_blank">
+            <img src="../static/images/GitHub_Invertocat_Logo.svg.png" alt="GitHub" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">krentzd/napari-fractal-tasks</span>
         </a>
         </div>
 
@@ -187,7 +187,7 @@
                                 </div>
                                 <ul class="PluginAuthors_authors__hs3zO">
                                     <li class="inline">
-                                        <span class="text-[11px] screen-495:text-[14px] font-semibold">Daniel Krentzel</span>
+                                        <span class="text-[11px] screen-495:text-[14px] font-semibold">Daniel Krentzel, Ruth Hornbachner</span>
                                     </li>
                             </ul>
                             <div class="screen-1425:hidden mt-sds-xl mb-sds-xxl"><a
@@ -209,23 +209,34 @@
                                 <div class="flex items-center justify-between mb-sds-xxl">
                                     <div class="Markdown_markdown__QZ95j">
 
-                                        <p>A <a href="https://napari.org/stable/index.html">napari</a> plugin to install and run <a href="https://fractal-analytics-platform.github.io/">Fractal</a> tasks locally on <a href="https://ngff.openmicroscopy.org/">OME-Zarr</a> images. Tasks can either be installed from the <a href="https://fractal-analytics-platform.github.io/fractal_tasks/">Fractal task catalog</a> or from tarball files (<code>.tar.gz</code>).</p>
-<p><img src="https://raw.githubusercontent.com/krentzd/napari-workflow-tasks/main/resources/images/napari-plugin-screenshot.png" alt="width=200" /></p>
+                                        <h1 align="center">Fractal Task Launcher</h1>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/krentzd/napari-fractal-tasks/main/src/napari_fractal_tasks/logo_images/napari-fractal-tasks-logo.svg" width="160" alt="napari-fractal-tasks logo">
+</p>
+<div align="center">
+<p><a href="https://pypi.org/project/napari-fractal-tasks"><img src="https://img.shields.io/pypi/v/napari-fractal-tasks.svg?color=green" alt="PyPI" /></a>
+<a href="https://pypi.org/project/napari-fractal-tasks"><img src="https://img.shields.io/pypi/pyversions/napari-fractal-tasks.svg?color=green" alt="Python Version" /></a>
+<a href="https://github.com/krentzd/napari-fractal-tasks/raw/main/LICENSE"><img src="https://img.shields.io/github/license/krentzd/napari-fractal-tasks?color=green" alt="License MIT" /></a>
+<a href="https://github.com/krentzd/napari-fractal-tasks/actions/workflows/test_and_deploy.yml"><img src="https://github.com/krentzd/napari-fractal-tasks/actions/workflows/test_and_deploy.yml/badge.svg?branch=main" alt="tests" /></a>
+<a href="https://napari-hub.org/plugins/napari-fractal-tasks"><img src="https://img.shields.io/endpoint?url=https://api.napari-hub.org/shields/napari-fractal-tasks" alt="napari hub" /></a></p>
+</div>
+<p>A <a href="https://napari.org/stable/index.html">napari</a> plugin to install and run <a href="https://fractal-analytics-platform.github.io/">Fractal</a> tasks locally on <a href="https://ngff.openmicroscopy.org/">OME-Zarr</a> images. Tasks can either be installed from the <a href="https://fractal-analytics-platform.github.io/fractal_tasks/">Fractal task catalog</a> or from tarball files (<code>.tar.gz</code>).</p>
+<p><img src="https://raw.githubusercontent.com/krentzd/napari-fractal-tasks/main/resources/images/napari-plugin-screenshot.png" alt="width=200" /></p>
 <h2>Usage</h2>
 <h3>Installation</h3>
-<p>The napari-workflow-tasks plugin requires <a href="https://pixi.prefix.dev/latest/">pixi</a>, which installs each task package in its own environment. Install pixi first; it is not installed together with the plugin.</p>
-<p>To add the plugin to an existing napari, install <code>napari-workflow-tasks</code> from napari's plugin manager (<code>Plugins &gt; Install/Uninstall Plugins</code>) or with pip:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>napari-workflow-tasks
+<p>The napari-fractal-tasks plugin requires <a href="https://pixi.prefix.dev/latest/">pixi</a>, which installs each task package in its own environment. Install pixi first; it is not installed together with the plugin.</p>
+<p>To add the plugin to an existing napari, install <code>napari-fractal-tasks</code> from napari's plugin manager (<code>Plugins &gt; Install/Uninstall Plugins</code>) or with pip:</p>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>napari-fractal-tasks
 </pre></div>
 </code></pre>
 <p>To run the plugin from its source code instead, open the terminal and run the following commands:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/krentzd/napari-workflow-tasks
-<span class="nb">cd</span><span class="w"> </span>napari-workflow-tasks
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/krentzd/napari-fractal-tasks
+<span class="nb">cd</span><span class="w"> </span>napari-fractal-tasks
 pixi<span class="w"> </span>run<span class="w"> </span>napari
 </pre></div>
 </code></pre>
 <h3>Running Fractal tasks</h3>
-<p><a href="https://youtu.be/Dy_UNt88HGA"><img src="https://raw.githubusercontent.com/krentzd/napari-workflow-tasks/main/resources/images/video-screenshot.png" alt="Watch the video" /></a></p>
+<p><a href="https://youtu.be/Dy_UNt88HGA"><img src="https://raw.githubusercontent.com/krentzd/napari-fractal-tasks/main/resources/images/video-screenshot.png" alt="Watch the video" /></a></p>
 <ol>
 <li><strong>Load task packages</strong> either from the <a href="https://fractal-analytics-platform.github.io/fractal_tasks/">Fractal task catalog</a>, or upload your own local task as a <code>.tar.gz</code> file by clicking on <code>Manage packages</code>.</li>
 <li><strong>Open an OME-Zarr file</strong> using the <a href="https://github.com/ome/napari-ome-zarr">napari-ome-zarr</a> plugin by drag-and-drop.</li>
@@ -239,7 +250,7 @@ pixi<span class="w"> </span>run<span class="w"> </span>napari
 <p>Parameter settings exported via the fractal-server can be directly imported for a given task.</p>
 </li>
 <li>
-<p>Workflows can also run headless e.g. in a Jupyter notebook (see <a href="https://github.com/krentzd/napari-workflow-tasks/tree/main/examples"><code>examples</code></a>).</p>
+<p>Workflows can also run headless e.g. in a Jupyter notebook (see <a href="https://github.com/krentzd/napari-fractal-tasks/tree/main/examples"><code>examples</code></a>).</p>
 </li>
 <li>
 <p>Restrict a task to a region of interest (ROI):</p>
@@ -254,7 +265,7 @@ pixi<span class="w"> </span>run<span class="w"> </span>napari
 <ul>
 <li>Requires <strong>Python 3.11+</strong> or higher.</li>
 <li><strong>First install of a task package</strong> can take several minutes. Installing the same version again reuses the cached environment and takes about a second.</li>
-<li><strong>Disk space:</strong> each (package, version) is a separate environment. Everything lives in <code>~/.napari_workflow_tasks</code>.</li>
+<li><strong>Disk space:</strong> each (package, version) is a separate environment. Everything lives in <code>~/.napari_fractal_tasks</code>.</li>
 </ul>
 <h2>Test data</h2>
 <ul>
@@ -290,7 +301,7 @@ pixi<span class="w"> </span>run<span class="w"> </span>napari
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.1.0</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.1.3</li>
                                                 </ul>
                                             </div>
                                         </div>

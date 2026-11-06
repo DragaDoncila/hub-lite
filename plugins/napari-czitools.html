@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.12.4</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.13.0</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-08-28</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-11-06</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -118,7 +118,7 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Open extension<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?readerFileExtensions=*.czi">*.czi</a></li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?readerFileExtensions=*.czi">*.czi</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?readerFileExtensions=*.vzip">*.vzip</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?readerFileExtensions=*.VZIP">*.VZIP</a></li></ul>
                                     </div>
                                 </div>
                                 <div class="text-sm">
@@ -156,7 +156,7 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Requirements<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">superqt</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">pyqtgraph</li><li class="MetadataList_textItem__KKmMN">czitools>=0.22.1</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-mock; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-timeout; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-forked; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt6!=6.11.0,!=6.11.1,>=6.7; extra == "testing"</li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">superqt</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">pyqtgraph</li><li class="MetadataList_textItem__KKmMN">czitools>=0.22.1</li><li class="MetadataList_textItem__KKmMN">czitools>=0.27.3; extra == "vzip"</li><li class="MetadataList_textItem__KKmMN">refkv[images,zarr]>=0.2.0; extra == "vzip"</li><li class="MetadataList_textItem__KKmMN">refkv[images,zarr]>=0.2.0; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest<9.2; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-mock; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-timeout; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-forked; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt6!=6.11.0,!=6.11.1,>=6.7; extra == "testing"</li></ul>
                                     </div>
                                 </div>
                             </div>
@@ -232,6 +232,7 @@
 <li><a href="#reading-a-subset">Reading a subset</a></li>
 <li><a href="#3d-preview-size">3D Preview Size</a></li>
 <li><a href="#lazy-loading">Lazy Loading</a></li>
+<li><a href="#vzip-loading">VZIP Loading</a></li>
 <li><a href="#scene-tolerance">Scene Tolerance</a></li>
 <li><a href="#gigapixel-czis-whole-slide-large-2d-scans">Gigapixel CZIs (whole-slide, large 2D scans)</a></li>
 <li><a href="#advanced-python-usage">Advanced Python usage</a></li>
@@ -281,6 +282,16 @@ https://napari.org/stable/plugins/index.html
 </pre></div>
 </code></pre>
 <p>The current release requires Python 3.12 or 3.13 and <code>czitools&gt;=0.22.1</code>.</p>
+<p>Version <strong>0.13.0</strong> adds optional VZIP loading and lazy scene stacking. See the
+<a href="_release_notes/v0.13.0.md">v0.13.0 release notes</a> for changes and compatibility.</p>
+<p>VZIP support is optional:</p>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"napari-czitools[vzip]"</span>
+</pre></div>
+</code></pre>
+<p>Creating new archives requires <code>czitools&gt;=0.27.3</code>, which provides
+<code>czitools.export_tools.create_czi_vzip</code>. The <code>vzip</code> extra enforces this
+minimum alongside refkv. Existing CZI loading does not require refkv.
+Without it, VZIP mode shows installation guidance.</p>
 <p>To install latest development version :</p>
 <pre><code><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">git</span><span class="o">+</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">sebi06</span><span class="o">/</span><span class="n">napari</span><span class="o">-</span><span class="n">czitools</span><span class="o">.</span><span class="n">git</span>
 </pre></div>
@@ -320,7 +331,7 @@ repository, which may take some time.</li>
 <p>Open <strong>Plugins &gt; Advanced CZI Reader (CziReadTools)</strong>. The initial panel has
 four main areas:</p>
 <ol>
-<li>Select a local CZI file. Drag and drop onto the file field is also supported.</li>
+<li>Select a local CZI or CZI-derived VZIP file. Drag and drop onto the file field is also supported.</li>
 <li>Inspect metadata as a table or tree. Tree view can optionally show value
 types.</li>
 <li>Configure scene handling and the 3D preview, then load the selected pixels.</li>
@@ -370,6 +381,51 @@ supports larger textures. Higher values can use more GPU memory.</li>
 metadata loads. For small images, changing it often has no visible effect
 because the existing coarsest level already fits.</p>
 <p><img src="https://github.com/sebi06/napari-czitools/raw/main/readme_images/3D_preview_size.png" alt="3D rendering with the 3D preview size control" /></p>
+<h4>VZIP Loading</h4>
+<p>Choose <strong>Load using: VZIP</strong> in the existing reader widget. The default remains
+<strong>CZI</strong>, which continues to use the normal lazy multiscale reader.</p>
+<p>Use the single <strong>Open CZI or VZIP</strong> selector at the top, then choose the loading
+mode directly below it. For a selected CZI, the archive destination defaults to
+a sibling <code>image.vzip</code>. <strong>Save archive as...</strong>, beside <strong>Load Pixel Data</strong>, allows
+a different destination; its parent directory must already exist. The selected
+archive filename is shown above the loading buttons; hover over it for the full
+destination path. Choosing a destination does not create the archive yet.
+<strong>Load Pixel Data</strong> creates the archive in a background worker,
+then adds lazy image layers. If the archive exists, choose <strong>Reuse</strong>, <strong>Rebuild</strong>,
+or <strong>Cancel</strong>. Reuse never rewrites it and checks that it references the selected
+CZI. Rebuild explicitly replaces it through the protected czitools exporter.</p>
+<p>The archive references the <strong>whole CZI</strong>. Scene/Time/Channel/Z selections apply
+only to the displayed layers, so changing selections does not require rebuilding.
+Selecting an existing <code>.vzip</code> in that same selector automatically switches the
+widget to VZIP mode and hides archive-creation and destination controls.
+Its metadata table/tree and sliders are populated from the archive without
+parsing the CZI again. For scenes with different T/C/Z lengths, the widget exposes
+the ranges common to all scenes.</p>
+<p>Compatible selected scenes are automatically stacked lazily along a leading
+<strong>S</strong> axis, with one layer per channel. For example, 28 equally sized 2D scenes
+become one <code>(28, Y, X)</code> layer per channel. Scene order follows the archive's
+numeric series order, and S/T/C/Z selections still apply only to display.
+Stacking requires matching axes, shapes, dtypes, physical scales and pyramid
+levels; incompatible scenes remain separate without cropping or resampling.
+Scene-dependent stage origins become local coordinates in the stack, while
+the original per-scene transforms and metadata are retained in the layer's
+<code>metadata[&quot;scenes&quot;]</code> list.</p>
+<p>Existing CZI-derived archives can also be opened through <strong>File &gt; Open</strong>, dropped
+onto the napari canvas, or opened from Python:</p>
+<pre><code class="language-python"><div class="highlight"><pre><span></span><span class="n">viewer</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">"image.vzip"</span><span class="p">,</span> <span class="n">plugin</span><span class="o">=</span><span class="s2">"napari-czitools"</span><span class="p">)</span>
+</pre></div>
+</code></pre>
+<p>Direct opening displays all scenes and channels. Stored pyramid levels are used
+when present, with OME axes, physical scale/origin, channel colors, and display
+windows preserved. <strong>Stack scenes</strong> and generated <strong>3D preview size</strong> are disabled
+in VZIP mode; no additional pyramid levels are synthesized.</p>
+<p><strong>VZIP contains references, not copied CZI pixels.</strong> The original local CZI must
+remain unchanged at its recorded location. Missing sources and unsupported
+archives produce explicit errors, never a silent fallback to another reader.
+Reuse does not fingerprint source contents or automatically detect every source
+change. Rebuild after modifying a CZI. Only CZI-derived refkv archives with local
+sources are supported; arbitrary VZIP formats and remote sources are not claimed
+as supported data. CZI layouts and compression support are determined by refkv.</p>
 <h4>Lazy Loading</h4>
 <p>The advanced reader always uses lazy multiscale loading after <strong>Load Pixel
 Data</strong> is pressed. It requests Dask-backed xarray stacks for the selected
@@ -426,15 +482,65 @@ of the Dask array to determine the display range and materialize the entire
 plane in RAM before the first pixel is shown.</p>
 <h4>Advanced Python usage</h4>
 <p>The Python reader API forwards the same lazy behaviour:</p>
-<p>from napari_czitools._io import DEFAULT_MAX_COARSE_EDGE
-from napari_czitools._reader import reader_function_adv</p>
-<p>reader_function_adv(
-&quot;image.czi&quot;,
-use_lazy=True,        # read pixel data only when requested
-use_dask=True,        # required for on-demand reads
-use_multiscale=True,  # napari renders coarse-level tiles first
-max_coarse_edge=DEFAULT_MAX_COARSE_EDGE,
-)</p>
+<pre><code class="language-python"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">napari_czitools._io</span><span class="w"> </span><span class="kn">import</span> <span class="n">DEFAULT_MAX_COARSE_EDGE</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">napari_czitools._reader</span><span class="w"> </span><span class="kn">import</span> <span class="n">reader_function_adv</span>
+
+<span class="n">reader_function_adv</span><span class="p">(</span>
+    <span class="s2">"image.czi"</span><span class="p">,</span>
+    <span class="n">use_lazy</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>        <span class="c1"># read pixel data only when requested</span>
+    <span class="n">use_dask</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>        <span class="c1"># required for on-demand reads</span>
+    <span class="n">use_multiscale</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># napari renders coarse-level tiles first</span>
+    <span class="n">max_coarse_edge</span><span class="o">=</span><span class="n">DEFAULT_MAX_COARSE_EDGE</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</code></pre>
+<p>The complete example below is also available as
+<a href="scripts/open_czi_with_napari_czitools.py"><code>scripts/open_czi_with_napari_czitools.py</code></a>.
+It opens scene 0, timepoints 0-2, channel 1, and Z planes 4-8. Run it from the
+repository root in an environment with napari-czitools installed using
+<code>python scripts/open_czi_with_napari_czitools.py</code>.</p>
+<pre><code><div class="highlight"><pre><span></span>  <span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span><span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span><span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span><span class="n">Open</span> <span class="n">the</span> <span class="n">bundled</span> <span class="n">CellDivision</span> <span class="n">CZI</span> <span class="n">sample</span> <span class="k">with</span> <span class="n">napari</span><span class="o">-</span><span class="n">czitools</span><span class="o">.&amp;</span><span class="n">quot</span><span class="p">;</span><span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span><span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span>
+
+  <span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+
+  <span class="kn">import</span><span class="w"> </span><span class="nn">napari</span>
+  <span class="kn">from</span><span class="w"> </span><span class="nn">napari_czitools._reader</span><span class="w"> </span><span class="kn">import</span> <span class="n">reader_function_adv</span>
+
+  <span class="n">SAMPLE_CZI_PATH</span> <span class="o">=</span> <span class="p">(</span>
+      <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span><span class="o">.</span><span class="n">parents</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+      <span class="o">/</span> <span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span><span class="n">src</span><span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span>
+      <span class="o">/</span> <span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span><span class="n">napari_czitools</span><span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span>
+      <span class="o">/</span> <span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span><span class="n">sample_data</span><span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span>
+      <span class="o">/</span> <span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span><span class="n">CellDivision_T10_Z20_CH2_X600_Y500_DCV_ZSTD</span><span class="o">.</span><span class="n">czi</span><span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span>
+  <span class="p">)</span>
+
+  <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span> <span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span><span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span><span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span><span class="n">Open</span> <span class="n">the</span> <span class="n">bundled</span> <span class="n">CZI</span> <span class="n">sample</span> <span class="ow">in</span> <span class="n">napari</span><span class="o">.&amp;</span><span class="n">quot</span><span class="p">;</span><span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span><span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span>
+      <span class="k">if</span> <span class="ow">not</span> <span class="n">SAMPLE_CZI_PATH</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
+          <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
+              <span class="n">f</span><span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span><span class="n">Bundled</span> <span class="n">CZI</span> <span class="n">sample</span> <span class="n">was</span> <span class="ow">not</span> <span class="n">found</span><span class="p">:</span> <span class="p">{</span><span class="n">SAMPLE_CZI_PATH</span><span class="p">}</span><span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span>
+          <span class="p">)</span>
+
+      <span class="c1"># The reader accepts `planes`; viewer.open forwards extra kwargs</span>
+      <span class="c1"># to layer creation instead of to the reader.</span>
+      <span class="n">napari</span><span class="o">.</span><span class="n">Viewer</span><span class="p">()</span>
+      <span class="n">planes</span> <span class="o">=</span> <span class="p">{</span>
+          <span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span><span class="n">S</span><span class="o">&amp;</span><span class="n">quot</span><span class="p">;:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+          <span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span><span class="n">T</span><span class="o">&amp;</span><span class="n">quot</span><span class="p">;:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+          <span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span><span class="n">C</span><span class="o">&amp;</span><span class="n">quot</span><span class="p">;:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+          <span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span><span class="n">Z</span><span class="o">&amp;</span><span class="n">quot</span><span class="p">;:</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span>
+      <span class="p">}</span>
+      <span class="n">reader_function_adv</span><span class="p">(</span>
+          <span class="nb">str</span><span class="p">(</span><span class="n">SAMPLE_CZI_PATH</span><span class="p">),</span>
+          <span class="n">planes</span><span class="o">=</span><span class="n">planes</span><span class="p">,</span>
+      <span class="p">)</span>
+
+      <span class="n">napari</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+
+  <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span><span class="n">__main__</span><span class="o">&amp;</span><span class="n">quot</span><span class="p">;:</span>
+      <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</code></pre>
 <p><code>max_coarse_edge</code> is the Python equivalent of <strong>3D preview size</strong>. Keep the
 default for portable 3D rendering, lower it to reduce GPU memory use, or raise
 it when the GPU supports larger textures.</p>
@@ -480,6 +586,10 @@ napari/Qt tests.</p>
 <h3>Recent Compatibility Notes</h3>
 <ul>
 <li><code>czitools&gt;=0.22.1</code> is required.</li>
+<li>Optional VZIP support requires <code>czitools&gt;=0.27.3</code> and
+<code>refkv[zarr,images]&gt;=0.2.0</code>; installing <code>napari-czitools[vzip]</code> supplies both.</li>
+<li>The testing extra requires <code>pytest&lt;9.2</code> because pytest-forked cannot
+serialize the new report fields introduced in pytest 9.2.</li>
 <li><code>read_tools.read_stacks</code> returns
 <code>(arrays_or_list, dims, num_stacks, metadata)</code>. The plugin handles both a
 single stacked xarray object and a list containing one xarray stack per
@@ -523,7 +633,7 @@ their use. Use them at your own risk.</p>
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.12.4</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.13.0</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -533,7 +643,7 @@ their use. Use them at your own risk.</p>
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-08-28</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-11-06</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -587,7 +697,7 @@ their use. Use them at your own risk.</p>
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">Open
                                                     extension<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?readerFileExtensions=*.czi">*.czi</a></li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?readerFileExtensions=*.czi">*.czi</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?readerFileExtensions=*.vzip">*.vzip</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?readerFileExtensions=*.VZIP">*.VZIP</a></li></ul>
                                             </div>
                                         </div>
                                         <div class="text-sm">
@@ -630,7 +740,7 @@ their use. Use them at your own risk.</p>
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">
                                                     Requirements<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">superqt</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">pyqtgraph</li><li class="MetadataList_textItem__KKmMN">czitools>=0.22.1</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-mock; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-timeout; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-forked; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt6!=6.11.0,!=6.11.1,>=6.7; extra == "testing"</li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">superqt</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">pyqtgraph</li><li class="MetadataList_textItem__KKmMN">czitools>=0.22.1</li><li class="MetadataList_textItem__KKmMN">czitools>=0.27.3; extra == "vzip"</li><li class="MetadataList_textItem__KKmMN">refkv[images,zarr]>=0.2.0; extra == "vzip"</li><li class="MetadataList_textItem__KKmMN">refkv[images,zarr]>=0.2.0; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest<9.2; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-mock; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-timeout; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-forked; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt6!=6.11.0,!=6.11.1,>=6.7; extra == "testing"</li></ul>
                                             </div>
                                         </div>
                                     </div>
