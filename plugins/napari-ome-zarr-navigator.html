@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.4.0</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.5.0</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-06-28</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-11-16</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -156,7 +156,7 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Requirements<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">napari-ome-zarr<0.8</li><li class="MetadataList_textItem__KKmMN">ngio<0.6,>=0.5</li><li class="MetadataList_textItem__KKmMN">numcodecs!=0.14.0,!=0.14.1,!=0.16</li><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">ome-zarr</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">wget</li><li class="MetadataList_textItem__KKmMN">napari; extra == 'testing'</li><li class="MetadataList_textItem__KKmMN">pyqt6; extra == 'testing'</li><li class="MetadataList_textItem__KKmMN">pytest; extra == 'testing'</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == 'testing'</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == 'testing'</li><li class="MetadataList_textItem__KKmMN">qtpy; extra == 'testing'</li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">napari-ome-zarr!=0.8.0,!=0.8.1</li><li class="MetadataList_textItem__KKmMN">napari>=0.7</li><li class="MetadataList_textItem__KKmMN">ngio<1.2,>=1.1.2</li><li class="MetadataList_textItem__KKmMN">numcodecs!=0.14.0,!=0.14.1,!=0.16</li><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">ome-zarr</li><li class="MetadataList_textItem__KKmMN">pandas</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">requests</li><li class="MetadataList_textItem__KKmMN">s3fs>=2024.2.0</li></ul>
                                     </div>
                                 </div>
                             </div>
@@ -223,7 +223,7 @@
 (click the picture above to see the walkthrough video)
 <h2>Usage</h2>
 <h3>Plate Browser</h3>
-<p>The Plate Browser loads an OME-Zarr plate from the local filesystem or via authenticated HTTPS (e.g. a <a href="https://fractal-analytics-platform.github.io/">Fractal Server</a> instance). It also auto-detects plates opened via <a href="https://github.com/ome/napari-ome-zarr">napari-ome-zarr</a>. The Plate Browser lets you zoom to a selected well (&quot;Go to well&quot;), which draws a bounding box and centers the camera on that well.</p>
+<p>The Plate Browser loads an OME-Zarr plate from the local filesystem, via authenticated HTTPS (e.g. a <a href="https://fractal-analytics-platform.github.io/">Fractal Server</a> instance) or from S3 (<code>s3://</code> URIs, using the credentials of your AWS environment; when no credentials are found, public buckets are opened anonymously). It also auto-detects plates opened via <a href="https://github.com/ome/napari-ome-zarr">napari-ome-zarr</a>. The Plate Browser lets you zoom to a selected well (&quot;Go to well&quot;), which draws a bounding box and centers the camera on that well.</p>
 <img width="1624" alt="plate_browser_go_to_well" src="https://github.com/user-attachments/assets/c83c1daf-a5d2-41b7-8685-564f80eb0122" />
 <p>Using <a href="https://biovisioncenter.github.io/ngio/stable/table_specs/table_types/condition_table/">ngio condition tables</a>, the Plate Browser can filter the well list to any subset defined by one or more conditions. Plate-level condition tables (fast) and image-level condition tables (slower, aggregated on the fly) are both supported.</p>
 <img width="1512" alt="plate_browser_filtering" src="https://github.com/user-attachments/assets/7938ed80-31ee-4e58-b896-20ed92ea6508" />
@@ -238,6 +238,15 @@
 <li><strong>Fixed resolution</strong> mode — loads a single numpy array, optimal for 3D images and downstream tools in napari that don't handle multi-resolution layers (e.g. the label layer needs to be loaded as fixed resolution for using it in the classifier)</li>
 </ul>
 <p>Once a ROI has been loaded for one well, &quot;Load selected ROI for additional well(s)&quot; reuses the same settings for any further wells selected in the Plate Browser.</p>
+<h4>ROI position options</h4>
+<p>Two options under <strong>Advanced settings</strong> change where a ROI is placed. Each one is only available when the selected ROI table has the columns it needs, and they can be combined.</p>
+<ul>
+<li><strong>Load ROI at original position</strong> uses the ROI table's <code>x/y/z_micrometer_original</code> columns, e.g. in the <code>FOV_ROI_table</code> written by Fractal's converters. Positions are taken relative to the smallest original position in the table, so fields of view stay in their well and keep the overlaps they had during acquisition. This is useful for stitching, e.g. with <a href="https://github.com/multiview-stitcher/napari-stitcher">multiview-stitcher</a>. Fields of view that didn't overlap land at their regular position.</li>
+<li><strong>Add registration translation</strong> shifts the ROI by the table's <code>translation_x/y/z</code> columns, as written by Fractal's registration tasks, to overlay a multiplexing acquisition on the reference acquisition. Use it only when the registration was calculated but not yet applied to the images; otherwise the shift is applied twice.</li>
+</ul>
+<p>Layers loaded with either option don't line up with the image on disk, so the Label Saver won't save them and the ROI Annotator won't allow for saving ROI tables for them. Reload the ROI without these options to do so.</p>
+<h4>Masked loading</h4>
+<p>When the selected ROI table is a masking ROI table (one ROI per object of a label image, e.g. organoids or nuclei), <strong>Mask ROI by its label</strong> under <strong>Advanced settings</strong> keeps only the selected object: image and label pixels outside the object become 0, and loaded features only cover that object. This shows a single object without the neighbours that share its bounding box, e.g. to make a clean projection of one organoid from its 3D segmentation. Masked label layers only contain the selected object, so the Label Saver won't save them.</p>
 <img width="1624" alt="roi_loader" src="https://github.com/user-attachments/assets/ddd8268f-52ae-4a43-9c00-f52df4422ba3" />
 <p>This plugin is tested with OME-Zarr files generated by <a href="https://fractal-analytics-platform.github.io/">Fractal</a> and is designed to work with any OME-Zarr ≥ v0.4. The feature loading workflow is optimised for use with the <a href="https://github.com/fractal-napari-plugins-collection/napari-feature-classifier">napari-feature-classifier</a>.</p>
 <h3>ROI Annotator</h3>
@@ -256,7 +265,7 @@
 <p>Select <strong>Masking ROI layer</strong>, choose a label layer that has been loaded into the viewer for a given OME-Zarr image (e.g. loaded by the ROI loader above), and click <strong>Calculate masking ROI table</strong>. The annotator computes one bounding-box ROI per labelled object using <a href="https://biovisioncenter.github.io/ngio/stable/">ngio's <code>compute_masking_roi</code></a> and adds the results as a shapes layer for review. Z-extents are inferred from the label data and stored as shape properties; 3D bounding boxes are supported when the image is 3D. Clicking <strong>Save ROI Table</strong> writes the result as a <a href="https://biovisioncenter.github.io/ngio/stable/table_specs/table_types/masking_roi_table/">Masking ROI table</a> to the OME-Zarr, if a corresponding label is available.</p>
 <img width="1726" alt="masking_roi_table_creation" src="https://github.com/user-attachments/assets/0caeea55-f080-4b19-b5e8-da89d6ddf8c2" />
 <h4>Remote OME-Zarr stores</h4>
-<p>The annotator opens images from local files or authenticated HTTPS stores. Saving back to a remote store is not supported (the store is read-only from the plugin's perspective). When a remote image is loaded, a <strong>Save to folder</strong> picker appears so the table can be written to a local directory instead.</p>
+<p>The annotator opens images from local files, authenticated HTTPS stores or S3. Saving back to a remote store is not supported (the store is read-only from the plugin's perspective). When a remote image is loaded, a <strong>Save to folder</strong> picker appears so the table can be written to a local directory instead.</p>
 <h3>Save Labels</h3>
 <p>The Save Labels widget can be launched from napari's <em>Plugins</em> menu (standalone, for single images) or from the ROI Loader (&quot;Save label layer to OME-Zarr&quot;). It saves any napari label layer back to an OME-Zarr image as a label image using <a href="https://biovisioncenter.github.io/ngio/stable/">ngio</a>, with optional <a href="https://biovisioncenter.github.io/ngio/stable/table_specs/table_types/masking_roi_table/">Masking ROI table</a> generation.</p>
 <p>Three write modes cover the main use cases:</p>
@@ -272,7 +281,15 @@
 <p>Load a single ROI using the ROI Loader, edit the label layer in napari, then switch the write mode to <strong>Edit existing label</strong> and save. Only the pixels within the loaded ROI are written back; the rest of the label is untouched. Importantly, neither the ROI loader nor the label saving perform masking. Thus, if you load masking ROI tables, be aware that labels outside the mask will still load and you should not remove them, otherwise they get removed from the final label image.</p>
 <img width="1631" alt="edit_label" src="https://github.com/user-attachments/assets/49495b59-af2c-45d8-b329-90d2236fa020" />
 <h4>Remote OME-Zarr stores</h4>
-<p>When the source image is on an authenticated remote store (e.g. served by the <a href="https://github.com/fractal-analytics-platform/fractal-data">Fractal data service</a>), the label cannot be written back to the read-only remote container. In this case a <strong>Local output</strong> folder picker appears and the label is saved there instead.</p>
+<p>When the source image is on an authenticated remote store (e.g. served by the <a href="https://github.com/fractal-analytics-platform/fractal-data">Fractal data service</a>) or on S3, the label cannot be written back to the read-only remote container. In this case a <strong>Local output</strong> folder picker appears and the label is saved there instead.</p>
+<h3>S3 access</h3>
+<p>Select the <strong>S3</strong> source and enter an <code>s3://</code> URI. Credentials come from the standard AWS chain (environment variables, <code>~/.aws/credentials</code> / <code>~/.aws/config</code>, instance role); the plugin has no credential fields. When no credentials are found, public buckets are opened anonymously.</p>
+<p>Known limitations:</p>
+<ul>
+<li>S3 stores are read-only: ROI tables and labels are saved to a local folder.</li>
+<li>Credentials are read when S3 is first accessed. If you configure or refresh credentials while napari is running, restart napari to use them.</li>
+<li>Expired or invalid credentials are still used, so they also block public buckets (no anonymous retry). The same problem could occur if using corporate credentials. Refresh them and restart napari, or start napari without them, e.g. <code>AWS_SHARED_CREDENTIALS_FILE=/dev/null napari</code>.</li>
+</ul>
 <hr />
 <h2>Test data</h2>
 <p>Test &amp; sample data is available at <a href="https://zenodo.org/records/20429951">https://zenodo.org/records/20429951</a></p>
@@ -306,6 +323,7 @@ napari
 </code></pre>
 <h2>Contributing</h2>
 <p>Contributions are very welcome. Tests can be run with <code>pixi run test</code>; please ensure coverage stays the same before submitting a pull request.</p>
+<p>Set up the pre-commit hooks once with <code>pixi run pre-commit install</code>. They run ruff from the pixi environment, so they use the same version as <code>pixi run lint</code> and <code>pixi run format</code>. <code>pixi run check</code> runs lint, type checking and tests together.</p>
 <h2>License</h2>
 <p>Distributed under the terms of the <a href="http://opensource.org/licenses/BSD-3-Clause">BSD-3</a> license,
 &quot;napari-ome-zarr-navigator&quot; is free and open source software</p>
@@ -326,7 +344,7 @@ napari
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.4.0</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.5.0</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -336,7 +354,7 @@ napari
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-06-28</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-11-16</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -433,7 +451,7 @@ napari
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">
                                                     Requirements<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">napari-ome-zarr<0.8</li><li class="MetadataList_textItem__KKmMN">ngio<0.6,>=0.5</li><li class="MetadataList_textItem__KKmMN">numcodecs!=0.14.0,!=0.14.1,!=0.16</li><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">ome-zarr</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">wget</li><li class="MetadataList_textItem__KKmMN">napari; extra == 'testing'</li><li class="MetadataList_textItem__KKmMN">pyqt6; extra == 'testing'</li><li class="MetadataList_textItem__KKmMN">pytest; extra == 'testing'</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == 'testing'</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == 'testing'</li><li class="MetadataList_textItem__KKmMN">qtpy; extra == 'testing'</li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">magicgui</li><li class="MetadataList_textItem__KKmMN">napari-ome-zarr!=0.8.0,!=0.8.1</li><li class="MetadataList_textItem__KKmMN">napari>=0.7</li><li class="MetadataList_textItem__KKmMN">ngio<1.2,>=1.1.2</li><li class="MetadataList_textItem__KKmMN">numcodecs!=0.14.0,!=0.14.1,!=0.16</li><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">ome-zarr</li><li class="MetadataList_textItem__KKmMN">pandas</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">requests</li><li class="MetadataList_textItem__KKmMN">s3fs>=2024.2.0</li></ul>
                                             </div>
                                         </div>
                                     </div>
