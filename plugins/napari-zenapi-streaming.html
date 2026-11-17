@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.0.1</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.0.2</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-11-01</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-11-17</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -156,7 +156,7 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Requirements<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">napari>=0.9.1</li><li class="MetadataList_textItem__KKmMN">magicgui>=0.7.0</li><li class="MetadataList_textItem__KKmMN">qtpy>=2.3.0</li><li class="MetadataList_textItem__KKmMN">numpy>=1.21.0</li><li class="MetadataList_textItem__KKmMN">qasync>=0.24.0</li><li class="MetadataList_textItem__KKmMN">grpclib</li><li class="MetadataList_textItem__KKmMN">pydantic</li><li class="MetadataList_textItem__KKmMN">python-dotenv</li><li class="MetadataList_textItem__KKmMN">ome-writers[acquire-zarr]</li><li class="MetadataList_textItem__KKmMN">ngff-zarr[dask-image]</li><li class="MetadataList_textItem__KKmMN">zarr>=3</li><li class="MetadataList_textItem__KKmMN">zen_api<=2026.11.1,>=2026.5.1</li><li class="MetadataList_textItem__KKmMN">zen_api_utils<0.2,>=0.1.0</li><li class="MetadataList_textItem__KKmMN">pytest>=6.0; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pytest-asyncio; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">ruff; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">mypy; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-timeout; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt6<6.10,>=6.7; extra == "testing"</li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">napari>=0.9.1</li><li class="MetadataList_textItem__KKmMN">magicgui>=0.7.0</li><li class="MetadataList_textItem__KKmMN">qtpy>=2.3.0</li><li class="MetadataList_textItem__KKmMN">numpy>=1.21.0</li><li class="MetadataList_textItem__KKmMN">qasync>=0.24.0</li><li class="MetadataList_textItem__KKmMN">grpclib</li><li class="MetadataList_textItem__KKmMN">pydantic</li><li class="MetadataList_textItem__KKmMN">python-dotenv</li><li class="MetadataList_textItem__KKmMN">ome-writers[acquire-zarr]</li><li class="MetadataList_textItem__KKmMN">ngff-zarr[dask-image]>=0.51.0</li><li class="MetadataList_textItem__KKmMN">zarr>=3</li><li class="MetadataList_textItem__KKmMN">zen_api<=2026.11.1,>=2026.5.1</li><li class="MetadataList_textItem__KKmMN">zen_api_utils<0.2,>=0.1.0</li><li class="MetadataList_textItem__KKmMN">pytest>=6.0; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pytest-asyncio; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">ruff; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">mypy; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-timeout; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt6<6.10,>=6.7; extra == "testing"</li></ul>
                                     </div>
                                 </div>
                             </div>
@@ -223,19 +223,48 @@ channel count.</li>
 using the standalone writer.</li>
 </ul>
 <p>Display workflows use the same live reader and restructure received frames
-into per-channel scene mosaics. Channel labels are 1-based; the ZEN API filter
+into per-channel scene mosaics. Native GRAY8/GRAY16 pixel types and intensities
+are preserved in both the live preview and final mosaics, without per-tile
+normalization. Final layers use one contrast range per channel across the
+whole mosaic; napari's contrast controls change only rendering, not pixel
+values. No dtype setting or source-code edit is needed.
+Enable <strong>Stream only (no history or mosaic)</strong> in either Display workflow
+to view arriving frames without retaining an acquisition or assembling a
+final image. Only the newest frame in each UI update batch is rendered,
+and the final frame stays visible when streaming stops. The existing
+channel filter works in this mode, including changes while streaming.
+The option is locked during an acquisition; by default it is off, preserving
+the normal final-mosaic workflow. It does not write an OME-ZARR file.
+Channel labels are 1-based; the ZEN API filter
 uses zero-based indices. The filter defaults to All channels when a
 previously selected channel is not available in the new mode or experiment.</p>
 <p>A <strong>standalone CLI</strong> (<code>ZEN_stream2omezarr.py</code>) is also available to stream
 directly to OME-ZARR without napari.</p>
+<p><img src="docs/napari_zenapi_stream1.png" alt="Napari - Streaming Pixel from ZEN via ZEN-API" /></p>
+<p>When finished the resulting OME-ZARR, created from the ZEN pixel stream can be shown in Napari.</p>
+<p><img src="docs/napari_zen.png" alt="Napari - OME-ZARR from ZEN Acquistion" /></p>
 <h2>Current status</h2>
 <ul>
+<li>Release: <strong>0.0.2</strong> (<a href="_release_notes/v0.0.2.md">release notes</a>).</li>
 <li>Project phase: alpha / MVP</li>
 <li>Primary OS target: Windows for ZEN Blue and the ZEN API Gateway</li>
 <li>Python target: <code>&gt;=3.12, &lt;3.15</code></li>
 </ul>
+<h3>What's new in 0.0.2</h3>
+<ul>
+<li>Original GRAY8/GRAY16 pixels in Display mode, without per-tile stretching.</li>
+<li>Optional stream-only viewing with channel filtering and no final mosaic.</li>
+<li>Scrollable experiment controls for smaller plugin docks.</li>
+<li>OME-Zarr 0.6 output and collection-opening fixes. Reading older OME-Zarr
+acquisitions now requires explicit conversion outside the plugin.</li>
+</ul>
 <h2>Known limitations</h2>
 <ul>
+<li>OME-ZARR readers require released format version <strong>0.6 or newer</strong>, as
+supported by the installed reader. New output is finalized as <strong>0.6</strong>,
+including images, collections, HCS wells, retained source tiles, and
+pyramids. Older acquisitions are rejected with an explicit conversion
+message; they are never upgraded automatically when opened.</li>
 <li>ZEN Blue and the ZEN API Gateway are required for live acquisition.
 Automated tests use simulated responses; they do not establish end-to-end
 throughput or frame completeness on real hardware. ZEN Blue and its gateway
@@ -249,7 +278,8 @@ here.</li>
 pixel types are not supported by that output path.</li>
 <li>ZEN-started Display mode monitors the global pixel stream without a known
 experiment ID; run only one acquisition at a time in this mode.</li>
-<li>Display mode retains received frames in memory for final scene assembly.
+<li>Display mode retains received frames in memory for final scene assembly,
+unless <strong>Stream only (no history or mosaic)</strong> is enabled.
 Very large or long acquisitions may exceed available RAM; the standalone
 unconfigured <code>--experiment</code> CLI mode also buffers the acquisition.</li>
 <li>Out-of-order OME-ZARR frames use a bounded pending buffer. If the stream
@@ -257,9 +287,8 @@ stays incomplete until the inactivity timeout, missing positions are
 skipped rather than recovered from ZEN. The configured writer retains the
 partial store, writes <code>acquisition_status.json</code>, and reports failure
 instead of success. Inspect the report before using partial output.</li>
-<li>Display mode currently assumes <code>uint16</code> input and normalizes every frame
-for preview. Its restructured layers are not raw quantitative image data.
-Use configured OME-ZARR output to retain raw GRAY8/GRAY16 intensities.</li>
+<li>Display mode accepts only 2D <code>GRAY8</code> and <code>GRAY16</code> frames. Retaining native
+<code>uint16</code> pixels uses twice the frame-storage memory of an 8-bit preview.</li>
 </ul>
 <h2>Features</h2>
 <ul>
@@ -274,10 +303,18 @@ writes via <code>ome-writers</code>. Identical code path for both plugin and CLI
 selected experiment XML. Changing the selection refreshes these values.</li>
 <li>OME-ZARR dtype is derived from the runtime frame <code>PixelType</code>; the raw
 payload size is checked before decoding.</li>
+<li>The streaming backend's temporary metadata is converted to the OME-Zarr
+0.6 coordinate-system schema and validated before acquisition completion
+is reported. This metadata-only finalization preserves acquired pixels;
+merely changing version labels is not sufficient.</li>
 <li>Incoming frames are assigned from live stream metadata. In particular,
 <code>FramePosition.s</code> and <code>FramePosition.m</code> select the scene and tile; frame
 arrival order and XML TileRegion order are not used for assignment.</li>
 <li>Thread-safe napari updates via Qt signals/slots.</li>
+<li>Scrollable experiment controls keep settings accessible in smaller docks.</li>
+<li>Completed OME-ZARR collections open their advertised scene images directly
+in napari, without requiring companion OME-XML. Reader-provided channel
+splitting, pyramids, scales, and axis labels are preserved.</li>
 <li>Configurable startup and timeout behavior from <code>.env</code> or CLI.</li>
 </ul>
 <h2>Repository layout</h2>
@@ -309,6 +346,8 @@ docs/
 <li>Access to the ZEN API certificate (<code>ZenApiPersonalSigningRootCA.pem</code>)</li>
 <li>Python 3.12-3.14 with Qt &gt;=6.7; PyQt6 is used in CI. PyQt5 is not
 compatible with napari 0.10 or newer.</li>
+<li><code>ngff-zarr&gt;=0.51.0</code> for released OME-Zarr 0.6 metadata conversion,
+validation, and pyramid generation.</li>
 <li>Authorized, compatible <code>zen_api</code> and <code>zen_api_utils</code> wheels from
 <a href="https://github.com/zeiss-microscopy/OAD/tree/master/ZEN-API">ZEISS OAD</a>
 (neither package is distributed on PyPI)</li>
@@ -351,9 +390,15 @@ gateway. Do not commit wheels, tokens, or certificates to this repository
 without confirming redistribution rights.</p>
 <h3>Install the plugin</h3>
 <p>For a published PyPI release:</p>
-<pre><code class="language-powershell"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">-m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">napari-zenapi-streaming</span> <span class="s2">"napari[pyqt6]"</span> <span class="s2">"PyQt6&gt;=6.7,&lt;6.10"</span>
+<pre><code class="language-powershell"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">-m</span> <span class="n">pip</span> <span class="n">install</span> <span class="s2">"napari-zenapi-streaming==0.0.2"</span> <span class="s2">"napari[pyqt6]"</span> <span class="s2">"PyQt6&gt;=6.7,&lt;6.10"</span>
 </pre></div>
 </code></pre>
+<p>To upgrade an existing environment with compatible ZEN wheels installed:</p>
+<pre><code class="language-powershell"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">-m</span> <span class="n">pip</span> <span class="n">install</span> <span class="p">-</span><span class="n">-upgrade</span> <span class="s2">"napari-zenapi-streaming==0.0.2"</span>
+</pre></div>
+</code></pre>
+<p>Restart napari after upgrading. Version 0.0.2 writes OME-Zarr 0.6 and does not
+automatically migrate older stores. Use a reader that supports 0.6.</p>
 <p>From this checkout, install the plugin:</p>
 <pre><code class="language-bash"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>.
 </pre></div>
@@ -545,9 +590,12 @@ The sparse key <code>(S, T, M, Z, C)</code> comes directly from each frame's
 <code>FramePosition</code> metadata, including its S and M indices. By default,
 <strong>Show only last frame during live</strong> displays a fixed 2D YX layer and
 replaces it with the newest frame without rebuilding acquisition history.
-Every frame remains in sparse storage for final assembly. Uncheck the
+Unless <strong>Stream only (no history or mosaic)</strong> is enabled, every frame
+remains in sparse storage for final assembly. Uncheck the
 option to restore the more expensive 7D frame-history preview. The option
-is frozen during acquisition and re-enabled after scene assembly.</li>
+is frozen during acquisition and re-enabled after completion.
+Stream-only viewing forces the latest-frame preview, retains no history,
+and leaves the last frame visible without assembling a mosaic.</li>
 <li><strong>Channel filter</strong> – Changing the filter immediately restarts the pipeline
 reader. Labels are 1-based, while the gRPC request uses zero-based indices.
 The initial value comes from <code>ZEN_CHANNEL_INDEX</code> in <code>.env</code>; leave it empty
@@ -557,11 +605,14 @@ to receive all channels. An out-of-range choice resets to All channels.</li>
 <li>Napari-started experiments: the status monitor watches
 <code>is_experiment_running</code>. Because ZEN can report completion before all
 gRPC pixel data arrives, the plugin then waits for the XML-derived unique
-frame count and uses pixel-stream inactivity as a safety fallback.</li>
+frame count and uses pixel-stream inactivity as a safety fallback.
+Stream-only viewing instead waits for inactivity without retaining
+unique frame coordinates.</li>
 <li>ZEN-started experiments: inactivity timeout (<code>ZEN_RESTRUCTURE_TIMEOUT</code>).</li>
 </ul>
 </li>
-<li><strong>Post-processing</strong> – The streaming layer is removed and each scene's M
+<li><strong>Post-processing</strong> – Unless stream-only viewing is enabled, the streaming
+layer is removed and each scene's M
 tiles are placed from their streamed stage coordinates into per-channel
 5D layers (<code>S, T, Z, Y, X</code>). In overlap regions, pixels from the tile with
 the higher M index replace pixels from lower-M tiles.</li>
@@ -631,6 +682,10 @@ coordinates and physical pixel scaling determine placement; M identifies
 the raw tile within S but does not imply a row or column. In overlaps, the
 highest M index wins, and gaps in irregular scene outlines remain at the
 array fill value. The <code>OME/series</code> list advertises only the scene mosaics.
+Generic mosaics use image subgroups named <code>scene_0</code>, <code>scene_1</code>, etc.,
+including when there is only one scene. Each subgroup contains that
+scene's assembled image, not one tile. Some external viewers require
+selecting the image subgroup instead of the collection root.
 <strong>Keep individual source tiles</strong> controls whether the raw tile groups remain
 after successful mosaic assembly. It is unchecked by default to avoid
 duplicated pixel storage. For HCS acquisitions, one frame from every M tile
@@ -955,7 +1010,7 @@ unrelated layers and docks. Measure throughput and memory at production size.</l
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.0.1</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.0.2</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -965,7 +1020,7 @@ unrelated layers and docks. Measure throughput and memory at production size.</l
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-11-01</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-11-17</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -1062,7 +1117,7 @@ unrelated layers and docks. Measure throughput and memory at production size.</l
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">
                                                     Requirements<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">napari>=0.9.1</li><li class="MetadataList_textItem__KKmMN">magicgui>=0.7.0</li><li class="MetadataList_textItem__KKmMN">qtpy>=2.3.0</li><li class="MetadataList_textItem__KKmMN">numpy>=1.21.0</li><li class="MetadataList_textItem__KKmMN">qasync>=0.24.0</li><li class="MetadataList_textItem__KKmMN">grpclib</li><li class="MetadataList_textItem__KKmMN">pydantic</li><li class="MetadataList_textItem__KKmMN">python-dotenv</li><li class="MetadataList_textItem__KKmMN">ome-writers[acquire-zarr]</li><li class="MetadataList_textItem__KKmMN">ngff-zarr[dask-image]</li><li class="MetadataList_textItem__KKmMN">zarr>=3</li><li class="MetadataList_textItem__KKmMN">zen_api<=2026.11.1,>=2026.5.1</li><li class="MetadataList_textItem__KKmMN">zen_api_utils<0.2,>=0.1.0</li><li class="MetadataList_textItem__KKmMN">pytest>=6.0; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pytest-asyncio; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">ruff; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">mypy; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-timeout; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt6<6.10,>=6.7; extra == "testing"</li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">napari>=0.9.1</li><li class="MetadataList_textItem__KKmMN">magicgui>=0.7.0</li><li class="MetadataList_textItem__KKmMN">qtpy>=2.3.0</li><li class="MetadataList_textItem__KKmMN">numpy>=1.21.0</li><li class="MetadataList_textItem__KKmMN">qasync>=0.24.0</li><li class="MetadataList_textItem__KKmMN">grpclib</li><li class="MetadataList_textItem__KKmMN">pydantic</li><li class="MetadataList_textItem__KKmMN">python-dotenv</li><li class="MetadataList_textItem__KKmMN">ome-writers[acquire-zarr]</li><li class="MetadataList_textItem__KKmMN">ngff-zarr[dask-image]>=0.51.0</li><li class="MetadataList_textItem__KKmMN">zarr>=3</li><li class="MetadataList_textItem__KKmMN">zen_api<=2026.11.1,>=2026.5.1</li><li class="MetadataList_textItem__KKmMN">zen_api_utils<0.2,>=0.1.0</li><li class="MetadataList_textItem__KKmMN">pytest>=6.0; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pytest-asyncio; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">ruff; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">mypy; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-timeout; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt6<6.10,>=6.7; extra == "testing"</li></ul>
                                             </div>
                                         </div>
                                     </div>
