@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.0.2</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.0.4</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-11-17</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-11-18</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -245,18 +245,23 @@ directly to OME-ZARR without napari.</p>
 <p><img src="docs/napari_zen.png" alt="Napari - OME-ZARR from ZEN Acquistion" /></p>
 <h2>Current status</h2>
 <ul>
-<li>Release: <strong>0.0.2</strong> (<a href="_release_notes/v0.0.2.md">release notes</a>).</li>
+<li>Release: <strong>0.0.4</strong> (<a href="_release_notes/v0.0.4.md">release notes</a>).</li>
 <li>Project phase: alpha / MVP</li>
 <li>Primary OS target: Windows for ZEN Blue and the ZEN API Gateway</li>
 <li>Python target: <code>&gt;=3.12, &lt;3.15</code></li>
 </ul>
-<h3>What's new in 0.0.2</h3>
+<h3>What's new in 0.0.4</h3>
 <ul>
-<li>Original GRAY8/GRAY16 pixels in Display mode, without per-tile stretching.</li>
-<li>Optional stream-only viewing with channel filtering and no final mosaic.</li>
-<li>Scrollable experiment controls for smaller plugin docks.</li>
-<li>OME-Zarr 0.6 output and collection-opening fixes. Reading older OME-Zarr
-acquisitions now requires explicit conversion outside the plugin.</li>
+<li>Configured OME-ZARR acquisition preserves active channel names and actual
+display colors from the selected ZEN experiment.</li>
+<li>Per-image OMERO display metadata follows channel subscriptions and
+single-channel selections across generic scenes, HCS wells, and retained
+source tiles.</li>
+<li>Pyramid generation retains these settings so <code>napari-ome-zarr</code> opens new
+output with the experiment's colors. Missing or invalid colors warn and
+use neutral grayscale rather than guessing a biological color.</li>
+<li>See the <a href="_release_notes/v0.0.3.md">0.0.3 release notes</a> for the preceding
+stream-activation and shutdown fixes.</li>
 </ul>
 <h2>Known limitations</h2>
 <ul>
@@ -390,15 +395,16 @@ gateway. Do not commit wheels, tokens, or certificates to this repository
 without confirming redistribution rights.</p>
 <h3>Install the plugin</h3>
 <p>For a published PyPI release:</p>
-<pre><code class="language-powershell"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">-m</span> <span class="n">pip</span> <span class="n">install</span> <span class="s2">"napari-zenapi-streaming==0.0.2"</span> <span class="s2">"napari[pyqt6]"</span> <span class="s2">"PyQt6&gt;=6.7,&lt;6.10"</span>
+<pre><code class="language-powershell"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">-m</span> <span class="n">pip</span> <span class="n">install</span> <span class="s2">"napari-zenapi-streaming==0.0.4"</span> <span class="s2">"napari[pyqt6]"</span> <span class="s2">"PyQt6&gt;=6.7,&lt;6.10"</span>
 </pre></div>
 </code></pre>
 <p>To upgrade an existing environment with compatible ZEN wheels installed:</p>
-<pre><code class="language-powershell"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">-m</span> <span class="n">pip</span> <span class="n">install</span> <span class="p">-</span><span class="n">-upgrade</span> <span class="s2">"napari-zenapi-streaming==0.0.2"</span>
+<pre><code class="language-powershell"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">-m</span> <span class="n">pip</span> <span class="n">install</span> <span class="p">-</span><span class="n">-upgrade</span> <span class="s2">"napari-zenapi-streaming==0.0.4"</span>
 </pre></div>
 </code></pre>
-<p>Restart napari after upgrading. Version 0.0.2 writes OME-Zarr 0.6 and does not
-automatically migrate older stores. Use a reader that supports 0.6.</p>
+<p>Restart napari after upgrading. Version 0.0.4 writes OME-Zarr 0.6 and does not
+automatically migrate older stores or add channel colors to existing output.
+Use a reader that supports 0.6 and OMERO channel display metadata.</p>
 <p>From this checkout, install the plugin:</p>
 <pre><code class="language-bash"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>.
 </pre></div>
@@ -570,13 +576,18 @@ not guarantee sufficient disk space or that access will remain available.</p>
 <h2>Runtime behavior</h2>
 <h3>Operating modes</h3>
 <p>The plugin UI exposes three stream modes. Connecting the plugin never starts
-an acquisition; only clicking Start in a start-capable mode does so.</p>
+an acquisition; only clicking Start in a start-capable mode does so.
+Closing the <strong>Experiment Selector</strong> dock stops its stream subscriptions and
+background tasks without stopping the acquisition in ZEN or closing napari.
+Open the plugin again to establish a new connection.</p>
 <h4>Display: watch ZEN experiment (index 0)</h4>
 <p>The plugin waits for an experiment started independently in ZEN Blue. No
 selected setup or known frame count is assumed, and there is no Start button.
 The channel filter offers All channels or labels 1-16 (ZEN indices 0-15).</p>
 <h4>Display: start selected experiment (index 1)</h4>
 <p>The Start button loads and triggers the selected experiment via the ZEN API.
+This mode does not subscribe to the pixel stream until Start is clicked, and
+returns to an unsubscribed idle state after the acquisition is finalized.
 Its XML dimensions are shown in the widget, and the channel filter offers All
 channels or exactly the channels available in that setup. Until metadata has
 loaded, only All channels is available. Changing the selected setup reloads
@@ -596,8 +607,9 @@ option to restore the more expensive 7D frame-history preview. The option
 is frozen during acquisition and re-enabled after completion.
 Stream-only viewing forces the latest-frame preview, retains no history,
 and leaves the last frame visible without assembling a mosaic.</li>
-<li><strong>Channel filter</strong> – Changing the filter immediately restarts the pipeline
-reader. Labels are 1-based, while the gRPC request uses zero-based indices.
+<li><strong>Channel filter</strong> – Changing the filter restarts an active pipeline reader
+but does not open a stream in an idle start-selected mode. Labels are
+1-based, while the gRPC request uses zero-based indices.
 The initial value comes from <code>ZEN_CHANNEL_INDEX</code> in <code>.env</code>; leave it empty
 to receive all channels. An out-of-range choice resets to All channels.</li>
 <li><strong>Completion detection</strong> –
@@ -617,15 +629,16 @@ tiles are placed from their streamed stage coordinates into per-channel
 5D layers (<code>S, T, Z, Y, X</code>). In overlap regions, pixels from the tile with
 the higher M index replace pixels from lower-M tiles.</li>
 </ol>
-<p><strong>Experiment identity:</strong> Display mode keeps one
+<p><strong>Experiment identity:</strong> While watching or acquiring, Display mode keeps one
 <code>monitor_all_experiments()</code> subscription open because the targeted ZEN stream
 can close when experiment status changes to finished, before trailing pixel
 payloads have arrived. For a Napari-started acquisition, the plugin loads the
 experiment first, arms a client-side filter for its <code>FrameData.experiment_id</code>,
 and only then starts acquisition. Frames from other experiments are ignored
 while that filter is active, including during trailing-frame drain. The filter
-is cleared after final restructure so later ZEN-started acquisitions remain
-discoverable. A ZEN-started run has no experiment ID known in advance and
+is cleared and the subscription is closed after final restructure. Switch to
+<strong>Display: watch ZEN experiment</strong> to discover independently started runs.
+A ZEN-started run has no experiment ID known in advance and
 therefore continues to accept the global stream; keep only one such
 acquisition active at a time.</p>
 <h4>OME-ZARR only (index 2)</h4>
@@ -719,7 +732,17 @@ and <strong>Create pyramid after acquisition</strong> in its UI. When enabled, c
 many 2x Y/X downsampled levels to append after acquisition completes. Napari
 opens the OME-Zarr only after pyramid generation finishes. Existing level <code>0</code>
 is reused and is never rewritten.
-Generic scene mosaics also expose <strong>Keep individual source tiles</strong>; unchecked
+Active channel names and display colors come from the selected experiment's
+exported XML, in the same order as the channel subscriptions. ZEN's
+<code>#AARRGGBB</code> colors are saved as OMERO <code>RRGGBB</code> colors on every image
+(including HCS wells and retained source tiles), with display limits from
+the runtime pixel type. Selecting a single channel retains that source
+channel's name and color. Pyramid generation preserves these settings, so
+<code>napari-ome-zarr</code> automatically opens the images with their ZEN colors.
+Missing or invalid XML colors produce a warning and use neutral grayscale,
+not an inferred fluorophore color. Direct writer configurations without
+channel metadata keep the previous reader-default behavior.</p>
+<p>Generic scene mosaics also expose <strong>Keep individual source tiles</strong>; unchecked
 removes source groups only after mosaic creation succeeds. Advanced values
 intentionally use fixed defaults declared at the top of <code>ZEN_omezarr.py</code>:</p>
 <ul>
@@ -1010,7 +1033,7 @@ unrelated layers and docks. Measure throughput and memory at production size.</l
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.0.2</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.0.4</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -1020,7 +1043,7 @@ unrelated layers and docks. Measure throughput and memory at production size.</l
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-11-17</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-11-18</li>
                                                 </ul>
                                             </div>
                                         </div>
