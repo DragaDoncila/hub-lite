@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">3.1.0</li>
+                                            <li class="MetadataList_textItem__KKmMN">3.3.0</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-10-04</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-11-19</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -156,7 +156,7 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Requirements<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">napari<0.8,>=0.4</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">pandas</li><li class="MetadataList_textItem__KKmMN">matplotlib</li><li class="MetadataList_textItem__KKmMN">imageio</li><li class="MetadataList_textItem__KKmMN">tifffile</li><li class="MetadataList_textItem__KKmMN">h5py</li><li class="MetadataList_textItem__KKmMN">vispy</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">scikit-learn</li><li class="MetadataList_textItem__KKmMN">pillow</li><li class="MetadataList_textItem__KKmMN">scipy</li><li class="MetadataList_textItem__KKmMN">zarr<3</li><li class="MetadataList_textItem__KKmMN">napari[pyqt6]<0.8,>=0.4; extra == "pyqt6"</li><li class="MetadataList_textItem__KKmMN">PySide6; extra == "pyside6"</li><li class="MetadataList_textItem__KKmMN">pre-commit; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">napari[all]<0.8,>=0.4; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">tox; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">twine; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">build; extra == "dev"</li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">smlm-view3d</li><li class="MetadataList_textItem__KKmMN">napari<0.8,>=0.4</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">pandas</li><li class="MetadataList_textItem__KKmMN">matplotlib</li><li class="MetadataList_textItem__KKmMN">imageio</li><li class="MetadataList_textItem__KKmMN">tifffile</li><li class="MetadataList_textItem__KKmMN">h5py</li><li class="MetadataList_textItem__KKmMN">vispy</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">scikit-learn</li><li class="MetadataList_textItem__KKmMN">pillow</li><li class="MetadataList_textItem__KKmMN">scipy</li><li class="MetadataList_textItem__KKmMN">psutil</li><li class="MetadataList_textItem__KKmMN">packaging</li><li class="MetadataList_textItem__KKmMN">comet-smlm<2,>=1.2; extra == "comet"</li><li class="MetadataList_textItem__KKmMN">zarr<3; extra == "minflux"</li><li class="MetadataList_textItem__KKmMN">napari[pyqt6]<0.8,>=0.4; extra == "pyqt6"</li><li class="MetadataList_textItem__KKmMN">PySide6; extra == "pyside6"</li><li class="MetadataList_textItem__KKmMN">pre-commit; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">napari[all]<0.8,>=0.4; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">zarr<3; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">tox; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">twine; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">build; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">comet-smlm<2,>=1.2; extra == "dev"</li></ul>
                                     </div>
                                 </div>
                             </div>
@@ -227,10 +227,30 @@ without an extra, no Qt binding is installed and napari cannot open a window
 <pre><code><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span><span class="n">napari</span><span class="o">-</span><span class="n">storm</span><span class="p">[</span><span class="n">pyqt6</span><span class="p">]</span><span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span>
 </pre></div>
 </code></pre>
-<p>To work on napari-storm itself, install from a clone instead:</p>
+<p>If you open MINFLUX <code>.zarr</code> datasets, add the <code>[minflux]</code> extra -- see
+<a href="#minflux-data">MINFLUX data</a>:</p>
+<pre><code><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span><span class="n">napari</span><span class="o">-</span><span class="n">storm</span><span class="p">[</span><span class="n">pyqt6</span><span class="p">,</span><span class="n">minflux</span><span class="p">]</span><span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span>
+</pre></div>
+</code></pre>
+<p>For drift correction in the Post-processing tab, add the <code>[comet]</code> extra. It
+installs <a href="https://github.com/gpufit/Comet">COMET</a>, published on PyPI as
+<a href="https://pypi.org/project/comet-smlm/">comet-smlm</a>:</p>
+<pre><code><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span><span class="n">napari</span><span class="o">-</span><span class="n">storm</span><span class="p">[</span><span class="n">pyqt6</span><span class="p">,</span><span class="n">comet</span><span class="p">]</span><span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span>
+</pre></div>
+</code></pre>
+<p>COMET is optional: without it napari-storm works as before, and the tab's
+grouping, loading of saved drifts and slider still work. If an older COMET
+installed as <code>py-comet</code> is present, uninstall it first (<code>pip uninstall py-comet</code>): both install the same <code>comet</code> package. See
+<a href="docs/post-processing.md">Post-processing</a> for the workflow and how
+memory is managed (the tab runs COMET's CPU backend).</p>
+<p>To work on napari-storm itself, install from a clone instead. The drawing
+core, <a href="smlm-view3d">smlm-view3d</a>, lives in this repository and is not on PyPI
+yet, so it goes in first:</p>
 <pre><code><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">napari</span><span class="o">-</span><span class="n">storm</span><span class="o">/</span><span class="n">napari</span><span class="o">-</span><span class="n">storm</span>
 
 <span class="n">cd</span> <span class="n">napari</span><span class="o">-</span><span class="n">storm</span>
+
+<span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="o">./</span><span class="n">smlm</span><span class="o">-</span><span class="n">view3d</span>
 
 <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span><span class="o">.</span><span class="p">[</span><span class="n">dev</span><span class="p">,</span><span class="n">pyqt6</span><span class="p">]</span><span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span>
 </pre></div>
@@ -250,12 +270,7 @@ does the same, and from a clone so does <code>python napari_start.py</code>.</p>
 </code></pre>
 <h3>Importing data into napari-storm</h3>
 <p>Drag &amp; drop onto the dock widget supported file types (Picasso, ThunderSTORM, MINFLUX, etc.) directly into napari or use the import file dialog.</p>
-<p>MINFLUX data is read in both Abberior layouts: the original one, and the flat
-layout Imspector writes from <strong>24.10</strong> onwards. The newer one is accepted as
-<code>.npy</code>, <code>.json</code>, <code>.mat</code>, <code>.zarr</code>, and as pyMINFLUX's own <code>.pmx</code>. Which layout a
-file uses is determined from the file, so there is nothing to choose. A <code>.zarr</code>
-dataset is a folder rather than a file; since a file dialog cannot select one,
-pick any file inside it and the whole dataset opens.</p>
+<p>MINFLUX files have their own section below: <a href="#minflux-data">MINFLUX data</a>.</p>
 <p>If your file is not covered:</p>
 <ul>
 <li>one can either write a custom import function by following the instructions in
@@ -267,7 +282,7 @@ and lets you assign your data. This should work for any .hdf5, .csv or .npy file
 <p>When a dataset is imported you should be able to see five tabs in the widget: Data Controls, File Infos, Decorators,
 Data Filter and Data adjustment. In the data controls tab you can change the render range, load
 a new file, merge the currently open dataset with another file and change your view.
-There is also the option to change the colormap, add a scalebar or activate rainbow colour coding (for 3D datasets),
+There is also the option to change the colormap, add a scalebar or colour code the localizations by any property -- depth, frame, photons, ... -- with a choice of colormaps,
 and adjust the contrast with the slider beneath the colormap. The contrast acts on the reconstruction itself -- the
 Gaussians summed where they overlap -- so its lower handle hides sparse regions while keeping dense ones, and its upper
 handle sets how many overlapping localizations it takes to reach full brightness.</p>
@@ -285,10 +300,80 @@ one of the apply buttons.</p>
 <li>For STORM/PALM ... datasets, it is possible to change the rendering options in the data controls tab to <strong>Variable-size gaussian</strong>, to include the uncertainty values or photon counts for the rendering</li>
 <li>hold shift and drag the mouse for panning</li>
 </ul>
+<h2>MINFLUX data</h2>
+<p>napari-storm reads Abberior MINFLUX exports in both layouts Imspector has
+written: the original one, with every iteration nested inside each record, and
+the flat layout of Imspector <strong>24.10</strong> and later, one row per iteration. Which
+layout a file holds is read from the file itself, so there is nothing to
+choose.</p>
+<table>
+<thead>
+<tr>
+<th>Container</th>
+<th>Layouts</th>
+<th>Needs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.npy</code></td>
+<td>both</td>
+<td>--</td>
+</tr>
+<tr>
+<td><code>.json</code></td>
+<td>both</td>
+<td>--</td>
+</tr>
+<tr>
+<td><code>.mat</code></td>
+<td>24.10+</td>
+<td>-- (scipy, installed anyway)</td>
+</tr>
+<tr>
+<td><code>.zarr</code></td>
+<td>24.10+</td>
+<td>the <code>[minflux]</code> extra</td>
+</tr>
+<tr>
+<td><code>.pmx</code> (pyMINFLUX 3.0)</td>
+<td>24.10+</td>
+<td>--</td>
+</tr>
+<tr>
+<td><code>.mfx</code></td>
+<td>original (napari-storm's own export)</td>
+<td>--</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Zarr.</strong> Imspector writes its MINFLUX table as a structured array, which
+zarr 3 cannot read, so <code>.zarr</code> stores need <code>zarr&lt;3</code>. It is not installed by
+default -- host applications that only use napari-storm to render may already
+be on zarr 3 -- so install it with the extra:</p>
+<pre><code><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span><span class="n">napari</span><span class="o">-</span><span class="n">storm</span><span class="p">[</span><span class="n">minflux</span><span class="p">]</span><span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span>
+</pre></div>
+</code></pre>
+<p>Without it every other container still opens, and a <code>.zarr</code> store says which
+command to run. A store is a folder rather than a file; a file dialog cannot
+select one, so pick any file inside it (its <code>.zgroup</code>, say) and the whole
+dataset opens. Dropping the folder onto napari works too.</p>
+<p><strong>Traces.</strong> Every MINFLUX localization carries the id of the trace it belongs
+to -- one molecule, localized again and again. <strong>Decorators → Traces →
+Connect traces</strong> draws each trace as a line through its localizations in the
+order they were measured, coloured by trace, by time, by progress along the
+trace, or by a column such as <code>efo</code> or <code>cfr</code>. Traces are for viewing; exports
+contain the Gaussian reconstruction only.</p>
+<p><strong>Trying it out.</strong> <code>sample_data/</code> has a small synthetic file for every
+container, written to the documented layout rather than measured -- enough to
+check that a container opens, not what a real acquisition looks like.</p>
 <h2>Documentation</h2>
-<p>Full documentation is at <strong><a href="https://napari-storm.readthedocs.io/">https://napari-storm.readthedocs.io/</a></strong> — a
-step-by-step tutorial, how the renderer works, and the embedding API for
-driving napari-storm from another application.</p>
+<p>Full documentation is at <strong><a href="https://napari-storm.readthedocs.io/">https://napari-storm.readthedocs.io/</a></strong> — getting
+started, a user guide by task with screenshots, a reference of every control,
+troubleshooting, the changelog, and for developers how the renderer works and
+the embedding API for driving napari-storm from another application.</p>
+<p>The screenshots are generated from <code>sample_data</code> by
+<code>python scripts/make_doc_images.py</code>; rerun it when the interface changes.</p>
 <p>There is also a custom Q&amp;A GPT for this repo specifically, available at
 <a href="https://chatgpt.com/g/g-68aebb6371a88191877094b48513d690-napari-storm-q-a">https://chatgpt.com/g/g-68aebb6371a88191877094b48513d690-napari-storm-q-a</a></p>
 <p>To build the docs locally, install the pinned toolchain (once):</p>
@@ -332,7 +417,7 @@ documented the format first.</li>
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">3.1.0</li>
+                                                    <li class="MetadataList_textItem__KKmMN">3.3.0</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -342,7 +427,7 @@ documented the format first.</li>
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-10-04</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-11-19</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -439,7 +524,7 @@ documented the format first.</li>
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">
                                                     Requirements<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">napari<0.8,>=0.4</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">pandas</li><li class="MetadataList_textItem__KKmMN">matplotlib</li><li class="MetadataList_textItem__KKmMN">imageio</li><li class="MetadataList_textItem__KKmMN">tifffile</li><li class="MetadataList_textItem__KKmMN">h5py</li><li class="MetadataList_textItem__KKmMN">vispy</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">scikit-learn</li><li class="MetadataList_textItem__KKmMN">pillow</li><li class="MetadataList_textItem__KKmMN">scipy</li><li class="MetadataList_textItem__KKmMN">zarr<3</li><li class="MetadataList_textItem__KKmMN">napari[pyqt6]<0.8,>=0.4; extra == "pyqt6"</li><li class="MetadataList_textItem__KKmMN">PySide6; extra == "pyside6"</li><li class="MetadataList_textItem__KKmMN">pre-commit; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">napari[all]<0.8,>=0.4; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">tox; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">twine; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">build; extra == "dev"</li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">smlm-view3d</li><li class="MetadataList_textItem__KKmMN">napari<0.8,>=0.4</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">pandas</li><li class="MetadataList_textItem__KKmMN">matplotlib</li><li class="MetadataList_textItem__KKmMN">imageio</li><li class="MetadataList_textItem__KKmMN">tifffile</li><li class="MetadataList_textItem__KKmMN">h5py</li><li class="MetadataList_textItem__KKmMN">vispy</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">scikit-learn</li><li class="MetadataList_textItem__KKmMN">pillow</li><li class="MetadataList_textItem__KKmMN">scipy</li><li class="MetadataList_textItem__KKmMN">psutil</li><li class="MetadataList_textItem__KKmMN">packaging</li><li class="MetadataList_textItem__KKmMN">comet-smlm<2,>=1.2; extra == "comet"</li><li class="MetadataList_textItem__KKmMN">zarr<3; extra == "minflux"</li><li class="MetadataList_textItem__KKmMN">napari[pyqt6]<0.8,>=0.4; extra == "pyqt6"</li><li class="MetadataList_textItem__KKmMN">PySide6; extra == "pyside6"</li><li class="MetadataList_textItem__KKmMN">pre-commit; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">napari[all]<0.8,>=0.4; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">zarr<3; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">tox; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">twine; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">build; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">comet-smlm<2,>=1.2; extra == "dev"</li></ul>
                                             </div>
                                         </div>
                                     </div>
