@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.1.0rc3</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.1.0rc4</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-11-19</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-11-20</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -177,8 +177,8 @@
         <img src="../static/images/PyPI_logo.svg.png" alt="PyPI" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">napari-lumic-cci</span>
     </a>
     
-        <a class="underline flex" href="https://github.com/CCI-GU-Sweden/spectral-unmixing-microscopy" rel="noreferrer" target="_blank">
-            <img src="../static/images/GitHub_Invertocat_Logo.svg.png" alt="GitHub" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">CCI-GU-Sweden/spectral-unmixing-microscopy</span>
+        <a class="underline flex" href="https://github.com/CCI-GU-Sweden/lumic" rel="noreferrer" target="_blank">
+            <img src="../static/images/GitHub_Invertocat_Logo.svg.png" alt="GitHub" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">CCI-GU-Sweden/lumic</span>
         </a>
         </div>
 
@@ -222,6 +222,20 @@ command supplies the PyQt6 binding for napari's graphical interface.</p>
 <h2>Usage</h2>
 <p>Launch napari with <code>python -m napari</code>, then open <strong>Plugins → LUMIC CCI-GU →
 Spectral Unmixing</strong>.</p>
+<p>For an introduction to the viewer, see the <a href="https://napari.org/stable/index.html">napari documentation</a> and <a href="https://napari.org/stable/getting_started/start_index.html">napari getting started guide</a>.</p>
+<h2>Workflow</h2>
+<p>Follow the tabs in order:</p>
+<ol>
+<li><strong>Input:</strong> Load an OME-TIFF or CZI spectral image and select a plane.</li>
+<li><strong>Spectra selection:</strong> Choose automatic or manual references; automatic selection finds distinctive spectra.</li>
+<li><strong>Unmixing:</strong> Optimize automatic references and calculate abundance maps, then save the spectra and maps.</li>
+<li><strong>Evaluation:</strong> Examine residual variation and its spatial patterns using principal component analysis.</li>
+</ol>
+<p>See the <a href="../../docs/plugins/overview.md">plugin documentation</a> for the controls and workflow in greater detail.</p>
+<h2>Run plugin tests</h2>
+<p>With the backend development environment active, install the plugin dependencies
+and Qt binding with <code>python -m pip install -e ./Python/plugin &quot;napari[pyqt6]&quot;</code>.
+From the <code>Python</code> directory, run <code>QT_QPA_PLATFORM=offscreen python -m pytest tests/test_plugin_*.py</code>.</p>
 
 
                                     </div>
@@ -237,7 +251,7 @@ Spectral Unmixing</strong>.</p>
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.1.0rc3</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.1.0rc4</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -247,7 +261,7 @@ Spectral Unmixing</strong>.</p>
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-11-19</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-11-20</li>
                                                 </ul>
                                             </div>
                                         </div>
