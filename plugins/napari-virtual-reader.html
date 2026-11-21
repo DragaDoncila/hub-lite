@@ -9,9 +9,9 @@
     <meta
         content="napari-virtual-reader, Sebastian Rhode, napari hub, napari, hub, plugin, image analysis, imaging, chan zuckerberg initiative"
         name="keywords" />
-    <meta content="Experimental napari plugin for lazy virtual OME-Zarr images via refkv" name="description" />
-    <meta content="Experimental napari plugin for lazy virtual OME-Zarr images via refkv" property="og:description" />
-    <meta content="Experimental napari plugin for lazy virtual OME-Zarr images via refkv." name="twitter:description" />
+    <meta content="Experimental napari plugin for reading microscopy image file formats, such as CZI as lazy virtual OME-Zarr images via refkv" name="description" />
+    <meta content="Experimental napari plugin for reading microscopy image file formats, such as CZI as lazy virtual OME-Zarr images via refkv" property="og:description" />
+    <meta content="Experimental napari plugin for reading microscopy image file formats, such as CZI as lazy virtual OME-Zarr images via refkv." name="twitter:description" />
     <meta content="napari-virtual-reader - napari Plugin - Sebastian Rhode" property="og:title" />
     <meta content="napari-virtual-reader - napari Plugin - Sebastian Rhode" name="twitter:title" />
     <meta content="article" property="og:type" />
@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.0.2</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.0.3</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-11-06</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-11-21</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -183,7 +183,7 @@
         </div>
 
                                 <div class="flex justify-between items-center my-6">
-                                    <h2 class="text-lg">Experimental napari plugin for lazy virtual OME-Zarr images via refkv</h2>
+                                    <h2 class="text-lg">Experimental napari plugin for reading microscopy image file formats, such as CZI as lazy virtual OME-Zarr images via refkv</h2>
                                 </div>
                                 <ul class="PluginAuthors_authors__hs3zO">
                                     <li class="inline">
@@ -209,13 +209,31 @@
                                 <div class="flex items-center justify-between mb-sds-xxl">
                                     <div class="Markdown_markdown__QZ95j">
 
-                                        <p><strong>Experimental software - Alpha status.</strong> APIs and behavior may change without
+                                        <p>A napari plugin for lazy, reference-backed OME-Zarr images using
+<a href="https://github.com/d-v-b/refkv">refkv</a>.</p>
+<h2>Remarks</h2>
+<p><strong>Experimental software - Beta status.</strong> APIs and behavior may change without
 notice. Validate results independently before relying on them for analysis.</p>
-<p>Open image files as lazy, reference-backed OME-Zarr in napari. No pixel
-conversion, copied image data, or intermediate archive is required.</p>
+<p>Open images without first converting them, writing a pixel copy, or creating
+an intermediate archive. Requested regions are still decoded and composed in
+memory for display; &quot;virtual&quot; does not mean zero memory use.</p>
 <p>The plugin uses refkv directly. It does not depend on czitools, pylibCZIrw,
 or the napari-czitools plugin.</p>
-<img src="https://raw.githubusercontent.com/sebi06/napari-virtual-reader/main/_images/czi_virtual_omezarr1.png" alt="Alt Text" style="width:80%; height:auto;">
+<p>This README describes the source checkout. Published releases may not yet include
+all features below; see the <a href="CHANGELOG.md">changelog</a> for unreleased changes.</p>
+<p>The screenshots show the earlier two-dock layout. The current UI combines the
+loading controls and metadata inspector in one dock.</p>
+<img src="https://raw.githubusercontent.com/sebi06/napari-virtual-reader/main/_images/czi_virtual_omezarr1.png" alt="CZI image displayed in napari with the earlier separate opener and metadata docks" style="width:80%; height:auto;">
+<h2>Visual guides</h2>
+<ul>
+<li><a href="https://sebi06.github.io/napari-virtual-reader/plugin-workflow.html">How the plugin works</a>:
+lazy loading, the combined dock, metadata and VZIP archives.</li>
+<li><a href="https://sebi06.github.io/napari-virtual-reader/czi-tile-assembly.html">How CZI tile assembly works</a>:
+tile placement, chunk reads, coordinate mapping, pyramids and limitations.</li>
+</ul>
+<p>These links open rendered HTML on GitHub Pages, not GitHub's HTML source viewer.
+The editable sources and standalone pages are in <a href="_docs/">_docs</a>;
+see the <a href="_docs/README.md">documentation publishing notes</a> for regeneration and deployment.</p>
 <h2>Install</h2>
 <p>Python 3.12 or newer is required. Install into the environment running napari:</p>
 <pre><code class="language-powershell"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">-m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">napari-virtual-reader</span>
@@ -229,11 +247,43 @@ or the napari-czitools plugin.</p>
 <p>Restart napari after installation. The package registers an npe2 reader and
 widget through its <code>napari.manifest</code> entry point; no manual registration is
 required. Check <strong>Plugins &gt; Plugin Manager</strong> for <strong>napari-virtual-reader</strong>.</p>
+<p>The plugin is also listed on
+<a href="https://napari-hub.org/plugins/napari-virtual-reader.html">napari hub</a>.</p>
+<h2>Format-specific features</h2>
+<h3>CZI image files</h3>
+<ul>
+<li><strong>RGB images:</strong> brightfield colour images open as one RGB/RGBA layer per
+acquisition channel, not separate red, green, and blue layers. Fluorescence
+channels remain separate.</li>
+<li><strong>Large 2D images and pyramids:</strong> supported 2D mosaics are assembled on demand,
+including full resolution when native tiles are available. Napari switches
+between stored resolution levels as you zoom, without loading the whole image
+or writing a converted copy.</li>
+<li><strong>Multiple scenes:</strong> compatible scenes share an <strong>S</strong> dimension slider.
+Scenes with different sizes or scales remain separate.</li>
+</ul>
+<p><strong>Why assembly helps:</strong> refkv can expose irregular or overlapping CZI tiles
+separately from its regular image levels. Reading only those levels can omit
+native resolution or show just an overview. The plugin places supported tiles
+using their CZI coordinates and groups them into the available resolution levels.
+Placement restores the missing view; lazy, chunk-by-chunk reads make it practical
+without building the whole slide in memory. It does not invent missing pixels
+or resolution levels.</p>
+<p><strong>This extra assembly is CZI-only.</strong> Other formats can display images and pyramids
+already exposed by refkv, but the plugin does <strong>not yet assemble their separate
+irregular tile arrays</strong>. General lazy loading is not a general tile-assembly solution.</p>
+<p>Open the <strong>original CZI</strong> to use mosaic assembly; reopening a VZIP archive
+does not currently restore this assembly. Overlapping tiles use a fixed
+&quot;later tile wins&quot; rule, so overlap regions can look different from ZEN.
+If some tiles cannot be assembled, the plugin warns that the view may be
+incomplete. See <a href="#scope">Scope</a> for technical details and limitations.</p>
 <h2>Open an image</h2>
 <p>In napari, choose <strong>Plugins &gt; napari-virtual-reader &gt; Open Data as virtual OME-ZARR</strong>,
-select the input, and click <strong>Open</strong>. Preparation runs in a background worker; napari
-provides its normal layer, contrast, time, and Z controls.</p>
-<img src="https://raw.githubusercontent.com/sebi06/napari-virtual-reader/main/_images/reader_plugin.png" alt="Alt Text" style="width:50%; height:auto;">
+select the input, and click <strong>Open</strong>. This dock prepares the image in a background
+worker; napari provides its normal layer, contrast, time, and Z controls.</p>
+<p>The plugin uses one dock: the file selector, <strong>Save VZIP archive</strong>, and <strong>Open</strong>
+controls stay at the top, with the metadata inspector below. The inspector
+receives the remaining vertical space as the dock is resized.</p>
 <p>You can also use <strong>File &gt; Open</strong> or drop a file on the napari canvas and choose
 the napari-virtual-reader reader. Drop a file on the plugin dock to select it without
 opening it yet.</p>
@@ -254,17 +304,28 @@ the source by default.</p>
 save dialog; the suggested filename is a sibling <code>.vzip</code>. Saving runs in the
 background, and the resulting image still opens lazily with the metadata panel.
 The status shows the saved filename, with its full path available on hover.</p>
-<p>Saving stores references to the original image, not converted pixel data.
-The archive covers the complete source, including all scenes and pyramid levels.
+<p>Saving stores refkv's reference layout, not converted pixel data. It retains
+the image series, pyramid levels and separate tile arrays exposed by refkv,
+not just the selected napari layer. It is not a self-contained image backup:
+the referenced source must remain available and unchanged.
 Existing destinations require explicit replacement confirmation; failed writes
 leave the old archive intact. Cancelling the save dialog cancels the open action.
 The save option is disabled for inputs that are already VZIP archives.
 File/Open and canvas drops remain in-memory operations without automatic saving.</p>
+<p>The saved archive retains refkv's original reference layout, not the plugin's
+runtime mosaic composition. Refkv's live pyramid-factor summary is not saved
+in VZIP. If a CZI-derived archive contains separate tile arrays, reopening it
+still warns about unassembled tiles; open the original CZI to use mosaic assembly.
+Archive reads also depend on refkv's source-access policy; an archive can fail to
+open if that policy does not permit its referenced local files.</p>
 <h2>Metadata Inspector</h2>
-<p>The <strong>Virtual Zarr metadata</strong> dock opens on the right when using the refkv reader
-through File/Open or drag-and-drop, without opening the plugin widget first.
-It also appears with <strong>Plugins &gt; napari-virtual-reader &gt; Open Data as virtual OME-ZARR</strong>.
-Both workflows share one inspector that follows the selected image layer.</p>
+<p>The metadata inspector is embedded below the loading controls in the
+<strong>Open Data as virtual OME-ZARR</strong> dock, which opens on the right by default.
+Using the refkv reader through File/Open or canvas drag-and-drop automatically
+opens this same dock, without requiring the plugin menu first. Opening the
+plugin from the menu before or after a reader load reuses the dock rather than
+creating a second panel. A new reader load also reopens the dock if it was hidden.
+The inspector follows the selected image layer, independently of how it was loaded.</p>
 <ul>
 <li><strong>Zarr structure</strong> shows expandable groups and arrays, including original
 shapes, dtypes, attributes, chunk grids and codec configuration.</li>
@@ -273,23 +334,63 @@ information, plus original scene transforms for stacked CZI images.</li>
 <li>A filter finds matching properties; selecting a row shows its complete,
 selectable value below the tree.</li>
 </ul>
-<img src="https://raw.githubusercontent.com/sebi06/napari-virtual-reader/main/_images/czi_virtual_omezarr2.png" alt="Alt Text" style="width:80%; height:auto;">
-<p>The inspector uses a metadata-only snapshot collected in the background. It
-does not scan pixel data or reconstruct the source hierarchy from displayed
-layer shapes. Selecting an unrelated layer clears the inspector.</p>
+<img src="https://raw.githubusercontent.com/sebi06/napari-virtual-reader/main/_images/czi_virtual_omezarr2.png" alt="Zarr structure and image metadata in the earlier separate metadata dock" style="width:80%; height:auto;">
+<p>The inspector uses a metadata-only snapshot collected during reader preparation
+(in the background when using the plugin's <strong>Open</strong> button). It does not scan
+pixel data or reconstruct the source hierarchy from displayed layer shapes.
+Selecting an unrelated layer clears the inspector.</p>
 <h2>Scope</h2>
 <ul>
+<li><strong>Lazy CZI mosaic assembly:</strong> for 2D slide-scan series with an OME image and
+refkv's live pyramid-factor summary, the plugin assembles irregular and
+overlapping tiles alongside the existing image levels. Full resolution is
+included when native tiles are available. Each requested output chunk is at
+most 1024 x 1024 pixels per acquisition channel and reads only intersecting
+source regions. This bounds output tasks, not total memory: a compressed source
+chunk can require full decoding, and concurrent tasks use separate buffers.
+No full mosaic or converted image is written.</li>
+<li>Mosaic levels share the finest level's spatial extent. Coarse levels use
+nearest-neighbour sampling to align differing origins and clipped/odd edges
+with napari's shape-derived pyramid transforms. Native full-resolution
+pixels are not resampled. Gaps are zero; overlaps use <strong>later numeric refkv
+tile wins</strong>, with tiles drawn over any existing assembled level. This is
+deterministic, not blending or image registration, and is not guaranteed to
+match ZEN/libCZI overlap selection or codec rounding pixel-for-pixel.
+<code>metadata[&quot;czi_assembly&quot;]</code> records bounds, factors, full-resolution availability,
+tile count, and compositing policy. The inspector's Zarr tree still describes
+the original reference store, not the runtime mosaic.
+Missing resolution levels are not generated, and gaps at one level are not
+filled from another. Source read/decode errors propagate; they are not replaced
+with zero-filled pixels.</li>
+<li><strong>Remaining incomplete CZI views:</strong> time/Z tile stacks, scenes without an
+OME image, unclassified tile scales, and VZIPs without the live calibration
+summary are not assembled by this implementation. Unsupported tiles retain
+the napari warning once per source load and <code>metadata[&quot;reader_warning&quot;]</code>.
+An input without any supported OME image still fails explicitly. Use
+napari-czitools for those cases; do not assume a displayed pyramid is complete
+when the warning is present.</li>
 <li>CZI, TIFF/OME-TIFF, and other refkv-supported files that expose OME image series.
 Reader registration includes common microscopy and volumetric image extensions;
-actual support is determined by refkv's parser and the file's metadata/codecs.</li>
-<li>One layer per channel. Compatible CZI scenes are stacked lazily along a leading
+actual support is determined by refkv's parser and the file's metadata/codecs.
+The extra tile assembler and incomplete-tile warning are CZI-specific; absence
+of that warning for another format does not establish that its view is complete.</li>
+<li>One layer per acquisition channel. Packed-colour CZI images (<code>Bgr24</code>, <code>Bgr48</code>,
+<code>Bgr96Float</code>, and <code>Bgra32</code>) open as RGB/RGBA layers rather than separate colour
+components. Detection uses refkv's CZI profile and component chunk layout,
+not channel count or names. Component order is corrected per pyramid level:
+raw/Zstd/LZW BGR(A) is reordered, while JPEG/JPEG-XR RGB(A) is retained.
+Complex-valued packed-colour CZI pixels are not supported.</li>
+<li>Compatible CZI scenes are stacked lazily along a leading
 <strong>S</strong> axis, in numeric series order. This also applies to CZI-derived
 VZIP archives. Other formats retain separate series layers.</li>
+<li>RGB/RGBA keeps its component axis last, outside napari's dimension sliders;
+ordinary fluorescence channels remain separate additive layers. Loading and
+reordering stay lazy, preserve pixel dtype, and do not write converted images.</li>
 <li>CZI stacking requires matching axes, shapes, dtypes, physical scales and
 pyramid levels. Incompatible scenes remain separate without cropping or
-resampling. Scene-dependent stage origins are replaced by local coordinates
-on the stacked layer; original origins and metadata remain available in
-the layer's <code>metadata[&quot;scenes&quot;]</code> list.</li>
+resampling. Axes with differing scene origins use zero translation on the
+stacked layer; shared origins are retained. Original origins and metadata
+remain available in the layer's <code>metadata[&quot;scenes&quot;]</code> list.</li>
 <li>Stored multiscale pyramids, OME axis ordering, physical scale/origin, channel
 names, colors, and display windows.</li>
 <li>Regular and rectilinear chunk grids, without scanning complete lazy arrays
@@ -311,12 +412,33 @@ sliders or CZI-specific options.</p>
 </code></pre>
 <p>Install a Qt backend as above if the development environment does not already
 provide one. Development installs register the same napari plugin as PyPI installs.</p>
+<p>Source guide:</p>
+<ul>
+<li><a href="src/napari_virtual_reader/_reader.py">_reader.py</a>: reference stores, lazy
+layers, axes, colours, scenes, warnings and archive saving.</li>
+<li><a href="src/napari_virtual_reader/_czi_mosaic.py">_czi_mosaic.py</a>: native tile
+placement, spatial indexing and on-demand pyramid composition.</li>
+<li><a href="src/napari_virtual_reader/_widget.py">_widget.py</a>: loading controls,
+preparation workers and Qt-thread delivery of layers.</li>
+<li><a href="src/napari_virtual_reader/_metadata.py">_metadata.py</a>: shared dock access
+and a read-only inspector built from metadata snapshots.</li>
+</ul>
 <h2>Releases</h2>
-<p>GitHub Actions tests pull requests and pushes to <code>main</code>. Publishing runs only
-after the test matrix passes on a release tag in the form <code>vX.Y.Z</code>.</p>
+<p>Version <a href="_release_notes/v0.0.3.md">0.0.3</a> adds lazy 2D CZI mosaic assembly,
+packed-colour CZI handling, a combined loading and metadata dock, and visual
+documentation. The package remains experimental Beta software; review
+<a href="#scope">Scope</a> before using it for analysis.</p>
+<p>The package workflow tests pull requests and pushes to <code>main</code> against
+<code>refkv[zarr,images]==0.2.0</code> from PyPI on Linux, Windows, and macOS with
+Python 3.12, 3.13, and 3.14. The runtime requirement remains refkv 0.2.0 or newer.
+PyPI publishing
+runs only after its test matrix passes on a pushed tag beginning with <code>v</code>;
+use the release convention <code>vX.Y.Z</code>.</p>
 <p>Set <code>project.version</code> in <code>pyproject.toml</code> to the intended release version before
 tagging; tags do not change the package version. PyPI requires a new
-version for every upload. Manual workflow runs test and build without publishing.</p>
+version for every upload. Manual runs of the package workflow test and build
+without publishing to PyPI. The separate documentation workflow publishes
+GitHub Pages on relevant pushes to <code>main</code> or a manual run on <code>main</code>.</p>
 <p>See the <a href="CHANGELOG.md">changelog</a> for the change history and the
 <a href="_release_notes/">release notes</a> for release-specific features, validation, and
 limitations. Published tags and release details are available on
@@ -336,7 +458,7 @@ limitations. Published tags and release details are available on
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.0.2</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.0.3</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -346,7 +468,7 @@ limitations. Published tags and release details are available on
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-11-06</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-11-21</li>
                                                 </ul>
                                             </div>
                                         </div>
