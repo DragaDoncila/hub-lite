@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+
+<html id="napari-hub" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link href="../plugins/napari-qrcode-barcode-scanner.html" rel="canonical" />
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
+    <meta
+        content="napari-qrcode-barcode-scanner, Thibaut Mélen, Nicolas Cella, napari hub, napari, hub, plugin, image analysis, imaging, chan zuckerberg initiative"
+        name="keywords" />
+    <meta content="Read the QR codes and barcodes of a napari image layer with the QR Code & Barcode Scanner engine." name="description" />
+    <meta content="Read the QR codes and barcodes of a napari image layer with the QR Code & Barcode Scanner engine." property="og:description" />
+    <meta content="Read the QR codes and barcodes of a napari image layer with the QR Code & Barcode Scanner engine.." name="twitter:description" />
+    <meta content="QR Code & Barcode Scanner - napari Plugin - Thibaut Mélen, Nicolas Cella" property="og:title" />
+    <meta content="QR Code & Barcode Scanner - napari Plugin - Thibaut Mélen, Nicolas Cella" name="twitter:title" />
+    <meta content="article" property="og:type" />
+    <meta content="../plugins/napari-qrcode-barcode-scanner.html" property="og:url" />
+    <meta content="@napari_imaging" name="twitter:site" />
+    <title>QR Code & Barcode Scanner - napari Plugin - Thibaut Mélen, Nicolas Cella</title>
+
+    <meta content="2" name="next-head-count" />
+    <meta content="#80d1ff" name="theme-color" />
+    <meta content="#009bf2" name="msapplication-TileColor" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <link as="style" href="../static/css/8ebdfa69bbc45988.css" rel="preload" />
+    <link data-n-g="" href="../static/css/8ebdfa69bbc45988.css" rel="stylesheet" /><noscript data-n-css=""></noscript>
+    <link href="../static/css/all_plugins_styles.css" rel="stylesheet" />
+    <link href="../static/css/pygments.css" rel="stylesheet" />
+    <style>
+      .highlight, .highlight pre, .highlight code {
+        /* default font color in code blocks */
+        color: #333333;
+        margin: 0;
+      }
+      /* get rid of some additional spacing I can't explain */
+      pre > code { display: contents; }
+      code::before, code::after {
+        content: none !important;
+        display: none !important;
+      }
+    </style>
+</head>
+
+<body>
+    <div id="__next">
+        <div class="flex flex-col min-h-screen">
+            <div class="flex items-center justify-center w-full p-4 bg-hub-primary-200 text-center">
+            </div>
+            <div class="screen-600:hidden"></div>
+            <header
+                class="grid grid-cols-[min-content,1fr] screen-875:grid-cols-napari-3 screen-1150:grid-cols-napari-4 screen-1425:grid-cols-napari-5 gap-sds-xl screen-495:gap-12 bg-hub-primary-400 h-napari-app-bar justify-center items-center px-sds-xl screen-495:px-12 screen-1150:p-0">
+                <div class="hidden screen-600:block">
+                    <nav class="flex"><a class="whitespace-nowrap" data-testid="appBarHome" href="../index.html">napari
+                            <strong>hub</strong></a>
+                        <div class="flex"><a class="ml-sds-xl" href="../index.html">Plugins</a></div>
+                    </nav>
+                </div>
+                <div class="screen-600:hidden">
+                    <nav class="flex"><a class="whitespace-nowrap" data-testid="appBarHome" href="../index.html">napari
+                            <strong>hub</strong></a></nav>
+                </div>
+            </header>
+            <main class="flex flex-col flex-grow">
+                <div class="flex flex-col flex-grow justify-center">
+                    <div class="p-sds-xl screen-495:p-12 screen-875:px-0 grid justify-center gap-sds-xl screen-495:gap-12 grid-cols-2 screen-875:grid-cols-napari-3 screen-1150:grid-cols-napari-4 screen-1425:grid-cols-napari-5"
+                        data-testid="pluginDetails">
+                        <div
+                            class="hidden screen-1425:block space-y-sds-xl screen-875:space-y-0 screen-1425:space-y-sds-xl grid screen-875:grid-cols-3 screen-1425:grid-cols-1">
+                            <div class="space-y-sds-xl">
+                                <div class="text-sm">
+                                    <div class="">
+                                        <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
+                                            <li class="MetadataList_textItem__KKmMN">0.1.0</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="text-sm">
+                                    <div class="">
+                                        <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
+                                            <li class="MetadataList_textItem__KKmMN">2026-11-22</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="text-sm">
+                                    <div class="">
+                                        <p class="font-bold whitespace-nowrap">First released<!-- -->:</p>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
+                                            <li class="MetadataList_textItem__KKmMN">2026-11-22</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="text-sm">
+                                    <div class="">
+                                        <p class="font-bold whitespace-nowrap">License<!-- -->:</p>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
+                                            <li class="MetadataList_textItem__KKmMN">
+                                                MIT
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="mb-sds-s screen-875:hidden screen-1425:block bg-gray-300 h-px bg-black border-none">
+                            </div>
+                            <div class="space-y-sds-xl">
+                                <div class="text-sm">
+                                    <div class="">
+                                        <p class="font-bold whitespace-nowrap">Plugin type<!-- -->:</p>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=widget">Widget</a></li></ul>
+                                    </div>
+                                </div>
+                                <div class="text-sm">
+                                    <div class="">
+                                        <p class="font-bold whitespace-nowrap">Open extension<!-- -->:</p>
+                                        
+                                    </div>
+                                </div>
+                                <div class="text-sm">
+                                    <div class="">
+                                        <p class="font-bold whitespace-nowrap">Save extension<!-- -->:</p>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="mb-sds-s screen-875:hidden screen-1425:block bg-gray-300 h-px bg-black border-none">
+                            </div>
+                            <div
+                                class="space-y-sds-xl screen-875:space-y-0 screen-1425:space-y-sds-xl hidden screen-1425:block">
+                            </div>
+                            <div
+                                class="space-y-sds-xl screen-875:space-y-0 screen-1425:space-y-sds-xl screen-875:hidden">
+                                <div
+                                    class="mb-sds-s screen-875:hidden screen-1425:block bg-gray-300 h-px bg-black border-none">
+                                </div>
+                            </div>
+                            <div class="space-y-sds-xl">
+                                <div class="text-sm">
+                                    <div class="">
+                                        <p class="font-bold whitespace-nowrap">Python versions supported<!-- -->:</p>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.11">3.11</a></li></ul>
+                                    </div>
+                                </div>
+                                <div class="text-sm">
+                                    <div class="">
+                                        <p class="font-bold whitespace-nowrap">Operating system<!-- -->:</p>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">MacOS</li></ul>
+                                    </div>
+                                </div>
+                                <div class="text-sm">
+                                    <div class="">
+                                        <p class="font-bold whitespace-nowrap">Requirements<!-- -->:</p>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy>=1.24</li><li class="MetadataList_textItem__KKmMN">magicgui>=0.8</li><li class="MetadataList_textItem__KKmMN">qrcode-barcode-scanner==0.11.0</li><li class="MetadataList_textItem__KKmMN">napari[all]; extra == "all"</li></ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-start-4 screen-1425:col-start-5 hidden screen-1150:block">
+                            <div class="sticky top-[50px]">
+                            </div>
+                        </div>
+                        <article
+                            class="w-full col-span-2 row-start-1 screen-875:col-span-3 screen-1150:col-start-1 screen-1425:col-start-2">
+                                <div class="container" style="display: flex; flex-direction: column;">
+                                    <h1 class="font-bold text-4xl" style="margin-bottom: 20px;" >QR Code & Barcode Scanner</h1>
+                                </div>
+
+                                
+   <div class="flex items-center" style="gap: 20px; ; align-items: center;"">
+        <a class="underline flex" href="https://pypi.org/project/napari-qrcode-barcode-scanner/" rel="noreferrer" target="_blank">
+        <img src="../static/images/PyPI_logo.svg.png" alt="PyPI" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">napari-qrcode-barcode-scanner</span>
+    </a>
+    
+        <a class="underline flex" href="https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust/issues" rel="noreferrer" target="_blank">
+            <img src="../static/images/GitHub_Invertocat_Logo.svg.png" alt="GitHub" style="height: 42px;" /><span style="padding-top: 10px; padding-left: 10px;">qrcode-ai-com/qrcode-barcode-scanner-rus</span>
+        </a>
+        </div>
+
+                                <div class="flex justify-between items-center my-6">
+                                    <h2 class="text-lg">Read the QR codes and barcodes of a napari image layer with the QR Code & Barcode Scanner engine.</h2>
+                                </div>
+                                <ul class="PluginAuthors_authors__hs3zO">
+                                    <li class="inline">
+                                        <span class="text-[11px] screen-495:text-[14px] font-semibold">Thibaut Mélen, Nicolas Cella</span>
+                                    </li>
+                            </ul>
+                            <div class="screen-1425:hidden mt-sds-xl mb-sds-xxl"><a
+                                    class="underline hover:text-hub-primary-400 mt-sds-xl" href="#pluginMetadata">View
+                                    project data</a></div>
+                            <div class="mt-sds-xl screen-495:mt-sds-xxl">
+                                <div class="overflow-x-auto mb-sds-xl border-b border-black">
+                                    <div class="MuiTabs-root m-0 p-0 css-h82tcz">
+                                        <div class="MuiTabs-scroller MuiTabs-fixed css-1anid1y"
+                                            style="overflow:hidden;margin-bottom:0">
+                                            <div class="MuiTabs-flexContainer css-k008qs" role="tablist">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex flex-col text-xs mt-sds-xl mb-sds-l screen-495:mb-sds-xl gap-sds-m screen-495:gap-sds-l">
+                                </div>
+                                <div class="flex items-center justify-between mb-sds-xxl">
+                                    <div class="Markdown_markdown__QZ95j">
+
+                                        <p align="center">
+  <a href="https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/qrcode-ai-com/.github/main/profile/assets/banner-napari-dark.gif?v=e2dd29dfa583">
+      <img src="https://raw.githubusercontent.com/qrcode-ai-com/.github/main/profile/assets/banner-napari-light.gif?v=628f7e806945" alt="QR Code &amp; Barcode Scanner for napari: the napari logo, the Plugins menu command and its form, and a QR code and a barcode being read" width="100%">
+    </picture>
+  </a>
+</p>
+<h1>QR Code &amp; Barcode Scanner for napari</h1>
+<!-- qrcode-ai-readme-actions:v2 -->
+<h3>Ask AI</h3>
+<p><a href="https://chatgpt.com/?q=Help%20me%20understand%20QR%20Code%20%26%20Barcode%20Scanner%20for%20napari%20%28integrations%2Fnapari%2FREADME.md%29%20for%20QR%20Code%20%26%20Barcode%20Scanner%2C%20the%20open-source%20scanner.%20Source%20documentation%3B%20publication%20is%20not%20implied.%20Provided%20README%20context%20%28verify%20against%20the%20sources%29%3A%20A%20napari%20plugin%20that%20reads%20every%20QR%20code%20and%20barcode%20in%20an%20image%20layer.%20It%20outlines%20each%20code%20in%20a%20new%20shapes%20layer%2C%20labelled%20with%20its%20format%20and%20text%2C%20and%20keeps%20the%20engine%27s%20full%20report%20with%20it.%20The%20open-source%20engine%20runs%20inside%20napari%27s%20own%20Python%3A%20the%20image%20stays%20on%20your%20machine%2C%20and%20the%20layer%27s%20pixels%20are%20not%20changed.%20Read%20the%20public%20documentation%20below.%20Explain%20what%20this%20destination%20does%2C%20its%20documented%20installation%20or%20access%20steps%2C%20a%20minimal%20example%20if%20supported%2C%20prerequisites%2C%20limitations%20and%20license.%20Distinguish%20published%20packages%20from%20working%20source%20and%20preparation.%20Cite%20your%20sources%3B%20if%20a%20page%20is%20unavailable%20or%20a%20fact%20cannot%20be%20checked%2C%20say%20so.%20Do%20not%20invent%20installation%20commands%2C%20benchmark%20results%20or%20comparisons.%20Answer%20in%20my%20language.%20Public%20sources%3A%20https%3A%2F%2Fgithub.com%2Fqrcode-ai-com%2Fqrcode-barcode-scanner-rust%2Fblob%2Fmain%2Fintegrations%2Fnapari%2FREADME.md%20https%3A%2F%2Fqrcode-ai.com%2Fen-US%2Fqr-code-scanner%20https%3A%2F%2Fqrcode-ai.com%2Fen-US%2Fbarcode-scanner%20https%3A%2F%2Fqrcode-ai.com%2Fen-US%2Fqr-code-scanner%2Fintegrations%2Fnapari%20https%3A%2F%2Fqrcode-ai.com%2Fen-US%2Fbarcode-scanner%2Fintegrations%2Fnapari%20https%3A%2F%2Fqrcode-ai.com%2Fen-US%2Fqr-code-generator%20https%3A%2F%2Fqrcode-ai.com%2Fen-US%2Fbarcode-generator"><img src="https://raw.githubusercontent.com/qrcode-ai-com/qrcode-barcode-scanner-rust/main/docs/assets/actions/chatgpt-v2.svg" alt="ChatGPT" /></a>
+<a href="https://claude.ai/new?q=Help%20me%20understand%20QR%20Code%20%26%20Barcode%20Scanner%20for%20napari%20%28integrations%2Fnapari%2FREADME.md%29%20for%20QR%20Code%20%26%20Barcode%20Scanner%2C%20the%20open-source%20scanner.%20Source%20documentation%3B%20publication%20is%20not%20implied.%20Provided%20README%20context%20%28verify%20against%20the%20sources%29%3A%20A%20napari%20plugin%20that%20reads%20every%20QR%20code%20and%20barcode%20in%20an%20image%20layer.%20It%20outlines%20each%20code%20in%20a%20new%20shapes%20layer%2C%20labelled%20with%20its%20format%20and%20text%2C%20and%20keeps%20the%20engine%27s%20full%20report%20with%20it.%20The%20open-source%20engine%20runs%20inside%20napari%27s%20own%20Python%3A%20the%20image%20stays%20on%20your%20machine%2C%20and%20the%20layer%27s%20pixels%20are%20not%20changed.%20Read%20the%20public%20documentation%20below.%20Explain%20what%20this%20destination%20does%2C%20its%20documented%20installation%20or%20access%20steps%2C%20a%20minimal%20example%20if%20supported%2C%20prerequisites%2C%20limitations%20and%20license.%20Distinguish%20published%20packages%20from%20working%20source%20and%20preparation.%20Cite%20your%20sources%3B%20if%20a%20page%20is%20unavailable%20or%20a%20fact%20cannot%20be%20checked%2C%20say%20so.%20Do%20not%20invent%20installation%20commands%2C%20benchmark%20results%20or%20comparisons.%20Answer%20in%20my%20language.%20Public%20sources%3A%20https%3A%2F%2Fgithub.com%2Fqrcode-ai-com%2Fqrcode-barcode-scanner-rust%2Fblob%2Fmain%2Fintegrations%2Fnapari%2FREADME.md%20https%3A%2F%2Fqrcode-ai.com%2Fen-US%2Fqr-code-scanner%20https%3A%2F%2Fqrcode-ai.com%2Fen-US%2Fbarcode-scanner%20https%3A%2F%2Fqrcode-ai.com%2Fen-US%2Fqr-code-scanner%2Fintegrations%2Fnapari%20https%3A%2F%2Fqrcode-ai.com%2Fen-US%2Fbarcode-scanner%2Fintegrations%2Fnapari%20https%3A%2F%2Fqrcode-ai.com%2Fen-US%2Fqr-code-generator%20https%3A%2F%2Fqrcode-ai.com%2Fen-US%2Fbarcode-generator"><img src="https://raw.githubusercontent.com/qrcode-ai-com/qrcode-barcode-scanner-rust/main/docs/assets/actions/claude-v2.svg" alt="Claude" /></a>
+<a href="https://gemini.google.com/"><img src="https://raw.githubusercontent.com/qrcode-ai-com/qrcode-barcode-scanner-rust/main/docs/assets/actions/gemini-v2.svg" alt="Gemini" /></a>
+<a href="https://grok.com/?q=Help%20me%20understand%20QR%20Code%20%26%20Barcode%20Scanner%20for%20napari%20%28integrations%2Fnapari%2FREADME.md%29%20for%20QR%20Code%20%26%20Barcode%20Scanner%2C%20the%20open-source%20scanner.%20Source%20documentation%3B%20publication%20is%20not%20implied.%20Provided%20README%20context%20%28verify%20against%20the%20sources%29%3A%20A%20napari%20plugin%20that%20reads%20every%20QR%20code%20and%20barcode%20in%20an%20image%20layer.%20It%20outlines%20each%20code%20in%20a%20new%20shapes%20layer%2C%20labelled%20with%20its%20format%20and%20text%2C%20and%20keeps%20the%20engine%27s%20full%20report%20with%20it.%20The%20open-source%20engine%20runs%20inside%20napari%27s%20own%20Python%3A%20the%20image%20stays%20on%20your%20machine%2C%20and%20the%20layer%27s%20pixels%20are%20not%20changed.%20Read%20the%20public%20documentation%20below.%20Explain%20what%20this%20destination%20does%2C%20its%20documented%20installation%20or%20access%20steps%2C%20a%20minimal%20example%20if%20supported%2C%20prerequisites%2C%20limitations%20and%20license.%20Distinguish%20published%20packages%20from%20working%20source%20and%20preparation.%20Cite%20your%20sources%3B%20if%20a%20page%20is%20unavailable%20or%20a%20fact%20cannot%20be%20checked%2C%20say%20so.%20Do%20not%20invent%20installation%20commands%2C%20benchmark%20results%20or%20comparisons.%20Answer%20in%20my%20language.%20Public%20sources%3A%20https%3A%2F%2Fgithub.com%2Fqrcode-ai-com%2Fqrcode-barcode-scanner-rust%2Fblob%2Fmain%2Fintegrations%2Fnapari%2FREADME.md%20https%3A%2F%2Fqrcode-ai.com%2Fen-US%2Fqr-code-scanner%20https%3A%2F%2Fqrcode-ai.com%2Fen-US%2Fbarcode-scanner%20https%3A%2F%2Fqrcode-ai.com%2Fen-US%2Fqr-code-scanner%2Fintegrations%2Fnapari%20https%3A%2F%2Fqrcode-ai.com%2Fen-US%2Fbarcode-scanner%2Fintegrations%2Fnapari%20https%3A%2F%2Fqrcode-ai.com%2Fen-US%2Fqr-code-generator%20https%3A%2F%2Fqrcode-ai.com%2Fen-US%2Fbarcode-generator"><img src="https://raw.githubusercontent.com/qrcode-ai-com/qrcode-barcode-scanner-rust/main/docs/assets/actions/grok-v2.svg" alt="Grok" /></a>
+<a href="https://www.perplexity.ai/?q=Help%20me%20understand%20QR%20Code%20%26%20Barcode%20Scanner%20for%20napari%20%28integrations%2Fnapari%2FREADME.md%29%20for%20QR%20Code%20%26%20Barcode%20Scanner%2C%20the%20open-source%20scanner.%20Source%20documentation%3B%20publication%20is%20not%20implied.%20Provided%20README%20context%20%28verify%20against%20the%20sources%29%3A%20A%20napari%20plugin%20that%20reads%20every%20QR%20code%20and%20barcode%20in%20an%20image%20layer.%20It%20outlines%20each%20code%20in%20a%20new%20shapes%20layer%2C%20labelled%20with%20its%20format%20and%20text%2C%20and%20keeps%20the%20engine%27s%20full%20report%20with%20it.%20The%20open-source%20engine%20runs%20inside%20napari%27s%20own%20Python%3A%20the%20image%20stays%20on%20your%20machine%2C%20and%20the%20layer%27s%20pixels%20are%20not%20changed.%20Read%20the%20public%20documentation%20below.%20Explain%20what%20this%20destination%20does%2C%20its%20documented%20installation%20or%20access%20steps%2C%20a%20minimal%20example%20if%20supported%2C%20prerequisites%2C%20limitations%20and%20license.%20Distinguish%20published%20packages%20from%20working%20source%20and%20preparation.%20Cite%20your%20sources%3B%20if%20a%20page%20is%20unavailable%20or%20a%20fact%20cannot%20be%20checked%2C%20say%20so.%20Do%20not%20invent%20installation%20commands%2C%20benchmark%20results%20or%20comparisons.%20Answer%20in%20my%20language.%20Public%20sources%3A%20https%3A%2F%2Fgithub.com%2Fqrcode-ai-com%2Fqrcode-barcode-scanner-rust%2Fblob%2Fmain%2Fintegrations%2Fnapari%2FREADME.md%20https%3A%2F%2Fqrcode-ai.com%2Fen-US%2Fqr-code-scanner%20https%3A%2F%2Fqrcode-ai.com%2Fen-US%2Fbarcode-scanner%20https%3A%2F%2Fqrcode-ai.com%2Fen-US%2Fqr-code-scanner%2Fintegrations%2Fnapari%20https%3A%2F%2Fqrcode-ai.com%2Fen-US%2Fbarcode-scanner%2Fintegrations%2Fnapari%20https%3A%2F%2Fqrcode-ai.com%2Fen-US%2Fqr-code-generator%20https%3A%2F%2Fqrcode-ai.com%2Fen-US%2Fbarcode-generator"><img src="https://raw.githubusercontent.com/qrcode-ai-com/qrcode-barcode-scanner-rust/main/docs/assets/actions/perplexity-v2.svg" alt="Perplexity" /></a>
+<a href="https://copilot.com/"><img src="https://raw.githubusercontent.com/qrcode-ai-com/qrcode-barcode-scanner-rust/main/docs/assets/actions/copilot-v2.svg" alt="Copilot" /></a>
+<a href="https://chat.deepseek.com/"><img src="https://raw.githubusercontent.com/qrcode-ai-com/qrcode-barcode-scanner-rust/main/docs/assets/actions/deepseek-v2.svg" alt="DeepSeek" /></a>
+<a href="https://www.meta.ai/"><img src="https://raw.githubusercontent.com/qrcode-ai-com/qrcode-barcode-scanner-rust/main/docs/assets/actions/meta-ai-v2.svg" alt="Meta AI" /></a>
+<a href="https://qwen.ai/"><img src="https://raw.githubusercontent.com/qrcode-ai-com/qrcode-barcode-scanner-rust/main/docs/assets/actions/qwen-v2.svg" alt="Qwen" /></a></p>
+<p>Choose an AI assistant to explain this destination using its public sources. Gemini opens <a href="http://gemini.google.com">gemini.google.com</a>. Gemini, Copilot, DeepSeek, Meta AI and Qwen require pasting the prompt below; the other links include it in their URL. Sign-in or a manual paste may still be required. Check the answer against the documentation.</p>
+<details>
+<summary>Copy the plain-text prompt</summary>
+<p>Use the code block's copy control, or select its complete text, then paste it into your assistant.</p>
+<pre><code class="language-text"><div class="highlight"><pre><span></span>Help me understand QR Code &amp; Barcode Scanner for napari (integrations/napari/README.md) for QR Code &amp; Barcode Scanner, the open-source scanner. Source documentation; publication is not implied. Provided README context (verify against the sources): A napari plugin that reads every QR code and barcode in an image layer. It outlines each code in a new shapes layer, labelled with its format and text, and keeps the engine's full report with it. The open-source engine runs inside napari's own Python: the image stays on your machine, and the layer's pixels are not changed. Read the public documentation below. Explain what this destination does, its documented installation or access steps, a minimal example if supported, prerequisites, limitations and license. Distinguish published packages from working source and preparation. Cite your sources; if a page is unavailable or a fact cannot be checked, say so. Do not invent installation commands, benchmark results or comparisons. Answer in my language. Public sources: https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust/blob/main/integrations/napari/README.md https://qrcode-ai.com/en-US/qr-code-scanner https://qrcode-ai.com/en-US/barcode-scanner https://qrcode-ai.com/en-US/qr-code-scanner/integrations/napari https://qrcode-ai.com/en-US/barcode-scanner/integrations/napari https://qrcode-ai.com/en-US/qr-code-generator https://qrcode-ai.com/en-US/barcode-generator
+</pre></div>
+</code></pre>
+</details>
+<!-- /qrcode-ai-readme-actions:v2 -->
+<p>A napari plugin that reads every QR code and barcode in an image layer. It outlines each code in a new shapes layer, labelled with its format and text, and keeps the engine's full report with it. The open-source engine runs inside napari's own Python: the image stays on your machine, and the layer's pixels are not changed.</p>
+<p>The <a href="https://qrcode-ai.com/en-US/qr-code-scanner">QR code scanner</a> and the <a href="https://qrcode-ai.com/en-US/barcode-scanner">barcode scanner</a> are QR Code AI's scanning pages in the browser. This plugin follows the same route as the <a href="https://qrcode-ai.com/en-US/qr-code-scanner/integrations/napari">QR code scanner napari guide</a> and the <a href="https://qrcode-ai.com/en-US/barcode-scanner/integrations/napari">barcode scanner napari guide</a>. If a page is not online yet, this README is the reference.</p>
+<p>To make a test image with a known value, use the <a href="https://qrcode-ai.com/en-US/qr-code-generator">QR code generator</a> or the <a href="https://qrcode-ai.com/en-US/barcode-generator">barcode generator</a>. Open the exported image in napari, scan it and compare the label of the outline with the text you encoded.</p>
+<h2>Status</h2>
+<p>The plugin is on PyPI as
+<a href="https://pypi.org/project/napari-qrcode-barcode-scanner/"><code>napari-qrcode-barcode-scanner</code></a> 0.1.0.
+The engine repository published that version from its tag <code>napari-v0.1.0</code>, after the owner's
+review, through PyPI trusted publishing: no token is stored. The files on PyPI are the sdist and
+the wheel that the tag's run built, checked with <code>twine check --strict</code>, installed in a new
+environment and tested on the sample in the three profiles. The plugin has also run in a napari
+window, from its dock widget, as the picture below shows.</p>
+<p>napari's plugin manager and the
+<a href="https://napari-hub.org/plugins/napari-qrcode-barcode-scanner">napari hub</a> read napari's plugin
+index, which is rebuilt once a day, so they can list the plugin a day or so after its PyPI release.
+What the listing shows, and where each value comes from, are in
+<a href="https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust/blob/main/integrations/napari/LISTING.md">LISTING.md</a>.</p>
+<h2>Install</h2>
+<p>Install the plugin from PyPI in the environment that runs napari:</p>
+<pre><code class="language-sh"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>napari-qrcode-barcode-scanner
+</pre></div>
+</code></pre>
+<p>Or, in napari, choose <strong>Plugins</strong>, <strong>Install/Uninstall Plugins</strong>, search for <code>qrcode</code>, install
+<strong>QR Code &amp; Barcode Scanner</strong> and restart napari.</p>
+<p>Its dependencies are numpy, magicgui and the engine wheel
+<a href="https://pypi.org/project/qrcode-barcode-scanner/0.11.0/"><code>qrcode-barcode-scanner</code></a> 0.11.0. As napari
+plugins do, it does not install napari or Qt: use the napari you have, or install the plugin with
+its <code>all</code> extra, <code>python -m pip install &quot;napari-qrcode-barcode-scanner[all]&quot;</code>, to get both.</p>
+<p>To try a change to the plugin, install the folder from a checkout of this repository instead:
+<code>python -m pip install ./integrations/napari</code>.</p>
+<h2>Use</h2>
+<p>Open an image, then choose <strong>Plugins</strong>, <strong>Scan QR codes and barcodes (QR Code &amp; Barcode Scanner)</strong>.
+Pick the image layer, a profile and a time budget, and press <strong>Run</strong>.</p>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/qrcode-ai-com/qrcode-barcode-scanner-rust/main/integrations/napari/media/napari-window.png" alt="A napari window: the sample image with its QR code and its Code 128 barcode outlined and labelled in a new shapes layer, the layer list, and the plugin's form with the layer, profile and budget fields" width="100%">
+</p>
+<ul>
+<li><code>profile</code>: <code>fast</code> (the default) suits uploads and gives a reduced quality score. <code>frame</code> gives
+no score. <code>full</code> searches deepest and gives the full score; artistic QR codes from a generator
+need it.</li>
+<li><code>budget_ms</code>: a time limit in milliseconds. <code>0</code>, the default, means no limit.</li>
+</ul>
+<p>The plugin adds a shapes layer named after the image, such as <code>sample codes</code>. A QR code or another
+matrix code is outlined by its four corners. A barcode is drawn as the line the reader scanned
+across it. Each shape is labelled with its format and text, and the full report is in the layer's
+metadata, under <code>qrcode_barcode_scanner</code>. A notification sums up what was read. A new scan of the
+same image replaces that layer; a scan that finds nothing removes it.</p>
+<p>From a script, <code>scan_layer</code> returns the same result as napari layer data:</p>
+<pre><code class="language-python"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">napari_qrcode_barcode_scanner</span><span class="w"> </span><span class="kn">import</span> <span class="n">scan_layer</span>
+
+<span class="n">data</span><span class="p">,</span> <span class="n">meta</span><span class="p">,</span> <span class="n">kind</span> <span class="o">=</span> <span class="n">scan_layer</span><span class="p">(</span><span class="n">viewer</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="s2">"sample"</span><span class="p">],</span> <span class="n">profile</span><span class="o">=</span><span class="s2">"full"</span><span class="p">,</span> <span class="n">budget_ms</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">([</span><span class="n">text</span> <span class="k">for</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">meta</span><span class="p">[</span><span class="s2">"features"</span><span class="p">][</span><span class="s2">"text"</span><span class="p">]])</span>
+</pre></div>
+</code></pre>
+<h2>Limits</h2>
+<ul>
+<li>It reads 2D images: grey, RGB or RGBA. A stack or a volume is refused with a way out: split the
+stack with <strong>Layers</strong>, <strong>Split Stack</strong>, or project it first. A multiscale image is read at its
+full resolution.</li>
+<li>The pixels pass through the layer's contrast limits, as napari shows them. The layer's data is
+only read.</li>
+<li>An image wider or taller than 10,000 pixels, or above 64 million pixels, is refused with the
+engine's <code>QRS-</code> code.</li>
+<li>The scan runs while napari waits. A <code>full</code> scan of a large image can take seconds: set a budget
+for those.</li>
+</ul>
+<h2>Develop</h2>
+<p>The tests call the widget function on napari's own layer classes and its viewer model, the model
+behind the window:</p>
+<pre><code class="language-sh"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
+.venv/bin/python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>./integrations/napari<span class="w"> </span>-r<span class="w"> </span>integrations/napari/tests/requirements.txt
+.venv/bin/python<span class="w"> </span>-m<span class="w"> </span>pytest<span class="w"> </span>integrations/napari/tests
+</pre></div>
+</code></pre>
+<p>They scan the sample in the three profiles, and grey, float, 16-bit, offset and RGBA layers. They
+check that the pixels reach the engine unchanged, that the image layer is untouched, that a new
+scan replaces the codes layer, and that stacks, bad options and refused sizes fail clearly. They
+also check the manifest as napari discovers it and the form magicgui builds. The workflow
+<code>integration-python-hosts</code> of the engine repository runs them on the built wheel, in a new
+environment. The same workflow opens a napari window on a virtual display, with PyQt6, adds the
+plugin's widget, runs a <code>full</code> scan of the sample and checks that both codes are outlined. It keeps
+a picture of that window: <code>tests/capture_window.py</code> takes it, and <code>media/napari-window.png</code> is the
+one above.</p>
+<h2>How it works</h2>
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/qrcode-ai-com/.github/main/profile/assets/how-python-dark.gif?v=60b4945fed7e">
+    <img src="https://raw.githubusercontent.com/qrcode-ai-com/.github/main/profile/assets/how-python-light.gif?v=bb48f1698ce2" alt="How the Python package works, in three steps: install the package, pass an image or a camera frame to the engine inside your process, and read the report" width="100%">
+  </picture>
+</p>
+<p>The plugin reads the layer's 2D plane, maps it through its contrast limits to RGBA pixels and passes them to the engine, which runs in napari's Python process. Each scan gives one report.</p>
+<h2>What it returns</h2>
+<p align="center">
+  <a href="https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust#examples">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/qrcode-ai-com/qrcode-barcode-scanner-rust/main/docs/assets/brand/examples-mixed-dark.png?v=385593c1c18d">
+      <img src="https://raw.githubusercontent.com/qrcode-ai-com/qrcode-barcode-scanner-rust/main/docs/assets/brand/examples-mixed-light.png?v=7f958679adcc" alt="A QR code and Code 128 decoded from the same image, each outlined where the engine measured it" width="100%">
+    </picture>
+  </a>
+</p>
+<p>The picture is a recorded scan of the sample image, which holds a QR code and a Code 128 barcode.
+Both come back in one report, each with its format, its exact text and the place where the engine
+measured it: <code>https://qrc-ai.com/76xMa</code> and <code>STOCK-4827</code>.</p>
+<p>The plugin returns a shapes layer: one shape per place the engine measured a code, with the code's <code>text</code> and <code>symbology</code> as features. The layer has the image's scale, translation, rotation, shear and affine transform, so the outlines sit on the codes.</p>
+<p>The report itself is described field by field in the
+<a href="https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust/blob/v0.11.0/docs/api/report.mdx">report reference</a>.
+An empty list of detections means the image holds no code the engine could read. A refused file
+is an error with a <code>QRS-</code> code instead, listed in the
+<a href="https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust/blob/v0.11.0/docs/api/errors.mdx">error codes</a>.</p>
+<h2>What it reads</h2>
+<p align="center">
+  <a href="https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust#supported-formats">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/qrcode-ai-com/qrcode-barcode-scanner-rust/main/docs/assets/brand/formats-dark.gif?v=92fa0e8084df">
+      <img src="https://raw.githubusercontent.com/qrcode-ai-com/qrcode-barcode-scanner-rust/main/docs/assets/brand/formats-light.gif?v=bdfe5fc5f9b3" alt="The code families the engine reads: QR codes, matrix and stacked codes such as Data Matrix, retail barcodes such as EAN-13, and other linear barcodes such as Code 128" width="100%">
+    </picture>
+  </a>
+</p>
+<table>
+<thead>
+<tr>
+<th>Family</th>
+<th>Formats</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>QR</td>
+<td>QR Code, Micro QR, rectangular Micro QR (rMQR)</td>
+</tr>
+<tr>
+<td>Matrix and stacked</td>
+<td>Data Matrix, Aztec, PDF417, MaxiCode</td>
+</tr>
+<tr>
+<td>Retail</td>
+<td>EAN-13, EAN-8, UPC-A, UPC-E</td>
+</tr>
+<tr>
+<td>Other linear</td>
+<td>Code 128, Code 39, Code 93, Codabar, ITF, GS1 DataBar, GS1 DataBar Expanded, Telepen</td>
+</tr>
+</tbody>
+</table>
+<p>The plugin reads what the engine reads. Codes of different formats in one image come back in one report. The engine's
+<a href="https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust#supported-formats">supported formats</a>
+section states the known limits.</p>
+<h2>The same engine in other runtimes</h2>
+<p align="center">
+  <a href="https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust#get-started">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/qrcode-ai-com/qrcode-barcode-scanner-rust/main/docs/assets/brand/runtimes-dark.png?v=57c63428574b">
+      <img src="https://raw.githubusercontent.com/qrcode-ai-com/qrcode-barcode-scanner-rust/main/docs/assets/brand/runtimes-light.png?v=6dbd5a8cf5ba" alt="One engine in the language you write: Rust on crates.io, Node.js and the browser on npm, Python on PyPI, Go, PHP, and the qrscan command line" width="100%">
+    </picture>
+  </a>
+</p>
+<table>
+<thead>
+<tr>
+<th>Runtime</th>
+<th>Package</th>
+<th>How it scans</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/qrcode-ai-com/qrcode-barcode-scanner-rust/main/docs/assets/brand/mark-lang-rust-dark.png?v=31b5deebc32e"><img src="https://raw.githubusercontent.com/qrcode-ai-com/qrcode-barcode-scanner-rust/main/docs/assets/brand/mark-lang-rust-light.png?v=c5207721973f" alt="" width="24" height="24" align="absmiddle"></picture> Rust</td>
+<td><a href="https://crates.io/crates/qrcode-barcode-scanner"><code>qrcode-barcode-scanner</code></a> on <a href="http://crates.io">crates.io</a></td>
+<td>In process</td>
+</tr>
+<tr>
+<td><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/qrcode-ai-com/qrcode-barcode-scanner-rust/main/docs/assets/brand/mark-lang-nodejs-dark.png?v=cf2159524fc6"><img src="https://raw.githubusercontent.com/qrcode-ai-com/qrcode-barcode-scanner-rust/main/docs/assets/brand/mark-lang-nodejs-light.png?v=6dd098480218" alt="" width="24" height="24" align="absmiddle"></picture> Node.js</td>
+<td><a href="https://www.npmjs.com/package/@qrcode-ai-com/qrcode-barcode-scanner"><code>@qrcode-ai-com/qrcode-barcode-scanner</code></a> on npm</td>
+<td>In process, native</td>
+</tr>
+<tr>
+<td><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/qrcode-ai-com/qrcode-barcode-scanner-rust/main/docs/assets/brand/mark-lang-browser-dark.png?v=bbe2f3560a6d"><img src="https://raw.githubusercontent.com/qrcode-ai-com/qrcode-barcode-scanner-rust/main/docs/assets/brand/mark-lang-browser-light.png?v=591e304cf9e9" alt="" width="24" height="24" align="absmiddle"></picture> Browser</td>
+<td><a href="https://www.npmjs.com/package/@qrcode-ai-com/qrcode-barcode-scanner-wasm"><code>@qrcode-ai-com/qrcode-barcode-scanner-wasm</code></a> on npm</td>
+<td>In the page, WebAssembly</td>
+</tr>
+<tr>
+<td><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/qrcode-ai-com/qrcode-barcode-scanner-rust/main/docs/assets/brand/mark-lang-python-dark.png?v=7469c3e0b4fb"><img src="https://raw.githubusercontent.com/qrcode-ai-com/qrcode-barcode-scanner-rust/main/docs/assets/brand/mark-lang-python-light.png?v=308121255ab7" alt="" width="24" height="24" align="absmiddle"></picture> Python</td>
+<td><a href="https://pypi.org/project/qrcode-barcode-scanner/"><code>qrcode-barcode-scanner</code></a> on PyPI</td>
+<td>In process</td>
+</tr>
+<tr>
+<td><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/qrcode-ai-com/qrcode-barcode-scanner-rust/main/docs/assets/brand/mark-lang-go-dark.png?v=b6dbac901176"><img src="https://raw.githubusercontent.com/qrcode-ai-com/qrcode-barcode-scanner-rust/main/docs/assets/brand/mark-lang-go-light.png?v=1983a9eb7344" alt="" width="24" height="24" align="absmiddle"></picture> Go</td>
+<td><a href="https://github.com/qrcode-ai-com/qrcode-barcode-scanner-go"><code>qrcode-barcode-scanner-go</code></a></td>
+<td>Through the installed <code>qrscan</code></td>
+</tr>
+<tr>
+<td><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/qrcode-ai-com/qrcode-barcode-scanner-rust/main/docs/assets/brand/mark-lang-php-dark.png?v=3800932934c8"><img src="https://raw.githubusercontent.com/qrcode-ai-com/qrcode-barcode-scanner-rust/main/docs/assets/brand/mark-lang-php-light.png?v=7bdd6884b3a4" alt="" width="24" height="24" align="absmiddle"></picture> PHP</td>
+<td><a href="https://github.com/qrcode-ai-com/qrcode-barcode-scanner-php"><code>qrcode-barcode-scanner-php</code></a></td>
+<td>Through the installed <code>qrscan</code></td>
+</tr>
+<tr>
+<td><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/qrcode-ai-com/qrcode-barcode-scanner-rust/main/docs/assets/brand/mark-terminal-dark.png?v=1e987f0ab278"><img src="https://raw.githubusercontent.com/qrcode-ai-com/qrcode-barcode-scanner-rust/main/docs/assets/brand/mark-terminal-light.png?v=2262d66bee6b" alt="" width="24" height="24" align="absmiddle"></picture> Command line</td>
+<td><a href="https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust#command-line"><code>qrscan</code></a></td>
+<td>One command, one JSON report</td>
+</tr>
+</tbody>
+</table>
+<p>The Rust, Node.js, browser and Python packages hold the engine. The Go and PHP packages hold no decoder:
+each one starts <code>qrscan</code> and hands you its report.</p>
+<p><sub>Language and platform names and logos belong to their owners. They identify a runtime or a destination and imply no endorsement.</sub></p>
+<h2>Licence</h2>
+<p>Project-authored plugin source is MIT; see <a href="https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust/blob/main/integrations/napari/LICENSE">LICENSE</a>. The plugin installs the engine wheel <code>qrcode-barcode-scanner</code> 0.11.0 from PyPI and does not ship it. The published engine 0.11.0 keeps the license it shipped with, AGPL-3.0-or-later; read the license packaged with the version you install and the <a href="https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust/blob/main/LICENSING.md">licensing guide</a>.</p>
+<p>Maintained by <strong>Thibaut Mélen &amp; Nicolas Cella</strong> for <strong>QR Code AI</strong>, a product of <strong>SuperNovae Studio</strong>. The license of each component is stated in its own license files.</p>
+<!-- qrscan-source-license:v1 -->
+<h2>Source license</h2>
+<p>Project-authored scanner code and documentation in this checkout are available under the <a href="https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust/blob/main/LICENSE">MIT License</a>. You may use, modify and redistribute this source in open-source or proprietary applications, including commercial products, while preserving the copyright and permission notice. Thibaut Mélen &amp; Nicolas Cella develop QR Code AI at SuperNovae Studio.</p>
+<p>Retained third-party code, dependencies, artwork and test data keep their own licenses and notices. The <a href="https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust/blob/main/LICENSING.md">licensing guide</a> explains these component boundaries; the project license does not assign a license to an unrelated platform or service.</p>
+<p>Published archives retain the license shipped with their version. A pinned engine, adapter or bundle may therefore have different terms from this working source. Read its packaged license and the <a href="https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust/blob/main/docs/guides/license-history.mdx">license history</a> before reuse. The source change does not replace an archive or publish a new version.</p>
+<!-- /qrscan-source-license:v1 -->
+
+
+                                    </div>
+                                </div>
+                                <!-- The project data section -->
+    <div id="pluginMetadata">
+                                <div
+                                    class="screen-1425:hidden space-y-sds-xl screen-875:space-y-0 screen-1425:space-y-sds-xl grid screen-875:grid-cols-3 screen-1425:grid-cols-1">
+                                    <div class="space-y-sds-xl">
+                                        <div class="text-sm">
+                                            <div class="inline">
+                                                <p class="font-bold whitespace-nowrap inline mr-sds-s">Version<!-- -->:
+                                                </p>
+                                                <ul
+                                                    class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
+                                                    <li class="MetadataList_textItem__KKmMN">0.1.0</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="text-sm">
+                                            <div class="inline">
+                                                <p class="font-bold whitespace-nowrap inline mr-sds-s">Last
+                                                    updated<!-- -->:</p>
+                                                <ul
+                                                    class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
+                                                    <li class="MetadataList_textItem__KKmMN">2026-11-22</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="text-sm">
+                                            <div class="inline">
+                                                <p class="font-bold whitespace-nowrap inline mr-sds-s">First
+                                                    released<!-- -->:</p>
+                                                <ul
+                                                    class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
+                                                    <li class="MetadataList_textItem__KKmMN">2026-11-22</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="text-sm">
+                                            <div class="inline">
+                                                <p class="font-bold whitespace-nowrap inline mr-sds-s">License<!-- -->:
+                                                </p>
+                                                <ul
+                                                    class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
+                                                    <li class="MetadataList_textItem__KKmMN">
+                                                            MIT
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="mb-sds-s screen-875:hidden screen-1425:block bg-gray-300 h-px bg-black border-none">
+                                    </div>
+                                    <div class="space-y-sds-xl">
+                                        <div class="text-sm">
+                                            <div class="flex items-center screen-875:inline">
+                                                <p class="font-bold whitespace-nowrap inline mr-sds-s">Supported
+                                                    data<!-- -->:</p>
+                                                <ul
+                                                    class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s flex-grow MetadataList_inline__jHQLo">
+                                                    <li class="flex justify-between items-center"><span
+                                                            class="text-napari-gray font-normal lowercase">Information
+                                                            not submitted</span></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="text-sm">
+                                            <div class="inline">
+                                                <p class="font-bold whitespace-nowrap inline mr-sds-s">Plugin
+                                                    type<!-- -->:</p>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?pluginType=widget">Widget</a></li></ul>
+                                            </div>
+                                        </div>
+                                        <div class="text-sm">
+                                            <div class="inline">
+                                                <p class="font-bold whitespace-nowrap inline mr-sds-s">Open
+                                                    extension<!-- -->:</p>
+                                                    
+                                            </div>
+                                        </div>
+                                        <div class="text-sm">
+                                            <div class="inline">
+                                                <p class="font-bold whitespace-nowrap inline mr-sds-s">Save
+                                                    extension<!-- -->:</p>
+                                                    
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="mb-sds-s screen-875:hidden screen-1425:block bg-gray-300 h-px bg-black border-none">
+                                    </div>
+                                    <div class="space-y-sds-xl">
+                                        <div class="hidden screen-875:block screen-1425:hidden">
+                                            <div
+                                                class="text-sm screen-875:justify-self-center screen-1425:justify-self-start">
+                                            </div>
+                                        </div>
+                                        <div class="text-sm">
+                                            <div class="inline">
+                                                <p class="font-bold whitespace-nowrap inline mr-sds-s">Python versions
+                                                    supported<!-- -->:</p>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?python=3.11">3.11</a></li></ul>
+                                            </div>
+                                        </div>
+                                        <div class="text-sm">
+                                            <div class="flex items-center screen-875:inline">
+                                                <p class="font-bold whitespace-nowrap inline mr-sds-s">Operating
+                                                    system<!-- -->:</p>
+                                                <ul
+                                                    class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s flex-grow MetadataList_inline__jHQLo">
+                                                    <li class="flex justify-between items-center"><span
+                                                            class="text-napari-gray font-normal lowercase">Information
+                                                            not submitted</span></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="text-sm">
+                                            <div class="inline">
+                                                <p class="font-bold whitespace-nowrap inline mr-sds-s">
+                                                    Requirements<!-- -->:</p>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy>=1.24</li><li class="MetadataList_textItem__KKmMN">magicgui>=0.8</li><li class="MetadataList_textItem__KKmMN">qrcode-barcode-scanner==0.11.0</li><li class="MetadataList_textItem__KKmMN">napari[all]; extra == "all"</li></ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                    <!-- Project data goes here -->
+    </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </main>
+            </div>
+            <div
+            class="grid grid-cols-2 screen-655:grid-cols-[1fr,min-content] screen-1150:grid-cols-[1fr,max-content,min-content] gap-sds-l bg-hub-primary-400 p-sds-xl screen-495:px-12">
+            <div
+                class="w-full flex-1 flex flex-row items-center justify-start mb-6 screen-655:mb-0 screen-655:mr-12 flex-wrap col-span-2 gap-y-2">
+                <a class="whitespace-nowrap font-semibold text-sds-body-s flex flex-row items-center mr-sds-xl last:mr-0"
+                    href="https://github.com/napari/hub-lite" rel="noreferrer" target="_blank"><svg
+                        class="inline-block mr-0.5 h-3 w-3" fill="none" height="14" viewbox="0 0 14 14" width="14"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M7 0.173252C3.1325 0.173252 0 3.3075 0 7.17325C0 10.2667 2.0055 12.8899 4.78625 13.8145C5.13625 13.8804 5.26458 13.664 5.26458 13.4779C5.26458 13.3117 5.25875 12.8713 5.25583 12.2879C3.30867 12.7103 2.898 11.3488 2.898 11.3488C2.5795 10.5408 2.11925 10.325 2.11925 10.325C1.48517 9.891 2.16825 9.89975 2.16825 9.89975C2.87117 9.94875 3.24042 10.6208 3.24042 10.6208C3.86458 11.6912 4.879 11.382 5.27917 11.2029C5.34217 10.7503 5.52242 10.4417 5.7225 10.2667C4.16792 10.0917 2.534 9.48967 2.534 6.8075C2.534 6.04334 2.80525 5.41917 3.25442 4.92917C3.17567 4.75242 2.93942 4.04075 3.31567 3.0765C3.31567 3.0765 3.90192 2.88867 5.24067 3.794C5.80067 3.63825 6.39567 3.56125 6.99067 3.55775C7.58567 3.56125 8.18067 3.63825 8.74067 3.794C10.0707 2.88867 10.6569 3.0765 10.6569 3.0765C11.0332 4.04075 10.7969 4.75242 10.7269 4.92917C11.1732 5.41917 11.4444 6.04334 11.4444 6.8075C11.4444 9.49667 9.80817 10.0888 8.25067 10.2608C8.49567 10.4708 8.72317 10.9002 8.72317 11.5558C8.72317 12.4927 8.71442 13.2452 8.71442 13.4727C8.71442 13.6564 8.83692 13.8752 9.19567 13.8052C11.9962 12.887 14 10.262 14 7.17325C14 3.3075 10.8657 0.173252 7 0.173252Z"
+                            fill="black"></path>
+                    </svg>GitHub repo</a>
+            </div>
+            <div
+                class="flex flex-row justify-end row-start-3 col-start-2 screen-655:row-start-2 screen-655:col-start-2 screen-1150:row-start-1 screen-1150:col-start-3">
+                <span
+                class="text-sds-body-xxs row-start-2 col-span-2 justify-self-end self-center screen-655:col-span-1 screen-655:whitespace-nowrap screen-1150:row-start-1 screen-1150:col-start-2">
+                Website by the
+                <a class="underline" href= "https://napari.org/stable/community/team.html">napari team</a>,
+                original design by
+                <a class="underline" href="https://chanzuckerberg.com" rel="noreferrer" target="_blank">CZI</a>.
+                </span>
+                <a class="mr-sds-s" href="https://napari.org" rel="noreferrer" target="_blank"><svg
+                        class="w-[1.625rem] h-[1.625rem] screen-495:w-[2.375rem] screen-495:h-[2.375rem]" fill="none"
+                        style="margin-left: 3px;"
+                        height="30" viewbox="0 0 30 30" width="30" xmlns="http://www.w3.org/2000/svg">
+                        <title>Go to napari main website.</title>
+                        <path
+                            d="M27.8387 0H2.16127C0.967636 0 0 0.967636 0 2.16127V27.8387C0 29.0324 0.967636 30 2.16127 30H27.8387C29.0324 30 30 29.0324 30 27.8387V2.16127C30 0.967636 29.0324 0 27.8387 0Z"
+                            fill="#26283D"></path>
+                        <path
+                            d="M27.7779 1.03139H2.22356C1.56514 1.03139 1.03139 1.56514 1.03139 2.22357V27.7779C1.03139 28.4363 1.56514 28.9701 2.22356 28.9701H27.7779C28.4363 28.9701 28.9701 28.4363 28.9701 27.7779V2.22357C28.9701 1.56514 28.4363 1.03139 27.7779 1.03139Z"
+                            fill="url(#paint0_radial)"></path>
+                        <path
+                            d="M17.4655 27.3361C17.099 27.3361 16.7542 27.3201 16.4124 27.2897C16.0096 27.2645 15.61 27.202 15.2187 27.1028C14.4296 26.8759 13.6918 26.4986 13.0459 25.9918C12.1394 25.2971 11.3826 24.4265 10.8209 23.4322C10.5949 23.0338 10.3863 22.4775 9.83293 20.9899C9.71125 20.661 9.61999 20.4104 9.54321 20.2091C9.36359 19.7209 9.3042 19.5558 9.15789 19.2385C8.96705 18.7853 8.73274 18.3516 8.45823 17.9435C8.12277 17.4768 7.73384 17.0509 7.29937 16.6745C7.13279 16.5297 7.05601 16.4616 6.91405 16.3515C6.73732 16.2067 6.49396 16.0183 6.02752 15.6098C5.2395 14.9174 4.94254 14.5958 4.66876 14.2453C4.25597 13.7417 3.92726 13.1748 3.69532 12.5664C3.49242 12.0272 3.37416 11.4599 3.34476 10.8846C3.32978 10.3829 3.38289 9.88145 3.50265 9.39401C3.69467 8.45513 4.01235 7.54642 4.44713 6.69241C4.7481 6.05734 5.13833 5.46858 5.60599 4.94398C6.16001 4.34736 6.8007 3.83754 7.50652 3.43167C7.8302 3.24114 8.16941 3.07832 8.52052 2.94495C9.04221 2.75721 9.59283 2.66258 10.1473 2.66537C10.6436 2.66652 11.1376 2.73375 11.6161 2.86528C12.5756 3.10049 13.433 3.64024 14.0599 4.40366C14.7204 5.22066 14.987 6.2477 15.2028 7.63978C15.2578 8.00193 15.2796 8.18879 15.2984 8.35248C15.31 8.46547 15.323 8.57846 15.352 8.77836C15.5273 9.97199 15.6142 10.5167 15.8141 10.9324C16.1038 11.5408 16.6572 11.8957 17.0208 12.1304C17.9131 12.7098 18.8344 12.788 19.4442 12.8416C19.6847 12.8633 19.9585 12.8749 20.2569 12.8749C20.703 12.8749 21.0739 12.8503 21.2115 12.8402C21.4853 12.8199 21.7141 12.7938 21.9358 12.7677C22.272 12.7223 22.6106 12.6972 22.9498 12.6924C23.3746 12.6921 23.7976 12.7491 24.2071 12.8619C25.0966 13.067 25.8989 13.547 26.5002 14.2337C27.1101 14.958 27.2738 15.6721 27.4795 16.5804C27.6193 17.187 27.707 17.8044 27.7417 18.4259C27.7764 19.1313 27.8242 20.0946 27.4925 21.2303C27.1727 22.2747 26.6228 23.234 25.8831 24.0377C25.1073 24.908 24.1734 25.6233 23.1309 26.1453C22.5393 26.4354 21.9207 26.6669 21.2839 26.8363C20.4006 27.0835 19.4935 27.2365 18.578 27.2926C18.1912 27.3216 17.8175 27.3361 17.4655 27.3361Z"
+                            fill="#26283D"></path>
+                        <path
+                            d="M17.4655 26.2265C17.1323 26.2265 16.8194 26.2134 16.5109 26.1859C16.1688 26.1658 15.8293 26.1139 15.4969 26.0309C14.8468 25.8412 14.2394 25.5279 13.7079 25.1082C12.924 24.5046 12.2698 23.7494 11.7842 22.8875C11.6016 22.5645 11.3873 21.9908 10.8701 20.6031C10.7484 20.2786 10.6586 20.0323 10.5804 19.8295C10.4008 19.3385 10.3269 19.1342 10.1618 18.7764C9.94359 18.2639 9.6768 17.7735 9.36504 17.3119C8.98218 16.7792 8.53831 16.293 8.04249 15.8633C7.84694 15.6852 7.74264 15.6026 7.59778 15.4882C7.41961 15.3433 7.19942 15.1738 6.75471 14.7842C6.03042 14.1497 5.76968 13.8672 5.53791 13.5703C5.19569 13.1552 4.92274 12.6875 4.7296 12.1854C4.41134 11.3736 4.36059 10.4814 4.58474 9.63882C4.75558 8.79295 5.04066 7.97424 5.43216 7.20521C5.68904 6.6581 6.02321 6.15074 6.42443 5.69869C6.89941 5.18449 7.44931 4.74497 8.05553 4.39498C8.32534 4.23625 8.6078 4.1001 8.90005 3.98793C9.29948 3.84394 9.72125 3.77185 10.1458 3.77499C10.5448 3.77727 10.9417 3.83182 11.3264 3.93723C12.0597 4.10871 12.7166 4.51577 13.1965 5.09609C13.6311 5.6422 13.8846 6.37663 14.1062 7.80492C14.1584 8.14389 14.1772 8.31048 14.1946 8.47127C14.2076 8.5944 14.2221 8.71753 14.254 8.93481C14.4336 10.1531 14.5321 10.8252 14.8146 11.4104C15.2492 12.2984 15.9734 12.7735 16.4182 13.056C17.5394 13.7803 18.6692 13.8817 19.3443 13.9425C19.6166 13.9672 19.9237 13.9788 20.2554 13.9788C20.7393 13.9788 21.142 13.9527 21.2941 13.9411C21.5838 13.9194 21.8387 13.8904 22.0604 13.8643C22.3529 13.8246 22.6474 13.8019 22.9425 13.7962C23.2691 13.7958 23.5942 13.8401 23.9087 13.9281C24.2796 14.028 25.0502 14.238 25.647 14.9421C26.0816 15.4592 26.2062 16.001 26.393 16.8252C26.5186 17.3689 26.5976 17.9223 26.6292 18.4795C26.661 19.14 26.7016 19.9614 26.422 20.9174C26.1469 21.8088 25.6746 22.6267 25.0401 23.3105C24.3582 24.0719 23.5378 24.6968 22.6224 25.1516C22.0928 25.4117 21.5387 25.6184 20.9681 25.7687C20.1555 25.9947 19.3214 26.1345 18.4795 26.1859C18.1333 26.2192 17.7929 26.2265 17.4655 26.2265Z"
+                            fill="#A59678"></path>
+                        <path
+                            d="M9.21149 4.83535C10.0328 4.53405 10.8513 4.74409 11.0946 4.80783C11.6453 4.93454 12.1384 5.24019 12.4969 5.67697C12.8199 6.07533 13.0212 6.69098 13.2211 7.95558C13.3124 8.5437 13.295 8.56978 13.366 9.07823C13.5529 10.3472 13.6644 11.1062 14.0077 11.816C14.548 12.9314 15.4563 13.521 15.9329 13.8267C17.2366 14.6726 18.5403 14.7885 19.2646 14.8537C19.9624 14.9053 20.663 14.9053 21.3607 14.8537C22.4718 14.7711 22.9121 14.6045 23.6712 14.8117C24.0058 14.9015 24.549 15.0579 24.9546 15.536C25.2443 15.8851 25.337 16.2603 25.5109 17.0324C25.625 17.5246 25.6967 18.0257 25.7253 18.5302C25.7571 19.169 25.7904 19.86 25.5543 20.6697C25.3157 21.4363 24.906 22.1387 24.3563 22.7238C23.7531 23.3969 23.027 23.9485 22.2168 24.3491C21.736 24.5834 21.2327 24.7683 20.7146 24.901C19.9602 25.1106 19.1857 25.2397 18.4042 25.2863C17.7992 25.3373 17.1911 25.3373 16.5862 25.2863C16.2975 25.2698 16.0109 25.2267 15.7301 25.1574C15.1926 24.9997 14.6912 24.7384 14.254 24.3882C13.5654 23.8599 12.9908 23.1976 12.5649 22.4413C12.4201 22.1806 12.1811 21.5476 11.7088 20.2801C11.2916 19.1603 11.2323 18.943 10.9845 18.3969C10.7451 17.8345 10.451 17.297 10.1067 16.7919C9.68854 16.2019 9.20233 15.6632 8.65814 15.1869C8.19314 14.7639 8.16417 14.8044 7.35442 14.0961C6.64751 13.4761 6.43168 13.2342 6.25205 13.0053C5.96697 12.6629 5.73947 12.2764 5.57846 11.8609C5.45202 11.5217 5.37825 11.1651 5.35973 10.8035C5.35202 10.4734 5.39004 10.1439 5.47272 9.82425C5.62675 9.05475 5.88556 8.31001 6.24191 7.61082C6.46342 7.13752 6.75173 6.69847 7.09802 6.3071C7.32105 6.06667 7.56328 5.84479 7.82231 5.64366C8.03967 5.47474 8.26863 5.3213 8.50748 5.18446C8.73275 5.05002 8.96813 4.93329 9.21149 4.83535V4.83535Z"
+                            fill="url(#paint1_linear)"></path>
+                        <defs>
+                            <radialgradient cx="0" cy="0" gradienttransform="translate(15 15) scale(28.521)"
+                                gradientunits="userSpaceOnUse" id="paint0_radial" r="1">
+                                <stop stop-color="#746B7F"></stop>
+                                <stop offset="0.12" stop-color="#615B6F"></stop>
+                                <stop offset="0.26" stop-color="#514C60"></stop>
+                                <stop offset="0.37" stop-color="#4B475B"></stop>
+                                <stop offset="0.44" stop-color="#4F4B5F"></stop>
+                                <stop offset="0.51" stop-color="#5A566C"></stop>
+                                <stop offset="0.59" stop-color="#6D6881"></stop>
+                                <stop offset="0.67" stop-color="#87829E"></stop>
+                                <stop offset="0.74" stop-color="#A9A2C3"></stop>
+                                <stop offset="0.78" stop-color="#BCB5D9"></stop>
+                            </radialgradient>
+                            <lineargradient gradientunits="userSpaceOnUse" id="paint1_linear" x1="5.54949" x2="23.9884"
+                                y1="7.79624" y2="23.7393">
+                                <stop offset="0.05" stop-color="#448491"></stop>
+                                <stop offset="0.15" stop-color="#4A7986"></stop>
+                                <stop offset="0.33" stop-color="#506E7B"></stop>
+                                <stop offset="0.52" stop-color="#526A77"></stop>
+                                <stop offset="0.6" stop-color="#56707C"></stop>
+                                <stop offset="0.7" stop-color="#607F8B"></stop>
+                                <stop offset="0.82" stop-color="#7099A3"></stop>
+                                <stop offset="0.94" stop-color="#87BDC4"></stop>
+                                <stop offset="1" stop-color="#94D1D6"></stop>
+                            </lineargradient>
+                        </defs>
+                    </svg></a>
+            </div>
+    </div>
+  </div>
+</body>
+
+</html>
