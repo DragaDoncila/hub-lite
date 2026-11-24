@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.1.0</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.1.1</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-11-22</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-11-24</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -156,7 +156,7 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Requirements<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy>=1.24</li><li class="MetadataList_textItem__KKmMN">magicgui>=0.8</li><li class="MetadataList_textItem__KKmMN">qrcode-barcode-scanner==0.11.0</li><li class="MetadataList_textItem__KKmMN">napari[all]; extra == "all"</li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy>=1.24</li><li class="MetadataList_textItem__KKmMN">magicgui>=0.8</li><li class="MetadataList_textItem__KKmMN">qrcode-barcode-scanner==0.12.0</li><li class="MetadataList_textItem__KKmMN">napari[all]; extra == "all"</li></ul>
                                     </div>
                                 </div>
                             </div>
@@ -243,16 +243,19 @@
 <p>To make a test image with a known value, use the <a href="https://qrcode-ai.com/en-US/qr-code-generator">QR code generator</a> or the <a href="https://qrcode-ai.com/en-US/barcode-generator">barcode generator</a>. Open the exported image in napari, scan it and compare the label of the outline with the text you encoded.</p>
 <h2>Status</h2>
 <p>The plugin is on PyPI as
-<a href="https://pypi.org/project/napari-qrcode-barcode-scanner/"><code>napari-qrcode-barcode-scanner</code></a> 0.1.0.
-The engine repository published that version from its tag <code>napari-v0.1.0</code>, after the owner's
-review, through PyPI trusted publishing: no token is stored. The files on PyPI are the sdist and
-the wheel that the tag's run built, checked with <code>twine check --strict</code>, installed in a new
-environment and tested on the sample in the three profiles. The plugin has also run in a napari
-window, from its dock widget, as the picture below shows.</p>
-<p>napari's plugin manager and the
-<a href="https://napari-hub.org/plugins/napari-qrcode-barcode-scanner">napari hub</a> read napari's plugin
-index, which is rebuilt once a day, so they can list the plugin a day or so after its PyPI release.
-What the listing shows, and where each value comes from, are in
+<a href="https://pypi.org/project/napari-qrcode-barcode-scanner/"><code>napari-qrcode-barcode-scanner</code></a>.
+Version 0.1.1 runs on the MIT engine 0.12.0. Version 0.1.0, on PyPI since 22 November 2026, runs
+on engine 0.11.0. The engine repository publishes each version from its own tag, <code>napari-v0.1.1</code>
+for this one, after the owner's review, through PyPI trusted publishing: no token is stored. The
+files on PyPI are the sdist and the wheel that the tag's run built, checked with
+<code>twine check --strict</code>, installed in a new environment and tested on the sample in the three
+profiles. The plugin has also run in a napari window, from its dock widget, as the picture below
+shows.</p>
+<p>The plugin is listed on the
+<a href="https://napari-hub.org/plugins/napari-qrcode-barcode-scanner">napari hub</a> and in napari's plugin
+manager. Both read napari's plugin index, which is rebuilt once a day, so a new version can take a
+day or so to appear there after its PyPI release. What the listing shows, and where each value
+comes from, are in
 <a href="https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust/blob/main/integrations/napari/LISTING.md">LISTING.md</a>.</p>
 <h2>Install</h2>
 <p>Install the plugin from PyPI in the environment that runs napari:</p>
@@ -262,9 +265,12 @@ What the listing shows, and where each value comes from, are in
 <p>Or, in napari, choose <strong>Plugins</strong>, <strong>Install/Uninstall Plugins</strong>, search for <code>qrcode</code>, install
 <strong>QR Code &amp; Barcode Scanner</strong> and restart napari.</p>
 <p>Its dependencies are numpy, magicgui and the engine wheel
-<a href="https://pypi.org/project/qrcode-barcode-scanner/0.11.0/"><code>qrcode-barcode-scanner</code></a> 0.11.0. As napari
-plugins do, it does not install napari or Qt: use the napari you have, or install the plugin with
-its <code>all</code> extra, <code>python -m pip install &quot;napari-qrcode-barcode-scanner[all]&quot;</code>, to get both.</p>
+<a href="https://pypi.org/project/qrcode-barcode-scanner/0.12.0/"><code>qrcode-barcode-scanner</code></a> 0.12.0. PyPI
+has prebuilt engine wheels for macOS on Apple silicon and Intel, Linux on x86-64 and ARM64, musl
+Linux on x86-64, and 64-bit Windows. Anywhere else pip builds the engine from source, which needs a
+Rust toolchain. As napari plugins do, it does not install napari or Qt: use the napari you have,
+or install the plugin with its <code>all</code> extra to get both:
+<code>python -m pip install &quot;napari-qrcode-barcode-scanner[all]&quot;</code>.</p>
 <p>To try a change to the plugin, install the folder from a checkout of this repository instead:
 <code>python -m pip install ./integrations/napari</code>.</p>
 <h2>Use</h2>
@@ -342,10 +348,10 @@ Both come back in one report, each with its format, its exact text and the place
 measured it: <code>https://qrc-ai.com/76xMa</code> and <code>STOCK-4827</code>.</p>
 <p>The plugin returns a shapes layer: one shape per place the engine measured a code, with the code's <code>text</code> and <code>symbology</code> as features. The layer has the image's scale, translation, rotation, shear and affine transform, so the outlines sit on the codes.</p>
 <p>The report itself is described field by field in the
-<a href="https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust/blob/v0.11.0/docs/api/report.mdx">report reference</a>.
+<a href="https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust/blob/v0.12.0/docs/api/report.mdx">report reference</a>.
 An empty list of detections means the image holds no code the engine could read. A refused file
 is an error with a <code>QRS-</code> code instead, listed in the
-<a href="https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust/blob/v0.11.0/docs/api/errors.mdx">error codes</a>.</p>
+<a href="https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust/blob/v0.12.0/docs/api/errors.mdx">error codes</a>.</p>
 <h2>What it reads</h2>
 <p align="center">
   <a href="https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust#supported-formats">
@@ -443,7 +449,7 @@ section states the known limits.</p>
 each one starts <code>qrscan</code> and hands you its report.</p>
 <p><sub>Language and platform names and logos belong to their owners. They identify a runtime or a destination and imply no endorsement.</sub></p>
 <h2>Licence</h2>
-<p>Project-authored plugin source is MIT; see <a href="https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust/blob/main/integrations/napari/LICENSE">LICENSE</a>. The plugin installs the engine wheel <code>qrcode-barcode-scanner</code> 0.11.0 from PyPI and does not ship it. The published engine 0.11.0 keeps the license it shipped with, AGPL-3.0-or-later; read the license packaged with the version you install and the <a href="https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust/blob/main/LICENSING.md">licensing guide</a>.</p>
+<p>Project-authored plugin source is MIT; see <a href="https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust/blob/main/integrations/napari/LICENSE">LICENSE</a>. The plugin installs the engine wheel <code>qrcode-barcode-scanner</code> 0.12.0 from PyPI and does not ship it. Engine 0.12.0 is MIT too: its wheel ships the MIT <code>LICENSE</code>. Version 0.1.0 of the plugin installed engine 0.11.0, which keeps the license it shipped with, AGPL-3.0-or-later. Read the license packaged with the version you install and the <a href="https://github.com/qrcode-ai-com/qrcode-barcode-scanner-rust/blob/main/LICENSING.md">licensing guide</a>.</p>
 <p>Maintained by <strong>Thibaut Mélen &amp; Nicolas Cella</strong> for <strong>QR Code AI</strong>, a product of <strong>SuperNovae Studio</strong>. The license of each component is stated in its own license files.</p>
 <!-- qrscan-source-license:v1 -->
 <h2>Source license</h2>
@@ -466,7 +472,7 @@ each one starts <code>qrscan</code> and hands you its report.</p>
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.1.0</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.1.1</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -476,7 +482,7 @@ each one starts <code>qrscan</code> and hands you its report.</p>
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-11-22</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-11-24</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -573,7 +579,7 @@ each one starts <code>qrscan</code> and hands you its report.</p>
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">
                                                     Requirements<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy>=1.24</li><li class="MetadataList_textItem__KKmMN">magicgui>=0.8</li><li class="MetadataList_textItem__KKmMN">qrcode-barcode-scanner==0.11.0</li><li class="MetadataList_textItem__KKmMN">napari[all]; extra == "all"</li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">numpy>=1.24</li><li class="MetadataList_textItem__KKmMN">magicgui>=0.8</li><li class="MetadataList_textItem__KKmMN">qrcode-barcode-scanner==0.12.0</li><li class="MetadataList_textItem__KKmMN">napari[all]; extra == "all"</li></ul>
                                             </div>
                                         </div>
                                     </div>
