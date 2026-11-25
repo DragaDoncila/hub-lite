@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.0.4</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.0.5</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-11-18</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-11-25</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -156,7 +156,7 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Requirements<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">napari>=0.9.1</li><li class="MetadataList_textItem__KKmMN">magicgui>=0.7.0</li><li class="MetadataList_textItem__KKmMN">qtpy>=2.3.0</li><li class="MetadataList_textItem__KKmMN">numpy>=1.21.0</li><li class="MetadataList_textItem__KKmMN">qasync>=0.24.0</li><li class="MetadataList_textItem__KKmMN">grpclib</li><li class="MetadataList_textItem__KKmMN">pydantic</li><li class="MetadataList_textItem__KKmMN">python-dotenv</li><li class="MetadataList_textItem__KKmMN">ome-writers[acquire-zarr]</li><li class="MetadataList_textItem__KKmMN">ngff-zarr[dask-image]>=0.51.0</li><li class="MetadataList_textItem__KKmMN">zarr>=3</li><li class="MetadataList_textItem__KKmMN">zen_api<=2026.11.1,>=2026.5.1</li><li class="MetadataList_textItem__KKmMN">zen_api_utils<0.2,>=0.1.0</li><li class="MetadataList_textItem__KKmMN">pytest>=6.0; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pytest-asyncio; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">ruff; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">mypy; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-timeout; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt6<6.10,>=6.7; extra == "testing"</li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">napari>=0.9.1</li><li class="MetadataList_textItem__KKmMN">magicgui>=0.7.0</li><li class="MetadataList_textItem__KKmMN">qtpy>=2.3.0</li><li class="MetadataList_textItem__KKmMN">numpy>=1.21.0</li><li class="MetadataList_textItem__KKmMN">qasync>=0.24.0</li><li class="MetadataList_textItem__KKmMN">grpclib</li><li class="MetadataList_textItem__KKmMN">pydantic</li><li class="MetadataList_textItem__KKmMN">python-dotenv</li><li class="MetadataList_textItem__KKmMN">ome-writers[acquire-zarr]</li><li class="MetadataList_textItem__KKmMN">ngff-zarr[dask-image]>=0.51.0</li><li class="MetadataList_textItem__KKmMN">zarr>=3</li><li class="MetadataList_textItem__KKmMN">zen_api>=2026.5.1</li><li class="MetadataList_textItem__KKmMN">zen_api_utils>=0.2.0</li><li class="MetadataList_textItem__KKmMN">pytest>=6.0; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pytest-asyncio; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">ruff; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">mypy; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-timeout; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt6<6.10,>=6.7; extra == "testing"</li></ul>
                                     </div>
                                 </div>
                             </div>
@@ -245,23 +245,25 @@ directly to OME-ZARR without napari.</p>
 <p><img src="docs/napari_zen.png" alt="Napari - OME-ZARR from ZEN Acquistion" /></p>
 <h2>Current status</h2>
 <ul>
-<li>Release: <strong>0.0.4</strong> (<a href="_release_notes/v0.0.4.md">release notes</a>).</li>
+<li>Release: <strong>0.0.5</strong> (<a href="_release_notes/v0.0.5.md">release notes</a>).</li>
 <li>Project phase: alpha / MVP</li>
 <li>Primary OS target: Windows for ZEN Blue and the ZEN API Gateway</li>
 <li>Python target: <code>&gt;=3.12, &lt;3.15</code></li>
 </ul>
-<h3>What's new in 0.0.4</h3>
+<h3>What's new in 0.0.5</h3>
 <ul>
-<li>Configured OME-ZARR acquisition preserves active channel names and actual
-display colors from the selected ZEN experiment.</li>
-<li>Per-image OMERO display metadata follows channel subscriptions and
-single-channel selections across generic scenes, HCS wells, and retained
-source tiles.</li>
-<li>Pyramid generation retains these settings so <code>napari-ome-zarr</code> opens new
-output with the experiment's colors. Missing or invalid colors warn and
-use neutral grayscale rather than guessing a biological color.</li>
-<li>See the <a href="_release_notes/v0.0.3.md">0.0.3 release notes</a> for the preceding
-stream-activation and shutdown fixes.</li>
+<li>Display acquisition startup fails promptly if its pixel reader fails or
+closes before becoming ready, rather than waiting indefinitely.</li>
+<li>Shutdown reports reader and stream-close errors while still draining
+accepted frames and stopping the frame processor.</li>
+<li>Display-reader lifecycle code has clearer types and regression coverage
+for startup, early stream completion, and shutdown failures.</li>
+<li>Require <code>zen_api_utils&gt;=0.2.0</code>; CI and installation examples use the public
+<code>zen_api==2026.11.1</code> and <code>zen_api_utils==0.2.0</code> wheels. The plugin no longer
+imposes its own API upper bound; gateway and utilities compatibility still
+apply.</li>
+<li>See the <a href="_release_notes/v0.0.4.md">0.0.4 release notes</a> for the preceding
+OME-Zarr channel-name and display-color improvements.</li>
 </ul>
 <h2>Known limitations</h2>
 <ul>
@@ -371,23 +373,25 @@ installation error or GUI message.</p>
 <p>Use the same Python environment for the wheels, the plugin, and napari. The
 current dependency requirements are:</p>
 <ul>
-<li><code>zen_api&gt;=2026.5.1,&lt;=2026.11.1</code>: choose a version compatible with your ZEN API
+<li><code>zen_api&gt;=2026.5.1</code>: choose a version compatible with your ZEN API
 Gateway.</li>
-<li><code>zen_api_utils&gt;=0.1.0,&lt;0.2</code>: utilities have their own version number, separate
+<li><code>zen_api_utils&gt;=0.2.0</code>: utilities have their own version number, separate
 from the API release.</li>
 </ul>
-<p>For example, install API <code>2026.7.1</code> and utilities <code>0.1.0</code> from OAD:</p>
+<p>The installed utilities may impose additional API version bounds; removing
+the plugin's upper bound does not guarantee compatibility with every gateway.
+For example, install API <code>2026.11.1</code> and utilities <code>0.2.0</code> from OAD:</p>
 <pre><code class="language-powershell"><div class="highlight"><pre><span></span><span class="nv">$base</span> <span class="p">=</span> <span class="s2">"https://github.com/zeiss-microscopy/OAD/releases/download"</span>
 <span class="n">python</span> <span class="n">-m</span> <span class="n">pip</span> <span class="n">install</span> <span class="p">`</span>
-  <span class="s2">"$base/v2026.07.1/zen_api-2026.7.1-py3-none-any.whl"</span> <span class="p">`</span>
-  <span class="s2">"$base/zen-api-utils-v0.1.0/zen_api_utils-0.1.0-py3-none-any.whl"</span>
+  <span class="s2">"$base/v2026.11.1-r1/zen_api-2026.11.1-py3-none-any.whl"</span> <span class="p">`</span>
+  <span class="s2">"$base/zen-api-utils-v0.2.0-r1/zen_api_utils-0.2.0-py3-none-any.whl"</span>
 </pre></div>
 </code></pre>
 <p>The backtick is PowerShell's line-continuation character. Alternatively, pass
 the paths to your downloaded authorized wheels:</p>
 <pre><code class="language-powershell"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">-m</span> <span class="n">pip</span> <span class="n">install</span> <span class="p">`</span>
   <span class="s2">"C:\path\to\authorized\zen_api-&lt;version&gt;-py3-none-any.whl"</span> <span class="p">`</span>
-  <span class="s2">"C:\path\to\authorized\zen_api_utils-0.1.0-py3-none-any.whl"</span>
+  <span class="s2">"C:\path\to\authorized\zen_api_utils-0.2.0-py3-none-any.whl"</span>
 </pre></div>
 </code></pre>
 <p>Replace the example paths and API version with the wheels supplied for your
@@ -395,14 +399,14 @@ gateway. Do not commit wheels, tokens, or certificates to this repository
 without confirming redistribution rights.</p>
 <h3>Install the plugin</h3>
 <p>For a published PyPI release:</p>
-<pre><code class="language-powershell"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">-m</span> <span class="n">pip</span> <span class="n">install</span> <span class="s2">"napari-zenapi-streaming==0.0.4"</span> <span class="s2">"napari[pyqt6]"</span> <span class="s2">"PyQt6&gt;=6.7,&lt;6.10"</span>
+<pre><code class="language-powershell"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">-m</span> <span class="n">pip</span> <span class="n">install</span> <span class="s2">"napari-zenapi-streaming==0.0.5"</span> <span class="s2">"napari[pyqt6]"</span> <span class="s2">"PyQt6&gt;=6.7,&lt;6.10"</span>
 </pre></div>
 </code></pre>
 <p>To upgrade an existing environment with compatible ZEN wheels installed:</p>
-<pre><code class="language-powershell"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">-m</span> <span class="n">pip</span> <span class="n">install</span> <span class="p">-</span><span class="n">-upgrade</span> <span class="s2">"napari-zenapi-streaming==0.0.4"</span>
+<pre><code class="language-powershell"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">-m</span> <span class="n">pip</span> <span class="n">install</span> <span class="p">-</span><span class="n">-upgrade</span> <span class="s2">"napari-zenapi-streaming==0.0.5"</span>
 </pre></div>
 </code></pre>
-<p>Restart napari after upgrading. Version 0.0.4 writes OME-Zarr 0.6 and does not
+<p>Restart napari after upgrading. Version 0.0.5 writes OME-Zarr 0.6 and does not
 automatically migrate older stores or add channel colors to existing output.
 Use a reader that supports 0.6 and OMERO channel display metadata.</p>
 <p>From this checkout, install the plugin:</p>
@@ -641,6 +645,10 @@ is cleared and the subscription is closed after final restructure. Switch to
 A ZEN-started run has no experiment ID known in advance and
 therefore continues to accept the global stream; keep only one such
 acquisition active at a time.</p>
+<p>If the pixel reader fails or closes before it is ready, acquisition startup
+fails instead of waiting indefinitely. Shutdown reports reader and stream-close
+errors while still draining accepted frames and stopping the frame processor.
+An OME-ZARR writer is not started if suspending the Display reader fails.</p>
 <h4>OME-ZARR only (index 2)</h4>
 <p>Bypasses the pipeline entirely.  When <strong>Start</strong> is clicked:</p>
 <ol>
@@ -984,14 +992,14 @@ settings do not override the repository configuration.</li>
 <li>Tests mock the gateway and cover routing, partial acquisitions, mosaics,
 metadata refresh, dtype handling, progress, configuration, and layer
 ownership.</li>
-<li>A clean Windows environment passed the full test suite with Python 3.12.15,
-napari 0.10.0, PyQt6 6.9.1, ome-writers 0.3.2, ngff-zarr 0.51.0,
-zen-api 2026.7.1, and zen-api-utils 0.1.0. This records one tested
-environment, not a claim that every gateway version is compatible.</li>
+<li>Release checks include 148 simulated-gateway tests, Ruff lint/format,
+focused mypy checks for the Display pipeline, source/wheel builds, and an
+installed-wheel configuration and plugin-discovery smoke test. These
+checks do not certify every gateway version or real-microscope throughput.</li>
 <li>CI checks Python 3.12-3.14 on Windows, Linux, and macOS. Pushes and pull
 requests target <code>main</code>; version tags trigger publishing only after tests pass.</li>
-<li>CI supplies the public OAD release wheel URLs for <code>zen_api==2026.7.1</code> and
-<code>zen_api_utils==0.1.0</code> in the same pip command as the plugin installation.
+<li>CI supplies the public OAD release wheel URLs for <code>zen_api==2026.11.1</code> and
+<code>zen_api_utils==0.2.0</code> in the same pip command as the plugin installation.
 No ZEN wheel URL secret is required, including for forked pull requests.</li>
 <li>The testing extra installs <code>PyQt6&gt;=6.7,&lt;6.10</code>. Both CI workflows set
 <code>QT_API=pyqt6</code> and <code>PYTEST_QT_API=pyqt6</code> to avoid selecting another binding.</li>
@@ -1000,8 +1008,12 @@ No ZEN wheel URL secret is required, including for forked pull requests.</li>
 <ul>
 <li>Confirm the pinned OAD release wheels remain reachable and the full CI
 matrix passes. Local tests do not replace this check.</li>
-<li>Choose the release version, update <code>pyproject.toml</code> and <code>CHANGELOG.md</code>, and
-verify the tag matches. No release version is selected by the cleanup.</li>
+<li>Keep the version in <code>pyproject.toml</code> and <code>src/napari_zen_streaming/__init__.py</code>
+consistent. Update <code>CHANGELOG.md</code>, the README, and
+<code>_release_notes/v&lt;version&gt;.md</code>, preserving historical release entries.</li>
+<li>Merge the release preparation into <code>main</code> after CI passes, then create the
+matching annotated <code>v&lt;version&gt;</code> tag and GitHub release from that commit.
+The tag triggers the PyPI workflow; verify publication before announcing it.</li>
 <li>Install the built wheel in a clean environment, initialize user configuration,
 and verify plugin discovery without relying on this checkout.</li>
 <li>On a real ZEN gateway, test watch/start Display modes, manual/auto-triggered
@@ -1033,7 +1045,7 @@ unrelated layers and docks. Measure throughput and memory at production size.</l
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.0.4</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.0.5</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -1043,7 +1055,7 @@ unrelated layers and docks. Measure throughput and memory at production size.</l
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-11-18</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-11-25</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -1140,7 +1152,7 @@ unrelated layers and docks. Measure throughput and memory at production size.</l
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">
                                                     Requirements<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">napari>=0.9.1</li><li class="MetadataList_textItem__KKmMN">magicgui>=0.7.0</li><li class="MetadataList_textItem__KKmMN">qtpy>=2.3.0</li><li class="MetadataList_textItem__KKmMN">numpy>=1.21.0</li><li class="MetadataList_textItem__KKmMN">qasync>=0.24.0</li><li class="MetadataList_textItem__KKmMN">grpclib</li><li class="MetadataList_textItem__KKmMN">pydantic</li><li class="MetadataList_textItem__KKmMN">python-dotenv</li><li class="MetadataList_textItem__KKmMN">ome-writers[acquire-zarr]</li><li class="MetadataList_textItem__KKmMN">ngff-zarr[dask-image]>=0.51.0</li><li class="MetadataList_textItem__KKmMN">zarr>=3</li><li class="MetadataList_textItem__KKmMN">zen_api<=2026.11.1,>=2026.5.1</li><li class="MetadataList_textItem__KKmMN">zen_api_utils<0.2,>=0.1.0</li><li class="MetadataList_textItem__KKmMN">pytest>=6.0; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pytest-asyncio; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">ruff; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">mypy; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-timeout; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt6<6.10,>=6.7; extra == "testing"</li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">napari>=0.9.1</li><li class="MetadataList_textItem__KKmMN">magicgui>=0.7.0</li><li class="MetadataList_textItem__KKmMN">qtpy>=2.3.0</li><li class="MetadataList_textItem__KKmMN">numpy>=1.21.0</li><li class="MetadataList_textItem__KKmMN">qasync>=0.24.0</li><li class="MetadataList_textItem__KKmMN">grpclib</li><li class="MetadataList_textItem__KKmMN">pydantic</li><li class="MetadataList_textItem__KKmMN">python-dotenv</li><li class="MetadataList_textItem__KKmMN">ome-writers[acquire-zarr]</li><li class="MetadataList_textItem__KKmMN">ngff-zarr[dask-image]>=0.51.0</li><li class="MetadataList_textItem__KKmMN">zarr>=3</li><li class="MetadataList_textItem__KKmMN">zen_api>=2026.5.1</li><li class="MetadataList_textItem__KKmMN">zen_api_utils>=0.2.0</li><li class="MetadataList_textItem__KKmMN">pytest>=6.0; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">pytest-asyncio; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">ruff; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">mypy; extra == "dev"</li><li class="MetadataList_textItem__KKmMN">tox; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-cov; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-timeout; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pyqt6<6.10,>=6.7; extra == "testing"</li></ul>
                                             </div>
                                         </div>
                                     </div>
