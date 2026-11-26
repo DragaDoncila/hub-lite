@@ -9,9 +9,9 @@
     <meta
         content="napari-reco-plugin, Clément Capdeville, napari hub, napari, hub, plugin, image analysis, imaging, chan zuckerberg initiative"
         name="keywords" />
-    <meta content="A Napari plugin for tomographic reconstruction using the ASTRA Toolbox, with optional Paganin phase retrieval filter for phase-contrast data." name="description" />
-    <meta content="A Napari plugin for tomographic reconstruction using the ASTRA Toolbox, with optional Paganin phase retrieval filter for phase-contrast data." property="og:description" />
-    <meta content="A Napari plugin for tomographic reconstruction using the ASTRA Toolbox, with optional Paganin phase retrieval filter for phase-contrast data.." name="twitter:description" />
+    <meta content="Napari plugin for tomographic reconstruction (ASTRA Toolbox) with Paganin phase retrieval, on GPU or CPU" name="description" />
+    <meta content="Napari plugin for tomographic reconstruction (ASTRA Toolbox) with Paganin phase retrieval, on GPU or CPU" property="og:description" />
+    <meta content="Napari plugin for tomographic reconstruction (ASTRA Toolbox) with Paganin phase retrieval, on GPU or CPU." name="twitter:description" />
     <meta content="Reconstruction Plugin - napari Plugin - Clément Capdeville" property="og:title" />
     <meta content="Reconstruction Plugin - napari Plugin - Clément Capdeville" name="twitter:title" />
     <meta content="article" property="og:type" />
@@ -74,7 +74,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Version<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">0.1.6</li>
+                                            <li class="MetadataList_textItem__KKmMN">0.2.0</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Last updated<!-- -->:</p>
                                         <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal">
-                                            <li class="MetadataList_textItem__KKmMN">2026-06-26</li>
+                                            <li class="MetadataList_textItem__KKmMN">2026-11-26</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -118,7 +118,7 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Open extension<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?readerFileExtensions=*.nxs">*.nxs</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?readerFileExtensions=*.tdf">*.tdf</a></li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?readerFileExtensions=*.nxs">*.nxs</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?readerFileExtensions=*.tdf">*.tdf</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?readerFileExtensions=*.NXS">*.NXS</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?readerFileExtensions=*.TDF">*.TDF</a></li></ul>
                                     </div>
                                 </div>
                                 <div class="text-sm">
@@ -156,7 +156,7 @@
                                 <div class="text-sm">
                                     <div class="">
                                         <p class="font-bold whitespace-nowrap">Requirements<!-- -->:</p>
-                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">h5py</li><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">scipy</li><li class="MetadataList_textItem__KKmMN">tqdm</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">matplotlib>=3.5</li><li class="MetadataList_textItem__KKmMN">dask[array]</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">napari>=0.4.18</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari[pyqt5]; extra == "testing"</li></ul>
+                                        <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">h5py</li><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">scipy</li><li class="MetadataList_textItem__KKmMN">tqdm</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">matplotlib>=3.5</li><li class="MetadataList_textItem__KKmMN">dask[array]</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">napari>=0.4.18</li><li class="MetadataList_textItem__KKmMN">tifffile</li><li class="MetadataList_textItem__KKmMN">astra-toolbox>=2.1; extra == "astra"</li><li class="MetadataList_textItem__KKmMN">cupy-cuda12x; extra == "gpu"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">PyQt6>=6.7; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">astra-toolbox>=2.1; extra == "testing"</li></ul>
                                     </div>
                                 </div>
                             </div>
@@ -183,7 +183,7 @@
         </div>
 
                                 <div class="flex justify-between items-center my-6">
-                                    <h2 class="text-lg">A Napari plugin for tomographic reconstruction using the ASTRA Toolbox, with optional Paganin phase retrieval filter for phase-contrast data.</h2>
+                                    <h2 class="text-lg">Napari plugin for tomographic reconstruction (ASTRA Toolbox) with Paganin phase retrieval, on GPU or CPU</h2>
                                 </div>
                                 <ul class="PluginAuthors_authors__hs3zO">
                                     <li class="inline">
@@ -209,112 +209,127 @@
                                 <div class="flex items-center justify-between mb-sds-xxl">
                                     <div class="Markdown_markdown__QZ95j">
 
-                                        <p>A Napari plugin for tomographic reconstruction using the <a href="https://www.astra-toolbox.com/">ASTRA Toolbox</a>, with optional Paganin phase retrieval filter for phase-contrast data.</p>
-<p>Supported reconstruction algorithms: <strong>FBP</strong>, <strong>BP</strong>, <strong>SIRT</strong>, <strong>SART</strong>, <strong>CGLS</strong> — all available in CPU or GPU (CUDA) mode.</p>
+                                        <p>A <a href="https://napari.org">napari</a> plugin for parallel-beam tomographic reconstruction with the
+<a href="https://www.astra-toolbox.com/">ASTRA Toolbox</a>, with single-distance <strong>Paganin</strong> phase retrieval.</p>
+<ul>
+<li>Reconstruction algorithms: <strong>FBP, BP, SIRT, SART, CGLS</strong>, on GPU (CUDA) or CPU.</li>
+<li>Standard (180° or 360°) and <strong>half acquisition</strong> (offset rotation axis, 360°) scans.</li>
+<li>Flat/dark-field and double flat-field correction, measured angles read from <code>.nxs</code> files.</li>
+<li>Centre-of-rotation tools: COR scan on one slice, automatic global COR (half acquisition).</li>
+<li><strong>Big Data</strong> mode: batch processing with lazy loading, result written to a temporary HDF5 file.</li>
+<li>Readers for <code>.nxs</code> / <code>.tdf</code> (HDF5); writers for <code>.tif</code> and <code>.raw</code> (+ processing history as JSON).</li>
+</ul>
+<p>Everything also runs <strong>without a GPU</strong>: CuPy is optional (NumPy/SciPy are used instead) and
+ASTRA's CPU algorithms are used when CUDA is not available.</p>
 <h2>Installation</h2>
-<h3>Option 1 — Install from Napari Hub (recommended)</h3>
-<p>Once published, the plugin can be installed directly from the Napari plugin manager:</p>
-<ol>
-<li>Open <strong>Napari</strong></li>
-<li>Go to <strong>Plugins &gt; Install/Uninstall Plugins</strong></li>
-<li>Search for <strong>&quot;napari-reco-plugin&quot;</strong></li>
-<li>Click <strong>Install</strong></li>
-</ol>
-<p>Alternatively, install via pip:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>napari-reco-plugin
+<h3>pip</h3>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"napari-reco-plugin[astra]"</span><span class="w">        </span><span class="c1"># plugin + ASTRA Toolbox</span>
+pip<span class="w"> </span>install<span class="w"> </span>cupy-cuda12x<span class="w">                       </span><span class="c1"># optional: GPU arrays (or cupy-cuda11x)</span>
 </pre></div>
 </code></pre>
-<hr />
-<h3>Option 2 — Manual installation (development)</h3>
-<h4>1. Create and activate a conda environment</h4>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>napari-env<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.12
-conda<span class="w"> </span>activate<span class="w"> </span>napari-env
+<h3>conda (recommended, GPU or CPU)</h3>
+<p>From a clone of this repository, create a dedicated environment with everything
+(napari, ASTRA, CuPy, all from conda-forge) and the plugin in editable mode:</p>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>environment.yml
+conda<span class="w"> </span>activate<span class="w"> </span>napari-reco
+napari
 </pre></div>
 </code></pre>
-<h4>2. Install main dependencies</h4>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>napari<span class="w"> </span>pyqt
-conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>astra-toolbox<span class="w"> </span>-c<span class="w"> </span>nvidia<span class="w"> </span>astra-toolbox
-
-<span class="c1"># Ensure compatibility with ASTRA</span>
-pip<span class="w"> </span>install<span class="w"> </span><span class="nv">numpy</span><span class="o">==</span><span class="m">1</span>.26.4
-
-<span class="c1"># Install CuPy depending on your CUDA version</span>
-pip<span class="w"> </span>install<span class="w"> </span>cupy-cuda12x<span class="w">  </span><span class="c1"># or cupy-cuda11x</span>
-</pre></div>
-</code></pre>
-<h4>3. Clone the repository</h4>
+<p>ASTRA and CuPy use CUDA when an NVIDIA driver is present, otherwise the CPU.
+Avoid mixing Qt bindings in one environment (e.g. PyQt5 and PySide6): napari ≥ 0.10 needs Qt 6.</p>
+<h3>From source (development)</h3>
 <pre><code class="language-bash"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Clementcmoi/Reconstruction-napari-plugin.git
 <span class="nb">cd</span><span class="w"> </span>Reconstruction-napari-plugin
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">".[testing]"</span>
 </pre></div>
 </code></pre>
-<h4>4. Install the plugin</h4>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
-</pre></div>
-</code></pre>
-<hr />
-<h2>Requirements</h2>
-<h3>Core</h3>
-<ul>
-<li>Python ≥ 3.9</li>
-<li>Napari</li>
-<li>ASTRA Toolbox</li>
-</ul>
-<h3>Optional (for GPU acceleration)</h3>
-<ul>
-<li>CUDA Toolkit</li>
-<li>CuPy</li>
-</ul>
-<blockquote>
-<p>⚠️ GPU dependencies are not installed automatically. You must install them manually according to your system configuration.</p>
-</blockquote>
-<hr />
+<p>The array backend in use (<code>cupy (GPU)</code> or <code>numpy (CPU)</code>) is shown at the bottom of the
+<em>Reconstruction Algorithm</em> section. Set <code>RECO_PLUGIN_BACKEND=numpy</code> to force the CPU.</p>
 <h2>Usage</h2>
-<p>Start Napari:</p>
-<pre><code class="language-bash"><div class="highlight"><pre><span></span>napari
-</pre></div>
-</code></pre>
-<p>Then open the plugin via:</p>
-<pre><code><div class="highlight"><pre><span></span><span class="n">Plugins</span> <span class="o">&gt;</span> <span class="n">Reconstruction</span> <span class="n">Plugin</span>
-</pre></div>
-</code></pre>
-<p>Available tools:</p>
-<ul>
-<li><strong>Reconstruction</strong></li>
-<li><strong>Multi Paganin</strong></li>
-</ul>
-<hr />
-<h2>Launchers Templates</h2>
-<p>Template scripts for launching Napari with the correct environment are available in the <code>launchers/</code> folder.</p>
-<h3>Usage</h3>
+<p>Start napari, open a <code>.nxs</code>/<code>.tdf</code> file (projections, flats and darks become layers), then
+<strong>Plugins › Reconstruction Plugin › Reconstruction</strong>.</p>
+<p>Typical workflow in the <em>Reconstruction</em> panel:</p>
 <ol>
-<li>
-<p>Copy a <code>.bat</code> file from <code>launchers/</code></p>
-</li>
-<li>
-<p>Edit:</p>
-<ul>
-<li><code>&lt;path_to_conda&gt;</code> → your Anaconda/Miniconda path</li>
-<li><code>&lt;your_napari_env&gt;</code> → your environment name</li>
-</ul>
-</li>
-<li>
-<p>Double-click to launch</p>
-</li>
+<li><strong>Sample Selection</strong> – choose the projection layer (angles × rows × columns). <em>Slice</em> is a
+detector row (0 … rows − 1).</li>
+<li><strong>Preprocessing</strong> – tick <em>Flatfield</em> / <em>Darkfield</em> and choose their layers. <em>Apply</em> creates a
+<code>preprocess_…</code> layer, but it is optional: every action applies the correction itself.</li>
+<li><strong>Paganin</strong> – energy (keV), distance (m), δ/β, optional unsharp mask and outlier cleaning.
+<em>Apply</em> creates a <code>paganin_…_db&lt;δ/β&gt;</code> layer (optional as well).</li>
+<li><strong>Center of Rotation</strong> – <em>Standard</em>: enter a COR range and <em>Try Center of Rotation</em> (one
+frame per COR value, listed in the layer metadata). <em>Half acquisition</em>: <em>Find Global Center of
+Rotation</em>, then refine with <em>Try Center of Rotation</em> (± delta around the value).</li>
+<li><strong>Reconstruction Algorithm</strong> – algorithm, GPU or CPU, pixel size (m, also used for the units).</li>
+<li><strong>Process</strong> – <em>Process one slice</em> or <em>Process all slices</em> (<em>Big Data</em> for volumes that do not
+fit in RAM).</li>
 </ol>
-<h3>Desktop shortcut (optional)</h3>
+<p>Results carry their full processing history in the layer metadata, saved next to the image by
+the <code>.tif</code> and <code>.raw</code> writers.</p>
+<h3>Good to know</h3>
 <ul>
-<li>Right-click <code>.bat</code> → <strong>Send to Desktop</strong></li>
-<li>(Optional) Change icon via shortcut properties</li>
+<li><strong>Parameters are read when you click.</strong> Changing δ/β (or any field) is always taken into
+account. A layer already filtered with Paganin is reused only if its parameters match the
+current ones; otherwise the plugin goes back to the layer it was computed from, so Paganin is
+never applied twice.</li>
+<li><strong>Units:</strong> pixel size and distance are in <strong>metres</strong> (0.65 µm → <code>0.65e-6</code>, 50 mm → <code>0.05</code>);
+values that look like µm or mm are rejected, because they make δ/β seem to have no effect.
+Commas are accepted as decimal separators. With a pixel size, reconstructions are in mm⁻¹.</li>
+<li><strong>Without Paganin</strong>, flat-field corrected transmissions I/I₀ are converted to attenuation
+−ln(I/I₀) before reconstruction (Paganin's output already is an attenuation).</li>
+<li>The pixel size appears in the <em>Paganin</em> and <em>Reconstruction Algorithm</em> sections: it is the
+same field (editing one updates the other).</li>
+<li><strong>COR convention:</strong> standard acquisition = position of the axis on the detector (pixels);
+half acquisition = distance from the left detector edge to the axis (the overlap is 2 × COR).</li>
+<li><strong>SART iterations</strong> are full sweeps over all projections.</li>
+<li><strong>Big Data:</strong> the temporary HDF5 output is deleted when its layer is removed or napari closes.
+Datasets larger than <code>RECO_PLUGIN_LAZY_GB</code> (default 4 GB) are opened lazily by the reader.</li>
 </ul>
-<hr />
-<h2>Project Structure</h2>
-<ul>
-<li>Plugin source code: <code>src/reco_plugin/</code></li>
-<li>Plugin manifest: <code>src/reco_plugin/napari.yaml</code></li>
-</ul>
-<hr />
+<h2>Troubleshooting</h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Cause / fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Changing δ/β changes nothing</td>
+<td>Check the units: the pixel size must be in metres (e.g. <code>0.65e-6</code>).</td>
+</tr>
+<tr>
+<td><em>Use GPU (CUDA)</em> is greyed out</td>
+<td>ASTRA cannot use CUDA on this machine: CPU algorithms are used.</td>
+</tr>
+<tr>
+<td>&quot;Another processing is still running&quot;</td>
+<td>One job at a time; wait for the <em>Processing</em> window to close.</td>
+</tr>
+<tr>
+<td>&quot;no 1D dataset of N angles&quot;</td>
+<td>Untick <em>Use the measured angles</em>, or check the file contains them.</td>
+</tr>
+</tbody>
+</table>
+<h2>Development</h2>
+<pre><code class="language-bash"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">".[testing]"</span>
+pytest<span class="w">            </span><span class="c1"># CPU backend, offscreen Qt: no GPU or display needed</span>
+</pre></div>
+</code></pre>
+<p>Project layout:</p>
+<pre><code><div class="highlight"><pre><span></span><span class="n">src</span><span class="o">/</span><span class="n">reco_plugin</span><span class="o">/</span>
+<span class="err">├──</span> <span class="n">_widget</span><span class="o">.</span><span class="n">py</span><span class="p">,</span> <span class="n">ui_sections</span><span class="o">.</span><span class="n">py</span>           <span class="c1"># Qt panel</span>
+<span class="err">├──</span> <span class="n">_link</span><span class="o">.</span><span class="n">py</span>                             <span class="c1"># parameters → processing (background threads)</span>
+<span class="err">├──</span> <span class="n">_reader</span><span class="o">.</span><span class="n">py</span><span class="p">,</span> <span class="n">_writer</span><span class="o">.</span><span class="n">py</span><span class="p">,</span> <span class="n">napari</span><span class="o">.</span><span class="n">yaml</span>  <span class="c1"># napari reader / writers / manifest</span>
+<span class="err">├──</span> <span class="n">processing</span><span class="o">/</span>                          <span class="c1"># numerical code (Paganin, sinograms, COR, ASTRA)</span>
+<span class="err">└──</span> <span class="n">utils</span><span class="o">/</span>                               <span class="c1"># backend (CuPy/NumPy), parameters, layers, Qt helpers</span>
+<span class="n">tests</span><span class="o">/</span>                                   <span class="c1"># pytest suite</span>
+<span class="n">launchers</span><span class="o">/</span>                               <span class="c1"># Windows .bat templates to start napari</span>
+</pre></div>
+</code></pre>
+<p>See <a href="CHANGELOG.md">CHANGELOG.md</a> for the list of changes.</p>
 <h2>License</h2>
-<p>This project is licensed under the GNU General Public License v3.0 (GPL-3.0), in compliance with the <a href="https://www.astra-toolbox.com/">ASTRA Toolbox license</a>.</p>
+<p>MIT — see <a href="LICENSE">LICENSE</a>. The ASTRA Toolbox itself is distributed under the GPLv3.</p>
 
 
                                     </div>
@@ -330,7 +345,7 @@ pip<span class="w"> </span>install<span class="w"> </span>cupy-cuda12x<span clas
                                                 </p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">0.1.6</li>
+                                                    <li class="MetadataList_textItem__KKmMN">0.2.0</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -340,7 +355,7 @@ pip<span class="w"> </span>install<span class="w"> </span>cupy-cuda12x<span clas
                                                     updated<!-- -->:</p>
                                                 <ul
                                                     class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo">
-                                                    <li class="MetadataList_textItem__KKmMN">2026-06-26</li>
+                                                    <li class="MetadataList_textItem__KKmMN">2026-11-26</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -394,7 +409,7 @@ pip<span class="w"> </span>install<span class="w"> </span>cupy-cuda12x<span clas
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">Open
                                                     extension<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?readerFileExtensions=*.nxs">*.nxs</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?readerFileExtensions=*.tdf">*.tdf</a></li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal inline space-y-sds-s MetadataList_inline__jHQLo"><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?readerFileExtensions=*.nxs">*.nxs</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?readerFileExtensions=*.tdf">*.tdf</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?readerFileExtensions=*.NXS">*.NXS</a></li><li class="MetadataList_textItem__KKmMN"><a class="MetadataList_textItem__KKmMN underline" href="../index.html?readerFileExtensions=*.TDF">*.TDF</a></li></ul>
                                             </div>
                                         </div>
                                         <div class="text-sm">
@@ -437,7 +452,7 @@ pip<span class="w"> </span>install<span class="w"> </span>cupy-cuda12x<span clas
                                             <div class="inline">
                                                 <p class="font-bold whitespace-nowrap inline mr-sds-s">
                                                     Requirements<!-- -->:</p>
-                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">h5py</li><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">scipy</li><li class="MetadataList_textItem__KKmMN">tqdm</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">matplotlib>=3.5</li><li class="MetadataList_textItem__KKmMN">dask[array]</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">napari>=0.4.18</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">pytest-qt; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari[pyqt5]; extra == "testing"</li></ul>
+                                                    <ul class="MetadataList_list__3DlqI list-none text-sm leading-normal"><li class="MetadataList_textItem__KKmMN">h5py</li><li class="MetadataList_textItem__KKmMN">numpy</li><li class="MetadataList_textItem__KKmMN">scipy</li><li class="MetadataList_textItem__KKmMN">tqdm</li><li class="MetadataList_textItem__KKmMN">scikit-image</li><li class="MetadataList_textItem__KKmMN">matplotlib>=3.5</li><li class="MetadataList_textItem__KKmMN">dask[array]</li><li class="MetadataList_textItem__KKmMN">qtpy</li><li class="MetadataList_textItem__KKmMN">napari>=0.4.18</li><li class="MetadataList_textItem__KKmMN">tifffile</li><li class="MetadataList_textItem__KKmMN">astra-toolbox>=2.1; extra == "astra"</li><li class="MetadataList_textItem__KKmMN">cupy-cuda12x; extra == "gpu"</li><li class="MetadataList_textItem__KKmMN">pytest; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">napari; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">PyQt6>=6.7; extra == "testing"</li><li class="MetadataList_textItem__KKmMN">astra-toolbox>=2.1; extra == "testing"</li></ul>
                                             </div>
                                         </div>
                                     </div>
